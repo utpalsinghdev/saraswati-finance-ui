@@ -9,6 +9,9 @@ import { BiUser, BiPhone } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiOutlineMail } from "react-icons/ai";
 import TextArea from "../components/ui/textarea";
+import banner3 from "../assets/banner3.jpg";
+import banner1 from "../assets/banner1.jpg";
+import banner2 from "../assets/banner2.jpg";
 const Homepage = () => {
   return (
     <div className="w-full  flex items-center justify-center flex-col">
@@ -23,7 +26,7 @@ const Homepage = () => {
         >
           <div className="relative">
             <img
-              src={"/banner1.jpg"}
+             src={banner1}
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
             />
@@ -41,7 +44,7 @@ const Homepage = () => {
 
           <div className="relative">
             <img
-              src={"/banner2.jpg"}
+               src={banner2}
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
             />
@@ -58,7 +61,7 @@ const Homepage = () => {
           </div>
           <div className="relative">
             <img
-              src={"/banner3.jpg"}
+              src={banner3}
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
             />
