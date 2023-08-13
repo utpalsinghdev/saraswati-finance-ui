@@ -32,7 +32,7 @@ function Input({
           required={required}
           placeholder={placeholder}
           className={classNames(
-            " block w-full rounded-md border-0 py-2 pl-8 text-red-900 ring-1 ring-gray-300 ring-inset  ",
+            " block w-full rounded-md border-0 py- pl-8 text-red-900 ring-1 ring-gray-300 ring-inset  ",
             error
               ? "ring-red-300  focus:ring-2 focus:ring-inset focus:ring-red-500"
               : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-indigo-500",

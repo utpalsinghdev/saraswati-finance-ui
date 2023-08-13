@@ -4,6 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Ticker from "../components/ui/ticker";
 import Image from "../components/ui/Image/Index";
+import Input from "../components/ui/input";
+import { BiUser, BiPhone } from "react-icons/bi";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { AiOutlineMail } from "react-icons/ai";
+import TextArea from "../components/ui/textarea";
 const Homepage = () => {
   return (
     <div className="w-full  flex items-center justify-center flex-col">
@@ -139,6 +144,67 @@ const Homepage = () => {
             <span className="text-gray-500 text-lg font-semibold md:text-left ">
               TAN NO:
             </span>
+          </div>
+        </section>
+      </div>
+      <div className="w-full bg-gray-100">
+        <section className="container  w-[90%] pb-10 mx-auto flex md:flex-row flex-col gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
+          <div className="max-w-[500px] min-w-[500px] h-[430px]">
+            <div className="w-[500px] h-[500px] flex flex-col gap-8">
+              <p className="text-2xl text-indigo-500 font-medium">
+                {">"} Easy Application
+              </p>
+              <p className="text-2xl text-indigo-500 font-medium">
+                {">"} Fast Approval
+              </p>
+              <p className="text-2xl text-indigo-500 font-medium">
+                {">"} Low interest rate
+              </p>
+              <p className="text-2xl text-indigo-500 font-medium">
+                {">"} Free consultation
+              </p>
+              <p className="text-2xl text-indigo-500 font-medium">
+                {">"} Flexible repayment
+              </p>
+              <p className="text-2xl text-indigo-500 font-medium">
+                {">"} Blacklisted accepted
+              </p>
+              <p className="text-2xl text-indigo-500 font-medium">
+                {">"} Get Approval in one day
+              </p>
+            </div>
+          </div>
+          <Image src={"/contact_arrow.png"} />
+          <div className="flex flex-col text-left  px-4 md:px-0  w-[500px]  ">
+            <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
+              About Us
+            </span>
+            <div className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white">
+              <Input
+                label={""}
+                type={"text"}
+                name="name"
+                placeholder={"Name"}
+                icon={<BiUser className="text-indigo-600" />}
+              />
+              <Input
+                label={""}
+                type={"email"}
+                name="email"
+                placeholder={"Email"}
+                icon={<AiOutlineMail className="text-indigo-600" />}
+              />
+              <Input
+                label={""}
+                type={"text"}
+                name="phone"
+                placeholder={"Phone"}
+                icon={<BiPhone className="text-indigo-600" />}
+              />
+              <TextArea row={5} name="phone" label={""}
+                placeholder={"Your Message"} icon={<BiPhone className="text-indigo-600" />} />
+                <Button size={"FULL"} >Send Message</Button>
+            </div>
           </div>
         </section>
       </div>

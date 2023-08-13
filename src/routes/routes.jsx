@@ -3,6 +3,7 @@ import Homepage from "../pages/Homepage";
 import PreNavbar from "../components/Navbar/PreNavbar";
 import PostFooter from "../components/Footer/PostFooter";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 // const USER_ROLES = {
 //   SUPER_ADMIN: "SUPER_ADMIN",
@@ -21,6 +22,7 @@ function RoutesConfig() {
       <Routes>
         <Route path="/" element={<Homepage />} />
       </Routes>
+      <Footer />
       <PostFooter />
     </Router>
   );

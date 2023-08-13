@@ -34,7 +34,7 @@ function Button({
         "inline-flex justify-center rounded-md border border-transparent disabled:cursor-not-allowed disabled:opacity-80 ",
         variant === "primary" ? "bg-indigo-800" : "bg-gray-300",
         size === "FULL"
-          ? "px-4 py-2 w-full"
+          ? "px-4 py-4 w-full"
           : size === "NORMAL"
           ? "px-4 py-2"
           : "px-2 py-1",
@@ -52,7 +52,7 @@ function Button({
           <span className="flex items-center justify-center">
             <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary mr-2"></span>
           </span>
-          <span className="ltr:ml-1 rtl:mr-1">{loadingText}</span>
+          <span className="ltr:ml-1 rtl:mr-1 text-sm">{loadingText}</span>
         </span>
       )}
     </button>
