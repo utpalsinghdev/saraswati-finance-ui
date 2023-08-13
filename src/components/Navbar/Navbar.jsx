@@ -1,0 +1,92 @@
+import React, { useEffect, useState } from "react";
+import { Bars3Icon } from "@heroicons/react/20/solid";
+import { Link, useLocation } from "react-router-dom";
+import { classNames } from "../../utils/classname";
+const Navbar = () => {
+  const location = useLocation();
+  const isActive = (url) => {
+    return location.pathname.split("/")[1] === url.split("/")[1];
+  };
+  const [show, setShow] = useState(false);
+  const links = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "About Us",
+      link: "/about-us",
+    },
+    {
+      name: "Load Services",
+      link: "/load-services",
+    },
+    {
+      name: "Our Agents",
+      link: "/agents",
+    },
+    {
+      name: "FAQs",
+      link: "/faqs",
+    },
+    {
+      name: "Contact Us",
+      link: "/contact-us",
+    },
+  ];
+  return (
+    <div className="relative container mt-6 pb-4 p-1 mx-auto px-8  md:px-0 transition duration-300">
+      <nav className="relative flex items-center justify-between">
+        <img
+          src="/logo.png"
+          className="hidden md:block absolute w-44 -top-6 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
+        />
+        <div className="hidden md:flex items-center justify-end w-full  gap-4">
+          <div className=" flex items-center  justify-between gap-4 font-semibold ">
+            {links.map((link, idx) => (
+              <Link
+                key={idx}
+                href={link.link}
+                className={classNames(
+                  "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
+                  isActive(link.link) ? "bg-green-200" : ""
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Bars3Icon
+          onClick={() => {
+            setShow(!show);
+          }}
+          className="md:hidden cursor-pointer w-5 h-5"
+        />
+      </nav>
+      <div
+        style={{
+          display: show ? "block" : "none",
+        }}
+        className="absolute bg-white right-0 w-full transition duration-300"
+      >
+        <div className="bg-white mt-4 flex flex-col items-center  gap-1 font-semibold md:hidden">
+          {links.map((link, idx) => (
+            <Link
+              key={idx}
+              href={link.link}
+              className={classNames(
+                "px-2 py-2 w-full rounded-md cursor-pointer font-medium pb-1 border-b-2 transition duration-300 border-white hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
+                isActive(link.link) ? "bg-green-200" : ""
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

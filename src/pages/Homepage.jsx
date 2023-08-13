@@ -4,8 +4,7 @@ import Input from "../components/ui/input/Input";
 import TextArea from "../components/ui/textarea";
 const Homepage = () => {
   return (
-    <div className="w-full h-screen flex items-center justify-center p-12">
-      <TextArea />
+    <div className="w-full  flex items-center justify-center h-[85vh]">
     </div>
   );
 };
