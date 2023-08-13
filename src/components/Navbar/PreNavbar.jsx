@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function PreNavbar() {
   return (
     <div className=" w-full bg-blue-800/95 py-1 z-40">
-      <div className="container mx-auto flex justify-between items-center text-white">
+      <div className="container w-[90%] mx-auto flex justify-between items-center text-white">
         <div className="py-2">
           Call Us: <a href="tel:9540542272">9540542272</a>
         </div>

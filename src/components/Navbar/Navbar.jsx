@@ -35,11 +35,11 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="relative container mt-6 pb-4 p-1 mx-auto px-8  md:px-0 transition duration-300">
+    <div className="relative container  w-[90%] mt-6 pb-4 p-1 mx-auto px-8  md:px-0 transition duration-300">
       <nav className="relative flex items-center justify-between">
         <img
           src="/logo.png"
-          className="hidden md:block absolute w-44 -top-6 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
+          className="hidden md:block absolute w-28 md:w-32    -top-6 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
         />
         <div className="hidden md:flex items-center justify-end w-full  gap-4">
           <div className=" flex items-center  justify-between gap-4 font-semibold ">
