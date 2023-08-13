@@ -42,13 +42,13 @@ const Navbar = () => {
           className="hidden md:block absolute w-28 md:w-32    -top-6 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
         />
         <div className="hidden md:flex items-center justify-end w-full  gap-4">
-          <div className=" flex items-center  justify-between gap-4 font-semibold ">
+          <div className=" flex items-center  justify-between gap-4 font-normal ">
             {links.map((link, idx) => (
               <Link
                 key={idx}
                 href={link.link}
                 className={classNames(
-                  "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
+                  "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-gray-700 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
                   isActive(link.link) ? "bg-green-200" : ""
                 )}
               >
