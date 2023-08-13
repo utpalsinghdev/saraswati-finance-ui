@@ -17,7 +17,7 @@ const Homepage = () => {
           className="productCarousel"
         >
           <div className="relative">
-            <img
+            <Image
               src={"/banner1.jpg"}
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
@@ -35,7 +35,7 @@ const Homepage = () => {
           </div>
 
           <div className="relative">
-            <img
+            <Image
               src={"/banner2.jpg"}
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
@@ -52,7 +52,7 @@ const Homepage = () => {
             </span>
           </div>
           <div className="relative">
-            <img
+            <Image
               src={"/banner3.jpg"}
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
