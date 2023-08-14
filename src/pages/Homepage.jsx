@@ -67,8 +67,8 @@ const Homepage = () => {
       </div>
 
       {/* <--------------------------Services Section-----------------------------> */}
-      <section className="flex bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
-        <span className="text-xl mt-16 font-semibold text-primary-500">
+      <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
+        <span className="text-xl mt-16 font-semibold mb-5 text-primary-500">
           WHAT WE DO FOR YOU
         </span>
         <h1 className="w-full text-center text-5xl font-bold text-gray-800">
