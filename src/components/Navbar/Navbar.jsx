@@ -22,10 +22,6 @@ const Navbar = () => {
       link: "/load-services",
     },
     {
-      name: "Our Agents",
-      link: "/agents",
-    },
-    {
       name: "FAQs",
       link: "/faqs",
     },

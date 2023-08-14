@@ -19,7 +19,7 @@ function PreNavbar() {
             Calculator
           </Link>
           <Link className="py-1 px-4 border border-white text-sm" to="/">
-            Login
+            Agent App
           </Link>
           <Link className="py-1 px-4 border border-white text-sm" to="/">
             Terms & Conditions

@@ -46,12 +46,12 @@ const Homepage = () => {
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
             />
-            <span className="absolute top-48 md:top-36 left-28 md:left-48 z-50 md:w-[400px] w-72  rounded-lg h-48 bg-black/60 text-white">
+            <span className="absolute top-48 md:top-36 left-20 md:left-48 z-50 md:w-[400px] w-60  rounded-lg md:h-48 h-64 bg-black/60 text-white">
               <div className="p-4 flex flex-col items-start gap-4 justify-start">
                 <p className="text-2xl text-left font-bold">
                   Green Apple Financial Services PVT. LTD.
                 </p>
-                <p className="text-base">Get Your loan on an easy EMI bais.</p>
+                <p className="text-base text-left">Get Your loan on an easy EMI bais.</p>
 
                 <Button size={"NORMAL"}>Apply Now</Button>
               </div>
@@ -64,12 +64,12 @@ const Homepage = () => {
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
             />
-            <span className="absolute top-48 md:top-36 left-28 md:left-48 z-50 md:w-[400px] w-72 rounded-lg h-48 bg-black/60 text-white">
+            <span className="absolute top-48 md:top-36 left-20 md:left-48 z-50 md:w-[400px] w-60  rounded-lg md:h-48 h-64 bg-black/60 text-white">
               <div className="p-4 flex flex-col items-start gap-4 justify-start">
                 <p className="text-2xl text-left font-bold">
                   Green Apple Financial Services PVT. LTD.
                 </p>
-                <p className="text-base">Get Your loan on an easy EMI bais.</p>
+                <p className="text-base text-left">Get Your loan on an easy EMI bais.</p>
 
                 <Button size={"NORMAL"}>Apply Now</Button>
               </div>
@@ -81,12 +81,12 @@ const Homepage = () => {
               alt={"banner 1"}
               className="w-full h-[500px] md:aspect-auto object-cover"
             />
-            <span className="absolute top-48 md:top-36 left-28 md:left-48 z-50 md:w-[400px] w-72 rounded-lg h-48 bg-black/60 text-white">
+            <span className="absolute top-48 md:top-36 left-20 md:left-48 z-50 md:w-[400px] w-60  rounded-lg md:h-48 h-64 bg-black/60 text-white">
               <div className="p-4 flex flex-col items-start gap-4 justify-start">
                 <p className="text-2xl text-left font-bold">
                   Green Apple Financial Services PVT. LTD.
                 </p>
-                <p className="text-base">Get Your loan on an easy EMI bais.</p>
+                <p className="text-base text-left">Get Your loan on an easy EMI bais.</p>
 
                 <Button size={"NORMAL"}>Apply Now</Button>
               </div>
