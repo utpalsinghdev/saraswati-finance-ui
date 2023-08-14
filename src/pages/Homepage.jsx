@@ -27,6 +27,7 @@ import TextArea from "../components/ui/textarea";
 import banner3 from "../assets/banner3.jpg";
 import banner1 from "../assets/banner1.jpg";
 import banner2 from "../assets/banner2.jpg";
+import LinkButton from "../components/ui/link";
 const Homepage = () => {
   return (
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
@@ -51,9 +52,13 @@ const Homepage = () => {
                 <p className="text-2xl text-left font-bold">
                   Green Apple Financial Services PVT. LTD.
                 </p>
-                <p className="text-base text-left">Get Your loan on an easy EMI bais.</p>
+                <p className="text-base text-left">
+                  Get Your loan on an easy EMI bais.
+                </p>
 
-                <Button size={"NORMAL"}>Apply Now</Button>
+                <LinkButton to="/apply-loan" size={"NORMAL"}>
+                  Apply Now
+                </LinkButton>
               </div>
             </span>
           </div>
@@ -69,9 +74,13 @@ const Homepage = () => {
                 <p className="text-2xl text-left font-bold">
                   Green Apple Financial Services PVT. LTD.
                 </p>
-                <p className="text-base text-left">Get Your loan on an easy EMI bais.</p>
+                <p className="text-base text-left">
+                  Get Your loan on an easy EMI bais.
+                </p>
 
-                <Button size={"NORMAL"}>Apply Now</Button>
+                <LinkButton to="/apply-loan" size={"NORMAL"}>
+                  Apply Now
+                </LinkButton>
               </div>
             </span>
           </div>
@@ -86,9 +95,13 @@ const Homepage = () => {
                 <p className="text-2xl text-left font-bold">
                   Green Apple Financial Services PVT. LTD.
                 </p>
-                <p className="text-base text-left">Get Your loan on an easy EMI bais.</p>
+                <p className="text-base text-left">
+                  Get Your loan on an easy EMI bais.
+                </p>
 
-                <Button size={"NORMAL"}>Apply Now</Button>
+                <LinkButton to="/apply-loan" size={"NORMAL"}>
+                  Apply Now
+                </LinkButton>
               </div>
             </span>
           </div>
@@ -149,7 +162,9 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                  <Button size={"small"}>View Details</Button>
+                <LinkButton to="/home-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -166,7 +181,9 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/personal-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -184,7 +201,9 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/business-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -201,7 +220,9 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/education-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -218,7 +239,9 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/property-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -235,7 +258,9 @@ const Homepage = () => {
                 EMI basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/agriculture-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -251,7 +276,9 @@ const Homepage = () => {
                 Green Apple Financial Services Offers ITR Loan on Easy EMI basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/itr-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -268,7 +295,9 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/pay-slip-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
@@ -285,13 +314,15 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <Button size={"small"}>View Details</Button>
+                <LinkButton to="/group-loan" size={"small"}>
+                  Apply Now
+                </LinkButton>
               </span>
             </div>
           </div>
         </div>
       </section>
-       {/* <--------------------------About Section-----------------------------> */}
+      {/* <--------------------------About Section-----------------------------> */}
       <div className="w-full bg-gray-100">
         <section className="container  w-[90%] mx-auto flex md:flex-row flex-col gap-12 md:gap-6 px-2 items-center justify-between py-20 md:py-15">
           <div className="max-w-[500px] min-w-[500px] h-[500px]">
@@ -336,7 +367,7 @@ const Homepage = () => {
           </div>
         </section>
       </div>
-       {/* <--------------------------Contact Section-----------------------------> */}
+      {/* <--------------------------Contact Section-----------------------------> */}
       <div className="w-full bg-gray-100">
         <section className="container  w-[90%] pb-10 mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
           <div className="max-w-[500px] min-w-[500px] h-[430px]">
