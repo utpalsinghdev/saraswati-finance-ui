@@ -7,7 +7,10 @@ import AccordianGroup from "../components/ui/accordian/AccordianGroup";
 
 function About() {
   return (
+
     <div className="bg-gray-100">
+    <ContainerWrapper>
+
       <CarouselBanner height="350px" />
         <HeadingWrapper
           heading="About"
@@ -58,7 +61,9 @@ function About() {
           </section>
           </div>
         </HeadingWrapper>
+    </ContainerWrapper>
     </div>
+
   );
 }
 
