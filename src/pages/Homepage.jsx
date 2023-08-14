@@ -259,7 +259,7 @@ const Homepage = () => {
             <div className="max-w-[500px] min-w-[500px] h-[500px]">
               <Image
                 className="w-[500px] h-[500px] md:aspect-auto object-cover rounded-md"
-                src={"/about.jpg"}
+                src={"/about.webp"}
                 alt="about-section"
               />
             </div>

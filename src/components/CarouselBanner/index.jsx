@@ -17,7 +17,7 @@ function CarouselBanner({ height = "500px" }) {
     >
       <div className="relative">
         <img
-          src={banner1}
+          src={"/banner1.webp"}
           alt={"banner 1"}
           style={{
             height: height,
@@ -42,7 +42,7 @@ function CarouselBanner({ height = "500px" }) {
 
       <div className="relative">
         <img
-          src={banner2}
+         src={"/banner2.webp"}
           style={{
             height: height,
           }}
@@ -66,7 +66,7 @@ function CarouselBanner({ height = "500px" }) {
       </div>
       <div className="relative">
         <img
-          src={banner3}
+          src={"/banner3.webp"}
           style={{
             height: height,
           }}
