@@ -35,11 +35,11 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="relative container  w-[90%] mt-6 pb-4 p-1 mx-auto px-8  md:px-0 transition duration-300">
-      <nav className="relative flex items-center justify-between">
+    <div className="relative container  w-[90%] mt-6 pb-4 p-1  mx-auto   md:px-0 transition duration-300">
+      <nav className="relative flex items-center justify-between border">
         <img
           src="/logo.png"
-          className="hidden md:block absolute w-28 md:w-32    -top-6 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
+          className="hidden md:block absolute w-28 md:w-32  -top-6 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
         />
         <div className="hidden md:flex items-center justify-end w-full  gap-4">
           <div className=" flex items-center  justify-between gap-4 font-normal ">
@@ -61,14 +61,14 @@ const Navbar = () => {
           onClick={() => {
             setShow(!show);
           }}
-          className="md:hidden cursor-pointer w-5 h-5"
+          className="md:hidden cursor-pointer w-6 h-6"
         />
       </nav>
       <div
         style={{
           display: show ? "block" : "none",
         }}
-        className="absolute bg-white right-0 w-full transition duration-300"
+        className="absolute z-50 bg-white right-0 w-full transition duration-300"
       >
         <div className="bg-white mt-4 flex flex-col items-center  gap-1 font-semibold md:hidden">
           {links.map((link, idx) => (

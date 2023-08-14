@@ -6,8 +6,8 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 function Footer() {
   return (
     <div className="w-full bg-slate-950 ">
-      <div className="container flex  mx-auto w-[90%] justify-between py-20 ">
-        <div className="w-[25%]">
+      <div className="container grid grid-cols-1 md:grid-cols-3 mx-auto w-[90%] gap-16 justify-between py-20 ">
+        <div className="w-full">
           <img src="/logo.png" className="w-44" alt="" />
           <p className="text-white mt-2">
             Green Apple Financial Services Private Limited. is dealing in
@@ -16,7 +16,7 @@ function Footer() {
             priority Basis.
           </p>
         </div>
-        <div className="flex flex-col w-[20%]">
+        <div className="w-full ">
           <h1 className="text-white text-2xl font-bold">Quick Links</h1>
           <ul className="text-white flex flex-col gap-4 mt-4">
             <li className="flex flex-row items-center gap-2">
@@ -40,7 +40,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col w-[20%]">
+        <div className="w-full ">
           <h1 className="text-white text-2xl font-bold">Contact Us</h1>
           <ul className="text-white flex flex-col gap-4 mt-4">
             <li className="flex flex-row items-center gap-2">
