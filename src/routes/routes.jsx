@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Faqs from "../pages/Faqs";
 
 // const USER_ROLES = {
 //   SUPER_ADMIN: "SUPER_ADMIN",
@@ -25,6 +26,7 @@ function RoutesConfig() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/faqs" element={<Faqs />} />
       </Routes>
       <Footer />
       <PostFooter />
