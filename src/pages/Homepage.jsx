@@ -28,84 +28,14 @@ import banner3 from "../assets/banner3.jpg";
 import banner1 from "../assets/banner1.jpg";
 import banner2 from "../assets/banner2.jpg";
 import LinkButton from "../components/ui/link";
+import ContainerWrapper from "../components/ui/containtWrapper";
+import CarouselBanner from "../components/CarouselBanner";
 const Homepage = () => {
   return (
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
-        <Carousel
-          autoPlay={true}
-          infiniteLoop
-          showStatus={false}
-          showArrows={false}
-          showThumbs={false}
-          className="productCarousel"
-        >
-          <div className="relative">
-            <img
-              src={banner1}
-              alt={"banner 1"}
-              className="w-full h-[500px] md:aspect-auto object-cover"
-            />
-            <span className="absolute top-48 md:top-36 left-20 md:left-48 z-50 md:w-[400px] w-60  rounded-lg md:h-48 h-64 bg-black/60 text-white">
-              <div className="p-4 flex flex-col items-start gap-4 justify-start">
-                <p className="text-2xl text-left font-bold">
-                  Green Apple Financial Services PVT. LTD.
-                </p>
-                <p className="text-base text-left">
-                  Get Your loan on an easy EMI bais.
-                </p>
-
-                <LinkButton to="/apply-loan" size={"NORMAL"}>
-                  Apply Now
-                </LinkButton>
-              </div>
-            </span>
-          </div>
-
-          <div className="relative">
-            <img
-              src={banner2}
-              alt={"banner 1"}
-              className="w-full h-[500px] md:aspect-auto object-cover"
-            />
-            <span className="absolute top-48 md:top-36 left-20 md:left-48 z-50 md:w-[400px] w-60  rounded-lg md:h-48 h-64 bg-black/60 text-white">
-              <div className="p-4 flex flex-col items-start gap-4 justify-start">
-                <p className="text-2xl text-left font-bold">
-                  Green Apple Financial Services PVT. LTD.
-                </p>
-                <p className="text-base text-left">
-                  Get Your loan on an easy EMI bais.
-                </p>
-
-                <LinkButton to="/apply-loan" size={"NORMAL"}>
-                  Apply Now
-                </LinkButton>
-              </div>
-            </span>
-          </div>
-          <div className="relative">
-            <img
-              src={banner3}
-              alt={"banner 1"}
-              className="w-full h-[500px] md:aspect-auto object-cover"
-            />
-            <span className="absolute top-48 md:top-36 left-20 md:left-48 z-50 md:w-[400px] w-60  rounded-lg md:h-48 h-64 bg-black/60 text-white">
-              <div className="p-4 flex flex-col items-start gap-4 justify-start">
-                <p className="text-2xl text-left font-bold">
-                  Green Apple Financial Services PVT. LTD.
-                </p>
-                <p className="text-base text-left">
-                  Get Your loan on an easy EMI bais.
-                </p>
-
-                <LinkButton to="/apply-loan" size={"NORMAL"}>
-                  Apply Now
-                </LinkButton>
-              </div>
-            </span>
-          </div>
-        </Carousel>
+        <CarouselBanner />
         <div className="absolute container mx-auto w-[80%] z-50 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
           <div className="bg-green-200 w-4">
             <p className="text-green-200">d</p>
@@ -324,115 +254,119 @@ const Homepage = () => {
       </section>
       {/* <--------------------------About Section-----------------------------> */}
       <div className="w-full bg-gray-100">
-        <section className="container  w-[90%] mx-auto flex md:flex-row flex-col gap-12 md:gap-6 px-2 items-center justify-between py-20 md:py-15">
-          <div className="max-w-[500px] min-w-[500px] h-[500px]">
-            <Image
-              className="w-[500px] h-[500px] md:aspect-auto object-cover rounded-md"
-              src={"/about.jpg"}
-              alt="about-section"
-            />
-          </div>
+        <ContainerWrapper>
+          <section className=" flex md:flex-row flex-col gap-12 md:gap-6 px-2 items-center justify-between py-20 md:py-15">
+            <div className="max-w-[500px] min-w-[500px] h-[500px]">
+              <Image
+                className="w-[500px] h-[500px] md:aspect-auto object-cover rounded-md"
+                src={"/about.jpg"}
+                alt="about-section"
+              />
+            </div>
 
-          <div className="flex flex-col text-left px-8 md:px-0 gap-6 ">
-            <span className="W-full text-2xl  text-left font-medium text-green-600 text-primary-500">
-              About Us
-            </span>
-            <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
-              Green Apple Financial Service PVT. LTD.
-            </h1>
-            <p className="text-gray-700 text-sm font-medium md:text-left text-center">
-              Green Apple Financial Service Private Limited is dealing in
-              Personal Loan, Loan against Property, Project Loan & Gold Loan. We
-              Believe in fair dealing and prompt disbursement of founds on
-              priority Basis.
-            </p>
-            <span className="text-gray-700 text-sm font-semibold md:text-left ">
-              Green Apple Financial Service Pvt Ltd is an organization that
-              motivates people to fulfill their dreams, which otherwise would be
-              difficult to achieve due to the inaccessibility to right financial
-              consulting and solutions.
-            </span>
-            <span className="text-gray-900 text-lg font-semibold md:text-left ">
-              We are registerd Private Limited Company:
-            </span>
-            <span className="text-gray-500 text-lg font-semibold md:text-left ">
-              IN CORPORATION NO:
-            </span>
-            <span className="text-gray-500 text-lg font-semibold md:text-left ">
-              PAN NO:
-            </span>
-            <span className="text-gray-500 text-lg font-semibold md:text-left ">
-              TAN NO:
-            </span>
-          </div>
-        </section>
+            <div className="flex flex-col text-left px-8 md:px-0 gap-6 ">
+              <span className="W-full text-2xl  text-left font-medium text-green-600 text-primary-500">
+                About Us
+              </span>
+              <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
+                Green Apple Financial Service PVT. LTD.
+              </h1>
+              <p className="text-gray-700 text-sm font-medium md:text-left text-center">
+                Green Apple Financial Service Private Limited is dealing in
+                Personal Loan, Loan against Property, Project Loan & Gold Loan.
+                We Believe in fair dealing and prompt disbursement of founds on
+                priority Basis.
+              </p>
+              <span className="text-gray-700 text-sm font-semibold md:text-left ">
+                Green Apple Financial Service Pvt Ltd is an organization that
+                motivates people to fulfill their dreams, which otherwise would
+                be difficult to achieve due to the inaccessibility to right
+                financial consulting and solutions.
+              </span>
+              <span className="text-gray-900 text-lg font-semibold md:text-left ">
+                We are registerd Private Limited Company:
+              </span>
+              <span className="text-gray-500 text-lg font-semibold md:text-left ">
+                IN CORPORATION NO: U69202HR2023PTC112412
+              </span>
+              <span className="text-gray-500 text-lg font-semibold md:text-left ">
+                PAN NO: AAKCG5265C
+              </span>
+              <span className="text-gray-500 text-lg font-semibold md:text-left ">
+                TAN NO: RTKG17932F
+              </span>
+            </div>
+          </section>
+        </ContainerWrapper>
       </div>
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="w-full bg-gray-100">
-        <section className="container  w-[90%] pb-10 mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
-          <div className="max-w-[500px] min-w-[500px] h-[430px]">
-            <div className="w-[500px] h-[500px] flex flex-col gap-8 flex flex-col text-left px-8 md:px-0">
-              <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
-                {">"} Easy Application
-              </p>
-              <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
-                {">"} Fast Approval
-              </p>
-              <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
-                {">"} Low interest rate
-              </p>
-              <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
-                {">"} Free consultation
-              </p>
-              <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
-                {">"} Flexible repayment
-              </p>
-              <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
-                {">"} Blacklisted accepted
-              </p>
-              <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
-                {">"} Get Approval in one day
-              </p>
+        <ContainerWrapper>
+          <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
+            <div className="max-w-[500px] min-w-[500px] h-[430px]">
+              <div className="w-[500px] h-[500px] flex flex-col gap-8 flex flex-col text-left px-8 md:px-0">
+                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                  {">"} Easy Application
+                </p>
+                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                  {">"} Fast Approval
+                </p>
+                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                  {">"} Low interest rate
+                </p>
+                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                  {">"} Free consultation
+                </p>
+                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                  {">"} Flexible repayment
+                </p>
+                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                  {">"} Blacklisted accepted
+                </p>
+                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                  {">"} Get Approval in one day
+                </p>
+              </div>
             </div>
-          </div>
-          <Image src={"/contact_arrow.png"} />
-          <div className="flex flex-col text-left  px-4 md:px-0    ">
-            <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
-              About Us
-            </span>
-            <div className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white">
-              <Input
-                label={""}
-                type={"text"}
-                name="name"
-                placeholder={"Name"}
-                icon={<BiUser className="text-indigo-600" />}
-              />
-              <Input
-                label={""}
-                type={"email"}
-                name="email"
-                placeholder={"Email"}
-                icon={<AiOutlineMail className="text-indigo-600" />}
-              />
-              <Input
-                label={""}
-                type={"text"}
-                name="phone"
-                placeholder={"Phone"}
-                icon={<BiPhone className="text-indigo-600" />}
-              />
-              <TextArea
-                row={5}
-                name="phone"
-                label={""}
-                placeholder={"Your Message"}
-                icon={<BiPhone className="text-indigo-600" />}
-              />
-              <Button size={"FULL"}>Send Message</Button>
+            <Image src={"/contact_arrow.png"} />
+            <div className="flex flex-col text-left  px-4 md:px-0    ">
+              <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
+                About Us
+              </span>
+              <div className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white">
+                <Input
+                  label={""}
+                  type={"text"}
+                  name="name"
+                  placeholder={"Name"}
+                  icon={<BiUser className="text-indigo-600" />}
+                />
+                <Input
+                  label={""}
+                  type={"email"}
+                  name="email"
+                  placeholder={"Email"}
+                  icon={<AiOutlineMail className="text-indigo-600" />}
+                />
+                <Input
+                  label={""}
+                  type={"text"}
+                  name="phone"
+                  placeholder={"Phone"}
+                  icon={<BiPhone className="text-indigo-600" />}
+                />
+                <TextArea
+                  row={5}
+                  name="phone"
+                  label={""}
+                  placeholder={"Your Message"}
+                  icon={<BiPhone className="text-indigo-600" />}
+                />
+                <Button size={"FULL"}>Send Message</Button>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ContainerWrapper>
       </div>
     </div>
   );

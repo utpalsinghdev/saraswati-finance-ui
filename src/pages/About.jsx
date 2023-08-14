@@ -1,0 +1,68 @@
+import React from "react";
+import ContainerWrapper from "../components/ui/containtWrapper";
+import HeadingWrapper from "../components/ui/heading Wrapper";
+import CarouselBanner from "../components/CarouselBanner";
+import Image from "../components/ui/Image/Index";
+
+function About() {
+  return (
+    <div className="bg-gray-100">
+      <CarouselBanner height="350px" />
+      <ContainerWrapper>
+        <HeadingWrapper
+          heading="About"
+          title="Green Apple Financial Services Private Limited."
+        >
+          <div className="w-full bg-gray-100">
+            <ContainerWrapper>
+              <section className=" flex md:flex-row flex-col gap-12 md:gap-6 px-2 items-center justify-between py-20 md:py-15">
+                <div className="max-w-[500px] min-w-[500px] h-[500px]">
+                  <Image
+                    className="w-[500px] h-[500px] md:aspect-auto object-cover rounded-md"
+                    src={"/about.jpg"}
+                    alt="about-section"
+                  />
+                </div>
+
+                <div className="flex flex-col text-left px-8 md:px-0 gap-6 ">
+                  <span className="W-full text-2xl  text-left font-medium text-green-600 text-primary-500">
+                    About Us
+                  </span>
+                  <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
+                    Green Apple Financial Service PVT. LTD.
+                  </h1>
+                  <p className="text-gray-700 text-sm font-medium md:text-left text-center">
+                    Green Apple Financial Service Private Limited is dealing in
+                    Personal Loan, Loan against Property, Project Loan & Gold
+                    Loan. We Believe in fair dealing and prompt disbursement of
+                    founds on priority Basis.
+                  </p>
+                  <span className="text-gray-700 text-sm font-semibold md:text-left ">
+                    Green Apple Financial Service Pvt Ltd is an organization
+                    that motivates people to fulfill their dreams, which
+                    otherwise would be difficult to achieve due to the
+                    inaccessibility to right financial consulting and solutions.
+                  </span>
+                  <span className="text-gray-900 text-lg font-semibold md:text-left ">
+                    We are registerd Private Limited Company:
+                  </span>
+                  <span className="text-gray-500 text-lg font-semibold md:text-left ">
+                    IN CORPORATION NO: U69202HR2023PTC112412
+                  </span>
+                  <span className="text-gray-500 text-lg font-semibold md:text-left ">
+                    PAN NO: AAKCG5265C
+                  </span>
+                  <span className="text-gray-500 text-lg font-semibold md:text-left ">
+                    TAN NO: RTKG17932F
+                  </span>
+                </div>
+              </section>
+            </ContainerWrapper>
+          </div>
+        </HeadingWrapper>
+      </ContainerWrapper>
+    </div>
+  );
+}
+
+export default About;
