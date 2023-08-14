@@ -72,7 +72,7 @@ const Navbar = () => {
             {links.map((link, idx) => (
               <Link
                 key={idx}
-                href={link.link}
+                to={link.link}
                 className={classNames(
                   "px-2 py-2 w-full rounded-md cursor-pointer font-medium pb-1 border-b-2 transition duration-300 border-white hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
                   isActive(link.link) ? "bg-green-200" : ""

@@ -303,27 +303,27 @@ const Homepage = () => {
       <div className="w-full bg-gray-100">
         <ContainerWrapper>
           <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
-            <div className="max-w-[500px] min-w-[500px] h-[430px]">
+            <div className="">
               <div className="w-[500px] h-[500px] flex flex-col gap-8 flex flex-col text-left px-8 md:px-0">
-                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Easy Application
                 </p>
-                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Fast Approval
                 </p>
-                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Low interest rate
                 </p>
-                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Free consultation
                 </p>
-                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Flexible repayment
                 </p>
-                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Blacklisted accepted
                 </p>
-                <p className="text-2xl text-indigo-500 font-medium md:text-left text-center">
+                <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Get Approval in one day
                 </p>
               </div>
