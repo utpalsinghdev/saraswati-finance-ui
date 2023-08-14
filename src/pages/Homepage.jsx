@@ -255,16 +255,16 @@ const Homepage = () => {
       {/* <--------------------------About Section-----------------------------> */}
       <div className="w-full bg-gray-100">
         <ContainerWrapper>
-          <section className=" flex md:flex-row flex-col gap-12 md:gap-6 px-2 items-center justify-between py-20 md:py-15">
-            <div className="max-w-[500px] min-w-[500px] h-[500px]">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 py-20 md:py-15">
+            <div className=" h-[500px]">
               <Image
-                className="w-[500px] h-[500px] md:aspect-auto object-cover rounded-md"
+                className=" h-[500px] md:w-[500px]  md:aspect-auto object-cover rounded-md"
                 src={"/about.webp"}
                 alt="about-section"
               />
             </div>
 
-            <div className="flex flex-col text-left px-8 md:px-0 gap-6 ">
+            <div className="flex flex-col text-left px-0 md:px-0 gap-6 ">
               <span className="W-full text-2xl  text-left font-medium text-green-600 text-primary-500">
                 About Us
               </span>
@@ -304,7 +304,7 @@ const Homepage = () => {
         <ContainerWrapper>
           <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
             <div className="">
-              <div className="w-[500px] h-[500px] flex flex-col gap-8 flex flex-col text-left px-8 md:px-0">
+              <div className="w-full h-[500px] flex flex-col gap-8 flex flex-col text-left  md:px-0">
                 <p className="text-2xl text-indigo-500 font-medium text-left">
                   {">"} Easy Application
                 </p>

@@ -45,6 +45,7 @@ const Navbar = () => {
                 <Link
                   key={idx}
                   to={link.link}
+              
                   className={classNames(
                     "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-gray-700 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
                     isActive(link.link) ? "bg-green-200" : ""
@@ -61,6 +62,10 @@ const Navbar = () => {
             }}
             className="md:hidden cursor-pointer w-6 h-6"
           />
+             <img
+            src="/logo.png"
+            className=" block md:hidden absolute w-24 md:w-32  right-0 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
+          />
         </nav>
         <div
           style={{
@@ -68,11 +73,14 @@ const Navbar = () => {
           }}
           className="absolute z-50 bg-white right-0 w-full transition duration-300"
         >
-          <div className="bg-white mt-4 flex flex-col items-center  gap-1 font-semibold md:hidden">
+          <div className="bg-white mt-4 w-full py-4 flex flex-col items-center  gap-1 font-semibold md:hidden">
             {links.map((link, idx) => (
               <Link
                 key={idx}
                 to={link.link}
+                onClick={() => {
+                  setShow(!show);
+                }}
                 className={classNames(
                   "px-2 py-2 w-full rounded-md cursor-pointer font-medium pb-1 border-b-2 transition duration-300 border-white hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
                   isActive(link.link) ? "bg-green-200" : ""
