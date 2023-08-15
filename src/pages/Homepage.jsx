@@ -273,7 +273,7 @@ const Homepage = () => {
               <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
                 Green Apple Financial Service PVT. LTD.
               </h1>
-              <p className="text-gray-700 text-sm font-medium md:text-left text-center">
+              <p className="text-gray-700 text-sm font-medium md:text-left ">
                 Green Apple Financial Service Private Limited is dealing in
                 Personal Loan, Loan against Property, Project Loan & Gold Loan.
                 We Believe in fair dealing and prompt disbursement of founds on
@@ -330,7 +330,7 @@ const Homepage = () => {
                 </p>
               </div>
             </div>
-            <Image src={"/contact_arrow.png"} />
+            <Image className={"hidden md:block"} src={"/contact_arrow.png"} />
             <div className="flex flex-col text-left  px-4 md:px-0    ">
               <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-800 rounded-t-md px-8 py-4 ">
                 Contact Us

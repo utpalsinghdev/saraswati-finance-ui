@@ -53,7 +53,7 @@ function Contact() {
                   </p>
                 </div>
               </div>
-              <Image src={"/contact_arrow.png"} />
+              <Image className={"hidden md:block"} src={"/contact_arrow.png"} />
               <div className="flex flex-col text-left  ">
                 <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
                   Contact Us
