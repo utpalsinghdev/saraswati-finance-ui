@@ -24,9 +24,6 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import TextArea from "../components/ui/textarea";
-import banner3 from "../assets/banner3.jpg";
-import banner1 from "../assets/banner1.jpg";
-import banner2 from "../assets/banner2.jpg";
 import LinkButton from "../components/ui/link";
 import ContainerWrapper from "../components/ui/containtWrapper";
 import CarouselBanner from "../components/CarouselBanner";

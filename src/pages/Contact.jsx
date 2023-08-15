@@ -29,7 +29,7 @@ function Contact() {
           <div className="w-full bg-gray-100 pt-16">
             <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
               <div className="">
-                <div className="w-full h-[500px] flex flex-col gap-8 flex flex-col text-left  md:px-0">
+                <div className="w-full h-[500px]  gap-8 flex flex-col text-left  md:px-0">
                   <p className="text-2xl text-indigo-500 font-medium text-left">
                     {">"} Easy Application
                   </p>
