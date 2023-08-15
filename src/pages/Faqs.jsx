@@ -7,7 +7,7 @@ import AccordianGroup from "../components/ui/accordian/AccordianGroup";
 function Faqs() {
   return (
     <div className="bg-gray-100">
-      <CarouselBanner height="350px" />
+      <CarouselBanner height="96" />
       <ContainerWrapper>
         <HeadingWrapper
           heading="Frequently Asked Questions"
