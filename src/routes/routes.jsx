@@ -11,6 +11,7 @@ import Calculator from "../pages/Calculator";
 import ApplyLoan from "../pages/ApplyLoan";
 import AntiFraudPolicy from "../pages/AntiFraudPolicy";
 import TermAndCondition from "../pages/TermAndCondition";
+import Career from "../pages/Career";
 
 // const USER_ROLES = {
 //   SUPER_ADMIN: "SUPER_ADMIN",
@@ -35,6 +36,7 @@ function RoutesConfig() {
         <Route path="/apply-loan" element={<ApplyLoan />} />
         <Route path="/anti-fraud-policy" element={<AntiFraudPolicy />} />
         <Route path="/terms-and-conditions" element={<TermAndCondition />} />
+        <Route path="/career" element={<Career />} />
       </Routes>
       <Footer />
       <PostFooter />
