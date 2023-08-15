@@ -174,7 +174,7 @@ function ApplyLoan() {
                   name="name"
                   icon={<BsBank className="w-4 text-indigo-500" />}
                   label={""}
-                  placeholder={"Account Number"}
+                  placeholder={"IFSC CODE"}
                 />
                 <Select
                   label={""}
