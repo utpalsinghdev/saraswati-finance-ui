@@ -37,7 +37,7 @@ const Homepage = () => {
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
-        <CarouselBanner  />
+        <CarouselBanner />
         <div className="absolute container mx-auto w-[80%] z-50 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
           <div className="bg-green-200 w-4">
             <p className="text-green-200">d</p>
@@ -94,8 +94,8 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/home-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/home-loan" size={"small"}>
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -113,8 +113,8 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/personal-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/personal-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>
@@ -133,8 +133,8 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/business-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/business-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>
@@ -152,8 +152,8 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/education-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/education-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>
@@ -171,8 +171,8 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/property-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/property-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>
@@ -190,8 +190,8 @@ const Homepage = () => {
                 EMI basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/agriculture-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/agriculture-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>
@@ -208,8 +208,8 @@ const Homepage = () => {
                 Green Apple Financial Services Offers ITR Loan on Easy EMI basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/itr-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/itr-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>
@@ -227,8 +227,8 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/pay-slip-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/pay-slip-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>
@@ -246,8 +246,8 @@ const Homepage = () => {
                 basis
               </span>
               <span className="self-center md:self-auto">
-                <LinkButton to="/group-loan" size={"small"}>
-                  Apply Now
+                <LinkButton to="/services/group-loan" size={"small"}>
+                View Details
                 </LinkButton>
               </span>
             </div>

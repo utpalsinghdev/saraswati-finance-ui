@@ -24,7 +24,7 @@ const Navbar = () => {
     },
     {
       name: "Loan Services",
-      link: "/loan-services",
+      link: "/services/loan",
     },
     {
       name: "FAQs",
