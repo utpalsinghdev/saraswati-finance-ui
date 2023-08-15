@@ -28,124 +28,7 @@ function Career() {
                 "h-[500px] md:w-[370px]  md:aspect-auto object-fill rounded-md"
               }
             />
-            {/* <div className="flex  items-center  flex-col gap-2">
-              <h3 className="text-2xl text-left w-full font-normal">
-                Personal Information
-              </h3>
-              <Input
-                name="name"
-                icon={<User2Icon className="w-4 text-indigo-500" />}
-                label={""}
-                placeholder={"Your Name"}
-              />
-              <span className="flex items-center justify-between w-full gap-8">
-                <Select
-                  label={""}
-                  icon={<RiUserHeartLine className="w-4 text-indigo-500" />}
-                >
-                  <option>S/O</option>
-                  <option>D/O</option>
-                  <option>W/O</option>
-                </Select>
-                <Input
-                  name="guardian_name"
-                  icon={<RiUser2Line className="w-4 text-indigo-500" />}
-                  label={""}
-                  placeholder={"Guardian Name"}
-                />
-              </span>
-              <Input
-                name="guardian_name"
-                icon={<Phone className="w-4 text-indigo-500" />}
-                label={""}
-                placeholder={"Mobile Number"}
-              />
-              <span className="text-sm text-normal w-full text-left">
-                Date of Birth
-              </span>
-              <Input
-                name="dob"
-                type={"date"}
-                icon={<Calendar className="w-4 text-indigo-500" />}
-                label={""}
-                placeholder={"Date of Birth"}
-              />
-              <Input
-                name="email"
-                icon={<MailIcon className="w-4 text-indigo-500" />}
-                label={""}
-                placeholder={"Email Address"}
-              />
-              <h3 className="text-2xl text-left w-full font-normal">
-                Loan Information
-              </h3>
-              <Input
-                name="amount"
-                icon={<BiRupee size={20} className="text-indigo-500" />}
-                label={""}
-                placeholder={"Loan Amount"}
-              />
-              <Input
-                name="amount in words"
-                icon={<Wallet className="w-4 text-indigo-500" />}
-                label={""}
-                placeholder={"Loan Amount in words"}
-              />
-              <span className="flex items-center justify-between w-full gap-8">
-                <Input
-                  name="dob"
-                  type={"text"}
-                  icon={<Calendar className="w-4 text-indigo-500" />}
-                  label={""}
-                  placeholder={"Loan Year"}
-                />
-                <Input
-                  name="dob"
-                  type={"text"}
-                  icon={<Calendar className="w-4 text-indigo-500" />}
-                  label={""}
-                  placeholder={"In Month"}
-                />
-              </span>
-              <h3 className="text-2xl text-left w-full font-normal">
-                Complete Address
-              </h3>
-              <TextArea
-                label={""}
-                row={3}
-                placeholder={"House No, Street City"}
-                icon={<GoLocation size={18} className=" text-indigo-500" />}
-              />
-              <Input
-                name="dob"
-                type={"text"}
-                icon={<MapIcon className="w-4 text-indigo-500" />}
-                label={""}
-                placeholder={"District"}
-              />
-              <span className="flex items-center justify-between w-full gap-8">
-                <Input
-                  name="test"
-                  type={"text"}
-                  icon={<SlLocationPin className="w-4 text-indigo-500" />}
-                  label={""}
-                  placeholder={"State"}
-                />
-                <Input
-                  name="dob"
-                  type={"text"}
-                  icon={<FlagIcon className="w-4 text-indigo-500" />}
-                  label={""}
-                  placeholder={"Pincode"}
-                />
-              </span>
-              <Select
-                label={""}
-                icon={<RiUserSearchLine className="w-4 text-indigo-500" />}
-              >
-                <option>Select Agent</option>
-              </Select>
-            </div> */}
+
             <div className="flex w-full md:w-96 md:gap-4 items-center flex-col gap-1">
               <Select
                 label={""}
@@ -205,7 +88,11 @@ function Career() {
                 placeholder={"Email Address"}
               />
               <span className="h-full w-full mb-2 md:mb-4 flex items-center justify-start gap-4">
-                <input id="other_document" type="checkbox" className="self-start mt-[6px]" />{" "}
+                <input
+                  id="other_document"
+                  type="checkbox"
+                  className="self-start mt-[6px]"
+                />{" "}
                 <label htmlFor="other_document" className="text-sm w-[95%]">
                   {" "}
                   I authorize that Company & its representatives to call me or
