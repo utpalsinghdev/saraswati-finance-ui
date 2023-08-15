@@ -30,6 +30,11 @@ import banner2 from "../assets/banner2.jpg";
 import LinkButton from "../components/ui/link";
 import ContainerWrapper from "../components/ui/containtWrapper";
 import CarouselBanner from "../components/CarouselBanner";
+import { Formik } from "formik";
+import { sendMessageDto } from "../schemas";
+import ApiService from "../services/Api_services";
+import { toast } from "react-toast";
+import axios from "axios";
 const Homepage = () => {
   return (
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
@@ -330,40 +335,93 @@ const Homepage = () => {
             </div>
             <Image src={"/contact_arrow.png"} />
             <div className="flex flex-col text-left  px-4 md:px-0    ">
-              <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
-                About Us
+              <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-800 rounded-t-md px-8 py-4 ">
+                Contact Us
               </span>
-              <div className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white">
-                <Input
-                  label={""}
-                  type={"text"}
-                  name="name"
-                  placeholder={"Name"}
-                  icon={<BiUser className="text-indigo-600" />}
-                />
-                <Input
-                  label={""}
-                  type={"email"}
-                  name="email"
-                  placeholder={"Email"}
-                  icon={<AiOutlineMail className="text-indigo-600" />}
-                />
-                <Input
-                  label={""}
-                  type={"text"}
-                  name="phone"
-                  placeholder={"Phone"}
-                  icon={<BiPhone className="text-indigo-600" />}
-                />
-                <TextArea
-                  row={5}
-                  name="phone"
-                  label={""}
-                  placeholder={"Your Message"}
-                  icon={<BiPhone className="text-indigo-600" />}
-                />
-                <Button size={"FULL"}>Send Message</Button>
-              </div>
+              <Formik
+                validationSchema={sendMessageDto}
+                initialValues={{
+                  name: "",
+                  email: "",
+                  phone: "",
+                  message: "",
+                }}
+                onSubmit={async (values, action) => {
+                  try {
+                    const res = await axios.post(
+                      `${import.meta.env.VITE_BASE_URL}/api/message`,
+                      values
+                    );
+                    if (res) toast.success(res.data.message);
+                  } catch (error) {
+                    toast.error(error.response.data.message);
+                  } finally {
+                    action.resetForm();
+                    action.setSubmitting(false);
+                  }
+                }}
+              >
+                {(formik) => (
+                  <form
+                    onSubmit={formik.handleSubmit}
+                    className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
+                  >
+                    <Input
+                      label={""}
+                      type={"text"}
+                      name="name"
+                      value={formik.values.name}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={formik.touched.name && formik.errors.name}
+                      placeholder={"Name"}
+                      icon={<BiUser className="text-indigo-600" />}
+                    />
+                    <Input
+                      label={""}
+                      type={"email"}
+                      name="email"
+                      value={formik.values.email}
+                      onBlur={formik.handleBlur}
+                      onChange={formik.handleChange}
+                      error={formik.touched.email && formik.errors.email}
+                      placeholder={"Email"}
+                      icon={<AiOutlineMail className="text-indigo-600" />}
+                    />
+                    <Input
+                      label={""}
+                      type={"text"}
+                      name="phone"
+                      value={formik.values.phone}
+                      onBlur={formik.handleBlur}
+                      onChange={formik.handleChange}
+                      error={formik.touched.phone && formik.errors.phone}
+                      placeholder={"Phone"}
+                      icon={<BiPhone className="text-indigo-600" />}
+                    />
+                    <TextArea
+                      row={5}
+                      name="message"
+                      label={""}
+                      value={formik.values.message}
+                      onBlur={formik.handleBlur}
+                      onChange={formik.handleChange}
+                      error={formik.touched.message && formik.errors.message}
+                      placeholder={"Your Message"}
+                      icon={<BiPhone className="text-indigo-600" />}
+                    />
+                    <Button
+                      loadingText={"sending..."}
+                      loading={formik.isSubmitting}
+                      disabled={formik.isSubmitting}
+                      type={"submit"}
+                      size={"FULL"}
+                    >
+                      Send Message
+                    </Button>
+                  </form>
+                )}
+              </Formik>
             </div>
           </section>
         </ContainerWrapper>

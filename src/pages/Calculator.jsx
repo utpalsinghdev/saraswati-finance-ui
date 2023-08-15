@@ -10,6 +10,19 @@ import Select from "../components/ui/select";
 import { AiOutlineCalendar } from "react-icons/ai";
 
 function Calculator() {
+  function calculateEMI(principal, interestRate, years) {
+    interestRate = interestRate / 100;
+    const monthlyInterestRate = interestRate / 12;
+    const totalMonths = years * 12;
+    const emi =
+      (principal * monthlyInterestRate) /
+      (1 - Math.pow(1 + monthlyInterestRate, -totalMonths));
+    const totalLoanAmount = emi * totalMonths;
+    return {
+      emi: emi,
+      totalLoanAmount: totalLoanAmount,
+    };
+  }
   return (
     <div className="bg-gray-100">
       <CarouselBanner height="350px" />
@@ -45,7 +58,6 @@ function Calculator() {
                   <option value="null">Select a year</option>
                   <option value="1">1 Year</option>
                 </Select>
-                <Button size={"NORMAL"}>Calculate</Button>
               </div>
             </div>
           </div>

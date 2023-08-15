@@ -13,6 +13,10 @@ import {
 import TextArea from "../components/ui/textarea";
 import Button from "../components/ui/button";
 import { AiOutlineMail } from "react-icons/ai";
+import { toast } from "react-toast";
+import axios from "axios";
+import { sendMessageDto } from "../schemas";
+import { Formik } from "formik";
 function Contact() {
   return (
     <div className="bg-gray-100">
@@ -23,70 +27,123 @@ function Contact() {
           title="Green Apple Financial Services Private Limited."
         >
           <div className="w-full bg-gray-100 pt-16">
-          <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
-            <div className="">
-              <div className="w-full h-[500px] flex flex-col gap-8 flex flex-col text-left  md:px-0">
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Easy Application
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Fast Approval
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Low interest rate
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Free consultation
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Flexible repayment
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Blacklisted accepted
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Get Approval in one day
-                </p>
+            <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
+              <div className="">
+                <div className="w-full h-[500px] flex flex-col gap-8 flex flex-col text-left  md:px-0">
+                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                    {">"} Easy Application
+                  </p>
+                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                    {">"} Fast Approval
+                  </p>
+                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                    {">"} Low interest rate
+                  </p>
+                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                    {">"} Free consultation
+                  </p>
+                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                    {">"} Flexible repayment
+                  </p>
+                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                    {">"} Blacklisted accepted
+                  </p>
+                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                    {">"} Get Approval in one day
+                  </p>
+                </div>
               </div>
-            </div>
-            <Image src={"/contact_arrow.png"} />
-            <div className="flex flex-col text-left  ">
-              <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
-                About Us
-              </span>
-              <div className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white">
-                <Input
-                  label={""}
-                  type={"text"}
-                  name="name"
-                  placeholder={"Name"}
-                  icon={<BiUser className="text-indigo-600" />}
-                />
-                <Input
-                  label={""}
-                  type={"email"}
-                  name="email"
-                  placeholder={"Email"}
-                  icon={<AiOutlineMail className="text-indigo-600" />}
-                />
-                <Input
-                  label={""}
-                  type={"text"}
-                  name="phone"
-                  placeholder={"Phone"}
-                  icon={<BiPhone className="text-indigo-600" />}
-                />
-                <TextArea
-                  row={5}
-                  name="phone"
-                  label={""}
-                  placeholder={"Your Message"}
-                  icon={<BiPhone className="text-indigo-600" />}
-                />
-                <Button size={"FULL"}>Send Message</Button>
+              <Image src={"/contact_arrow.png"} />
+              <div className="flex flex-col text-left  ">
+                <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
+                  Contact Us
+                </span>
+                <Formik
+                  validationSchema={sendMessageDto}
+                  initialValues={{
+                    name: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                  }}
+                  onSubmit={async (values, action) => {
+                    try {
+                      const res = await axios.post(
+                        `${import.meta.env.VITE_BASE_URL}/api/message`,
+                        values
+                      );
+                      if (res) toast.success(res.data.message);
+                    } catch (error) {
+                      toast.error(error.response.data.message);
+                    } finally {
+                      action.resetForm();
+                      action.setSubmitting(false);
+                    }
+                  }}
+                >
+                  {(formik) => (
+                    <form
+                      onSubmit={formik.handleSubmit}
+                      className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
+                    >
+                      <Input
+                        label={""}
+                        type={"text"}
+                        name="name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.name && formik.errors.name}
+                        placeholder={"Name"}
+                        icon={<BiUser className="text-indigo-600" />}
+                      />
+                      <Input
+                        label={""}
+                        type={"email"}
+                        name="email"
+                        value={formik.values.email}
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        error={formik.touched.email && formik.errors.email}
+                        placeholder={"Email"}
+                        icon={<AiOutlineMail className="text-indigo-600" />}
+                      />
+                      <Input
+                        label={""}
+                        type={"text"}
+                        name="phone"
+                        value={formik.values.phone}
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        error={formik.touched.phone && formik.errors.phone}
+                        placeholder={"Phone"}
+                        icon={<BiPhone className="text-indigo-600" />}
+                      />
+                      <TextArea
+                        row={5}
+                        name="message"
+                        label={""}
+                        value={formik.values.message}
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        error={formik.touched.message && formik.errors.message}
+                        placeholder={"Your Message"}
+                        icon={<BiPhone className="text-indigo-600" />}
+                      />
+                      <Button
+                        loadingText={"sending..."}
+                        loading={formik.isSubmitting}
+                        disabled={formik.isSubmitting}
+                        type={"submit"}
+                        size={"FULL"}
+                      >
+                        Send Message
+                      </Button>
+                    </form>
+                  )}
+                </Formik>
               </div>
-            </div>
-          </section>
+            </section>
           </div>
         </HeadingWrapper>
       </ContainerWrapper>

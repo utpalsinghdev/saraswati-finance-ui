@@ -43,7 +43,7 @@ function Input({
       </div>
       {error && (
         <p className=" text-sm text-red-600" id="error">
-          Not a valid email address.
+          {error}
         </p>
       )}
     </div>
