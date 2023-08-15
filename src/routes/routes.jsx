@@ -8,6 +8,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Faqs from "../pages/Faqs";
 import Calculator from "../pages/Calculator";
+import ApplyLoan from "../pages/ApplyLoan";
 
 // const USER_ROLES = {
 //   SUPER_ADMIN: "SUPER_ADMIN",
@@ -29,6 +30,7 @@ function RoutesConfig() {
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/loan-calculator" element={<Calculator />} />
+        <Route path="/apply-loan" element={<ApplyLoan />} />
       </Routes>
       <Footer />
       <PostFooter />

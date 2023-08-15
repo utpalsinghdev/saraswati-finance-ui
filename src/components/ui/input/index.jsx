@@ -36,6 +36,7 @@ function Input({
             error
               ? "ring-red-300  focus:ring-2 focus:ring-inset focus:ring-red-500"
               : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-indigo-500",
+            type === "file" && "py-1.5 bg-white text-gray-500",
             className
           )}
           {...rest}

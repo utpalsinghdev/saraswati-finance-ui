@@ -45,7 +45,7 @@ function Contact() {
                   <p className="text-2xl text-indigo-500 font-medium text-left">
                     {">"} Flexible repayment
                   </p>
-                  <p className="text-2xl text-indigo-500 font-medium text-left">
+                  <p className="text-2xl text-indigo-500 font-medihttps://vercel.com/utpalsinghdev/green-apple/BcBe9dSUk4sUthTwH3oUmyUdbH84/sourceum text-left">
                     {">"} Blacklisted accepted
                   </p>
                   <p className="text-2xl text-indigo-500 font-medium text-left">

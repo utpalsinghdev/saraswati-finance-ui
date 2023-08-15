@@ -13,7 +13,7 @@ function PreNavbar() {
           <div className="flex flex-row gap-2  md:gap-2 items-center justify-start flex-wrap">
             <Link
               className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/"
+              to="/apply-loan"
             >
               Apply Loan
             </Link>

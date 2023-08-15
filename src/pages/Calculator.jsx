@@ -123,7 +123,7 @@ function Calculator() {
                         )}
                       </p>
                       <div className="flex items-start justify-center mt-4 w-full">
-                        <LinkButton size={"NORMAL"}>Apply Now</LinkButton>
+                        <LinkButton to="/apply-loan" size={"NORMAL"}>Apply Now</LinkButton>
                       </div>
                     </>
                   )}
