@@ -9,6 +9,8 @@ import Contact from "../pages/Contact";
 import Faqs from "../pages/Faqs";
 import Calculator from "../pages/Calculator";
 import ApplyLoan from "../pages/ApplyLoan";
+import AntiFraudPolicy from "../pages/AntiFraudPolicy";
+import TermAndCondition from "../pages/TermAndCondition";
 
 // const USER_ROLES = {
 //   SUPER_ADMIN: "SUPER_ADMIN",
@@ -31,6 +33,8 @@ function RoutesConfig() {
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/loan-calculator" element={<Calculator />} />
         <Route path="/apply-loan" element={<ApplyLoan />} />
+        <Route path="/anti-fraud-policy" element={<AntiFraudPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermAndCondition />} />
       </Routes>
       <Footer />
       <PostFooter />

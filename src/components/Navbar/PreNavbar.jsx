@@ -1,10 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import ContainerWrapper from "../ui/containtWrapper";
 
 function PreNavbar() {
+  const location = useLocation();
+  const myRef = useRef(null);
+  useEffect(() => {
+    window.scrollTo(0, myRef.current.offsetTop);
+  }, [location.pathname]);
   return (
-    <div className=" w-full bg-blue-800/95 py-2 z-40">
+    <div ref={myRef} className=" w-full bg-blue-800/95 py-2 z-40">
       <ContainerWrapper>
         <div className="flex justify-between items-center text-white">
           <div className="py-2 hidden md:block">
@@ -25,6 +30,12 @@ function PreNavbar() {
             </Link>
             <Link
               className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
+              to="/"
+            >
+              login
+            </Link>
+            <Link
+              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
               to="/loan-calculator"
             >
               Calculator
@@ -37,13 +48,13 @@ function PreNavbar() {
             </Link>
             <Link
               className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/"
+              to="/terms-and-conditions"
             >
               Terms & Conditions
             </Link>
             <Link
               className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/"
+              to="/anti-fraud-policy"
             >
               Anti-fraud Policy
             </Link>

@@ -7,15 +7,9 @@ import { useLocation } from "react-router-dom";
 import smoothscroll from "smoothscroll-polyfill";
 smoothscroll.polyfill();
 function CarouselBanner({ height = "96" }) {
-  const location = useLocation();
-  const myRef = useRef(null);
-  useEffect(() => {
-    window.scrollTo(0, myRef.current.offsetTop);
-  }, [location.pathname]);
   const dynamicHeightClass = `md:h-${height}`;
   return (
     <Carousel
-      ref={myRef}
       autoPlay={true}
       infiniteLoop
       showStatus={false}
