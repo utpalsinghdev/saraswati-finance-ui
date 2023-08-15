@@ -5,10 +5,14 @@ import { classNames } from "../../utils/classname";
 import ContainerWrapper from "../ui/containtWrapper";
 const Navbar = () => {
   const location = useLocation();
+
   const isActive = (url) => {
     return location.pathname.split("/")[1] === url.split("/")[1];
   };
   const [show, setShow] = useState(false);
+  useEffect(() => {
+    setShow(false);
+  }, [location.pathname]);
   const links = [
     {
       name: "Home",

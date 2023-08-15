@@ -32,7 +32,7 @@ function Calculator() {
   }
   return (
     <div className="bg-gray-100">
-      <CarouselBanner height="350px" />
+      <CarouselBanner  />
       <ContainerWrapper>
         <HeadingWrapper
           heading="Loan Calculator"
