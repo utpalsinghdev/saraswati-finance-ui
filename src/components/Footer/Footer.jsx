@@ -4,6 +4,7 @@ import { BsTelephone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import ContainerWrapper from "../ui/containtWrapper";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="w-full bg-slate-950 ">
@@ -21,13 +22,13 @@ function Footer() {
           <div className="w-full ">
             <h1 className="text-white text-2xl font-bold">Quick Links</h1>
             <ul className="text-white flex flex-col gap-4 mt-4">
-              <li className="flex flex-row items-center gap-2">
+              <Link to="/" className="flex flex-row items-center gap-2">
                 <IoIosArrowForward /> Home
-              </li>
-              <li className="flex flex-row items-center gap-2">
+              </Link>
+              <Link to="about-us" className="flex flex-row items-center gap-2">
                 <IoIosArrowForward />
                 About Us
-              </li>
+              </Link>
               <li className="flex flex-row items-center gap-2">
                 <IoIosArrowForward />
                 Services
@@ -36,10 +37,10 @@ function Footer() {
                 <IoIosArrowForward />
                 Apply Now
               </li>
-              <li className="flex flex-row items-center gap-2">
+              <Link to="contact-us" className="flex flex-row items-center gap-2">
                 <IoIosArrowForward />
                 Contact Us
-              </li>
+              </Link>
             </ul>
           </div>
           <div className="w-full ">

@@ -2,6 +2,7 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import LinkButton from "../ui/link";
+import { classNames } from "../../utils/classname";
 function CarouselBanner({ height = "500px" }) {
   return (
     <Carousel
@@ -16,12 +17,12 @@ function CarouselBanner({ height = "500px" }) {
         <img
           src={"/banner1.webp"}
           alt={"banner 1"}
-          style={{
-            height: height,
-          }}
-          className="w-full md:aspect-auto object-cover"
+          className={classNames(
+            "w-full md:aspect-auto object-cover",
+            `h-[300px] md:h-[${height}]`
+          )}
         />
-        <span className="absolute top-32 md:top-36 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-48 bg-black/60 text-white">
+        <span className="absolute top-16 md:top-36 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
           <div className="p-4 flex flex-col items-start gap-4 justify-start">
             <p className="md:text-2xl text-xl text-left font-bold">
               Green Apple Financial Services PVT. LTD.
@@ -39,14 +40,15 @@ function CarouselBanner({ height = "500px" }) {
 
       <div className="relative">
         <img
-         src={"/banner2.webp"}
-          style={{
-            height: height,
-          }}
+          src={"/banner2.webp"}
+    
           alt={"banner 1"}
-          className="w-full  md:aspect-auto object-cover"
+          className={classNames(
+            "w-full md:aspect-auto object-cover",
+            `h-[300px] md:h-[${height}]`
+          )}
         />
-        <span className="absolute top-32 md:top-36 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-48 bg-black/60 text-white">
+        <span className="absolute top-16 md:top-36 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
           <div className="p-4 flex flex-col items-start gap-4 justify-start">
             <p className="md:text-2xl text-xl text-left font-bold">
               Green Apple Financial Services PVT. LTD.
@@ -64,13 +66,14 @@ function CarouselBanner({ height = "500px" }) {
       <div className="relative">
         <img
           src={"/banner3.webp"}
-          style={{
-            height: height,
-          }}
+    
           alt={"banner 1"}
-          className="w-full  md:aspect-auto object-cover"
+          className={classNames(
+            "w-full md:aspect-auto object-cover",
+            `h-[300px] md:h-[${height}]`
+          )}
         />
-       <span className="absolute top-32 md:top-36 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-48 bg-black/60 text-white">
+        <span className="absolute top-16 md:top-36 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
           <div className="p-4 flex flex-col items-start gap-4 justify-start">
             <p className="md:text-2xl text-xl text-left font-bold">
               Green Apple Financial Services PVT. LTD.

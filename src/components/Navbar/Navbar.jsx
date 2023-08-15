@@ -32,12 +32,18 @@ const Navbar = () => {
     },
   ];
   return (
-    <ContainerWrapper>
-      <div className="relative mt-6 pb-4 p-1   md:px-0 transition duration-300">
-        <nav className="relative flex items-center justify-between">
+    <div className="container w-full md:w-[90%] mx-auto">
+      <div className="items-center justify-center flex">
+        <img
+          src="/logo.png"
+          className=" block md:hidden  w-24 md:w-32 mt-1  text-2xl font-extrabold font-serif cursor-pointer "
+        />
+      </div>
+      <div className="relative mt-2 md:mt-6 pb-4  bg-indigo-500 md:bg-white  md:px-0 transition duration-300">
+        <nav className="relative flex items-center justify-start md:justify-between">
           <img
             src="/logo.png"
-            className="hidden md:block absolute w-28 md:w-32  -top-6 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
+            className="hidden md:block absolute w-28 md:w-32  -top-4 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
           />
           <div className="hidden md:flex items-center justify-end w-full  gap-4">
             <div className=" flex items-center  justify-between gap-4 font-normal ">
@@ -45,7 +51,6 @@ const Navbar = () => {
                 <Link
                   key={idx}
                   to={link.link}
-              
                   className={classNames(
                     "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-gray-700 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
                     isActive(link.link) ? "bg-green-200" : ""
@@ -60,20 +65,19 @@ const Navbar = () => {
             onClick={() => {
               setShow(!show);
             }}
-            className="md:hidden cursor-pointer w-6 h-6"
+            className="md:hidden mt-4 cursor-pointer w-6 h-6 ml-1"
           />
-             <img
-            src="/logo.png"
-            className=" block md:hidden absolute w-24 md:w-32  right-0 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
-          />
+          <span className="md:hidden mt-4 ml-4 font-medium  text-md">
+            Green Apple Financial Services Pvt Ltd.
+          </span>
         </nav>
         <div
           style={{
             display: show ? "block" : "none",
           }}
-          className="absolute z-50 bg-white right-0 w-full transition duration-300"
+          className="absolute z-50 bg-indigo-500 top-10 rounded-b-md right-0 w-full transition duration-300"
         >
-          <div className="bg-white mt-4 w-full py-4 flex flex-col items-center  gap-1 font-semibold md:hidden">
+          <div className="bg-white mt-4 w-full py-4 px-2 flex flex-col items-center  gap-1 font-semibold md:hidden">
             {links.map((link, idx) => (
               <Link
                 key={idx}
@@ -82,7 +86,7 @@ const Navbar = () => {
                   setShow(!show);
                 }}
                 className={classNames(
-                  "px-2 py-2 w-full rounded-md cursor-pointer font-medium pb-1 border-b-2 transition duration-300 border-white hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
+                  "px-2 py-2 w-full rounded-md border  cursor-pointer font-medium pb-1 border-b-2 transition duration-300  hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
                   isActive(link.link) ? "bg-green-200" : ""
                 )}
               >
@@ -92,7 +96,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </ContainerWrapper>
+    </div>
   );
 };
 
