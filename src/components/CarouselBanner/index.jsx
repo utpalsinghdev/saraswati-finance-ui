@@ -27,7 +27,7 @@ function CarouselBanner({ height = "96" }) {
             dynamicHeightClass
           )}
         />
-        <span className="absolute top-16 md:top-32 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
+        <span className="absolute top-16 md:top-10 left-10 md:left-40 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
           <div className="p-4 flex flex-col items-start gap-4 justify-start">
             <p className="md:text-2xl text-xl text-left font-bold">
               Green Apple Financial Services PVT. LTD.
@@ -53,7 +53,7 @@ function CarouselBanner({ height = "96" }) {
             dynamicHeightClass
           )}
         />
-        <span className="absolute top-16 md:top-32 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
+        <span className="absolute top-16 md:top-10 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
           <div className="p-4 flex flex-col items-start gap-4 justify-start">
             <p className="md:text-2xl text-xl text-left font-bold">
               Green Apple Financial Services PVT. LTD.
@@ -78,7 +78,7 @@ function CarouselBanner({ height = "96" }) {
             dynamicHeightClass
           )}
         />
-        <span className="absolute top-16 md:top-32 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
+        <span className="absolute top-16 md:top-10 left-10 md:left-48 z-50 md:w-[400px] w-64  rounded-lg md:h-48 h-44 bg-black/60 text-white">
           <div className="p-4 flex flex-col items-start gap-4 justify-start">
             <p className="md:text-2xl text-xl text-left font-bold">
               Green Apple Financial Services PVT. LTD.
