@@ -24,7 +24,7 @@ function PreNavbar() {
             </Link>
             <Link
               className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/"
+              to="/career"
             >
               Career
             </Link>
