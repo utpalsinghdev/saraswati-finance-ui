@@ -33,11 +33,17 @@ function Footer() {
                 <IoIosArrowForward />
                 Services
               </li>
-              <li className="flex flex-row items-center gap-2">
+              <Link
+                to="apply-loan"
+                className="flex flex-row items-center gap-2"
+              >
                 <IoIosArrowForward />
                 Apply Now
-              </li>
-              <Link to="contact-us" className="flex flex-row items-center gap-2">
+              </Link>
+              <Link
+                to="contact-us"
+                className="flex flex-row items-center gap-2"
+              >
                 <IoIosArrowForward />
                 Contact Us
               </Link>
