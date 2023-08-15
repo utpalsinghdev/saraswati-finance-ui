@@ -37,7 +37,7 @@ const Homepage = () => {
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
-        <CarouselBanner />
+        <CarouselBanner  />
         <div className="absolute container mx-auto w-[80%] z-50 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
           <div className="bg-green-200 w-4">
             <p className="text-green-200">d</p>
