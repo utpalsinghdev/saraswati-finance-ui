@@ -3,6 +3,7 @@ import { Bars3Icon } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "react-router-dom";
 import { classNames } from "../../utils/classname";
 import ContainerWrapper from "../ui/containtWrapper";
+import { Phone } from "lucide-react";
 const Navbar = () => {
   const location = useLocation();
 
@@ -37,11 +38,18 @@ const Navbar = () => {
   ];
   return (
     <div className="container w-full md:w-[90%] mx-auto">
-      <div className="items-center justify-center flex">
+      <div className="items-center justify-between px-2 flex">
         <img
           src="/logo.png"
-          className=" block md:hidden  w-24 md:w-32 mt-1  text-2xl font-extrabold font-serif cursor-pointer "
+          className=" block md:hidden  w-32 md:w-32 mt-1  text-2xl font-extrabold font-serif cursor-pointer "
         />
+        <span className="block md:hidden flex flex-col items-center text-sm text-gray-800 gap-2 font-bold">
+          <span className="flex items-center gap-2 ">
+            <Phone className="w-4 text-green-600" /> 9540542272
+          </span>
+          <span className="flex items-center gap-2 " >
+            <Phone className="w-4 text-green-600" />9540542271</span>
+        </span>
       </div>
       <div className="relative mt-2 md:mt-6 pb-4  bg-indigo-500 md:bg-white  md:px-0 transition duration-300">
         <nav className="relative flex items-center justify-start md:justify-between">
