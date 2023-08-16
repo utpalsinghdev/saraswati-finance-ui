@@ -29,31 +29,23 @@ function Contact() {
           <div className="w-full bg-gray-100 pt-16">
             <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
               <div className="">
-                <div className="w-full h-[500px]  gap-8 flex flex-col text-left  md:px-0">
-                  <p className="text-2xl text-indigo-500 font-medium text-left">
-                    {">"} Easy Application
-                  </p>
-                  <p className="text-2xl text-indigo-500 font-medium text-left">
-                    {">"} Fast Approval
-                  </p>
-                  <p className="text-2xl text-indigo-500 font-medium text-left">
-                    {">"} Low interest rate
-                  </p>
-                  <p className="text-2xl text-indigo-500 font-medium text-left">
-                    {">"} Free consultation
-                  </p>
-                  <p className="text-2xl text-indigo-500 font-medium text-left">
-                    {">"} Flexible repayment
-                  </p>
-                  <p className="text-2xl text-indigo-500 font-medihttps://vercel.com/utpalsinghdev/green-apple/BcBe9dSUk4sUthTwH3oUmyUdbH84/sourceum text-left">
-                    {">"} Blacklisted accepted
-                  </p>
-                  <p className="text-2xl text-indigo-500 font-medium text-left">
-                    {">"} Get Approval in one day
-                  </p>
+                <div className="relative w-full h-[500px]  gap-8 flex flex-col text-left  md:px-0">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d857.5812246991592!2d76.80891817090478!3d30.709265395327726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fecc4866daf91%3A0xe93293e7eb442304!2sRegus%20-%20Chandigarh%2C%20Harmony!5e0!3m2!1sen!2sin!4v1692183067788!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    scrolling="0"
+                  />
+     
                 </div>
               </div>
-              <Image className={"hidden md:block"} src={"/contact_arrow.png"} />
+              <div className="w-full flex items-center justify-center">
+                <Image
+                  className={"hidden md:block"}
+                  src={"/contact_arrow.png"}
+                />
+              </div>
               <div className="flex flex-col text-left  ">
                 <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-500 rounded-t-md px-8 py-4 ">
                   Contact Us

@@ -45,10 +45,17 @@ const Navbar = () => {
         />
         <span className="block md:hidden flex flex-col items-center text-sm text-gray-800 gap-2 font-bold">
           <span className="flex items-center gap-2 ">
-            <Phone className="w-4 text-green-600" /> 9540542272
+            <Phone className="w-4 text-green-600" />{" "}
+            <a href="tel:9540542272" target="_blank" rel="noreferrer">
+              9540542272
+            </a>
           </span>
-          <span className="flex items-center gap-2 " >
-            <Phone className="w-4 text-green-600" />9540542271</span>
+          <span className="flex items-center gap-2 ">
+            <Phone className="w-4 text-green-600" />{" "}
+            <a href="tel:9540542271" target="_blank" rel="noreferrer">
+              9540542271
+            </a>
+          </span>
         </span>
       </div>
       <div className="relative mt-2 md:mt-6 pb-4  bg-indigo-500 md:bg-white  md:px-0 transition duration-300">

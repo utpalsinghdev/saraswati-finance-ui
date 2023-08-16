@@ -51,8 +51,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Education Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1-5 lac
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5% and the loan amount will Upto 1 lakh -5 lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-4">
@@ -110,8 +110,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Agriculture Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1-5 lac
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 5 Cr
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -166,8 +166,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Property Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1-5 lac
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5% and the loan amount will Upto 1 lakh -5 lakhs (according to market 70% to 80%)
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -222,8 +222,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Business Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1-5 lac
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -275,8 +275,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Personal Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1-5 lac
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 30 lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -328,8 +328,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Home Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5%
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5%, According to market Value 70% to 80%
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -384,8 +384,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> ITR Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5%
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5% can get 3 to 4 times (according to ITR)
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -438,8 +438,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Pay Slip Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5%
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5%, 40 to 50 times (according to salary)
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -496,8 +496,8 @@ function Loan() {
                 Eligibility for{" "}
                 <span className="text-green-500"> Group Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5%
+              <p className="text-center text-sm md:text-md font-medium  mt-2">
+                Rate of interest 5%, and amount will be 50000 to 3 lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -568,8 +568,8 @@ function Loan() {
               <h1 className="w-full text-2xl md:text-3xl mt-1 font-bold text-center">
                 Eligibility for <span className="text-green-500"> Loan</span>
               </h1>
-              <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1-5 lac
+              <p className="text-center text-sm md:text-md  mt-2 font-medium">
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">

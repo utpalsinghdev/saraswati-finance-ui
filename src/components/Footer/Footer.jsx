@@ -29,7 +29,10 @@ function Footer() {
                 <IoIosArrowForward />
                 About Us
               </Link>
-              <Link to="/services/loan" className="flex flex-row items-center gap-2">
+              <Link
+                to="/services/loan"
+                className="flex flex-row items-center gap-2"
+              >
                 <IoIosArrowForward />
                 Services
               </Link>
@@ -53,14 +56,40 @@ function Footer() {
             <h1 className="text-white text-2xl font-bold">Contact Us</h1>
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
-                <BsTelephone /> 9540542271
+                <BsTelephone />{" "}
+                <a href="tel:9540542271" target="_blank" rel="noreferrer">
+                  9540542271
+                </a>
               </li>
               <li className="flex flex-row items-center gap-2">
-                <BsTelephone /> Whatsapp
+                <BsTelephone />
+                <a
+                  href="https://wa.me/+919540542271"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Whatsapp 1
+                </a>
+              </li>
+              <li className="flex flex-row items-center gap-2">
+                <BsTelephone />
+                <a
+                  href="https://wa.me/+919540542272"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Whatsapp 2
+                </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
-                info@greenapplefinancial.com
+                <a
+                  href="mailto:info@greenapplefinancial.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  info@greenapplefinancial.com
+                </a>
               </li>
               <li className="flex flex-row items-start gap-2">
                 <HiOutlineLocationMarker size={40} />

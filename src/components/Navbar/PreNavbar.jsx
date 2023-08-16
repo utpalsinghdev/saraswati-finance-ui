@@ -13,7 +13,10 @@ function PreNavbar() {
       <ContainerWrapper>
         <div className="flex justify-between items-center text-white">
           <div className="py-2 hidden md:block">
-            Call Us: <a href="tel:9540542272">9540542272</a>
+            Call Us:{" "}
+            <a href="tel:9540542272" target="_blank" rel="noreferrer">
+              9540542272
+            </a>
           </div>
           <div className="flex flex-row gap-2  md:gap-2 items-center justify-start flex-wrap">
             <Link
@@ -22,6 +25,7 @@ function PreNavbar() {
             >
               Apply Loan
             </Link>
+
             <Link
               className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
               to="/career"
