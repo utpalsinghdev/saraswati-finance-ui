@@ -271,16 +271,16 @@ const Homepage = () => {
                 About Us
               </span>
               <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
-                Green Apple Financial Service PVT. LTD.
+                Green Apple Financial Services PVT. LTD.
               </h1>
               <p className="text-gray-700 text-sm font-medium md:text-left ">
-                Green Apple Financial Service Private Limited is dealing in
+                Green Apple Financial Services Private Limited is dealing in
                 Personal Loan, Loan against Property, Project Loan & Gold Loan.
                 We Believe in fair dealing and prompt disbursement of founds on
                 priority Basis.
               </p>
               <span className="text-gray-700 text-sm font-semibold md:text-left ">
-                Green Apple Financial Service Pvt Ltd is an organization that
+                Green Apple Financial Services Pvt Ltd is an organization that
                 motivates people to fulfill their dreams, which otherwise would
                 be difficult to achieve due to the inaccessibility to right
                 financial consulting and solutions.
