@@ -111,7 +111,7 @@ function Loan() {
                 <span className="text-green-500"> Agriculture Loan</span>
               </h1>
               <p className="text-center text-sm md:text-md  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1-5 lakhs
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 5 Cr
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
