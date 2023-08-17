@@ -9,7 +9,7 @@ export const sendMessageDto = Yup.object({
   message: Yup.string().required("Please enter your message."),
 });
 
-export const agentApplicationSchema = Yup.object().shape({
+export const agentApplicationSchema = Yup.object({
   title: Yup.string().required("Please Select a title"),
   firstName: Yup.string().required("Please Enter Your First Name"),
   lastName: Yup.string().required("Please Enter Your First Name"),
