@@ -1,4 +1,4 @@
-import * as Yup from "Yup";
+import * as Yup from "yup";
 
 export const sendMessageDto = Yup.object({
   name: Yup.string().required("Name is a required field"),
@@ -9,7 +9,7 @@ export const sendMessageDto = Yup.object({
   message: Yup.string().required("Please enter your message."),
 });
 
-export const agentApplicationSchema = Yup.object({
+export const agentApplicationSchema = Yup.object().shape({
   title: Yup.string().required("Please Select a title"),
   firstName: Yup.string().required("Please Enter Your First Name"),
   lastName: Yup.string().required("Please Enter Your First Name"),
