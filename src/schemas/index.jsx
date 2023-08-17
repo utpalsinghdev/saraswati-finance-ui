@@ -19,8 +19,7 @@ export const agentApplicationSchema = Yup.object().shape({
     .oneOf(["AGENT", "DEALERSHIP", "FEILDOFFICER"])
     .required("Please Select a Post"),
   city: Yup.string().required("Please Enter Your City"),
-  resume: Yup.mixed()
-    .test(
+  resume: Yup.mixed().test(
       "fileType",
       "Invalid file format. Only accept PDF or DOC files.",
       (value) => {
