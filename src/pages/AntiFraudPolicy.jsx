@@ -32,8 +32,7 @@ const AntiFraudPolicy = () => {
               Fake/False Documentation
             </h3>
             <p className="text-gray-600 text-sm font-medium">
-              For avoiding any delay or cancellation of your application, UK Fin
-              Service Private Limited suggests you to always provide genuine and
+              For avoiding any delay or cancellation of your application, Green Apple Financial Services Private Limited suggests you to always provide genuine and
               updated document to fulfill the documentation criteria of a loan
               Process. If our team or loan department find a document provided
               by you is fake/false, then you will be solely responsible for the

@@ -30,7 +30,7 @@ import CarouselBanner from "../components/CarouselBanner";
 import { Formik } from "formik";
 import { sendMessageDto } from "../schemas";
 import ApiService from "../services/Api_services";
-import { toast } from "react-toast";
+import { toast } from "react-hot-toast";
 import axios from "axios";
 const Homepage = () => {
   return (

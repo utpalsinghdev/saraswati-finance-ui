@@ -13,7 +13,7 @@ import {
 import TextArea from "../components/ui/textarea";
 import Button from "../components/ui/button";
 import { AiOutlineMail } from "react-icons/ai";
-import { toast } from "react-toast";
+import { toast } from "react-hot-toast";
 import axios from "axios";
 import { sendMessageDto } from "../schemas";
 import { Formik } from "formik";
