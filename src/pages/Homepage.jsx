@@ -51,18 +51,18 @@ const Homepage = () => {
           </div>
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
-              <Ticker>
-                CALL FOR ANY TYPE OF LOAN ON: 9540542272 IN CORPORATION NO:
-                -Green Apple Financial Services PAN NO: - Green Apple Financial
-                Services Private Limited TAN: - Green Apple Financial Services
-                Private Limited.
-              </Ticker>
+              <Ticker
+                messages={[
+                  "CALL FOR ANY TYPE OF LOAN ON: 9540542272 IN CORPORATION NO -Green Apple Financial Services PAN NO - Apple Financial Services Private Limited TAN: - Green Apple Financial Services Private Limited.", "Testing here", "Testing here"
+                ]}
+              />
             </span>
             <span className="py-1 px-2 text-sm">
-              <Ticker>
-                WELCOME TO Green Apple Financial Services Private Limited. LTD.
-                TO CHECK ELIGIBILITY PLEASE CALL US ON OUR HELPLINE NUMBER.
-              </Ticker>
+              <Ticker
+                messages={[
+                  "WELCOME TO Green Apple Financial Services Private Limited. LTD. TO CHECK ELIGIBILITY PLEASE CALL US ON OUR HELPLINE NUMBER.","testing bhai testing"
+                ]}
+              />
             </span>
           </div>
         </div>
@@ -114,7 +114,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/personal-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -134,7 +134,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/business-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -153,7 +153,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/education-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -172,7 +172,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/property-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -191,7 +191,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/agriculture-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -209,7 +209,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/itr-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -228,7 +228,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/pay-slip-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
@@ -247,7 +247,7 @@ const Homepage = () => {
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/group-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
