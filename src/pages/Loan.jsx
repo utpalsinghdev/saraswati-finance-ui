@@ -19,7 +19,7 @@ function Loan() {
 
   function Card({ title, children }) {
     return (
-      <div className="bg-white shadow-md rounded-md p-4">
+      <div className="bg-green-100 shadow-md rounded-md p-4">
         <h1 className="text-xl font-bold text-left w-full">{title}</h1>
         <div className="mt-4 flex gap-3 flex-col">{children}</div>
       </div>
