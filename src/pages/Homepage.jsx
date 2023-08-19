@@ -80,7 +80,7 @@ const Homepage = () => {
           Enhance SEO: Keyword search boosts rankings, visibility, and relevance
           for improved online performance.
         </p> */}
-        <div className="w-full md:grid md:grid-cols-3 gap-4 my-2 flex flex-col items-start justify-between ">
+        <div className="w-full md:grid md:grid-cols-3 gap-5 my-2 flex flex-col items-start justify-between ">
           <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <AiOutlineHome className="w-8 h-8 text-green-500" />
@@ -89,7 +89,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Home Loan
               </span>
-              <span className="mt-2 mb-1 text-center font-semibold md:text-left text-secondary-200 text-lg">
+              <span className="mt-2 mb-1 text-center font-semibold md:text-left text-secondary-200 text-md">
                 Green Apple Financial Services Offers Home Loan on Easy EMI
                 basis
               </span>
@@ -108,7 +108,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Personal Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Personal Loan on Easy EMI
                 basis
               </span>
@@ -128,7 +128,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Business Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Business Loan on Easy EMI
                 basis
               </span>
@@ -147,7 +147,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Education Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Education Loan on Easy EMI
                 basis
               </span>
@@ -166,7 +166,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Property Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Property Loan on Easy EMI
                 basis
               </span>
@@ -185,7 +185,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Agriculture
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Agriculture Loan on Easy
                 EMI basis
               </span>
@@ -204,7 +204,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 ITR Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers ITR Loan on Easy EMI basis
               </span>
               <span className="self-center md:self-auto">
@@ -222,7 +222,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Pay Slip Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Pay Slip Loan on Easy EMI
                 basis
               </span>
@@ -241,7 +241,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Group Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Home Loan on Easy EMI
                 basis
               </span>
