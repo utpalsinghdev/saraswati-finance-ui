@@ -80,8 +80,8 @@ const Homepage = () => {
           Enhance SEO: Keyword search boosts rankings, visibility, and relevance
           for improved online performance.
         </p> */}
-        <div className="w-full md:grid md:grid-cols-3  flex flex-col items-start justify-between ">
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+        <div className="w-full md:grid md:grid-cols-3 gap-4 my-2 flex flex-col items-start justify-between ">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <AiOutlineHome className="w-8 h-8 text-green-500" />
             </span>
@@ -100,7 +100,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <AiOutlineUser className="w-8 h-8 text-green-500" />
             </span>
@@ -120,7 +120,7 @@ const Homepage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md  items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <BiSolidBusiness className="w-8 h-8 text-green-500" />
             </span>
@@ -139,7 +139,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <MdSchool className="w-8 h-8 text-green-500" />
             </span>
@@ -158,7 +158,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md  bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <GiFamilyHouse className="w-8 h-8 text-green-500" />
             </span>
@@ -177,7 +177,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <GiHighGrass className="w-8 h-8 text-green-500" />
             </span>
@@ -196,7 +196,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <MdOutlineRequestPage className="w-8 h-8 text-green-500" />
             </span>
@@ -214,7 +214,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <MdOutlineRequestPage className="w-8 h-8 text-green-500" />
             </span>
@@ -233,7 +233,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <LiaUsersCogSolid className="w-8 h-8 text-green-500" />
             </span>
