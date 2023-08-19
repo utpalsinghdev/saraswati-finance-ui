@@ -19,7 +19,7 @@ function Loan() {
 
   function Card({ title, children }) {
     return (
-      <div className="bg-white shadow-md rounded-md p-4">
+      <div className="bg-green-100 shadow-md rounded-md p-4">
         <h1 className="text-xl font-bold text-left w-full">{title}</h1>
         <div className="mt-4 flex gap-3 flex-col">{children}</div>
       </div>
@@ -52,7 +52,8 @@ function Loan() {
                 <span className="text-green-500"> Education Loan</span>
               </h1>
               <p className="text-center text-sm md:text-md font-medium  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1 lakh -5 lakhs
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 30
+                lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-4">
@@ -85,10 +86,10 @@ function Loan() {
                   <Bullets> Driving License </Bullets>
                 </Card>
                 <Card title="Loan Amount As Per Qualification">
-                  <Bullets>10th - 1-5 L</Bullets>
-                  <Bullets> 12th - 5-8 L</Bullets>
-                  <Bullets> Graduation - 8-15 L</Bullets>
-                  <Bullets> M.BA - 20-30 L </Bullets>
+                  <Bullets>10th - 1 Lakh-5 Lakhs</Bullets>
+                  <Bullets> 12th - 5 Lakh-8 Lakhs</Bullets>
+                  <Bullets> Graduation - 8 Lakh -15 Lakhs</Bullets>
+                  <Bullets> M.BA - 20 Lakh -30 Lakhs </Bullets>
                 </Card>
               </div>
             </div>
@@ -167,7 +168,8 @@ function Loan() {
                 <span className="text-green-500"> Property Loan</span>
               </h1>
               <p className="text-center text-sm md:text-md font-medium  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1 lakh -5 lakhs (according to market 70% to 80%)
+                Rate of interest 5% and the loan amount will be (according to
+                market 70% to 80%)
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -223,7 +225,8 @@ function Loan() {
                 <span className="text-green-500"> Business Loan</span>
               </h1>
               <p className="text-center text-sm md:text-md font-medium  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 5
+                lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -276,7 +279,8 @@ function Loan() {
                 <span className="text-green-500"> Personal Loan</span>
               </h1>
               <p className="text-center text-sm md:text-md font-medium  mt-2">
-                Rate of interest 5% and the loan amount will Upto 1 lakh - 30 lakhs
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 30
+                lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -569,7 +573,8 @@ function Loan() {
                 Eligibility for <span className="text-green-500"> Loan</span>
               </h1>
               <p className="text-center text-sm md:text-md  mt-2 font-medium">
-                Rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs
+                Rate of interest 5% and the loan amount will Upto 1 lakh - 5
+                lakhs
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">

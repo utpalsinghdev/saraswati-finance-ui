@@ -51,18 +51,18 @@ const Homepage = () => {
           </div>
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
-              <Ticker>
-                CALL FOR ANY TYPE OF LOAN ON: 9540542272 IN CORPORATION NO:
-                -Green Apple Financial Services PAN NO: - Green Apple Financial
-                Services Private Limited TAN: - Green Apple Financial Services
-                Private Limited.
-              </Ticker>
+              <Ticker
+                messages={[
+                  "CALL FOR ANY TYPE OF LOAN ON: 9540542272 IN CORPORATION NO -Green Apple Financial Services PAN NO - Apple Financial Services Private Limited TAN: - Green Apple Financial Services Private Limited.", "Testing here", "Testing here"
+                ]}
+              />
             </span>
             <span className="py-1 px-2 text-sm">
-              <Ticker>
-                WELCOME TO Green Apple Financial Services Private Limited. LTD.
-                TO CHECK ELIGIBILITY PLEASE CALL US ON OUR HELPLINE NUMBER.
-              </Ticker>
+              <Ticker
+                messages={[
+                  "WELCOME TO Green Apple Financial Services Private Limited. LTD. TO CHECK ELIGIBILITY PLEASE CALL US ON OUR HELPLINE NUMBER.","testing bhai testing"
+                ]}
+              />
             </span>
           </div>
         </div>
@@ -80,8 +80,8 @@ const Homepage = () => {
           Enhance SEO: Keyword search boosts rankings, visibility, and relevance
           for improved online performance.
         </p> */}
-        <div className="w-full md:grid md:grid-cols-3  flex flex-col items-start justify-between ">
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+        <div className="w-full md:grid md:grid-cols-3 gap-5 my-2 flex flex-col items-start justify-between ">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <AiOutlineHome className="w-8 h-8 text-green-500" />
             </span>
@@ -89,7 +89,7 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Home Loan
               </span>
-              <span className="mt-2 mb-1 text-center font-semibold md:text-left text-secondary-200 text-lg">
+              <span className="mt-2 mb-1 text-center font-semibold md:text-left text-secondary-200 text-md">
                 Green Apple Financial Services Offers Home Loan on Easy EMI
                 basis
               </span>
@@ -100,7 +100,7 @@ const Homepage = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <AiOutlineUser className="w-8 h-8 text-green-500" />
             </span>
@@ -108,19 +108,19 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Personal Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Personal Loan on Easy EMI
                 basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/personal-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md  items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <BiSolidBusiness className="w-8 h-8 text-green-500" />
             </span>
@@ -128,18 +128,18 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Business Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Business Loan on Easy EMI
                 basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/business-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <MdSchool className="w-8 h-8 text-green-500" />
             </span>
@@ -147,18 +147,18 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Education Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Education Loan on Easy EMI
                 basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/education-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md  bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <GiFamilyHouse className="w-8 h-8 text-green-500" />
             </span>
@@ -166,18 +166,18 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Property Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Property Loan on Easy EMI
                 basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/property-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <GiHighGrass className="w-8 h-8 text-green-500" />
             </span>
@@ -185,18 +185,18 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Agriculture
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Agriculture Loan on Easy
                 EMI basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/agriculture-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <MdOutlineRequestPage className="w-8 h-8 text-green-500" />
             </span>
@@ -204,17 +204,17 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 ITR Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers ITR Loan on Easy EMI basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/itr-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <MdOutlineRequestPage className="w-8 h-8 text-green-500" />
             </span>
@@ -222,18 +222,18 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Pay Slip Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Pay Slip Loan on Easy EMI
                 basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/pay-slip-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8  items-center md:justify-around justify-center px-2 gap-4">
+          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
               <LiaUsersCogSolid className="w-8 h-8 text-green-500" />
             </span>
@@ -241,13 +241,13 @@ const Homepage = () => {
               <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
                 Group Loan
               </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-lg">
+              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
                 Green Apple Financial Services Offers Home Loan on Easy EMI
                 basis
               </span>
               <span className="self-center md:self-auto">
                 <LinkButton to="/services/group-loan" size={"small"}>
-                View Details
+                  View Details
                 </LinkButton>
               </span>
             </div>
