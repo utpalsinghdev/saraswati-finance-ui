@@ -169,7 +169,7 @@ function Loan() {
               </h1>
               <p className="text-center text-sm md:text-md font-medium  mt-2">
                 Rate of interest 5% and the loan amount will be (according to
-                market 70% to 80%)
+                market value 70% to 80%)
               </p>
 
               <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
