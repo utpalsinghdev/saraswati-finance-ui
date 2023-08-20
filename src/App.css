@@ -22,6 +22,12 @@
     animation: ticker 20s linear infinite;
 }
 
+@media (max-width: 768px) {
+    .ticker-text {
+        animation-duration: 8s;
+    }
+}
+
 .ticker-content {
     display: inline-block;
 }

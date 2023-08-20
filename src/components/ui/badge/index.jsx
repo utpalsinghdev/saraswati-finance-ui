@@ -5,12 +5,15 @@ export const enums = {
   GREEN: "GREEN",
   BLUE: "BLUE",
 };
-function Badge({ children, type }) {
+function Badge({ children, type, ...rest }) {
   const badges = [
     {
       color: "GRAY",
       comp: (
-        <span className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
+        <span
+          {...rest}
+          className="inline-flex cursor-pointer items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600"
+        >
           {children}
         </span>
       ),
@@ -18,7 +21,10 @@ function Badge({ children, type }) {
     {
       color: "RED",
       comp: (
-        <span className="inline-flex items-center rounded-md bg-red-100 px-2 py-1 text-xs font-medium text-red-700">
+        <span
+          {...rest}
+          className="inline-flex cursor-pointer items-center rounded-md bg-red-100 px-2 py-1 text-xs font-medium text-red-700"
+        >
           {children}
         </span>
       ),
@@ -26,7 +32,10 @@ function Badge({ children, type }) {
     {
       color: "GREEN",
       comp: (
-        <span className="inline-flex items-center rounded-md bg-green-100 px-2 py-1 text-xs font-medium text-green-700">
+        <span
+          {...rest}
+          className="inline-flex cursor-pointer items-center rounded-md bg-green-100 px-2 py-1 text-xs font-medium text-green-700"
+        >
           {children}
         </span>
       ),
@@ -34,7 +43,10 @@ function Badge({ children, type }) {
     {
       color: "BLUE",
       comp: (
-        <span className="inline-flex items-center rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700">
+        <span
+          {...rest}
+          className="inline-flex cursor-pointer items-center rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700"
+        >
           {children}
         </span>
       ),

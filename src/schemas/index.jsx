@@ -46,3 +46,7 @@ export const adminLoginDto = Yup.object({
   Id: Yup.string().required("Please enter your Id."),
   password: Yup.string().required("Please enter your password."),
 });
+export const addNewsDto = Yup.object({
+  text: Yup.string().required("Please enter your News."),
+  lane: Yup.string().oneOf(["FIRST", "SECOND"]).required("Select a lane."),
+});

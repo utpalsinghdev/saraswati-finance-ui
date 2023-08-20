@@ -19,6 +19,7 @@ import {
 import { classNames } from "../../utils/classname";
 import Cookie from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 const navigation = [
   {
     name: "Dashboard",
@@ -27,15 +28,27 @@ const navigation = [
     current: false,
   },
   { name: "News", href: "/admin/news", icon: NewspaperIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+  {
+    name: "Career Application",
+    href: "#",
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
+  { name: "Agents", href: "#", icon: UsersIcon, current: false },
+  { name: "Files and Docs", href: "#", icon: FolderIcon, current: false },
+  {
+    name: "Loan Application",
+    href: "#",
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
+  // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+  // { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
 ];
 const teams = [
-  { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
-  { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
-  { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
+  { id: 1, name: "joining letter", href: "#", initial: "J", current: false },
+  { id: 2, name: "Welcome letter", href: "#", initial: "W", current: false },
+  { id: 3, name: "approval letter", href: "#", initial: "A", current: false },
 ];
 
 export default function DashboardLayout({ children }) {
@@ -51,9 +64,8 @@ export default function DashboardLayout({ children }) {
   const navigate = useNavigate();
   const onLogout = async () => {
     await Cookie.remove("gafs_user");
-    setTimeout(() => {
-      navigate("/admin/login");
-    }, 400);
+    navigate("/admin/login");
+    if (!Cookies.get("gafs_user")) window.location.reload();
   };
   const userNavigation = [
     { name: "Your profile", href: "#" },
@@ -125,7 +137,7 @@ export default function DashboardLayout({ children }) {
                     <div className="flex h-16 shrink-0 items-center">
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=white"
+                        src="https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
                         alt="Your Company"
                       />
                     </div>
@@ -162,7 +174,7 @@ export default function DashboardLayout({ children }) {
                         </li>
                         <li>
                           <div className="text-xs font-semibold leading-6 text-indigo-200">
-                            Your teams
+                            Letters
                           </div>
                           <ul role="list" className="-mx-2 mt-2 space-y-1">
                             {teams.map((team) => (
@@ -247,7 +259,7 @@ export default function DashboardLayout({ children }) {
                 </li>
                 <li>
                   <div className="text-xs font-semibold leading-6 text-indigo-200">
-                    Your teams
+                    Letters
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
