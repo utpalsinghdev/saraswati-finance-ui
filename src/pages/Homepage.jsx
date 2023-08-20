@@ -32,7 +32,9 @@ import { sendMessageDto } from "../schemas";
 import ApiService from "../services/Api_services";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import useFetch from "../hooks/useFetch";
 const Homepage = () => {
+  const news = useFetch("/api/news");
   return (
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
       {/* <--------------------------Contact Section-----------------------------> */}
@@ -52,16 +54,22 @@ const Homepage = () => {
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
               <Ticker
-                messages={[
-                  "CALL FOR ANY TYPE OF LOAN ON: 9540542272 IN CORPORATION NO -Green Apple Financial Services PAN NO - Apple Financial Services Private Limited TAN: - Green Apple Financial Services Private Limited.", "Testing here", "Testing here"
-                ]}
+                messages={
+                  !news.loading
+                    ? news.data
+                        .map((n) => n.lane === "FIRST" && n.text)
+                    : ["Green Apple Financial Services Pvt. Ltd."]
+                }
               />
             </span>
             <span className="py-1 px-2 text-sm w-full">
               <Ticker
-                messages={[
-                  "WELCOME TO Green Apple Financial Services Private Limited. LTD. TO CHECK ELIGIBILITY PLEASE CALL US ON OUR HELPLINE NUMBER.","testing bhai testing"
-                ]}
+                messages={
+                  !news.loading
+                    ? news.data
+                        .map((n) => n.lane === "SECOND" && n.text)
+                    : ["Green Apple Financial Services Pvt. Ltd."]
+                }
               />
             </span>
           </div>
@@ -76,10 +84,7 @@ const Homepage = () => {
         <h1 className="w-full text-center text-5xl font-bold text-gray-800">
           Services <span className="text-green-500">Benefits.</span>{" "}
         </h1>
-        {/* <p className="max-w-128 mt-4 text-gray-700 font-medium mb-12 text-center ">
-          Enhance SEO: Keyword search boosts rankings, visibility, and relevance
-          for improved online performance.
-        </p> */}
+
         <div className="w-full md:grid md:grid-cols-3 gap-5 my-2 flex flex-col items-start justify-between ">
           <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
             <span className="border self-auto md:self-start rounded-full p-4">
