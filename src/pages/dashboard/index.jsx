@@ -136,9 +136,10 @@ export default function DashboardLayout({ children }) {
                             {navigation.map((item) => (
                               <li key={item.name}>
                                 <Link
+                                  onClick={() => setSidebarOpen((pre) => !pre)}
                                   to={item.href}
                                   className={classNames(
-                                    isActive
+                                    isActive(item.href)
                                       ? "bg-indigo-700 text-white"
                                       : "text-indigo-200 hover:text-white hover:bg-indigo-700",
                                     "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
