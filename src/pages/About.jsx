@@ -44,7 +44,7 @@ function About() {
                   right financial consulting and solutions.
                 </span>
                 <span className="text-gray-900 text-lg font-semibold md:text-left ">
-                  We are registerd Private Limited Company:
+                  We are registered Private Limited Company:
                 </span>
                 <span className="text-gray-500 text-lg font-semibold md:text-left ">
                   IN CORPORATION NO: U69202HR2023PTC112412

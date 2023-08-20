@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import Homepage from "../pages/Homepage";
 import PreNavbar from "../components/Navbar/PreNavbar";
 import PostFooter from "../components/Footer/PostFooter";
@@ -14,36 +19,109 @@ import TermAndCondition from "../pages/TermAndCondition";
 import Career from "../pages/Career";
 import Loan from "../pages/Loan";
 import NotFound from "../pages/NotFound";
+import ProtectedRoute from "./ProtectedRoutes";
+import DashboardHome from "../pages/dashboard/home";
+import News from "../pages/dashboard/news";
+import AdminLogin from "../pages/Auth/AdminLogin";
+import Cookie from "js-cookie";
+import AccessControl from "./AccessControl";
+const USER_ROLES = {
+  ADMIN: "ADMIN",
+  DOCTOR: "DOCTOR",
+  CLINICAL_ASSISTANT: "CLINICAL_ASSISTANT",
+  RECEPTION_MANAGER: "RECEPTION_MANAGER",
+  CLINICAL_ADMIN: "CLINICAL_ADMIN",
+  PLAN_MAKER: "PLAN_MAKER",
+};
 
-// const USER_ROLES = {
-//   SUPER_ADMIN: "SUPER_ADMIN",
-//   DOCTOR: "DOCTOR",
-//   CLINICAL_ASSISTANT: "CLINICAL_ASSISTANT",
-//   RECEPTION_MANAGER: "RECEPTION_MANAGER",
-//   CLINICAL_ADMIN: "CLINICAL_ADMIN",
-//   PLAN_MAKER: "PLAN_MAKER",
-// };
+function PublicLayout() {
+  return (
+    <>
+      <PreNavbar />
+      <Navbar />
+      <Outlet />
+      <Footer />
+      <PostFooter />
+    </>
+  );
+}
+
+const ro = [
+  {
+    link: "about-us",
+    com: <About />,
+  },
+  {
+    link: "contact-us",
+    com: <Contact />,
+  },
+  {
+    link: "faqs",
+    com: <Faqs />,
+  },
+  {
+    link: "loan-calculator",
+    com: <Calculator />,
+  },
+  {
+    link: "apply-loan",
+    com: <ApplyLoan />,
+  },
+  {
+    link: "anti-fraud-policy",
+    com: <AntiFraudPolicy />,
+  },
+  {
+    link: "terms-and-conditions",
+    com: <TermAndCondition />,
+  },
+  {
+    link: "career",
+    com: <Career />,
+  },
+  {
+    link: "services/:slug",
+    com: <Loan />,
+  },
+];
+const Authro = [
+  {
+    link: "/admin/login/",
+    Auth: ["ADMIN"],
+    comp: <AdminLogin />,
+  },
+];
 
 function RoutesConfig() {
   return (
     <Router>
-      <PreNavbar />
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/about-us" element={<About />} />
-        <Route path="/contact-us" element={<Contact />} />
-        <Route path="/faqs" element={<Faqs />} />
-        <Route path="/loan-calculator" element={<Calculator />} />
-        <Route path="/apply-loan" element={<ApplyLoan />} />
-        <Route path="/anti-fraud-policy" element={<AntiFraudPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermAndCondition />} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/services/:slug" element={<Loan />} />
-        <Route path="*" element={<NotFound />  } />
+        <Route path="/" element={<PublicLayout />}>
+          <Route index element={<Homepage />} />\
+          {ro.map((r, idx) => (
+            <Route key={idx} path={r.link} element={r.com} />
+          ))}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        {Cookie.get("gafs_user")
+          ? Authro.filter(
+              (a) =>
+                !a.Auth.includes(
+                  JSON?.parse(Cookie?.get("gafs_user")).user.role
+                )
+            ).map((r, idx) => (
+              <Route key={idx} path={r.link} element={r.comp} />
+            ))
+          : Authro.map((r, idx) => (
+              <Route key={idx} path={r.link} element={r.comp} />
+            ))}
+        <Route element={<ProtectedRoute />}>
+          <Route element={<AccessControl allowedRoles={[USER_ROLES.ADMIN]} />}>
+            <Route path="/admin/dashboard/" element={<DashboardHome />} />
+            <Route path="/admin/news/" element={<News />} />
+          </Route>
+        </Route>
       </Routes>
-      <Footer />
-      <PostFooter />
     </Router>
   );
 }

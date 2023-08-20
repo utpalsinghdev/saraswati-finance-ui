@@ -57,7 +57,7 @@ const Homepage = () => {
                 ]}
               />
             </span>
-            <span className="py-1 px-2 text-sm">
+            <span className="py-1 px-2 text-sm w-full">
               <Ticker
                 messages={[
                   "WELCOME TO Green Apple Financial Services Private Limited. LTD. TO CHECK ELIGIBILITY PLEASE CALL US ON OUR HELPLINE NUMBER.","testing bhai testing"
@@ -286,7 +286,7 @@ const Homepage = () => {
                 financial consulting and solutions.
               </span>
               <span className="text-gray-900 text-lg font-semibold md:text-left ">
-                We are registerd Private Limited Company:
+                We are registered Private Limited Company:
               </span>
               <span className="text-gray-500 text-lg font-semibold md:text-left ">
                 IN CORPORATION NO: U69202HR2023PTC112412
