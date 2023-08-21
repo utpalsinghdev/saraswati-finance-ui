@@ -105,7 +105,7 @@ function News() {
               >
                 <option>Select a lane</option>
                 <option value="FIRST">First Lane</option>
-                <option value="SECOND">First Second</option>
+                <option value="SECOND">Second Lane</option>
               </Select>
               <Button
                 loading={formik.isSubmitting}

@@ -30,7 +30,7 @@ const navigation = [
   { name: "News", href: "/admin/news", icon: NewspaperIcon, current: false },
   {
     name: "Career Application",
-    href: "#",
+    href: "/admin/job-applications/",
     icon: DocumentDuplicateIcon,
     current: false,
   },

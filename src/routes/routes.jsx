@@ -25,6 +25,7 @@ import News from "../pages/dashboard/news";
 import AdminLogin from "../pages/Auth/AdminLogin";
 import Cookie from "js-cookie";
 import AccessControl from "./AccessControl";
+import CarrerApplications from "../pages/dashboard/careerApplication";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   DOCTOR: "DOCTOR",
@@ -119,6 +120,10 @@ function RoutesConfig() {
           <Route element={<AccessControl allowedRoles={[USER_ROLES.ADMIN]} />}>
             <Route path="/admin/dashboard/" element={<DashboardHome />} />
             <Route path="/admin/news/" element={<News />} />
+            <Route
+              path="/admin/job-applications/"
+              element={<CarrerApplications />}
+            />
           </Route>
         </Route>
       </Routes>

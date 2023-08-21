@@ -26,7 +26,7 @@ function Input({
           {icon}
         </div>
         <input
-          id={id}
+          id={id || name}
           name={name}
           type={type}
           required={required}
