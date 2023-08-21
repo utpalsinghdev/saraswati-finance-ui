@@ -16,7 +16,7 @@ function Select({
   return (
     <div className="w-full">
       <label
-        htmlFor={id}
+        htmlFor={id || name}
         className="block text-sm font-medium leading-6 text-gray-900"
       >
         {label}
@@ -26,7 +26,7 @@ function Select({
           {icon}
         </div>
         <select
-          id={id}
+          id={id || name}
           name={name}
           required={required}
           className={classNames(
