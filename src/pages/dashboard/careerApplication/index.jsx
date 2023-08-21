@@ -11,7 +11,7 @@ import Select from "../../../components/ui/select";
 import { RiLockPasswordLine } from "react-icons/ri";
 import Button from "../../../components/ui/button";
 import { Link2Icon, MailIcon, Phone, User2Icon } from "lucide-react";
-import { addNewsDto } from "../../../schemas";
+import { addNewsDto, agentSchema } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
 import { SlLocationPin } from "react-icons/sl";
 
@@ -51,7 +51,8 @@ function CarrerApplications() {
         setOpen={() => setModal(initialModalState)}
       >
         <Formik
-          // validationSchema={addNewsDto}
+          enableReinitialize={true}
+          validationSchema={agentSchema}
           initialValues={data}
           onSubmit={async (values, action) => {
             try {
@@ -105,7 +106,7 @@ function CarrerApplications() {
                 placeholder={"First Name"}
               />
               <Input
-                name="lastName"
+                name="LastName"
                 onChange={f.handleChange}
                 value={f.values.LastName}
                 onBlur={f.handleBlur}
@@ -150,7 +151,7 @@ function CarrerApplications() {
                 placeholder={"Designation"}
               />
               <Input
-                name="phone"
+                name="Phone"
                 onChange={f.handleChange}
                 onBlur={f.handleBlur}
                 value={f.values.Phone}
@@ -160,7 +161,7 @@ function CarrerApplications() {
                 placeholder={"Mobile Number"}
               />
               <Input
-                name="email"
+                name="Email"
                 onChange={f.handleChange}
                 onBlur={f.handleBlur}
                 value={f.values.Email}
