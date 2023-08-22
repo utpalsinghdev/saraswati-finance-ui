@@ -26,6 +26,7 @@ import AdminLogin from "../pages/Auth/AdminLogin";
 import Cookie from "js-cookie";
 import AccessControl from "./AccessControl";
 import CarrerApplications from "../pages/dashboard/careerApplication";
+import Agents from "../pages/dashboard/agents";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   DOCTOR: "DOCTOR",
@@ -123,6 +124,10 @@ function RoutesConfig() {
             <Route
               path="/admin/job-applications/"
               element={<CarrerApplications />}
+            />
+            <Route
+              path="/admin/agents/"
+              element={<Agents />}
             />
           </Route>
         </Route>

@@ -32,9 +32,9 @@ const initialModalState = {
     designation: "",
   },
 };
-function CarrerApplications() {
+function Agents() {
   const [modal, setModal] = useState(initialModalState);
-  const [applications, setApplications] = useState({
+  const [agents, setAgents] = useState({
     loading: true,
     data: [],
   });
@@ -42,14 +42,12 @@ function CarrerApplications() {
     state: false,
     id: null,
   });
-
-  const allEmployees = useFetch(`api/agent/employee`);
   function renderModal() {
     const { state, edit_id, data } = modal;
 
     return (
       <Modal
-        title="Approve Agent"
+        title={edit_id ? "Update Agent" : "Add Agent"}
         open={state}
         setOpen={() => setModal(initialModalState)}
       >
@@ -59,20 +57,23 @@ function CarrerApplications() {
           initialValues={data}
           onSubmit={async (values, action) => {
             try {
-              const payload = values;
-              if (values.workUnder)
-                payload.workUnder = Number(values.workUnder);
-              const res = await ApiService.fetchData({
-                url: `api/agent-application/${edit_id}`,
-                method: "POST",
-                data: payload,
-              });
-              if (res) toast.success(res.data.message);
-              setApplications((prev) => ({
-                ...prev,
-                data: prev.data.filter((n) => n.id !== Number(edit_id)),
-              }));
-              setModal(initialModalState);
+              if (!edit_id) {
+                if (!values.workUnder) delete values.workUnder;
+                const payload = values;
+                if (values.workUnder)
+                  payload.workUnder = Number(values.workUnder);
+                const res = await ApiService.fetchData({
+                  url: `api/agent/employee`,
+                  method: "POST",
+                  data: payload,
+                });
+                if (res) toast.success(res.data.message);
+                setAgents((prev) => ({
+                  ...prev,
+                  data: [...prev.data, res.data.data],
+                }));
+                setModal(initialModalState);
+              }
             } catch (error) {
               toast.error(error.response.data.message);
             } finally {
@@ -177,22 +178,16 @@ function CarrerApplications() {
                 placeholder={"Email Address"}
               />
               <Select
-                onChange={(e) => {
-                  f.setValues((prev) => ({
-                    ...prev,
-                    workUnder: Number(e.target.value),
-                  }));
-                  f.handleChange(e);
-                }}
-                name={"title"}
+                onChange={f.handleChange}
+                name={"workUnder"}
                 value={f.values.workUnder}
                 onBlur={f.handleBlur}
                 error={f.touched.workUnder && f.errors.workUnder}
                 label={""}
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
-                <option value={""}>Select A Agent</option>
-                {allEmployees.data.map((a) => (
+                <option value={" "}>Work Under</option>
+                {agents.data.map((a) => (
                   <option
                     key={a.id}
                     value={a.id}
@@ -212,12 +207,12 @@ function CarrerApplications() {
               />
               <Button
                 loading={f.isSubmitting}
-                loadingText={"Approving..."}
+                loadingText={edit_id ? "Updating..." : "Adding..."}
                 disabled={f.isSubmitting}
                 size={"NORMAL"}
                 type={"submit"}
               >
-                Approve
+                {edit_id ? "Update" : "Add Agent"}
               </Button>
             </form>
           )}
@@ -226,8 +221,8 @@ function CarrerApplications() {
     );
   }
 
-  function approve(id) {
-    const OneNews = applications.data.find((n) => Number(n.id) === id);
+  function edit(id) {
+    const OneNews = agents.data.find((n) => Number(n.id) === id);
     setModal((prev) => ({
       ...prev,
       edit_id: id,
@@ -242,7 +237,6 @@ function CarrerApplications() {
         city: OneNews.city,
         password: "",
         designation: OneNews.designation,
-        workUnder: "",
       },
     }));
   }
@@ -253,17 +247,17 @@ function CarrerApplications() {
   async function FetchNews() {
     try {
       const res = await ApiService.fetchData({
-        url: `api/agent-application`,
+        url: `api/agent/employee`,
         method: "GET",
       });
-      setApplications((prev) => ({
+      setAgents((prev) => ({
         ...prev,
         loading: false,
         data: res.data.data,
       }));
     } catch (error) {
       toast.error(error.response.data.message);
-      setApplications((prev) => ({
+      setAgents((prev) => ({
         ...prev,
         loading: false,
         data: [],
@@ -273,8 +267,8 @@ function CarrerApplications() {
 
   const columns = () => [
     {
-      Header: "application id",
-      accessor: "ApplicationID",
+      Header: "Employee id",
+      accessor: "employeeCode",
     },
     {
       Header: "name",
@@ -286,7 +280,7 @@ function CarrerApplications() {
     },
     {
       Header: "Email",
-      accessor: "Email",
+      accessor: "email",
     },
     {
       Header: "city",
@@ -294,30 +288,37 @@ function CarrerApplications() {
     },
     {
       Header: "phone",
-      accessor: "Phone",
+      accessor: "phone",
     },
-
     {
-      Header: "resume",
+      Header: "Working Under",
       accessor: (e) =>
-        e?.resume ? (
-          <a className="hover:underline text-blue-800" href={e?.resume?.url}>
-            resume
-          </a>
-        ) : (
-          "N/A"
-        ),
+        e.managedBy
+          ? `${e.managedBy.firstName} ${e.managedBy.LastName} ( ${e.managedBy.employeeCode} ) `
+          : "N/A",
     },
+    // {
+    //   Header: "resume",
+    //   accessor: (e) =>
+    //     e?.resume ? (
+    //       <a className="hover:underline text-blue-800" href={e?.resume?.url}>
+    //         resume
+    //       </a>
+    //     ) : (
+    //       "N/A"
+    //     ),
+    // },
     {
       Header: "Action",
       accessor: "action",
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
           <Badge
-            onClick={() => approve(cell.row.original.id)}
+            //  onClick={() => edit(cell.row.original.id)}
+
             type={enums.GREEN}
           >
-            Approve
+            Edit
           </Badge>
           <Badge
             onClick={() =>
@@ -328,7 +329,7 @@ function CarrerApplications() {
             }
             type={enums.RED}
           >
-            Reject
+            Remove
           </Badge>
         </span>
       ),
@@ -339,7 +340,7 @@ function CarrerApplications() {
     <>
       {renderModal()}
       <ConfirmationModal
-        description="Do you really want to Reject this Application?"
+        description="Do you really want to Reject this Agent?"
         isDelete
         open={confirmModal.state}
         setOpen={() => {
@@ -350,14 +351,11 @@ function CarrerApplications() {
         }}
         onDelete={async () => {
           const res = await ApiService.fetchData({
-            url: `api/agent-application/${confirmModal.id}`,
+            url: `api/agent/${confirmModal.id}`,
             method: "DELETE",
           });
           if (res) toast.success(res.data.message);
-          setApplications((prev) => ({
-            ...prev,
-            data: prev.data.filter((n) => n.id !== Number(confirmModal.id)),
-          }));
+          FetchNews()
           setConfirmModal((prev) => ({
             state: false,
             id: null,
@@ -366,14 +364,22 @@ function CarrerApplications() {
       />
 
       <Table
-        title="Job Applications"
-        subtitle={"Application requested from website"}
-        dataName={"Applications"}
-        data={applications.data}
+        btnText={"Add Agent"}
+        btnfunc={() =>
+          setModal((prev) => ({
+            state: true,
+            data: initialModalState.data,
+            edit_id: initialModalState.edit_id,
+          }))
+        }
+        title="Employee"
+        subtitle={"Employees of your company"}
+        dataName={"Employees"}
+        data={agents.data}
         columns={columns()}
       />
     </>
   );
 }
 
-export default CarrerApplications;
+export default Agents;

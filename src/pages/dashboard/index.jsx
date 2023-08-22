@@ -34,7 +34,7 @@ const navigation = [
     icon: DocumentDuplicateIcon,
     current: false,
   },
-  { name: "Agents", href: "#", icon: UsersIcon, current: false },
+  { name: "Agents", href: "/admin/agents", icon: UsersIcon, current: false },
   { name: "Files and Docs", href: "#", icon: FolderIcon, current: false },
   {
     name: "Loan Application",
