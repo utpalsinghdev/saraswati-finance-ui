@@ -20,6 +20,7 @@ import { classNames } from "../../utils/classname";
 import Cookie from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { Users2Icon } from "lucide-react";
 const navigation = [
   {
     name: "Dashboard",
@@ -35,11 +36,11 @@ const navigation = [
     current: false,
   },
   { name: "Agents", href: "/admin/agents", icon: UsersIcon, current: false },
-  { name: "Files and Docs", href: "#", icon: FolderIcon, current: false },
+  { name: "Loan Applications", href: "/admin/loan-applications", icon: DocumentDuplicateIcon, current: false },
   {
-    name: "Loan Application",
+    name: "Customers",
     href: "#",
-    icon: DocumentDuplicateIcon,
+    icon: Users2Icon,
     current: false,
   },
   // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
