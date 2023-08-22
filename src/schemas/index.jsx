@@ -56,6 +56,20 @@ export const agentSchema = Yup.object().shape({
   designation: Yup.string().required("Please Enter the Designation"),
   workUnder: Yup.string().optional("Please Enter A Employee Above him"),
 });
+export const agentUpdateSchema = Yup.object().shape({
+  title: Yup.string().required("Please Select a title"),
+  firstName: Yup.string().required("Please Enter the First Name"),
+  LastName: Yup.string().required("Please Enter the First Name"),
+  Email: Yup.string().email().required("Please Enter the Email Address"),
+  Phone: Yup.string().required("Please Enter the Phone Number"),
+  role: Yup.string()
+    .oneOf(["AGENT", "DEALERSHIP", "FEILDOFFICER"])
+    .required("Please Select a Post"),
+  city: Yup.string().required("Please Enter the City"),
+  password: Yup.string().optional("Please Enter the Password"),
+  designation: Yup.string().required("Please Enter the Designation"),
+  workUnder: Yup.string().optional("Please Enter A Employee Above him"),
+});
 export const adminLoginDto = Yup.object({
   Id: Yup.string().required("Please enter your Id."),
   password: Yup.string().required("Please enter your password."),

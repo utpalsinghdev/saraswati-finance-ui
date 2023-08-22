@@ -11,7 +11,7 @@ import Select from "../../../components/ui/select";
 import { RiLockPasswordLine } from "react-icons/ri";
 import Button from "../../../components/ui/button";
 import { Link2Icon, MailIcon, Phone, User2Icon } from "lucide-react";
-import { addNewsDto, agentSchema } from "../../../schemas";
+import { addNewsDto, agentSchema, agentUpdateSchema } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
 import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
@@ -53,7 +53,7 @@ function Agents() {
       >
         <Formik
           enableReinitialize={true}
-          validationSchema={agentSchema}
+          validationSchema={edit_id ? agentUpdateSchema : agentSchema}
           initialValues={data}
           onSubmit={async (values, action) => {
             try {
@@ -71,6 +71,24 @@ function Agents() {
                 setAgents((prev) => ({
                   ...prev,
                   data: [...prev.data, res.data.data],
+                }));
+                setModal(initialModalState);
+              } else {
+                const payload = values;
+                payload.workUnder = Number(values.workUnder);
+                if (!values.workUnder) delete payload.workUnder;
+                if (!values.password) delete payload.password;
+                const res = await ApiService.fetchData({
+                  url: `api/agent/${edit_id}`,
+                  method: "PUT",
+                  data: payload,
+                });
+                if (res) toast.success(res.data.message);
+                setAgents((prev) => ({
+                  ...prev,
+                  data: prev.data.map((n) =>
+                    n.id === +edit_id ? res.data.data : n
+                  ),
                 }));
                 setModal(initialModalState);
               }
@@ -232,11 +250,12 @@ function Agents() {
         firstName: OneNews.firstName,
         LastName: OneNews.LastName,
         role: OneNews.role,
-        Email: OneNews.Email,
-        Phone: OneNews.Phone,
+        Email: OneNews.email,
+        Phone: OneNews.phone,
         city: OneNews.city,
         password: "",
         designation: OneNews.designation,
+        workUnder: OneNews.managedById || "",
       },
     }));
   }
@@ -317,11 +336,7 @@ function Agents() {
       accessor: "action",
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
-          <Badge
-            //  onClick={() => edit(cell.row.original.id)}
-
-            type={enums.GREEN}
-          >
+          <Badge onClick={() => edit(cell.row.original.id)} type={enums.GREEN}>
             Edit
           </Badge>
           <Badge
@@ -359,7 +374,7 @@ function Agents() {
             method: "DELETE",
           });
           if (res) toast.success(res.data.message);
-          FetchNews()
+          FetchNews();
           setConfirmModal((prev) => ({
             state: false,
             id: null,
