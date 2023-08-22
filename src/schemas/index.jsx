@@ -28,12 +28,11 @@ export const agentApplicationSchema = Yup.object().shape({
   resume: Yup.mixed()
     .test(
       "fileType",
-      "Invalid file format. Only accept PDF or DOC files.",
+      "Invalid file format. Only accept PDF files.",
       (value) => {
         if (!value) return true;
         return [
           "application/pdf",
-          "application/msword",
           "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         ].includes(value.type);
       }
