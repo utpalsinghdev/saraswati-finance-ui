@@ -283,6 +283,10 @@ function Agents() {
       accessor: "email",
     },
     {
+      Header: "designation",
+      accessor: "designation",
+    },
+    {
       Header: "city",
       accessor: "city",
     },
