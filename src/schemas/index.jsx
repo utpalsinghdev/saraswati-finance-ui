@@ -5,7 +5,10 @@ export const sendMessageDto = Yup.object({
   email: Yup.string()
     .email("Please enter a valid Email address")
     .required("Please enter your email."),
-  phone: Yup.string().required("Please enter your phone number."),
+  phone: Yup.string()
+    .min(10, "Phone number must be at least 10 characters")
+    .max(10, "Phone number must be of maximum 10 characters")
+    .required("Please enter your phone number."),
   message: Yup.string().required("Please enter your message."),
 });
 
@@ -14,7 +17,10 @@ export const agentApplicationSchema = Yup.object().shape({
   firstName: Yup.string().required("Please Enter Your First Name"),
   lastName: Yup.string().required("Please Enter Your First Name"),
   email: Yup.string().email().required("Please Enter Your Email Address"),
-  phone: Yup.string().required("Please Enter Your Phone Number"),
+  phone: Yup.string()
+    .min(10, "Phone number must be at least 10 characters")
+    .max(10, "Phone number must be of maximum 10 characters")
+    .required("Please Enter Your Phone Number"),
   role: Yup.string()
     .oneOf(["AGENT", "DEALERSHIP", "FEILDOFFICER"])
     .required("Please Select a Post"),
@@ -47,7 +53,10 @@ export const agentSchema = Yup.object().shape({
   firstName: Yup.string().required("Please Enter the First Name"),
   LastName: Yup.string().required("Please Enter the First Name"),
   Email: Yup.string().email().required("Please Enter the Email Address"),
-  Phone: Yup.string().required("Please Enter the Phone Number"),
+  Phone: Yup.string()
+    .min(10, "Phone number must be at least 10 characters")
+    .max(10, "Phone number must be of maximum 10 characters")
+    .required("Please Enter the Phone Number"),
   role: Yup.string()
     .oneOf(["AGENT", "DEALERSHIP", "FEILDOFFICER"])
     .required("Please Select a Post"),
@@ -61,7 +70,10 @@ export const agentUpdateSchema = Yup.object().shape({
   firstName: Yup.string().required("Please Enter the First Name"),
   LastName: Yup.string().required("Please Enter the First Name"),
   Email: Yup.string().email().required("Please Enter the Email Address"),
-  Phone: Yup.string().required("Please Enter the Phone Number"),
+  Phone: Yup.string()
+    .min(10, "Phone number must be at least 10 characters")
+    .max(10, "Phone number must be of maximum 10 characters")
+    .required("Please Enter the Phone Number"),
   role: Yup.string()
     .oneOf(["AGENT", "DEALERSHIP", "FEILDOFFICER"])
     .required("Please Select a Post"),
