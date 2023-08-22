@@ -166,7 +166,7 @@ function Career() {
                     placeholder={"Mobile Number"}
                   />
                   <Input
-                    label="Upload Resume (doc,pdf)"
+                    label="Upload Resume (pdf only)"
                     type={"file"}
                     name={"resume"}
                     required={true}
