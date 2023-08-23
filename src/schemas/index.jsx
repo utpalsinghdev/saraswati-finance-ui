@@ -147,7 +147,12 @@ export const customerSchema = Yup.object().shape({
       "Invalid file format. Only accept PDF files.",
       (value) => {
         if (!value) return true;
-        return ["application/pdf"].includes(value.type);
+        return [
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
+          "application/pdf",
+        ].includes(value.type);
       }
     )
     .test(
@@ -174,7 +179,12 @@ export const customerSchema = Yup.object().shape({
       "Invalid file format. Only accept PDF files.",
       (value) => {
         if (!value) return true;
-        return ["application/pdf"].includes(value.type);
+        return [
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
+          "application/pdf",
+        ].includes(value.type);
       }
     )
     .test(
@@ -193,6 +203,9 @@ export const customerSchema = Yup.object().shape({
       (value) => {
         if (!value) return true;
         return [
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
           "application/pdf",
           "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         ].includes(value.type);
