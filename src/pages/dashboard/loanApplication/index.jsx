@@ -15,7 +15,7 @@ import { addNewsDto, agentSchema } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
 import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
-
+import moment from "moment";
 const initialModalState = {
   state: false,
   edit_id: "",
@@ -38,7 +38,11 @@ function LoanApplication() {
     loading: true,
     data: [],
   });
-  const [confirmModal, setConfirmModal] = useState({
+  const [DconfirmModal, setDConfirmModal] = useState({
+    state: false,
+    id: null,
+  });
+  const [AconfirmModal, setAConfirmModal] = useState({
     state: false,
     id: null,
   });
@@ -226,34 +230,13 @@ function LoanApplication() {
   //     );
   //   }
 
-  function approve(id) {
-    const OneNews = applications.data.find((n) => Number(n.id) === id);
-    setModal((prev) => ({
-      ...prev,
-      edit_id: id,
-      state: true,
-      data: {
-        title: OneNews.title,
-        firstName: OneNews.firstName,
-        LastName: OneNews.LastName,
-        role: OneNews.role,
-        Email: OneNews.Email,
-        Phone: OneNews.Phone,
-        city: OneNews.city,
-        password: "",
-        designation: OneNews.designation,
-        workUnder: "",
-      },
-    }));
-  }
-
   useEffect(() => {
     FetchNews();
   }, []);
   async function FetchNews() {
     try {
       const res = await ApiService.fetchData({
-        url: `api/customer`,
+        url: `api/customer/loan`,
         method: "GET",
       });
       setApplications((prev) => ({
@@ -277,8 +260,20 @@ function LoanApplication() {
       accessor: "loanId",
     },
     {
+      Header: "Status",
+      accessor: "status",
+    },
+    {
       Header: "name",
       accessor: "name",
+    },
+    {
+      Header: "Photo",
+      accessor: (a) => (
+        <a className="text-blue-600 underline" href={a.photo.url}>
+          Download
+        </a>
+      ),
     },
     {
       Header: "guardian relation",
@@ -294,6 +289,14 @@ function LoanApplication() {
       accessor: "guardian_name",
     },
     {
+      Header: "phone",
+      accessor: "phone",
+    },
+    {
+      Header: "Email",
+      accessor: "email",
+    },
+    {
       Header: "amount",
       accessor: "loanInNumber",
     },
@@ -301,18 +304,12 @@ function LoanApplication() {
       Header: "amount (In words)",
       accessor: "loanInWords",
     },
-    {
-      Header: "Email",
-      accessor: "email",
-    },
+
     {
       Header: "dob",
-      accessor: "dob",
+      accessor: (e) => moment(e.dob).format("DD/MM/YYYY"),
     },
-    {
-      Header: "phone",
-      accessor: "phone",
-    },
+
     {
       Header: "loan FYear",
       accessor: "loanYear",
@@ -330,6 +327,10 @@ function LoanApplication() {
       accessor: "State",
     },
     {
+      Header: "pin code",
+      accessor: "pinCode",
+    },
+    {
       Header: "bank",
       accessor: "bank",
     },
@@ -342,46 +343,86 @@ function LoanApplication() {
       accessor: "ifsc",
     },
     {
-      Header: "accountType",
+      Header: "account Type",
       accessor: "accountType",
     },
+    {
+      Header: "adhar Number",
+      accessor: "adharNumber",
+    },
+    {
+      Header: "Adhar Card",
+      accessor: (a) => (
+        <a className="text-blue-600 underline" href={a.AdharCard.url}>
+          Download
+        </a>
+      ),
+    },
+    {
+      Header: "pan Number",
+      accessor: "panNumber",
+    },
+    {
+      Header: "Pan Card",
+      accessor: (a) => (
+        <a className="text-blue-600 underline" href={a.panCard.url}>
+          Download
+        </a>
+      ),
+    },
+    {
+      Header: "Proof Doc",
+      accessor: "bankProof",
+    },
+    {
+      Header: "Proof",
+      accessor: (a) => (
+        <a className="text-blue-600 underline" href={a.proofDoc.url}>
+          Download
+        </a>
+      ),
+    },
+    {
+      Header: "Tracking By",
+      accessor: (a) =>
+        a.agent.firstName +
+        " " +
+        a.agent.LastName +
+        "(" +
+        a.agent.employeeCode +
+        ")",
+    },
 
-    // {
-    //   Header: "resume",
-    //   accessor: (e) =>
-    //     e?.resume ? (
-    //       <a className="hover:underline text-blue-800" href={e?.resume?.url}>
-    //         resume
-    //       </a>
-    //     ) : (
-    //       "N/A"
-    //     ),
-    // },
-    // {
-    //   Header: "Action",
-    //   accessor: "action",
-    //   Cell: (cell) => (
-    //     <span className="flex items-center justify-start gap-4">
-    //       <Badge
-    //         onClick={() => approve(cell.row.original.id)}
-    //         type={enums.GREEN}
-    //       >
-    //         Approve
-    //       </Badge>
-    //       <Badge
-    //         onClick={() =>
-    //           setConfirmModal((prev) => ({
-    //             state: true,
-    //             id: Number(cell.row.original.id),
-    //           }))
-    //         }
-    //         type={enums.RED}
-    //       >
-    //         Reject
-    //       </Badge>
-    //     </span>
-    //   ),
-    // },
+    {
+      Header: "Action",
+      accessor: "action",
+      Cell: (cell) => (
+        <span className="flex items-center justify-start gap-4">
+          <Badge
+            onClick={() =>
+              setAConfirmModal((prev) => ({
+                state: true,
+                id: Number(cell.row.original.id),
+              }))
+            }
+            type={enums.GREEN}
+          >
+            Approve
+          </Badge>
+          <Badge
+            onClick={() =>
+              setDConfirmModal((prev) => ({
+                state: true,
+                id: Number(cell.row.original.id),
+              }))
+            }
+            type={enums.RED}
+          >
+            Reject
+          </Badge>
+        </span>
+      ),
+    },
   ];
 
   return (
@@ -390,24 +431,50 @@ function LoanApplication() {
       <ConfirmationModal
         description="Do you really want to Reject this Application?"
         isDelete
-        open={confirmModal.state}
+        open={DconfirmModal.state}
         setOpen={() => {
-          setConfirmModal({
+          setDConfirmModal({
             state: false,
             id: null,
           });
         }}
         onDelete={async () => {
           const res = await ApiService.fetchData({
-            url: `api/agent-application/${confirmModal.id}`,
+            url: `api/customer/reject/${DconfirmModal.id}`,
             method: "DELETE",
           });
           if (res) toast.success(res.data.message);
           setApplications((prev) => ({
             ...prev,
-            data: prev.data.filter((n) => n.id !== Number(confirmModal.id)),
+            data: prev.data.filter((n) => n.id !== Number(DconfirmModal.id)),
           }));
-          setConfirmModal((prev) => ({
+          setDConfirmModal((prev) => ({
+            state: false,
+            id: null,
+          }));
+        }}
+      />
+      <ConfirmationModal
+        description="Do you really want to Approve this Application?"
+        open={AconfirmModal.state}
+        confirmationButtonText={"Approve"}
+        setOpen={() => {
+          setAConfirmModal({
+            state: false,
+            id: null,
+          });
+        }}
+        onDelete={async () => {
+          const res = await ApiService.fetchData({
+            url: `api/customer/${AconfirmModal.id}`,
+            method: "PATCH",
+          });
+          if (res) toast.success(res.data.message);
+          setApplications((prev) => ({
+            ...prev,
+            data: prev.data.filter((n) => n.id !== Number(AconfirmModal.id)),
+          }));
+          setAConfirmModal((prev) => ({
             state: false,
             id: null,
           }));

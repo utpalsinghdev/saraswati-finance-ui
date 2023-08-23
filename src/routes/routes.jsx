@@ -28,6 +28,7 @@ import AccessControl from "./AccessControl";
 import CarrerApplications from "../pages/dashboard/careerApplication";
 import Agents from "../pages/dashboard/agents";
 import LoanApplication from "../pages/dashboard/loanApplication";
+import Cutomers from "../pages/dashboard/Customer";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   DOCTOR: "DOCTOR",
@@ -128,6 +129,7 @@ function RoutesConfig() {
             />
             <Route path="/admin/agents/" element={<Agents />} />
             <Route path="/admin/loan-applications/" element={<LoanApplication />} />
+            <Route path="/admin/customers/" element={<Cutomers />} />
           </Route>
         </Route>
       </Routes>

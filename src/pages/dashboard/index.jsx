@@ -36,10 +36,15 @@ const navigation = [
     current: false,
   },
   { name: "Agents", href: "/admin/agents", icon: UsersIcon, current: false },
-  { name: "Loan Applications", href: "/admin/loan-applications", icon: DocumentDuplicateIcon, current: false },
+  {
+    name: "Loan Applications",
+    href: "/admin/loan-applications",
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
   {
     name: "Customers",
-    href: "#",
+    href: "/admin/customers/",
     icon: Users2Icon,
     current: false,
   },
