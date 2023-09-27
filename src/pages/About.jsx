@@ -3,7 +3,6 @@ import ContainerWrapper from "../components/ui/containtWrapper";
 import HeadingWrapper from "../components/ui/heading Wrapper";
 import CarouselBanner from "../components/CarouselBanner";
 import Image from "../components/ui/Image/Index";
-import AccordianGroup from "../components/ui/accordian/AccordianGroup";
 
 function About() {
   return (
