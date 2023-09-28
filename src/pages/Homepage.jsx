@@ -40,34 +40,13 @@ const Homepage = () => {
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
-        <div className="absolute container mx-auto w-[80%] z-50 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
-          <div className="bg-green-200 w-4">
-            <p className="text-green-200">d</p>
-          </div>
-
-          <div className="flex flex-col py-2 z-50 ">
-            <span className="py-1 px-2 text-black text-sm font-medium ">
-              ABOUT COMPANY
-            </span>
-            <span className="py-1 px-2 text-2xl font-semibold ">News</span>
-          </div>
+        <div className="absolute w-full z-50 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-blue-800  flex h-max  gap-2 ">
           <div className="flex flex-col justify-between w-full py-2">
-            <span className="py-1 px-2 text-sm  ">
+            <span className="py-1 px-2 text-sm font-semibold text-white w-full">
               <Ticker
                 messages={
                   !news.loading
-                    ? news.data
-                        .map((n) => n.lane === "FIRST" && n.text)
-                    : ["Green Apple Financial Services Pvt. Ltd."]
-                }
-              />
-            </span>
-            <span className="py-1 px-2 text-sm w-full">
-              <Ticker
-                messages={
-                  !news.loading
-                    ? news.data
-                        .map((n) => n.lane === "SECOND" && n.text)
+                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
                     : ["Green Apple Financial Services Pvt. Ltd."]
                 }
               />
@@ -78,11 +57,9 @@ const Homepage = () => {
 
       {/* <--------------------------Services Section-----------------------------> */}
       <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
-        <span className="text-xl mt-16 font-semibold mb-5 text-primary-500">
-          WHAT WE DO FOR YOU
-        </span>
-        <h1 className="w-full text-center text-5xl font-bold text-gray-800">
-          Services <span className="text-green-500">Benefits.</span>{" "}
+        <h1 className="w-full text-left text-5xl font-bold mb-4 text-gray-800">
+          <span className="underline">Our</span>{" "}
+          <span className="text-orange-500">Services.</span>{" "}
         </h1>
 
         <div className="w-full md:grid md:grid-cols-3 gap-5 my-2 flex flex-col items-start justify-between ">
