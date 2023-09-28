@@ -6,8 +6,8 @@ function PostFooter() {
   return (
     <div className="container mx-auto w-[90%] flex justify-between items-center py-4 text-black">
       <span>
-        All Right Reserved | Copyright &copy; {currentYear} Green Apple
-        Financial Services Private Limited.
+        All Right Reserved | Copyright &copy; {currentYear} Vandham Finance
+        Private Limited.
       </span>
       <span className="flex gap-8">
         <Link className="underline">FAQ&apos;s</Link>{" "}

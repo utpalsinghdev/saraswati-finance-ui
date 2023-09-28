@@ -38,11 +38,7 @@ const Navbar = () => {
   ];
   return (
     <div className="container w-full md:w-[90%] mx-auto">
-      <div className="items-center justify-between px-2 flex">
-        <img
-          src="/logo.png"
-          className=" block md:hidden  w-32 md:w-32 mt-1  text-2xl font-extrabold font-serif cursor-pointer "
-        />
+      {/* <div className="items-center justify-between px-2 flex">
         <span className="block md:hidden flex flex-col items-center text-sm text-gray-800 gap-2 font-bold">
           <span className="flex items-center gap-2 ">
             <Phone className="w-4 text-green-600" />{" "}
@@ -57,12 +53,12 @@ const Navbar = () => {
             </a>
           </span>
         </span>
-      </div>
-      <div className="relative mt-2 md:mt-6 pb-4  bg-indigo-500 md:bg-white  md:px-0 transition duration-300">
+      </div> */}
+      <div className="relative  md:mt-6 pb-4  bg-blue-800 md:bg-white  md:px-0 transition duration-300">
         <nav className="relative flex items-center justify-start md:justify-between">
           <img
             src="/logo.png"
-            className="hidden md:block absolute w-28 md:w-32  -top-4 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
+            className="hidden md:block absolute w-28 md:w-20  -top-8 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
           />
           <div className="hidden md:flex items-center justify-end w-full  gap-4">
             <div className=" flex items-center  justify-between gap-4 font-normal ">
@@ -86,15 +82,21 @@ const Navbar = () => {
             }}
             className="md:hidden mt-4 cursor-pointer w-6 h-6 ml-1"
           />
-          <span className="md:hidden mt-4 ml-4 font-medium  text-md">
-            Green Apple Financial Services Pvt Ltd.
+          <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-between gap-4 text-md">
+            <p className="text-xl text-orange-500 font-serif">
+              Vandham Finace Pvt. Ltd.
+            </p>
+            <img
+              src="/logo_without_name.png"
+              className=" block md:hidden  w-16   cursor-pointer mr-1"
+            />
           </span>
         </nav>
         <div
           style={{
             display: show ? "block" : "none",
           }}
-          className="absolute z-50 bg-indigo-500 top-10 rounded-b-md right-0 w-full transition duration-300"
+          className="absolute z-50 bg-blue-800 top-20 rounded-b-md right-0 w-full transition duration-300"
         >
           <div className="bg-white mt-4 w-full py-4 px-2 flex flex-col items-center  gap-1 font-semibold md:hidden">
             {links.map((link, idx) => (

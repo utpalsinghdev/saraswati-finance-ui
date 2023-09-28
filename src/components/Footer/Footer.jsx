@@ -13,10 +13,9 @@ function Footer() {
           <div className="w-full">
             <img src="/logo.png" className="w-44" alt="" />
             <p className="text-white mt-2">
-              Green Apple Financial Services Private Limited. is dealing in
-              Personal Loan, Loan against Property, Project Loan & Gold Loan. We
-              Believe in fair dealing and prompt disbursement of founds on
-              priority Basis.
+              Vandham Finance Private Limited. is dealing in Personal Loan, Loan
+              against Property, Project Loan & Gold Loan. We Believe in fair
+              dealing and prompt disbursement of founds on priority Basis.
             </p>
           </div>
           <div className="w-full ">
@@ -57,30 +56,17 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:9540542271" target="_blank" rel="noreferrer">
-                  9540542271
+                <a href="tel:9289115033" target="_blank" rel="noreferrer">
+                  9289115033
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
-                <BsTelephone />
-                <a
-                  href="https://wa.me/+919540542271"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Whatsapp 1
+                <BsTelephone />{" "}
+                <a href="tel:9289122303" target="_blank" rel="noreferrer">
+                  9289122303
                 </a>
               </li>
-              <li className="flex flex-row items-center gap-2">
-                <BsTelephone />
-                <a
-                  href="https://wa.me/+919540542272"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Whatsapp 2
-                </a>
-              </li>
+
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
@@ -88,14 +74,14 @@ function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@greenapplefinancial.com
+                  info@vandhamservices.com
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">
                 <HiOutlineLocationMarker size={40} />
                 <span>
-                  Plot number 70, Godrej Eternia, Level 4 Tower-A, Industrial
-                  Area Phase 1, Chandigarh, 160002
+                  DLF IT PARK TOWER A, RAJIV GANDHI CHANDIGARH TECHNOLOGY PARK,
+                  KISHANGARH, PHASE-1, SECTOR 13, CHANDIGARH 160101
                 </span>
               </li>
             </ul>
