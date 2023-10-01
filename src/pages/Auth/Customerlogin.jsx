@@ -10,7 +10,7 @@ import Cookie from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-export default function AdminLogin() {
+function Customerlogin() {
   const navigator = useNavigate();
   let user = {};
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function AdminLogin() {
   }, [Cookie?.get("gafs_user")]);
   useEffect(() => {
     if (!!Cookie?.get("gafs_user")) {
-      navigator("/admin/dashboard");
+      navigator("/home");
     }
   }, [user]);
   return (
@@ -34,7 +34,7 @@ export default function AdminLogin() {
               alt="Your Company"
             />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-              Admin Login
+              Customer Login
             </h2>
           </div>
           <Formik
@@ -46,13 +46,13 @@ export default function AdminLogin() {
             onSubmit={async (values, action) => {
               try {
                 const res = await axios.post(
-                  `${import.meta.env.VITE_BASE_URL}/api/auth/admin`,
+                  `${import.meta.env.VITE_BASE_URL}/api/auth/customer`,
                   values
                 );
                 if (res) {
                   Cookie.set("gafs_user", JSON.stringify(res.data.data));
                   toast.success(res.data.message);
-                  navigator("/admin/dashboard");
+                  navigator("/home");
                 }
               } catch (error) {
                 toast.error(error.response.data.message);
@@ -127,3 +127,5 @@ export default function AdminLogin() {
     </>
   );
 }
+
+export default Customerlogin;

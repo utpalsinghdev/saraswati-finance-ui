@@ -27,34 +27,105 @@ const navigation = [
     href: "/admin/dashboard",
     icon: HomeIcon,
     current: false,
+    access: ["ADMIN"],
   },
-  { name: "News", href: "/admin/news", icon: NewspaperIcon, current: false },
+  {
+    name: "News",
+    href: "/admin/news",
+    icon: NewspaperIcon,
+    current: false,
+    access: ["ADMIN"],
+  },
   {
     name: "Career Application",
     href: "/admin/job-applications/",
     icon: DocumentDuplicateIcon,
     current: false,
+    access: ["ADMIN"],
   },
-  { name: "Agents", href: "/admin/agents", icon: UsersIcon, current: false },
+  {
+    name: "Agents",
+    href: "/admin/agents",
+    icon: UsersIcon,
+    current: false,
+    access: ["ADMIN"],
+  },
   {
     name: "Loan Applications",
     href: "/admin/loan-applications",
     icon: DocumentDuplicateIcon,
     current: false,
+    access: ["ADMIN"],
   },
   {
     name: "Customers",
     href: "/admin/customers/",
     icon: Users2Icon,
     current: false,
+    access: ["ADMIN"],
   },
   // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   // { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
 ];
 const teams = [
-  { id: 1, name: "joining letter", href: "#", initial: "J", current: false },
-  { id: 2, name: "Welcome letter", href: "#", initial: "W", current: false },
-  { id: 3, name: "approval letter", href: "#", initial: "A", current: false },
+  {
+    id: 1,
+    name: "Appointment letter",
+    href: "/admin/appointment-letter/",
+    initial: "A",
+    current: false,
+    access: ["ADMIN"],
+  },
+  {
+    id: 2,
+    name: "Welcome letter",
+    href: "/admin/welcome-letter/",
+    initial: "W",
+    current: false,
+    access: ["ADMIN"],
+  },
+  {
+    id: 3,
+    name: "I-card",
+    href: "/admin/i-card",
+    initial: "I",
+    current: false,
+    access: ["ADMIN"],
+  },
+  {
+    id: 3,
+    name: "approval letter",
+    href: "/admin/approval-letter/",
+    initial: "A",
+    current: false,
+    access: ["ADMIN"],
+  },
+  {
+    id: 3,
+    name: "DSA / DMA",
+    href: "/admin/joint-percent-letter/",
+    initial: "D",
+    current: false,
+    access: ["ADMIN"],
+  },
+];
+const invoice = [
+  {
+    id: 2,
+    name: "Welcome Invoice",
+    href: "/admin/welcome-invoice/",
+    initial: "W",
+    current: false,
+    access: ["ADMIN"],
+  },
+  {
+    id: 3,
+    name: "approval Invoice",
+    href: "/admin/approval-invoice/",
+    initial: "A",
+    current: false,
+    access: ["ADMIN"],
+  },
 ];
 
 export default function DashboardLayout({ children }) {
@@ -70,8 +141,16 @@ export default function DashboardLayout({ children }) {
   const navigate = useNavigate();
   const onLogout = async () => {
     await Cookie.remove("gafs_user");
-    navigate("/admin/login");
-    if (!Cookies.get("gafs_user")) window.location.reload();
+    if (!!Cookies.get("gafs_agent")) {
+      window.location.reload();
+      navigate("/agent/login");
+    } else navigate("/admin/login");
+    if (!Cookies.get("gafs_user")) {
+      if (!!Cookies.get("gafs_agent")) {
+      } else {
+        window.location.reload();
+      }
+    }
   };
   const userNavigation = [
     { name: "Your profile", href: "#" },
@@ -151,59 +230,110 @@ export default function DashboardLayout({ children }) {
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
                         <li>
                           <ul role="list" className="-mx-2 space-y-1">
-                            {navigation.map((item) => (
-                              <li key={item.name}>
-                                <Link
-                                  onClick={() => setSidebarOpen((pre) => !pre)}
-                                  to={item.href}
-                                  className={classNames(
-                                    isActive(item.href)
-                                      ? "bg-indigo-700 text-white"
-                                      : "text-indigo-200 hover:text-white hover:bg-indigo-700",
-                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                  )}
-                                >
-                                  <item.icon
+                            {navigation
+                              .filter((t) =>
+                                t.access.includes(user?.user?.role)
+                              )
+                              .map((item) => (
+                                <li key={item.name}>
+                                  <Link
+                                    onClick={() =>
+                                      setSidebarOpen((pre) => !pre)
+                                    }
+                                    to={item.href}
                                     className={classNames(
-                                      item.current
-                                        ? "text-white"
-                                        : "text-indigo-200 group-hover:text-white",
-                                      "h-6 w-6 shrink-0"
+                                      isActive(item.href)
+                                        ? "bg-indigo-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                      "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
-                                    aria-hidden="true"
-                                  />
-                                  {item.name}
-                                </Link>
-                              </li>
-                            ))}
+                                  >
+                                    <item.icon
+                                      className={classNames(
+                                        item.current
+                                          ? "text-white"
+                                          : "text-indigo-200 group-hover:text-white",
+                                        "h-6 w-6 shrink-0"
+                                      )}
+                                      aria-hidden="true"
+                                    />
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
                           </ul>
                         </li>
                         <li>
                           <div className="text-xs font-semibold leading-6 text-indigo-200">
-                            Letters
+                            {teams.filter((t) =>
+                              t.access.includes(user?.user?.role)
+                            ).length
+                              ? "Letters"
+                              : null}
                           </div>
                           <ul role="list" className="-mx-2 mt-2 space-y-1">
-                            {teams.map((team) => (
-                              <li key={team.name}>
-                                <Link
-                                  to={team.href}
-                                  className={classNames(
-                                    isActive(team.href)
-                                      ? "bg-indigo-700 text-white"
-                                      : "text-indigo-200 hover:text-white hover:bg-indigo-700",
-                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                  )}
-                                >
-                                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
-                                    {team.initial}
-                                  </span>
-                                  <span className="truncate">{team.name}</span>
-                                </Link>
-                              </li>
-                            ))}
+                            {teams
+                              .filter((t) =>
+                                t.access.includes(user?.user?.role)
+                              )
+                              .map((team) => (
+                                <li key={team.name}>
+                                  <Link
+                                    to={team.href}
+                                    className={classNames(
+                                      isActive(team.href)
+                                        ? "bg-indigo-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                      "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                    )}
+                                  >
+                                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
+                                      {team.initial}
+                                    </span>
+                                    <span className="truncate">
+                                      {team.name}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ))}
                           </ul>
                         </li>
-                        <li className="mt-auto">
+                        <li>
+                          <div className="text-xs font-semibold leading-6 text-indigo-200">
+                            {invoice.filter((t) =>
+                              t.access.includes(user?.user?.role)
+                            ).length
+                              ? "Invoices"
+                              : null}
+                          </div>
+                          <ul role="list" className="-mx-2 mt-2 space-y-1">
+                            {invoice
+                              .filter((t) =>
+                                t.access.includes(user?.user?.role)
+                              )
+                              .map((team) => (
+                                <li key={team.name}>
+                                  <Link
+                                    to={team.href}
+                                    className={classNames(
+                                      isActive(team.href)
+                                        ? "bg-indigo-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                      "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                    )}
+                                  >
+                                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
+                                      {team.initial}
+                                    </span>
+                                    <span className="truncate">
+                                      {team.name}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ))}
+                          </ul>
+                        </li>
+                        {/* <li className="mt-auto">
                           <Link className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white">
                             <Cog6ToothIcon
                               className="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white"
@@ -211,7 +341,7 @@ export default function DashboardLayout({ children }) {
                             />
                             Settings
                           </Link>
-                        </li>
+                        </li> */}
                       </ul>
                     </nav>
                   </div>
@@ -237,58 +367,98 @@ export default function DashboardLayout({ children }) {
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
                 <li>
                   <ul role="list" className="-mx-2 space-y-1">
-                    {navigation.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          to={item.href}
-                          className={classNames(
-                            isActive(item.href)
-                              ? "bg-indigo-700 text-white"
-                              : "text-indigo-200 hover:text-white hover:bg-indigo-700",
-                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                          )}
-                        >
-                          <item.icon
+                    {navigation
+                      .filter((t) => t.access.includes(user?.user?.role))
+                      .map((item) => (
+                        <li key={item.name}>
+                          <Link
+                            to={item.href}
                             className={classNames(
-                              item.current
-                                ? "text-white"
-                                : "text-indigo-200 group-hover:text-white",
-                              "h-6 w-6 shrink-0"
+                              isActive(item.href)
+                                ? "bg-indigo-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                              "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
-                            aria-hidden="true"
-                          />
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
+                          >
+                            <item.icon
+                              className={classNames(
+                                item.current
+                                  ? "text-white"
+                                  : "text-indigo-200 group-hover:text-white",
+                                "h-6 w-6 shrink-0"
+                              )}
+                              aria-hidden="true"
+                            />
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
                   </ul>
                 </li>
                 <li>
                   <div className="text-xs font-semibold leading-6 text-indigo-200">
-                    Letters
+                    {teams.filter((t) => t.access.includes(user?.user?.role))
+                      .length
+                      ? "Letters"
+                      : null}
                   </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
-                    {teams.map((team) => (
-                      <li key={team.name}>
-                        <Link
-                          to={team.href}
-                          className={classNames(
-                            isActive(team.href)
-                              ? "bg-indigo-700 text-white"
-                              : "text-indigo-200 hover:text-white hover:bg-indigo-700",
-                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                          )}
-                        >
-                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
-                            {team.initial}
-                          </span>
-                          <span className="truncate">{team.name}</span>
-                        </Link>
-                      </li>
-                    ))}
+                    {teams
+                      .filter((t) => t.access.includes(user?.user?.role))
+                      .map((team) => (
+                        <li key={team.name}>
+                          <Link
+                            to={team.href}
+                            className={classNames(
+                              isActive(team.href)
+                                ? "bg-indigo-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                              "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                            )}
+                          >
+                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
+                              {team.initial}
+                            </span>
+                            <span className="truncate">{team.name}</span>
+                          </Link>
+                        </li>
+                      ))}
                   </ul>
                 </li>
-                <li className="mt-auto">
+                <li>
+                  {invoice && (
+                    <div className="text-xs font-semibold leading-6 text-indigo-200">
+                      {invoice.filter((t) =>
+                        t.access.includes(user?.user?.role)
+                      ).length
+                        ? "Invoices"
+                        : null}
+                    </div>
+                  )}
+                  <ul role="list" className="-mx-2 mt-2 space-y-1">
+                    {invoice
+                      .filter((t) => t.access.includes(user?.user?.role))
+                      .map((team) => (
+                        <li key={team.name}>
+                          <Link
+                            to={team.href}
+                            className={classNames(
+                              isActive(team.href)
+                                ? "bg-indigo-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                              "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                            )}
+                          >
+                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-indigo-400 bg-indigo-500 text-[0.625rem] font-medium text-white">
+                              {team.initial}
+                            </span>
+                            <span className="truncate">{team.name}</span>
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                </li>
+                {/* <li className="mt-auto">
                   <Link className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white">
                     <Cog6ToothIcon
                       className="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white"
@@ -296,7 +466,7 @@ export default function DashboardLayout({ children }) {
                     />
                     Settings
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>
@@ -357,7 +527,9 @@ export default function DashboardLayout({ children }) {
                         className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                         aria-hidden="true"
                       >
-                        {user?.user?.firstName + " " + user?.user?.LastName}
+                        {user?.user?.name
+                          ? user?.user?.name
+                          : user?.user?.firstName + " " + user?.user?.LastName}
                       </span>
                       <ChevronDownIcon
                         className="ml-2 h-5 w-5 text-gray-400"

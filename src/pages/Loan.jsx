@@ -543,7 +543,6 @@ function Loan() {
 
   if (slug === "personal-loan") {
     return <PersonalLoan />;
-    console.log(slug);
   } else if (slug === "home-loan") {
     return <HomeLoan />;
   } else if (slug === "business-loan") {

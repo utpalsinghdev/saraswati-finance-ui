@@ -31,9 +31,7 @@ function fileToBase64(file, callback) {
   reader.readAsDataURL(file);
 }
 function Career() {
-  // AGENT
-  // DEALERSHIP
-  // FEILDOFFICER
+
   return (
     <div className="bg-gray-100">
       <ContainerWrapper>

@@ -1,0 +1,755 @@
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  Page,
+  Text,
+  View,
+  Document,
+  StyleSheet,
+  Image,
+  PDFViewer,
+  PDFDownloadLink,
+} from "@react-pdf/renderer";
+import Modal from "../../../components/ui/modal";
+import Select from "../../../components/ui/select";
+import { BiIdCard, BiRupee } from "react-icons/bi";
+import { Button } from "../../../components/ui/table/paginationButtons";
+import ApiService from "../../../services/Api_services";
+import { toast } from "react-hot-toast";
+import { Formik } from "formik";
+import Badge, { enums } from "../../../components/ui/badge";
+import ConfirmationModal from "../../../components/confirmationModal";
+import Table from "../../../components/ui/table/Table";
+import {
+  generateApprovalInvoice,
+  generateWelcomeInvoice,
+  generateWelcomeLetter,
+} from "../../../schemas";
+import useFetch from "../../../hooks/useFetch";
+import Input from "../../../components/ui/input";
+import Loader from "../../../components/loader";
+import { GoCrossReference } from "react-icons/go";
+import { MdDescription, MdProductionQuantityLimits } from "react-icons/md";
+const PdfFile = ({ data }) => {
+  function calculateEMI(principal, interestRate, years) {
+    if (principal && interestRate && years) {
+      interestRate = interestRate / 100;
+      const monthlyInterestRate = interestRate / 12;
+      const totalMonths = years * 12;
+      const emi =
+        (principal * monthlyInterestRate) /
+        (1 - Math.pow(1 + monthlyInterestRate, -totalMonths));
+      const totalLoanAmount = emi * totalMonths;
+      return {
+        emi: Math.round(emi),
+        totalLoanAmount: totalLoanAmount,
+        totalMonths,
+      };
+    } else {
+      return null;
+    }
+  }
+  return (
+    <Document>
+      <Page
+        size="A4"
+        style={{
+          paddingBottom: 35,
+        }}
+      >
+        <View style={{}}>
+          <Image src={"/pdfBanner.png"} />
+        </View>
+        <View
+          style={{
+            padding: 40,
+            fontFamily: "Helvetica",
+            position: "relative",
+          }}
+        >
+          <Image
+            style={{
+              position: "absolute",
+              top: 160,
+              right: 40,
+              width: 500,
+              height: 200,
+              opacity: 0.1,
+              transform: "rotate(-45deg)",
+            }}
+            src={
+              "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
+            }
+          />
+          <Text
+            style={{
+              textAlign: "center",
+              color: "green",
+              fontSize: 12,
+              fontWeight: "light",
+            }}
+          >
+            Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
+            PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
+          </Text>
+          <Text
+            style={{
+              textAlign: "right",
+              color: "orange",
+              marginTop: 20,
+              fontSize: 15,
+              fontWeight: "light",
+            }}
+          >
+            Date : {data.createdAt.split("T")[0]}
+          </Text>
+          <Text
+            style={{
+              textAlign: "center",
+              color: "orange",
+              marginTop: 15,
+              fontSize: 30,
+              fontWeight: "light",
+            }}
+          >
+            Invoice
+          </Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 20,
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 6,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: "light",
+                }}
+              >
+                Invoice to :
+              </Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: "light",
+                }}
+              >
+                {data?.customer?.name}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: "light",
+                }}
+              >
+                {data?.customer?.email}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: "light",
+                }}
+              >
+                {data?.customer?.phone}
+              </Text>
+            </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 6,
+              }}
+            >
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  gap: 10,
+                  fontSize: 12,
+                }}
+              >
+                <Text>InvoiceId:</Text>
+                <Text>{data?.invoiceId}</Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  fontSize: 12,
+                }}
+              >
+                <Text>Pay mode:</Text>
+                <Text>{data?.paymentMethod}</Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  fontSize: 12,
+                }}
+              >
+                <Text>reference:</Text>
+                <Text>{data?.refence}</Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  fontSize: 12,
+                }}
+              >
+                <Text>date:</Text>
+                <Text> {data.createdAt.split("T")[0]}</Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={{
+              marginTop: 40,
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                gap: 20,
+                fontSize: 12,
+              }}
+            >
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Item Description
+              </Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Total
+              </Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Received
+              </Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Balance
+              </Text>
+            </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                gap: 20,
+                fontSize: 12,
+                marginTop: 20,
+              }}
+            >
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                {data?.desciption}
+              </Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Rs. {data?.total}
+              </Text>
+
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Rs. {data?.recived}
+              </Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Rs. {data?.total - data?.recived}
+              </Text>
+            </View>
+          </View>
+          <View
+            style={{
+              marginTop: 40,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              gap: 20,
+              fontSize: 12,
+            }}
+          >
+            <View>
+              <Text
+                style={{
+                  textAlign: "left",
+                }}
+              >
+                Dear {data?.customer?.name} processing fee
+              </Text>
+
+              <Text
+                style={{
+                  textAlign: "left",
+                  marginTop: 5,
+                }}
+              >
+                has been received.
+              </Text>
+            </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 6,
+              }}
+            >
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  fontSize: 12,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                  }}
+                >
+                  Total :
+                </Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                  }}
+                >
+                  Rs. {data?.total}
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  fontSize: 12,
+                  marginTop: 5,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                  }}
+                >
+                  Received:
+                </Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                  }}
+                >
+                  Rs. {data?.recived}
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  fontSize: 12,
+                  marginTop: 20,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                  }}
+                >
+                  Balance:
+                </Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                  }}
+                >
+                  Rs. {data?.total - data?.recived}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <Image
+            src={"/stamp.png"}
+            style={{
+              position: "absolute",
+              bottom: -120,
+              right: 60,
+              width: 100,
+              height: 100,
+            }}
+          />
+        </View>
+
+        {/* <Text
+          style={{
+            position: "absolute",
+            fontSize: 12,
+            bottom: 30,
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            color: "grey",
+          }}
+          render={({ pageNumber, totalPages }) =>
+            `${pageNumber} / ${totalPages}`
+          }
+        /> */}
+      </Page>
+    </Document>
+  );
+};
+const initialModalState = {
+  state: false,
+  edit_id: "",
+  data: {
+    desciption: "",
+    customerId: "",
+    total: "",
+    recived: "",
+    paymentMethod: "",
+    refence: "",
+  },
+};
+function ApprovalInvoice() {
+  const [modal, setModal] = useState(initialModalState);
+  const [agents, setDatas] = useState({
+    loading: true,
+    data: [],
+  });
+  const [confirmModal, setConfirmModal] = useState({
+    state: false,
+    id: null,
+  });
+  const [download, setDownload] = useState();
+  const customers = useFetch("api/customer");
+  function renderModal() {
+    const { state, edit_id, data } = modal;
+
+    return (
+      <Modal
+        title={"Generate Approval Invoice"}
+        open={state}
+        setOpen={() => setModal(initialModalState)}
+      >
+        <Formik
+          enableReinitialize={true}
+          validationSchema={generateApprovalInvoice}
+          initialValues={data}
+          onSubmit={async (values, action) => {
+            try {
+              const payload = {
+                ...values,
+                total: Number(values.total),
+                recived: Number(values.recived),
+                customerId: Number(values.customerId),
+              };
+              const res = await ApiService.fetchData({
+                url: `api/invoice`,
+                method: "POST",
+                data: payload,
+              });
+              if (res) toast.success(res.data.message);
+              setDatas((prev) => ({
+                ...prev,
+                data: [...prev.data, res.data.data],
+              }));
+              setModal(initialModalState);
+            } catch (error) {
+              toast.error(error.response.data.message);
+            } finally {
+              action.resetForm();
+              action.setSubmitting(false);
+            }
+          }}
+        >
+          {(f) => (
+            <form
+              onSubmit={f.handleSubmit}
+              className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
+            >
+              <Select
+                label={""}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                name={"customerId"}
+                value={f.values.customerId}
+                error={f.touched.customerId && f.errors.customerId}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
+              >
+                <option value={" "}>Select a Customer</option>
+                {customers.data.map((a) => (
+                  <option key={a.id} value={a.id}>
+                    {`${a.name} (${a.customerId})`}
+                  </option>
+                ))}
+              </Select>
+              <Select
+                label={""}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                name={"paymentMethod"}
+                value={f.values.paymentMethod}
+                error={f.touched.paymentMethod && f.errors.paymentMethod}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
+              >
+                <option value={" "}>Select a Payment Method</option>
+                <option value="ONLINE">ONLINE</option>
+                <option value="CASH">CASH</option>
+                <option value="CHECQUE">CHECQUE</option>
+                <option value="NETBANKING">NETBANKING</option>
+                <option value="UPI">UPI</option>
+              </Select>
+
+              <Input
+                name="recived"
+                type={"number"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.recived}
+                error={f.touched.recived && f.errors.recived}
+                icon={<BiRupee size={20} className="text-indigo-500" />}
+                label={""}
+                placeholder={"Received Amount"}
+              />
+              <Input
+                name="total"
+                type={"number"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.total}
+                error={f.touched.total && f.errors.total}
+                icon={<BiRupee size={20} className="text-indigo-500" />}
+                label={""}
+                placeholder={"Total Amount"}
+              />
+
+              <Input
+                name="refence"
+                type={"text"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.refence}
+                error={f.touched.refence && f.errors.refence}
+                icon={
+                  <GoCrossReference size={20} className="text-indigo-500" />
+                }
+                label={""}
+                placeholder={"Refrence"}
+              />
+              <Input
+                name="desciption"
+                type={"text"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.desciption}
+                error={f.touched.desciption && f.errors.desciption}
+                icon={<MdDescription size={20} className="text-indigo-500" />}
+                label={""}
+                placeholder={"description"}
+              />
+
+              <Button
+                loading={f.isSubmitting}
+                loadingText={"Generating..."}
+                disabled={f.isSubmitting}
+                size={"NORMAL"}
+                type={"submit"}
+              >
+                Generate
+              </Button>
+            </form>
+          )}
+        </Formik>
+      </Modal>
+    );
+  }
+
+  useEffect(() => {
+    FetchNews();
+  }, []);
+  async function FetchNews() {
+    try {
+      const res = await ApiService.fetchData({
+        url: `api/invoice`,
+        method: "GET",
+      });
+      setDatas((prev) => ({
+        ...prev,
+        loading: false,
+        data: res.data.data,
+      }));
+    } catch (error) {
+      toast.error(error.response.data.message);
+      setDatas((prev) => ({
+        ...prev,
+        loading: false,
+        data: [],
+      }));
+    }
+  }
+
+  const columns = () => [
+    {
+      Header: "invoice id",
+      accessor: (c) => c?.invoiceId,
+    },
+    {
+      Header: "Customer id",
+      accessor: (c) => c?.customer?.customerId,
+    },
+    {
+      Header: "Customer name",
+      accessor: (c) => c?.customer?.name,
+    },
+    {
+      Header: "total",
+      accessor: (c) => "Rs. " + c.total,
+    },
+
+    {
+      Header: "Action",
+      accessor: "action",
+      Cell: (cell) => (
+        <span className="flex items-center justify-start gap-4">
+          <Badge
+            onClick={() => {
+              setDownload(cell.row.index);
+            }}
+            type={enums.BLUE}
+          >
+            {download === cell.row.index ? (
+              <PDFDownloadLink
+                id="download"
+                document={
+                  <PdfFile
+                    data={
+                      agents.data.filter((a) => a?.recived !== null)[download]
+                    }
+                  />
+                }
+                fileName={`approval_invoice.pdf`}
+              >
+                {({ blob, url, loading, error }) =>
+                  loading ? "Generateing..." : "Print"
+                }
+              </PDFDownloadLink>
+            ) : (
+              "Generate"
+            )}
+          </Badge>
+          <Badge
+            onClick={() =>
+              setConfirmModal((prev) => ({
+                state: true,
+                id: Number(cell.row.original.id),
+              }))
+            }
+            type={enums.RED}
+          >
+            Remove
+          </Badge>
+        </span>
+      ),
+    },
+  ];
+
+  return agents.loading ? (
+    <Loader />
+  ) : (
+    <>
+      {renderModal()}
+      {/* <PDFViewer height={1000} width={400}>
+        <PdfFile data={agents.data[0]} />
+      </PDFViewer> */}
+      <ConfirmationModal
+        description="Do you really want to delete this Invoice?"
+        isDelete
+        open={confirmModal.state}
+        setOpen={() => {
+          setConfirmModal({
+            state: false,
+            id: null,
+          });
+        }}
+        onDelete={async () => {
+          const res = await ApiService.fetchData({
+            url: `api/invoice/${confirmModal.id}`,
+            method: "DELETE",
+          });
+          if (res) toast.success(res.data.message);
+          setDatas((prev) => ({
+            data: prev.data.filter((a) => a.id !== confirmModal.id),
+          }));
+          setConfirmModal((prev) => ({
+            state: false,
+            id: null,
+          }));
+        }}
+      />
+
+      <Table
+        btnText={"Generate Invoice"}
+        btnfunc={() =>
+          setModal((prev) => ({
+            state: true,
+            data: initialModalState.data,
+            edit_id: initialModalState.edit_id,
+          }))
+        }
+        title="Approval Invoice"
+        subtitle={"All generated Approval invoice"}
+        dataName={"Invoices"}
+        data={agents.data.filter((a) => a?.recived !== null)}
+        columns={columns()}
+      />
+    </>
+  );
+}
+
+export default ApprovalInvoice;

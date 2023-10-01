@@ -10,6 +10,7 @@ import {
   BiPhone,
   BiConversation,
   BiSolidBusiness,
+  BiRupee,
 } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineRequestPage, MdSchool } from "react-icons/md";
@@ -17,6 +18,7 @@ import { ImParagraphLeft } from "react-icons/im";
 import { LiaUsersCogSolid } from "react-icons/lia";
 import { GiFamilyHouse, GiHighGrass } from "react-icons/gi";
 import {
+  AiOutlineCalendar,
   AiOutlineHome,
   AiOutlineMail,
   AiOutlineSafety,
@@ -34,6 +36,9 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
+import calculateEMI from "../utils/calculator";
+import Select from "../components/ui/select";
+import HeadingWrapper from "../components/ui/heading Wrapper";
 const Homepage = () => {
   const services = [
     {
@@ -123,7 +128,7 @@ const Homepage = () => {
       </div>
       {/* <--------------------About Section------------------------------> */}
       <section className="flex mt-20 bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
-        <div className="flex flex-col self-start gap-4 ">
+        <div className="flex flex-col self-start gap-4 w-full md:w-96">
           <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
           <p className="mt-10 ">
@@ -147,9 +152,9 @@ const Homepage = () => {
         </div>
         <Image
           src={"/about.png"}
-          className={"md:aspect-auto h-96  object-cover rounded-3xl w-[300px]"}
+          className={"md:aspect-auto h-96  object-cover rounded-3xl"}
         />
-        <div className="flex flex-col h-full items-center gap-8 justify-between ">
+        <div className="flex flex-col h-full items-center gap-8 justify-between w-full md:w-96">
           <div className="flex gap-2 w-full">
             <img src="/time.png" alt="" className="w-20 h-20" />
             <span className="flex flex-col justify-between py-1">
@@ -202,54 +207,9 @@ const Homepage = () => {
         </div>
       </section>
       {/* <--------------------------About Section-----------------------------> */}
-      <div className="w-full bg-gray-100">
-        <ContainerWrapper>
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 py-20 md:py-15">
-            <div className=" h-[500px]">
-              <Image
-                className=" h-[500px] md:w-[500px]  md:aspect-auto object-cover rounded-md"
-                src={"/about.webp"}
-                alt="about-section"
-              />
-            </div>
 
-            <div className="flex flex-col text-left px-0 md:px-0 gap-6 ">
-              <span className="W-full text-2xl  text-left font-medium text-green-600 text-primary-500">
-                About Us
-              </span>
-              <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
-                Green Apple Financial Services PVT. LTD.
-              </h1>
-              <p className="text-gray-700 text-sm font-medium md:text-left ">
-                Green Apple Financial Services Private Limited is dealing in
-                Personal Loan, Loan against Property, Project Loan & Gold Loan.
-                We Believe in fair dealing and prompt disbursement of founds on
-                priority Basis.
-              </p>
-              <span className="text-gray-700 text-sm font-semibold md:text-left ">
-                Green Apple Financial Services Pvt Ltd is an organization that
-                motivates people to fulfill their dreams, which otherwise would
-                be difficult to achieve due to the inaccessibility to right
-                financial consulting and solutions.
-              </span>
-              <span className="text-gray-900 text-lg font-semibold md:text-left ">
-                We are registered Private Limited Company:
-              </span>
-              <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                IN CORPORATION NO: U69202HR2023PTC112412
-              </span>
-              <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                PAN NO: AAKCG5265C
-              </span>
-              <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                TAN NO: RTKG17932F
-              </span>
-            </div>
-          </section>
-        </ContainerWrapper>
-      </div>
       {/* <--------------------------Contact Section-----------------------------> */}
-      <div className="w-full bg-gray-100">
+      {/* <div className="w-full bg-gray-100">
         <ContainerWrapper>
           <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
             <div className="">
@@ -369,7 +329,215 @@ const Homepage = () => {
             </div>
           </section>
         </ContainerWrapper>
+      </div> */}
+      <div className="w-full my-10 ">
+        <h1 className="text-center text-2xl font-bold">
+          <span className="text-blue-800">Calculate EMI,</span> Send Your
+          Message
+        </h1>
       </div>
+      <section className="mb-10 grid grid-cols-1 md:grid-cols-3 bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
+        <div>
+          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-orange-700 w-full ">
+            <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
+              Loan EMI Calculator
+            </span>
+            <span className="text-sm px-6">
+              Enter loan amount and select year to Calculate EMI and check you
+              eligibility
+            </span>
+            <div className="w-full pt-4 rounded-b-md pb-8   flex flex-col gap-4 px-4 ">
+              <Formik
+                initialValues={{
+                  amount: "",
+                  years: "",
+                  intrestRate: 5,
+                }}
+              >
+                {(e) => (
+                  <>
+                    <Input
+                      label={"Enter Loan Amount"}
+                      type="number"
+                      value={e.values.amount}
+                      name="amount"
+                      onChange={e.handleChange}
+                      placeholder={"Enter Amount"}
+                      icon={<BiRupee className="text-indigo-600" />}
+                    />
+                    <Select
+                      icon={<AiOutlineCalendar className="text-indigo-600" />}
+                      label={"Select Loan Tenure"}
+                      value={e.values.years}
+                      onChange={e.handleChange}
+                      name="years"
+                    >
+                      <option value="null">Select a year</option>
+                      {Array.from({ length: 17 }, (_, index) => (
+                        <option key={index + 1} value={index + 1}>
+                          {index + 1} Year{index !== 0 ? "s" : ""}
+                        </option>
+                      ))}
+                    </Select>
+
+                    <p className="text-sm mt-8 font-medium text-center text-gray-700">
+                      You have to pay
+                      {calculateEMI(
+                        Number(e.values.amount),
+                        Number(e.values.intrestRate),
+                        Number(e.values.years)
+                      )?.emi && (
+                        <>
+                          <span className="text-green-600">
+                            {" "}
+                            Rs.{" "}
+                            {
+                              calculateEMI(
+                                Number(e.values.amount),
+                                Number(e.values.intrestRate),
+                                Number(e.values.years)
+                              )?.emi
+                            }
+                            <span className="text-gray-700">
+                              {" "}
+                              / Month at the interest Rate of{" "}
+                              <span className="text-green-600">
+                                5%
+                              </span> for{" "}
+                              <span className="text-indigo-600">
+                                {
+                                  calculateEMI(
+                                    Number(e.values.amount),
+                                    Number(e.values.intrestRate),
+                                    Number(e.values.years)
+                                  )?.totalMonths
+                                }
+                              </span>{" "}
+                              Months
+                            </span>
+                          </span>
+                        </>
+                      )}
+                    </p>
+                    <div className="flex items-start justify-center mt-4 w-full">
+                      <Link className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu">
+                        <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
+                          Apply Now
+                        </span>
+                      </Link>
+                    </div>
+                  </>
+                )}
+              </Formik>
+            </div>
+          </div>
+        </div>
+        <Image
+          src={"/contact.jpg"}
+          className={"md:aspect-auto   object-cover rounded-3xl"}
+        />
+        <div className=" flex flex-col text-left  px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-orange-700 w-full ">
+          <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
+            Contact Us
+          </span>
+          <span className="text-sm px-6">
+            have any Question, Feel free to ask your query
+          </span>
+          <Formik
+            validationSchema={sendMessageDto}
+            initialValues={{
+              name: "",
+              email: "",
+              phone: "",
+              message: "",
+            }}
+            onSubmit={async (values, action) => {
+              try {
+                const res = await axios.post(
+                  `${import.meta.env.VITE_BASE_URL}/api/message`,
+                  values
+                );
+                if (res) toast.success(res.data.message);
+              } catch (error) {
+                toast.error(error.response.data.message);
+              } finally {
+                action.resetForm();
+                action.setSubmitting(false);
+              }
+            }}
+          >
+            {(formik) => (
+              <form
+                onSubmit={formik.handleSubmit}
+                className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 "
+              >
+                <Input
+                  label={""}
+                  type={"text"}
+                  name="name"
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.touched.name && formik.errors.name}
+                  placeholder={"Name"}
+                  icon={<BiUser className="text-indigo-600" />}
+                />
+                <Input
+                  label={""}
+                  type={"email"}
+                  name="email"
+                  value={formik.values.email}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  error={formik.touched.email && formik.errors.email}
+                  placeholder={"Email"}
+                  icon={<AiOutlineMail className="text-indigo-600" />}
+                />
+                <Input
+                  label={""}
+                  type={"text"}
+                  name="phone"
+                  value={formik.values.phone}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  error={formik.touched.phone && formik.errors.phone}
+                  placeholder={"Phone"}
+                  icon={<BiPhone className="text-indigo-600" />}
+                />
+                <TextArea
+                  row={5}
+                  name="message"
+                  label={""}
+                  value={formik.values.message}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  error={formik.touched.message && formik.errors.message}
+                  placeholder={"Your Message"}
+                  icon={<BiPhone className="text-indigo-600" />}
+                />
+                {/* <Button
+                  loadingText={"sending..."}
+                  loading={formik.isSubmitting}
+                  disabled={formik.isSubmitting}
+                  type={"submit"}
+                  size={"FULL"}
+                >
+                  Send Message
+                </Button> */}
+                <button
+                  type={"submit"}
+                  disabled={formik.isSubmitting}
+                  className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu"
+                >
+                  <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
+                    {formik.isSubmitting ? "Sending..." : "Send Message"}
+                  </span>
+                </button>
+              </form>
+            )}
+          </Formik>
+        </div>
+      </section>
     </div>
   );
 };

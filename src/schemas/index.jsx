@@ -89,6 +89,25 @@ export const addNewsDto = Yup.object({
   text: Yup.string().required("Please enter your News."),
   lane: Yup.string().oneOf(["FIRST", "SECOND"]).required("Select a lane."),
 });
+export const generateWelcomeLetter = Yup.object({
+  customerId: Yup.string().required("Please Select the customer."),
+  employeeId: Yup.string().required("Select a Agent."),
+  charge: Yup.string().required("Please enter your file charge."),
+});
+export const generateWelcomeLetterManual = Yup.object({
+  employeeId: Yup.string().required("Select an Agent."),
+  charge: Yup.string().required("Please enter the file charge."),
+  name: Yup.string().required("Please enter the name."),
+  guardian_relation: Yup.string().required(
+    "Please enter the guardian's relation."
+  ),
+  guardian_name: Yup.string().required("Please enter the guardian's name."),
+  phone: Yup.string().required("Please enter the phone number."),
+  loanInNumber: Yup.number().required(
+    "Please enter the loan amount in numbers."
+  ),
+  loanYear: Yup.number().required("Please enter the loan year."),
+});
 const today = new Date();
 
 export const customerSchema = Yup.object().shape({
@@ -144,7 +163,7 @@ export const customerSchema = Yup.object().shape({
   AdharCard: Yup.mixed()
     .test(
       "fileType",
-      "Invalid file format. Only accept PDF files.",
+      "Invalid file format. Only accept PDF/jpg/png files.",
       (value) => {
         if (!value) return true;
         return [
@@ -176,7 +195,7 @@ export const customerSchema = Yup.object().shape({
   proofDoc: Yup.mixed()
     .test(
       "fileType",
-      "Invalid file format. Only accept PDF files.",
+      "Invalid file format. Only accept PDF/jpg/png files.",
       (value) => {
         if (!value) return true;
         return [
@@ -199,7 +218,7 @@ export const customerSchema = Yup.object().shape({
   panCard: Yup.mixed()
     .test(
       "fileType",
-      "Invalid file format. Only accept PDF files.",
+      "Invalid file format. Only accept PDF/jpg/png files.",
       (value) => {
         if (!value) return true;
         return [
@@ -207,7 +226,6 @@ export const customerSchema = Yup.object().shape({
           "image/jpg",
           "image/png",
           "application/pdf",
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         ].includes(value.type);
       }
     )
@@ -220,4 +238,305 @@ export const customerSchema = Yup.object().shape({
       }
     )
     .required("Please Upload Your Pan Card"),
+});
+export const generateIcard = Yup.object({
+  employeeId: Yup.string().required("Select a Agent."),
+  location: Yup.string().required("Please enter the location."),
+  profilepic: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept png / Jpeg / jpg files.",
+      (value) => {
+        if (!value) return true;
+        return ["image/jpeg", "image/jpg", "image/png"].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .required("Photo is required"),
+});
+export const generateAppointmentLetter = Yup.object({
+  employeeId: Yup.string().required("Select an Agent."),
+  location: Yup.string().required("Please enter the location."),
+  address: Yup.string().required("Please enter the address."),
+  salary: Yup.string().required("Please enter the salary."),
+  agentName: Yup.string().optional("Please enter Agent Name."),
+  agentNumber: Yup.string().optional("Please enter Agent Number."),
+  targetOne: Yup.string()
+    .test(
+      "targetValidation",
+      "Target One must be equal to or less than Target Two",
+      function (value) {
+        const targetTwo = this.parent.targetTwo;
+        if (!value || !targetTwo) {
+          return true; // If either value is not provided, let other validations handle it
+        }
+        return parseInt(value) <= parseInt(targetTwo);
+      }
+    )
+    .required("Please enter Target One."),
+  targetTwo: Yup.string()
+    .test(
+      "targetValidation",
+      "Target Two must be greater than or equal to Target One",
+      function (value) {
+        const targetOne = this.parent.targetOne;
+        if (!value || !targetOne) {
+          return true; // If either value is not provided, let other validations handle it
+        }
+        return parseInt(value) >= parseInt(targetOne);
+      }
+    )
+    .required("Please enter Target Two."),
+  photo: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept png / jpeg / jpg files.",
+      (value) => {
+        if (!value) return true;
+        return ["image/jpeg", "image/jpg", "image/png"].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .required("Photo is required"),
+});
+export const generateApprovalLetter = Yup.object({
+  customerId: Yup.string().required("Select an Customer."),
+  permanentAddress: Yup.string().required(
+    "Please enter the Permanent Address."
+  ),
+  address: Yup.string().required("Please enter the Postal Address."),
+  processingCharge: Yup.string().required(
+    "Please enter the processing charge."
+  ),
+  photo: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept png / jpeg / jpg files.",
+      (value) => {
+        if (!value) return true;
+        return ["image/jpeg", "image/jpg", "image/png"].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .optional("Photo is required"),
+});
+export const generateWelcomeInvoice = Yup.object({
+  customerId: Yup.string().required("Please Select the customer."),
+  paymentMethod: Yup.string().required("Please Select the payment mode."),
+  refence: Yup.string()
+    .required("Please add the reference.")
+    .matches(/^[^0-9]*$/, "Numeric values are not allowed."),
+  desciption: Yup.string()
+    .required("Please add the description.")
+    .matches(/^[^0-9]*$/, "Numeric values are not allowed."),
+  total: Yup.string()
+    .required("Please enter the total charge.")
+    .matches(/^[0-9]+$/, "Only numeric values are allowed."),
+  price: Yup.string()
+    .required("Please enter the price.")
+    .matches(/^[0-9]+$/, "Only numeric values are allowed."),
+  qty: Yup.string()
+    .required("Please enter the quantity.")
+    .matches(/^[0-9]+$/, "Only numeric values are allowed."),
+});
+export const generateApprovalInvoice = Yup.object({
+  customerId: Yup.string().required("Please Select the customer."),
+  paymentMethod: Yup.string().required("Please Select the payment mode."),
+  refence: Yup.string()
+    .required("Please add the reference.")
+    .matches(/^[^0-9]*$/, "Numeric values are not allowed."),
+  desciption: Yup.string()
+    .required("Please add the description.")
+    .matches(/^[^0-9]*$/, "Numeric values are not allowed."),
+  total: Yup.string()
+    .required("Please enter the total Amount.")
+    .matches(/^[0-9]+$/, "Only numeric values are allowed."),
+  recived: Yup.string()
+    .required("Please enter the received Amount.")
+    .matches(/^[0-9]+$/, "Only numeric values are allowed."),
+});
+
+export const JointSchema = Yup.object().shape({
+  title: Yup.string().required("Title is required"),
+  firstName: Yup.string().required("First name is required"),
+  LastName: Yup.string().required("Last name is required"),
+  Email: Yup.string().email("Invalid email").required("Email is required"),
+  Phone: Yup.string().required("Phone number is required"),
+  city: Yup.string().required("City is required"),
+  designation: Yup.string().required("Designation is required"),
+  photo: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept png / Jpeg / jpg files.",
+      (value) => {
+        if (!value) return true;
+        return ["image/jpeg", "image/jpg", "image/png"].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .required("Photo is required"),
+  address: Yup.string().required("Address is required"),
+  file_charge: Yup.string().required("File charge is required"),
+  loan_amount: Yup.string().required("Loan amount is required"),
+  processing_fee: Yup.string().required("Processing fee is required"),
+  add_charge: Yup.string().required("Additional charge is required"),
+  service_tax: Yup.string().required("Service tax is required"),
+});
+export const UpdatecustomerSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  guardian_relation: Yup.string().required("Guardian relation is required"),
+  guardian_name: Yup.string().required("Guardian name is required"),
+  phone: Yup.string()
+    .min(10, "Phone number must be at least 10 characters")
+    .max(10, "Phone number must be of maximum 10 characters")
+    .required("Phone number is required"),
+  dob: Yup.date()
+    .max(today, "Date of birth cannot be in the future")
+    .required("Date of birth is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  loanInNumber: Yup.number().integer().required("Loan amount is required"),
+  loanYear: Yup.number().integer().required("Loan year is required"),
+  address: Yup.string().required("Address is required"),
+  district: Yup.string().required("District is required"),
+  State: Yup.string().required("State is required"),
+  password: Yup.string().optional("Password"),
+  pinCode: Yup.string()
+    .min(6, "Pincode must be at least 6 characters")
+    .max(6, "Pincode number must be of maximum 6 characters")
+    .required("PIN code is required"),
+  agentId: Yup.string().required("Please Select a Agent"),
+  bank: Yup.string().required("Bank name is required"),
+  AccountNumber: Yup.string()
+    .required("Account number is required")
+    .min(6, "Account number must be at least 6 characters")
+    .max(20, "Account number can't exceed 20 characters"),
+  ifsc: Yup.string()
+    .required("IFSC code is required")
+    .min(11, "IFSC code must be 11 characters")
+    .max(11, "IFSC code can't exceed 11 characters"),
+  accountType: Yup.string().required("Account type is required"),
+  photo: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept png / Jpeg / jpg files.",
+      (value) => {
+        if (!value) return true;
+        return ["image/jpeg", "image/jpg", "image/png"].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .nullable(),
+  AdharCard: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept PDF/jpg/png files.",
+      (value) => {
+        if (!value) return true;
+        return [
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
+          "application/pdf",
+        ].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .nullable(),
+  adharNumber: Yup.string()
+    .min(12, "Adhar number must be 12 digits")
+    .max(12, "Adhar number must be 12 digits")
+    .required("Adhar number is required"),
+  panNumber: Yup.string()
+    .required("Adhar number is required")
+    .min(10, "PAN number must be at least 10 characters")
+    .max(10, "PAN number can't exceed 10 characters"),
+  bankProof: Yup.string().required("Bank proof is required"),
+  proofDoc: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept PDF/jpg/png files.",
+      (value) => {
+        if (!value) return true;
+        return [
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
+          "application/pdf",
+        ].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .nullable(),
+  panCard: Yup.mixed()
+    .test(
+      "fileType",
+      "Invalid file format. Only accept PDF/jpg/png files.",
+      (value) => {
+        if (!value) return true;
+        return [
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
+          "application/pdf",
+        ].includes(value.type);
+      }
+    )
+    .test(
+      "fileSize",
+      "File size is too large. Maximum size allowed is 2MB.",
+      (value) => {
+        if (!value) return true;
+        return value.size <= 2 * 1024 * 1024;
+      }
+    )
+    .nullable(),
 });

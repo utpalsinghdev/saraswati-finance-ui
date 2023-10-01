@@ -14,6 +14,7 @@ import { NewspaperIcon } from "@heroicons/react/24/outline";
 import { Link2Icon } from "lucide-react";
 import { addNewsDto } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
+import Loader from "../../../components/loader";
 
 const initialModalState = {
   state: false,
@@ -194,11 +195,13 @@ function News() {
             Delete
           </Badge>
         </span>
-      ), 
+      ),
     },
   ];
 
-  return (
+  return news.loading ? (
+    <Loader />
+  ) : (
     <>
       {renderModal()}
       <ConfirmationModal

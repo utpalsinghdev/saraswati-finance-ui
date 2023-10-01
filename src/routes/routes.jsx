@@ -29,10 +29,27 @@ import CarrerApplications from "../pages/dashboard/careerApplication";
 import Agents from "../pages/dashboard/agents";
 import LoanApplication from "../pages/dashboard/loanApplication";
 import Cutomers from "../pages/dashboard/Customer";
+import AgentLogin from "../pages/Auth/AgentLogin";
+import HomeAgent from "../pages/agent/home";
+import WelcomeLetter from "../pages/dashboard/welcomeLetter";
+import Icard from "../pages/dashboard/icard";
+import Appointment from "../pages/dashboard/salaryAppointment";
+import ApprovalLetter from "../pages/dashboard/approvalLetter";
+import WelcomeInvoice from "../pages/dashboard/welcomeInvoice";
+import ApprovalInvoice from "../pages/dashboard/approvalInvoice";
+import AgentLogs from "../pages/agent/agents";
+import AgentWelcome from "../pages/agent/welcomeLetters";
+import ApprovalLetteragemt from "../pages/agent/approval";
+import ApprovalCustomers from "../pages/agent/customers";
+import JointPercent from "../pages/dashboard/jointpercent";
+import Customerlogin from "../pages/Auth/Customerlogin";
+import CustomerHome from "../pages/dashboard/customerHome";
 const USER_ROLES = {
   ADMIN: "ADMIN",
-  DOCTOR: "DOCTOR",
-  CLINICAL_ASSISTANT: "CLINICAL_ASSISTANT",
+  AGENT: "AGENT",
+  FEILDOFFICER: "FEILDOFFICER",
+  DEALERSHIP: "DEALERSHIP",
+  CUSTOMER: "CUSTOMER",
   RECEPTION_MANAGER: "RECEPTION_MANAGER",
   CLINICAL_ADMIN: "CLINICAL_ADMIN",
   PLAN_MAKER: "PLAN_MAKER",
@@ -94,6 +111,16 @@ const Authro = [
     Auth: ["ADMIN"],
     comp: <AdminLogin />,
   },
+  {
+    link: "/agent/login/",
+    Auth: ["AGENT", "DEALERSHIP", "FEILDOFFICER"],
+    comp: <AgentLogin />,
+  },
+  {
+    link: "/c/login",
+    Auth: ["ADMIN"],
+    comp: <Customerlogin />,
+  },
 ];
 
 function RoutesConfig() {
@@ -107,29 +134,67 @@ function RoutesConfig() {
           ))}
           <Route path="*" element={<NotFound />} />
         </Route>
-        {Cookie.get("gafs_user")
-          ? Authro.filter(
-              (a) =>
-                !a.Auth.includes(
-                  JSON?.parse(Cookie?.get("gafs_user")).user.role
-                )
-            ).map((r, idx) => (
-              <Route key={idx} path={r.link} element={r.comp} />
-            ))
-          : Authro.map((r, idx) => (
-              <Route key={idx} path={r.link} element={r.comp} />
-            ))}
+        {Authro.map((r, idx) => (
+          <Route key={idx} path={r.link} element={r.comp} />
+        ))}
         <Route element={<ProtectedRoute />}>
           <Route element={<AccessControl allowedRoles={[USER_ROLES.ADMIN]} />}>
             <Route path="/admin/dashboard/" element={<DashboardHome />} />
+            <Route path="/admin/welcome-letter/" element={<WelcomeLetter />} />
+            <Route
+              path="/admin/welcome-invoice/"
+              element={<WelcomeInvoice />}
+            />
+            <Route
+              path="/admin/approval-invoice/"
+              element={<ApprovalInvoice />}
+            />
+            <Route
+              path="/admin/approval-letter/"
+              element={<ApprovalLetter />}
+            />
+            <Route
+              path="/admin/joint-percent-letter/"
+              element={<JointPercent />}
+            />
+            <Route path="/admin/i-card/" element={<Icard />} />
+            <Route
+              path="/admin/appointment-letter/"
+              element={<Appointment />}
+            />
             <Route path="/admin/news/" element={<News />} />
             <Route
               path="/admin/job-applications/"
               element={<CarrerApplications />}
             />
             <Route path="/admin/agents/" element={<Agents />} />
-            <Route path="/admin/loan-applications/" element={<LoanApplication />} />
+            <Route
+              path="/admin/loan-applications/"
+              element={<LoanApplication />}
+            />
             <Route path="/admin/customers/" element={<Cutomers />} />
+          </Route>
+          <Route
+            element={
+              <AccessControl
+                allowedRoles={[
+                  USER_ROLES.AGENT,
+                  USER_ROLES.FEILDOFFICER,
+                  USER_ROLES.DEALERSHIP,
+                ]}
+              />
+            }
+          >
+            <Route path="/agent/home/" element={<HomeAgent />} />
+            <Route path="/agent/agents/" element={<AgentLogs />} />
+            <Route path="/agent/welcome/" element={<AgentWelcome />} />
+            <Route path="/agent/approval/" element={<ApprovalLetteragemt />} />
+            <Route path="/agent/customer/" element={<ApprovalCustomers />} />
+          </Route>
+          <Route
+            element={<AccessControl allowedRoles={[USER_ROLES.CUSTOMER]} />}
+          >
+            <Route path="/home" element={<CustomerHome />} />
           </Route>
         </Route>
       </Routes>
