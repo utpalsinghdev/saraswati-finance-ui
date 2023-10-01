@@ -45,6 +45,15 @@
     transform: translateY(-4px);
 }
 
+.upper {
+    border: none;
+    outline-offset: 4px;
+}
+
+.lower {
+    transform: translateY(-4px);
+}
+
 .pushable:active .front {
     transform: translateY(-1px);
 }

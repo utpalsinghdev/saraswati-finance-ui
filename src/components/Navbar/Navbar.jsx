@@ -38,28 +38,14 @@ const Navbar = () => {
   ];
   return (
     <div className="container w-full md:w-[90%] mx-auto">
-      {/* <div className="items-center justify-between px-2 flex">
-        <span className="block md:hidden flex flex-col items-center text-sm text-gray-800 gap-2 font-bold">
-          <span className="flex items-center gap-2 ">
-            <Phone className="w-4 text-green-600" />{" "}
-            <a href="tel:9540542272" target="_blank" rel="noreferrer">
-              9540542272
-            </a>
-          </span>
-          <span className="flex items-center gap-2 ">
-            <Phone className="w-4 text-green-600" />{" "}
-            <a href="tel:9540542271" target="_blank" rel="noreferrer">
-              9540542271
-            </a>
-          </span>
-        </span>
-      </div> */}
       <div className="relative  md:mt-6 pb-4  bg-blue-800 md:bg-white  md:px-0 transition duration-300">
         <nav className="relative flex items-center justify-start md:justify-between">
-          <img
-            src="/logo.png"
-            className="hidden md:block absolute w-28 md:w-20  -top-8 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
-          />
+          <Link to="/">
+            <img
+              src="/logo_full.png"
+              className="hidden md:block absolute w-28 md:w-56  -top-5 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
+            />
+          </Link>
           <div className="hidden md:flex items-center justify-end w-full  gap-4">
             <div className=" flex items-center  justify-between gap-4 font-normal ">
               {links.map((link, idx) => (
@@ -83,13 +69,13 @@ const Navbar = () => {
             className="md:hidden mt-4 cursor-pointer w-6 h-6 ml-1"
           />
           <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-between gap-4 text-md">
-            <p className="text-xl text-orange-500 font-serif">
-              Vandham Finace Pvt. Ltd.
-            </p>
             <img
               src="/logo_without_name.png"
               className=" block md:hidden  w-16   cursor-pointer mr-1"
             />
+            <p className="text-2xl text-orange-500 font-bold">
+              Vandhnam Finance Pvt. Ltd.
+            </p>
           </span>
         </nav>
         <div
