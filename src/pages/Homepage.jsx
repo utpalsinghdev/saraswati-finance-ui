@@ -118,8 +118,8 @@ const Homepage = () => {
               <Ticker
                 messages={
                   !news.loading
-                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Green Apple Financial Services Pvt. Ltd."]
+                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                    : ["Vandhnam Finance Pvt. Ltd."]
                 }
               />
             </span>
