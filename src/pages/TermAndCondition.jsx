@@ -11,13 +11,13 @@ const TermAndCondition = () => {
       <ContainerWrapper>
         <HeadingWrapper
           heading={"Terms & Conditions"}
-          title={"Green Apple Financial Services Private Limited."}
+          title={"VANDHNAM FINANCE PVT. LTD."}
         >
           <div className="px-4 mt-4  pb-8 flex flex-col gap-8 ">
             <p className="text-gray-600 text-sm font-medium h-full w-full flex items-center justify-start gap-4">
               <ChevronLeft className="text-green-600 w-4 h-4 rotate-180" />{" "}
               <span className="w-[95%]">
-              Personal/Educational loans are offered up to 50 Lakhs.
+                Personal/Educational loans are offered up to 50 Lakhs.
               </span>
             </p>
 

@@ -16,6 +16,7 @@ import ConfirmationModal from "../../../components/confirmationModal";
 import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/loader";
+import moment from "moment";
 
 const initialModalState = {
   state: false,
@@ -310,6 +311,11 @@ function CarrerApplications() {
         ) : (
           "N/A"
         ),
+    },
+    {
+      Header: "Applied at",
+      accessor: (e) =>
+        e.createdAt ? moment(e.createdAt).format("DD/MM/YYYY") : "N/A",
     },
     {
       Header: "Action",

@@ -470,7 +470,7 @@ function CustomerHome() {
                   fontFamily: "Roboto",
                 }}
               >
-                GREEN APPLE FINANCIAL PRIVATE LIMITED
+                VANDHNAM FINANCE PVT. LTD.
               </Text>
             </Text>
             <Text
@@ -624,7 +624,7 @@ function CustomerHome() {
     );
   };
   const PdfApprovalFile = ({ data }) => {
-    const company = "GREEN APPLE FINANCIAL SERVICES PVT. LTD.";
+    const company = "VANDHNAM FINANCE PVT. LTD.";
     return (
       <Document>
         <Page size="A4" style={{}}>
@@ -749,7 +749,7 @@ function CustomerHome() {
                       width: 300,
                     }}
                   >
-                    Account of LOAN from GREEN APPLE FINNANCIAL SERVICES
+                    Account of LOAN from {company}
                   </Text>
                 </View>
                 <View
@@ -1448,7 +1448,7 @@ function CustomerHome() {
                       fontFamily: "Roboto",
                     }}
                   >
-                    GREEN APPLE FINANCIAL SERVICES PVT. LTD.
+                    {company}
                   </Text>
                 </Text>
                 for issuing advisory report and to meet other expenses, along
@@ -1841,7 +1841,7 @@ function CustomerHome() {
                     fontFamily: "Roboto",
                   }}
                 >
-                  Important Notice of GREEN APPLE FINANCIAL SERVICES PVT.LTD.
+                  Important Notice of {company}
                 </Text>
                 <Text style={{ fontSize: 12, marginTop: "6" }}>
                   1. Applicant should not deposit money in any of these

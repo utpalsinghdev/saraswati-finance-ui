@@ -41,7 +41,7 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const company_name = "GREEN APPLE FINANCIAL SERVICES PVT. LTD.";
+const company_name = "VANDHNAM FINANCE PVT. LTD.";
 const PdfFile = ({ data }) => {
   return (
     <Document>

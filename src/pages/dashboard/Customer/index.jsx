@@ -798,6 +798,11 @@ function Cutomers() {
           : "N/A",
     },
     {
+      Header: "Applied On",
+      accessor: (e) =>
+        e.createdAt ? moment(e.createdAt).format("DD/MM/YYYY") : "N/A",
+    },
+    {
       Header: "Action",
       accessor: "action",
       Cell: (cell) => (

@@ -12,14 +12,13 @@ import { Formik } from "formik";
 import LinkButton from "../components/ui/link";
 import calculateEMI from "../utils/calculator";
 function Calculator() {
- 
   return (
     <div className="bg-gray-100">
       <CarouselBanner />
       <ContainerWrapper>
         <HeadingWrapper
           heading="Loan Calculator"
-          title="Green Apple Financial Services Private Limited."
+          title="Vandhnam Finance Private Limited."
         >
           <div className="px-0 md:px-16 grid grid-cols-1 gap-4 md:grid-cols-2 mt-4 md:mt-8">
             <Image

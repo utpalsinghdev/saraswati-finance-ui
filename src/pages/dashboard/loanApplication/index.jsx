@@ -393,7 +393,11 @@ function LoanApplication() {
         a.agent.employeeCode +
         ")",
     },
-
+    {
+      Header: "Applied On",
+      accessor: (e) =>
+        e.createdAt ? moment(e.createdAt).format("DD/MM/YYYY") : "N/A",
+    },
     {
       Header: "Action",
       accessor: "action",

@@ -37,7 +37,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "GREEN APPLE FINANCIAL SERVICES PVT. LTD.";
+  const company = "VANDHNAM FINANCE PVT. LTD.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -162,7 +162,7 @@ const PdfFile = ({ data }) => {
                     width: 300,
                   }}
                 >
-                  Account of LOAN from GREEN APPLE FINNANCIAL SERVICES
+                  Account of LOAN from {company}
                 </Text>
               </View>
               <View
@@ -861,7 +861,7 @@ const PdfFile = ({ data }) => {
                     fontFamily: "Roboto",
                   }}
                 >
-                  GREEN APPLE FINANCIAL SERVICES PVT. LTD.
+                  {company}
                 </Text>
               </Text>
               for issuing advisory report and to meet other expenses, along with
@@ -1249,7 +1249,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                Important Notice of GREEN APPLE FINANCIAL SERVICES PVT.LTD.
+                Important Notice of {company}
               </Text>
               <Text style={{ fontSize: 12, marginTop: "6" }}>
                 1. Applicant should not deposit money in any of these following

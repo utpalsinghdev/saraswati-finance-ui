@@ -76,7 +76,6 @@ const PdfFile = ({ data }) => {
           style={{
             paddingHorizontal: 30,
             paddingBottom: 30,
-
             fontFamily: "Helvetica",
             position: "relative",
           }}
@@ -91,9 +90,7 @@ const PdfFile = ({ data }) => {
               opacity: 0.1,
               transform: "rotate(-45deg)",
             }}
-            src={
-              "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-            }
+            src={"/logo_full.png"}
           />
           <Text
             style={{
@@ -319,7 +316,7 @@ const PdfFile = ({ data }) => {
               We are pleased to appoint you in our organization as &quot;SALES
               EXECUTIVE&quot;, Grade:
               <Text style={{ fontSize: 12, fontFamily: "Roboto" }}>
-                GREEN APPLE FINANCIAL SERVICES PVT.LTD
+                VANDHNAM FINANCE PVT.LTD
               </Text>{" "}
               .,w.e.f. {moment(data.createdAt).format("DD/MM/YYYY")} on the
               following terms &conditions:
@@ -486,9 +483,7 @@ const PdfFile = ({ data }) => {
                 opacity: 0.1,
                 transform: "rotate(-45deg)",
               }}
-              src={
-                "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-              }
+              src={"/logo_full.png"}
             />
             <View
               style={{
@@ -626,9 +621,7 @@ const PdfFile = ({ data }) => {
                     opacity: 0.1,
                     transform: "rotate(-45deg)",
                   }}
-                  src={
-                    "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-                  }
+                  src={"/logo_full.png"}
                 />
               </View>
               <Text style={{ fontSize: 13, marginTop: "8" }}>
@@ -772,9 +765,7 @@ const PdfFile = ({ data }) => {
                     opacity: 0.1,
                     transform: "rotate(-45deg)",
                   }}
-                  src={
-                    "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-                  }
+                  src={"/logo_full.png"}
                 />
               </View>
               <Text style={{ fontSize: 13, marginTop: "8" }}>
@@ -797,7 +788,7 @@ const PdfFile = ({ data }) => {
                 Any change in your status of residential address should be
                 notified in writing to the company. We welcome you to
                 <Text style={{ fontSize: 14, fontFamily: "Roboto" }}>
-                  GREEN APPLE FINANCIAL SERVICES PVT. LTD.
+                  VANDHNAM FINANCE PVT. LTD.
                 </Text>{" "}
                 and look forward to having a long and mutually beneficial
                 association with you.

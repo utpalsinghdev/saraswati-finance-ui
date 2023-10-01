@@ -437,7 +437,7 @@ const PdfFile = ({ data }) => {
                 fontFamily: "Roboto",
               }}
             >
-              GREEN APPLE FINANCIAL PRIVATE LIMITED
+              VANDHNAM FINANCE PVT. LTD.
             </Text>
           </Text>
           <Text
@@ -497,7 +497,7 @@ const PdfFile = ({ data }) => {
                 fontFamily: "Roboto",
               }}
             >
-              info@greenapplefinancial.com
+              info@vandhnamservices.com
             </Text>
           </Text>
           <Text
