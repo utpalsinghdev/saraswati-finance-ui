@@ -54,6 +54,6 @@
     transform: translateY(-4px);
 }
 
-.pushable:active .front {
+.pushable:enabled:active .front {
     transform: translateY(-1px);
 }

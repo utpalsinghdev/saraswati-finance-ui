@@ -30,7 +30,7 @@ export default function AdminLogin() {
           <div>
             <img
               className="mx-auto h-16 w-auto"
-              src="https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
+              src="/logo_full.png"
               alt="Your Company"
             />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

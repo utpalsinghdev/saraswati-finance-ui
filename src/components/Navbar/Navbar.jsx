@@ -28,12 +28,20 @@ const Navbar = () => {
       link: "/services/loan",
     },
     {
-      name: "FAQs",
-      link: "/faqs",
+      name: "Career",
+      link: "/Career",
     },
     {
       name: "Contact Us",
       link: "/contact-us",
+    },
+    {
+      name: "Apply Now",
+      link: "/apply-loan",
+    },
+    {
+      name: "Login",
+      link: "/c/login",
     },
   ];
   return (
