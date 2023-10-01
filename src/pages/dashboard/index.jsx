@@ -218,11 +218,11 @@ export default function DashboardLayout({ children }) {
                     </div>
                   </Transition.Child>
                   {/* Sidebar component, swap this element with another sidebar if you like */}
-                  <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
+                  <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-blue-900 px-6 pb-4">
                     <div className="flex h-16 shrink-0 items-center">
                       <img
-                        className="h-8 w-auto"
-                        src="https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
+                        className="h-20 w-auto"
+                        src="/logo.png"
                         alt="Your Company"
                       />
                     </div>
@@ -243,8 +243,8 @@ export default function DashboardLayout({ children }) {
                                     to={item.href}
                                     className={classNames(
                                       isActive(item.href)
-                                        ? "bg-indigo-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                        ? "bg-orange-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-orange-600",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -282,8 +282,8 @@ export default function DashboardLayout({ children }) {
                                     to={team.href}
                                     className={classNames(
                                       isActive(team.href)
-                                        ? "bg-indigo-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                        ? "bg-orange-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-orange-600",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -317,8 +317,8 @@ export default function DashboardLayout({ children }) {
                                     to={team.href}
                                     className={classNames(
                                       isActive(team.href)
-                                        ? "bg-indigo-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                        ? "bg-orange-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-orange-600",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -354,12 +354,12 @@ export default function DashboardLayout({ children }) {
         {/* Static sidebar for desktop */}
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-blue-900 px-6 pb-4">
             <div className="flex h-16 mt-2 shrink-0 items-center justify-center">
               <img
-                className="h-16 w-auto ml"
+                className="h-20 w-auto ml"
                 draggable="false"
-                src="https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
+                src="/logo.png"
                 alt="Your Company"
               />
             </div>
@@ -375,8 +375,8 @@ export default function DashboardLayout({ children }) {
                             to={item.href}
                             className={classNames(
                               isActive(item.href)
-                                ? "bg-indigo-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                ? "bg-orange-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-orange-600",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >
@@ -411,8 +411,8 @@ export default function DashboardLayout({ children }) {
                             to={team.href}
                             className={classNames(
                               isActive(team.href)
-                                ? "bg-indigo-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                ? "bg-orange-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-orange-600",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >
@@ -444,8 +444,8 @@ export default function DashboardLayout({ children }) {
                             to={team.href}
                             className={classNames(
                               isActive(team.href)
-                                ? "bg-indigo-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                ? "bg-orange-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-orange-600",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >

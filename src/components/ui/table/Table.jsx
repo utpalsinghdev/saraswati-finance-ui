@@ -126,7 +126,8 @@ function Table({
 
   // Render the UI for your table
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobiled, setIsMobile] = useState(false);
+  const isMobile = true;
 
   useEffect(() => {
     const handleResize = () => {
