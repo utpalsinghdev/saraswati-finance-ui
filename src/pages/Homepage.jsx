@@ -121,7 +121,73 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-
+      {/* <--------------------About Section------------------------------> */}
+      <section className="flex mt-20 bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
+        <div className="flex flex-col self-start gap-4 ">
+          <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
+          <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
+          <p className="mt-10 ">
+            Vandham Finance Services Pvt. Ltd. is dealing in Home Loan, Personal
+            Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
+            Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
+            Loans, Loan Against Property & Project Etc.
+          </p>
+          <div className="flex md:mt-10 mt-1 items-center gap-4">
+            <button className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu">
+              <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
+                Contact
+              </span>
+            </button>
+            <button className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  ">
+              <span className="front bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold">
+                Apply
+              </span>
+            </button>
+          </div>
+        </div>
+        <Image
+          src={"/about.png"}
+          className={"md:aspect-auto h-96  object-cover rounded-3xl w-[300px]"}
+        />
+        <div className="flex flex-col h-full items-center gap-8 justify-between ">
+          <div className="flex gap-2 w-full">
+            <img src="/time.png" alt="" className="w-20 h-20" />
+            <span className="flex flex-col justify-between py-1">
+              <h2 className="font-semibold text-lg text-blue-800">
+                24/7 Unlimited Support
+              </h2>
+              <h4 className="text-gray-700 font-medium">
+                Our customer support team is ready to help our clients all the
+                time.
+              </h4>
+            </span>
+          </div>
+          <div className="flex gap-2">
+            <img src="/agreement.png" alt="" className="w-20 h-20" />
+            <span className="flex flex-col justify-between py-1">
+              <h2 className="font-semibold text-lg text-blue-800">
+                We Are Committed
+              </h2>
+              <h4 className="text-gray-700 font-medium">
+                Skilled professionals are always ready to provide reliable
+                services to our clients!...
+              </h4>
+            </span>
+          </div>
+          <div className="flex gap-2">
+            <img src="/medal.png" alt="" className="w-20 h-20" />
+            <span className="flex flex-col justify-between py-1">
+              <h2 className="font-semibold text-lg text-blue-800">
+                Customer Focused Team
+              </h2>
+              <h4 className="text-gray-700 font-medium">
+                Our agency can only be as strong as our people & because of
+                this, our team have designed....
+              </h4>
+            </span>
+          </div>
+        </div>
+      </section>
       {/* <--------------------------Services Section-----------------------------> */}
       <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
         <h1 className="w-full text-left text-5xl pl-2 font-bold mb-4 text-gray-800">
