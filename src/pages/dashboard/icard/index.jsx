@@ -336,14 +336,14 @@ export default function Icard() {
           className="relative  w-60 h-96 bg-white shadow-md rounded-lg overflow-hidden"
         >
           <img
-            src="https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
+            src="/logo_without_name.png"
             alt="watermark"
-            className="absolute top-36 right-10 w-56 h-20 opacity-10 -rotate-45"
+            className="absolute top-24  left-4 w-52 h-52 opacity-10 "
           />
           <img src={"/pdfBanner.png"} alt="banner" className="w-full" />
 
           <img
-            src={"/ifooter.png"}
+            src={"/pdfFooter.png"}
             alt="footerbanner"
             className="absolute w-full bottom-0 z-0 "
           />

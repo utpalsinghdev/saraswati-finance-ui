@@ -8,6 +8,7 @@ import {
   Image,
   PDFDownloadLink,
   Font,
+  PDFViewer,
 } from "@react-pdf/renderer";
 import Modal from "../../../components/ui/modal";
 import Select from "../../../components/ui/select";
@@ -57,16 +58,13 @@ const PdfFile = ({ data }) => {
           <Image
             style={{
               position: "absolute",
-              top: 160,
-              right: 40,
+              top: 100,
+              right: 30,
               width: 500,
-              height: 200,
+              height: 500,
               opacity: 0.1,
-              transform: "rotate(-45deg)",
             }}
-            src={
-              "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-            }
+            src={"/logo_without_name.png"}
           />
           <Text
             style={{
@@ -572,20 +570,24 @@ const PdfFile = ({ data }) => {
           </View>
         </View>
 
-        {/* <Text
+        <View
           style={{
             position: "absolute",
             fontSize: 12,
-            bottom: 30,
+            bottom: 0,
             left: 0,
             right: 0,
             textAlign: "center",
             color: "grey",
           }}
-          render={({ pageNumber, totalPages }) =>
-            `${pageNumber} / ${totalPages}`
-          }
-        /> */}
+        >
+          <Image
+            style={{
+              marginTop: 120,
+            }}
+            src={"/pdfFooter.png"}
+          />
+        </View>
       </Page>
     </Document>
   );

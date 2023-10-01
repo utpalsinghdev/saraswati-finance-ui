@@ -83,14 +83,13 @@ const PdfFile = ({ data }) => {
           <Image
             style={{
               position: "absolute",
-              top: 160,
-              right: 40,
+              top: 100,
+              right: 30,
               width: 500,
-              height: 200,
+              height: 500,
               opacity: 0.1,
-              transform: "rotate(-45deg)",
             }}
-            src={"/logo_full.png"}
+            src={"/logo_without_name.png"}
           />
           <Text
             style={{
@@ -476,14 +475,13 @@ const PdfFile = ({ data }) => {
             <Image
               style={{
                 position: "absolute",
-                top: 180,
-                right: 50,
+                top: 100,
+                right: 30,
                 width: 500,
-                height: 200,
+                height: 500,
                 opacity: 0.1,
-                transform: "rotate(-45deg)",
               }}
-              src={"/logo_full.png"}
+              src={"/logo_without_name.png"}
             />
             <View
               style={{
@@ -610,20 +608,7 @@ const PdfFile = ({ data }) => {
               >
                 Increment:
               </Text>
-              <View style={{ position: "relative" }}>
-                <Image
-                  style={{
-                    position: "absolute",
-                    top: 180,
-                    right: 50,
-                    width: 500,
-                    height: 200,
-                    opacity: 0.1,
-                    transform: "rotate(-45deg)",
-                  }}
-                  src={"/logo_full.png"}
-                />
-              </View>
+
               <Text style={{ fontSize: 13, marginTop: "8" }}>
                 Your increment and future prospects in the company shall
                 entirely depend on your Appraisal. Appraisal dependson
@@ -759,13 +744,13 @@ const PdfFile = ({ data }) => {
                 <Image
                   style={{
                     position: "absolute",
-                    right: 50,
+                    top: -150,
+                    right: 30,
                     width: 500,
-                    height: 200,
+                    height: 500,
                     opacity: 0.1,
-                    transform: "rotate(-45deg)",
                   }}
-                  src={"/logo_full.png"}
+                  src={"/logo_without_name.png"}
                 />
               </View>
               <Text style={{ fontSize: 13, marginTop: "8" }}>
@@ -863,7 +848,7 @@ const PdfFile = ({ data }) => {
           style={{
             position: "absolute",
             fontSize: 12,
-            bottom: 30,
+            bottom: 60,
             left: 0,
             borderTop: "1px solid black",
             right: 0,
@@ -878,16 +863,24 @@ const PdfFile = ({ data }) => {
             `SIGNATURE & THUMB IMPRESSION PAGE-${pageNumber}`
           }
         />
-        {/* <Text
+        <View
           style={{
-           
-            textAlign: "right",
-            color: "black",
-            marginTop: 100,
-      
+            position: "absolute",
+            fontSize: 12,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            color: "grey",
+          }}
         >
-          
-        </Text> */}
+          <Image
+            style={{
+              marginTop: 120,
+            }}
+            src={"/pdfFooter.png"}
+          />
+        </View>
       </Page>
     </Document>
   );
@@ -1226,9 +1219,6 @@ export default function Appointment() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[agents.data.length - 1]} />
-      </PDFViewer> */}
 
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
