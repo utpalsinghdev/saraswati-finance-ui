@@ -55,16 +55,13 @@ const PdfFile = ({ data }) => {
           <Image
             style={{
               position: "absolute",
-              top: 160,
-              right: 40,
+              top: 100,
+              right: 30,
               width: 500,
-              height: 200,
+              height: 500,
               opacity: 0.1,
-              transform: "rotate(-45deg)",
             }}
-            src={
-              "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-            }
+            src={"/logo_without_name.png"}
           />
           <Text
             style={{
@@ -247,7 +244,7 @@ const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 10,
+              marginTop: 20,
               fontSize: 12,
               fontWeight: "light",
             }}
@@ -818,22 +815,19 @@ const PdfFile = ({ data }) => {
             <Image
               style={{
                 position: "absolute",
-                top: 160,
-                right: 40,
+                top: 100,
+                right: 30,
                 width: 500,
-                height: 200,
+                height: 500,
                 opacity: 0.1,
-                transform: "rotate(-45deg)",
               }}
-              src={
-                "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-              }
+              src={"/logo_without_name.png"}
             />
             <Text
               style={{
                 textAlign: "left",
                 color: "black",
-                marginTop: 40,
+                marginTop: 60,
                 paddingTop: 4,
                 fontSize: 12,
                 fontWeight: "bold",
@@ -1060,6 +1054,7 @@ const PdfFile = ({ data }) => {
                 textAlign: "right",
                 color: "black",
                 marginTop: 30,
+                marginBottom: 30,
                 paddingTop: 4,
                 fontSize: 12,
                 fontWeight: "bold",
@@ -1077,16 +1072,13 @@ const PdfFile = ({ data }) => {
             <Image
               style={{
                 position: "absolute",
-                top: 160,
-                right: 40,
+                top: 100,
+                right: 30,
                 width: 500,
-                height: 200,
+                height: 500,
                 opacity: 0.1,
-                transform: "rotate(-45deg)",
               }}
-              src={
-                "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-              }
+              src={"/logo_without_name.png"}
             />
             <View
               style={{
@@ -1205,7 +1197,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "bold",
                 }}
               >
-                SIGNATURE & THUMB IMPRESSION PAGE-1
+                SIGNATURE & THUMB IMPRESSION PAGE-3
               </Text>
             </View>
           </View>
@@ -1218,16 +1210,13 @@ const PdfFile = ({ data }) => {
             <Image
               style={{
                 position: "absolute",
-                top: 160,
-                right: 40,
+                top: 100,
+                right: 30,
                 width: 500,
-                height: 200,
+                height: 500,
                 opacity: 0.1,
-                transform: "rotate(-45deg)",
               }}
-              src={
-                "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-              }
+              src={"/logo_without_name.png"}
             />
             <View
               style={{
@@ -1293,9 +1282,9 @@ const PdfFile = ({ data }) => {
               >
                 COMPANY’S PAYMENT DETAILS:-
               </Text>
-              <View style={{}}>
+              {/* <View style={{}}>
                 <Image src={"/payment.png"} />
-              </View>
+              </View> */}
               <View
                 style={{
                   display: "flex",
@@ -1358,20 +1347,24 @@ const PdfFile = ({ data }) => {
           </View>
         </View>
 
-        {/* <Text
+        <View
           style={{
             position: "absolute",
             fontSize: 12,
-            bottom: 30,
+            bottom: 0,
             left: 0,
             right: 0,
             textAlign: "center",
             color: "grey",
           }}
-          render={({ pageNumber, totalPages }) =>
-            `${pageNumber} / ${totalPages}`
-          }
-        /> */}
+        >
+          <Image
+            style={{
+              marginTop: 120,
+            }}
+            src={"/pdfFooter.png"}
+          />
+        </View>
       </Page>
     </Document>
   );
