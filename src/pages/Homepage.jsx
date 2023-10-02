@@ -92,7 +92,7 @@ const Homepage = () => {
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from Vandham Finance Pvt. Ltd.
+            Get {type} Loan on Easy EMI basis from vandhnam Finance Pvt. Ltd.
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
@@ -133,8 +133,8 @@ const Homepage = () => {
           <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
           <p className="mt-10 ">
-            Vandham Finance Services Pvt. Ltd. is dealing in Home Loan, Personal
-            Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
+            vandhnam Finance Services Pvt. Ltd. is dealing in Home Loan,
+            Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
             Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
             Loans, Loan Against Property & Project Etc.
           </p>

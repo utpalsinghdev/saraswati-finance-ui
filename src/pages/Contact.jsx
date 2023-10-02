@@ -48,10 +48,10 @@ function Contact() {
                       <Phone /> +91-9289122303 (HOD)
                     </a>
                     <a
-                      href="mailto:vandhamservices.com"
+                      href="mailto:vandhnamservices.com"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@vandhamservices.com (HOD)
+                      <MailIcon /> info@vandhnamservices.com (HOD)
                     </a>
                   </div>
                 </div>

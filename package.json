@@ -1,11 +1,12 @@
 {
-  "name": "vandham-finance-ui",
+  "name": "vandhnam-finance-ui",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
+    "deploy": "vite build && sudo cp -R dist/* /var/www/html/vandham_ui",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

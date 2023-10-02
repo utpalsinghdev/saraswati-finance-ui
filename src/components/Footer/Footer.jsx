@@ -13,9 +13,9 @@ function Footer() {
           <div className="w-full">
             <img src="/logo.png" className="w-44" alt="" />
             <p className="text-white mt-2">
-              Vandham Finance Private Limited. is dealing in Personal Loan, Loan
-              against Property, Project Loan & Gold Loan. We Believe in fair
-              dealing and prompt disbursement of founds on priority Basis.
+              vandhnam Finance Private Limited. is dealing in Personal Loan,
+              Loan against Property, Project Loan & Gold Loan. We Believe in
+              fair dealing and prompt disbursement of founds on priority Basis.
             </p>
           </div>
           <div className="w-full ">
@@ -82,7 +82,7 @@ function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@vandhamservices.com
+                  info@vandhnamservices.com
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">
