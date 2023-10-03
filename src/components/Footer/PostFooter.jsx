@@ -9,10 +9,6 @@ function PostFooter() {
         All Right Reserved | Copyright &copy; {currentYear} vandhnam Finance
         Private Limited.
       </span>
-      <span className="flex gap-8">
-        <Link className="underline">FAQ&apos;s</Link>{" "}
-        <Link className="underline">Terms & Condition</Link>
-      </span>
     </div>
   );
 }
