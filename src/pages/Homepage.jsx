@@ -1,17 +1,10 @@
 import React from "react";
-import Button from "../components/ui/button";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Ticker from "../components/ui/ticker";
 import Image from "../components/ui/Image/Index";
 import Input from "../components/ui/input";
-import {
-  BiUser,
-  BiPhone,
-  BiConversation,
-  BiSolidBusiness,
-  BiRupee,
-} from "react-icons/bi";
+import { BiRupee } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineRequestPage, MdSchool } from "react-icons/md";
 import { ImParagraphLeft } from "react-icons/im";
@@ -35,7 +28,7 @@ import ApiService from "../services/Api_services";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import useFetch from "../hooks/useFetch";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import calculateEMI from "../utils/calculator";
 import Select from "../components/ui/select";
 import HeadingWrapper from "../components/ui/heading Wrapper";
@@ -83,6 +76,10 @@ const Homepage = () => {
       img: "/pay.jpg",
     },
   ];
+  const navigator = useNavigate();
+  function aboutNav() {
+    navigator("/about-us");
+  }
   function ServiceCard({ img, type, link }) {
     return (
       <div className="flex w-[23rem] md:w-[18rem] flex-col pt-8 pb-8 mb-4 shadow-lg shadow-orange-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
@@ -113,7 +110,7 @@ const Homepage = () => {
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
-        <div className="absolute w-full z-50 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-blue-800  flex h-max  gap-2 ">
+        <div className="absolute w-full z-40 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-blue-800  flex h-max  gap-2 ">
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm font-semibold text-white w-full">
               <Ticker
@@ -139,12 +136,20 @@ const Homepage = () => {
             Loans, Loan Against Property & Project Etc.
           </p>
           <div className="flex md:mt-10 mt-1 items-center gap-4">
-            <button className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu">
+            <button
+              onClick={() => {
+                navigator("/contact-us");
+              }}
+              className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu"
+            >
               <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                 Contact
               </span>
             </button>
-            <button className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  ">
+            <button
+              onClick={aboutNav}
+              className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
+            >
               <span className="front bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold">
                 Apply
               </span>
@@ -421,7 +426,10 @@ const Homepage = () => {
                       )}
                     </p>
                     <div className="flex items-start justify-center mt-4 w-full">
-                      <Link className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu">
+                      <Link
+                        to="/about-us"
+                        className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu"
+                      >
                         <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                           Apply Now
                         </span>

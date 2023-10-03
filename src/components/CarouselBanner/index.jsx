@@ -4,8 +4,11 @@ import { Carousel } from "react-responsive-carousel";
 import LinkButton from "../ui/link";
 import { classNames } from "../../utils/classname";
 import smoothscroll from "smoothscroll-polyfill";
+import { useNavigate } from "react-router-dom";
 smoothscroll.polyfill();
 function CarouselBanner() {
+  const navigator = useNavigate();
+
   function ApplyBox() {
     return (
       <span className="absolute top-16 md:top-20 left-6 md:left-40 z-50 md:w-[500px] w-72  rounded-lg md:h-56 h-52 bg-white/30 ">
@@ -16,12 +19,22 @@ function CarouselBanner() {
           </p>
 
           <div className="flex md:mt-4 mt-1 items-center gap-4">
-            <button className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu">
+            <button
+              onClick={() => {
+                navigator("/contact-us");
+              }}
+              className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu"
+            >
               <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                 Contact
               </span>
             </button>
-            <button className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  ">
+            <button
+              onClick={() => {
+                navigator("/apply-loan");
+              }}
+              className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
+            >
               <span className="front bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold">
                 Apply
               </span>
