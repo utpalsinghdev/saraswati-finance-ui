@@ -348,14 +348,19 @@ export default function Icard() {
             className="absolute w-full bottom-0 z-0 "
           />
           <img
+            src={"/logo_full.png"}
+            alt="footerbanner"
+            className="w-full h-16 px-2 "
+          />
+          <img
             src={IcardData.profilepic}
             alt="Employee"
-            className="w-[70px] h-20 mt-4 mx-auto mb-2 relative z-10 p-0.4 border-2 border-[#3E4759] "
+            className="w-24 h-28 mx-auto mb-2 relative z-10 p-0.4 border-2 border-[#3E4759] "
           />
           <img
             src={"/stamp.png"}
             alt="Employee"
-            className="w-[50px] h-[50px]  z-10 absolute top-32 left-16 "
+            className="w-[50px] h-[50px]  z-10 absolute top-48 left-12 "
           />
           <h2 className="text-md font-bold italic text-center mb-2 uppercase  tracking-wide  text-black">
             {IcardData?.agent?.firstName} {IcardData?.agent?.LastName}
