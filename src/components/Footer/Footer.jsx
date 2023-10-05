@@ -78,7 +78,7 @@ function Footer() {
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@greenapplefinancial.com"
+                  href="mailto:info@vandhnamservices.com"
                   target="_blank"
                   rel="noreferrer"
                 >

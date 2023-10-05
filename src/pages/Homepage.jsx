@@ -164,7 +164,9 @@ const Homepage = () => {
               </span>
             </button>
             <button
-              onClick={aboutNav}
+              onClick={() => {
+                navigator("/apply-loan");
+              }}
               className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
             >
               <span className="front bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold">
