@@ -373,6 +373,7 @@ export default function DashboardLayout({ children }) {
                         <li key={item.name}>
                           <Link
                             to={item.href}
+                            onClick={() => setSidebarOpen(false)}
                             className={classNames(
                               isActive(item.href)
                                 ? "bg-orange-700 text-white"
