@@ -1302,12 +1302,160 @@ const PdfFile = ({ data }) => {
               </View> */}
               <View
                 style={{
+                  marginTop: 10,
+                  border: "1px solid black",
+                  fontFamily: "Roboto",
+                  textTransform: "uppercase",
+                }}
+              >
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    Bank Name
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    Union Bank Of India
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    display: "flex",
+                    borderTop: "1px solid black",
+                    flexDirection: "row",
+                    gap: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    A/C Holder name
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    Vandhnam Services
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    borderTop: "1px solid black",
+                    gap: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    a/c no
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    198821010000065
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    borderTop: "1px solid black",
+                    gap: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    IFSC Code
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    UBIN0919888
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={{
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "space-between",
                   gap: 10,
-                  marginTop: 20,
+                  marginTop: 30,
                 }}
               >
                 <View
@@ -1646,9 +1794,9 @@ export default function ApprovalLetter() {
   ) : (
     <>
       {renderModal()}
-      <PDFViewer height={1000} width={600}>
+      {/* <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[0]} />
-      </PDFViewer>
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This letter?"
         isDelete
