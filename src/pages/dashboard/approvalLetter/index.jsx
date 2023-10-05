@@ -80,7 +80,7 @@ const PdfFile = ({ data }) => {
               marginTop: 10,
               fontSize: 18,
               fontFamily: "Roboto",
-              color: "green",
+              color: "orange",
               fontWeight: "bold",
             }}
           >
@@ -287,7 +287,14 @@ const PdfFile = ({ data }) => {
                 fontWeight: "light",
               }}
             >
-              Mr./Mrs./Ms.Miss {data?.customer?.name}{" "}
+              Mr./Mrs./Ms.Miss{" "}
+              <Text
+                style={{
+                  fontFamily: "Roboto",
+                }}
+              >
+                {data?.customer?.name}
+              </Text>{" "}
               <Text
                 style={{
                   color: "black",
@@ -340,8 +347,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 4,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Date of Application
@@ -350,7 +357,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  border: "1px solid black",
                 }}
               >
                 {moment(data?.customer?.createdAt).format("DD/MM/YYYY")}
@@ -372,8 +379,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Name
@@ -381,8 +388,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 2,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer?.name}
@@ -404,8 +411,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Guardian Name
@@ -414,7 +421,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer?.guardian_name}
@@ -436,8 +443,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Address
@@ -445,8 +452,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer?.address}
@@ -500,8 +507,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Mobile NO
@@ -509,8 +516,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer.phone}
@@ -532,8 +539,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Email
@@ -541,8 +548,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer.email}
@@ -564,8 +571,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Aadhar
@@ -573,8 +580,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer.adharNumber}
@@ -596,8 +603,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Pan
@@ -605,8 +612,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer.panNumber}
@@ -628,8 +635,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Loan Amount
@@ -637,8 +644,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Rs. {data?.customer.loanInNumber} /- (
@@ -661,8 +668,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Loan Details
@@ -670,8 +677,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Periods {data?.customer?.loanYear} years at INTEREST RATE-5% EMI
@@ -702,8 +709,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Bank Name &A/CNo./IFSCCODE A/C
@@ -711,8 +718,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data.customer.bank
@@ -742,8 +749,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Executive Details
@@ -751,8 +758,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 {data?.customer?.agent.employeeCode}-
@@ -777,8 +784,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: 400,
-                  paddingBottom: 4,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Processing Charges + 18%GST
@@ -786,8 +793,8 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   width: "100%",
-                  paddingBottom: 4,
-                  borderBottom: "1px solid black",
+                  padding: 1,
+                  border: "1px solid black",
                 }}
               >
                 Rs. {data?.processingCharge}
@@ -835,7 +842,7 @@ const PdfFile = ({ data }) => {
               }}
             >
               You are intimated that{" "}
-              <Text style={{ color: "red" }}>
+              <Text style={{ color: "red", fontFamily: "Roboto" }}>
                 Rs.{data?.customer.loanInNumber}/- ({data?.customer.loanInWords}
                 )
               </Text>{" "}
@@ -847,7 +854,7 @@ const PdfFile = ({ data }) => {
               will keep you are submitted to documents safe only for 30 days,
               otherwise your file will stand closed. Kindly deposit your process
               fees of
-              <Text style={{ color: "red" }}>
+              <Text style={{ color: "red", fontFamily: "Roboto" }}>
                 Rs. {data.processingCharge}/-(18% Gst Tax Of Agreement Fees) by
                 Bank (NEFT or RTGS) infavor of{" "}
                 <Text
@@ -998,7 +1005,15 @@ const PdfFile = ({ data }) => {
                 lineHeight: 1.5,
               }}
             >
-              9. File charges of company is Rs.4130/-paid
+              9. File charges of company is{" "}
+              <Text
+                style={{
+                  fontFamily: "Roboto",
+                }}
+              >
+                Rs.4130/-
+              </Text>{" "}
+              paid
             </Text>
             <Text
               style={{
@@ -1631,9 +1646,9 @@ export default function ApprovalLetter() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
+      <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This letter?"
         isDelete
