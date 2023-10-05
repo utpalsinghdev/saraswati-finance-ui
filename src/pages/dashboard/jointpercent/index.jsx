@@ -275,7 +275,6 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "left",
-              textAlign: "left",
               marginTop: 4,
               fontSize: 12,
               fontFamily: "Roboto",
@@ -351,7 +350,6 @@ const PdfFile = ({ data }) => {
               textAlign: "left",
               marginTop: 15,
               fontSize: 12,
-              fontFamily: "Roboto",
               fontFamily: "Roboto",
               fontWeight: "700",
             }}

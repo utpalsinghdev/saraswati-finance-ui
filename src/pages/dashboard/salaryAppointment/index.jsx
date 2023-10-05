@@ -425,7 +425,6 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "left",
-              textAlign: "left",
               marginTop: 4,
               fontSize: 16,
               fontFamily: "Roboto",
