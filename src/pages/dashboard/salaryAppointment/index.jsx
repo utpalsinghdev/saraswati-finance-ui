@@ -109,7 +109,7 @@ const PdfFile = ({ data }) => {
               textAlign: "center",
               marginRight: 25,
               fontSize: 21,
-              color: "green",
+              color: "orange",
               fontFamily: "Roboto",
             }}
           >
@@ -153,12 +153,24 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 12,
-                    width: 130,
+                    width: 150,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   Employee Name:-
                 </Text>
-                <Text>
+                <Text
+                  style={{
+                    width: 260,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
                   {data?.agent?.title} {data?.agent?.firstName}{" "}
                   {data?.agent?.LastName}
                 </Text>
@@ -175,12 +187,29 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 12,
-                    width: 130,
+                    width: 150,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   Employee Designation:-
                 </Text>
-                <Text>{data?.agent?.designation}</Text>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 260,
+                    maxWidth: 260,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {data?.agent?.designation}
+                </Text>
               </View>
               <View
                 style={{
@@ -193,7 +222,11 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 12,
-                    width: 130,
+                    width: 150,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   Employee Address:-
@@ -203,6 +236,10 @@ const PdfFile = ({ data }) => {
                     width: 260,
                     maxWidth: 260,
                     flexWrap: "wrap",
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   {addLineBreaks(data?.address, 40)}
@@ -219,12 +256,29 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 12,
-                    width: 130,
+                    width: 150,
+                    border: "1px solid black",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   Employee Mobile:-
                 </Text>
-                <Text>{data?.agent?.phone}</Text>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 260,
+                    maxWidth: 260,
+                    border: "1px solid black",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {data?.agent?.phone}
+                </Text>
               </View>
               <View
                 style={{
@@ -237,12 +291,29 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 12,
-                    width: 130,
+                    width: 150,
+                    border: "1px solid black",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   Generated Date:-
                 </Text>
-                <Text>{moment(data?.createdAt).format("DD/MM/YYYY")}</Text>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 260,
+                    maxWidth: 260,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {moment(data?.createdAt).format("DD/MM/YYYY")}
+                </Text>
               </View>
               <View
                 style={{
@@ -255,12 +326,29 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 12,
-                    width: 130,
+                    width: 150,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   Letter Subject:-
                 </Text>
-                <Text>Letter of Appointment</Text>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 260,
+                    maxWidth: 260,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  Letter of Appointment
+                </Text>
               </View>
             </View>
             <Image
@@ -290,7 +378,6 @@ const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 15,
               fontSize: 12,
               fontWeight: "light",
             }}
@@ -312,13 +399,27 @@ const PdfFile = ({ data }) => {
                 fontWeight: "light",
               }}
             >
-              We are pleased to appoint you in our organization as &quot;SALES
-              EXECUTIVE&quot;, Grade:
+              We are pleased to appoint you in our organization as &quot;
+              <Text
+                style={{
+                  fontFamily: "Roboto",
+                }}
+              >
+                SALES EXECUTIVE
+              </Text>
+              &quot;, Grade:
               <Text style={{ fontSize: 12, fontFamily: "Roboto" }}>
                 VANDHNAM FINANCE PVT.LTD
               </Text>{" "}
-              .,w.e.f. {moment(data.createdAt).format("DD/MM/YYYY")} on the
-              following terms &conditions:
+              .,w.e.f.{" "}
+              <Text
+                style={{
+                  fontFamily: "Roboto",
+                }}
+              >
+                {moment(data.createdAt).format("DD/MM/YYYY")}
+              </Text>{" "}
+              on the following terms &conditions:
             </Text>
           </View>
           <Text
@@ -346,8 +447,16 @@ const PdfFile = ({ data }) => {
           >
             Your annual compensation package will be on{" "}
             <Text style={{ fontSize: 14, fontFamily: "Roboto" }}>SALARY</Text>{" "}
-            BASIS {data.salary}/-PER MONTH(2%Loan Amount) subjects to deductions
-            as per Govt.rules & anyother Govt.taxes & Levisas may be applicable.
+            BASIS{" "}
+            <Text
+              style={{
+                fontFamily: "Roboto",
+              }}
+            >
+              {data.salary}
+            </Text>
+            /-PER MONTH (2% Loan Amount) subjects to deductions as per
+            Govt.rules & anyother Govt.taxes & Levisas may be applicable.
           </Text>
           <Text
             style={{
@@ -381,7 +490,14 @@ const PdfFile = ({ data }) => {
               fontSize: 12,
             }}
           >
-            Your initial place of posting will be at {data.location}
+            Your initial place of posting will be at{" "}
+            <Text
+              style={{
+                fontFamily: "Roboto",
+              }}
+            >
+              {data.location}
+            </Text>
           </Text>
           <Text
             style={{
@@ -1245,7 +1361,6 @@ export default function Appointment() {
           }));
         }}
       />
-
       <Table
         btnText={"Generate Letter"}
         btnfunc={() =>
