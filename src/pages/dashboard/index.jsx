@@ -280,6 +280,7 @@ export default function DashboardLayout({ children }) {
                                 <li key={team.name}>
                                   <Link
                                     to={team.href}
+                                    onClick={() => setSidebarOpen(false)}
                                     className={classNames(
                                       isActive(team.href)
                                         ? "bg-orange-700 text-white"
@@ -314,6 +315,7 @@ export default function DashboardLayout({ children }) {
                               .map((team) => (
                                 <li key={team.name}>
                                   <Link
+                                    onClick={() => setSidebarOpen(false)}
                                     to={team.href}
                                     className={classNames(
                                       isActive(team.href)
@@ -410,6 +412,7 @@ export default function DashboardLayout({ children }) {
                         <li key={team.name}>
                           <Link
                             to={team.href}
+                            onClick={() => setSidebarOpen(false)}
                             className={classNames(
                               isActive(team.href)
                                 ? "bg-orange-700 text-white"
@@ -442,6 +445,7 @@ export default function DashboardLayout({ children }) {
                       .map((team) => (
                         <li key={team.name}>
                           <Link
+                            onClick={() => setSidebarOpen(false)}
                             to={team.href}
                             className={classNames(
                               isActive(team.href)
