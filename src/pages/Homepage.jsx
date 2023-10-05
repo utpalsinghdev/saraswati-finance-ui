@@ -80,6 +80,23 @@ const Homepage = () => {
   function aboutNav() {
     navigator("/about-us");
   }
+  const catalog = [
+    {
+      name: "24/7 Unlimited Support",
+      img: "/time.png",
+      desc: "Our customer support team is ready to help our clients all the time.",
+    },
+    {
+      name: "We Are Committed",
+      img: "/agreement.png",
+      desc: "Skilled professionals are always ready to provide reliable services to our clients!...",
+    },
+    {
+      name: "Customer Focused Team",
+      img: "/medal.png",
+      desc: "Our agency can only be as strong as our people & because of this, our team have designed....",
+    },
+  ];
   function ServiceCard({ img, type, link }) {
     return (
       <div className="flex w-[23rem] md:w-[18rem] flex-col pt-8 pb-8 mb-4 shadow-lg shadow-orange-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
@@ -160,43 +177,23 @@ const Homepage = () => {
           src={"/about.png"}
           className={"md:aspect-auto h-96  object-cover rounded-3xl"}
         />
-        <div className="flex flex-col h-full items-center gap-8 justify-between w-full md:w-96">
-          <div className="flex gap-2 w-full">
-            <img src="/time.png" alt="" className="w-20 h-20" />
-            <span className="flex flex-col justify-between py-1">
-              <h2 className="font-semibold text-lg text-blue-800">
-                24/7 Unlimited Support
-              </h2>
-              <h4 className="text-gray-700 font-medium">
-                Our customer support team is ready to help our clients all the
-                time.
-              </h4>
-            </span>
-          </div>
-          <div className="flex gap-2">
-            <img src="/agreement.png" alt="" className="w-20 h-20" />
-            <span className="flex flex-col justify-between py-1">
-              <h2 className="font-semibold text-lg text-blue-800">
-                We Are Committed
-              </h2>
-              <h4 className="text-gray-700 font-medium">
-                Skilled professionals are always ready to provide reliable
-                services to our clients!...
-              </h4>
-            </span>
-          </div>
-          <div className="flex gap-2">
-            <img src="/medal.png" alt="" className="w-20 h-20" />
-            <span className="flex flex-col justify-between py-1">
-              <h2 className="font-semibold text-lg text-blue-800">
-                Customer Focused Team
-              </h2>
-              <h4 className="text-gray-700 font-medium">
-                Our agency can only be as strong as our people & because of
-                this, our team have designed....
-              </h4>
-            </span>
-          </div>
+        <div className="flex flex-col h-full items-center gap-1 justify-between w-full md:w-96">
+          {catalog.map((c, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center gap-2 p-1  shadow-md rounded-lg w-full"
+            >
+              <img src={c.img} alt="" className="w-16 h-16" />
+              <span className="flex flex-col justify-between py-1">
+                <h2 className="font-semibold text-center text-lg text-blue-800">
+                  {c.name}
+                </h2>
+                <h4 className="text-gray-700 text-center font-medium">
+                  {c.desc}
+                </h4>
+              </span>
+            </div>
+          ))}
         </div>
       </section>
       {/* <--------------------------Services Section-----------------------------> */}
