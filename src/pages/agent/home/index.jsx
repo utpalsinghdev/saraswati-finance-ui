@@ -21,7 +21,7 @@ function HomeAgent() {
       </div>
       <Link
         to="/agent/customer/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-indigo-400 items-center justify-between"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
       >
         <span className="flex items-start gap-4 justify-between flex-col">
           <p className="text-start">My Customers</p>
@@ -31,7 +31,7 @@ function HomeAgent() {
       </Link>
       <Link
         to="/agent/welcome/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-indigo-400 items-center justify-between"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
       >
         <span className="flex items-start gap-4 justify-between flex-col">
           <p className="text-start">Welcome Letters</p>
@@ -41,7 +41,7 @@ function HomeAgent() {
       </Link>
       <Link
         to="/agent/approval/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-indigo-400 items-center justify-between"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
       >
         <span className="flex items-start gap-4 justify-between flex-col">
           <p className="text-start">Approval Letters</p>
@@ -51,7 +51,10 @@ function HomeAgent() {
         </span>
         <NewspaperIcon className="w-16 h-16" />
       </Link>
-      <Link to="/agent/agents/" className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-indigo-400 items-center justify-between">
+      <Link
+        to="/agent/agents/"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
+      >
         <span className="flex items-start gap-4 justify-between flex-col">
           <p className="text-start">My Agents</p>
           <p className="text-start">{_agent?.data?.managing?.length}</p>
