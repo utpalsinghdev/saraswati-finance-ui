@@ -266,6 +266,14 @@ export const generateAppointmentLetter = Yup.object({
   location: Yup.string().required("Please enter the location."),
   address: Yup.string().required("Please enter the address."),
   salary: Yup.string().required("Please enter the salary."),
+  salary_after_pf: Yup.string().required(
+    "Please enter the salary after deducting PF."
+  ),
+  guradian_relation: Yup.string().required(
+    "Please guardian's relation with the employee."
+  ),
+  guardian_name: Yup.string().required("Please enter the guardian's name."),
+  incentive: Yup.string().required("Please enter the incentive."),
   agentName: Yup.string().optional("Please enter Agent Name."),
   agentNumber: Yup.string().optional("Please enter Agent Number."),
   targetOne: Yup.string()

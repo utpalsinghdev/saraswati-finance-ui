@@ -29,6 +29,7 @@ import Table from "../../../components/ui/table/Table";
 import moment from "moment";
 import Loader from "../../../components/loader";
 import bold from "../../../assets/bold.ttf";
+import { RiUser2Line, RiUserHeartLine } from "react-icons/ri";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
@@ -98,7 +99,7 @@ const PdfFile = ({ data }) => {
               fontSize: 12,
               marginTop: 5,
               fontWeight: "light",
-              marginBottom: 25,
+              marginBottom: 5,
             }}
           >
             Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
@@ -209,6 +210,45 @@ const PdfFile = ({ data }) => {
                   }}
                 >
                   {data?.agent?.designation}
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 4,
+                }}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 150,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {data.guradian_relation === "SONOF" ||
+                  data.guradian_relation === "DOF"
+                    ? "Father Name"
+                    : "Husband Name"}
+                  :-
+                </Text>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 260,
+                    maxWidth: 260,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {data?.guardian_name}
                 </Text>
               </View>
               <View
@@ -440,22 +480,25 @@ const PdfFile = ({ data }) => {
               color: "black",
               marginTop: 4,
               fontSize: 12,
-              lineHeight: 1.5,
-              fontWeight: "bold",
+              lineHeight: 1.1,
             }}
           >
-            Your annual compensation package will be on{" "}
-            <Text style={{ fontSize: 14, fontFamily: "Roboto" }}>SALARY</Text>{" "}
-            BASIS{" "}
+            You will be paid a fixed stipend{" "}
+            <Text style={{ color: "red" }}>On SALARY Basis Rs.</Text>{" "}
             <Text
               style={{
-                fontFamily: "Roboto",
+                color: "red",
               }}
             >
-              {data.salary}
+              {data?.salary}
+              /-PER MONTH After Deduction (P.F & ESI) Your salary will be Rs.{" "}
+              {data?.salary_after_pf} /-PER MONTH. Your Monthly target will be{" "}
+              {data?.targetOne} to {data?.targetTwo} Files with (
+              {data?.incentive} % of the incentive of loan amount after
+              disbursement) and T.A & D.A Rs. 6000/-{" "}
             </Text>
-            /-PER MONTH (2% Loan Amount) subjects to deductions as per
-            Govt.rules & anyother Govt.taxes & Levisas may be applicable.
+            subjects to deductions as per govt. rules and any other Govt. taxes
+            and Levis as may be applicable.
           </Text>
           <Text
             style={{
@@ -504,7 +547,7 @@ const PdfFile = ({ data }) => {
               color: "black",
               marginTop: 2,
               fontSize: 12,
-              lineHeight: 1.5,
+              lineHeight: 1.2,
             }}
           >
             However, the organization reserves the right to transfer you at any
@@ -573,7 +616,7 @@ const PdfFile = ({ data }) => {
               borderTop: "1px solid black",
               textAlign: "right",
               color: "black",
-              marginTop: 20,
+              marginTop: 10,
               paddingTop: 4,
               fontSize: 12,
               fontWeight: "bold",
@@ -1010,6 +1053,10 @@ const initialModalState = {
     address: "",
     salary: "",
     targetOne: "",
+    incentive: "",
+    salary_after_pf: "",
+    guradian_relation: "SONOF",
+    guardian_name: "",
     targetTwo: "",
     agentName: "",
     agentNumber: "",
@@ -1063,13 +1110,19 @@ export default function Appointment() {
               employeeId: values.employeeId ? Number(values.employeeId) : "",
               targetOne: values.targetOne ? Number(values.targetOne) : "",
               targetTwo: values.targetTwo ? Number(values.targetTwo) : "",
+              incentive: values.incentive ? Number(values.incentive) : "",
               location: values.location,
               address: values.address,
               salary: values.salary,
+              guardian_name: values.guardian_name,
+              guradian_relation: values.guradian_relation,
             };
             if (values.agentName && values.agentNumber) {
               payload.agentName = values.agentName;
               payload.agentNumber = values.agentNumber;
+            }
+            if (values.salary_after_pf && values.salary_after_pf) {
+              payload.salary_after_pf = values.salary_after_pf;
             }
             await new Promise((resolve) => {
               fileToBase64(values.photo, (base64Data) => {
@@ -1132,6 +1185,34 @@ export default function Appointment() {
                   >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
                 ))}
               </Select>
+              <span className="flex items-center justify-between w-full gap-8">
+                <Select
+                  label={""}
+                  name={"guradian_relation"}
+                  onBlur={f.handleBlur}
+                  onChange={f.handleChange}
+                  value={f.values.guradian_relation}
+                  error={
+                    f.touched.guradian_relation && f.errors.guradian_relation
+                  }
+                  icon={<RiUserHeartLine className="w-4 text-indigo-500" />}
+                >
+                  <option value={"SONOF"}>S/O</option>
+                  <option value={"DOF"}>D/O</option>
+                  <option value={"WOF"}>W/O</option>
+                </Select>
+                <Input
+                  name="guardian_name"
+                  type={"text"}
+                  onChange={f.handleChange}
+                  onBlur={f.handleBlur}
+                  value={f.values.guardian_name}
+                  error={f.touched.guardian_name && f.errors.guardian_name}
+                  icon={<RiUser2Line className="w-4 text-indigo-500" />}
+                  label={""}
+                  placeholder={"Guardian Name"}
+                />
+              </span>
               <Input
                 name="location"
                 type={"text"}
@@ -1164,6 +1245,28 @@ export default function Appointment() {
                 icon={<BiRupee size={18} className=" text-indigo-500" />}
                 label={""}
                 placeholder={"Enter salary"}
+              />
+              <Input
+                name="salary_after_pf"
+                type={"text"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.salary_after_pf}
+                error={f.touched.salary_after_pf && f.errors.salary_after_pf}
+                icon={<BiRupee size={18} className=" text-indigo-500" />}
+                label={""}
+                placeholder={"Salary After Deducting PF"}
+              />
+              <Input
+                name="incentive"
+                type={"number"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.incentive}
+                error={f.touched.incentive && f.errors.incentive}
+                icon={<BiRupee size={18} className=" text-indigo-500" />}
+                label={""}
+                placeholder={"Incentive in %"}
               />
               <span className="flex gap-4">
                 <Input
@@ -1334,7 +1437,9 @@ export default function Appointment() {
   ) : (
     <>
       {renderModal()}
-
+      <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[agents.data.length - 1]} />
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete
