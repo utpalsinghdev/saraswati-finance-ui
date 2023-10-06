@@ -1437,9 +1437,7 @@ export default function Appointment() {
   ) : (
     <>
       {renderModal()}
-      <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[agents.data.length - 1]} />
-      </PDFViewer>
+
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete
