@@ -394,7 +394,7 @@ const PdfFile = ({ data }) => {
             <Image
               style={{
                 position: "absolute",
-                top: -5,
+                top: 4,
                 right: 0,
                 width: 100,
                 height: 100,
