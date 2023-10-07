@@ -35,6 +35,10 @@ function Footer() {
                 <IoIosArrowForward />
                 Services
               </Link>
+              <a href="/Agent.apk" className="flex flex-row items-center gap-2">
+                <IoIosArrowForward />
+                Agent App
+              </a>
               <Link
                 to="apply-loan"
                 className="flex flex-row items-center gap-2"
