@@ -45,6 +45,17 @@ const PdfFile = ({ data }) => {
         <View style={{}}>
           <Image src={"/pdfBanner.png"} />
         </View>
+        <Image
+          style={{
+            position: "absolute",
+            top: 120,
+            right: 30,
+            width: 500,
+            height: 500,
+            opacity: 0.1,
+          }}
+          src={"/logo_without_name.png"}
+        />
         <View
           style={{
             paddingTop: 20,
