@@ -11,55 +11,70 @@ function HomeAgent() {
   return _agent.loading ? (
     <Loader />
   ) : (
-    <div className="w-full">
-      <div>
+    <div className="w-full ">
+      <div className="flex justify-between items-center mx-4">
         <div className="flex items-start justify-start flex-col">
           <span>Good Morning</span>
           <span>{user?.user?.firstName + " " + user?.user?.LastName}</span>
           <span>Designation: {user?.user?.designation}</span>
+          <span>Agent Code: {user?.user?.employeeCode}</span>
         </div>
+        <Image
+          className={"rounded-full w-16 h-16"}
+          src={
+            _agent?.data?.AppointmentSalary?.[0]?.photo ||
+            _agent?.data?.profilePic
+              ? _agent?.data?.profilePic
+                ? _agent?.data?.profilePic
+                : _agent?.data?.AppointmentSalary?.[0]?.photo
+              : "/fallback.png"
+          }
+        />
       </div>
       <Link
         to="/agent/customer/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-2 bg-blue-200 items-center justify-evenly gap-4"
       >
-        <span className="flex items-start gap-4 justify-between flex-col">
-          <p className="text-start">My Customers</p>
-          <p className="text-start">{_agent?.data?.Customer?.length}</p>
-        </span>
-        <Users2Icon className="w-16 h-16" />
+        <Image src={"/application.png"} className="w-20 h-20" />
+
+        <p className="text-start font-semibold text-blue-800">My Customers</p>
+        <p className="text-start p-2 bg-orange-400 rounded-xl">
+          {_agent?.data?.Customer?.length}
+        </p>
       </Link>
       <Link
         to="/agent/welcome/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4"
       >
-        <span className="flex items-start gap-4 justify-between flex-col">
-          <p className="text-start">Welcome Letters</p>
-          <p className="text-start">{_agent?.data?.WelcomeLetter?.length}</p>
-        </span>
-        <NewspaperIcon className="w-16 h-16" />
+        <Image src={"/welcome.png"} className="w-20 h-20" />
+        <p className="text-start font-semibold text-blue-800">
+          Welcome Letters
+        </p>
+        <p className="text-start p-2 bg-orange-400 rounded-xl">
+          {_agent?.data?.WelcomeLetter?.length}
+        </p>
       </Link>
       <Link
         to="/agent/approval/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4 "
       >
-        <span className="flex items-start gap-4 justify-between flex-col">
-          <p className="text-start">Approval Letters</p>
-          <p className="text-start">
-            {_agent?.data?.Customer.map((c) => +c?.ApprovalLetter?.length)}
-          </p>
-        </span>
-        <NewspaperIcon className="w-16 h-16" />
+        <Image src={"/approval.png"} className="w-20 h-20" />
+        <p className="text-start font-semibold text-blue-800">
+          Approval Letters
+        </p>
+        <p className="text-start p-2 bg-orange-400 rounded-xl">
+          {_agent?.data?.Customer?.map((c) => +c?.ApprovalLetter?.length)}
+        </p>
       </Link>
       <Link
         to="/agent/agents/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-800 items-center justify-between"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4"
       >
-        <span className="flex items-start gap-4 justify-between flex-col">
-          <p className="text-start">My Agents</p>
-          <p className="text-start">{_agent?.data?.managing?.length}</p>
-        </span>
-        <Users2Icon className="w-16 h-16" />
+        <Image src={"/agent.png"} className="w-20 h-20" />
+        <p className="text-start font-semibold text-blue-800">My Agents</p>
+        <p className="text-start p-2 bg-orange-400 rounded-xl">
+          {_agent?.data?.managing?.length}
+        </p>
       </Link>
     </div>
   );

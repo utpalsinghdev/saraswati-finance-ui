@@ -192,21 +192,10 @@ function RoutesConfig() {
             <Route path="/agent/welcome/" element={<AgentWelcome />} />
             <Route path="/agent/approval/" element={<ApprovalLetteragemt />} />
             <Route path="/agent/customer/" element={<ApprovalCustomers />} />
-          </Route>
-          <Route
-            element={
-              <AccessControl
-                allowedRoles={[
-                  USER_ROLES.AGENT,
-                  USER_ROLES.FEILDOFFICER,
-                  USER_ROLES.DEALERSHIP,
-                ]}
-              />
-            }
-          >
             <Route path="/profile/me" element={<Profile />} />
             <Route path="profile/me/edit" element={<Edit />} />
           </Route>
+
           <Route
             element={<AccessControl allowedRoles={[USER_ROLES.CUSTOMER]} />}
           >
