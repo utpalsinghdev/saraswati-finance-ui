@@ -520,7 +520,7 @@ export default function DashboardLayout({ children }) {
                     <span className="sr-only">Open user menu</span>
                     {console.log(user)}
                     <Image
-                      className="h-8 w-8 rounded-full bg-gray-50"
+                      className="h-8 w-8 rounded-full border-2 bg-gray-50"
                       src={
                         user?.user?.profilePic
                           ? user?.user?.profilePic
