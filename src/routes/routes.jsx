@@ -44,6 +44,7 @@ import ApprovalCustomers from "../pages/agent/customers";
 import JointPercent from "../pages/dashboard/jointpercent";
 import Customerlogin from "../pages/Auth/Customerlogin";
 import CustomerHome from "../pages/dashboard/customerHome";
+import Profile from "../pages/profile";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   AGENT: "AGENT",
@@ -190,6 +191,19 @@ function RoutesConfig() {
             <Route path="/agent/welcome/" element={<AgentWelcome />} />
             <Route path="/agent/approval/" element={<ApprovalLetteragemt />} />
             <Route path="/agent/customer/" element={<ApprovalCustomers />} />
+          </Route>
+          <Route
+            element={
+              <AccessControl
+                allowedRoles={[
+                  USER_ROLES.AGENT,
+                  USER_ROLES.FEILDOFFICER,
+                  USER_ROLES.DEALERSHIP,
+                ]}
+              />
+            }
+          >
+            <Route path="/profile/me" element={<Profile />} />
           </Route>
           <Route
             element={<AccessControl allowedRoles={[USER_ROLES.CUSTOMER]} />}

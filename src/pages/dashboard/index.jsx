@@ -153,7 +153,10 @@ export default function DashboardLayout({ children }) {
     }
   };
   const userNavigation = [
-    { name: "Your profile", href: "#" },
+    {
+      name: "Your profile",
+      href: !!Cookies.get("gafs_agent") ? "/profile/me" : "#",
+    },
     {
       name: "Sign out",
       href: "#",
