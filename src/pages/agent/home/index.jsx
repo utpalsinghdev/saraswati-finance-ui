@@ -33,7 +33,7 @@ function HomeAgent() {
       </div>
       <Link
         to="/agent/customer/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-2 bg-blue-200 items-center justify-evenly gap-4"
+        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4"
       >
         <Image src={"/application.png"} className="w-20 h-20" />
 
