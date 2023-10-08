@@ -559,6 +559,7 @@ export default function DashboardLayout({ children }) {
                         <Menu.Item key={item.name}>
                           {({ active }) => (
                             <Link
+                              to={item.href}
                               onClick={item.func ? item.func : null}
                               className={classNames(
                                 active ? "bg-gray-50" : "",

@@ -45,6 +45,7 @@ import JointPercent from "../pages/dashboard/jointpercent";
 import Customerlogin from "../pages/Auth/Customerlogin";
 import CustomerHome from "../pages/dashboard/customerHome";
 import Profile from "../pages/profile";
+import Edit from "../pages/profile/Edit";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   AGENT: "AGENT",
@@ -204,6 +205,7 @@ function RoutesConfig() {
             }
           >
             <Route path="/profile/me" element={<Profile />} />
+            <Route path="profile/me/edit" element={<Edit />} />
           </Route>
           <Route
             element={<AccessControl allowedRoles={[USER_ROLES.CUSTOMER]} />}
