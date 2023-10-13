@@ -93,8 +93,9 @@ function Footer() {
               <li className="flex flex-row items-start gap-2">
                 <HiOutlineLocationMarker size={40} />
                 <span>
-                  DLF IT PARK TOWER A, RAJIV GANDHI CHANDIGARH TECHNOLOGY PARK,
-                  KISHANGARH, PHASE-1, SECTOR 13, CHANDIGARH 160101
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Modi, neque sequi minus nemo dolores quam iusto velit
+                  voluptate! Vel distinctio ratione,
                 </span>
               </li>
             </ul>
