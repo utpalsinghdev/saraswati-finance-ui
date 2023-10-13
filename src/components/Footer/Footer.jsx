@@ -69,14 +69,14 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:9289115033" target="_blank" rel="noreferrer">
-                  9289115033
+                <a href="tel:928XXXX033" target="_blank" rel="noreferrer">
+                  928XXXX033
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:9289122303" target="_blank" rel="noreferrer">
-                  9289122303
+                <a href="tel:928XXXX033" target="_blank" rel="noreferrer">
+                  928XXXX033
                 </a>
               </li>
 

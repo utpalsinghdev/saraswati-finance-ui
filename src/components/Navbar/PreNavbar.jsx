@@ -37,15 +37,15 @@ function PreNavbar() {
             <HeadphonesIcon />
             <span className="flex gap-1" rel="noreferrer">
               <a
-                href="tel:9289122303"
+                href="tel:928XXXX033"
                 className="pr-2 border-r-2 border-white"
                 target="_blank"
                 rel="noreferrer"
               >
-                9289122303
+                928XXXX033
               </a>
-              <a href="tel:9289115033" target="_blank" rel="noreferrer">
-                9289115033
+              <a href="tel:928XXXX033" target="_blank" rel="noreferrer">
+                928XXXX033
               </a>
             </span>
           </div>
