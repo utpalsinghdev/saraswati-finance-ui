@@ -62,7 +62,7 @@ const Navbar = () => {
                   to={link.link}
                   className={classNames(
                     "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-gray-700 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
-                    isActive(link.link) ? "bg-orange-200" : ""
+                    isActive(link.link) ? "bg-green-200" : ""
                   )}
                 >
                   {link.name}
@@ -81,7 +81,7 @@ const Navbar = () => {
               src="/logo_without_name.png"
               className=" block md:hidden  w-14   cursor-pointer mr-1"
             />
-            <p className="text-2xl text-orange-500 font-bold">
+            <p className="text-2xl text-green-500 font-bold">
               Caslon Business services Pvt. Ltd.
             </p>
           </span>
@@ -102,7 +102,7 @@ const Navbar = () => {
                 }}
                 className={classNames(
                   "px-2 py-2 w-full rounded-md border  cursor-pointer font-medium pb-1 border-b-2 transition duration-300  hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
-                  isActive(link.link) ? "bg-orange-200" : ""
+                  isActive(link.link) ? "bg-green-200" : ""
                 )}
               >
                 {link.name}

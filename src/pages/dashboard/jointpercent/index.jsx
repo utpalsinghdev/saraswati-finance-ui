@@ -101,7 +101,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "right",
-              color: "orange",
+              color: "green",
               fontSize: 12,
               fontWeight: "light",
             }}

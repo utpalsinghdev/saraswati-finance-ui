@@ -99,7 +99,7 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem] flex-col pt-8 pb-8 mb-4 shadow-lg shadow-orange-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem] flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
           <span className="text-3xl self-center font-bold text-blue-800">
@@ -111,7 +111,7 @@ const Homepage = () => {
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
-              <button className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu">
+              <button className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-blue-900 transform-cpu">
                 <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                   Read More
                 </span>
@@ -158,7 +158,7 @@ const Homepage = () => {
               onClick={() => {
                 navigator("/contact-us");
               }}
-              className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu"
+              className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-green-500 transform-cpu"
             >
               <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                 Contact
@@ -170,7 +170,7 @@ const Homepage = () => {
               }}
               className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
             >
-              <span className="front bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold">
+              <span className="front bg-green-600 hover:bg-green-700 px-4 py-2  rounded-3xl font-semibold">
                 Apply
               </span>
             </button>
@@ -203,7 +203,7 @@ const Homepage = () => {
       <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
         <h1 className="w-full text-left text-5xl pl-2 font-bold mb-4 text-gray-800">
           <span className="underline">Our</span>{" "}
-          <span className="text-orange-500">Services.</span>{" "}
+          <span className="text-green-500">Services.</span>{" "}
         </h1>
 
         <div className="w-full px-2 md:grid md:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
@@ -344,7 +344,7 @@ const Homepage = () => {
       </div>
       <section className="mb-10 grid grid-cols-1 md:grid-cols-3 bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
         <div>
-          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-orange-700 w-full ">
+          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-green-700 w-full ">
             <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
               Loan EMI Calculator
             </span>
@@ -428,7 +428,7 @@ const Homepage = () => {
                     <div className="flex items-start justify-center mt-4 w-full">
                       <Link
                         to="/apply-loan"
-                        className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu"
+                        className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-blue-900 transform-cpu"
                       >
                         <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                           Apply Now

@@ -108,7 +108,7 @@ function CustomerHome() {
           <Text
             style={{
               textAlign: "center",
-              color: "orange",
+              color: "green",
               marginTop: 8,
               fontSize: 18,
               letterSpacing: 1,
@@ -757,7 +757,7 @@ function CustomerHome() {
                 marginTop: 10,
                 fontSize: 18,
                 fontFamily: "Roboto",
-                color: "orange",
+                color: "green",
                 fontWeight: "bold",
               }}
             >
@@ -2276,7 +2276,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "right",
-                color: "orange",
+                color: "green",
                 marginTop: 20,
                 fontSize: 15,
                 fontWeight: "light",
@@ -2287,7 +2287,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "orange",
+                color: "green",
                 marginTop: 15,
                 fontSize: 30,
                 fontWeight: "light",
@@ -2411,7 +2411,7 @@ function CustomerHome() {
                   flexDirection: "row",
                   gap: 10,
                   fontSize: 12,
-                  borderBottom: "1px solid orange",
+                  borderBottom: "1px solid green",
                 }}
               >
                 <Text
@@ -2709,7 +2709,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "right",
-                color: "orange",
+                color: "green",
                 marginTop: 20,
                 fontSize: 15,
                 fontWeight: "light",
@@ -2720,7 +2720,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "orange",
+                color: "green",
                 marginTop: 15,
                 fontSize: 30,
                 fontWeight: "light",

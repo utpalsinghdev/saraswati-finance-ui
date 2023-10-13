@@ -38,7 +38,7 @@ function HomeAgent() {
         <Image src={"/application.png"} className="w-20 h-20" />
 
         <p className="text-start font-semibold text-blue-800">My Customers</p>
-        <p className="text-start p-2 bg-orange-400 rounded-xl">
+        <p className="text-start p-2 bg-green-400 rounded-xl">
           {_agent?.data?.Customer?.length}
         </p>
       </Link>
@@ -50,7 +50,7 @@ function HomeAgent() {
         <p className="text-start font-semibold text-blue-800">
           Welcome Letters
         </p>
-        <p className="text-start p-2 bg-orange-400 rounded-xl">
+        <p className="text-start p-2 bg-green-400 rounded-xl">
           {_agent?.data?.WelcomeLetter?.length}
         </p>
       </Link>
@@ -62,7 +62,7 @@ function HomeAgent() {
         <p className="text-start font-semibold text-blue-800">
           Approval Letters
         </p>
-        <p className="text-start p-2 bg-orange-400 rounded-xl">
+        <p className="text-start p-2 bg-green-400 rounded-xl">
           {_agent?.data?.Customer?.map((c) => +c?.ApprovalLetter?.length)}
         </p>
       </Link>
@@ -72,7 +72,7 @@ function HomeAgent() {
       >
         <Image src={"/agent.png"} className="w-20 h-20" />
         <p className="text-start font-semibold text-blue-800">My Agents</p>
-        <p className="text-start p-2 bg-orange-400 rounded-xl">
+        <p className="text-start p-2 bg-green-400 rounded-xl">
           {_agent?.data?.managing?.length}
         </p>
       </Link>

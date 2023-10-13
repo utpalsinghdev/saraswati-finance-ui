@@ -17,7 +17,7 @@ function CarouselBanner() {
             <p>
               {" "}
               Caslon Business{" "}
-              <p className="text-orange-500 ">Services PVT. LTD.</p>
+              <p className="text-green-500 ">Services PVT. LTD.</p>
             </p>
           </p>
 
@@ -26,7 +26,7 @@ function CarouselBanner() {
               onClick={() => {
                 navigator("/contact-us");
               }}
-              className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu"
+              className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-green-500 transform-cpu"
             >
               <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                 Contact
@@ -38,7 +38,7 @@ function CarouselBanner() {
               }}
               className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
             >
-              <span className="front bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold">
+              <span className="front bg-green-600 hover:bg-green-700 px-4 py-2  rounded-3xl font-semibold">
                 Apply
               </span>
             </button>

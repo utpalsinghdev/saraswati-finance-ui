@@ -110,7 +110,7 @@ function Edit() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="p-2 rounded-full bg-orange-400 self-end"
+                  className="p-2 rounded-full bg-green-400 self-end"
                 >
                   {isSubmitting ? "Uploading..." : "Save"}
                 </button>
@@ -178,7 +178,7 @@ function Edit() {
                 <div className="flex items-end justify-end w-full">
                   <button
                     type="submit"
-                    className="p-2 rounded-full bg-orange-400 self-end"
+                    className="p-2 rounded-full bg-green-400 self-end"
                   >
                     Update
                   </button>

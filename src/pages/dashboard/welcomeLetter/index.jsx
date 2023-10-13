@@ -79,7 +79,7 @@ const PdfFile = ({ data }) => {
         <Text
           style={{
             textAlign: "center",
-            color: "orange",
+            color: "green",
             marginTop: 8,
             fontSize: 18,
             letterSpacing: 1,
@@ -1190,7 +1190,7 @@ export default WelcomeLetter;
     //       <Text
     //         style={{
     //           textAlign: "right",
-    //           color: "orange",
+    //           color: "green",
     //           fontSize: 12,
     //           fontWeight: "light",
     //         }}

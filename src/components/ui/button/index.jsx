@@ -42,7 +42,7 @@ function Button({
       aria-label={type}
       {...props}
     >
-      <span className="front  bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold ">
+      <span className="front  bg-green-600 hover:bg-green-700 px-4 py-2  rounded-3xl font-semibold ">
         {!loading && children}{" "}
         {loading && (
           <div className="flex items-center justify-center">

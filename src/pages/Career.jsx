@@ -36,7 +36,7 @@ function Career() {
       <ContainerWrapper>
         <div className="p-0 md:p-4">
           <h1 className="text-3xl font-bold py-4 border-b-2 px-2 border-green-600">
-            <span className="text-orange-500">Start Your Career with us</span>
+            <span className="text-green-500">Start Your Career with us</span>
           </h1>
         </div>
         <Formik
@@ -214,7 +214,7 @@ function Career() {
                   <button
                     type={"submit"}
                     disabled={!f.values.agree || f.isSubmitting}
-                    className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu block w-full"
+                    className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-green-500 transform-cpu block w-full"
                   >
                     <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                       {f.isSubmitting ? "Submitting" : "Submit"}

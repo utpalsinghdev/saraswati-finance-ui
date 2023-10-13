@@ -80,7 +80,7 @@ const PdfFile = ({ data }) => {
               marginTop: 10,
               fontSize: 18,
               fontFamily: "Roboto",
-              color: "orange",
+              color: "green",
               fontWeight: "bold",
             }}
           >

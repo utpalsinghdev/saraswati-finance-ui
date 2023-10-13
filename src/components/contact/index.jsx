@@ -11,10 +11,10 @@ import TextArea from "../ui/textarea";
 const Contact = () => {
   return (
     <div
-      className="upper bg-orange-500 h-max rounded-3xl
+      className="upper bg-green-500 h-max rounded-3xl
         "
     >
-      <div className="lower bg-white flex flex-col text-left  px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-orange-700 w-full ">
+      <div className="lower bg-white flex flex-col text-left  px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-green-700 w-full ">
         <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
           Contact Us
         </span>
@@ -105,7 +105,7 @@ const Contact = () => {
               <button
                 type={"submit"}
                 disabled={formik.isSubmitting}
-                className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu"
+                className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-blue-900 transform-cpu"
               >
                 <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                   {formik.isSubmitting ? "Sending..." : "Send Message"}

@@ -27,7 +27,7 @@ function About() {
         <div className="w-full flex flex-col md:flex-row justify-between mb-10">
           <div className="px-4 py-8 mt-5 md:mt-20 w-full md:w-[60%]">
             <h1 className="flex gap-2 items-center text-left md:text-center  ">
-              <span className="text-3xl font-bold text-orange-500">About</span>
+              <span className="text-3xl font-bold text-green-500">About</span>
               <span className="text-3xl font-bold text-blue-800">
                 Caslon Business Services Private Limited
               </span>
@@ -38,15 +38,15 @@ function About() {
               Loan, Education Loan, Pay Slip Loan, Car Loan, Machine Loan,
               Business Loans, Loan Against Property & Project Etc.
             </p>
-            <div className="upper bg-orange-500 rounded-2xl mt-8">
+            <div className="upper bg-green-500 rounded-2xl mt-8">
               <div className="lower bg-blue-800 rounded-2xl mr-1 pt-1 pb-4">
-                <h1 className="pl-4 text-2xl font-extrabold text-orange-600 flex items-center gap-2 border-b border-blue-900 mx-2">
+                <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                   <AiFillInfoCircle /> Important Information
                 </h1>
                 <div className="text-gray-200 text-sm font-medium px-4 flex items-start flex-col gap-2">
                   {loanInformation.map((l) => (
                     <p key={l} className="flex gap-2 items-center">
-                      <BiSolidChevronsRight className="text-orange-500 text-lg" />
+                      <BiSolidChevronsRight className="text-green-500 text-lg" />
                       {l}
                     </p>
                   ))}
