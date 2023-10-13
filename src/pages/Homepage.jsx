@@ -1,37 +1,16 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import Ticker from "../components/ui/ticker";
 import Image from "../components/ui/Image/Index";
 import Input from "../components/ui/input";
 import { BiRupee } from "react-icons/bi";
-import { HiOutlineLocationMarker } from "react-icons/hi";
-import { MdOutlineRequestPage, MdSchool } from "react-icons/md";
-import { ImParagraphLeft } from "react-icons/im";
-import { LiaUsersCogSolid } from "react-icons/lia";
-import { GiFamilyHouse, GiHighGrass } from "react-icons/gi";
-import {
-  AiOutlineCalendar,
-  AiOutlineHome,
-  AiOutlineMail,
-  AiOutlineSafety,
-  AiOutlineStar,
-  AiOutlineUser,
-} from "react-icons/ai";
-import TextArea from "../components/ui/textarea";
-import LinkButton from "../components/ui/link";
-import ContainerWrapper from "../components/ui/containtWrapper";
+import { AiOutlineCalendar } from "react-icons/ai";
 import CarouselBanner from "../components/CarouselBanner";
 import { Formik } from "formik";
-import { sendMessageDto } from "../schemas";
-import ApiService from "../services/Api_services";
-import { toast } from "react-hot-toast";
-import axios from "axios";
 import useFetch from "../hooks/useFetch";
 import { Link, useNavigate } from "react-router-dom";
 import calculateEMI from "../utils/calculator";
 import Select from "../components/ui/select";
-import HeadingWrapper from "../components/ui/heading Wrapper";
 import Contact from "../components/contact";
 const Homepage = () => {
   const services = [
@@ -99,7 +78,7 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem] flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
           <span className="text-3xl self-center font-bold text-blue-800">
@@ -212,130 +191,7 @@ const Homepage = () => {
           ))}
         </div>
       </section>
-      {/* <--------------------------About Section-----------------------------> */}
 
-      {/* <--------------------------Contact Section-----------------------------> */}
-      {/* <div className="w-full bg-gray-100">
-        <ContainerWrapper>
-          <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
-            <div className="">
-              <div className="w-full h-[500px] flex flex-col gap-8 flex flex-col text-left  md:px-0">
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Easy Application
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Fast Approval
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Low interest rate
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Free consultation
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Flexible repayment
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Blacklisted accepted
-                </p>
-                <p className="text-2xl text-indigo-500 font-medium text-left">
-                  {">"} Get Approval in one day
-                </p>
-              </div>
-            </div>
-            <Image className={"hidden md:block"} src={"/contact_arrow.png"} />
-            <div className="flex flex-col text-left  px-4 md:px-0    ">
-              <span className="W-full text-2xl  text-left font-medium text-white bg-indigo-800 rounded-t-md px-8 py-4 ">
-                Contact Us
-              </span>
-              <Formik
-                validationSchema={sendMessageDto}
-                initialValues={{
-                  name: "",
-                  email: "",
-                  phone: "",
-                  message: "",
-                }}
-                onSubmit={async (values, action) => {
-                  try {
-                    const res = await axios.post(
-                      `${import.meta.env.VITE_BASE_URL}/api/message`,
-                      values
-                    );
-                    if (res) toast.success(res.data.message);
-                  } catch (error) {
-                    toast.error(error.response.data.message);
-                  } finally {
-                    action.resetForm();
-                    action.setSubmitting(false);
-                  }
-                }}
-              >
-                {(formik) => (
-                  <form
-                    onSubmit={formik.handleSubmit}
-                    className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
-                  >
-                    <Input
-                      label={""}
-                      type={"text"}
-                      name="name"
-                      value={formik.values.name}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      error={formik.touched.name && formik.errors.name}
-                      placeholder={"Name"}
-                      icon={<BiUser className="text-indigo-600" />}
-                    />
-                    <Input
-                      label={""}
-                      type={"email"}
-                      name="email"
-                      value={formik.values.email}
-                      onBlur={formik.handleBlur}
-                      onChange={formik.handleChange}
-                      error={formik.touched.email && formik.errors.email}
-                      placeholder={"Email"}
-                      icon={<AiOutlineMail className="text-indigo-600" />}
-                    />
-                    <Input
-                      label={""}
-                      type={"text"}
-                      name="phone"
-                      value={formik.values.phone}
-                      onBlur={formik.handleBlur}
-                      onChange={formik.handleChange}
-                      error={formik.touched.phone && formik.errors.phone}
-                      placeholder={"Phone"}
-                      icon={<BiPhone className="text-indigo-600" />}
-                    />
-                    <TextArea
-                      row={5}
-                      name="message"
-                      label={""}
-                      value={formik.values.message}
-                      onBlur={formik.handleBlur}
-                      onChange={formik.handleChange}
-                      error={formik.touched.message && formik.errors.message}
-                      placeholder={"Your Message"}
-                      icon={<BiPhone className="text-indigo-600" />}
-                    />
-                    <Button
-                      loadingText={"sending..."}
-                      loading={formik.isSubmitting}
-                      disabled={formik.isSubmitting}
-                      type={"submit"}
-                      size={"FULL"}
-                    >
-                      Send Message
-                    </Button>
-                  </form>
-                )}
-              </Formik>
-            </div>
-          </section>
-        </ContainerWrapper>
-      </div> */}
       <div className="w-full my-10 ">
         <h1 className="text-center text-2xl font-bold">
           <span className="text-blue-800">Calculate EMI,</span> Send Your
@@ -443,7 +299,7 @@ const Homepage = () => {
         </div>
         <Image
           src={"/contact.jpg"}
-          className={"md:aspect-auto   object-cover rounded-3xl"}
+          className={"md:aspect-auto object-cover rounded-3xl"}
         />
         <Contact />
       </section>
