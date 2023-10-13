@@ -54,10 +54,10 @@ function Footer() {
                 <IoIosArrowForward />
                 Contact Us
               </Link>
-              <a href="/broc.pdf" className="flex flex-row items-center gap-2">
+              {/* <a href="/broc.pdf" className="flex flex-row items-center gap-2">
                 <IoIosArrowForward />
                 Download Brochure
-              </a>
+              </a> */}
               <a href="#" className="flex flex-row items-center gap-2">
                 <IoIosArrowForward />
                 Agent App
