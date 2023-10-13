@@ -11,7 +11,7 @@ function Faqs() {
       <ContainerWrapper>
         <HeadingWrapper
           heading="Frequently Asked Questions"
-          title="Green Apple Financial Services Private Limited."
+          title="VANDHNAM FINANCE PVT. LTD."
         >
           <div className="py-10">
             <AccordianGroup
@@ -65,7 +65,8 @@ function Faqs() {
                   id: 8,
                   title:
                     " क्या हम कम्पनी के साथ जुड़कर काम कर सकते है (Can we work in association with the company?)",
-                  content: "Yes, आप कम्पनी में एजेंट, फील्ड ऑफिसर, डीलरशिप लेकर काम कर सकते हैं (Yes, you can work in the company by taking Dealership or you can work as a agent, field officer.)",
+                  content:
+                    "Yes, आप कम्पनी में एजेंट, फील्ड ऑफिसर, डीलरशिप लेकर काम कर सकते हैं (Yes, you can work in the company by taking Dealership or you can work as a agent, field officer.)",
                 },
                 {
                   id: 9,

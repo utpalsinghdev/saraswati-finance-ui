@@ -14,13 +14,14 @@ import { NewspaperIcon } from "@heroicons/react/24/outline";
 import { Link2Icon } from "lucide-react";
 import { addNewsDto } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
+import Loader from "../../../components/loader";
 
 const initialModalState = {
   state: false,
   edit_id: "",
   data: {
     text: "",
-    lane: "",
+    lane: "FIRST",
   },
 };
 function News() {
@@ -94,19 +95,7 @@ function News() {
                 placeholder={"Enter Your News"}
                 icon={<NewspaperIcon className="text-indigo-600 w-[18px]" />}
               />
-              <Select
-                label={""}
-                name="lane"
-                value={formik.values.lane}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.lane && formik.errors.lane}
-                icon={<Link2Icon className="w-4 text-indigo-500" />}
-              >
-                <option>Select a lane</option>
-                <option value="FIRST">First Lane</option>
-                <option value="SECOND">Second Lane</option>
-              </Select>
+
               <Button
                 loading={formik.isSubmitting}
                 loadingText={modal.edit_id ? "Updating..." : "Saving..."}
@@ -171,8 +160,8 @@ function News() {
       accessor: "text",
     },
     {
-      Header: "Lane",
-      accessor: "lane",
+      Header: "Created At",
+      accessor: "createdAt",
     },
     {
       Header: "Action",
@@ -194,11 +183,13 @@ function News() {
             Delete
           </Badge>
         </span>
-      ), 
+      ),
     },
   ];
 
-  return (
+  return news.loading ? (
+    <Loader />
+  ) : (
     <>
       {renderModal()}
       <ConfirmationModal

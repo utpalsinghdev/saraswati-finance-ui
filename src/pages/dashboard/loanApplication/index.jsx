@@ -16,6 +16,7 @@ import ConfirmationModal from "../../../components/confirmationModal";
 import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
 import moment from "moment";
+import Loader from "../../../components/loader";
 const initialModalState = {
   state: false,
   edit_id: "",
@@ -392,7 +393,11 @@ function LoanApplication() {
         a.agent.employeeCode +
         ")",
     },
-
+    {
+      Header: "Applied On",
+      accessor: (e) =>
+        e.createdAt ? moment(e.createdAt).format("DD/MM/YYYY") : "N/A",
+    },
     {
       Header: "Action",
       accessor: "action",
@@ -425,7 +430,9 @@ function LoanApplication() {
     },
   ];
 
-  return (
+  return applications.loading ? (
+    <Loader />
+  ) : (
     <>
       {/* {renderModal()} */}
       <ConfirmationModal

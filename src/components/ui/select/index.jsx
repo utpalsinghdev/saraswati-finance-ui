@@ -30,14 +30,16 @@ function Select({
           name={name}
           required={required}
           className={classNames(
-            " block w-full rounded-md text-black border-0 py- pl-8  ring-1 ring-gray-300 ring-inset  ",
+            " block w-full rounded-2xl text-black border-0 py- pl-8  ring-1 ring-gray-300 ring-inset  ",
             error
               ? "ring-red-300  focus:ring-2 focus:ring-inset focus:ring-red-500"
-              : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-indigo-500",
+              : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-orange-500",
             className
           )}
           {...rest}
-        >{children}</select>
+        >
+          {children}
+        </select>
       </div>
       {error && (
         <p className=" text-sm text-red-600" id="error">

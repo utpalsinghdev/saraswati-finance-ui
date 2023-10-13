@@ -4,61 +4,61 @@ import HeadingWrapper from "../components/ui/heading Wrapper";
 import CarouselBanner from "../components/CarouselBanner";
 import Image from "../components/ui/Image/Index";
 import AccordianGroup from "../components/ui/accordian/AccordianGroup";
+import { AiFillInfoCircle } from "react-icons/ai";
+import { BiSolidChevronsRight } from "react-icons/bi";
+import Contact from "../components/contact";
 
 function About() {
+  const loanInformation = [
+    "Personal/Educational loans are offered up to 50 Lakhs.",
+    "Special schemes for Government, Private sectors employee, Engineers, Teacher, Architectures, other persons for grow their business.",
+    "Easy EMI options means mode of payment and time.",
+    "You can get personal/educational loan at 4 to 9% flat p.a rate of interest.",
+    "A person can get a personal loan which have minimum six thousand salary.",
+    "Maximum loan repayment time is 20 years.",
+    "One must have a creditors proof stating about a steady job, including past Paychecks.",
+    "Needs a Guarantor to get all type of loan.",
+    "Bad Civil score doesn't matter for any type of loan.",
+    "If your file has been rejected by bank you can apply in our company.",
+  ];
   return (
-    <div className="bg-gray-100">
-      <CarouselBanner height="96" />
+    <div className="">
       <ContainerWrapper>
-        <HeadingWrapper
-          heading="About"
-          title="Green Apple Financial Services Private Limited."
-        >
-          <div className="w-full bg-gray-100">
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 py-20 md:py-15">
-              <div className=" h-[500px]">
-                <Image
-                  className=" h-[500px] md:w-[500px]  md:aspect-auto object-cover rounded-md"
-                  src={"/about.webp"}
-                  alt="about-section"
-                />
-              </div>
-
-              <div className="flex flex-col text-left px-0 md:px-0 gap-6 ">
-                <span className="W-full text-2xl  text-left font-medium text-green-600 text-primary-500">
-                  About Us
-                </span>
-                <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
-                  Green Apple Financial Services PVT. LTD.
+        <div className="w-full flex flex-col md:flex-row justify-between mb-10">
+          <div className="px-4 py-8 mt-5 md:mt-20 w-full md:w-[60%]">
+            <h1 className="flex gap-2 items-center text-left md:text-center  ">
+              <span className="text-3xl font-bold text-orange-500">About</span>
+              <span className="text-3xl font-bold text-blue-800">
+                Vandhnam Finance Private Limited
+              </span>
+            </h1>
+            <p className="text-md text-gray-700 font-medium mt-8">
+              Vandhnam Finance Pvt. Ltd. is dealing in Home Loan, Personal Loan,
+              Agriculture Loan, Shop Loan, Flat Loan, Project Loan, Education
+              Loan, Pay Slip Loan, Car Loan, Machine Loan, Business Loans, Loan
+              Against Property & Project Etc.
+            </p>
+            <div className="upper bg-orange-500 rounded-2xl mt-8">
+              <div className="lower bg-blue-800 rounded-2xl mr-1 pt-1 pb-4">
+                <h1 className="pl-4 text-2xl font-extrabold text-orange-600 flex items-center gap-2 border-b border-blue-900 mx-2">
+                  <AiFillInfoCircle /> Important Information
                 </h1>
-                <p className="text-gray-700 text-sm font-medium md:text-left ">
-                  Green Apple Financial Services Private Limited is dealing in
-                  Personal Loan, Loan against Property, Project Loan & Gold
-                  Loan. We Believe in fair dealing and prompt disbursement of
-                  founds on priority Basis.
-                </p>
-                <span className="text-gray-700 text-sm font-semibold md:text-left ">
-                  Green Apple Financial Services Pvt Ltd is an organization that
-                  motivates people to fulfill their dreams, which otherwise
-                  would be difficult to achieve due to the inaccessibility to
-                  right financial consulting and solutions.
-                </span>
-                <span className="text-gray-900 text-lg font-semibold md:text-left ">
-                  We are registered Private Limited Company:
-                </span>
-                <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                  IN CORPORATION NO: U69202HR2023PTC112412
-                </span>
-                <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                  PAN NO: AAKCG5265C
-                </span>
-                <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                  TAN NO: RTKG17932F
-                </span>
+                <div className="text-gray-200 text-sm font-medium px-4 flex items-start flex-col gap-2">
+                  {loanInformation.map((l) => (
+                    <p key={l} className="flex gap-2 items-center">
+                      <BiSolidChevronsRight className="text-orange-500 text-lg" />
+                      {l}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </section>
+            </div>
           </div>
-        </HeadingWrapper>
+          <div>
+            <Image src={"/about.jpg"} />
+            <Contact />
+          </div>
+        </div>
       </ContainerWrapper>
     </div>
   );

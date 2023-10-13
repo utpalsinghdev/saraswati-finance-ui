@@ -8,9 +8,21 @@ import { IdentificationIcon } from "@heroicons/react/24/outline";
 import { adminLoginDto } from "../../schemas";
 import Cookie from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function AdminLogin() {
   const navigator = useNavigate();
+  let user = {};
+  useEffect(() => {
+    if (!!Cookie?.get("gafs_user")) {
+      user = JSON?.parse(Cookie?.get("gafs_user"));
+    }
+  }, [Cookie?.get("gafs_user")]);
+  useEffect(() => {
+    if (!!Cookie?.get("gafs_user")) {
+      navigator("/admin/dashboard");
+    }
+  }, [user]);
   return (
     <>
       <div className="flex h-screen min-h-full flex-1 items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
@@ -18,7 +30,7 @@ export default function AdminLogin() {
           <div>
             <img
               className="mx-auto h-16 w-auto"
-              src="https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
+              src="/logo_full.png"
               alt="Your Company"
             />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -102,7 +114,6 @@ export default function AdminLogin() {
                     loadingText={"logging you in..."}
                     size={"NORMAL"}
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign in
                   </Button>

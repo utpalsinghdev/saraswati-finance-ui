@@ -15,6 +15,8 @@ import { addNewsDto, agentSchema } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
 import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/loader";
+import moment from "moment";
 
 const initialModalState = {
   state: false,
@@ -62,6 +64,8 @@ function CarrerApplications() {
               const payload = values;
               if (values.workUnder)
                 payload.workUnder = Number(values.workUnder);
+
+              if (!values.workUnder) delete payload.workUnder;
               const res = await ApiService.fetchData({
                 url: `api/agent-application/${edit_id}`,
                 method: "POST",
@@ -184,7 +188,7 @@ function CarrerApplications() {
                   }));
                   f.handleChange(e);
                 }}
-                name={"title"}
+                name={"workUnder"}
                 value={f.values.workUnder}
                 onBlur={f.handleBlur}
                 error={f.touched.workUnder && f.errors.workUnder}
@@ -309,6 +313,11 @@ function CarrerApplications() {
         ),
     },
     {
+      Header: "Applied at",
+      accessor: (e) =>
+        e.createdAt ? moment(e.createdAt).format("DD/MM/YYYY") : "N/A",
+    },
+    {
       Header: "Action",
       accessor: "action",
       Cell: (cell) => (
@@ -335,7 +344,9 @@ function CarrerApplications() {
     },
   ];
 
-  return (
+  return applications.loading ? (
+    <Loader />
+  ) : (
     <>
       {renderModal()}
       <ConfirmationModal

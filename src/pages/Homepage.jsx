@@ -1,22 +1,17 @@
 import React from "react";
-import Button from "../components/ui/button";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Ticker from "../components/ui/ticker";
 import Image from "../components/ui/Image/Index";
 import Input from "../components/ui/input";
-import {
-  BiUser,
-  BiPhone,
-  BiConversation,
-  BiSolidBusiness,
-} from "react-icons/bi";
+import { BiRupee } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineRequestPage, MdSchool } from "react-icons/md";
 import { ImParagraphLeft } from "react-icons/im";
 import { LiaUsersCogSolid } from "react-icons/lia";
 import { GiFamilyHouse, GiHighGrass } from "react-icons/gi";
 import {
+  AiOutlineCalendar,
   AiOutlineHome,
   AiOutlineMail,
   AiOutlineSafety,
@@ -33,281 +28,193 @@ import ApiService from "../services/Api_services";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import useFetch from "../hooks/useFetch";
+import { Link, useNavigate } from "react-router-dom";
+import calculateEMI from "../utils/calculator";
+import Select from "../components/ui/select";
+import HeadingWrapper from "../components/ui/heading Wrapper";
+import Contact from "../components/contact";
 const Homepage = () => {
+  const services = [
+    {
+      type: "Personal",
+      link: "/services/personal-loan",
+      img: "/personal.jpeg",
+    },
+    {
+      type: "Home",
+      link: "/services/home-loan",
+      img: "/home.jpeg",
+    },
+    {
+      type: "Education",
+      link: "/services/education-loan",
+      img: "/education.jpeg",
+    },
+    {
+      type: "Business",
+      link: "/services/business-loan",
+      img: "/business.jpeg",
+    },
+    {
+      type: "Property",
+      link: "/services/property-loan",
+      img: "/property.jpeg",
+    },
+    {
+      type: "ITR",
+      link: "/services/itr-loan",
+      img: "/itr.jpg",
+    },
+    {
+      type: "Agriculture",
+      link: "/services/agriculture-loan",
+      img: "/agriculture.jpeg",
+    },
+    {
+      type: "Pay Slip",
+      link: "/services/pay-slip-loan",
+      img: "/pay.jpg",
+    },
+  ];
+  const navigator = useNavigate();
+  function aboutNav() {
+    navigator("/about-us");
+  }
+  const catalog = [
+    {
+      name: "24/7 Unlimited Support",
+      img: "/time.png",
+      desc: "Our customer support team is ready to help our clients all the time.",
+    },
+    {
+      name: "We Are Committed",
+      img: "/agreement.png",
+      desc: "Skilled professionals are always ready to provide reliable services to our clients!...",
+    },
+    {
+      name: "Customer Focused Team",
+      img: "/medal.png",
+      desc: "Our agency can only be as strong as our people & because of this, our team have designed....",
+    },
+  ];
+  function ServiceCard({ img, type, link }) {
+    return (
+      <div className="flex w-[23rem] md:w-[18rem] flex-col pt-8 pb-8 mb-4 shadow-lg shadow-orange-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
+        <Image src={img} className={"w-96 h-64 rounded-xl"} />
+        <div className="flex flex-col items-center justify-between">
+          <span className="text-3xl self-center font-bold text-blue-800">
+            {type} Loan
+          </span>
+          <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
+            Get {type} Loan on Easy EMI basis from vandhnam Finance Pvt. Ltd.
+          </span>
+          <span className="self-center mt-4 md:self-auto">
+            <Link to={link}>
+              <button className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu">
+                <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
+                  Read More
+                </span>
+              </button>
+            </Link>
+          </span>
+        </div>
+      </div>
+    );
+  }
   const news = useFetch("/api/news");
   return (
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
-        <div className="absolute container mx-auto w-[80%] z-50 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
-          <div className="bg-green-200 w-4">
-            <p className="text-green-200">d</p>
-          </div>
-
-          <div className="flex flex-col py-2 z-50 ">
-            <span className="py-1 px-2 text-black text-sm font-medium ">
-              ABOUT COMPANY
-            </span>
-            <span className="py-1 px-2 text-2xl font-semibold ">News</span>
-          </div>
+        <div className="absolute w-full z-40 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-blue-800  flex h-max  gap-2 ">
           <div className="flex flex-col justify-between w-full py-2">
-            <span className="py-1 px-2 text-sm  ">
+            <span className="py-1 px-2 text-sm font-semibold text-white w-full">
               <Ticker
                 messages={
                   !news.loading
-                    ? news.data
-                        .map((n) => n.lane === "FIRST" && n.text)
-                    : ["Green Apple Financial Services Pvt. Ltd."]
-                }
-              />
-            </span>
-            <span className="py-1 px-2 text-sm w-full">
-              <Ticker
-                messages={
-                  !news.loading
-                    ? news.data
-                        .map((n) => n.lane === "SECOND" && n.text)
-                    : ["Green Apple Financial Services Pvt. Ltd."]
+                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                    : ["Vandhnam Finance Pvt. Ltd."]
                 }
               />
             </span>
           </div>
         </div>
       </div>
-
+      {/* <--------------------About Section------------------------------> */}
+      <section className="flex mt-20 bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
+        <div className="flex flex-col self-start gap-4 w-full md:w-96">
+          <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
+          <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
+          <p className="mt-10 ">
+            vandhnam Finance Services Pvt. Ltd. is dealing in Home Loan,
+            Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
+            Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
+            Loans, Loan Against Property & Project Etc.
+          </p>
+          <div className="flex md:mt-10 mt-1 items-center gap-4">
+            <button
+              onClick={() => {
+                navigator("/contact-us");
+              }}
+              className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-orange-500 transform-cpu"
+            >
+              <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
+                Contact
+              </span>
+            </button>
+            <button
+              onClick={() => {
+                navigator("/apply-loan");
+              }}
+              className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
+            >
+              <span className="front bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold">
+                Apply
+              </span>
+            </button>
+          </div>
+        </div>
+        <Image
+          src={"/about.png"}
+          className={"md:aspect-auto h-96  object-cover rounded-3xl"}
+        />
+        <div className="flex flex-col h-full items-center gap-1 justify-between w-full md:w-96">
+          {catalog.map((c, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center gap-2 p-1  shadow-md rounded-lg w-full"
+            >
+              <img src={c.img} alt="" className="w-16 h-16" />
+              <span className="flex flex-col justify-between py-1">
+                <h2 className="font-semibold text-center text-lg text-blue-800">
+                  {c.name}
+                </h2>
+                <h4 className="text-gray-700 text-center font-medium">
+                  {c.desc}
+                </h4>
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* <--------------------------Services Section-----------------------------> */}
       <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
-        <span className="text-xl mt-16 font-semibold mb-5 text-primary-500">
-          WHAT WE DO FOR YOU
-        </span>
-        <h1 className="w-full text-center text-5xl font-bold text-gray-800">
-          Services <span className="text-green-500">Benefits.</span>{" "}
+        <h1 className="w-full text-left text-5xl pl-2 font-bold mb-4 text-gray-800">
+          <span className="underline">Our</span>{" "}
+          <span className="text-orange-500">Services.</span>{" "}
         </h1>
 
-        <div className="w-full md:grid md:grid-cols-3 gap-5 my-2 flex flex-col items-start justify-between ">
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <AiOutlineHome className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Home Loan
-              </span>
-              <span className="mt-2 mb-1 text-center font-semibold md:text-left text-secondary-200 text-md">
-                Green Apple Financial Services Offers Home Loan on Easy EMI
-                basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/home-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <AiOutlineUser className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Personal Loan
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers Personal Loan on Easy EMI
-                basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/personal-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md  items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <BiSolidBusiness className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Business Loan
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers Business Loan on Easy EMI
-                basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/business-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <MdSchool className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Education Loan
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers Education Loan on Easy EMI
-                basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/education-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md  bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <GiFamilyHouse className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Property Loan
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers Property Loan on Easy EMI
-                basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/property-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <GiHighGrass className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Agriculture
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers Agriculture Loan on Easy
-                EMI basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/agriculture-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <MdOutlineRequestPage className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                ITR Loan
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers ITR Loan on Easy EMI basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/itr-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <MdOutlineRequestPage className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Pay Slip Loan
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers Pay Slip Loan on Easy EMI
-                basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/pay-slip-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row pt-8 pb-8 shadow-md bg-green-100 rounded-md items-center md:justify-around justify-center px-2 gap-4">
-            <span className="border self-auto md:self-start rounded-full p-4">
-              <LiaUsersCogSolid className="w-8 h-8 text-green-500" />
-            </span>
-            <div className="flex flex-col items-start justify-between">
-              <span className="text-3xl self-center md:self-start font-bold text-indigo-500">
-                Group Loan
-              </span>
-              <span className="mt-4 text-center md:text-left font-semibold text-secondary-200 text-md">
-                Green Apple Financial Services Offers Home Loan on Easy EMI
-                basis
-              </span>
-              <span className="self-center md:self-auto">
-                <LinkButton to="/services/group-loan" size={"small"}>
-                  View Details
-                </LinkButton>
-              </span>
-            </div>
-          </div>
+        <div className="w-full px-2 md:grid md:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
+          {services.map((s, i) => (
+            <ServiceCard type={s.type} link={s.link} key={i} img={s.img} />
+          ))}
         </div>
       </section>
       {/* <--------------------------About Section-----------------------------> */}
-      <div className="w-full bg-gray-100">
-        <ContainerWrapper>
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 py-20 md:py-15">
-            <div className=" h-[500px]">
-              <Image
-                className=" h-[500px] md:w-[500px]  md:aspect-auto object-cover rounded-md"
-                src={"/about.webp"}
-                alt="about-section"
-              />
-            </div>
 
-            <div className="flex flex-col text-left px-0 md:px-0 gap-6 ">
-              <span className="W-full text-2xl  text-left font-medium text-green-600 text-primary-500">
-                About Us
-              </span>
-              <h1 className="text-4xl lg:text-3xl text-indigo-500 font-bold md:text-left ">
-                Green Apple Financial Services PVT. LTD.
-              </h1>
-              <p className="text-gray-700 text-sm font-medium md:text-left ">
-                Green Apple Financial Services Private Limited is dealing in
-                Personal Loan, Loan against Property, Project Loan & Gold Loan.
-                We Believe in fair dealing and prompt disbursement of founds on
-                priority Basis.
-              </p>
-              <span className="text-gray-700 text-sm font-semibold md:text-left ">
-                Green Apple Financial Services Pvt Ltd is an organization that
-                motivates people to fulfill their dreams, which otherwise would
-                be difficult to achieve due to the inaccessibility to right
-                financial consulting and solutions.
-              </span>
-              <span className="text-gray-900 text-lg font-semibold md:text-left ">
-                We are registered Private Limited Company:
-              </span>
-              <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                IN CORPORATION NO: U69202HR2023PTC112412
-              </span>
-              <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                PAN NO: AAKCG5265C
-              </span>
-              <span className="text-gray-500 text-lg font-semibold md:text-left ">
-                TAN NO: RTKG17932F
-              </span>
-            </div>
-          </section>
-        </ContainerWrapper>
-      </div>
       {/* <--------------------------Contact Section-----------------------------> */}
-      <div className="w-full bg-gray-100">
+      {/* <div className="w-full bg-gray-100">
         <ContainerWrapper>
           <section className="pb-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
             <div className="">
@@ -427,7 +334,118 @@ const Homepage = () => {
             </div>
           </section>
         </ContainerWrapper>
+      </div> */}
+      <div className="w-full my-10 ">
+        <h1 className="text-center text-2xl font-bold">
+          <span className="text-blue-800">Calculate EMI,</span> Send Your
+          Message
+        </h1>
       </div>
+      <section className="mb-10 grid grid-cols-1 md:grid-cols-3 bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
+        <div>
+          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-orange-700 w-full ">
+            <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
+              Loan EMI Calculator
+            </span>
+            <span className="text-sm px-6">
+              Enter loan amount and select year to Calculate EMI and check you
+              eligibility
+            </span>
+            <div className="w-full pt-4 rounded-b-md pb-8   flex flex-col gap-4 px-4 ">
+              <Formik
+                initialValues={{
+                  amount: "",
+                  years: "",
+                  intrestRate: 5,
+                }}
+              >
+                {(e) => (
+                  <>
+                    <Input
+                      label={"Enter Loan Amount"}
+                      type="number"
+                      value={e.values.amount}
+                      name="amount"
+                      onChange={e.handleChange}
+                      placeholder={"Enter Amount"}
+                      icon={<BiRupee className="text-indigo-600" />}
+                    />
+                    <Select
+                      icon={<AiOutlineCalendar className="text-indigo-600" />}
+                      label={"Select Loan Tenure"}
+                      value={e.values.years}
+                      onChange={e.handleChange}
+                      name="years"
+                    >
+                      <option value="null">Select a year</option>
+                      {Array.from({ length: 17 }, (_, index) => (
+                        <option key={index + 1} value={index + 1}>
+                          {index + 1} Year{index !== 0 ? "s" : ""}
+                        </option>
+                      ))}
+                    </Select>
+
+                    <p className="text-sm mt-8 font-medium text-center text-gray-700">
+                      You have to pay
+                      {calculateEMI(
+                        Number(e.values.amount),
+                        Number(e.values.intrestRate),
+                        Number(e.values.years)
+                      )?.emi && (
+                        <>
+                          <span className="text-green-600">
+                            {" "}
+                            Rs.{" "}
+                            {
+                              calculateEMI(
+                                Number(e.values.amount),
+                                Number(e.values.intrestRate),
+                                Number(e.values.years)
+                              )?.emi
+                            }
+                            <span className="text-gray-700">
+                              {" "}
+                              / Month at the interest Rate of{" "}
+                              <span className="text-green-600">
+                                5%
+                              </span> for{" "}
+                              <span className="text-indigo-600">
+                                {
+                                  calculateEMI(
+                                    Number(e.values.amount),
+                                    Number(e.values.intrestRate),
+                                    Number(e.values.years)
+                                  )?.totalMonths
+                                }
+                              </span>{" "}
+                              Months
+                            </span>
+                          </span>
+                        </>
+                      )}
+                    </p>
+                    <div className="flex items-start justify-center mt-4 w-full">
+                      <Link
+                        to="/apply-loan"
+                        className="pushable rounded-3xl  bg-orange-400 hover:bg-orange-700 hover:text-blue-900 transform-cpu"
+                      >
+                        <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
+                          Apply Now
+                        </span>
+                      </Link>
+                    </div>
+                  </>
+                )}
+              </Formik>
+            </div>
+          </div>
+        </div>
+        <Image
+          src={"/contact.jpg"}
+          className={"md:aspect-auto   object-cover rounded-3xl"}
+        />
+        <Contact />
+      </section>
     </div>
   );
 };

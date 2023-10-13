@@ -31,14 +31,10 @@ function Button({
     <button
       onClick={onClickHandler}
       className={classNames(
-        "inline-flex justify-center rounded-md border border-transparent disabled:cursor-not-allowed disabled:opacity-80 ",
+        "pushable rounded-3xl bg-blue-600 mt-2 disabled:cursor-not-allowed  hover:bg-blue-900  block ",
         variant === "primary" ? "bg-indigo-800" : "bg-gray-300",
-        size === "FULL"
-          ? "px-4 py-4 w-full"
-          : size === "NORMAL"
-          ? "px-4 py-2"
-          : "px-2 py-1",
-        "text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm",
+
+        "text-base font-medium w-full text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm",
         className
       )}
       disabled={disabled}
@@ -46,15 +42,17 @@ function Button({
       aria-label={type}
       {...props}
     >
-      {!loading && children}
-      {loading && (
-        <span className="flex items-center justify-center">
-          <span className="flex items-center justify-center">
-            <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary mr-2"></span>
-          </span>
-          <span className="ltr:ml-1 rtl:mr-1 text-sm">{loadingText}</span>
-        </span>
-      )}
+      <span className="front  bg-orange-600 hover:bg-orange-700 px-4 py-2  rounded-3xl font-semibold ">
+        {!loading && children}{" "}
+        {loading && (
+          <div className="flex items-center justify-center">
+            <span className="flex items-center justify-center">
+              <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary mr-2"></span>
+            </span>
+            <span className="ltr:ml-1 rtl:mr-1 text-sm">{loadingText}</span>
+          </div>
+        )}
+      </span>
     </button>
   );
 }

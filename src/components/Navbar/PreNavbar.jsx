@@ -1,6 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ContainerWrapper from "../ui/containtWrapper";
+import {
+  BriefcaseIcon,
+  CaseLowerIcon,
+  HeadphonesIcon,
+  MailIcon,
+} from "lucide-react";
 
 function PreNavbar() {
   const location = useLocation();
@@ -9,59 +15,39 @@ function PreNavbar() {
     window.scrollTo(0, myRef.current.offsetTop);
   }, [location.pathname]);
   return (
-    <div ref={myRef} className=" w-full bg-blue-800/95 py-2 z-40">
+    <div
+      ref={myRef}
+      className="font-normal hidden md:block w-full bg-blue-900 py-2 z-40"
+    >
       <ContainerWrapper>
         <div className="flex justify-between items-center text-white">
-          <div className="py-2 hidden md:block">
-            Call Us:{" "}
-            <a href="tel:9540542272" target="_blank" rel="noreferrer">
-              9540542272
+          <div className="py-2 flex gap-2">
+            <MailIcon />
+            <a href="mailto:info@vandhnamservices.com" rel="noreferrer">
+              info@vandhnamservices.com
             </a>
           </div>
-          <div className="flex flex-row gap-2  md:gap-2 items-center justify-start flex-wrap">
-            <Link
-              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/apply-loan"
-            >
-              Apply Loan
-            </Link>
-
-            <Link
-              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/career"
-            >
-              Career
-            </Link>
-            <Link
-              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/"
-            >
-              login
-            </Link>
-            <Link
-              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/loan-calculator"
-            >
-              Calculator
-            </Link>
-            <Link
-              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/"
-            >
-              Agent App
-            </Link>
-            <Link
-              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/terms-and-conditions"
-            >
-              Terms & Conditions
-            </Link>
-            <Link
-              className="py-0.5 px-1 md:px-4  border border-white text-xs md:text-sm"
-              to="/anti-fraud-policy"
-            >
-              Anti-fraud Policy
-            </Link>
+          <div className="py-2 flex gap-2">
+            <BriefcaseIcon />
+            <p target="_blank" rel="noreferrer">
+              Mon - Sat 10:00 AM - 5:00 PM
+            </p>
+          </div>
+          <div className="py-2 flex gap-2">
+            <HeadphonesIcon />
+            <span className="flex gap-1" rel="noreferrer">
+              <a
+                href="tel:9289122303"
+                className="pr-2 border-r-2 border-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                9289122303
+              </a>
+              <a href="tel:9289115033" target="_blank" rel="noreferrer">
+                9289115033
+              </a>
+            </span>
           </div>
         </div>
       </ContainerWrapper>

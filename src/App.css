@@ -2,10 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @keyframes ticker {
     0% {
         transform: translateX(100%);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -30,4 +32,28 @@
 
 .ticker-content {
     display: inline-block;
+}
+
+.pushable {
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.front {
+    display: block;
+    transform: translateY(-4px);
+}
+
+.upper {
+    border: none;
+    outline-offset: 4px;
+}
+
+.lower {
+    transform: translateY(-4px);
+}
+
+.pushable:enabled:active .front {
+    transform: translateY(-1px);
 }

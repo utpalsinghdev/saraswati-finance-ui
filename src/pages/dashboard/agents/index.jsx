@@ -8,13 +8,19 @@ import { Formik } from "formik";
 import Input from "../../../components/ui/input";
 import { BiIdCard } from "react-icons/bi";
 import Select from "../../../components/ui/select";
-import { RiLockPasswordLine } from "react-icons/ri";
+import { RiLockPasswordLine, RiRestartLine } from "react-icons/ri";
+import { GiReturnArrow } from "react-icons/gi";
 import Button from "../../../components/ui/button";
 import { Link2Icon, MailIcon, Phone, User2Icon } from "lucide-react";
 import { addNewsDto, agentSchema, agentUpdateSchema } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
 import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
+import Loader from "../../../components/loader";
+import moment from "moment";
+const generateRandomSixDigitNumber = () =>
+  `${Math.floor(100000 + Math.random() * 900000)}`;
+// const randomSixDigitNumber = ;
 
 const initialModalState = {
   state: false,
@@ -27,7 +33,7 @@ const initialModalState = {
     Email: "",
     Phone: "",
     city: "",
-    password: "",
+    password: generateRandomSixDigitNumber(),
     workUnder: "",
     designation: "",
   },
@@ -212,17 +218,28 @@ function Agents() {
                   >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
                 ))}
               </Select>
-              <Input
-                name="password"
-                label=""
-                type="password"
-                placeholder="Password"
-                value={f.values.password}
-                onBlur={f.handleBlur}
-                onChange={f.handleChange}
-                icon={<RiLockPasswordLine className="text-indigo-600" />}
-                error={f.touched.password && f.errors.password}
-              />
+              <span className="flex items-center gap-2 justify-between">
+                <Input
+                  name="password"
+                  label=""
+                  type="text"
+                  placeholder="Password"
+                  value={f.values.password}
+                  onBlur={f.handleBlur}
+                  onChange={f.handleChange}
+                  icon={<RiLockPasswordLine className="text-indigo-600" />}
+                  error={f.touched.password && f.errors.password}
+                />
+                <GiReturnArrow
+                  onClick={() => {
+                    f.setValues((prev) => ({
+                      ...prev,
+                      password: generateRandomSixDigitNumber(),
+                    }));
+                  }}
+                  className="text-indigo-500 cursor-pointer"
+                />
+              </span>
               <Button
                 loading={f.isSubmitting}
                 loadingText={edit_id ? "Updating..." : "Adding..."}
@@ -320,17 +337,10 @@ function Agents() {
           ? `${e.managedBy.firstName} ${e.managedBy.LastName} ( ${e.managedBy.employeeCode} ) `
           : "N/A",
     },
-    // {
-    //   Header: "resume",
-    //   accessor: (e) =>
-    //     e?.resume ? (
-    //       <a className="hover:underline text-blue-800" href={e?.resume?.url}>
-    //         resume
-    //       </a>
-    //     ) : (
-    //       "N/A"
-    //     ),
-    // },
+    {
+      Header: "Joined at",
+      accessor: (e) => moment(e.joinedAt).format("DD/MM/YYYY"),
+    },
     {
       Header: "Action",
       accessor: "action",
@@ -355,7 +365,9 @@ function Agents() {
     },
   ];
 
-  return (
+  return agents.loading ? (
+    <Loader />
+  ) : (
     <>
       {renderModal()}
       <ConfirmationModal

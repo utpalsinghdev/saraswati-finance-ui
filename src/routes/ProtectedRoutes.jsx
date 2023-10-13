@@ -8,7 +8,9 @@ const ProtectedRoute = () => {
       <Outlet />
     </DashboardLayout>
   ) : (
-    <Navigate to="/page-not-found" />
+    <Navigate
+      to={!!Cookie.get("gafs_agent") ? "/agent/login/" : "/admin/login"}
+    />
   );
 };
 

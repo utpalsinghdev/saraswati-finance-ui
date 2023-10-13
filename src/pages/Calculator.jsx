@@ -10,33 +10,15 @@ import Select from "../components/ui/select";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { Formik } from "formik";
 import LinkButton from "../components/ui/link";
-
+import calculateEMI from "../utils/calculator";
 function Calculator() {
-  function calculateEMI(principal, interestRate, years) {
-    if (principal && interestRate && years) {
-      interestRate = interestRate / 100;
-      const monthlyInterestRate = interestRate / 12;
-      const totalMonths = years * 12;
-      const emi =
-        (principal * monthlyInterestRate) /
-        (1 - Math.pow(1 + monthlyInterestRate, -totalMonths));
-      const totalLoanAmount = emi * totalMonths;
-      return {
-        emi: Math.round(emi),
-        totalLoanAmount: totalLoanAmount,
-        totalMonths,
-      };
-    } else {
-      return null;
-    }
-  }
   return (
     <div className="bg-gray-100">
-      <CarouselBanner  />
+      <CarouselBanner />
       <ContainerWrapper>
         <HeadingWrapper
           heading="Loan Calculator"
-          title="Green Apple Financial Services Private Limited."
+          title="Vandhnam Finance Private Limited."
         >
           <div className="px-0 md:px-16 grid grid-cols-1 gap-4 md:grid-cols-2 mt-4 md:mt-8">
             <Image
@@ -123,7 +105,9 @@ function Calculator() {
                         )}
                       </p>
                       <div className="flex items-start justify-center mt-4 w-full">
-                        <LinkButton to="/apply-loan" size={"NORMAL"}>Apply Now</LinkButton>
+                        <LinkButton to="/apply-loan" size={"NORMAL"}>
+                          Apply Now
+                        </LinkButton>
                       </div>
                     </>
                   )}
