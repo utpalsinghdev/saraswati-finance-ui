@@ -10,23 +10,23 @@ const AntiFraudPolicy = () => {
       <ContainerWrapper>
         <HeadingWrapper
           heading={"Anti-Fraud Policy"}
-          title={"VANDHNAM FINANCE PVT. LTD."}
+          title={"Caslon Business Services Pvt. ltd."}
         >
           <div className="px-4 mt-4 flex flex-col gap-2">
             <h3 className="text-green-500 text-2xl font-semibold">Payment</h3>
             <p className="text-gray-600 text-sm font-medium">
-              If you make payment online, then pay only on the account of
-              VANDHNAM FINANCE PVT. LTD. which is mentioned on the bank section
+              If you make payment online, then pay only on the account of Caslon
+              Business Services Pvt. ltd. which is mentioned on the bank section
               of our website. If person asks you to pay to a bank account which
-              is Having no relevance to VANDHNAM FINANCE PVT. LTD. then never
-              make this kind of Payments Also never pay any amount to any person
-              claiming that he/she is an agent or representative of Financial
-              Services Private Limited outside the office branches any agent,
-              representative offers you extra care to process your application
-              faster or to Manage a document on an additional fee, we highly
-              discourage this kind of misuse of our services. Also, immediately
-              contact our official no -8272814112 to stop this type of unwanted
-              scam
+              is Having no relevance to Caslon Business Services Pvt. ltd. then
+              never make this kind of Payments Also never pay any amount to any
+              person claiming that he/she is an agent or representative of
+              Financial Services Private Limited outside the office branches any
+              agent, representative offers you extra care to process your
+              application faster or to Manage a document on an additional fee,
+              we highly discourage this kind of misuse of our services. Also,
+              immediately contact our official no -8272814112 to stop this type
+              of unwanted scam
             </p>
             <h3 className="text-green-500 text-2xl font-semibold">
               Fake/False Documentation
@@ -44,9 +44,9 @@ const AntiFraudPolicy = () => {
               Suggestion For You
             </h3>
             <p className="text-gray-600 text-sm font-medium">
-              VANDHNAM FINANCE PVT. LTD. suggest you, if you find any type of
-              fraud or scam with our agent or representative please contact us
-              immediately. We are always happy to help you.
+              Caslon Business Services Pvt. ltd. suggest you, if you find any
+              type of fraud or scam with our agent or representative please
+              contact us immediately. We are always happy to help you.
             </p>
           </div>
         </HeadingWrapper>

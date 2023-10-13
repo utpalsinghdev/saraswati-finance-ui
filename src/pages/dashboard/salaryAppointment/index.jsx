@@ -931,7 +931,7 @@ const PdfFile = ({ data }) => {
                 Any change in your status of residential address should be
                 notified in writing to the company. We welcome you to
                 <Text style={{ fontSize: 14, fontFamily: "Roboto" }}>
-                  VANDHNAM FINANCE PVT. LTD.
+                  Caslon Business Services Pvt. ltd.
                 </Text>{" "}
                 and look forward to having a long and mutually beneficial
                 association with you.

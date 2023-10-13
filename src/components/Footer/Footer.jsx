@@ -11,11 +11,12 @@ function Footer() {
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">
-            <img src="/logo.png" className="w-44" alt="" />
+            <img src="/logo.png" className="w-32" alt="" />
             <p className="text-white mt-2">
-              vandhnam Finance Private Limited. is dealing in Personal Loan,
-              Loan against Property, Project Loan & Gold Loan. We Believe in
-              fair dealing and prompt disbursement of founds on priority Basis.
+              Caslon Business Services Private Limited. is dealing in Personal
+              Loan, Loan against Property, Project Loan & Gold Loan. We Believe
+              in fair dealing and prompt disbursement of founds on priority
+              Basis.
             </p>
           </div>
           <div className="w-full ">
@@ -82,11 +83,11 @@ function Footer() {
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@vandhnamservices.com"
+                  href="mailto:info@caslonservices.in"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@vandhnamservices.com
+                  info@caslonservices.in
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">

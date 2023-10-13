@@ -37,7 +37,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "VANDHNAM FINANCE PVT. LTD.";
+  const company = "Caslon Business Services Pvt. ltd.";
   return (
     <Document>
       <Page size="A4" style={{}}>

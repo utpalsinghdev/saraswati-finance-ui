@@ -11,11 +11,14 @@ function CarouselBanner() {
 
   function ApplyBox() {
     return (
-      <span className="absolute top-16 md:top-20 left-6 md:left-40 z-50 md:w-[500px] w-72  rounded-lg md:h-56 h-52 bg-white/30 ">
+      <span className="absolute top-16 md:top-36 left-6 md:left-40 z-50 md:w-[500px] w-72  rounded-lg md:h-56 h-52 bg-white/30 ">
         <div className="p-4 flex flex-col items-start gap-4 justify-start">
           <p className="md:text-5xl text-3xl text-left text-blue-800 font-extrabold">
-            <p> Vandhnam Finance</p>
-            <p className="text-orange-500 md:mt-4 mt-1"> PVT. LTD.</p>
+            <p>
+              {" "}
+              Caslon Business{" "}
+              <p className="text-orange-500 ">Services PVT. LTD.</p>
+            </p>
           </p>
 
           <div className="flex md:mt-4 mt-1 items-center gap-4">

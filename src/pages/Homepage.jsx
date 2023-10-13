@@ -106,7 +106,8 @@ const Homepage = () => {
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from vandhnam Finance Pvt. Ltd.
+            Get {type} Loan on Easy EMI basis from Caslon Business Services Pvt.
+            ltd.
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
@@ -134,7 +135,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Vandhnam Finance Pvt. Ltd."]
+                    : ["Caslon Business Services Pvt. ltd."]
                 }
               />
             </span>

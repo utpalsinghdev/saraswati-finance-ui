@@ -40,12 +40,12 @@ const Navbar = () => {
       link: "/apply-loan",
     },
     {
-      name: "Login",
+      name: "Customer Login",
       link: "/c/login",
     },
   ];
   return (
-    <div className="container w-full md:w-[90%] mx-auto">
+    <div className=" w-full md:w-[90%] mx-auto">
       <div className="relative  md:mt-6 pb-4  bg-blue-800 md:bg-white  md:px-0 transition duration-300">
         <nav className="relative flex items-center justify-start md:justify-between">
           <Link to="/">
@@ -79,10 +79,10 @@ const Navbar = () => {
           <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-between gap-4 text-md">
             <img
               src="/logo_without_name.png"
-              className=" block md:hidden  w-16   cursor-pointer mr-1"
+              className=" block md:hidden  w-14   cursor-pointer mr-1"
             />
             <p className="text-2xl text-orange-500 font-bold">
-              Vandhnam Finance Pvt. Ltd.
+              Caslon Business services Pvt. Ltd.
             </p>
           </span>
         </nav>

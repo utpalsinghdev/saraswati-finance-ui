@@ -38,7 +38,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Vandhnam Finance Private Limited.";
+  const company = "Caslon Business Services Private Limited.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -1533,7 +1533,7 @@ export default WelcomeLetter;
     //             fontFamily: "Roboto",
     //           }}
     //         >
-    //           VANDHNAM FINANCE PVT. LTD.
+    //           Caslon Business Services Pvt. ltd.
     //         </Text>
     //       </Text>
     //       <Text

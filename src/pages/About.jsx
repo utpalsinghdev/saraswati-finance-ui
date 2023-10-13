@@ -29,14 +29,14 @@ function About() {
             <h1 className="flex gap-2 items-center text-left md:text-center  ">
               <span className="text-3xl font-bold text-orange-500">About</span>
               <span className="text-3xl font-bold text-blue-800">
-                Vandhnam Finance Private Limited
+                Caslon Business Services Private Limited
               </span>
             </h1>
             <p className="text-md text-gray-700 font-medium mt-8">
-              Vandhnam Finance Pvt. Ltd. is dealing in Home Loan, Personal Loan,
-              Agriculture Loan, Shop Loan, Flat Loan, Project Loan, Education
-              Loan, Pay Slip Loan, Car Loan, Machine Loan, Business Loans, Loan
-              Against Property & Project Etc.
+              Caslon Business Services Pvt. ltd. is dealing in Home Loan,
+              Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project
+              Loan, Education Loan, Pay Slip Loan, Car Loan, Machine Loan,
+              Business Loans, Loan Against Property & Project Etc.
             </p>
             <div className="upper bg-orange-500 rounded-2xl mt-8">
               <div className="lower bg-blue-800 rounded-2xl mr-1 pt-1 pb-4">

@@ -41,7 +41,7 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const company_name = "VANDHNAM FINANCE PVT. LTD.";
+const company_name = "Caslon Business Services Pvt. ltd.";
 const PdfFile = ({ data }) => {
   return (
     <Document>

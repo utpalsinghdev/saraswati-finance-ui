@@ -228,9 +228,9 @@ function Career() {
                 </h3>
 
                 <p className="text-sm max-w-md text-left ">
-                  Vandhnam Finance pvt ltd, a loan franchise, has been in
-                  existence for years now. You can bridge the gap between your
-                  applicant and us by partnering with our institution. Your
+                  Caslon Business Services Pvt ltd, a loan franchise, has been
+                  in existence for years now. You can bridge the gap between
+                  your applicant and us by partnering with our institution. Your
                   journey with us will be one long road of opportunities. Our
                   support team is always there to mentor you along the way. We
                   ensure 100% transparency by keeping you updated about your
@@ -252,7 +252,7 @@ function Career() {
                 <p className="text-sm max-w-md text-left ">
                   anyone (salaried/self-employed/freelancer/students) above 21
                   years and willing to enhance the monthly income can become the
-                  business partner of Vandhnam Finance pvt Ltd.
+                  business partner of Caslon Business Services Pvt ltd.
                 </p>
                 <h3 className="text-2xl text-green-500 text-left w-full font-extrabold ">
                   How to Become our Partner
