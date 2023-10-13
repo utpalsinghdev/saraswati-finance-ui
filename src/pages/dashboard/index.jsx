@@ -503,10 +503,19 @@ export default function DashboardLayout({ children }) {
             <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
               <form className="relative flex flex-1" action="#" method="GET">
                 {/* //TODO: ADD Logo here */}
-                <img
-                  src="/logo_full.png"
-                  className=" md:block  md:w-56  -top-5 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
-                />
+                <span
+                  className={classNames(
+                    " font-medium flex items-center justify-start gap-4 text-sm "
+                  )}
+                >
+                  <img
+                    src="/logo_without_name.png"
+                    className="w-12 cursor-pointer mr-1"
+                  />
+                  <p className=" md:block text-xl sm:text-2xl md:text-2xl text-green-500 font-bold">
+                    Caslon Business services Pvt. Ltd.
+                  </p>
+                </span>
               </form>
               <div className="flex items-center gap-x-4 lg:gap-x-6">
                 {/* Separator */}
