@@ -17,22 +17,22 @@ const Homepage = () => {
     {
       type: "Personal",
       link: "/services/personal-loan",
-      img: "/personal.jpeg",
+      img: "/personal.jpg",
     },
     {
       type: "Home",
       link: "/services/home-loan",
-      img: "/home.jpeg",
+      img: "/home.jpg",
     },
     {
       type: "Education",
       link: "/services/education-loan",
-      img: "/education.jpeg",
+      img: "/education.jpg",
     },
     {
       type: "Business",
       link: "/services/business-loan",
-      img: "/business.jpeg",
+      img: "/bussiness.jpg",
     },
     {
       type: "Property",
@@ -47,7 +47,7 @@ const Homepage = () => {
     {
       type: "Agriculture",
       link: "/services/agriculture-loan",
-      img: "/agriculture.jpeg",
+      img: "/agri.jpg",
     },
     {
       type: "Pay Slip",
