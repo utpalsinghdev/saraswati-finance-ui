@@ -148,8 +148,8 @@ const Homepage = () => {
           <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
           <p className="mt-10 ">
-            vandhnam Finance Services Pvt. Ltd. is dealing in Home Loan,
-            Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
+            Caslon Business Services Pvt. Ltd. is dealing in Home Loan, Personal
+            Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
             Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
             Loans, Loan Against Property & Project Etc.
           </p>
