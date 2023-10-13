@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "react-router-dom";
 import { classNames } from "../../utils/classname";
+import Brand from "../brand";
 const Navbar = () => {
   const location = useLocation();
 
@@ -51,10 +52,7 @@ const Navbar = () => {
       <div className="relative  md:mt-6 pb-4  bg-blue-800 md:bg-white  md:px-0 transition duration-300">
         <nav className="relative flex items-center justify-start md:justify-between">
           <Link to="/">
-            <img
-              src="/logo_full.png"
-              className="hidden md:block absolute w-28 md:w-56  -top-5 text-2xl font-extrabold font-serif cursor-pointer transition duration-300 hover:text-primary-500"
-            />
+            <Brand className={"hidden md:flex"} />
           </Link>
           <div className="hidden md:flex items-center justify-end w-full  gap-4">
             <div className=" flex items-center  justify-between gap-4 font-normal ">

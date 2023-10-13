@@ -9,6 +9,8 @@ import { adminLoginDto } from "../../schemas";
 import Cookie from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Brand from "../../components/brand";
+import { classNames } from "../../utils/classname";
 
 export default function AdminLogin() {
   const navigator = useNavigate();
@@ -28,11 +30,19 @@ export default function AdminLogin() {
       <div className="flex h-screen min-h-full flex-1 items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         <div className="w-full max-w-sm space-y-10">
           <div>
-            <img
-              className="mx-auto h-16 w-auto"
-              src="/logo_full.png"
-              alt="Your Company"
-            />
+            <span
+              className={classNames(
+                " font-medium  flex items-center justify-start gap-4 text-sm "
+              )}
+            >
+              <img
+                src="/logo_without_name.png"
+                className="   w-20   cursor-pointer mr-1"
+              />
+              <p className="text-xl md:text-2xl text-green-500 font-bold">
+                Caslon Business services Pvt. Ltd.
+              </p>
+            </span>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
               Admin Login
             </h2>
