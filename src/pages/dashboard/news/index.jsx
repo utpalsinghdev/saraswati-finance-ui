@@ -15,6 +15,7 @@ import { Link2Icon } from "lucide-react";
 import { addNewsDto } from "../../../schemas";
 import ConfirmationModal from "../../../components/confirmationModal";
 import Loader from "../../../components/loader";
+import TextArea from "../../../components/ui/textarea";
 
 const initialModalState = {
   state: false,
@@ -84,7 +85,8 @@ function News() {
               onSubmit={formik.handleSubmit}
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
-              <Input
+              <TextArea
+                row={3}
                 label={""}
                 type={"text"}
                 name="text"
