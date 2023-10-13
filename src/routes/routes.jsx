@@ -46,6 +46,7 @@ import Customerlogin from "../pages/Auth/Customerlogin";
 import CustomerHome from "../pages/dashboard/customerHome";
 import Profile from "../pages/profile";
 import Edit from "../pages/profile/Edit";
+import OurAgents from "../pages/OurAgents";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   AGENT: "AGENT",
@@ -105,6 +106,10 @@ const ro = [
   {
     link: "services/:slug",
     com: <Loan />,
+  },
+  {
+    link: "our-agents",
+    com: <OurAgents />,
   },
 ];
 const Authro = [

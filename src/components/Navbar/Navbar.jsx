@@ -30,6 +30,10 @@ const Navbar = () => {
       link: "/Career",
     },
     {
+      name: "Our Agents",
+      link: "/our-agents",
+    },
+    {
       name: "Contact Us",
       link: "/contact-us",
     },
