@@ -23,13 +23,15 @@ function About() {
   ];
   return (
     <div className="">
-      <ContainerWrapper>
+      <div className="container w-ful md:w-[90%] mx-auto px-1">
         <div className="w-full flex flex-col md:flex-row justify-between mb-10">
-          <div className="px-4 py-8 mt-5 md:mt-20 w-full md:w-[60%]">
-            <h1 className="flex gap-2 items-center text-left md:text-center  ">
-              <span className="text-3xl font-bold text-green-500">About</span>
+          <div className="px-1 py-8 mt-5 md:mt-20 w-full md:w-[60%]">
+            <h1 className="flex gap-2 items-center flex-col md:flex-row text-left md:text-center  ">
+              <span className="text-3xl w-full md:w-max font-bold text-green-500">
+                About
+              </span>
               <span className="text-3xl font-bold text-blue-800">
-                Caslon Business Services Private Limited
+                Caslon Business Services Pvt. Ltd.
               </span>
             </h1>
             <p className="text-md text-gray-700 font-medium mt-8">
@@ -59,7 +61,7 @@ function About() {
             <Contact />
           </div>
         </div>
-      </ContainerWrapper>
+      </div>
     </div>
   );
 }
