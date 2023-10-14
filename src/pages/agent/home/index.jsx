@@ -14,7 +14,7 @@ function HomeAgent() {
     <div className="w-full ">
       <div className="flex justify-between items-center mx-4">
         <div className="flex items-start justify-start flex-col">
-          <span>Good Morning</span>
+          <span>Welcome Back</span>
           <span>{user?.user?.firstName + " " + user?.user?.LastName}</span>
           <span>Designation: {user?.user?.designation}</span>
           <span>Agent Code: {user?.user?.employeeCode}</span>
@@ -33,7 +33,7 @@ function HomeAgent() {
       </div>
       <Link
         to="/agent/customer/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4"
+        className="w-full mt-4 flex rounded-md shadow-md px-4 py-3 bg-blue-200 items-center justify-evenly gap-4"
       >
         <Image src={"/application.png"} className="w-20 h-20" />
 
@@ -44,7 +44,7 @@ function HomeAgent() {
       </Link>
       <Link
         to="/agent/welcome/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4"
+        className="w-full mt-4 flex rounded-md shadow-md px-4 py-3 bg-blue-200 items-center justify-evenly gap-4"
       >
         <Image src={"/welcome.png"} className="w-20 h-20" />
         <p className="text-start font-semibold text-blue-800">
@@ -56,7 +56,7 @@ function HomeAgent() {
       </Link>
       <Link
         to="/agent/approval/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4 "
+        className="w-full mt-4 flex rounded-md shadow-md px-4 py-3 bg-blue-200 items-center justify-evenly gap-4 "
       >
         <Image src={"/approval.png"} className="w-20 h-20" />
         <p className="text-start font-semibold text-blue-800">
@@ -68,7 +68,7 @@ function HomeAgent() {
       </Link>
       <Link
         to="/agent/agents/"
-        className="w-full mt-4 flex rounded-md shadow-md px-8 py-6 bg-blue-200 items-center justify-evenly gap-4"
+        className="w-full mt-4 flex rounded-md shadow-md px-4 py-3 bg-blue-200 items-center justify-evenly gap-4"
       >
         <Image src={"/agent.png"} className="w-20 h-20" />
         <p className="text-start font-semibold text-blue-800">My Agents</p>
