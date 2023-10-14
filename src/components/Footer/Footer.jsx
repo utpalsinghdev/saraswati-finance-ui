@@ -58,10 +58,6 @@ function Footer() {
                 <IoIosArrowForward />
                 Download Brochure
               </a> */}
-              <a href="#" className="flex flex-row items-center gap-2">
-                <IoIosArrowForward />
-                Agent App
-              </a>
             </ul>
           </div>
           <div className="w-full ">

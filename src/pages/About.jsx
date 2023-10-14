@@ -3,7 +3,6 @@ import ContainerWrapper from "../components/ui/containtWrapper";
 import HeadingWrapper from "../components/ui/heading Wrapper";
 import CarouselBanner from "../components/CarouselBanner";
 import Image from "../components/ui/Image/Index";
-import AccordianGroup from "../components/ui/accordian/AccordianGroup";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { BiSolidChevronsRight } from "react-icons/bi";
 import Contact from "../components/contact";
@@ -48,8 +47,13 @@ function About() {
                 <div className="text-gray-200 text-sm font-medium px-4 flex items-start flex-col gap-2">
                   {loanInformation.map((l) => (
                     <p key={l} className="flex gap-2 items-center">
-                      <BiSolidChevronsRight className="text-green-500 text-lg" />
-                      {l}
+                      <div className="flex items-center gap-2">
+                        <span className="self-start">
+                          {" "}
+                          <BiSolidChevronsRight className="text-green-500 text-lg mt-1 md:mt-0" />
+                        </span>
+                        <p>{l}</p>
+                      </div>
                     </p>
                   ))}
                 </div>
