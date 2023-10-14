@@ -532,8 +532,8 @@ export default function DashboardLayout({ children }) {
                     <Image
                       className="h-8 w-8 rounded-full border-2 bg-gray-50"
                       src={
-                        user?.user?.profilePic
-                          ? user?.user?.profilePic
+                        user?.user.profilePic
+                          ? user?.user.profilePic
                           : "/fallback.png"
                       }
                       alt=""

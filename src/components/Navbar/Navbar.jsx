@@ -3,6 +3,7 @@ import { Bars3Icon } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "react-router-dom";
 import { classNames } from "../../utils/classname";
 import Brand from "../brand";
+import Image from "../ui/Image/Index";
 const Navbar = () => {
   const location = useLocation();
 
@@ -77,7 +78,7 @@ const Navbar = () => {
             className="md:hidden mt-4 cursor-pointer  w-6 h-6 ml-4"
           />
           <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-between gap-4 text-md">
-            <img
+            <Image
               src="/logo_without_name.png"
               className=" block md:hidden  w-14   cursor-pointer mr-1"
             />
