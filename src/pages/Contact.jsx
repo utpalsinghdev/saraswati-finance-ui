@@ -36,22 +36,22 @@ function Contact() {
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     <a
-                      href="tel:9289115033"
+                      href="tel:928XXXX033"
                       className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-9289115033 (Complaint & Help)
+                      <Phone /> +91-928XXXX033 (Complaint & Help)
                     </a>
                     <a
-                      href="tel:9289122303"
+                      href="tel:928XXXX033"
                       className="flex items-end text-md  gap-2"
                     >
-                      <Phone /> +91-9289122303 (HOD)
+                      <Phone /> +91-928XXXX033 (HOD)
                     </a>
                     <a
-                      href="mailto:vandhnamservices.com"
+                      href="mailto:caslonservices.com"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@vandhnamservices.com (HOD)
+                      <MailIcon /> info@caslonservices.com (HOD)
                     </a>
                   </div>
                 </div>
@@ -62,8 +62,9 @@ function Contact() {
                     Office Address
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    DLF IT PARK TOWER A, RAJIV GANDHI CHANDIGARH TECHNOLOGY
-                    PARK, KISHANGARH, PHASE-1, SECTOR 13, CHANDIGARH 160101
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur at, placeat eligendi iste sequi consequatur
+                    aliquid corporis! Obcaecati!
                   </div>
                 </div>
               </div>
