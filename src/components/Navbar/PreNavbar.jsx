@@ -23,7 +23,7 @@ function PreNavbar() {
         <div className="flex justify-between items-center text-white">
           <div className="py-2 flex gap-2">
             <MailIcon />
-            <a href="mailto:info@vandhnamservices.com" rel="noreferrer">
+            <a href="mailto:info@caslonservices.com" rel="noreferrer">
               info@caslonservices.in
             </a>
           </div>
