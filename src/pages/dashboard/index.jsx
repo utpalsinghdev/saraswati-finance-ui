@@ -361,9 +361,9 @@ export default function DashboardLayout({ children }) {
           <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-blue-900 px-6 pb-4">
             <div className="flex h-16 mt-2 shrink-0 items-center justify-center">
               <img
-                className="h-20 w-auto ml"
+                className="h-20 mt-2 w-auto ml"
                 draggable="false"
-                src="/logo.png"
+                src="/logo_full.png"
                 alt="Your Company"
               />
             </div>

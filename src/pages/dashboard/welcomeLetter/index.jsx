@@ -500,7 +500,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                UNION BANK OF INDIA
+                XXXXX BANK OF INDIA
               </Text>
             </View>
             <View
@@ -535,7 +535,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                VANDHNAM SERVICES
+                CASLON BUSINESS SERVICES
               </Text>
             </View>
             <View
@@ -570,7 +570,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                198821010000065
+                1988XXXX00000XX
               </Text>
             </View>
             <View
@@ -605,7 +605,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                UBIN0919888
+                UBIN09XXXXX
               </Text>
             </View>
           </View>
@@ -654,8 +654,8 @@ const PdfFile = ({ data }) => {
               position: "absolute",
               bottom: -15,
               right: 0,
-              width: 80,
-              height: 80,
+              width: 120,
+              height: 120,
             }}
           />
           <Text style={{ marginTop: 20 }}>
@@ -688,7 +688,7 @@ const initialModalState = {
   state: false,
   edit_id: "",
   data: {
-    charge: "4130",
+    charge: "4720",
     customerId: "",
     employeeId: "",
 

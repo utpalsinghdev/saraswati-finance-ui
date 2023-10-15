@@ -233,8 +233,8 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 top: 40,
                 right: 50,
-                width: 70,
-                height: 70,
+                width: 90,
+                height: 90,
                 backgroundColor: "transparent",
               }}
             />
@@ -1011,7 +1011,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                Rs.4130/-
+                Rs.4720/-
               </Text>{" "}
               paid
             </Text>
@@ -1339,7 +1339,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    Union Bank Of India
+                    XXXXX Bank Of India
                   </Text>
                 </View>
                 <View
@@ -1374,7 +1374,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    Vandhnam Services
+                    Caslon Business Services
                   </Text>
                 </View>
                 <View
@@ -1409,7 +1409,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    198821010000065
+                    19882101XXXXXXX
                   </Text>
                 </View>
                 <View
@@ -1444,7 +1444,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    UBIN0919888
+                    UBIN0XXXXXXXX
                   </Text>
                 </View>
               </View>
@@ -1489,8 +1489,8 @@ const PdfFile = ({ data }) => {
                   position: "absolute",
                   bottom: -50,
                   right: 20,
-                  width: 100,
-                  height: 100,
+                  width: 120,
+                  height: 120,
                 }}
               />
               <Text

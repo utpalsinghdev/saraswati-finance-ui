@@ -396,7 +396,7 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 top: 4,
                 right: 0,
-                width: 100,
+                width: 80,
                 height: 100,
               }}
               src={data?.photo}
@@ -406,9 +406,9 @@ const PdfFile = ({ data }) => {
               style={{
                 position: "absolute",
                 top: 40,
-                right: 50,
-                width: 70,
-                height: 70,
+                right: 40,
+                width: 90,
+                height: 90,
                 backgroundColor: "transparent",
               }}
             />
@@ -443,13 +443,14 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   fontFamily: "Roboto",
+                  textTransform: "uppercase",
                 }}
               >
-                SALES EXECUTIVE
+                {data?.agent?.designation}
               </Text>
               &quot;, Grade:
               <Text style={{ fontSize: 12, fontFamily: "Roboto" }}>
-                VANDHNAM FINANCE PVT.LTD
+                Caslon Business Services PVT.LTD
               </Text>{" "}
               .,w.e.f.{" "}
               <Text
@@ -981,8 +982,8 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 bottom: -100,
                 right: 20,
-                width: 100,
-                height: 100,
+                width: 120,
+                height: 120,
               }}
             />
           </View>

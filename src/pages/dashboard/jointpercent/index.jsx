@@ -218,8 +218,8 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 top: 40,
                 right: 50,
-                width: 70,
-                height: 70,
+                width: 90,
+                height: 90,
                 backgroundColor: "transparent",
               }}
             />
@@ -1059,8 +1059,8 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 bottom: 0,
                 right: 20,
-                width: 70,
-                height: 70,
+                width: 90,
+                height: 90,
               }}
             />
             <Text
