@@ -36,8 +36,27 @@ const initialModalState = {
     password: generateRandomSixDigitNumber(),
     workUnder: "",
     designation: "",
+    profilePic: "",
   },
 };
+function fileToBase64(file, callback) {
+  if (!file) {
+    callback("");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function (event) {
+    callback(event.target.result.split(",")[1]);
+  };
+
+  reader.onerror = function () {
+    callback("");
+  };
+
+  reader.readAsDataURL(file);
+}
 function Agents() {
   const [modal, setModal] = useState(initialModalState);
   const [agents, setAgents] = useState({
@@ -66,6 +85,14 @@ function Agents() {
               if (!edit_id) {
                 if (!values.workUnder) delete values.workUnder;
                 const payload = values;
+                if (values.profilePic) {
+                  await new Promise((resolve) => {
+                    fileToBase64(values.profilePic, (base64Data) => {
+                      payload.profilePic = base64Data;
+                      resolve();
+                    });
+                  });
+                }
                 if (values.workUnder)
                   payload.workUnder = Number(values.workUnder);
                 const res = await ApiService.fetchData({
@@ -81,6 +108,14 @@ function Agents() {
                 setModal(initialModalState);
               } else {
                 const payload = values;
+                if (values.profilePic) {
+                  await new Promise((resolve) => {
+                    fileToBase64(values.profilePic, (base64Data) => {
+                      payload.profilePic = base64Data;
+                      resolve();
+                    });
+                  });
+                }
                 payload.workUnder = Number(values.workUnder);
                 if (!values.workUnder) delete payload.workUnder;
                 if (!values.password) delete payload.password;
@@ -145,6 +180,19 @@ function Agents() {
                 icon={<User2Icon className="w-4 text-indigo-500" />}
                 label={""}
                 placeholder={"Last Name"}
+              />
+              <Input
+                name="profilePic"
+                onChange={(e) =>
+                  f.setValues((prev) => ({
+                    ...prev,
+                    profilePic: e.target.files[0],
+                  }))
+                }
+                onBlur={f.handleBlur}
+                required={edit_id ? false : true}
+                icon={<User2Icon className="w-4 text-indigo-500" />}
+                label={"Profile Pic"}
               />
               <Select
                 label={""}
