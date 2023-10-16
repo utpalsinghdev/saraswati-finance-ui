@@ -183,6 +183,7 @@ function Agents() {
               />
               <Input
                 name="profilePic"
+                type={"file"}
                 onChange={(e) =>
                   f.setValues((prev) => ({
                     ...prev,
