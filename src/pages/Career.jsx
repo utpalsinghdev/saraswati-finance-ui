@@ -43,13 +43,13 @@ function Career() {
           enableReinitialize
           validationSchema={agentApplicationSchema}
           initialValues={{
-            title: "Mr.",
-            firstName: "Utpal",
-            lastName: "Singh",
-            email: "singhutpal@gmail.com",
-            phone: "7645904853",
-            role: "AGENT",
-            city: "Delhi",
+            title: "",
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            role: "",
+            city: "",
             resume: "",
             profilePic: "",
             agree: false,
