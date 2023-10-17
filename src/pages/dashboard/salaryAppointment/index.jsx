@@ -1387,7 +1387,10 @@ export default function Appointment() {
       Header: "target",
       accessor: (c) => c.targetOne + " - " + c.targetTwo,
     },
-
+    {
+      Header: "Generated At",
+      accessor: (c) => moment(c.createdAt).format("hh:mm A DD/MM/YYYY"),
+    },
     {
       Header: "Action",
       accessor: "action",

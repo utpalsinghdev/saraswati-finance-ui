@@ -20,7 +20,7 @@ function OurAgents() {
     return (
       <div className="flex flex-row gap-3 border border-green-300  rounded-md p-2">
         <Image
-          className={"w-24 rounded-md"}
+          className={"w-[110px] h-32 rounded-md"}
           src={agent?.profilePic ? agent?.profilePic : "/fallback.png"}
         />
         <div className="text-sm font-semibold flex flex-col justify-between">

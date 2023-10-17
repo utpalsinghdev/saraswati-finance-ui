@@ -9,6 +9,7 @@ import {
   Image,
   PDFViewer,
   PDFDownloadLink,
+  Font,
 } from "@react-pdf/renderer";
 import Modal from "../../../components/ui/modal";
 import Select from "../../../components/ui/select";
@@ -29,6 +30,12 @@ import Input from "../../../components/ui/input";
 import Loader from "../../../components/loader";
 import { GoCrossReference } from "react-icons/go";
 import { MdDescription, MdProductionQuantityLimits } from "react-icons/md";
+import bold from "../../../assets/bold.ttf";
+import moment from "moment";
+Font.register({
+  family: "Roboto",
+  fonts: [{ src: bold, fontWeight: "bold" }],
+});
 const PdfFile = ({ data }) => {
   function calculateEMI(principal, interestRate, years) {
     if (principal && interestRate && years) {
@@ -54,6 +61,7 @@ const PdfFile = ({ data }) => {
         size="A4"
         style={{
           paddingBottom: 35,
+          fontFamily: "Roboto",
         }}
       >
         <View style={{}}>
@@ -82,7 +90,7 @@ const PdfFile = ({ data }) => {
               textAlign: "center",
               color: "green",
               fontSize: 12,
-              fontWeight: "light",
+              fontFamily: "Roboto",
             }}
           >
             Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
@@ -94,7 +102,7 @@ const PdfFile = ({ data }) => {
               color: "green",
               marginTop: 20,
               fontSize: 15,
-              fontWeight: "light",
+              fontFamily: "Roboto",
             }}
           >
             Date : {data.createdAt.split("T")[0]}
@@ -105,7 +113,7 @@ const PdfFile = ({ data }) => {
               color: "green",
               marginTop: 15,
               fontSize: 30,
-              fontWeight: "light",
+              fontFamily: "Roboto",
             }}
           >
             Invoice
@@ -116,6 +124,7 @@ const PdfFile = ({ data }) => {
               flexDirection: "row",
               justifyContent: "space-between",
               marginTop: 20,
+              fontFamily: "Roboto",
             }}
           >
             <View
@@ -227,6 +236,7 @@ const PdfFile = ({ data }) => {
                 gap: 10,
                 fontSize: 12,
                 borderBottom: "1px solid green",
+                fontFamily: "Roboto",
               }}
             >
               <Text
@@ -277,6 +287,7 @@ const PdfFile = ({ data }) => {
                 gap: 20,
                 fontSize: 12,
                 marginTop: 20,
+                fontFamily: "Roboto",
               }}
             >
               <Text
@@ -329,6 +340,7 @@ const PdfFile = ({ data }) => {
               justifyContent: "space-between",
               gap: 20,
               fontSize: 12,
+              fontFamily: "Roboto",
             }}
           >
             <View>
@@ -686,6 +698,10 @@ function WelcomeInvoice() {
     {
       Header: "total",
       accessor: (c) => "Rs. " + c.total,
+    },
+    {
+      Header: "Generated At",
+      accessor: (c) => moment(c.createdAt).format("hh:mm A DD/MM/YYYY"),
     },
 
     {

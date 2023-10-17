@@ -18,6 +18,7 @@ import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/loader";
 import moment from "moment";
+import Image from "../../../components/ui/Image/Index";
 const generateRandomSixDigitNumber = () =>
   `${Math.floor(100000 + Math.random() * 900000)}`;
 // const randomSixDigitNumber = ;
@@ -184,6 +185,7 @@ function Agents() {
               <Input
                 name="profilePic"
                 type={"file"}
+                accept="image/*, png, jpeg, jpg"
                 onChange={(e) =>
                   f.setValues((prev) => ({
                     ...prev,
@@ -192,7 +194,7 @@ function Agents() {
                 }
                 onBlur={f.handleBlur}
                 required={edit_id ? false : true}
-                icon={<User2Icon className="w-4 text-indigo-500" />}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
                 label={"Profile Pic"}
               />
               <Select
@@ -354,6 +356,10 @@ function Agents() {
     {
       Header: "Employee id",
       accessor: "employeeCode",
+    },
+    {
+      Header: "Photo",
+      accessor: (e) => (e.profilePic ? <Image src={e.profilePic} /> : "-"),
     },
     {
       Header: "name",

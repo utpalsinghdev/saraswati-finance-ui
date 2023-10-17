@@ -1747,7 +1747,10 @@ export default function ApprovalLetter() {
       Header: "Customer id",
       accessor: (c) => c?.customer.customerId,
     },
-
+    {
+      Header: "Generated At",
+      accessor: (c) => moment(c.createdAt).format("hh:mm A DD/MM/YYYY"),
+    },
     {
       Header: "Action",
       accessor: "action",
@@ -1755,7 +1758,11 @@ export default function ApprovalLetter() {
         <span className="flex items-center justify-start gap-4">
           <Badge
             onClick={() => {
-              setDownload(cell.row.index);
+              if (agents?.data?.[download]?.customer?.bank !== undefined) {
+                setDownload(cell.row.index);
+              } else {
+                toast.error("Customer Bank Details are Missing Please Update");
+              }
             }}
             type={enums.BLUE}
           >

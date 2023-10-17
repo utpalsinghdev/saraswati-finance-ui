@@ -1484,6 +1484,10 @@ export default function JointPercent() {
       accessor: (c) => c.add_charge,
     },
     {
+      Header: "Generated At",
+      accessor: (c) => moment(c.createdAt).format("hh:mm A DD/MM/YYYY"),
+    },
+    {
       Header: "Action",
       accessor: "action",
       Cell: (cell) => (

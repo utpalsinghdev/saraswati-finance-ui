@@ -17,6 +17,7 @@ import { SlLocationPin } from "react-icons/sl";
 import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/loader";
 import moment from "moment";
+import Image from "../../../components/ui/Image/Index";
 
 const initialModalState = {
   state: false,
@@ -279,6 +280,10 @@ function CarrerApplications() {
     {
       Header: "application id",
       accessor: "ApplicationID",
+    },
+    {
+      Header: "Photo",
+      accessor: (e) => (e.profilePic ? <Image src={e.profilePic} /> : "-"),
     },
     {
       Header: "name",

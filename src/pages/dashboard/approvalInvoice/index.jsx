@@ -9,6 +9,7 @@ import {
   Image,
   PDFViewer,
   PDFDownloadLink,
+  Font,
 } from "@react-pdf/renderer";
 import Modal from "../../../components/ui/modal";
 import Select from "../../../components/ui/select";
@@ -30,6 +31,12 @@ import Input from "../../../components/ui/input";
 import Loader from "../../../components/loader";
 import { GoCrossReference } from "react-icons/go";
 import { MdDescription, MdProductionQuantityLimits } from "react-icons/md";
+import bold from "../../../assets/bold.ttf";
+import moment from "moment";
+Font.register({
+  family: "Roboto",
+  fonts: [{ src: bold, fontWeight: "bold" }],
+});
 const PdfFile = ({ data }) => {
   function calculateEMI(principal, interestRate, years) {
     if (principal && interestRate && years) {
@@ -65,6 +72,7 @@ const PdfFile = ({ data }) => {
             padding: 40,
             fontFamily: "Helvetica",
             position: "relative",
+            fontFamily: "Roboto",
           }}
         >
           <Image
@@ -84,6 +92,7 @@ const PdfFile = ({ data }) => {
               color: "green",
               fontSize: 12,
               fontWeight: "light",
+              fontFamily: "Roboto",
             }}
           >
             Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
@@ -665,6 +674,10 @@ function ApprovalInvoice() {
     {
       Header: "total",
       accessor: (c) => "Rs. " + c.total,
+    },
+    {
+      Header: "Generated At",
+      accessor: (c) => moment(c.createdAt).format("hh:mm A DD/MM/YYYY"),
     },
 
     {

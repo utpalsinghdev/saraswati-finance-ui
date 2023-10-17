@@ -1029,6 +1029,7 @@ function WelcomeLetter() {
       Header: "Charge",
       accessor: (c) => c.charge,
     },
+
     {
       Header: "Agent",
       accessor: (c) =>
@@ -1039,7 +1040,10 @@ function WelcomeLetter() {
         c?.with.employeeCode +
         ")",
     },
-
+    {
+      Header: "Generated At",
+      accessor: (c) => moment(c.createdAt).format("hh:mm A DD/MM/YYYY"),
+    },
     {
       Header: "Action",
       accessor: "action",

@@ -43,14 +43,15 @@ function Career() {
           enableReinitialize
           validationSchema={agentApplicationSchema}
           initialValues={{
-            title: "",
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            role: "",
-            city: "",
+            title: "Mr.",
+            firstName: "Utpal",
+            lastName: "Singh",
+            email: "singhutpal@gmail.com",
+            phone: "7645904853",
+            role: "AGENT",
+            city: "Delhi",
             resume: "",
+            profilePic: "",
             agree: false,
           }}
           onSubmit={async (values, action) => {
@@ -61,7 +62,18 @@ function Career() {
                 resolve();
               });
             });
+            console.log(values.profilePic[0]);
+            if (values.profilePic) {
+              await new Promise((resolve) => {
+                fileToBase64(values.profilePic, (base64Data) => {
+                  payload.profilePic = base64Data;
+                  payload.fileType = values.profilePic.name;
+                  resolve();
+                });
+              });
+            }
             try {
+              console.log(payload);
               const res = await axios.post(
                 `${import.meta.env.VITE_BASE_URL}/api/agent-application`,
                 payload
@@ -141,6 +153,20 @@ function Career() {
                   icon={<User2Icon className="w-4 text-indigo-500" />}
                   label={""}
                   placeholder={"Last Name"}
+                />
+                <Input
+                  name="profilePic"
+                  type={"file"}
+                  onChange={(e) =>
+                    f.setValues((prev) => ({
+                      ...prev,
+                      profilePic: e.target.files[0],
+                    }))
+                  }
+                  accept="image/*, png, jpeg, jpg"
+                  onBlur={f.handleBlur}
+                  icon={<BiIdCard className="w-4 text-indigo-500" />}
+                  label={"Photo"}
                 />
                 <Input
                   name="city"

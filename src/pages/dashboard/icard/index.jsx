@@ -29,6 +29,7 @@ import Loader from "../../../components/loader";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import "../../../arton.css";
+import moment from "moment";
 function fileToBase64(file, callback) {
   if (!file) {
     callback("");
@@ -439,7 +440,10 @@ export default function Icard() {
       Header: "location",
       accessor: (c) => c.location,
     },
-
+    {
+      Header: "Generated At",
+      accessor: (c) => moment(c.createdAt).format("hh:mm A DD/MM/YYYY"),
+    },
     {
       Header: "Action",
       accessor: "action",
