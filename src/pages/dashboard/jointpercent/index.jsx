@@ -721,7 +721,7 @@ const PdfFile = ({ data }) => {
           </View>
           <View
             style={{
-              marginTop: 20,
+              marginTop: 10,
               gap: 15,
               display: "flex",
               flexDirection: "column",
@@ -881,7 +881,7 @@ const PdfFile = ({ data }) => {
           </View>
           <View
             style={{
-              marginTop: 20,
+              marginTop: 10,
               gap: 15,
               display: "flex",
               flexDirection: "column",
@@ -1078,24 +1078,21 @@ const PdfFile = ({ data }) => {
           </View>
         </View>
 
-        {/* <Text
+        <View
           style={{
             position: "absolute",
             fontSize: 12,
-            bottom: 30,
+            bottom: 0,
             left: 0,
-            borderTop: "1px solid black",
             right: 0,
-            paddingTop: 4,
             fontSize: 12,
             fontWeight: "bold",
 
             textAlign: "right",
           }}
-          render={({ pageNumber, totalPages }) =>
-            `SIGNATURE & THUMB IMPRESSION PAGE-${pageNumber}`
-          }
-        /> */}
+        >
+          <Image src={"/pdfFooter.png"} />
+        </View>
         {/* <Text
           style={{
            
@@ -1106,24 +1103,6 @@ const PdfFile = ({ data }) => {
         >
           
         </Text> */}
-        <View
-          style={{
-            position: "absolute",
-            fontSize: 12,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            color: "grey",
-          }}
-        >
-          <Image
-            style={{
-              marginTop: 120,
-            }}
-            src={"/pdfFooter.png"}
-          />
-        </View>
       </Page>
     </Document>
   );

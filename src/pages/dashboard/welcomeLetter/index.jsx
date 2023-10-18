@@ -80,7 +80,7 @@ const PdfFile = ({ data }) => {
           style={{
             textAlign: "center",
             color: "green",
-            marginTop: 8,
+            marginTop: 4,
             fontSize: 18,
             letterSpacing: 1,
             fontFamily: "Roboto",
@@ -452,7 +452,7 @@ const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "red",
-              marginTop: 10,
+              marginTop: 5,
               fontSize: 12,
               fontWeight: "light",
               textTransform: "uppercase",

@@ -129,7 +129,7 @@ const PdfFile = ({ data }) => {
           <View
             style={{
               fontSize: 12,
-              marginTop: 10,
+              marginTop: 2,
               fontWeight: "light",
             }}
           >
@@ -617,7 +617,6 @@ const PdfFile = ({ data }) => {
               borderTop: "1px solid black",
               textAlign: "right",
               color: "black",
-              marginTop: 10,
               paddingTop: 4,
               fontSize: 12,
               fontWeight: "bold",
