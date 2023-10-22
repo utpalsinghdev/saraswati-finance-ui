@@ -65,14 +65,14 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:928XXXX033" target="_blank" rel="noreferrer">
-                  928XXXX033
+                <a href="tel:8475059101" target="_blank" rel="noreferrer">
+                  8475059101
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:928XXXX033" target="_blank" rel="noreferrer">
-                  928XXXX033
+                <a href="tel:7900700989" target="_blank" rel="noreferrer">
+                  7900700989
                 </a>
               </li>
 
@@ -87,12 +87,8 @@ function Footer() {
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">
-                <HiOutlineLocationMarker size={40} />
-                <span>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Modi, neque sequi minus nemo dolores quam iusto velit
-                  voluptate! Vel distinctio ratione,
-                </span>
+                <HiOutlineLocationMarker size={20} />
+                <span>D-288,Gali No.10, Laxmi Nagar, Delhi-110092</span>
               </li>
             </ul>
           </div>

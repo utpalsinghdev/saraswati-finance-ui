@@ -36,22 +36,22 @@ function Contact() {
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     <a
-                      href="tel:928XXXX033"
+                      href="tel:8475059101"
                       className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-928XXXX033 (Complaint & Help)
+                      <Phone /> +91-8475059101 (Complaint & Help)
                     </a>
                     <a
-                      href="tel:928XXXX033"
+                      href="tel:7900700989"
                       className="flex items-end text-md  gap-2"
                     >
-                      <Phone /> +91-928XXXX033 (HOD)
+                      <Phone /> +91-7900700989
                     </a>
                     <a
                       href="mailto:caslonservices.com"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@caslonservices.com (HOD)
+                      <MailIcon /> info@caslonservices.com
                     </a>
                   </div>
                 </div>
@@ -62,9 +62,7 @@ function Contact() {
                     Office Address
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Consectetur at, placeat eligendi iste sequi consequatur
-                    aliquid corporis! Obcaecati!
+                    D-288,Gali No.10, Laxmi Nagar, Delhi-110092
                   </div>
                 </div>
               </div>
