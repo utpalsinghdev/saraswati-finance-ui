@@ -59,12 +59,22 @@ function Contact() {
               <div className="upper bg-green-500 rounded-2xl ">
                 <div className="lower bg-yellow-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
-                    Office Address
+                    Corporate Office:
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     Office no 401 fourth floor plot no 86, near sai mandir,
-                    laxmi nagar, delhi head office add: 9th foor, core tower,
-                    near prinam crossing ellisbridge ahmedabad-6, ahmedabad GJ,
+                    laxmi nagar, delhi
+                  </div>
+                </div>
+              </div>
+              <div className="upper bg-green-500 rounded-2xl ">
+                <div className="lower bg-yellow-800 rounded-2xl mr-1 pt-1 pb-4 ">
+                  <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
+                    Head Office:
+                  </h1>
+                  <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
+                    head office add: 9th foor, core tower, near prinam crossing
+                    ellisbridge ahmedabad-6, ahmedabad GJ,
                   </div>
                 </div>
               </div>
