@@ -284,7 +284,7 @@ export default function Icard() {
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Select a agent</option>
-                {employees.data.map((a) => (
+                {employees.data?.map((a) => (
                   <option
                     key={a.id}
                     value={a.id}

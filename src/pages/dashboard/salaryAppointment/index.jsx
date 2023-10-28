@@ -1178,7 +1178,7 @@ export default function Appointment() {
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Select Agent</option>
-                {employees.data.map((a) => (
+                {employees.data?.map((a) => (
                   <option
                     key={a.id}
                     value={a.id}

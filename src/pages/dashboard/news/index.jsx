@@ -54,7 +54,7 @@ function News() {
                 if (res) toast.success(res.data.message);
                 setNews((prev) => ({
                   ...prev,
-                  data: prev.data.map((n) =>
+                  data: prev.data?.map((n) =>
                     n.id === +edit_id ? res.data.data : n
                   ),
                 }));

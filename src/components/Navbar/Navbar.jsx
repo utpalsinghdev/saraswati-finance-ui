@@ -57,7 +57,7 @@ const Navbar = () => {
           </Link>
           <div className="hidden md:flex items-center justify-end w-full  gap-4">
             <div className=" flex items-center  justify-between gap-4 font-normal ">
-              {links.map((link, idx) => (
+              {links?.map((link, idx) => (
                 <Link
                   key={idx}
                   to={link.link}
@@ -94,7 +94,7 @@ const Navbar = () => {
           className="absolute z-50 bg-blue-800 top-20 rounded-b-md right-0 w-full transition duration-300"
         >
           <div className="bg-white mt-4 w-full py-4 px-2 flex flex-col items-center  gap-1 font-semibold md:hidden">
-            {links.map((link, idx) => (
+            {links?.map((link, idx) => (
               <Link
                 key={idx}
                 to={link.link}

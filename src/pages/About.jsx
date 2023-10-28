@@ -45,7 +45,7 @@ function About() {
                   <AiFillInfoCircle /> Important Information
                 </h1>
                 <div className="text-gray-200 text-sm font-medium px-4 flex items-start flex-col gap-2">
-                  {loanInformation.map((l) => (
+                  {loanInformation?.map((l) => (
                     <p key={l} className="flex gap-2 items-center">
                       <div className="flex items-center gap-2">
                         <span className="self-start">

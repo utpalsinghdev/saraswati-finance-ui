@@ -848,7 +848,7 @@ function WelcomeLetter() {
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Work Under</option>
-                {employees.data.map((a) => (
+                {employees.data?.map((a) => (
                   <option
                     key={a.id}
                     value={a.id}
@@ -967,7 +967,7 @@ function WelcomeLetter() {
                   icon={<BiIdCard className="w-4 text-indigo-500" />}
                 >
                   <option value={" "}>Select the Customer</option>
-                  {customers.data.map((a) => (
+                  {customers.data?.map((a) => (
                     <option
                       key={a.id}
                       value={a.id}

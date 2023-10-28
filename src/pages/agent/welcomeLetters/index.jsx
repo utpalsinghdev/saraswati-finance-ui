@@ -25,7 +25,7 @@ function AgentWelcome() {
   const navigate = useNavigate();
   return (
     <div>
-         <button
+      <button
         onClick={() => navigate(-1)}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
@@ -37,7 +37,7 @@ function AgentWelcome() {
       ) : _agent.data.WelcomeLetter.length === 0 ? (
         <p>No letters to display.</p>
       ) : (
-        _agent.data.WelcomeLetter.map((item, idx) => (
+        _agent.data.WelcomeLetter?.map((item, idx) => (
           <Card key={idx} item={item} />
         ))
       )}

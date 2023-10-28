@@ -112,7 +112,7 @@ const Homepage = () => {
               <Ticker
                 messages={
                   !news.data
-                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                    ? news.data?.map((n) => n.lane === "FIRST" && n.text)
                     : ["Aardhya Financial Pvt. ltd."]
                 }
               />
@@ -159,7 +159,7 @@ const Homepage = () => {
           className={"md:aspect-auto h-96  object-cover rounded-3xl"}
         />
         <div className="flex flex-col h-full items-center gap-1 justify-between w-full md:w-96">
-          {catalog.map((c, i) => (
+          {catalog?.map((c, i) => (
             <div
               key={i}
               className="flex flex-col items-center gap-2 p-1  shadow-md rounded-lg w-full"
@@ -185,7 +185,7 @@ const Homepage = () => {
         </h1>
 
         <div className="w-full px-2 md:grid md:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
-          {services.map((s, i) => (
+          {services?.map((s, i) => (
             <ServiceCard type={s.type} link={s.link} key={i} img={s.img} />
           ))}
         </div>

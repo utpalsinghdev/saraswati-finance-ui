@@ -19,13 +19,13 @@ function AgentLogs() {
       </div>
     );
   };
-  
+
   const user = JSON.parse(Cookie.get("gafs_user"));
   const _agent = useFetch(`api/auth/profile/${user?.user?.id}`);
   const navigate = useNavigate();
   return (
     <div>
-         <button
+      <button
         onClick={() => navigate(-1)}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
@@ -37,9 +37,7 @@ function AgentLogs() {
       ) : _agent.data.managing.length === 0 ? (
         <p>No agents to display.</p>
       ) : (
-        _agent.data.managing.map((item, idx) => (
-          <Card key={idx} item={item} />
-        ))
+        _agent.data.managing?.map((item, idx) => <Card key={idx} item={item} />)
       )}
     </div>
   );

@@ -38,7 +38,7 @@ function ApprovalCustomers() {
       ) : _agent.data.Customer.length === 0 ? (
         <p>No letters to display.</p>
       ) : (
-        _agent.data.Customer.map((item, idx) => <Card key={idx} item={item} />)
+        _agent.data.Customer?.map((item, idx) => <Card key={idx} item={item} />)
       )}
     </div>
   );

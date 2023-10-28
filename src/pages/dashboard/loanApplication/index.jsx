@@ -197,7 +197,7 @@ function LoanApplication() {
   //                 icon={<BiIdCard className="w-4 text-indigo-500" />}
   //               >
   //                 <option value={""}>Select A Agent</option>
-  //                 {allEmployees.data.map((a) => (
+  //                 {allEmployees.data?.map((a) => (
   //                   <option
   //                     key={a.id}
   //                     value={a.id}

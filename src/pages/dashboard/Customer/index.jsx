@@ -451,7 +451,7 @@ function Cutomers() {
                   icon={<RiUserSearchLine className="w-4 text-indigo-500" />}
                 >
                   <option>Select Agent</option>
-                  {allEmployees.data.map((a) => (
+                  {allEmployees.data?.map((a) => (
                     <option
                       key={a.id}
                       value={a.id}

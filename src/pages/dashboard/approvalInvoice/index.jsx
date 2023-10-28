@@ -547,7 +547,7 @@ function ApprovalInvoice() {
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Select a Customer</option>
-                {customers.data.map((a) => (
+                {customers.data?.map((a) => (
                   <option key={a.id} value={a.id}>
                     {`${a.name} (${a.customerId})`}
                   </option>

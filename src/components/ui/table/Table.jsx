@@ -40,7 +40,7 @@ export function SelectColumnFilter({
         }}
       >
         <option value="">All</option>
-        {options.map((option, i) => (
+        {options?.map((option, i) => (
           <option key={i} value={option}>
             {option}
           </option>
@@ -172,8 +172,8 @@ function Table({
           globalFilter={state.globalFilter}
           setGlobalFilter={setGlobalFilter}
         />
-        {headerGroups.map((headerGroup) =>
-          headerGroup.headers.map((column) =>
+        {headerGroups?.map((headerGroup) =>
+          headerGroup.headers?.map((column) =>
             column.Filter ? (
               <div className="mt-2 sm:mt-0" key={column.title}>
                 {column.render("Filter")}
@@ -192,12 +192,12 @@ function Table({
                 className="min-w-full divide-y divide-gray-200"
               >
                 <thead>
-                  {headerGroups.map((headerGroup) => (
+                  {headerGroups?.map((headerGroup) => (
                     <tr
                       key={headerGroup}
                       {...headerGroup.getHeaderGroupProps()}
                     >
-                      {headerGroup.headers.map((column, columnIndex) => {
+                      {headerGroup.headers?.map((column, columnIndex) => {
                         if (
                           isMobile ||
                           columnIndex === 0 ||
@@ -238,11 +238,11 @@ function Table({
                   {...getTableBodyProps()}
                   className="divide-y divide-gray-200"
                 >
-                  {page.map((row, i) => {
+                  {page?.map((row, i) => {
                     prepareRow(row);
                     return (
                       <tr key={row} {...row.getRowProps()} className="bg-white">
-                        {row.cells.map((cell, cellIndex) => {
+                        {row.cells?.map((cell, cellIndex) => {
                           if (
                             isMobile ||
                             cellIndex === 0 ||
@@ -311,7 +311,7 @@ function Table({
                       setPageSize(Number(e.target.value));
                     }}
                   >
-                    {[10, 20, 30, 40, 50].map((pageSize) => (
+                    {[10, 20, 30, 40, 50]?.map((pageSize) => (
                       <option key={pageSize} value={pageSize}>
                         Show {pageSize}
                       </option>

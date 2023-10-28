@@ -136,12 +136,12 @@ function RoutesConfig() {
       <Routes>
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<Homepage />} />\
-          {ro.map((r, idx) => (
+          {ro?.map((r, idx) => (
             <Route key={idx} path={r.link} element={r.com} />
           ))}
           <Route path="*" element={<NotFound />} />
         </Route>
-        {Authro.map((r, idx) => (
+        {Authro?.map((r, idx) => (
           <Route key={idx} path={r.link} element={r.comp} />
         ))}
         <Route element={<ProtectedRoute />}>

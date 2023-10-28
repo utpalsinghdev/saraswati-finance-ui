@@ -128,7 +128,7 @@ function Agents() {
                 if (res) toast.success(res.data.message);
                 setAgents((prev) => ({
                   ...prev,
-                  data: prev.data.map((n) =>
+                  data: prev.data?.map((n) =>
                     n.id === +edit_id ? res.data.data : n
                   ),
                 }));
@@ -262,7 +262,7 @@ function Agents() {
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Work Under</option>
-                {agents.data.map((a) => (
+                {agents.data?.map((a) => (
                   <option
                     key={a.id}
                     value={a.id}

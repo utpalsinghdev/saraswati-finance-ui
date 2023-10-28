@@ -56,7 +56,7 @@ function Badge({ children, type, ...rest }) {
     <div>
       {badges
         .filter((b) => b.color === type)
-        .map((badge, index) => (
+        ?.map((badge, index) => (
           <div key={index}>{badge.comp}</div>
         ))}
       {/* <span className="inline-flex items-center rounded-md bg-yellow-100 px-2 py-1 text-xs font-medium text-yellow-800">

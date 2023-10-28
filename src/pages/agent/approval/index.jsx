@@ -33,11 +33,11 @@ function ApprovalLetteragemt() {
       <h1 className="text-gray-700 text-2xl font-semibold">Approval Letters</h1>
       {_agent.loading ? (
         <Loader />
-      ) : _agent?.data?.Customer.map((c) => +c?.ApprovalLetter?.length) ===
+      ) : _agent?.data?.Customer?.map((c) => +c?.ApprovalLetter?.length) ===
         0 ? (
         <p>No letters to display.</p>
       ) : (
-        _agent.data.Customer.map((item, idx) => (
+        _agent.data.Customer?.map((item, idx) => (
           <>
             {item?.ApprovalLetter?.map((item, idx) => (
               <Card key={idx} item={item} />

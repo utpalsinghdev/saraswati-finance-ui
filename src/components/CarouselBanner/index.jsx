@@ -72,7 +72,7 @@ function CarouselBanner() {
       showThumbs={false}
       className="productCarousel"
     >
-      {imgs.map((i, idx) => (
+      {imgs?.map((i, idx) => (
         <ItemBox key={idx} src={i} />
       ))}
     </Carousel>

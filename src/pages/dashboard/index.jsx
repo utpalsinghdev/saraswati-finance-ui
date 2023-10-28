@@ -236,7 +236,7 @@ export default function DashboardLayout({ children }) {
                               .filter((t) =>
                                 t.access.includes(user?.user?.role)
                               )
-                              .map((item) => (
+                              ?.map((item) => (
                                 <li key={item.name}>
                                   <Link
                                     onClick={() =>
@@ -278,7 +278,7 @@ export default function DashboardLayout({ children }) {
                               .filter((t) =>
                                 t.access.includes(user?.user?.role)
                               )
-                              .map((team) => (
+                              ?.map((team) => (
                                 <li key={team.name}>
                                   <Link
                                     to={team.href}
@@ -314,7 +314,7 @@ export default function DashboardLayout({ children }) {
                               .filter((t) =>
                                 t.access.includes(user?.user?.role)
                               )
-                              .map((team) => (
+                              ?.map((team) => (
                                 <li key={team.name}>
                                   <Link
                                     onClick={() => setSidebarOpen(false)}
@@ -373,7 +373,7 @@ export default function DashboardLayout({ children }) {
                   <ul role="list" className="-mx-2 space-y-1">
                     {navigation
                       .filter((t) => t.access.includes(user?.user?.role))
-                      .map((item) => (
+                      ?.map((item) => (
                         <li key={item.name}>
                           <Link
                             to={item.href}
@@ -410,7 +410,7 @@ export default function DashboardLayout({ children }) {
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams
                       .filter((t) => t.access.includes(user?.user?.role))
-                      .map((team) => (
+                      ?.map((team) => (
                         <li key={team.name}>
                           <Link
                             to={team.href}
@@ -444,7 +444,7 @@ export default function DashboardLayout({ children }) {
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {invoice
                       .filter((t) => t.access.includes(user?.user?.role))
-                      .map((team) => (
+                      ?.map((team) => (
                         <li key={team.name}>
                           <Link
                             onClick={() => setSidebarOpen(false)}
@@ -563,7 +563,7 @@ export default function DashboardLayout({ children }) {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
-                      {userNavigation.map((item) => (
+                      {userNavigation?.map((item) => (
                         <Menu.Item key={item.name}>
                           {({ active }) => (
                             <Link

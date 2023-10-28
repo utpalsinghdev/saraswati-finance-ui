@@ -36,8 +36,6 @@ const Ticker = ({ messages }) => {
   );
 };
 
-
-
 Ticker.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.string),
 };
