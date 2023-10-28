@@ -106,7 +106,7 @@ const Homepage = () => {
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
-        <div className="absolute w-full z-40 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-blue-800  flex h-max  gap-2 ">
+        <div className="absolute w-full z-40 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-green-800  flex h-max  gap-2 ">
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm font-semibold text-white w-full">
               <Ticker

@@ -13,8 +13,8 @@ function Brand({ className }) {
         src="/logo_without_name.png"
         className="   w-20   cursor-pointer mr-1"
       />
-      <p className="text-xl text-green-800 font-extrabold">
-        Aaradhya Financial Pvt. Ltd.
+      <p className="text-xl text-yellow-800  font-extrabold">
+        AARDHYA FINANCIAL PVT LTD
       </p>
     </span>
   );

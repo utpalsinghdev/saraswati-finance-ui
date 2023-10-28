@@ -91,9 +91,9 @@ function Footer() {
                 </span>
                 <span>
                   {" "}
-                  Office no 401 fourth floor plot no 86, near sai mandir, laxmi
-                  nagar, delhi head office add: 9th foor, core tower, near
-                  prinam crossing ellisbridge ahmedabad-6, ahmedabad GJ,
+                  Office no 401 fourth floor plot no 86, near Sai Mandir, Laxmi
+                  Nagar, Delhi head office. Head Office: 9th foor, core tower,
+                  near prinam crossing ellisbridge Ahmedabad-6, Ahmedabad GJ.
                 </span>
               </li>
             </ul>

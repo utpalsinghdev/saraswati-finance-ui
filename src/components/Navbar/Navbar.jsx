@@ -50,7 +50,7 @@ const Navbar = () => {
   ];
   return (
     <div className=" w-full md:w-[90%] mx-auto">
-      <div className="relative  md:mt-6 pb-4  bg-blue-800 md:bg-white  md:px-0 transition duration-300">
+      <div className="relative  md:mt-6 pb-4  bg-green-800 md:bg-white  md:px-0 transition duration-300">
         <nav className="relative flex items-center justify-start md:justify-between">
           <Link to="/">
             <Brand className={"hidden md:flex"} />
@@ -82,8 +82,9 @@ const Navbar = () => {
               src="/logo_without_name.png"
               className=" block md:hidden  w-14   cursor-pointer mr-1"
             />
-            <p className="text-2xl text-green-500 font-bold">
-              Aardhya Financial Pvt. Ltd.
+            <p className="text-2xl text-[#B77E15] font-bold">
+              {" "}
+              AARDHYA FINANCIAL PVT LTD
             </p>
           </span>
         </nav>
@@ -91,7 +92,7 @@ const Navbar = () => {
           style={{
             display: show ? "block" : "none",
           }}
-          className="absolute z-50 bg-blue-800 top-20 rounded-b-md right-0 w-full transition duration-300"
+          className="absolute z-50 bg-green-800 top-20 rounded-b-md right-0 w-full transition duration-300"
         >
           <div className="bg-white mt-4 w-full py-4 px-2 flex flex-col items-center  gap-1 font-semibold md:hidden">
             {links?.map((link, idx) => (
