@@ -83,7 +83,7 @@ const Navbar = () => {
               className=" block md:hidden  w-14   cursor-pointer mr-1"
             />
             <p className="text-2xl text-green-500 font-bold">
-              Caslon Business services Pvt. Ltd.
+              Aardhya Financial Pvt. Ltd.
             </p>
           </span>
         </nav>

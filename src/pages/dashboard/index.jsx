@@ -513,7 +513,7 @@ export default function DashboardLayout({ children }) {
                     className="w-12 cursor-pointer mr-1"
                   />
                   <p className=" md:block text-xl sm:text-2xl md:text-2xl text-green-500 font-bold">
-                    Caslon Business services Pvt. Ltd.
+                    Aardhya Financial Pvt. Ltd.
                   </p>
                 </span>
               </form>

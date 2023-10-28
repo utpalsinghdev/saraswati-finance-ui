@@ -26,43 +26,45 @@ function Contact() {
           <section className="pb-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
             <Image src={"contact-us.jpg"} />
             <div className="flex flex-col gap-5 ">
-              <h1 className="text-3xl text-center font-bold text-green-500">
+              <h1 className="text-3xl text-center font-bold text-green-800">
                 Contact Us
               </h1>
               <div className="upper bg-green-500 rounded-2xl mt-8">
-                <div className="lower bg-blue-800 rounded-2xl mr-1 pt-1 pb-4">
+                <div className="lower bg-yellow-800 rounded-2xl mr-1 pt-1 pb-4">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Contact With Us
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     <a
-                      href="tel:8475059101"
+                      href="tel:8755030228"
                       className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-8475059101 (Complaint & Help)
+                      <Phone /> +91-8755030228
                     </a>
                     <a
-                      href="tel:7900700989"
+                      href="tel:8755030228"
                       className="flex items-end text-md  gap-2"
                     >
-                      <Phone /> +91-7900700989
+                      <Phone /> +91-8755030228
                     </a>
                     <a
-                      href="mailto:caslonservices.com"
+                      href="mailto:info@aardhyafinance.com"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@caslonservices.com
+                      <MailIcon /> info@aardhyafinance.com
                     </a>
                   </div>
                 </div>
               </div>
               <div className="upper bg-green-500 rounded-2xl ">
-                <div className="lower bg-blue-800 rounded-2xl mr-1 pt-1 pb-4 ">
+                <div className="lower bg-yellow-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Office Address
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    D-288,Gali No.10, Laxmi Nagar, Delhi-110092
+                    Office no 401 fourth floor plot no 86, near sai mandir,
+                    laxmi nagar, delhi head office add: 9th foor, core tower,
+                    near prinam crossing ellisbridge ahmedabad-6, ahmedabad GJ,
                   </div>
                 </div>
               </div>

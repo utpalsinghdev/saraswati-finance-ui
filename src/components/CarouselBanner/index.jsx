@@ -13,11 +13,10 @@ function CarouselBanner() {
     return (
       <span className="absolute top-16 md:top-36 left-6 md:left-32 z-50 md:w-[500px] w-72  rounded-lg md:h-56 h-52 bg-green-50/40 ">
         <div className="p-4 flex flex-col items-start gap-4 justify-start">
-          <p className="md:text-5xl text-3xl text-left text-blue-800 font-extrabold">
+          <p className="md:text-5xl text-3xl text-left text-green-800 font-extrabold">
             <p>
               {" "}
-              Caslon Business{" "}
-              <p className="text-green-500 ">Services PVT. LTD.</p>
+              Aaradhya Financial <p className="text-yellow-600 "> PVT. LTD.</p>
             </p>
           </p>
 

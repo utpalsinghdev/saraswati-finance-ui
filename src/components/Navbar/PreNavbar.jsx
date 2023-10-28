@@ -23,8 +23,8 @@ function PreNavbar() {
         <div className="flex justify-between items-center text-white">
           <div className="py-2 flex gap-2">
             <MailIcon />
-            <a href="mailto:info@caslonservices.com" rel="noreferrer">
-              info@caslonservices.in
+            <a href="mailto:info@aardhyafinance.com" rel="noreferrer">
+              info@aardhyafinance.com
             </a>
           </div>
           <div className="py-2 flex gap-2">
@@ -37,15 +37,15 @@ function PreNavbar() {
             <HeadphonesIcon />
             <span className="flex gap-1" rel="noreferrer">
               <a
-                href="tel:8475059101  "
+                href="tel:8755030228  "
                 className="pr-2 border-r-2 border-white"
                 target="_blank"
                 rel="noreferrer"
               >
-                8475059101
+                8755030228
               </a>
-              <a href="tel:7900700989" target="_blank" rel="noreferrer">
-                7900700989
+              <a href="tel:8755030228" target="_blank" rel="noreferrer">
+                8755030228
               </a>
             </span>
           </div>

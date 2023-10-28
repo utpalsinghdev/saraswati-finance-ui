@@ -37,7 +37,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Caslon Business Services Pvt. ltd.";
+  const company = "Aardhya Financial Pvt. ltd.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -1011,7 +1011,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                Rs.4720/-
+                Rs.3990/-
               </Text>{" "}
               paid
             </Text>
@@ -1374,7 +1374,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    Caslon Business Services
+                    Aardhya Financial
                   </Text>
                 </View>
                 <View

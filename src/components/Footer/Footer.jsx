@@ -11,12 +11,11 @@ function Footer() {
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">
-            <img src="/logo.png" className="w-32" alt="" />
+            <img src="/logo_full.png" className="w-64" alt="" />
             <p className="text-white mt-2">
-              Caslon Business Services Private Limited. is dealing in Personal
-              Loan, Loan against Property, Project Loan & Gold Loan. We Believe
-              in fair dealing and prompt disbursement of founds on priority
-              Basis.
+              Aardhya Financial Private Limited. is dealing in Personal Loan,
+              Loan against Property, Project Loan & Gold Loan. We Believe in
+              fair dealing and prompt disbursement of founds on priority Basis.
             </p>
           </div>
           <div className="w-full ">
@@ -65,30 +64,37 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:8475059101" target="_blank" rel="noreferrer">
-                  8475059101
+                <a href="tel:8755030228" target="_blank" rel="noreferrer">
+                  8755030228
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:7900700989" target="_blank" rel="noreferrer">
-                  7900700989
+                <a href="tel:8755030228" target="_blank" rel="noreferrer">
+                  8755030228
                 </a>
               </li>
 
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@caslonservices.in"
+                  href="mailto:info@aardhyafinance.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@caslonservices.in
+                  info@aardhyafinance.com
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">
-                <HiOutlineLocationMarker size={20} />
-                <span>D-288,Gali No.10, Laxmi Nagar, Delhi-110092</span>
+                <span>
+                  <HiOutlineLocationMarker size={20} />
+                </span>
+                <span>
+                  {" "}
+                  Office no 401 fourth floor plot no 86, near sai mandir, laxmi
+                  nagar, delhi head office add: 9th foor, core tower, near
+                  prinam crossing ellisbridge ahmedabad-6, ahmedabad GJ,
+                </span>
               </li>
             </ul>
           </div>

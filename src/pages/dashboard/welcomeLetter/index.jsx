@@ -38,7 +38,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Caslon Business Services Private Limited.";
+  const company = "Aardhya Financial Private Limited.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -535,7 +535,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                CASLON BUSINESS SERVICES
+                Aardhya Financial
               </Text>
             </View>
             <View
@@ -688,7 +688,7 @@ const initialModalState = {
   state: false,
   edit_id: "",
   data: {
-    charge: "4720",
+    charge: "3990",
     customerId: "",
     employeeId: "",
 
@@ -1537,7 +1537,7 @@ export default WelcomeLetter;
     //             fontFamily: "Roboto",
     //           }}
     //         >
-    //           Caslon Business Services Pvt. ltd.
+    //           Aardhya Financial Pvt. ltd.
     //         </Text>
     //       </Text>
     //       <Text

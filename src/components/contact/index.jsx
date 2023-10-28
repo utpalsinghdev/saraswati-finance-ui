@@ -15,7 +15,7 @@ const Contact = () => {
         "
     >
       <div className="lower bg-white flex flex-col text-left  px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-green-700 w-full ">
-        <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
+        <span className="mt-10 text-4xl text-green-800 text-center font-extrabold">
           Contact Us
         </span>
         <span className="text-sm px-6">

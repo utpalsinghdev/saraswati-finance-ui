@@ -78,19 +78,18 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-blue-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-yellow-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
-          <span className="text-3xl self-center font-bold text-blue-800">
+          <span className="text-3xl self-center font-bold text-green-800">
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from Caslon Business Services Pvt.
-            ltd.
+            Get {type} Loan on Easy EMI basis from Aardhya Financial Pvt. ltd.
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
-              <button className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-blue-900 transform-cpu">
+              <button className="pushable rounded-3xl  bg-green-800 hover:bg-green-700 hover:text-blue-900 transform-cpu">
                 <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                   Read More
                 </span>
@@ -112,9 +111,9 @@ const Homepage = () => {
             <span className="py-1 px-2 text-sm font-semibold text-white w-full">
               <Ticker
                 messages={
-                  !news.loading
+                  !news.data
                     ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Caslon Business Services Pvt. ltd."]
+                    : ["Aardhya Financial Pvt. ltd."]
                 }
               />
             </span>
@@ -127,10 +126,10 @@ const Homepage = () => {
           <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
           <p className="mt-10 ">
-            Caslon Business Services Pvt. Ltd. is dealing in Home Loan, Personal
-            Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
-            Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
-            Loans, Loan Against Property & Project Etc.
+            Aardhya Financial Pvt. Ltd. is dealing in Home Loan, Personal Loan,
+            Agriculture Loan, Shop Loan, Flat Loan, Project Loan, Education
+            Loan, Pay Slip Loan, Car Loan, Machine Loan, Business Loans, Loan
+            Against Property & Project Etc.
           </p>
           <div className="flex md:mt-10 mt-1 items-center gap-4">
             <button
@@ -167,7 +166,7 @@ const Homepage = () => {
             >
               <img src={c.img} alt="" className="w-16 h-16" />
               <span className="flex flex-col justify-between py-1">
-                <h2 className="font-semibold text-center text-lg text-blue-800">
+                <h2 className="font-semibold text-center text-lg text-yellow-800">
                   {c.name}
                 </h2>
                 <h4 className="text-gray-700 text-center font-medium">
@@ -201,7 +200,7 @@ const Homepage = () => {
       <section className="mb-10 grid grid-cols-1 md:grid-cols-3 bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
         <div>
           <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-green-700 w-full ">
-            <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
+            <span className="mt-10 text-4xl text-green-800 text-center font-extrabold">
               Loan EMI Calculator
             </span>
             <span className="text-sm px-6">

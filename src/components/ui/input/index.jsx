@@ -35,7 +35,7 @@ function Input({
             " block w-full rounded-2xl text-black border-0 py- pl-8  ring-1 ring-gray-300 ring-inset  ",
             error
               ? "ring-red-300  focus:ring-2 focus:ring-inset focus:ring-red-500"
-              : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-green-500",
+              : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-green-800",
             type === "file" && "py-1.5 bg-white text-gray-500",
             className
           )}

@@ -11,10 +11,10 @@ function Brand({ className }) {
     >
       <img
         src="/logo_without_name.png"
-        className="   w-12   cursor-pointer mr-1"
+        className="   w-20   cursor-pointer mr-1"
       />
-      <p className="text-lg text-green-500 font-bold">
-        Caslon Business services Pvt. Ltd.
+      <p className="text-xl text-green-800 font-extrabold">
+        Aaradhya Financial Pvt. Ltd.
       </p>
     </span>
   );
