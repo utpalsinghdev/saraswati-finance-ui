@@ -84,7 +84,7 @@ const Navbar = () => {
             />
             <p className="text-2xl text-[#B77E15] font-bold">
               {" "}
-              AARDHYA FINANCIAL PVT LTD
+              AARADHYA FINANCIAL PVT LTD
             </p>
           </span>
         </nav>
