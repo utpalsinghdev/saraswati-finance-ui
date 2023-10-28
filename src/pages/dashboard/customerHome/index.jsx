@@ -67,7 +67,7 @@ function CustomerHome() {
 
   const [generate, setGenerate] = useState(init);
   const PdfFileWelcomeLetter = ({ data }) => {
-    const company = "Aardhya Financial Private Limited.";
+    const company = "Aaradhya Financial Private Limited.";
     return (
       <Document>
         <Page size="A4" style={{}}>
@@ -714,7 +714,7 @@ function CustomerHome() {
     );
   };
   const PdfApprovalFile = ({ data }) => {
-    const company = "Aardhya Financial Pvt. ltd.";
+    const company = "Aaradhya Financial Pvt. ltd.";
     return (
       <Document>
         <Page size="A4" style={{}}>

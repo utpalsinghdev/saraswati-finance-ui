@@ -39,7 +39,7 @@ export default function AgentLogin() {
                 className="   w-20   cursor-pointer mr-1"
               />
               <p className="text-xl md:text-2xl text-green-500 font-bold">
-                Aardhya Financial Pvt. Ltd.
+                Aaradhya Financial Pvt. Ltd.
               </p>
             </span>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

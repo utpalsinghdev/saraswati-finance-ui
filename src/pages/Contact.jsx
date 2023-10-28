@@ -48,10 +48,10 @@ function Contact() {
                       <Phone /> +91-8755030228
                     </a>
                     <a
-                      href="mailto:info@aardhyafinance.com"
+                      href="mailto:info@Aaradhyafinance.com"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@aardhyafinance.com
+                      <MailIcon /> info@Aaradhyafinance.com
                     </a>
                   </div>
                 </div>

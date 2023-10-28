@@ -13,7 +13,7 @@ function Footer() {
           <div className="w-full">
             <img src="/logo_full.png" className="w-64" alt="" />
             <p className="text-white mt-2">
-              Aardhya Financial Private Limited. is dealing in Personal Loan,
+              Aaradhya Financial Private Limited. is dealing in Personal Loan,
               Loan against Property, Project Loan & Gold Loan. We Believe in
               fair dealing and prompt disbursement of founds on priority Basis.
             </p>
@@ -78,11 +78,11 @@ function Footer() {
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@aardhyafinance.com"
+                  href="mailto:info@Aaradhyafinance.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@aardhyafinance.com
+                  info@Aaradhyafinance.com
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">

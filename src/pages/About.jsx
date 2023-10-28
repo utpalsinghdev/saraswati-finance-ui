@@ -30,11 +30,11 @@ function About() {
                 About
               </span>
               <span className="text-3xl font-bold text-green-800">
-                Aardhya Financial Pvt. Ltd.
+                Aaradhya Financial Pvt. Ltd.
               </span>
             </h1>
             <p className="text-md text-gray-700 font-medium mt-8">
-              Aardhya Financial Pvt. ltd. is dealing in Home Loan, Personal
+              Aaradhya Financial Pvt. ltd. is dealing in Home Loan, Personal
               Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
               Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
               Loans, Loan Against Property & Project Etc.

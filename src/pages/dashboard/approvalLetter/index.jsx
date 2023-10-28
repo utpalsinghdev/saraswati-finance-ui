@@ -37,7 +37,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Aardhya Financial Pvt. ltd.";
+  const company = "Aaradhya Financial Pvt. ltd.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -1374,7 +1374,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    Aardhya Financial
+                    Aaradhya Financial
                   </Text>
                 </View>
                 <View

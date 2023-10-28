@@ -254,7 +254,7 @@ function Career() {
                 </h3>
 
                 <p className="text-sm max-w-md text-left ">
-                  Aardhya Financial Pvt ltd, a loan franchise, has been in
+                  Aaradhya Financial Pvt ltd, a loan franchise, has been in
                   existence for years now. You can bridge the gap between your
                   applicant and us by partnering with our institution. Your
                   journey with us will be one long road of opportunities. Our
@@ -278,7 +278,7 @@ function Career() {
                 <p className="text-sm max-w-md text-left ">
                   anyone (salaried/self-employed/freelancer/students) above 21
                   years and willing to enhance the monthly income can become the
-                  business partner of Aardhya Financial Pvt ltd.
+                  business partner of Aaradhya Financial Pvt ltd.
                 </p>
                 <h3 className="text-2xl text-green-800 text-left w-full font-extrabold ">
                   How to Become our Partner
