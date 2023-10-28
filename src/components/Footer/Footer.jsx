@@ -78,11 +78,11 @@ function Footer() {
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@Aaradhyafinance.com"
+                  href="mailto:info@Aardhyafinance.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@Aaradhyafinance.com
+                  info@Aardhyafinance.com
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">
