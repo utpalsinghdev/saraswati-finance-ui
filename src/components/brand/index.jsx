@@ -14,7 +14,7 @@ function Brand({ className }) {
         className="   w-20   cursor-pointer mr-1"
       />
       <p className="text-xl text-yellow-800  font-extrabold">
-        AARDHYA FINANCIAL PVT LTD
+        AARADHYA FINANCIAL PVT LTD
       </p>
     </span>
   );

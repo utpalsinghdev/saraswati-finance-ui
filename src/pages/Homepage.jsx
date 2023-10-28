@@ -179,7 +179,7 @@ const Homepage = () => {
       </section>
       {/* <--------------------------Services Section-----------------------------> */}
       <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
-        <h1 className="w-full text-left text-5xl pl-2 font-bold mb-4 text-gray-800">
+        <h1 className="w-full md:text-left text-center text-5xl pl-2 font-bold mb-4 text-gray-800">
           <span className="underline">Our</span>{" "}
           <span className="text-green-500">Services.</span>{" "}
         </h1>
