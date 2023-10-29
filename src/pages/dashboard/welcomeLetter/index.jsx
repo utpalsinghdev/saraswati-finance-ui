@@ -654,7 +654,7 @@ const PdfFile = ({ data }) => {
               position: "absolute",
               bottom: -15,
               right: 0,
-              width: 120,
+              width: 150,
               height: 120,
             }}
           />
@@ -1090,7 +1090,9 @@ function WelcomeLetter() {
   ) : (
     <>
       {renderModal()}
-
+      {/* <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[0]} />
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this letter?"
         isDelete

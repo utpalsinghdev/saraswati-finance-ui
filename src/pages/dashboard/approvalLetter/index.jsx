@@ -1285,7 +1285,7 @@ const PdfFile = ({ data }) => {
                     fontFamily: "Roboto",
                   }}
                 >
-                  info@caslonservices.com
+                  info@aardhyafinance.com
                 </Text>
               </Text>
               <Text style={{ fontSize: 12, marginTop: "6" }}>
@@ -1632,7 +1632,7 @@ export default function ApprovalLetter() {
                 icon={<BiRupee className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Select the Customer</option>
-                {customers.data?.map((a) => (
+                {customers.data.map((a) => (
                   <option key={a.id} value={a.id}>
                     {a.name}
                   </option>

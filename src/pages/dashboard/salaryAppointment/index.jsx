@@ -492,11 +492,9 @@ const PdfFile = ({ data }) => {
               }}
             >
               {data?.salary}
-              /-PER MONTH After Deduction (P.F & ESI) Your salary will be Rs.{" "}
-              {data?.salary_after_pf} /-PER MONTH. Your Monthly target will be{" "}
-              {data?.targetOne} to {data?.targetTwo} Files with (
-              {data?.incentive} % of the incentive of loan amount after
-              disbursement) and T.A & D.A Rs. 6000/-{" "}
+              /-PER MONTH Your Monthly target will be {data?.targetOne} to{" "}
+              {data?.targetTwo} Files with ({data?.incentive} % of the incentive
+              of loan amount after disbursement) and T.A & D.A Rs. 6000/-{" "}
             </Text>
             subjects to deductions as per govt. rules and any other Govt. taxes
             and Levis as may be applicable.
@@ -981,32 +979,18 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 bottom: -100,
                 right: 20,
-                width: 120,
+                width: 150,
                 height: 120,
               }}
             />
           </View>
-
-          {/* <Text
-            style={{
-              borderTop: "1px solid black",
-              textAlign: "right",
-              color: "black",
-              marginTop: 350,
-              paddingTop: 4,
-              fontSize: 12,
-              fontWeight: "bold",
-            }}
-          >
-            SIGNATURE & THUMB IMPRESSION PAGE-4
-          </Text> */}
         </View>
 
         <Text
           style={{
             position: "absolute",
             fontSize: 12,
-            bottom: 60,
+            bottom: 90,
             left: 0,
             borderTop: "1px solid black",
             right: 0,
@@ -1014,7 +998,6 @@ const PdfFile = ({ data }) => {
             paddingTop: 4,
             fontSize: 12,
             fontWeight: "bold",
-
             textAlign: "right",
           }}
           render={({ pageNumber, totalPages }) =>
@@ -1124,12 +1107,7 @@ export default function Appointment() {
             if (values.salary_after_pf && values.salary_after_pf) {
               payload.salary_after_pf = values.salary_after_pf;
             }
-            await new Promise((resolve) => {
-              fileToBase64(values.photo, (base64Data) => {
-                payload.photo = base64Data;
-                resolve();
-              });
-            });
+
             try {
               const res = await ApiService.fetchData({
                 url: `api/appointment-salary`,
@@ -1156,18 +1134,6 @@ export default function Appointment() {
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
               {" "}
-              <Input
-                name="photo"
-                type={"file"}
-                onChange={(e) => {
-                  f.setValues({ ...f.values, photo: e.target.files[0] });
-                }}
-                onBlur={f.handleBlur}
-                error={f.touched.photo && f.errors.photo}
-                icon={<ImagePlus size={20} className="text-indigo-500" />}
-                label={"Profile pic"}
-                placeholder={"Profile pic"}
-              />
               <Select
                 onChange={f.handleChange}
                 name={"employeeId"}
@@ -1178,7 +1144,7 @@ export default function Appointment() {
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Select Agent</option>
-                {employees.data?.map((a) => (
+                {employees.data.map((a) => (
                   <option
                     key={a.id}
                     value={a.id}
@@ -1440,7 +1406,9 @@ export default function Appointment() {
   ) : (
     <>
       {renderModal()}
-
+      {/* <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[0]} />
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete

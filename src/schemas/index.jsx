@@ -242,24 +242,6 @@ export const customerSchema = Yup.object().shape({
 export const generateIcard = Yup.object({
   employeeId: Yup.string().required("Select a Agent."),
   location: Yup.string().required("Please enter the location."),
-  profilepic: Yup.mixed()
-    .test(
-      "fileType",
-      "Invalid file format. Only accept png / Jpeg / jpg files.",
-      (value) => {
-        if (!value) return true;
-        return ["image/jpeg", "image/jpg", "image/png"].includes(value.type);
-      }
-    )
-    .test(
-      "fileSize",
-      "File size is too large. Maximum size allowed is 2MB.",
-      (value) => {
-        if (!value) return true;
-        return value.size <= 2 * 1024 * 1024;
-      }
-    )
-    .required("Photo is required"),
 });
 export const generateAppointmentLetter = Yup.object({
   employeeId: Yup.string().required("Select an Agent."),
@@ -302,24 +284,6 @@ export const generateAppointmentLetter = Yup.object({
       }
     )
     .required("Please enter Target Two."),
-  photo: Yup.mixed()
-    .test(
-      "fileType",
-      "Invalid file format. Only accept png / jpeg / jpg files.",
-      (value) => {
-        if (!value) return true;
-        return ["image/jpeg", "image/jpg", "image/png"].includes(value.type);
-      }
-    )
-    .test(
-      "fileSize",
-      "File size is too large. Maximum size allowed is 2MB.",
-      (value) => {
-        if (!value) return true;
-        return value.size <= 2 * 1024 * 1024;
-      }
-    )
-    .required("Photo is required"),
 });
 export const generateApprovalLetter = Yup.object({
   customerId: Yup.string().required("Select an Customer."),

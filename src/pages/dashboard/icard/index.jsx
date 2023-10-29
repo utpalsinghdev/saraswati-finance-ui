@@ -230,12 +230,7 @@ export default function Icard() {
               employeeId: values.employeeId ? Number(values.employeeId) : "",
               location: values.location,
             };
-            await new Promise((resolve) => {
-              fileToBase64(values.profilepic, (base64Data) => {
-                payload.profilepic = base64Data;
-                resolve();
-              });
-            });
+
             try {
               const res = await ApiService.fetchData({
                 url: `api/icard`,
@@ -262,18 +257,6 @@ export default function Icard() {
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
               {" "}
-              <Input
-                name="profilepic"
-                type={"file"}
-                onChange={(e) => {
-                  f.setValues({ ...f.values, profilepic: e.target.files[0] });
-                }}
-                onBlur={f.handleBlur}
-                error={f.touched.profilepic && f.errors.profilepic}
-                icon={<ImagePlus size={20} className="text-indigo-500" />}
-                label={"Profile pic"}
-                placeholder={"Profile pic"}
-              />
               <Select
                 onChange={f.handleChange}
                 name={"employeeId"}
@@ -284,7 +267,7 @@ export default function Icard() {
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
               >
                 <option value={" "}>Select a agent</option>
-                {employees.data?.map((a) => (
+                {employees.data.map((a) => (
                   <option
                     key={a.id}
                     value={a.id}
@@ -354,16 +337,16 @@ export default function Icard() {
             className="w-full h-16 px-2 "
           />
           <img
-            src={IcardData.profilepic}
+            src={IcardData?.agent?.profilePic}
             alt="Employee"
             className="w-24 h-28 mx-auto mb-2 relative z-10 p-0.4 border-2 border-[#3E4759] "
           />
           <img
             src={"/stamp.png"}
             alt="Employee"
-            className="w-[50px] h-[50px]  z-10 absolute top-48 left-12 "
+            className="w-[90px] h-[75px]  z-10 absolute top-[11.5rem] left-8 "
           />
-          <h2 className="text-md font-bold italic text-center mb-2 uppercase  tracking-wide  text-black">
+          <h2 className="text-md font-bold italic text-center uppercase  tracking-wide  text-black">
             {IcardData?.agent?.firstName} {IcardData?.agent?.LastName}
           </h2>
           <div
