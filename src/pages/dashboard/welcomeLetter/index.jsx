@@ -461,7 +461,7 @@ const PdfFile = ({ data }) => {
           >
             Company&rsquo;s bank details :
           </Text>
-          <View
+          {/* <View
             style={{
               marginTop: 10,
               border: "1px solid black",
@@ -608,6 +608,20 @@ const PdfFile = ({ data }) => {
                 UBIN09XXXXX
               </Text>
             </View>
+          </View> */}
+          <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              style={{
+                width: 150,
+              }}
+              src={"/qr.png"}
+            />
           </View>
         </View>
         <View
@@ -652,8 +666,8 @@ const PdfFile = ({ data }) => {
             src={"/stamp.png"}
             style={{
               position: "absolute",
-              bottom: -15,
-              right: 0,
+              bottom: -10,
+              right: -20,
               width: 150,
               height: 120,
             }}
@@ -1090,9 +1104,9 @@ function WelcomeLetter() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
+      <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this letter?"
         isDelete

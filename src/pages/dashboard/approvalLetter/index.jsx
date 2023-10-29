@@ -1300,7 +1300,7 @@ const PdfFile = ({ data }) => {
               {/* <View style={{}}>
                 <Image src={"/payment.png"} />
               </View> */}
-              <View
+              {/* <View
                 style={{
                   marginTop: 10,
                   border: "1px solid black",
@@ -1447,6 +1447,20 @@ const PdfFile = ({ data }) => {
                     UBIN0XXXXXXXX
                   </Text>
                 </View>
+              </View> */}
+              <View
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Image
+                  style={{
+                    width: 150,
+                  }}
+                  src={"/qr.png"}
+                />
               </View>
               <View
                 style={{
