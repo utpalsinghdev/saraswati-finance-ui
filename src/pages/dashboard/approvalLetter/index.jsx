@@ -1559,7 +1559,7 @@ export default function ApprovalLetter() {
 
   const customers = useFetch("api/customer");
   function renderModal() {
-    const { state, edit_id, data } = modal;
+    const { state, data } = modal;
 
     return (
       <Modal
