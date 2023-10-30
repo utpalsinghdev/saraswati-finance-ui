@@ -492,9 +492,11 @@ const PdfFile = ({ data }) => {
               }}
             >
               {data?.salary}
-              /-PER MONTH Your Monthly target will be {data?.targetOne} to{" "}
-              {data?.targetTwo} Files with ({data?.incentive} % of the incentive
-              of loan amount after disbursement) and T.A & D.A Rs. 6000/-{" "}
+              /-PER MONTH After Deduction (P.F & ESI) Your salary will be Rs.{" "}
+              {data?.salary_after_pf} /-PER MONTH. Your Monthly target will be{" "}
+              {data?.targetOne} to {data?.targetTwo} Files with (
+              {data?.incentive} % of the incentive of loan amount after
+              disbursement) and T.A & D.A Rs. 6000/-{" "}
             </Text>
             subjects to deductions as per govt. rules and any other Govt. taxes
             and Levis as may be applicable.
