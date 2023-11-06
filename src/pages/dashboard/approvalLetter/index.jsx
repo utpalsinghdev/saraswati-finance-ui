@@ -1772,7 +1772,7 @@ export default function ApprovalLetter() {
         <span className="flex items-center justify-start gap-4">
           <Badge
             onClick={() => {
-              if (agents?.data?.[download]?.customer?.bank !== undefined) {
+              if (agents?.data?.[cell.row.index]?.customer?.bank) {
                 setDownload(cell.row.index);
               } else {
                 toast.error("Customer Bank Details are Missing Please Update");
