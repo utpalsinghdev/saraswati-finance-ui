@@ -1300,7 +1300,7 @@ const PdfFile = ({ data }) => {
               {/* <View style={{}}>
                 <Image src={"/payment.png"} />
               </View> */}
-              {/* <View
+              <View
                 style={{
                   marginTop: 10,
                   border: "1px solid black",
@@ -1339,7 +1339,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    XXXXX Bank Of India
+                    PUNJAB NATIONAL BANK
                   </Text>
                 </View>
                 <View
@@ -1374,7 +1374,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    Aaradhya Financial
+                    AARDHYA FINANCIAL PVT LTD (MD MUKESH)
                   </Text>
                 </View>
                 <View
@@ -1409,7 +1409,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    19882101XXXXXXX
+                    1908001700146885
                   </Text>
                 </View>
                 <View
@@ -1444,11 +1444,11 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    UBIN0XXXXXXXX
+                    PUNB0007110
                   </Text>
                 </View>
-              </View> */}
-              <View
+              </View>
+              {/* <View
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -1461,7 +1461,7 @@ const PdfFile = ({ data }) => {
                   }}
                   src={"/qr.png"}
                 />
-              </View>
+              </View> */}
               <View
                 style={{
                   display: "flex",

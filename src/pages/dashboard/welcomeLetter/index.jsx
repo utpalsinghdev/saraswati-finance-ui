@@ -461,7 +461,7 @@ const PdfFile = ({ data }) => {
           >
             Company&rsquo;s bank details :
           </Text>
-          {/* <View
+          <View
             style={{
               marginTop: 10,
               border: "1px solid black",
@@ -500,7 +500,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                XXXXX BANK OF INDIA
+                PUNJAB NATIONAL BANK
               </Text>
             </View>
             <View
@@ -535,7 +535,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                Aaradhya Financial
+                AARDHYA FINANCIAL PVT LTD (MD MUKESH)
               </Text>
             </View>
             <View
@@ -570,7 +570,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                1988XXXX00000XX
+                1908001700146885
               </Text>
             </View>
             <View
@@ -605,11 +605,11 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                UBIN09XXXXX
+                PUNB0007110
               </Text>
             </View>
-          </View> */}
-          <View
+          </View>
+          {/* <View
             style={{
               display: "flex",
               alignItems: "center",
@@ -622,7 +622,7 @@ const PdfFile = ({ data }) => {
               }}
               src={"/qr.png"}
             />
-          </View>
+          </View> */}
         </View>
         <View
           style={{
