@@ -1503,7 +1503,7 @@ const PdfFile = ({ data }) => {
                   position: "absolute",
                   bottom: -50,
                   right: 20,
-                  width: 120,
+                  width: 130,
                   height: 120,
                 }}
               />

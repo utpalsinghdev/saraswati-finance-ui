@@ -666,7 +666,7 @@ const PdfFile = ({ data }) => {
             src={"/stamp.png"}
             style={{
               position: "absolute",
-              bottom: -10,
+              bottom: -14,
               right: -20,
               width: 150,
               height: 120,
