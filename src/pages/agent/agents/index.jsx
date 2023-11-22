@@ -14,7 +14,7 @@ function AgentLogs() {
           </span>
           <span>Designation: {item?.designation}</span>
           <span>Employee Code: {item?.employeeCode}</span>
-          <span>Phone:{item?.phone}</span>
+         
         </div>
       </div>
     );
