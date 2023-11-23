@@ -28,8 +28,13 @@ BaseService.interceptors.response.use(
     const { response } = error;
 
     if (response && unauthorizedCode.includes(response.status)) {
-      localStorage.clear();
+      Cookie.remove("gafs_user");
       toast.error("Session Expired !!");
+      if (!!Cookie.get("gafs_agent")) {
+        window.location.href = "/agent/login";
+      } else {
+        window.location.href = "/admin/login";
+      }
     }
     return Promise.reject(error);
   }
