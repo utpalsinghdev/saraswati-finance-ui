@@ -107,10 +107,10 @@ const ro = [
     link: "services/:slug",
     com: <Loan />,
   },
-  {
-    link: "our-agents",
-    com: <OurAgents />,
-  },
+  // {
+  //   link: "our-agents",
+  //   com: <OurAgents />,
+  // },
 ];
 const Authro = [
   {

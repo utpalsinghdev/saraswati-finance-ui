@@ -31,10 +31,10 @@ const Navbar = () => {
       name: "Career",
       link: "/Career",
     },
-    {
-      name: "Our Agents",
-      link: "/our-agents",
-    },
+    // {
+    //   name: "Our Agents",
+    //   link: "/our-agents",
+    // },
     {
       name: "Contact Us",
       link: "/contact-us",
