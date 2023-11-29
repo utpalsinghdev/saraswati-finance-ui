@@ -364,7 +364,7 @@ function ApplyLoan() {
                     <option
                       key={a.id}
                       value={a.id}
-                    >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
+                    >{`${a.firstName} ${a.LastName}`}</option>
                   ))}
                 </Select>
               </div>
