@@ -14,6 +14,19 @@ const Navbar = () => {
   useEffect(() => {
     setShow(false);
   }, [location.pathname]);
+  const [isMobiled, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth >= 710);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const links = [
     {
       name: "Home",
@@ -50,7 +63,14 @@ const Navbar = () => {
   ];
   return (
     <div className=" w-full md:w-[90%] mx-auto">
-      <div className="relative  md:mt-6 pb-4  bg-green-800 md:bg-white  md:px-0 transition duration-300">
+      <div
+        className={classNames(
+          "relative  md:mt-6 pb-4    md:px-0 transition duration-300",
+          !isMobiled
+            ? "bg-gradient-to-r from-orange-500 via-white to-green-500"
+            : "bg-green-800 md:bg-white"
+        )}
+      >
         <nav className="relative flex items-center justify-start md:justify-between">
           <Link to="/">
             <Brand className={"hidden md:flex"} />
