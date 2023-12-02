@@ -100,7 +100,7 @@ const Navbar = () => {
           <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-between gap-4 text-md">
             <Image
               src="/logo_without_name.png"
-              className=" block md:hidden  w-16   cursor-pointer mr-0.5"
+              className=" block md:hidden  w-20   cursor-pointer"
             />
             <p className="text-2xl text-[#B77E15] font-extrabold text-center">
               {" "}
