@@ -382,6 +382,10 @@ function Agents() {
       accessor: "city",
     },
     {
+      Header: "password",
+      accessor: "e_password",
+    },
+    {
       Header: "phone",
       accessor: "phone",
     },
