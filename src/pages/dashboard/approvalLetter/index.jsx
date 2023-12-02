@@ -37,7 +37,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Aaradhya Financial Pvt. ltd.";
+  const company = "Future Financial Services Pvt. Ltd.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -1011,7 +1011,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                Rs.3990/-
+                Rs.4150/-
               </Text>{" "}
               paid
             </Text>
@@ -1285,7 +1285,7 @@ const PdfFile = ({ data }) => {
                     fontFamily: "Roboto",
                   }}
                 >
-                  info@aardhyafinance.com
+                  info@futurefinancial.in
                 </Text>
               </Text>
               <Text style={{ fontSize: 12, marginTop: "6" }}>

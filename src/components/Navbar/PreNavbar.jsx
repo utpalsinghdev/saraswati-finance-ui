@@ -17,14 +17,14 @@ function PreNavbar() {
   return (
     <div
       ref={myRef}
-      className="font-normal hidden md:block w-full bg-blue-900 py-2 z-40"
+      className="font-normal hidden md:block w-full bg-gray-900 py-2 z-40"
     >
       <ContainerWrapper>
         <div className="flex justify-between items-center text-white">
           <div className="py-2 flex gap-2">
             <MailIcon />
-            <a href="mailto:info@Aardhyafinance.com" rel="noreferrer">
-              info@Aardhyafinance.com
+            <a href="mailto:info@futurefinancial.in" rel="noreferrer">
+              info@futurefinancial.in
             </a>
           </div>
           <div className="py-2 flex gap-2">
@@ -37,15 +37,15 @@ function PreNavbar() {
             <HeadphonesIcon />
             <span className="flex gap-1" rel="noreferrer">
               <a
-                href="tel:8755030228  "
+                href="tel:7253978410  "
                 className="pr-2 border-r-2 border-white"
                 target="_blank"
                 rel="noreferrer"
               >
-                8755030228
+                7253978410
               </a>
-              <a href="tel:8755030228" target="_blank" rel="noreferrer">
-                8755030228
+              <a href="tel:7253978410" target="_blank" rel="noreferrer">
+                7253978410
               </a>
             </span>
           </div>

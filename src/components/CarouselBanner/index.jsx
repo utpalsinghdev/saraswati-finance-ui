@@ -16,7 +16,7 @@ function CarouselBanner() {
           <p className="md:text-5xl text-3xl text-left text-green-800 font-extrabold">
             <p>
               {" "}
-              Aaradhya Financial <p className="text-yellow-600 "> PVT. LTD.</p>
+              Future Financial <p className="text-orange-400 "> PVT. LTD.</p>
             </p>
           </p>
 

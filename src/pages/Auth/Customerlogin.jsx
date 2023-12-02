@@ -39,7 +39,7 @@ function Customerlogin() {
                 className="   w-20   cursor-pointer mr-1"
               />
               <p className="text-xl md:text-2xl text-green-800 font-bold">
-                Aaradhya Financial Pvt. Ltd.
+                Future Financial Services Pvt. Ltd.
               </p>
             </span>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

@@ -7,13 +7,13 @@ import ContainerWrapper from "../ui/containtWrapper";
 import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <div className="w-full bg-slate-950 ">
+    <div className="w-full bg-gray-900 ">
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">
             <img src="/logo_full.png" className="w-64" alt="" />
             <p className="text-white mt-2">
-              Aaradhya Financial Private Limited. is dealing in Personal Loan,
+              Future Financial Private Limited. is dealing in Personal Loan,
               Loan against Property, Project Loan & Gold Loan. We Believe in
               fair dealing and prompt disbursement of founds on priority Basis.
             </p>
@@ -53,10 +53,6 @@ function Footer() {
                 <IoIosArrowForward />
                 Contact Us
               </Link>
-              {/* <a href="/broc.pdf" className="flex flex-row items-center gap-2">
-                <IoIosArrowForward />
-                Download Brochure
-              </a> */}
             </ul>
           </div>
           <div className="w-full ">
@@ -64,25 +60,25 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:8755030228" target="_blank" rel="noreferrer">
-                  8755030228
+                <a href="tel:7253978410" target="_blank" rel="noreferrer">
+                  7253978410
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:8755030228" target="_blank" rel="noreferrer">
-                  8755030228
+                <a href="tel:7253978410" target="_blank" rel="noreferrer">
+                  7253978410
                 </a>
               </li>
 
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@Aardhyafinance.com"
+                  href="mailto:info@futurefinancial.in"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@Aardhyafinance.com
+                  info@futurefinancial.in
                 </a>
               </li>
               <li className="flex flex-row items-start gap-2">
@@ -91,8 +87,8 @@ function Footer() {
                 </span>
                 <span>
                   {" "}
-                  Corporate Office: Office no 401 fourth floor plot no 86, near
-                  Sai Mandir, Laxmi Nagar, Delhi head office.
+                  Branch Office: Plot No.330, Bus stand Rd, Opp. Acharya Puri,
+                  Prem Nagar, Sector 12, Gurugram, Haryana 122001
                 </span>
               </li>
               <li className="flex flex-row items-start gap-2">
@@ -101,8 +97,8 @@ function Footer() {
                 </span>
                 <span>
                   {" "}
-                  Head Office: 9th foor, core tower, near prinam crossing
-                  ellisbridge Ahmedabad-6, Ahmedabad GJ.
+                  Head Office: 17/1, GRA Tower, Ambalipura Main Road Off
+                  Sarjapur Road, Agara Post Bengaluru, Karnataka 560103
                 </span>
               </li>
             </ul>

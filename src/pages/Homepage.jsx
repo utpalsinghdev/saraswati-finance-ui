@@ -78,14 +78,15 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-yellow-800 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-orange-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
           <span className="text-3xl self-center font-bold text-green-800">
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from Aaradhya Financial Pvt. ltd.
+            Get {type} Loan on Easy EMI basis from Future Financial Services
+            Pvt. Ltd.
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
@@ -106,14 +107,46 @@ const Homepage = () => {
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
-        <div className="absolute w-full z-40 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-green-800  flex h-max  gap-2 ">
+        {/* <div className="absolute w-full z-40 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-green-800  flex h-max  gap-2 ">
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm font-semibold text-white w-full">
               <Ticker
                 messages={
                   !news.data
                     ? news.data?.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Aaradhya Financial Pvt. ltd."]
+                    : ["Future Financial Services Pvt. Ltd."]
+                }
+              />
+            </span>
+          </div>
+        </div> */}
+        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
+          <div className="bg-orange-400 w-4">
+            <p className="text-orange-400">d</p>
+          </div>
+
+          <div className="flex flex-col py-2 z-50 ">
+            <span className="py-1 px-2 text-black text-sm font-medium ">
+              ABOUT COMPANY
+            </span>
+            <span className="py-1 px-2 text-2xl font-semibold ">News</span>
+          </div>
+          <div className="flex flex-col justify-between w-full py-2">
+            <span className="py-1 px-2 text-sm  ">
+              <Ticker
+                messages={
+                  !news.loading
+                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                    : ["Future Financial Services Pvt. Ltd."]
+                }
+              />
+            </span>
+            <span className="py-1 px-2 text-sm w-full">
+              <Ticker
+                messages={
+                  !news.loading
+                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
+                    : ["Future Financial Services Pvt. Ltd."]
                 }
               />
             </span>
@@ -126,10 +159,10 @@ const Homepage = () => {
           <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
           <p className="mt-10 ">
-            Aaradhya Financial Pvt. Ltd. is dealing in Home Loan, Personal Loan,
-            Agriculture Loan, Shop Loan, Flat Loan, Project Loan, Education
-            Loan, Pay Slip Loan, Car Loan, Machine Loan, Business Loans, Loan
-            Against Property & Project Etc.
+            Future Financial Services Pvt. Ltd. is dealing in Home Loan,
+            Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
+            Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
+            Loans, Loan Against Property & Project Etc.
           </p>
           <div className="flex md:mt-10 mt-1 items-center gap-4">
             <button
@@ -166,7 +199,7 @@ const Homepage = () => {
             >
               <img src={c.img} alt="" className="w-16 h-16" />
               <span className="flex flex-col justify-between py-1">
-                <h2 className="font-semibold text-center text-lg text-yellow-800">
+                <h2 className="font-semibold text-center text-lg text-orange-800">
                   {c.name}
                 </h2>
                 <h4 className="text-gray-700 text-center font-medium">
@@ -184,7 +217,7 @@ const Homepage = () => {
           <span className="text-green-500">Services.</span>{" "}
         </h1>
 
-        <div className="w-full px-2 md:grid md:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
+        <div className="w-full px-2 md:grid md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
           {services?.map((s, i) => (
             <ServiceCard type={s.type} link={s.link} key={i} img={s.img} />
           ))}

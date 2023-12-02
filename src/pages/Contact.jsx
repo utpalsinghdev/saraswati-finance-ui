@@ -30,51 +30,51 @@ function Contact() {
                 Contact Us
               </h1>
               <div className="upper bg-green-500 rounded-2xl mt-8">
-                <div className="lower bg-yellow-800 rounded-2xl mr-1 pt-1 pb-4">
+                <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Contact With Us
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     <a
-                      href="tel:8755030228"
+                      href="tel:7253978410"
                       className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-8755030228
+                      <Phone /> +91-7253978410
                     </a>
                     <a
-                      href="tel:8755030228"
+                      href="tel:7253978410"
                       className="flex items-end text-md  gap-2"
                     >
-                      <Phone /> +91-8755030228
+                      <Phone /> +91-7253978410
                     </a>
                     <a
-                      href="mailto:info@Aardhyafinance.com"
+                      href="mailto:info@futurefinancial.in"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@Aardhyafinance.com
+                      <MailIcon /> info@futurefinancial.in
                     </a>
                   </div>
                 </div>
               </div>
               <div className="upper bg-green-500 rounded-2xl ">
-                <div className="lower bg-yellow-800 rounded-2xl mr-1 pt-1 pb-4 ">
+                <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
-                    Corporate Office:
+                    Branch Office:
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    Office no 401 fourth floor plot no 86, near sai mandir,
-                    laxmi nagar, delhi
+                    Plot No.330, Bus stand Rd, Opp. Acharya Puri, Prem Nagar,
+                    Sector 12, Gurugram, Haryana 122001
                   </div>
                 </div>
               </div>
               <div className="upper bg-green-500 rounded-2xl ">
-                <div className="lower bg-yellow-800 rounded-2xl mr-1 pt-1 pb-4 ">
+                <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Head Office:
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    head office add: 9th foor, core tower, near prinam crossing
-                    ellisbridge ahmedabad-6, ahmedabad GJ,
+                    17/1, GRA Tower, Ambalipura Main Road Off Sarjapur Road,
+                    Agara Post Bengaluru, Karnataka 560103
                   </div>
                 </div>
               </div>

@@ -38,7 +38,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Aaradhya Financial Private Limited.";
+  const company = "Future Financial Private Limited.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -702,7 +702,7 @@ const initialModalState = {
   state: false,
   edit_id: "",
   data: {
-    charge: "3990",
+    charge: "4150",
     customerId: "",
     employeeId: "",
 
@@ -1553,7 +1553,7 @@ export default WelcomeLetter;
     //             fontFamily: "Roboto",
     //           }}
     //         >
-    //           Aaradhya Financial Pvt. ltd.
+    //           Future Financial Services Pvt. Ltd.
     //         </Text>
     //       </Text>
     //       <Text

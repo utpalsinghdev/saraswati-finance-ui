@@ -41,7 +41,7 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const company_name = "Aaradhya Financial Pvt. ltd.";
+const company_name = "Future Financial Services Pvt. Ltd.";
 const PdfFile = ({ data }) => {
   return (
     <Document>
