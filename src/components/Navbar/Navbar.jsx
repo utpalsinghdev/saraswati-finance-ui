@@ -97,7 +97,7 @@ const Navbar = () => {
             }}
             className="md:hidden mt-4 cursor-pointer  w-6 h-6 ml-4"
           />
-          <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-between gap-4 text-md">
+          <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-start gap-3 text-md">
             <Image
               src="/logo_without_name.png"
               className=" block md:hidden  w-20   cursor-pointer"
