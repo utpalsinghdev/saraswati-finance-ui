@@ -30,7 +30,7 @@ function Contact() {
                 Contact Us
               </h1>
               <div className="upper bg-green-500 rounded-2xl mt-8">
-                <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4">
+                <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Contact With Us
                   </h1>
@@ -57,7 +57,7 @@ function Contact() {
                 </div>
               </div>
               <div className="upper bg-green-500 rounded-2xl ">
-                <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4 ">
+                <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Branch Office:
                   </h1>
@@ -68,7 +68,7 @@ function Contact() {
                 </div>
               </div>
               <div className="upper bg-green-500 rounded-2xl ">
-                <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4 ">
+                <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Head Office:
                   </h1>

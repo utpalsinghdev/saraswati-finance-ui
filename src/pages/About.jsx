@@ -40,7 +40,7 @@ function About() {
               Business Loans, Loan Against Property & Project Etc.
             </p>
             <div className="upper bg-green-500 rounded-2xl mt-8">
-              <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4">
+              <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4">
                 <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                   <AiFillInfoCircle /> Important Information
                 </h1>
