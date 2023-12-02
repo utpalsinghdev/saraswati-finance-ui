@@ -50,7 +50,7 @@ const Navbar = () => {
   ];
   return (
     <div className=" w-full md:w-[90%] mx-auto">
-      <div className="relative  md:mt-6 pb-4  bg-gradient-to-r from-orange-500 via-white to-green-500 md:bg-white  md:px-0 transition duration-300">
+      <div className="relative  md:mt-6 pb-4  bg-green-800 md:bg-white  md:px-0 transition duration-300">
         <nav className="relative flex items-center justify-start md:justify-between">
           <Link to="/">
             <Brand className={"hidden md:flex"} />
