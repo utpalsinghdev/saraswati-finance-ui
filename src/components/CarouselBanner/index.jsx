@@ -46,7 +46,7 @@ function CarouselBanner() {
       </span>
     );
   }
-  const imgs = ["/banner1.webp", "/banner2.webp", "/banner3.jpg"];
+  const imgs = ["/banner1.jpg", "/banner2.jpg", "/banner3.jpg"];
   function ItemBox({ src }) {
     return (
       <div className="relative">
