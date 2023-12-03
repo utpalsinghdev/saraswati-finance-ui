@@ -51,9 +51,9 @@ function Profile() {
           <IdentificationIcon className="text-indigo-500 w-6" />{" "}
           {_agent.data.employeeCode}
         </span>
-        <span className="text-md font-medium flex items-center gap-2">
+        {/* <span className="text-md font-medium flex items-center gap-2">
           <Phone className="text-indigo-500 " /> +91 {_agent?.data?.phone}
-        </span>
+        </span> */}
         <span className="text-md font-medium flex items-center gap-2">
           <ImUserTie className="text-indigo-500 w-6" />{" "}
           {_agent?.data?.designation}
