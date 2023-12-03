@@ -852,7 +852,7 @@ function WelcomeLetter() {
                 <option value={"false"}>Is Online</option>
                 <option value={"true"}>Is Manual</option>
               </Select>
-
+              {/* 
               <Select
                 onChange={f.handleChange}
                 name={"employeeId"}
@@ -867,10 +867,28 @@ function WelcomeLetter() {
                   <option
                     key={a.id}
                     value={a.id}
-                  >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
+                  >{}</option>
                 ))}
-              </Select>
-
+              </Select> */}
+              <ComboBox
+                people={employees.data?.map((a) => ({
+                  id: a.id,
+                  name: `${a.firstName} ${a.LastName} (${a.employeeCode})`,
+                }))}
+                onChange={(e) => {
+                  console.log(e);
+                  f.setValues((prev) => ({
+                    ...prev,
+                    employeeId: e,
+                  }));
+                }}
+                name={"employeeId"}
+                placeholder={"Select Agent"}
+                value={f.values.employeeId}
+                onBlur={f.handleBlur}
+                error={f.touched.employeeId && f.errors.employeeId}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
+              />
               {isManual ? (
                 <div className="flex flex-col gap-2">
                   <Input

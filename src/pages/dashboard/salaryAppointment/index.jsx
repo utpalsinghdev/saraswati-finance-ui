@@ -1136,24 +1136,6 @@ export default function Appointment() {
               onSubmit={f.handleSubmit}
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
-              {console.log(f.errors)}
-              {/* <Select
-                onChange={f.handleChange}
-                name={"employeeId"}
-                value={f.values.employeeId}
-                onBlur={f.handleBlur}
-                error={f.touched.employeeId && f.errors.employeeId}
-                label={""}
-                icon={<BiIdCard className="w-4 text-indigo-500" />}
-              >
-                <option value={" "}>Select Agent</option>
-                {employees.data.map((a) => (
-                  <option
-                    key={a.id}
-                    value={a.id}
-                  >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
-                ))}
-              </Select> */}
               <ComboBox
                 people={employees.data?.map((a) => ({
                   id: a.id,
