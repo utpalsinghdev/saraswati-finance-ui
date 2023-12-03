@@ -30,6 +30,7 @@ import moment from "moment";
 import Loader from "../../../components/loader";
 import bold from "../../../assets/bold.ttf";
 import { RiUser2Line, RiUserHeartLine } from "react-icons/ri";
+import ComboBox from "../../../components/ui/comboBox";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
@@ -1136,7 +1137,7 @@ export default function Appointment() {
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
               {" "}
-              <Select
+              {/* <Select
                 onChange={f.handleChange}
                 name={"employeeId"}
                 value={f.values.employeeId}
@@ -1152,7 +1153,26 @@ export default function Appointment() {
                     value={a.id}
                   >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
                 ))}
-              </Select>
+              </Select> */}
+              <ComboBox
+                people={employees.data?.map((a) => ({
+                  id: a.id,
+                  name: `${a.firstName} ${a.LastName} (${a.employeeCode})`,
+                }))}
+                onChange={(e) => {
+                  console.log(e);
+                  f.setValues((prev) => ({
+                    ...prev,
+                    employeeId: e.id,
+                  }));
+                }}
+                name={"employeeId"}
+                placeholder={"Select Agent"}
+                value={f.values.employeeId}
+                onBlur={f.handleBlur}
+                error={f.touched.employeeId && f.errors.employeeId}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
+              />
               <span className="flex items-center justify-between w-full gap-8">
                 <Select
                   label={""}

@@ -33,6 +33,7 @@ import { Calendar, Phone, User2Icon, Wallet } from "lucide-react";
 import { RiUser2Line, RiUserHeartLine } from "react-icons/ri";
 import { ToWords } from "to-words";
 import moment from "moment/moment";
+import ComboBox from "../../../components/ui/comboBox";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
@@ -971,23 +972,42 @@ function WelcomeLetter() {
                   </span>
                 </div>
               ) : (
-                <Select
-                  onChange={f.handleChange}
+                // <Select
+                //   onChange={f.handleChange}
+                //   name={"customerId"}
+                //   value={f.values.customerId}
+                //   onBlur={f.handleBlur}
+                //   error={f.touched.customerId && f.errors.customerId}
+                //   label={""}
+                //   icon={<BiIdCard className="w-4 text-indigo-500" />}
+                // >
+                //   <option value={" "}>Select the Customer</option>
+                //   {customers.data?.map((a) => (
+                //     <option
+                //       key={a.id}
+                //       value={a.id}
+                //     >{`${a.name} (${a.customerId})`}</option>
+                //   ))}
+                // </Select>
+                <ComboBox
+                  people={customers.data?.map((a) => ({
+                    id: a.id,
+                    name: `${a.name}`,
+                  }))}
+                  onChange={(e) => {
+                    console.log(e);
+                    f.setValues((prev) => ({
+                      ...prev,
+                      customerId: e.id,
+                    }));
+                  }}
                   name={"customerId"}
+                  placeholder={"Select Customer"}
                   value={f.values.customerId}
                   onBlur={f.handleBlur}
                   error={f.touched.customerId && f.errors.customerId}
-                  label={""}
                   icon={<BiIdCard className="w-4 text-indigo-500" />}
-                >
-                  <option value={" "}>Select the Customer</option>
-                  {customers.data?.map((a) => (
-                    <option
-                      key={a.id}
-                      value={a.id}
-                    >{`${a.name} (${a.customerId})`}</option>
-                  ))}
-                </Select>
+                />
               )}
               <Button
                 loading={f.isSubmitting}

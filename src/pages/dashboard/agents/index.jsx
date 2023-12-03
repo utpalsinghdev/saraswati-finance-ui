@@ -19,6 +19,7 @@ import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/loader";
 import moment from "moment";
 import Image from "../../../components/ui/Image/Index";
+import ComboBox from "../../../components/ui/comboBox";
 const generateRandomSixDigitNumber = () =>
   `${Math.floor(100000 + Math.random() * 900000)}`;
 // const randomSixDigitNumber = ;
@@ -252,23 +253,25 @@ function Agents() {
                 label={""}
                 placeholder={"Email Address"}
               />
-              <Select
-                onChange={f.handleChange}
+              <ComboBox
+                people={agents.data?.map((a) => ({
+                  id: a.id,
+                  name: `${a.firstName} ${a.LastName} (${a.employeeCode})`,
+                }))}
+                onChange={(e) => {
+                  console.log(e);
+                  f.setValues((prev) => ({
+                    ...prev,
+                    workUnder: e.id,
+                  }));
+                }}
                 name={"workUnder"}
                 value={f.values.workUnder}
                 onBlur={f.handleBlur}
                 error={f.touched.workUnder && f.errors.workUnder}
                 label={""}
                 icon={<BiIdCard className="w-4 text-indigo-500" />}
-              >
-                <option value={" "}>Work Under</option>
-                {agents.data?.map((a) => (
-                  <option
-                    key={a.id}
-                    value={a.id}
-                  >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
-                ))}
-              </Select>
+              />
               <span className="flex items-center gap-2 justify-between">
                 <Input
                   name="password"
