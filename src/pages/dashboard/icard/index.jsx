@@ -568,15 +568,18 @@ export default function Icard() {
         <span className="flex items-center justify-start gap-4">
           <Badge
             onClick={() => {
-              setDownload(cell.row.index);
+              setPrevModal((prev) => ({
+                edit_id: cell.row.original.id,
+                state: true,
+              }));
             }}
             type={enums.BLUE}
           >
-            {download === cell.row.index ? (
+            {/* {download === cell.row.index ? (
               <PDFDownloadLink
                 id="download"
                 document={<PdfFile data={agents.data[download]} />}
-                fileName={`${agents.data[download].agent.firstName}.pdf`}
+                fileName={`welcome.pdf`}
               >
                 {({ blob, url, loading, error }) =>
                   loading ? "Generateing..." : "Print"
@@ -584,7 +587,8 @@ export default function Icard() {
               </PDFDownloadLink>
             ) : (
               "Generate"
-            )}
+            )} */}
+            Preview
           </Badge>
           <Badge
             onClick={() =>
@@ -607,6 +611,7 @@ export default function Icard() {
   ) : (
     <>
       {renderModal()}
+      {prevIcardModal()}
       {/* <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[1]} />
       </PDFViewer> */}
