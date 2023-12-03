@@ -501,7 +501,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                XXXXXX NATIONAL BANK
+                PUNJAB NATIONAL BANK
               </Text>
             </View>
             <View
@@ -536,7 +536,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                Future FINANCIAL PVT LTD
+                Future FINANCIAL PVT LTD (MD MUKESH)
               </Text>
             </View>
             <View
@@ -571,7 +571,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                19080017001XXXXXX
+                1908001700146885
               </Text>
             </View>
             <View
@@ -606,7 +606,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                XXXXXX7110
+                PUNB0007110
               </Text>
             </View>
           </View>
