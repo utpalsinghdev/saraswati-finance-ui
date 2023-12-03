@@ -407,7 +407,7 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 top: 40,
                 right: 40,
-                width: 90,
+                width: 100,
                 height: 90,
                 backgroundColor: "transparent",
               }}
@@ -982,7 +982,7 @@ const PdfFile = ({ data }) => {
                 bottom: -100,
                 right: 20,
                 width: 150,
-                height: 120,
+                height: 140,
               }}
             />
           </View>

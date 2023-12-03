@@ -233,7 +233,7 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 top: 40,
                 right: 50,
-                width: 90,
+                width: 100,
                 height: 90,
                 backgroundColor: "transparent",
               }}
@@ -1816,7 +1816,7 @@ export default function ApprovalLetter() {
     <>
       {renderModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[0]} />
+        <PdfFile data={agents.data[1]} />
       </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This letter?"

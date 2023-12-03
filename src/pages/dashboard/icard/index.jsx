@@ -322,7 +322,7 @@ export default function Icard() {
           <img
             src="/logo_without_name.png"
             alt="watermark"
-            className="absolute top-24  left-4 w-52 h-52 opacity-10 "
+            className="absolute top-28  left-4 w-52 h-52 opacity-10 "
           />
           <img src={"/pdfBanner.png"} alt="banner" className="w-full" />
 
@@ -344,7 +344,7 @@ export default function Icard() {
           <img
             src={"/stamp.png"}
             alt="Employee"
-            className="w-[90px] h-[75px]  z-10 absolute top-[11.5rem] left-8 "
+            className="w-[90px] h-[80px]  z-10 absolute top-[11.5rem] left-8 "
           />
           <h2 className="text-md font-bold italic text-center uppercase  tracking-wide  text-black">
             {IcardData?.agent?.firstName} {IcardData?.agent?.LastName}

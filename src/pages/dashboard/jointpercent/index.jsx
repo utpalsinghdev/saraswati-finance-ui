@@ -216,9 +216,9 @@ const PdfFile = ({ data }) => {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                top: 40,
+                top: 30,
                 right: 50,
-                width: 90,
+                width: 100,
                 height: 90,
                 backgroundColor: "transparent",
               }}
@@ -1057,9 +1057,9 @@ const PdfFile = ({ data }) => {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                bottom: 0,
+                bottom: -10,
                 right: 20,
-                width: 90,
+                width: 100,
                 height: 90,
               }}
             />
@@ -1206,10 +1206,7 @@ export default function JointPercent() {
                 data: payload,
               });
               if (res) toast.success(res.data.message);
-              setDatas((prev) => ({
-                ...prev,
-                data: [...prev.data, res.data.data],
-              }));
+              FetchNews();
               setModal(initialModalState);
             } catch (error) {
               toast.error(error.response.data.message);
@@ -1448,7 +1445,7 @@ export default function JointPercent() {
     },
     {
       Header: "Post",
-      accessor: (c) => c.agent.designation,
+      accessor: (c) => c.agent?.designation,
     },
     {
       Header: "service tax",
@@ -1512,7 +1509,9 @@ export default function JointPercent() {
   ) : (
     <>
       {renderModal()}
-
+      <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[1]} />
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete

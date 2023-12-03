@@ -432,7 +432,7 @@ const PdfFile = ({ data }) => {
               position: "absolute",
               bottom: -120,
               right: 60,
-              width: 120,
+              width: 130,
               height: 120,
             }}
           />
@@ -760,7 +760,9 @@ function WelcomeInvoice() {
   ) : (
     <>
       {renderModal()}
-
+      {/* <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[1]} />
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this Invoice?"
         isDelete
