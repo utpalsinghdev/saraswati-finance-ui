@@ -77,7 +77,7 @@ function CustomerHome() {
           <Image
             style={{
               position: "absolute",
-              top: 120,
+              top: 160,
               right: 30,
               width: 500,
               height: 500,
@@ -109,7 +109,7 @@ function CustomerHome() {
             style={{
               textAlign: "center",
               color: "green",
-              marginTop: 8,
+              marginTop: 4,
               fontSize: 18,
               letterSpacing: 1,
               fontFamily: "Roboto",
@@ -481,7 +481,7 @@ function CustomerHome() {
               style={{
                 textAlign: "left",
                 color: "red",
-                marginTop: 10,
+                marginTop: 5,
                 fontSize: 12,
                 fontWeight: "light",
                 textTransform: "uppercase",
@@ -529,7 +529,7 @@ function CustomerHome() {
                     fontWeight: "extrabold",
                   }}
                 >
-                  UNION BANK OF INDIA
+                  XXXXXX NATIONAL BANK
                 </Text>
               </View>
               <View
@@ -564,7 +564,7 @@ function CustomerHome() {
                     fontWeight: "extrabold",
                   }}
                 >
-                  VANDHNAM SERVICES
+                  Future FINANCIAL PVT LTD
                 </Text>
               </View>
               <View
@@ -599,7 +599,7 @@ function CustomerHome() {
                     fontWeight: "extrabold",
                   }}
                 >
-                  198821010000065
+                  19080017001XXXXXX
                 </Text>
               </View>
               <View
@@ -634,10 +634,24 @@ function CustomerHome() {
                     fontWeight: "extrabold",
                   }}
                 >
-                  UBIN0919888
+                  XXXXXX7110
                 </Text>
               </View>
             </View>
+            {/* <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              style={{
+                width: 150,
+              }}
+              src={"/qr.png"}
+            />
+          </View> */}
           </View>
           <View
             style={{
@@ -681,10 +695,10 @@ function CustomerHome() {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                bottom: -15,
-                right: 0,
-                width: 80,
-                height: 80,
+                bottom: -50,
+                right: -20,
+                width: 150,
+                height: 140,
               }}
             />
             <Text style={{ marginTop: 20 }}>
@@ -910,8 +924,8 @@ function CustomerHome() {
                   position: "absolute",
                   top: 40,
                   right: 50,
-                  width: 70,
-                  height: 70,
+                  width: 100,
+                  height: 90,
                   backgroundColor: "transparent",
                 }}
               />
@@ -1690,7 +1704,7 @@ function CustomerHome() {
                     fontFamily: "Roboto",
                   }}
                 >
-                  Rs.4130/-
+                  Rs.4150/-
                 </Text>{" "}
                 paid
               </Text>
@@ -1967,7 +1981,7 @@ function CustomerHome() {
                       fontFamily: "Roboto",
                     }}
                   >
-                    info@vandhnamservices.com
+                    info@futurefinancial.in
                   </Text>
                 </Text>
                 <Text style={{ fontSize: 12, marginTop: "6" }}>
@@ -2021,7 +2035,7 @@ function CustomerHome() {
                         fontWeight: "extrabold",
                       }}
                     >
-                      Union Bank Of India
+                      XXXXXXX NATIONAL BANK
                     </Text>
                   </View>
                   <View
@@ -2056,7 +2070,7 @@ function CustomerHome() {
                         fontWeight: "extrabold",
                       }}
                     >
-                      Vandhnam Services
+                      Future FINANCIAL PVT LTD
                     </Text>
                   </View>
                   <View
@@ -2091,7 +2105,7 @@ function CustomerHome() {
                         fontWeight: "extrabold",
                       }}
                     >
-                      198821010000065
+                      19080017XXXXXX007110
                     </Text>
                   </View>
                   <View
@@ -2126,10 +2140,24 @@ function CustomerHome() {
                         fontWeight: "extrabold",
                       }}
                     >
-                      UBIN0919888
+                      XXXXXX007110
                     </Text>
                   </View>
                 </View>
+                {/* <View
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Image
+                  style={{
+                    width: 150,
+                  }}
+                  src={"/qr.png"}
+                />
+              </View> */}
                 <View
                   style={{
                     display: "flex",
@@ -2171,8 +2199,8 @@ function CustomerHome() {
                     position: "absolute",
                     bottom: -50,
                     right: 20,
-                    width: 100,
-                    height: 100,
+                    width: 130,
+                    height: 120,
                   }}
                 />
                 <Text
@@ -2239,6 +2267,7 @@ function CustomerHome() {
           size="A4"
           style={{
             paddingBottom: 35,
+            fontFamily: "Roboto",
           }}
         >
           <View style={{}}>
@@ -2267,7 +2296,7 @@ function CustomerHome() {
                 textAlign: "center",
                 color: "green",
                 fontSize: 12,
-                fontWeight: "light",
+                fontFamily: "Roboto",
               }}
             >
               Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
@@ -2279,7 +2308,7 @@ function CustomerHome() {
                 color: "green",
                 marginTop: 20,
                 fontSize: 15,
-                fontWeight: "light",
+                fontFamily: "Roboto",
               }}
             >
               Date : {data.createdAt.split("T")[0]}
@@ -2290,7 +2319,7 @@ function CustomerHome() {
                 color: "green",
                 marginTop: 15,
                 fontSize: 30,
-                fontWeight: "light",
+                fontFamily: "Roboto",
               }}
             >
               Invoice
@@ -2301,6 +2330,7 @@ function CustomerHome() {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 marginTop: 20,
+                fontFamily: "Roboto",
               }}
             >
               <View
@@ -2412,6 +2442,7 @@ function CustomerHome() {
                   gap: 10,
                   fontSize: 12,
                   borderBottom: "1px solid green",
+                  fontFamily: "Roboto",
                 }}
               >
                 <Text
@@ -2462,6 +2493,7 @@ function CustomerHome() {
                   gap: 20,
                   fontSize: 12,
                   marginTop: 20,
+                  fontFamily: "Roboto",
                 }}
               >
                 <Text
@@ -2514,6 +2546,7 @@ function CustomerHome() {
                 justifyContent: "space-between",
                 gap: 20,
                 fontSize: 12,
+                fontFamily: "Roboto",
               }}
             >
               <View>
@@ -2605,8 +2638,8 @@ function CustomerHome() {
                 position: "absolute",
                 bottom: -120,
                 right: 60,
-                width: 100,
-                height: 100,
+                width: 130,
+                height: 120,
               }}
             />
           </View>
@@ -2682,6 +2715,7 @@ function CustomerHome() {
               padding: 40,
               fontFamily: "Helvetica",
               position: "relative",
+              fontFamily: "Roboto",
             }}
           >
             <Image
@@ -2701,6 +2735,7 @@ function CustomerHome() {
                 color: "green",
                 fontSize: 12,
                 fontWeight: "light",
+                fontFamily: "Roboto",
               }}
             >
               Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
@@ -3034,8 +3069,8 @@ function CustomerHome() {
                 position: "absolute",
                 bottom: -120,
                 right: 60,
-                width: 100,
-                height: 100,
+                width: 130,
+                height: 120,
               }}
             />
           </View>
