@@ -262,7 +262,7 @@ function Agents() {
                   console.log(e);
                   f.setValues((prev) => ({
                     ...prev,
-                    workUnder: e.id,
+                    workUnder: e,
                   }));
                 }}
                 name={"workUnder"}

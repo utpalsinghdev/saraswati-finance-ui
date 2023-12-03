@@ -998,7 +998,7 @@ function WelcomeLetter() {
                     console.log(e);
                     f.setValues((prev) => ({
                       ...prev,
-                      customerId: e.id,
+                      customerId: e,
                     }));
                   }}
                   name={"customerId"}

@@ -1136,7 +1136,7 @@ export default function Appointment() {
               onSubmit={f.handleSubmit}
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
-              {" "}
+              {console.log(f.errors)}
               {/* <Select
                 onChange={f.handleChange}
                 name={"employeeId"}
@@ -1163,7 +1163,11 @@ export default function Appointment() {
                   console.log(e);
                   f.setValues((prev) => ({
                     ...prev,
-                    employeeId: e.id,
+                    employeeId: e,
+                  }));
+                  f.setErrors((prev) => ({
+                    ...prev,
+                    employeeId: "",
                   }));
                 }}
                 name={"employeeId"}
