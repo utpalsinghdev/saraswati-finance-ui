@@ -11,10 +11,10 @@ function Brand({ className }) {
     >
       <img
         src="/logo_without_name.png"
-        className="   w-20   cursor-pointer mr-1"
+        className="   w-16   cursor-pointer mr-1"
       />
       <p className="text-xl text-yellow-800  font-extrabold">
-        AARADHYA FINANCIAL PVT LTD
+        FUTURE FINANCIAL PVT LTD
       </p>
     </span>
   );
