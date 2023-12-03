@@ -59,7 +59,9 @@ function Customerlogin() {
                   values
                 );
                 if (res) {
-                  Cookie.set("gafs_user", JSON.stringify(res.data.data));
+                  Cookie.set("gafs_user", JSON.stringify(res.data.data), {
+                    expires: 29,
+                  });
                   toast.success(res.data.message);
                   navigator("/home");
                 }

@@ -60,7 +60,9 @@ export default function AgentLogin() {
                 );
                 if (res) {
                   Cookie.set("gafs_user", JSON.stringify(res.data.data));
-                  Cookie.set("gafs_agent", JSON.stringify(true));
+                  Cookie.set("gafs_agent", JSON.stringify(true), {
+                    expires: 29,
+                  });
                   toast.success(res.data.message);
                   navigator("/agent/home");
                 }
