@@ -53,129 +53,243 @@ const PreviewModalState = {
   edit_id: "",
 };
 
-// const PdfFile = ({ data }) => {
-//   return (
-//     <Document>
-//       <Page
-//         size="A7"
-//         style={{
-//           position: "relative",
-//         }}
-//       >
-//         <View style={{}}>
-//           <Image src={"/icardBanner.png"} />
-//         </View>
-//         <View
-//           style={{
-//             fontFamily: "Helvetica",
-//             position: "relative",
-//             display: "flex",
-//             flexDirection: "column",
-//             alignItems: "center",
-//             gap: 2,
-//             justifyContent: "center",
-//           }}
-//         >
-//           <Image
-//             style={{
-//               marginTop: 4,
-//               width: 80,
-//               height: 80,
-//               marginBottom: 2,
-//             }}
-//             src={data?.profilepic}
-//           />
-//           <Text
-//             style={{
-//               fontSize: 8,
-//               textAlign: "left",
-//               borderBottom: "1px solid blue",
-//               paddingBottom: 2,
-//             }}
-//           >
-//             {data.agent.firstName} {data.agent.LastName}
-//           </Text>
-//           <Text
-//             style={{
-//               width: 100,
-//               marginLeft: 20,
-//               fontSize: 8,
-//               textAlign: "left",
-//             }}
-//           >
-//             Designation :{data.agent.designation}
-//           </Text>
-//           <Text
-//             style={{
-//               width: 100,
-//               marginLeft: 20,
-//               fontSize: 8,
-//               textAlign: "left",
-//             }}
-//           >
-//             Code :{data.agent.employeeCode}
-//           </Text>
-//           <Text
-//             style={{
-//               width: 100,
-//               marginLeft: 20,
-//               fontSize: 8,
-//               textAlign: "left",
-//             }}
-//           >
-//             Location : {data.location}
-//           </Text>
-//           <Text
-//             style={{
-//               width: 100,
-//               marginLeft: 20,
-//               fontSize: 8,
-//               textAlign: "left",
-//             }}
-//           >
-//             Mobile :{data.agent.phone}
-//           </Text>
-//           <Image
-//             style={{
-//               position: "absolute",
-//               bottom: -57,
-//               right: 0,
-//               left: 0,
-//               zIndex: -1,
-//               width: "100%",
-//             }}
-//             src={"/icardFooter.png"}
-//           />
-//           <Image
-//             style={{
-//               position: "absolute",
-//               top: 40,
-//               right: 40,
-//               width: 100,
-//               height: 50,
-//               zIndex: 0,
-//               opacity: 0.1,
-//               transform: "rotate(-45deg)",
-//             }}
-//             src={
-//               "https://res.cloudinary.com/dedbpyhmr/image/upload/v1692499335/logo_zizin9.png"
-//             }
-//           />
-//         </View>
-//         <Image
-//           src={"/stamp.png"}
-//           style={{
-//             position: "absolute",
-//             top: 160,
-//             left: 60,
-//             width: 25,
-//             height: 25,
-//           }}
-//         />
-//       </Page>
-//     </Document>
-//   );
-// };
+const PdfFile = ({ data }) => {
+  return (
+    <Document>
+      <Page
+        size="A4"
+        style={{
+          position: "relative",
+        }}
+      >
+        <View style={{}}>
+          <Image src={"/pdfBanner.png"} />
+        </View>
+        <View
+          style={{
+            fontFamily: "Helvetica",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+            justifyContent: "center",
+          }}
+        >
+          <Image
+            style={{
+              marginTop: 2,
+              marginRight: 10,
+              paddingHorizontal: 30,
+              height: 130,
+              marginBottom: 2,
+            }}
+            src={"/logo_full.png"}
+          />
+          <Image
+            style={{
+              width: 200,
+              height: 230,
+            }}
+            src={data.agent.profilePic}
+          />
+          <Text
+            style={{
+              marginTop: 20,
+              fontSize: 36,
+              textAlign: "left",
+              paddingBottom: 2,
+            }}
+          >
+            {data.agent.firstName} {data.agent.LastName}
+          </Text>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Designation
+            </Text>
+            <Text style={{ width: 130 }}>: {data.agent.designation}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Location
+            </Text>
+            <Text style={{ width: 130 }}>: {data.location}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Code
+            </Text>
+            <Text style={{ width: 130 }}>: {data.agent.employeeCode}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Mobile
+            </Text>
+            <Text style={{ width: 130 }}>: {data.agent.phone}</Text>
+          </View>
+
+          {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              marginHorizontal: 110,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Code
+            </Text>
+            <Text>{data.agent.employeeCode}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Location
+            </Text>
+            <Text>{data.location}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Mobile
+            </Text>
+            <Text>{data.agent.phone}</Text>
+          </View> */}
+
+          <Image
+            style={{
+              position: "absolute",
+              bottom: -57,
+              right: 0,
+              left: 0,
+              zIndex: -1,
+              width: "100%",
+            }}
+            src={"/icardFooter.png"}
+          />
+          <Image
+            style={{
+              position: "absolute",
+              top: 70,
+              right: 70,
+              width: 400,
+              height: 400,
+              zIndex: 0,
+              opacity: 0.1,
+            }}
+            src={"/logo_without_name.png"}
+          />
+        </View>
+        <Image
+          src={"/stamp.png"}
+          style={{
+            position: "absolute",
+            top: 420,
+            left: 140,
+            width: 130,
+            height: 130,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            fontSize: 12,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            color: "grey",
+          }}
+        >
+          <Image
+            style={{
+              marginTop: 120,
+            }}
+            src={"/pdfFooter.png"}
+          />
+        </View>
+      </Page>
+    </Document>
+  );
+};
 const initialModalState = {
   state: false,
   edit_id: "",
@@ -454,18 +568,15 @@ export default function Icard() {
         <span className="flex items-center justify-start gap-4">
           <Badge
             onClick={() => {
-              setPrevModal((prev) => ({
-                edit_id: cell.row.original.id,
-                state: true,
-              }));
+              setDownload(cell.row.index);
             }}
             type={enums.BLUE}
           >
-            {/* {download === cell.row.index ? (
+            {download === cell.row.index ? (
               <PDFDownloadLink
                 id="download"
                 document={<PdfFile data={agents.data[download]} />}
-                fileName={`welcome.pdf`}
+                fileName={`${agents.data[download].agent.firstName}.pdf`}
               >
                 {({ blob, url, loading, error }) =>
                   loading ? "Generateing..." : "Print"
@@ -473,8 +584,7 @@ export default function Icard() {
               </PDFDownloadLink>
             ) : (
               "Generate"
-            )} */}
-            Preview
+            )}
           </Badge>
           <Badge
             onClick={() =>
@@ -497,7 +607,9 @@ export default function Icard() {
   ) : (
     <>
       {renderModal()}
-      {prevIcardModal()}
+      {/* <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[1]} />
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This ICard?"
         isDelete
