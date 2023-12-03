@@ -1339,7 +1339,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    PUNJAB NATIONAL BANK
+                    XXXXXXX NATIONAL BANK
                   </Text>
                 </View>
                 <View
@@ -1374,7 +1374,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    AARDHYA FINANCIAL PVT LTD (MD MUKESH)
+                    Future FINANCIAL PVT LTD
                   </Text>
                 </View>
                 <View
@@ -1409,7 +1409,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    1908001700146885
+                    19080017XXXXXX007110
                   </Text>
                 </View>
                 <View
@@ -1444,7 +1444,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    PUNB0007110
+                    XXXXXX007110
                   </Text>
                 </View>
               </View>
