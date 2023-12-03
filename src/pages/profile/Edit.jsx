@@ -118,7 +118,7 @@ function Edit() {
             )}
           </Formik>
         </span>
-        <span className="w-full mt-5">
+        {/* <span className="w-full mt-5">
           <Formik
             initialValues={{
               Oldpassword: "",
@@ -186,7 +186,7 @@ function Edit() {
               </form>
             )}
           </Formik>
-        </span>
+        </span> */}
       </div>
     </>
   );
