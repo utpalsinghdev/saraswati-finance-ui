@@ -30,6 +30,7 @@ import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import "../../../arton.css";
 import moment from "moment";
+import ComboBox from "../../../components/ui/comboBox";
 function fileToBase64(file, callback) {
   if (!file) {
     callback("");
@@ -257,7 +258,7 @@ export default function Icard() {
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
               {" "}
-              <Select
+              {/* <Select
                 onChange={f.handleChange}
                 name={"employeeId"}
                 value={f.values.employeeId}
@@ -271,9 +272,28 @@ export default function Icard() {
                   <option
                     key={a.id}
                     value={a.id}
-                  >{`${a.firstName} ${a.LastName} (${a.employeeCode})`}</option>
+                  >{}</option>
                 ))}
-              </Select>
+              </Select> */}
+              <ComboBox
+                people={employees.data?.map((a) => ({
+                  id: a.id,
+                  name: `${a.firstName} ${a.LastName} (${a.employeeCode})`,
+                }))}
+                onChange={(e) => {
+                  console.log(e);
+                  f.setValues((prev) => ({
+                    ...prev,
+                    employeeId: e,
+                  }));
+                }}
+                name={"employeeId"}
+                placeholder={"Select Agent"}
+                value={f.values.employeeId}
+                onBlur={f.handleBlur}
+                error={f.touched.employeeId && f.errors.employeeId}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
+              />
               <Input
                 name="location"
                 type={"text"}

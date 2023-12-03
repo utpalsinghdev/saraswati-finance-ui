@@ -32,6 +32,7 @@ import Loader from "../../../components/loader";
 import calculateEMI from "../../../utils/calculator";
 
 import bold from "../../../assets/bold.ttf";
+import ComboBox from "../../../components/ui/comboBox";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
@@ -1636,7 +1637,7 @@ export default function ApprovalLetter() {
                 label={"Photo (optional)"}
                 placeholder={"Profile pic"}
               /> */}
-              <Select
+              {/* <Select
                 onChange={f.handleChange}
                 name={"customerId"}
                 value={f.values.customerId}
@@ -1651,7 +1652,26 @@ export default function ApprovalLetter() {
                     {a.name}
                   </option>
                 ))}
-              </Select>
+              </Select> */}
+              <ComboBox
+                people={customers.data?.map((a) => ({
+                  id: a.id,
+                  name: a.name,
+                }))}
+                onChange={(e) => {
+                  console.log(e);
+                  f.setValues((prev) => ({
+                    ...prev,
+                    customerId: e,
+                  }));
+                }}
+                name={"customerId"}
+                placeholder={"Select the Customer"}
+                value={f.values.customerId}
+                onBlur={f.handleBlur}
+                error={f.touched.customerId && f.errors.customerId}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
+              />
               <Input
                 name="processingCharge"
                 type={"text"}

@@ -32,6 +32,7 @@ import { GoCrossReference } from "react-icons/go";
 import { MdDescription, MdProductionQuantityLimits } from "react-icons/md";
 import bold from "../../../assets/bold.ttf";
 import moment from "moment";
+import ComboBox from "../../../components/ui/comboBox";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
@@ -545,7 +546,7 @@ function WelcomeInvoice() {
               onSubmit={f.handleSubmit}
               className="w-full pt-4 rounded-b-md pb-8 flex flex-col gap-4 px-4 bg-white"
             >
-              {console.log(f.errors)}
+              {/* {console.log(f.errors)}
               <Select
                 label={""}
                 onChange={f.handleChange}
@@ -561,7 +562,26 @@ function WelcomeInvoice() {
                     {`${a.name} (${a.customerId})`}
                   </option>
                 ))}
-              </Select>
+              </Select> */}
+              <ComboBox
+                people={customers.data?.map((a) => ({
+                  id: a.id,
+                  name: a.name,
+                }))}
+                onChange={(e) => {
+                  console.log(e);
+                  f.setValues((prev) => ({
+                    ...prev,
+                    customerId: e,
+                  }));
+                }}
+                name={"customerId"}
+                placeholder={"Select the Customer"}
+                value={f.values.customerId}
+                onBlur={f.handleBlur}
+                error={f.touched.customerId && f.errors.customerId}
+                icon={<BiIdCard className="w-4 text-indigo-500" />}
+              />
               <Select
                 label={""}
                 onChange={f.handleChange}

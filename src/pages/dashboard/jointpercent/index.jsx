@@ -1509,9 +1509,9 @@ export default function JointPercent() {
   ) : (
     <>
       {renderModal()}
-      <PDFViewer height={1000} width={600}>
+      {/* <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[1]} />
-      </PDFViewer>
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete
