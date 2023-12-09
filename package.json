@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "deploy": "vite build && sudo cp -R dist/* /var/www/html/vandham_ui",
+    "deploy": "sudo cp -R dist/* /var/www/html/mahadev",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
