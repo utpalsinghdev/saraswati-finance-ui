@@ -120,7 +120,7 @@ const Homepage = () => {
             </span>
           </div>
         </div> */}
-        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
+        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-orange-500  flex h-max  gap-2 ">
           <div className="bg-green-400 w-4">
             <p className="text-green-400">d</p>
           </div>
@@ -129,7 +129,7 @@ const Homepage = () => {
             <span className="py-1 px-2 text-black text-sm font-medium ">
               ABOUT COMPANY
             </span>
-            <span className="py-1 px-2 text-2xl font-semibold ">News</span>
+            {/* <span className="py-1 px-2 text-2xl font-semibold ">News</span> */}
           </div>
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
@@ -141,7 +141,8 @@ const Homepage = () => {
                 }
               />
             </span>
-            <span className="py-1 px-2 text-sm w-full">
+
+            {/* <span className="py-1 px-2 text-sm w-full">
               <Ticker
                 messages={
                   !news.loading
@@ -149,7 +150,38 @@ const Homepage = () => {
                     : ["Mahadev Financial Services Pvt. Ltd."]
                 }
               />
+            </span> */}
+          </div>
+        </div>
+        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-orange-500  flex h-max  gap-2 ">
+          <div className="bg-green-400 w-4">
+            <p className="text-green-400">d</p>
+          </div>
+
+          <div className="flex flex-col py-2 z-50 ">
+            <span className="py-1 px-2 text-2xl font-semibold ">News</span>
+            {/* <span className="py-1 px-2 text-2xl font-semibold ">News</span> */}
+          </div>
+          <div className="flex flex-col justify-between w-full py-2">
+            <span className="py-1 px-2 text-sm  ">
+              <Ticker
+                messages={
+                  !news.loading
+                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                    : ["Mahadev Financial Services Pvt. Ltd."]
+                }
+              />
             </span>
+
+            {/* <span className="py-1 px-2 text-sm w-full">
+              <Ticker
+                messages={
+                  !news.loading
+                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
+                    : ["Mahadev Financial Services Pvt. Ltd."]
+                }
+              />
+            </span> */}
           </div>
         </div>
       </div>
