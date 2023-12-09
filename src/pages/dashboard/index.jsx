@@ -513,7 +513,7 @@ export default function DashboardLayout({ children }) {
                     className="w-12 cursor-pointer mr-1"
                   />
                   <p className=" md:block text-xl sm:text-2xl md:text-2xl text-green-500 font-bold">
-                    Future Financial Services Pvt. Ltd.
+                    Mahadev Financial Services Pvt. Ltd.
                   </p>
                 </span>
               </form>

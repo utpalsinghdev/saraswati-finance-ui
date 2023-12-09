@@ -11,10 +11,10 @@ function Brand({ className }) {
     >
       <img
         src="/logo_without_name.png"
-        className="   w-16   cursor-pointer mr-1"
+        className="   w-[6.8rem]   cursor-pointer mr-1"
       />
       <p className="text-xl text-yellow-800  font-extrabold">
-        FUTURE FINANCIAL PVT LTD
+        MAHADEV FINANCIAL SERVICES PVT LTD
       </p>
     </span>
   );

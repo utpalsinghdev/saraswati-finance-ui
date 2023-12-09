@@ -67,7 +67,7 @@ function CustomerHome() {
 
   const [generate, setGenerate] = useState(init);
   const PdfFileWelcomeLetter = ({ data }) => {
-    const company = "Future Financial Private Limited.";
+    const company = "Mahadev Financial Private Limited.";
     return (
       <Document>
         <Page size="A4" style={{}}>
@@ -564,7 +564,7 @@ function CustomerHome() {
                     fontWeight: "extrabold",
                   }}
                 >
-                  Future FINANCIAL PVT LTD
+                  MAHADEV FINANCIAL PVT LTD
                 </Text>
               </View>
               <View
@@ -728,7 +728,7 @@ function CustomerHome() {
     );
   };
   const PdfApprovalFile = ({ data }) => {
-    const company = "Future Financial Services Pvt. Ltd.";
+    const company = "Mahadev Financial Services Pvt. Ltd.";
     return (
       <Document>
         <Page size="A4" style={{}}>
@@ -1981,7 +1981,7 @@ function CustomerHome() {
                       fontFamily: "Roboto",
                     }}
                   >
-                    info@futurefinancial.in
+                    info@mahadevfinancial.in
                   </Text>
                 </Text>
                 <Text style={{ fontSize: 12, marginTop: "6" }}>
@@ -2070,7 +2070,7 @@ function CustomerHome() {
                         fontWeight: "extrabold",
                       }}
                     >
-                      Future FINANCIAL PVT LTD
+                      MAHADEV FINANCIAL PVT LTD
                     </Text>
                   </View>
                   <View

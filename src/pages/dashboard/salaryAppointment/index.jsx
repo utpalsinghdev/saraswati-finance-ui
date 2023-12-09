@@ -451,7 +451,7 @@ const PdfFile = ({ data }) => {
               </Text>
               &quot;, Grade:
               <Text style={{ fontSize: 12, fontFamily: "Roboto" }}>
-                Future Financial PVT.LTD
+                Mahadev Financial PVT.LTD
               </Text>{" "}
               .,w.e.f.{" "}
               <Text
@@ -932,7 +932,7 @@ const PdfFile = ({ data }) => {
                 Any change in your status of residential address should be
                 notified in writing to the company. We welcome you to
                 <Text style={{ fontSize: 14, fontFamily: "Roboto" }}>
-                  Future Financial Services Pvt. Ltd.
+                  Mahadev Financial Services Pvt. Ltd.
                 </Text>{" "}
                 and look forward to having a long and mutually beneficial
                 association with you.

@@ -11,9 +11,9 @@ function Footer() {
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">
-            <img src="/logo_full.png" className="w-64" alt="" />
+            <img src="/logo_full.png" className="w-72" alt="" />
             <p className="text-white mt-2">
-              Future Financial Private Limited. is dealing in Personal Loan,
+              Mahadev Financial Private Limited. is dealing in Personal Loan,
               Loan against Property, Project Loan & Gold Loan. We Believe in
               fair dealing and prompt disbursement of founds on priority Basis.
             </p>
@@ -60,28 +60,28 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:7253978410" target="_blank" rel="noreferrer">
-                  7253978410
+                <a href="tel:7310801366" target="_blank" rel="noreferrer">
+                  7310801366
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:7253978410" target="_blank" rel="noreferrer">
-                  7253978410
+                <a href="tel:7310801366" target="_blank" rel="noreferrer">
+                  7310801366
                 </a>
               </li>
 
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@futurefinancial.in"
+                  href="mailto:info@mahadevfinancial.in"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@futurefinancial.in
+                  info@mahadevfinancial.in
                 </a>
               </li>
-              <li className="flex flex-row items-start gap-2">
+              {/* <li className="flex flex-row items-start gap-2">
                 <span>
                   <HiOutlineLocationMarker size={20} />
                 </span>
@@ -90,15 +90,15 @@ function Footer() {
                   Branch Office: Plot No.330, Bus stand Rd, Opp. Acharya Puri,
                   Prem Nagar, Sector 12, Gurugram, Haryana 122001
                 </span>
-              </li>
+              </li> */}
               <li className="flex flex-row items-start gap-2">
                 <span>
                   <HiOutlineLocationMarker size={20} />
                 </span>
                 <span>
                   {" "}
-                  Head Office: 17/1, GRA Tower, Ambalipura Main Road Off
-                  Sarjapur Road, Agara Post Bengaluru, Karnataka 560103
+                  Office: D.4 SCHEME NEAR ADHIVAKTA BHAWAN JYOTI NAGAR JAIPUR RJ
+                  302005
                 </span>
               </li>
             </ul>

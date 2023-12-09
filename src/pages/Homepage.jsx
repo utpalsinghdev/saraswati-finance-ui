@@ -22,17 +22,17 @@ const Homepage = () => {
     {
       type: "Home",
       link: "/services/home-loan",
-      img: "/home.jpg",
+      img: "/homeLoan.png",
     },
     {
       type: "Education",
       link: "/services/education-loan",
-      img: "/education.jpg",
+      img: "/educationLoan.png",
     },
     {
       type: "Business",
       link: "/services/business-loan",
-      img: "/bussiness.jpg",
+      img: "/businessLoan.png",
     },
     {
       type: "Property",
@@ -47,7 +47,7 @@ const Homepage = () => {
     {
       type: "Agriculture",
       link: "/services/agriculture-loan",
-      img: "/agri.jpg",
+      img: "/agricultureLoan.png",
     },
     {
       type: "Pay Slip",
@@ -78,14 +78,14 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-orange-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-yellow-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
           <span className="text-3xl self-center font-bold text-green-800">
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from Future Financial Services
+            Get {type} Loan on Easy EMI basis from Mahadev Financial Services
             Pvt. Ltd.
           </span>
           <span className="self-center mt-4 md:self-auto">
@@ -114,15 +114,15 @@ const Homepage = () => {
                 messages={
                   !news.data
                     ? news.data?.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Future Financial Services Pvt. Ltd."]
+                    : ["Mahadev Financial Services Pvt. Ltd."]
                 }
               />
             </span>
           </div>
         </div> */}
         <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-14 text-black bg-white  flex h-max  gap-2 ">
-          <div className="bg-orange-400 w-4">
-            <p className="text-orange-400">d</p>
+          <div className="bg-green-400 w-4">
+            <p className="text-green-400">d</p>
           </div>
 
           <div className="flex flex-col py-2 z-50 ">
@@ -137,7 +137,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Future Financial Services Pvt. Ltd."]
+                    : ["Mahadev Financial Services Pvt. Ltd."]
                 }
               />
             </span>
@@ -146,7 +146,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Future Financial Services Pvt. Ltd."]
+                    : ["Mahadev Financial Services Pvt. Ltd."]
                 }
               />
             </span>
@@ -159,7 +159,7 @@ const Homepage = () => {
           <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
           <p className="mt-10 ">
-            Future Financial Services Pvt. Ltd. is dealing in Home Loan,
+            Mahadev Financial Services Pvt. Ltd. is dealing in Home Loan,
             Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
             Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
             Loans, Loan Against Property & Project Etc.

@@ -36,27 +36,27 @@ function Contact() {
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     <a
-                      href="tel:7253978410"
+                      href="tel:7310801366"
                       className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-7253978410
+                      <Phone /> +91-7310801366
                     </a>
                     <a
-                      href="tel:7253978410"
+                      href="tel:7310801366"
                       className="flex items-end text-md  gap-2"
                     >
-                      <Phone /> +91-7253978410
+                      <Phone /> +91-7310801366
                     </a>
                     <a
-                      href="mailto:info@futurefinancial.in"
+                      href="mailto:info@mahadevfinancial.in"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@futurefinancial.in
+                      <MailIcon /> info@mahadevfinancial.in
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="upper bg-green-500 rounded-2xl ">
+              {/* <div className="upper bg-green-500 rounded-2xl ">
                 <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Branch Office:
@@ -66,15 +66,15 @@ function Contact() {
                     Sector 12, Gurugram, Haryana 122001
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="upper bg-green-500 rounded-2xl ">
                 <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 ">
                   <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
-                    Head Office:
+                    Office:
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    17/1, GRA Tower, Ambalipura Main Road Off Sarjapur Road,
-                    Agara Post Bengaluru, Karnataka 560103
+                    D.4 SCHEME NEAR ADHIVAKTA BHAWAN JYOTI NAGAR JAIPUR RJ
+                    302005
                   </div>
                 </div>
               </div>

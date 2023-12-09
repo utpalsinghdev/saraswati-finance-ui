@@ -18,7 +18,7 @@ function Calculator() {
       <ContainerWrapper>
         <HeadingWrapper
           heading="Loan Calculator"
-          title="Future Financial Private Limited."
+          title="Mahadev Financial Private Limited."
         >
           <div className="px-0 md:px-16 grid grid-cols-1 gap-4 md:grid-cols-2 mt-4 md:mt-8">
             <Image

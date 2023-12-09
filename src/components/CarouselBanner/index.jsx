@@ -11,12 +11,12 @@ function CarouselBanner() {
 
   function ApplyBox() {
     return (
-      <span className="absolute top-16 md:top-36 left-6 md:left-32 z-50 md:w-[500px] w-72  rounded-lg md:h-56 h-52 bg-green-50/40 ">
+      <span className="absolute top-16 md:top-36 left-6 md:left-32 z-50 md:w-[500px] w-72  rounded-lg md:h-56 h-44 bg-green-50/40 ">
         <div className="p-4 flex flex-col items-start gap-4 justify-start">
           <p className="md:text-5xl text-3xl text-left text-green-800 font-extrabold">
             <p>
               {" "}
-              Future Financial <p className="text-orange-400 "> PVT. LTD.</p>
+              Mahadev Financial <p className="text-orange-400 "> PVT. LTD.</p>
             </p>
           </p>
 
@@ -46,7 +46,7 @@ function CarouselBanner() {
       </span>
     );
   }
-  const imgs = ["/banner1.jpg", "/banner2.jpg", "/banner3.jpg"];
+  const imgs = ["/slider1.jpg", "/slider2.jpg", "/slider3.jpg"];
   function ItemBox({ src }) {
     return (
       <div className="relative">

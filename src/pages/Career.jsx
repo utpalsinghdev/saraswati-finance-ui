@@ -94,13 +94,13 @@ function Career() {
           {(f) => (
             <form
               onSubmit={f.handleSubmit}
-              className="flex pb-4 items-start gap-4 md:gap-12 justify-start flex-col md:flex-row  mt-4 p-0 md:p-8 lg:px-20  "
+              className="flex pb-4 items-start gap-4 md:gap-10 justify-start flex-col md:flex-row  mt-4 p-0 md:p-8 lg:px-20  "
             >
               <Image
-                src={"/job.jpg"}
+                src={"/hire.jpg"}
                 alt={"career"}
                 className={
-                  "h-[500px] md:w-[370px]  md:aspect-auto object-fill rounded-md"
+                  "h-[500px] md:w-[500px]  md:aspect-auto object-fill rounded-md"
                 }
               />
 
@@ -254,7 +254,7 @@ function Career() {
                 </h3>
 
                 <p className="text-sm max-w-md text-left ">
-                  Future Financial Pvt ltd, a loan franchise, has been in
+                  Mahadev Financial Pvt ltd, a loan franchise, has been in
                   existence for years now. You can bridge the gap between your
                   applicant and us by partnering with our institution. Your
                   journey with us will be one long road of opportunities. Our
@@ -278,7 +278,7 @@ function Career() {
                 <p className="text-sm max-w-md text-left ">
                   anyone (salaried/self-employed/freelancer/students) above 21
                   years and willing to enhance the monthly income can become the
-                  business partner of Future Financial Pvt ltd.
+                  business partner of Mahadev Financial Pvt ltd.
                 </p>
                 <h3 className="text-2xl text-green-800 text-left w-full font-extrabold ">
                   How to Become our Partner

@@ -17,14 +17,14 @@ function PreNavbar() {
   return (
     <div
       ref={myRef}
-      className="font-normal hidden md:block w-full bg-gray-900 py-2 z-40"
+      className="font-normal hidden md:block w-full bg-green-800 py-2 z-40"
     >
       <ContainerWrapper>
         <div className="flex justify-between items-center text-white">
           <div className="py-2 flex gap-2">
             <MailIcon />
-            <a href="mailto:info@futurefinancial.in" rel="noreferrer">
-              info@futurefinancial.in
+            <a href="mailto:info@mahadevfinancial.in" rel="noreferrer">
+              info@mahadevfinancial.in{" "}
             </a>
           </div>
           <div className="py-2 flex gap-2">

@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { classNames } from "../../utils/classname";
 import Brand from "../brand";
 import Image from "../ui/Image/Index";
+import { Headphones } from "lucide-react";
 const Navbar = () => {
   const location = useLocation();
 
@@ -63,12 +64,44 @@ const Navbar = () => {
   ];
   return (
     <div className=" w-full md:w-[90%] mx-auto">
+      <div className="w-full md:hidden bg-green-50 py-2 px-4">
+        <div className="w-full flex flex-row items-center gap-4">
+          <img src="/mic.svg" className="w-9 h-auto text-green-800" />
+          <span className="w-full flex flex-col ">
+            <a
+              href="tel:7310801366"
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-800 font-medium"
+            >
+              +19-7310801366
+            </a>
+            <a
+              href="mailto:info@mahadevfinancial.in"
+              target="_blank"
+              rel="noreferrer"
+              className="text-green-800 font-medium"
+            >
+              info@mahadevfinancial.in
+            </a>
+          </span>
+        </div>
+      </div>
+      <div className="w-full md:hidden bg-green-50 py-2 px-4">
+        <div className="w-full flex flex-row items-center gap-4">
+          <img src="/clock.png" className="w-9 h-auto text-green-800" />
+          <span className="w-full flex flex-col ">
+            <p className="text-blue-800 font-medium">
+              Mon - Sat 10:00 AM - 5:00 PM
+            </p>
+            <p className="text-green-800 font-medium">Sunday Closed</p>
+          </span>
+        </div>
+      </div>
       <div
         className={classNames(
           "relative  md:mt-6 pb-4    md:px-0 transition duration-300",
-          !isMobiled
-            ? "bg-gradient-to-r from-orange-500 via-white to-green-500"
-            : "bg-green-800 md:bg-white"
+          "bg-green-800 md:bg-white"
         )}
       >
         <nav className="relative flex items-center justify-start md:justify-between">
@@ -104,7 +137,7 @@ const Navbar = () => {
             />
             <p className="text-2xl text-[#B77E15] font-extrabold text-center">
               {" "}
-              FUTURE FINANCIAL PVT LTD
+              Mahadev Financial PVT LTD
             </p>
           </span>
         </nav>

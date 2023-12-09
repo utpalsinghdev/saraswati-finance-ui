@@ -24,11 +24,11 @@ const Ticker = ({ messages }) => {
         {messages?.map((message, index) => (
           <span
             key={index}
-            className={`ticker-content text-[#B77E15] mr-4 ${
+            className={`ticker-content text-green-800 mr-4 ${
               index === currentIndex ? "visible" : ""
             }`}
           >
-            {message}
+            {message ? message : "Mahadev Financial Services Pvt Ltd"}
           </span>
         ))}
       </div>

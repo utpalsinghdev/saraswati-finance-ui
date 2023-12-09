@@ -39,7 +39,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Future Financial Private Limited.";
+  const company = "Mahadev Financial Private Limited.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -536,7 +536,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                Future FINANCIAL PVT LTD (MD MUKESH)
+                MAHADEV FAINACAL SERVICES
               </Text>
             </View>
             <View
@@ -571,7 +571,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                1908001700146885
+                110119513797
               </Text>
             </View>
             <View
@@ -606,7 +606,7 @@ const PdfFile = ({ data }) => {
                   fontWeight: "extrabold",
                 }}
               >
-                PUNB0007110
+                CNRB0008320
               </Text>
             </View>
           </View>
