@@ -80,7 +80,7 @@ const PdfFile = ({ data }) => {
         <Text
           style={{
             textAlign: "center",
-            color: "green",
+            color: "red",
             marginTop: 4,
             fontSize: 18,
             letterSpacing: 1,
@@ -101,7 +101,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "left",
-              color: "red",
+              color: "#5FBDFF",
               marginTop: 5,
               marginBottom: 5,
               fontSize: 12,
@@ -110,7 +110,7 @@ const PdfFile = ({ data }) => {
               textAlign: "right",
               fontFamily: "Roboto",
 
-              color: "blue",
+              // color: "blue",
             }}
           >
             Date : {moment(data.createdAt).format("DD/MM/YYYY")}
@@ -140,10 +140,12 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
+                color: "#5FBDFF",
                 fontSize: 12,
                 fontWeight: "light",
-                padding: 5,
+                // padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 width: 190,
                 borderBottom: "1px solid black",
@@ -156,8 +158,9 @@ const PdfFile = ({ data }) => {
               style={{
                 textAlign: "left",
                 color: "black",
-                fontSize: 12,
-                padding: 5,
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
                 borderBottom: "1px solid black",
@@ -178,10 +181,11 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 width: 190,
                 borderBottom: "1px solid black",
@@ -197,8 +201,9 @@ const PdfFile = ({ data }) => {
               style={{
                 textAlign: "left",
                 color: "black",
-                fontSize: 12,
-                padding: 5,
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
                 width: "100%",
@@ -218,10 +223,11 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 width: 180,
                 borderBottom: "1px solid black",
@@ -234,23 +240,25 @@ const PdfFile = ({ data }) => {
               style={{
                 textAlign: "left",
                 color: "black",
-                fontSize: 12,
-                padding: 5,
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
                 borderBottom: "1px solid black",
                 width: 170,
               }}
             >
-              +91 {data.for.phone}
+              {data.for.phone}
             </Text>
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 width: 160,
                 textTransform: "uppercase",
                 borderBottom: "1px solid black",
@@ -262,8 +270,9 @@ const PdfFile = ({ data }) => {
               style={{
                 textAlign: "left",
                 color: "black",
-                fontSize: 12,
-                padding: 5,
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 paddingLeft: 20,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
@@ -284,10 +293,11 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 width: 190,
                 borderBottom: "1px solid black",
@@ -300,8 +310,9 @@ const PdfFile = ({ data }) => {
               style={{
                 textAlign: "left",
                 color: "black",
-                fontSize: 12,
-                padding: 5,
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
                 width: "100%",
@@ -321,10 +332,11 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 width: 180,
                 borderBottom: "1px solid black",
@@ -337,8 +349,9 @@ const PdfFile = ({ data }) => {
               style={{
                 textAlign: "left",
                 color: "black",
-                fontSize: 12,
-                padding: 5,
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
                 borderBottom: "1px solid black",
@@ -350,10 +363,11 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 borderBottom: "1px solid black",
                 width: 160,
@@ -365,8 +379,9 @@ const PdfFile = ({ data }) => {
               style={{
                 textAlign: "left",
                 color: "black",
-                fontSize: 12,
-                padding: 5,
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 paddingLeft: 20,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
@@ -387,10 +402,11 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 width: 180,
                 borderBottom: "1px solid black",
@@ -402,9 +418,10 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
+                color: "red",
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
                 borderBottom: "1px solid black",
@@ -418,10 +435,11 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
+                color: "#5FBDFF",
+                fontSize: 11,
                 fontWeight: "light",
-                padding: 5,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 textTransform: "uppercase",
                 borderBottom: "1px solid black",
                 width: 160,
@@ -432,9 +450,10 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
+                color: "red",
+                fontSize: 11,
+                paddingHorizontal: 5,
+                paddingVertical: 2,
                 paddingLeft: 20,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
@@ -729,13 +748,26 @@ const PdfFile = ({ data }) => {
               </Text>
             </View>
           </View>
-          <Image
-            source={"/qr.jpeg"}
-            style={{
-              width: 100,
-              height: 100,
-            }}
-          />
+          <View>
+            <Text
+              style={{
+                fontSize: 14,
+                marginLeft: 15,
+                textAlign: "center",
+                fontWeight: "bold",
+                fontFamily: "Roboto",
+              }}
+            >
+              Payment Qr
+            </Text>
+            <Image
+              source={"/qr.jpeg"}
+              style={{
+                width: 100,
+                height: 100,
+              }}
+            />
+          </View>
         </View>
 
         <View
@@ -779,10 +811,10 @@ const PdfFile = ({ data }) => {
             src={"/stamp.png"}
             style={{
               position: "absolute",
-              bottom: -25,
-              right: -20,
-              width: 120,
-              height: 120,
+              bottom: -20,
+              right: -15,
+              width: 110,
+              height: 110,
             }}
           />
           <Text style={{ marginTop: 20 }}>
@@ -1255,7 +1287,7 @@ function WelcomeLetter() {
     <>
       {renderModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[1]} />
+        <PdfFile data={agents.data[0]} />
       </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this letter?"

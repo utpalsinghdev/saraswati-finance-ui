@@ -465,11 +465,15 @@ export default function Icard() {
             alt="footerbanner"
             className="absolute w-full bottom-0 z-0 "
           />
-          <img
+          {/* <img
             src={"/logo_full.png"}
             alt="footerbanner"
             className="w-full h-16 px-2 "
-          />
+          /> */}
+          <span className="w-full h-14 px-2 text-center flex flex-col font-semibold">
+            <p className="text-green-800">Mahadev Financial</p>
+            <p className="text-yellow-800">Pvt Ltd</p>
+          </span>
           <img
             src={IcardData?.agent?.profilePic}
             alt="Employee"
@@ -478,7 +482,7 @@ export default function Icard() {
           <img
             src={"/stamp.png"}
             alt="Employee"
-            className="w-[90px] h-[90px]  z-10 absolute top-[11.3rem] left-6 "
+            className="w-[90px] h-[90px]  z-10 absolute top-[10.5rem] left-5 "
           />
           <h2 className="text-md font-bold italic text-center uppercase  tracking-wide  text-black">
             {IcardData?.agent?.firstName} {IcardData?.agent?.LastName}
@@ -488,7 +492,7 @@ export default function Icard() {
               fontSize: "10px",
               lineHeight: "14px",
             }}
-            className="uppercase flex flex-col gap-2 text-black font-semibold italic  text-center"
+            className="uppercase flex flex-col gap-1 text-black font-semibold italic  text-center"
           >
             <span className="flex items-center justify-between gap-1 border-black mx-8 font-semibold">
               <p className="w-[70px]   text-left flex items-center justify-between">
