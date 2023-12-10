@@ -80,11 +80,11 @@ const PdfFile = ({ data }) => {
               position: "absolute",
               top: 100,
               right: 30,
-              width: 500,
-              height: 500,
+              width: 550,
+              height: 550,
               opacity: 0.1,
             }}
-            src={"/logo_without_name.png"}
+            src={"/watermark.png"}
           />
           <Text
             style={{
@@ -106,7 +106,7 @@ const PdfFile = ({ data }) => {
               fontFamily: "Roboto",
             }}
           >
-            Date : {data.createdAt.split("T")[0]}
+            Date : {moment(data.createdAt.split("T")[0]).format("DD/MM/YY")}
           </Text>
           <Text
             style={{
@@ -221,7 +221,10 @@ const PdfFile = ({ data }) => {
                 }}
               >
                 <Text>date:</Text>
-                <Text> {data.createdAt.split("T")[0]}</Text>
+                <Text>
+                  {" "}
+                  {moment(data.createdAt.split("T")[0]).format("DD/MM/YY")}
+                </Text>
               </View>
             </View>
           </View>
@@ -431,7 +434,7 @@ const PdfFile = ({ data }) => {
             src={"/stamp.png"}
             style={{
               position: "absolute",
-              bottom: -120,
+              bottom: -90,
               right: 60,
               width: 130,
               height: 120,

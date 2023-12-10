@@ -106,7 +106,7 @@ const PdfFile = ({ data }) => {
               fontWeight: "light",
             }}
           >
-            Date : {data.createdAt.split("T")[0]}
+            Date : {moment(data.createdAt?.split("T")[0]).format("DD-MM-YY")}
           </Text>
           <View
             style={{
@@ -218,7 +218,7 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 top: 30,
                 right: 50,
-                width: 100,
+                width: 90,
                 height: 90,
                 backgroundColor: "transparent",
               }}
@@ -287,7 +287,7 @@ const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 15,
+              marginTop: 10,
               marginLeft: 8,
               fontSize: 12,
               lineHeight: 1.5,
@@ -1059,7 +1059,7 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 bottom: -10,
                 right: 20,
-                width: 100,
+                width: 90,
                 height: 90,
               }}
             />
@@ -1068,7 +1068,7 @@ const PdfFile = ({ data }) => {
                 borderTop: "1px solid black",
                 textAlign: "right",
                 color: "black",
-                marginTop: 20,
+                marginTop: 10,
                 paddingTop: 4,
                 fontSize: 12,
               }}
@@ -1510,7 +1510,7 @@ export default function JointPercent() {
     <>
       {renderModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[1]} />
+        <PdfFile data={agents.data[0]} />
       </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"

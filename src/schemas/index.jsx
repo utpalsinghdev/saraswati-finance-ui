@@ -26,17 +26,17 @@ export const agentApplicationSchema = Yup.object().shape({
     .required("Please Select a Post"),
   city: Yup.string().required("Please Enter Your City"),
   resume: Yup.mixed()
-    .test(
-      "fileType",
-      "Invalid file format. Only accept PDF files.",
-      (value) => {
-        if (!value) return true;
-        return [
-          "application/pdf",
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        ].includes(value.type);
-      }
-    )
+    // .test(
+    //   "fileType",
+    //   "Invalid file format. Only accept PDF files.",
+    //   (value) => {
+    //     if (!value) return true;
+    //     return [
+    //       "application/pdf",
+    //       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    //     ].includes(value.type);
+    //   }
+    // )
     .test(
       "fileSize",
       "File size is too large. Maximum size allowed is 2MB.",

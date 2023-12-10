@@ -1140,53 +1140,51 @@ function WelcomeLetter() {
   return agents.loading ? (
     <Loader />
   ) : (
-    <>
-      {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
-      <ConfirmationModal
-        description="Do you really want to delete this letter?"
-        isDelete
-        open={confirmModal.state}
-        setOpen={() => {
-          setConfirmModal({
-            state: false,
-            id: null,
-          });
-        }}
-        onDelete={async () => {
-          const res = await ApiService.fetchData({
-            url: `api/welcome-letter/${confirmModal.id}`,
-            method: "DELETE",
-          });
-          if (res) toast.success(res.data.message);
-          setDatas((prev) => ({
-            data: prev.data.filter((a) => a.id !== confirmModal.id),
-          }));
-          setConfirmModal((prev) => ({
-            state: false,
-            id: null,
-          }));
-        }}
-      />
-
-      <Table
-        btnText={"Generate Letter"}
-        btnfunc={() =>
-          setModal((prev) => ({
-            state: true,
-            data: initialModalState.data,
-            edit_id: initialModalState.edit_id,
-          }))
-        }
-        title="Welcome Letters"
-        subtitle={"All generated welcome letter"}
-        dataName={"letters"}
-        data={agents.data}
-        columns={columns()}
-      />
-    </>
+    // <>
+    //   {renderModal()}
+    //   {/* s */} */}
+    //   <ConfirmationModal
+    //     description="Do you really want to delete this letter?"
+    //     isDelete
+    //     open={confirmModal.state}
+    //     setOpen={() => {
+    //       setConfirmModal({
+    //         state: false,
+    //         id: null,
+    //       });
+    //     }}
+    //     onDelete={async () => {
+    //       const res = await ApiService.fetchData({
+    //         url: `api/welcome-letter/${confirmModal.id}`,
+    //         method: "DELETE",
+    //       });
+    //       if (res) toast.success(res.data.message);
+    //       setDatas((prev) => ({
+    //         data: prev.data.filter((a) => a.id !== confirmModal.id),
+    //       }));
+    //       setConfirmModal((prev) => ({
+    //         state: false,
+    //         id: null,
+    //       }));
+    //     }}
+    //   />
+    //   <Table
+    //     btnText={"Generate Letter"}
+    //     btnfunc={() =>
+    //       setModal((prev) => ({
+    //         state: true,
+    //         data: initialModalState.data,
+    //         edit_id: initialModalState.edit_id,
+    //       }))
+    //     }
+    //     title="Welcome Letters"
+    //     subtitle={"All generated welcome letter"}
+    //     dataName={"letters"}
+    //     data={agents.data}
+    //     columns={columns()}
+    //   />
+    // </>
+    <div>available soon</div>
   );
 }
 

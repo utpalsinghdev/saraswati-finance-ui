@@ -58,11 +58,11 @@ const PdfFile = ({ data }) => {
               position: "absolute",
               top: 100,
               right: 30,
-              width: 500,
-              height: 500,
-              opacity: 0.1,
+              width: 550,
+              height: 550,
+              opacity: 0.15,
             }}
-            src={"/logo_without_name.png"}
+            src={"/watermark.png"}
           />
           <Text
             style={{
@@ -229,13 +229,13 @@ const PdfFile = ({ data }) => {
               src={data?.photo ? data?.photo : data?.customer?.photo?.url}
             />
             <Image
-              src={"/stamp.png"}
+              src={"/stamp2.png"}
               style={{
                 position: "absolute",
-                top: 40,
-                right: 50,
-                width: 100,
-                height: 90,
+                top: 70,
+                right: 20,
+                // width: 90,
+                height: 60,
                 backgroundColor: "transparent",
               }}
             />
@@ -349,7 +349,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Date of Application
@@ -358,7 +358,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {moment(data?.customer?.createdAt).format("DD/MM/YYYY")}
@@ -381,7 +381,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Name
@@ -390,7 +390,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer?.name}
@@ -413,7 +413,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Guardian Name
@@ -422,7 +422,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer?.guardian_name}
@@ -445,7 +445,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Address
@@ -454,7 +454,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer?.address}
@@ -509,7 +509,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Mobile NO
@@ -518,7 +518,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer.phone}
@@ -541,7 +541,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Email
@@ -573,7 +573,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Aadhar
@@ -582,7 +582,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer.adharNumber}
@@ -614,7 +614,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer.panNumber}
@@ -637,7 +637,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Loan Amount
@@ -646,7 +646,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Rs. {data?.customer.loanInNumber} /- (
@@ -670,7 +670,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Loan Details
@@ -679,7 +679,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Periods {data?.customer?.loanYear} years at INTEREST RATE-5% EMI
@@ -711,7 +711,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Bank Name &A/CNo./IFSCCODE A/C
@@ -720,7 +720,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data.customer.bank
@@ -751,7 +751,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Executive Details
@@ -760,7 +760,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer?.agent.employeeCode}-
@@ -786,7 +786,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Processing Charges + 18%GST
@@ -795,7 +795,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Rs. {data?.processingCharge}
@@ -806,7 +806,7 @@ const PdfFile = ({ data }) => {
                 borderTop: "1px solid black",
                 textAlign: "right",
                 color: "black",
-                marginTop: 10,
+                marginTop: 5,
                 paddingTop: 4,
                 fontSize: 12,
                 fontWeight: "bold",
@@ -827,9 +827,9 @@ const PdfFile = ({ data }) => {
                 right: 30,
                 width: 500,
                 height: 500,
-                opacity: 0.1,
+                opacity: 0.15,
               }}
-              src={"/logo_without_name.png"}
+              src={"/watermark.png"}
             />
             <Text
               style={{
@@ -1092,9 +1092,9 @@ const PdfFile = ({ data }) => {
                 right: 30,
                 width: 500,
                 height: 500,
-                opacity: 0.1,
+                opacity: 0.15,
               }}
-              src={"/logo_without_name.png"}
+              src={"/watermark.png"}
             />
             <View
               style={{
@@ -1230,9 +1230,9 @@ const PdfFile = ({ data }) => {
                 right: 30,
                 width: 500,
                 height: 500,
-                opacity: 0.1,
+                opacity: 0.15,
               }}
-              src={"/logo_without_name.png"}
+              src={"/watermark.png"}
             />
             <View
               style={{
@@ -1375,7 +1375,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    MAHADEV FINANCIAL PVT LTD (MD MUKESH)
+                    MAHADEV FAINACAL SERVICES{" "}
                   </Text>
                 </View>
                 <View
@@ -1499,13 +1499,13 @@ const PdfFile = ({ data }) => {
               }}
             >
               <Image
-                src={"/stamp.png"}
+                src={"/stamp2.png"}
                 style={{
                   position: "absolute",
-                  bottom: -50,
-                  right: 20,
-                  width: 130,
-                  height: 120,
+                  bottom: -25,
+                  right: 10,
+                  // width: 90,
+                  height: 90,
                 }}
               />
               <Text
@@ -1591,7 +1591,7 @@ export default function ApprovalLetter() {
               customerId: values.customerId ? Number(values.customerId) : "",
               address: values.address,
               permanentAddress: values.permanentAddress,
-              processingCharge: values.processingCharge,
+              processingCharge: values.processingCharge.toString(),
             };
             await new Promise((resolve) => {
               fileToBase64(values.photo, (base64Data) => {
@@ -1664,6 +1664,17 @@ export default function ApprovalLetter() {
                     ...prev,
                     customerId: e,
                   }));
+                  const customer = customers.data.find(
+                    (a) => a.id === Number(e)
+                  );
+
+                  console.log(customer.loanInNumber);
+                  console.log(processingCharge(customer.loanInNumber));
+
+                  f.setValues({
+                    ...f.values,
+                    processingCharge: processingCharge(customer.loanInNumber),
+                  });
                 }}
                 name={"customerId"}
                 placeholder={"Select the Customer"}
@@ -1829,7 +1840,11 @@ export default function ApprovalLetter() {
       ),
     },
   ];
-
+  function processingCharge(loanAmount) {
+    const chargeWithoutGST = 0.03 * loanAmount;
+    const totalCharge = chargeWithoutGST + 0.18 * chargeWithoutGST;
+    return Math.round(totalCharge);
+  }
   return agents.loading ? (
     <Loader />
   ) : (
