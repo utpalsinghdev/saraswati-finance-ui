@@ -87,8 +87,9 @@ const PdfFile = ({ data }) => {
             fontFamily: "Roboto",
           }}
         >
-          CONGRATULATIONS
+          WELCOME LETTER
         </Text>
+
         <View
           style={{
             marginTop: 10,
@@ -97,6 +98,38 @@ const PdfFile = ({ data }) => {
             marginHorizontal: 40,
           }}
         >
+          <Text
+            style={{
+              textAlign: "left",
+              color: "red",
+              marginTop: 5,
+              marginBottom: 5,
+              fontSize: 12,
+              fontWeight: "light",
+              width: "100%",
+              textAlign: "right",
+              fontFamily: "Roboto",
+
+              color: "blue",
+            }}
+          >
+            Date : {moment(data.createdAt).format("DD/MM/YYYY")}
+          </Text>
+          <Text
+            style={{
+              textAlign: "left",
+              color: "red",
+              marginTop: 5,
+              marginBottom: 5,
+              fontSize: 12,
+              fontWeight: "light",
+              textTransform: "uppercase",
+              fontFamily: "Roboto",
+            }}
+          >
+            Dear Sir/ Madam{" "}
+          </Text>
+
           <View
             style={{
               display: "flex",
@@ -112,12 +145,13 @@ const PdfFile = ({ data }) => {
                 fontWeight: "light",
                 padding: 5,
                 textTransform: "uppercase",
-                width: 135,
+                width: 190,
+                borderBottom: "1px solid black",
               }}
             >
               Applicant Name
             </Text>
-            <Text>:</Text>
+            {/* <Text>:</Text> */}
             <Text
               style={{
                 textAlign: "left",
@@ -126,6 +160,8 @@ const PdfFile = ({ data }) => {
                 padding: 5,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
+                borderBottom: "1px solid black",
+                width: "100%",
               }}
             >
               {data.for.name}
@@ -136,7 +172,7 @@ const PdfFile = ({ data }) => {
             style={{
               display: "flex",
               flexDirection: "row",
-              gap: 10,
+              gap: 6,
             }}
           >
             <Text
@@ -147,41 +183,8 @@ const PdfFile = ({ data }) => {
                 fontWeight: "light",
                 padding: 5,
                 textTransform: "uppercase",
-                width: 130,
-              }}
-            >
-              Applicant Mobile
-            </Text>
-            <Text>:</Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-              }}
-            >
-              +91 {data.for.phone}
-            </Text>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 10,
-            }}
-          >
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                fontWeight: "light",
-                padding: 5,
-                textTransform: "uppercase",
-                width: 130,
+                width: 190,
+                borderBottom: "1px solid black",
               }}
             >
               {data.for.guardian_relation === "SONOF" ||
@@ -189,7 +192,7 @@ const PdfFile = ({ data }) => {
                 ? "Father Name"
                 : "Husband Name"}
             </Text>
-            <Text>:</Text>
+            {/* <Text>:</Text> */}
             <Text
               style={{
                 textAlign: "left",
@@ -198,17 +201,18 @@ const PdfFile = ({ data }) => {
                 padding: 5,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
+                width: "100%",
+                borderBottom: "1px solid black",
               }}
             >
               {data.for.guardian_name}
             </Text>
           </View>
-
           <View
             style={{
               display: "flex",
               flexDirection: "row",
-              gap: 10,
+              gap: 6,
             }}
           >
             <Text
@@ -219,12 +223,13 @@ const PdfFile = ({ data }) => {
                 fontWeight: "light",
                 padding: 5,
                 textTransform: "uppercase",
-                width: 130,
+                width: 180,
+                borderBottom: "1px solid black",
               }}
             >
-              Loan Amount
+              Applicant Mobile
             </Text>
-            <Text>:</Text>
+            {/* <Text>:</Text> */}
             <Text
               style={{
                 textAlign: "left",
@@ -233,13 +238,214 @@ const PdfFile = ({ data }) => {
                 padding: 5,
                 textTransform: "uppercase",
                 fontWeight: "extrabold",
+                borderBottom: "1px solid black",
+                width: 170,
+              }}
+            >
+              +91 {data.for.phone}
+            </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                width: 160,
+                textTransform: "uppercase",
+                borderBottom: "1px solid black",
+              }}
+            >
+              Application No.{" "}
+            </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                paddingLeft: 20,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+                borderBottom: "1px solid black",
+                width: 150,
+              }}
+            >
+              {data.for.loanId}
+            </Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 6,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 190,
+                borderBottom: "1px solid black",
+              }}
+            >
+              Loan Amount
+            </Text>
+            {/* <Text>:</Text> */}
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+                width: "100%",
+                borderBottom: "1px solid black",
               }}
             >
               Rs. {data.for.loanInNumber}/- ({data.for.loanInWords})
             </Text>
           </View>
-
           <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 5,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 180,
+                borderBottom: "1px solid black",
+              }}
+            >
+              Loan Year
+            </Text>
+            {/* <Text>:</Text> */}
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+                borderBottom: "1px solid black",
+                width: 170,
+              }}
+            >
+              {data.for.loanYear} Years
+            </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                borderBottom: "1px solid black",
+                width: 160,
+              }}
+            >
+              Loan Months
+            </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                paddingLeft: 20,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+                borderBottom: "1px solid black",
+                width: 150,
+              }}
+            >
+              {data.for.loanYear * 12} Months
+            </Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 5,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 180,
+                borderBottom: "1px solid black",
+              }}
+            >
+              Monthly Emi
+            </Text>
+            {/* <Text>:</Text> */}
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+                borderBottom: "1px solid black",
+                width: 170,
+              }}
+            >
+              Rs.{" "}
+              {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi} /
+              month
+            </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                borderBottom: "1px solid black",
+                width: 160,
+              }}
+            >
+              File Charge
+            </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                paddingLeft: 20,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+                borderBottom: "1px solid black",
+                width: 150,
+              }}
+            >
+              Rs. {data.charge}/-
+            </Text>
+          </View>
+          {/* <View
             style={{
               display: "flex",
               flexDirection: "row",
@@ -272,9 +478,9 @@ const PdfFile = ({ data }) => {
             >
               {data.for.loanYear} Years
             </Text>
-          </View>
+          </View> */}
 
-          <View
+          {/* <View
             style={{
               display: "flex",
               flexDirection: "row",
@@ -307,9 +513,9 @@ const PdfFile = ({ data }) => {
             >
               {data.for.loanYear * 12} Months
             </Text>
-          </View>
+          </View> */}
 
-          <View
+          {/* <View
             style={{
               display: "flex",
               flexDirection: "row",
@@ -344,9 +550,9 @@ const PdfFile = ({ data }) => {
               {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi}
               /month
             </Text>
-          </View>
+          </View> */}
 
-          <View
+          {/* <View
             style={{
               display: "flex",
               flexDirection: "row",
@@ -379,9 +585,9 @@ const PdfFile = ({ data }) => {
             >
               Rs. {data.charge}/-
             </Text>
-          </View>
+          </View> */}
 
-          <View
+          {/* <View
             style={{
               display: "flex",
               flexDirection: "row",
@@ -412,9 +618,9 @@ const PdfFile = ({ data }) => {
                 fontWeight: "extrabold",
               }}
             >
-              {moment(Date.now()).format("DD/MM/YYYY")}
+              
             </Text>
-          </View>
+          </View> */}
         </View>
         <View
           style={{
@@ -427,12 +633,11 @@ const PdfFile = ({ data }) => {
               color: "black",
               marginTop: 15,
               lineHeight: 1.5,
-              fontSize: 11,
+              fontSize: 12,
             }}
           >
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We
-            have received your documents, these are appropriate docs according
-            to our legal adviser. Behalf of your documents by{" "}
+            Your documents received, and those are appropriate docs according to
+            our legal adviser, behalf of your documents by
             <Text
               style={{
                 textAlign: "left",
@@ -442,189 +647,97 @@ const PdfFile = ({ data }) => {
                 fontFamily: "Roboto",
               }}
             >
-              {company}
+              {" " + company}
             </Text>
-            Your documents are passed by our legal department and now you have
-            to pay file charge (Login Charge) for the loan, only in the account
-            of our company. If any condition your file is not complete your file
-            charge is refund to your account within 7 working days.
           </Text>
           <Text
             style={{
               textAlign: "left",
-              color: "red",
-              marginTop: 5,
+              color: "black",
+              marginTop: 8,
+              lineHeight: 1.5,
               fontSize: 12,
-              fontWeight: "light",
-              textTransform: "uppercase",
-              fontFamily: "Roboto",
             }}
           >
-            Company&rsquo;s bank details :
+            Your documents are passed by our legal department and now you have
+            to pay file charge (Login Charge) for the loan, only in the account
+            of our company.
           </Text>
+        </View>
+        <Text
+          style={{
+            textAlign: "left",
+            color: "black",
+            marginTop: 5,
+            marginBottom: 5,
+            marginHorizontal: 40,
+            fontSize: 11,
+            fontWeight: "light",
+            textTransform: "uppercase",
+            fontFamily: "Roboto",
+          }}
+        >
+          Important Notice{" "}
+        </Text>
+        <View
+          style={{
+            marginHorizontal: 40,
+            fontSize: 11,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
           <View
             style={{
-              marginTop: 10,
-              border: "1px solid black",
-              fontFamily: "Roboto",
-              textTransform: "uppercase",
+              width: "80%",
+              display: "flex",
+              flexDirection: "column",
+              gap: 10,
             }}
           >
+            <Text>
+              1. Applicant should not deposit money in any of these following
+              working (person, lawyer, agent) or else company would not be
+              responsible for it.
+            </Text>
+            <Text>
+              2. Every signed paper of the offer letter as well as required
+              paper processing fees has to be send to the company.
+            </Text>
             <View
               style={{
                 display: "flex",
-                flexDirection: "row",
-                gap: 10,
+                flexDirection: "column",
+                gap: 3,
               }}
             >
               <Text
                 style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  borderRight: "1px solid black",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
+                  textAlign: "justify",
                 }}
               >
-                Bank Name
+                3. Immediately send the cash deposit slip at company&apos;s
+                email ID
               </Text>
               <Text
                 style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
+                  textAlign: "justify",
                 }}
               >
-                PUNJAB NATIONAL BANK
-              </Text>
-            </View>
-            <View
-              style={{
-                display: "flex",
-                borderTop: "1px solid black",
-                flexDirection: "row",
-                gap: 10,
-              }}
-            >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  borderRight: "1px solid black",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                A/C Holder name
-              </Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                MAHADEV FAINACAL SERVICES
-              </Text>
-            </View>
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                borderTop: "1px solid black",
-                gap: 10,
-              }}
-            >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  borderRight: "1px solid black",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                a/c no
-              </Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                110119513797
-              </Text>
-            </View>
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                borderTop: "1px solid black",
-                gap: 10,
-              }}
-            >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  borderRight: "1px solid black",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                IFSC Code
-              </Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                CNRB0008320
+                info@Mahadevfinancial.in
               </Text>
             </View>
           </View>
-          {/* <View
+          <Image
+            source={"/qr.jpeg"}
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              width: 100,
+              height: 100,
             }}
-          >
-            <Image
-              style={{
-                width: 150,
-              }}
-              src={"/qr.png"}
-            />
-          </View> */}
+          />
         </View>
+
         <View
           style={{
             marginHorizontal: 40,
@@ -636,15 +749,14 @@ const PdfFile = ({ data }) => {
               marginTop: 20,
             }}
           >
-            After deposit your file charge you will receive your letter within
-            1-3 days. For Further Query
+            If you have any query
           </Text>
           <Text
             style={{
-              marginTop: 10,
+              marginTop: 4,
             }}
           >
-            Contact to Our Assistant:{" "}
+            Contact:
             <Text
               style={{
                 fontFamily: "Roboto",
@@ -654,7 +766,7 @@ const PdfFile = ({ data }) => {
             </Text>
           </Text>
           <Text style={{ marginTop: 4 }}>
-            Contact to Our Assistant:{" "}
+            Mobile :
             <Text
               style={{
                 fontFamily: "Roboto",
@@ -667,10 +779,10 @@ const PdfFile = ({ data }) => {
             src={"/stamp.png"}
             style={{
               position: "absolute",
-              bottom: -50,
+              bottom: -25,
               right: -20,
-              width: 150,
-              height: 140,
+              width: 120,
+              height: 120,
             }}
           />
           <Text style={{ marginTop: 20 }}>
@@ -1140,51 +1252,53 @@ function WelcomeLetter() {
   return agents.loading ? (
     <Loader />
   ) : (
-    // <>
-    //   {renderModal()}
-    //   {/* s */} */}
-    //   <ConfirmationModal
-    //     description="Do you really want to delete this letter?"
-    //     isDelete
-    //     open={confirmModal.state}
-    //     setOpen={() => {
-    //       setConfirmModal({
-    //         state: false,
-    //         id: null,
-    //       });
-    //     }}
-    //     onDelete={async () => {
-    //       const res = await ApiService.fetchData({
-    //         url: `api/welcome-letter/${confirmModal.id}`,
-    //         method: "DELETE",
-    //       });
-    //       if (res) toast.success(res.data.message);
-    //       setDatas((prev) => ({
-    //         data: prev.data.filter((a) => a.id !== confirmModal.id),
-    //       }));
-    //       setConfirmModal((prev) => ({
-    //         state: false,
-    //         id: null,
-    //       }));
-    //     }}
-    //   />
-    //   <Table
-    //     btnText={"Generate Letter"}
-    //     btnfunc={() =>
-    //       setModal((prev) => ({
-    //         state: true,
-    //         data: initialModalState.data,
-    //         edit_id: initialModalState.edit_id,
-    //       }))
-    //     }
-    //     title="Welcome Letters"
-    //     subtitle={"All generated welcome letter"}
-    //     dataName={"letters"}
-    //     data={agents.data}
-    //     columns={columns()}
-    //   />
-    // </>
-    <div>available soon</div>
+    <>
+      {renderModal()}
+      <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[1]} />
+      </PDFViewer>
+      <ConfirmationModal
+        description="Do you really want to delete this letter?"
+        isDelete
+        open={confirmModal.state}
+        setOpen={() => {
+          setConfirmModal({
+            state: false,
+            id: null,
+          });
+        }}
+        onDelete={async () => {
+          const res = await ApiService.fetchData({
+            url: `api/welcome-letter/${confirmModal.id}`,
+            method: "DELETE",
+          });
+          if (res) toast.success(res.data.message);
+          setDatas((prev) => ({
+            data: prev.data.filter((a) => a.id !== confirmModal.id),
+          }));
+          setConfirmModal((prev) => ({
+            state: false,
+            id: null,
+          }));
+        }}
+      />
+      {/* <p className="text-justify"></p> */}
+      <Table
+        btnText={"Generate Letter"}
+        btnfunc={() =>
+          setModal((prev) => ({
+            state: true,
+            data: initialModalState.data,
+            edit_id: initialModalState.edit_id,
+          }))
+        }
+        title="Welcome Letters"
+        subtitle={"All generated welcome letter"}
+        dataName={"letters"}
+        data={agents.data}
+        columns={columns()}
+      />
+    </>
   );
 }
 
