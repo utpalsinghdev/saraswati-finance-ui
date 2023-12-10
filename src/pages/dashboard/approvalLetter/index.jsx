@@ -1628,8 +1628,7 @@ export default function ApprovalLetter() {
               {/* <Input
                 name="photo"
                 type={"file"}
-                onChange={(e) => {
-                  f.setValues({ ...f.values, photo: e.target.files[0] });
+                onChange={(object});
                 }}
                 onBlur={f.handleBlur}
                 error={f.touched.photo && f.errors.photo}
@@ -1653,6 +1652,7 @@ export default function ApprovalLetter() {
                   </option>
                 ))}
               </Select> */}
+              {console.log(f.errors)}
               <ComboBox
                 people={customers.data?.map((a) => ({
                   id: a.id,
@@ -1674,6 +1674,7 @@ export default function ApprovalLetter() {
                   f.setValues({
                     ...f.values,
                     processingCharge: processingCharge(customer.loanInNumber),
+                    customerId: e,
                   });
                 }}
                 name={"customerId"}
