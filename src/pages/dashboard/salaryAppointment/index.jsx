@@ -91,7 +91,7 @@ const PdfFile = ({ data }) => {
               height: 500,
               opacity: 0.1,
             }}
-            src={"/logo_without_name.png"}
+            src={"/watermark.png"}
           />
           <Text
             style={{
@@ -409,7 +409,7 @@ const PdfFile = ({ data }) => {
                 top: 40,
                 right: 40,
                 width: 100,
-                height: 90,
+                height: 100,
                 backgroundColor: "transparent",
               }}
             />
@@ -640,7 +640,7 @@ const PdfFile = ({ data }) => {
                 height: 500,
                 opacity: 0.1,
               }}
-              src={"/logo_without_name.png"}
+              src={"/watermark.png"}
             />
             <View
               style={{
@@ -909,7 +909,7 @@ const PdfFile = ({ data }) => {
                     height: 500,
                     opacity: 0.1,
                   }}
-                  src={"/logo_without_name.png"}
+                  src={"/watermark.png"}
                 />
               </View>
               <Text style={{ fontSize: 13, marginTop: "8" }}>
@@ -980,9 +980,9 @@ const PdfFile = ({ data }) => {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                bottom: -100,
+                bottom: -70,
                 right: 20,
-                width: 150,
+                width: 140,
                 height: 140,
               }}
             />
