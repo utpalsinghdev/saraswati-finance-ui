@@ -39,6 +39,10 @@ Font.register({
 });
 const PdfFile = ({ data }) => {
   const company = "Mahadev Financial Services Pvt. Ltd.";
+
+  const costWithoutGst = 0.03 * data?.customer?.loanInNumber;
+  const gst = 0.03 * data?.customer?.loanInNumber * 0.18;
+  const totalCost = costWithoutGst + gst;
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -179,26 +183,30 @@ const PdfFile = ({ data }) => {
                 >
                   LoanId
                 </Text>
-                <Text>{data?.customer?.customerId}</Text>
+                <Text>
+                  {data?.customer?.customerId} |{" "}
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 11,
+                      width: 85,
+                    }}
+                  >
+                    ApplicationNo
+                  </Text>{" "}
+                  <Text>{data?.customer?.loanId}</Text>
+                </Text>
               </View>
-              <View
+              {/* <View
                 style={{
                   display: "flex",
                   flexDirection: "row",
                   gap: 4,
                 }}
               >
-                <Text
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: 11,
-                    width: 85,
-                  }}
-                >
-                  ApplicationNo:-
-                </Text>
-                <Text>{data?.customer?.loanId}</Text>
-              </View>
+                
+               
+              </View> */}
               <View
                 style={{
                   display: "flex",
@@ -348,7 +356,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Date of Application
@@ -357,7 +365,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {moment(data?.customer?.createdAt).format("DD/MM/YYYY")}
@@ -380,7 +388,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Name
@@ -389,7 +397,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.name}
@@ -412,7 +420,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Guardian Name
@@ -421,7 +429,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.guardian_name}
@@ -444,7 +452,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Address
@@ -453,7 +461,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.address}
@@ -508,7 +516,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Mobile NO
@@ -517,7 +525,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer.phone}
@@ -540,7 +548,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Email
@@ -549,7 +557,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer.email}
@@ -572,7 +580,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Aadhar
@@ -581,7 +589,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer.adharNumber}
@@ -604,7 +612,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Pan
@@ -636,7 +644,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Loan Amount
@@ -645,7 +653,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Rs. {data?.customer.loanInNumber} /- (
@@ -669,7 +677,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Loan Details
@@ -678,7 +686,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Periods {data?.customer?.loanYear} years at INTEREST RATE-5% EMI
@@ -710,7 +718,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Bank Name &A/CNo./IFSCCODE A/C
@@ -719,7 +727,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data.customer.bank
@@ -750,7 +758,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 Executive Details
@@ -759,7 +767,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.agent.employeeCode}-
@@ -785,19 +793,21 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
-                Processing Charges + 18%GST
+                Processing Charges 3% + 18% GST
               </Text>
               <Text
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  borderBottom: "1px solid #5FBDFF",
                 }}
               >
-                Rs. {data?.processingCharge}
+                {data.processingCharge == totalCost
+                  ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
+                  : data.processingCharge}
               </Text>
             </View>
             <Text
@@ -855,8 +865,11 @@ const PdfFile = ({ data }) => {
               otherwise your file will stand closed. Kindly deposit your process
               fees of
               <Text style={{ color: "red", fontFamily: "Roboto" }}>
-                Rs. {data.processingCharge}/-(18% Gst Tax Of Agreement Fees) by
-                Bank (NEFT or RTGS) infavor of{" "}
+                {data.processingCharge === totalCost
+                  ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
+                  : data.processingCharge}{" "}
+                (18% Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor
+                of{" "}
                 <Text
                   style={{
                     fontFamily: "Roboto",
@@ -1501,7 +1514,7 @@ const PdfFile = ({ data }) => {
                 src={"/stamp2.png"}
                 style={{
                   position: "absolute",
-                  bottom: -25,
+                  bottom: -55,
                   right: 20,
                   height: 60,
                 }}
