@@ -1340,7 +1340,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "extrabold",
                     }}
                   >
-                    PUNJAB NATIONAL BANK
+                    CANERA BANK
                   </Text>
                 </View>
                 <View
