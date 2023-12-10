@@ -167,7 +167,7 @@ const Homepage = () => {
               <Ticker
                 messages={
                   !news.loading
-                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
                     : ["Mahadev Financial Services Pvt. Ltd."]
                 }
               />

@@ -107,6 +107,7 @@ function News() {
                 placeholder={"Select Lane"}
                 icon={<Link2Icon className="text-indigo-600 w-[18px]" />}
               >
+                <option value="">Select Lane</option>
                 <option value="FIRST">First</option>
                 <option value="SECOND">Second</option>
               </Select>
