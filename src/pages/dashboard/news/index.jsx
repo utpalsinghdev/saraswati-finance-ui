@@ -97,6 +97,19 @@ function News() {
                 placeholder={"Enter Your News"}
                 icon={<NewspaperIcon className="text-indigo-600 w-[18px]" />}
               />
+              <Select
+                label={""}
+                name="lane"
+                value={formik.values.lane}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={formik.touched.lane && formik.errors.lane}
+                placeholder={"Select Lane"}
+                icon={<Link2Icon className="text-indigo-600 w-[18px]" />}
+              >
+                <option value="FIRST">First</option>
+                <option value="SECOND">Second</option>
+              </Select>
 
               <Button
                 loading={formik.isSubmitting}
