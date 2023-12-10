@@ -64,7 +64,7 @@ const PdfFile = ({ data }) => {
             }}
             src={"/watermark.png"}
           />
-          <Text
+          {/* <Text
             style={{
               textAlign: "center",
               color: "#0531B1",
@@ -74,14 +74,14 @@ const PdfFile = ({ data }) => {
           >
             Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
             PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
-          </Text>
+          </Text> */}
           <Text
             style={{
               textAlign: "center",
               marginTop: 10,
               fontSize: 18,
               fontFamily: "Roboto",
-              color: "green",
+              color: "red",
               fontWeight: "bold",
             }}
           >

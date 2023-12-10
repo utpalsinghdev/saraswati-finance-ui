@@ -93,7 +93,7 @@ const PdfFile = ({ data }) => {
             }}
             src={"/watermark.png"}
           />
-          <Text
+          {/* <Text
             style={{
               textAlign: "center",
               color: "#0531B1",
@@ -105,13 +105,14 @@ const PdfFile = ({ data }) => {
           >
             Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
             PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
-          </Text>
+          </Text> */}
           <Text
             style={{
               textAlign: "center",
               marginRight: 25,
               fontSize: 21,
-              color: "green",
+              marginTop: 5,
+              color: "red",
               fontFamily: "Roboto",
             }}
           >
@@ -122,10 +123,11 @@ const PdfFile = ({ data }) => {
               textAlign: "right",
               color: "green",
               fontSize: 12,
+              color: "#5FBDFF",
               fontWeight: "light",
             }}
           >
-            Date : {data.createdAt.split("T")[0]}
+            Date : {moment(data.createdAt.split("T")[0]).format("DD/MM/YYYY")}
           </Text>
           <View
             style={{
@@ -158,11 +160,12 @@ const PdfFile = ({ data }) => {
                     width: 150,
                     border: "1px solid black  ",
                     padding: 1,
+                    color: "#5FBDFF",
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  Employee Name:-
+                  Employee Name
                 </Text>
                 <Text
                   style={{
@@ -190,13 +193,14 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 12,
                     width: 150,
+                    color: "#5FBDFF",
                     border: "1px solid black  ",
                     padding: 1,
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  Employee Designation:-
+                  Employee Designation
                 </Text>
                 <Text
                   style={{
@@ -225,6 +229,7 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 12,
                     width: 150,
+                    color: "#5FBDFF",
                     border: "1px solid black  ",
                     padding: 1,
                     display: "flex",
@@ -235,7 +240,6 @@ const PdfFile = ({ data }) => {
                   data.guradian_relation === "DOF"
                     ? "Father Name"
                     : "Husband Name"}
-                  :-
                 </Text>
                 <Text
                   style={{
@@ -264,13 +268,14 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 12,
                     width: 150,
+                    color: "#5FBDFF",
                     border: "1px solid black  ",
                     padding: 1,
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  Employee Address:-
+                  Employee Address
                 </Text>
                 <Text
                   style={{
@@ -298,13 +303,14 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 12,
                     width: 150,
+                    color: "#5FBDFF",
                     border: "1px solid black",
                     padding: 1,
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  Employee Mobile:-
+                  Employee Mobile
                 </Text>
                 <Text
                   style={{
@@ -333,13 +339,14 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 12,
                     width: 150,
+                    color: "#5FBDFF",
                     border: "1px solid black",
                     padding: 1,
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  Generated Date:-
+                  Generated Date
                 </Text>
                 <Text
                   style={{
@@ -368,13 +375,14 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 12,
                     width: 150,
+                    color: "#5FBDFF",
                     border: "1px solid black  ",
                     padding: 1,
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  Letter Subject:-
+                  Letter Subject
                 </Text>
                 <Text
                   style={{
@@ -403,13 +411,12 @@ const PdfFile = ({ data }) => {
               src={data?.photo}
             />
             <Image
-              src={"/stamp.png"}
+              src={"/stamp2.png"}
               style={{
                 position: "absolute",
-                top: 40,
-                right: 40,
-                width: 100,
-                height: 100,
+                top: 90,
+                right: -20,
+                height: 60,
                 backgroundColor: "transparent",
               }}
             />
@@ -977,13 +984,12 @@ const PdfFile = ({ data }) => {
             }}
           >
             <Image
-              src={"/stamp.png"}
+              src={"/stamp2.png"}
               style={{
                 position: "absolute",
                 bottom: -70,
                 right: 20,
-                width: 140,
-                height: 140,
+                height: 60,
               }}
             />
           </View>
