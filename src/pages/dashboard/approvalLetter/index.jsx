@@ -117,7 +117,7 @@ const PdfFile = ({ data }) => {
                     width: 85,
                   }}
                 >
-                  Name:-
+                  Name
                 </Text>
                 <Text>{data?.customer?.name}</Text>
               </View>
@@ -135,7 +135,7 @@ const PdfFile = ({ data }) => {
                     width: 85,
                   }}
                 >
-                  Mob:-
+                  Mob
                 </Text>
                 <Text>{data?.customer?.phone}</Text>
               </View>
@@ -153,7 +153,7 @@ const PdfFile = ({ data }) => {
                     width: 85,
                   }}
                 >
-                  Ref:-
+                  Ref
                 </Text>
                 <Text
                   style={{
@@ -177,7 +177,7 @@ const PdfFile = ({ data }) => {
                     width: 85,
                   }}
                 >
-                  LoanId:-
+                  LoanId
                 </Text>
                 <Text>{data?.customer?.customerId}</Text>
               </View>
@@ -213,7 +213,7 @@ const PdfFile = ({ data }) => {
                     width: 85,
                   }}
                 >
-                  Date :-
+                  Date
                 </Text>
                 <Text>{moment(data.createdAt).format("DD/MM/YYYY")}</Text>
               </View>
@@ -232,10 +232,9 @@ const PdfFile = ({ data }) => {
               src={"/stamp2.png"}
               style={{
                 position: "absolute",
-                top: 70,
-                right: 20,
-                // width: 90,
-                height: 60,
+                top: 85,
+                right: -10,
+                height: 50,
                 backgroundColor: "transparent",
               }}
             />
@@ -550,7 +549,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data?.customer.email}
@@ -605,7 +604,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  border: "1px solid black",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Pan
@@ -1503,9 +1502,8 @@ const PdfFile = ({ data }) => {
                 style={{
                   position: "absolute",
                   bottom: -25,
-                  right: 10,
-                  // width: 90,
-                  height: 90,
+                  right: 20,
+                  height: 60,
                 }}
               />
               <Text
@@ -1652,7 +1650,6 @@ export default function ApprovalLetter() {
                   </option>
                 ))}
               </Select> */}
-              {console.log(f.errors)}
               <ComboBox
                 people={customers.data?.map((a) => ({
                   id: a.id,
@@ -1851,9 +1848,9 @@ export default function ApprovalLetter() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
+      <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[1]} />
-      </PDFViewer> */}
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This letter?"
         isDelete
