@@ -756,7 +756,7 @@ function Cutomers() {
     {
       Header: "Adhar Card",
       accessor: (a) => (
-        <a className="text-blue-600 underline" download={a.AdharCard?.url}>
+        <a className="text-blue-600 underline" href={a.AdharCard?.url}>
           {a.AdharCard?.url ? "Download" : "N/A"}
         </a>
       ),
@@ -768,7 +768,7 @@ function Cutomers() {
     {
       Header: "Pan Card",
       accessor: (a) => (
-        <a className="text-blue-600 underline" download={a.panCard?.url}>
+        <a className="text-blue-600 underline" href={a.panCard?.url}>
           {a.panCard?.url ? "Download" : "N/A"}
         </a>
       ),
@@ -780,7 +780,7 @@ function Cutomers() {
     {
       Header: "Proof",
       accessor: (a) => (
-        <a className="text-blue-600 underline" download={a.proofDoc?.url}>
+        <a className="text-blue-600 underline" href={a.proofDoc?.url}>
           {a.proofDoc?.url ? "Download" : "N/A"}
         </a>
       ),
