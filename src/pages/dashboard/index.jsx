@@ -63,6 +63,13 @@ const navigation = [
     current: false,
     access: ["ADMIN"],
   },
+  {
+    name: "Payment Qr",
+    href: "/admin/payment-method/",
+    icon: Users2Icon,
+    current: false,
+    access: ["ADMIN"],
+  },
   // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   // { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
 ];

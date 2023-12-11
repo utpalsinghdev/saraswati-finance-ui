@@ -108,7 +108,7 @@ function CustomerHome() {
           <Text
             style={{
               textAlign: "center",
-              color: "green",
+              color: "#F98F13",
               marginTop: 4,
               fontSize: 18,
               letterSpacing: 1,
@@ -771,7 +771,7 @@ function CustomerHome() {
                 marginTop: 10,
                 fontSize: 18,
                 fontFamily: "Roboto",
-                color: "green",
+                color: "#F98F13",
                 fontWeight: "bold",
               }}
             >
@@ -2294,7 +2294,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "green",
+                color: "#F98F13",
                 fontSize: 12,
                 fontFamily: "Roboto",
               }}
@@ -2305,7 +2305,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "right",
-                color: "green",
+                color: "#F98F13",
                 marginTop: 20,
                 fontSize: 15,
                 fontFamily: "Roboto",
@@ -2316,7 +2316,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "green",
+                color: "#F98F13",
                 marginTop: 15,
                 fontSize: 30,
                 fontFamily: "Roboto",
@@ -2732,7 +2732,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "green",
+                color: "#F98F13",
                 fontSize: 12,
                 fontWeight: "light",
                 fontFamily: "Roboto",
@@ -2744,7 +2744,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "right",
-                color: "green",
+                color: "#F98F13",
                 marginTop: 20,
                 fontSize: 15,
                 fontWeight: "light",
@@ -2755,7 +2755,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "green",
+                color: "#F98F13",
                 marginTop: 15,
                 fontSize: 30,
                 fontWeight: "light",

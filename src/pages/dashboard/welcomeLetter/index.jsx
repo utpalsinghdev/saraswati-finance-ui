@@ -80,7 +80,7 @@ const PdfFile = ({ data }) => {
         <Text
           style={{
             textAlign: "center",
-            color: "red",
+            color: "#F98F13",
             marginTop: 4,
             fontSize: 18,
             letterSpacing: 1,
@@ -118,7 +118,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "left",
-              color: "red",
+              color: "#F98F13",
               marginTop: 5,
               marginBottom: 5,
               fontSize: 12,
@@ -418,7 +418,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "red",
+                color: "#F98F13",
                 fontSize: 11,
                 paddingHorizontal: 5,
                 paddingVertical: 2,
@@ -450,7 +450,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "red",
+                color: "#F98F13",
                 fontSize: 11,
                 paddingHorizontal: 5,
                 paddingVertical: 2,

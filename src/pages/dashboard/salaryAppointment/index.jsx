@@ -112,7 +112,7 @@ const PdfFile = ({ data }) => {
               marginRight: 25,
               fontSize: 21,
               marginTop: 5,
-              color: "red",
+              color: "#F98F13",
               fontFamily: "Roboto",
             }}
           >
@@ -121,7 +121,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "right",
-              color: "green",
+              color: "#F98F13",
               fontSize: 12,
               color: "#5FBDFF",
               fontWeight: "light",
@@ -478,7 +478,7 @@ const PdfFile = ({ data }) => {
               fontSize: 16,
               fontFamily: "Roboto",
               fontWeight: "700",
-              color: "green",
+              color: "#F98F13",
             }}
           >
             Annual Compensation
@@ -493,10 +493,10 @@ const PdfFile = ({ data }) => {
             }}
           >
             You will be paid a fixed stipend{" "}
-            <Text style={{ color: "red" }}>On SALARY Basis Rs.</Text>{" "}
+            <Text style={{ color: "#F98F13" }}>On SALARY Basis Rs.</Text>{" "}
             <Text
               style={{
-                color: "red",
+                color: "#F98F13",
               }}
             >
               {data?.salary}
@@ -528,7 +528,7 @@ const PdfFile = ({ data }) => {
               fontSize: 16,
               fontFamily: "Roboto",
               fontWeight: "700",
-              color: "green",
+              color: "#F98F13",
             }}
           >
             Location:
@@ -573,7 +573,7 @@ const PdfFile = ({ data }) => {
               fontSize: 16,
               fontFamily: "Roboto",
               fontWeight: "700",
-              color: "green",
+              color: "#F98F13",
               lineHeight: 1,
             }}
           >
@@ -686,7 +686,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Probationary Period:
@@ -711,7 +711,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Secrecy:
@@ -732,7 +732,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Alternate Employment:
@@ -749,7 +749,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Least:
@@ -769,7 +769,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Increment:
@@ -789,7 +789,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Reference Checks:
@@ -828,7 +828,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Past Records:
@@ -845,7 +845,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "700",
                   marginTop: "10",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Consequence of breach of terms:
@@ -869,7 +869,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 General:
@@ -901,7 +901,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Relieving:
@@ -930,7 +930,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "700",
                   marginTop: "10",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Change of Address:
@@ -950,7 +950,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "700",
                   marginTop: "10",
-                  color: "green",
+                  color: "#F98F13",
                 }}
               >
                 Terms:
@@ -1420,9 +1420,9 @@ export default function Appointment() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
+      <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete

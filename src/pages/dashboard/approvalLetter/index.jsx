@@ -85,7 +85,7 @@ const PdfFile = ({ data }) => {
               marginTop: 10,
               fontSize: 18,
               fontFamily: "Roboto",
-              color: "red",
+              color: "#F98F13",
               fontWeight: "bold",
             }}
           >
@@ -261,7 +261,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "red",
+                color: "#F98F13",
                 marginTop: 15,
                 fontSize: 12,
                 fontWeight: "bold",
@@ -289,7 +289,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "red",
+                color: "#F98F13",
                 marginTop: 8,
                 fontSize: 11,
                 fontWeight: "light",
@@ -852,7 +852,7 @@ const PdfFile = ({ data }) => {
               }}
             >
               You are intimated that{" "}
-              <Text style={{ color: "red", fontFamily: "Roboto" }}>
+              <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
                 Rs.{data?.customer.loanInNumber}/- ({data?.customer.loanInWords}
                 )
               </Text>{" "}
@@ -864,7 +864,7 @@ const PdfFile = ({ data }) => {
               will keep you are submitted to documents safe only for 30 days,
               otherwise your file will stand closed. Kindly deposit your process
               fees of
-              <Text style={{ color: "red", fontFamily: "Roboto" }}>
+              <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
                 {data.processingCharge === totalCost
                   ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
                   : data.processingCharge}{" "}
@@ -889,7 +889,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "red",
+                color: "#F98F13",
                 marginTop: 20,
                 paddingTop: 4,
                 fontSize: 12,
@@ -1121,7 +1121,7 @@ const PdfFile = ({ data }) => {
               }}
             >
               <Text
-                style={{ color: "red", fontSize: 13, fontFamily: "Roboto" }}
+                style={{ color: "#F98F13", fontSize: 13, fontFamily: "Roboto" }}
               >
                 QUESTIONAIRE FOR GUARANTOR
               </Text>
@@ -1261,7 +1261,7 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   fontSize: 14,
-                  color: "red",
+                  color: "#F98F13",
                   marginTop: "6",
                   fontFamily: "Roboto",
                 }}

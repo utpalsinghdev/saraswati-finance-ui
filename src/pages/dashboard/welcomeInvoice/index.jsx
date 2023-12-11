@@ -89,7 +89,7 @@ const PdfFile = ({ data }) => {
           {/* <Text
             style={{
               textAlign: "center",
-              color: "green",
+              color: "#F98F13",
               fontSize: 12,
               fontFamily: "Roboto",
             }}
@@ -100,7 +100,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "right",
-              color: "green",
+              color: "#F98F13",
               marginTop: 20,
               fontSize: 15,
               fontFamily: "Roboto",
@@ -111,7 +111,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "center",
-              color: "red",
+              color: "#F98F13",
               marginTop: 15,
               fontSize: 30,
               fontFamily: "Roboto",
