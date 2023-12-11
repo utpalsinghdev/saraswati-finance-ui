@@ -807,7 +807,10 @@ function Cutomers() {
       accessor: "action",
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
-          <Badge onClick={() => edit(cell.row.original.id)} type={enums.GREEN}>
+          {/* <Badge  type={enums.GREEN}>
+            Manage
+          </Badge> */}
+          <Badge onClick={() => edit(cell.row.original.id)} type={enums.BLUE}>
             Manage
           </Badge>
           <Badge

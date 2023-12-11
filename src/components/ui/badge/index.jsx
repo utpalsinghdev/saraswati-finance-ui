@@ -30,7 +30,7 @@ function Badge({ children, type, ...rest }) {
       ),
     },
     {
-      color: "#F98F13",
+      color: "GREEN",
       comp: (
         <span
           {...rest}
