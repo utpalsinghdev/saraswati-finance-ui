@@ -181,7 +181,7 @@ const PdfFile = ({ data }) => {
                     width: 85,
                   }}
                 >
-                  LoanId
+                  Loan Id
                 </Text>
                 <Text>
                   {data?.customer?.customerId} |{" "}
@@ -192,7 +192,7 @@ const PdfFile = ({ data }) => {
                       width: 85,
                     }}
                   >
-                    ApplicationNo
+                    Application No
                   </Text>{" "}
                   <Text>{data?.customer?.loanId}</Text>
                 </Text>
@@ -1313,7 +1313,7 @@ const PdfFile = ({ data }) => {
               {/* <View style={{}}>
                 <Image src={"/payment.png"} />
               </View> */}
-              <View
+              {/* <View
                 style={{
                   marginTop: 10,
                   border: "1px solid black",
@@ -1460,10 +1460,11 @@ const PdfFile = ({ data }) => {
                     CNRB0008320
                   </Text>
                 </View>
-              </View>
-              {/* <View
+              </View> */}
+              <View
                 style={{
                   display: "flex",
+                  marginVertical: 20,
                   alignItems: "center",
                   justifyContent: "center",
                 }}
@@ -1472,9 +1473,9 @@ const PdfFile = ({ data }) => {
                   style={{
                     width: 150,
                   }}
-                  src={"/qr.png"}
+                  src={"/qr.jpeg"}
                 />
-              </View> */}
+              </View>
               <View
                 style={{
                   display: "flex",
@@ -1861,9 +1862,9 @@ export default function ApprovalLetter() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[1]} />
-      </PDFViewer> */}
+      <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[0]} />
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This letter?"
         isDelete

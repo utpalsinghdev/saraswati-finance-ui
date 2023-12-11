@@ -47,7 +47,7 @@ function Qr() {
       onSubmit: async (action) => {
         const payload = {};
         const data = await fileToBase64(values.file, (result) => {
-          payload.qr = data;
+          payload.qr = result;
         });
         try {
           console.log(payload);
@@ -75,7 +75,7 @@ function Qr() {
         {qr.data.length ? `Add at ${qr.data[0].created_at}` : "No Qr Code"}
       </h1>
       <form
-        onScroll={handleSubmit}
+        onSubmit={handleSubmit}
         className="flex items-center justify-center w-full flex-col h-[75vh]"
       >
         <div className="w-[50%]">
@@ -91,7 +91,7 @@ function Qr() {
                   className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                 >
                   <span>
-                    {values.file ? values.file.name : "Upload a file"}
+                    {values.file.name ? values.file.name : "Upload a file"}
                   </span>
                   <input
                     accept="image/*"
@@ -113,7 +113,7 @@ function Qr() {
           </div>
         </div>
         <span>{touched.file && errors.file}</span>
-        <Button>Upload</Button>
+        <Button type={"submit"}>Upload</Button>
       </form>
     </div>
   );
