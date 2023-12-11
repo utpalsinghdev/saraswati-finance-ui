@@ -39,7 +39,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Mahadev Financial Private Limited.";
+  const company = "Mahadev Financial Services Private Limited.";
   return (
     <Document>
       <Page size="A4" style={{}}>
