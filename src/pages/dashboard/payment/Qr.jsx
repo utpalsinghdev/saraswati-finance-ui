@@ -4,7 +4,6 @@ import { PhotoIcon } from "@heroicons/react/24/outline";
 
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
-import axios from "axios";
 import ApiService from "../../../services/Api_services";
 import Button from "../../../components/ui/button";
 
@@ -44,13 +43,15 @@ function Qr() {
 
         return errors;
       },
-      onSubmit: async (action) => {
+      onSubmit: async (values, action) => {
         const payload = {};
-        const data = await fileToBase64(values.file, (result) => {
-          payload.qr = result;
+        await new Promise((resolve) => {
+          fileToBase64(values.file, (base64Data) => {
+            payload.qr = base64Data;
+            resolve();
+          });
         });
         try {
-          console.log(payload);
           const res = await ApiService.fetchData({
             url: `api/payment-qr`,
             method: "POST",
@@ -72,7 +73,7 @@ function Qr() {
   return (
     <div className="w-full flex flex-col">
       <h1>
-        {qr.data.length ? `Add at ${qr.data[0].created_at}` : "No Qr Code"}
+        {qr.data.length ? `Add at ${qr.data[0].createdAt}` : "No Qr Code"}
       </h1>
       <form
         onSubmit={handleSubmit}

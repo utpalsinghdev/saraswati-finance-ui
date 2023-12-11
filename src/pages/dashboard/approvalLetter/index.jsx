@@ -91,18 +91,30 @@ const PdfFile = ({ data }) => {
           >
             Letter of Approval
           </Text>
+          <Text
+            style={{
+              textAlign: "right",
+              fontSize: 12,
+              fontFamily: "Roboto",
+              color: "#F98F13",
+              fontWeight: "bold",
+            }}
+          >
+            Date : {moment(data.createdAt).format("DD/MM/YYYY")}
+          </Text>
           <View
             style={{
               fontSize: 12,
               marginTop: 10,
               fontWeight: "light",
+              color: "#5FBDFF",
             }}
           >
             <View
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 5,
+                gap: 3,
                 fontSize: 11,
                 fontFamily: "Roboto",
               }}
@@ -118,6 +130,7 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 11,
+                    color: "#5FBDFF",
                     width: 85,
                   }}
                 >
@@ -136,6 +149,7 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 11,
+                    color: "#5FBDFF",
                     width: 85,
                   }}
                 >
@@ -154,6 +168,7 @@ const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 11,
+                    color: "#5FBDFF",
                     width: 85,
                   }}
                 >
@@ -171,6 +186,7 @@ const PdfFile = ({ data }) => {
                 style={{
                   display: "flex",
                   flexDirection: "row",
+                  // color: "#5FBDFF",
                   gap: 4,
                 }}
               >
@@ -179,6 +195,7 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 11,
                     width: 85,
+                    color: "#5FBDFF",
                   }}
                 >
                   Loan Id
@@ -190,6 +207,7 @@ const PdfFile = ({ data }) => {
                       fontWeight: "bold",
                       fontSize: 11,
                       width: 85,
+                      color: "#5FBDFF",
                     }}
                   >
                     Application No
@@ -219,6 +237,7 @@ const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 11,
                     width: 85,
+                    color: "#5FBDFF",
                   }}
                 >
                   Date
@@ -240,7 +259,7 @@ const PdfFile = ({ data }) => {
               src={"/stamp2.png"}
               style={{
                 position: "absolute",
-                top: 85,
+                top: 80,
                 right: -10,
                 height: 50,
                 backgroundColor: "transparent",
@@ -252,7 +271,7 @@ const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 20,
+              marginTop: 30,
               fontSize: 12,
               fontWeight: "light",
             }}
@@ -1463,19 +1482,40 @@ const PdfFile = ({ data }) => {
               </View> */}
               <View
                 style={{
-                  display: "flex",
-                  marginVertical: 20,
-                  alignItems: "center",
-                  justifyContent: "center",
+                  border: "1px solid black",
+                  padding: 2,
                 }}
               >
-                <Image
+                <Text
                   style={{
-                    width: 150,
+                    fontSize: 14,
+                    fontFamily: "Roboto",
+                    paddingTop: 4,
+                    textAlign: "center",
+                    border: "1px solid black",
                   }}
-                  src={"/qr.jpeg"}
-                />
+                >
+                  Payment Qr
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    marginTop: 4,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "1px solid black",
+                    paddingVertical: 10,
+                  }}
+                >
+                  <Image
+                    style={{
+                      width: 150,
+                    }}
+                    src={"/qr.jpeg"}
+                  />
+                </View>
               </View>
+
               <View
                 style={{
                   display: "flex",
