@@ -865,7 +865,7 @@ const PdfFile = ({ data }) => {
               otherwise your file will stand closed. Kindly deposit your process
               fees of
               <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
-                {data.processingCharge === totalCost
+                {data.processingCharge == totalCost
                   ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
                   : data.processingCharge}{" "}
                 (18% Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor
