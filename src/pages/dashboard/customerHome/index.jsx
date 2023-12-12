@@ -775,6 +775,9 @@ function CustomerHome() {
                   info@Mahadevfinancial.in
                 </Text>
               </View>
+              <Text>
+                4. Signature or thumb impression is compulsory in every page.
+              </Text>
             </View>
             <View>
               <Text
