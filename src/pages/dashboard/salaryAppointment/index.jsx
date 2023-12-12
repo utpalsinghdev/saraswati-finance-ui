@@ -180,43 +180,6 @@ const PdfFile = ({ data }) => {
                   {data?.agent?.LastName}
                 </Text>
               </View>
-
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 4,
-                }}
-              >
-                <Text
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: 12,
-                    width: 150,
-                    color: "#5FBDFF",
-                    border: "1px solid black  ",
-                    padding: 1,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  Employee Designation
-                </Text>
-                <Text
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: 12,
-                    width: 260,
-                    maxWidth: 260,
-                    border: "1px solid black  ",
-                    padding: 1,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  {data?.agent?.designation}
-                </Text>
-              </View>
               <View
                 style={{
                   display: "flex",
@@ -256,6 +219,43 @@ const PdfFile = ({ data }) => {
                   {data?.guardian_name}
                 </Text>
               </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 4,
+                }}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 150,
+                    color: "#5FBDFF",
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  Employee Designation
+                </Text>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    width: 260,
+                    maxWidth: 260,
+                    border: "1px solid black  ",
+                    padding: 1,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {data?.agent?.designation}
+                </Text>
+              </View>
+
               <View
                 style={{
                   display: "flex",
@@ -407,16 +407,17 @@ const PdfFile = ({ data }) => {
                 right: 0,
                 width: 80,
                 height: 100,
+                border: "1px solid black",
               }}
               src={data?.photo}
             />
             <Image
-              src={"/stamp2.png"}
+              src={"/stamp.png"}
               style={{
                 position: "absolute",
-                top: 90,
-                right: -20,
-                height: 60,
+                top: 60,
+                right: 0,
+                height: 90,
                 backgroundColor: "transparent",
               }}
             />
