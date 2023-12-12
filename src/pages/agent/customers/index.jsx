@@ -11,7 +11,7 @@ function ApprovalCustomers() {
       <div>
         <div className="mx-4 my-4 border border-gray-400 px-4 py-2 rounded-md flex-col items-start flex">
           <span>Name: {item?.name}</span>
-          <span>LoanId: {item?.customerId}</span>
+          <span>CNF: {item?.customerId}</span>
           <span>Application id: {item?.loanId}</span>
           <span>
             Created At : {moment(item?.createdAt).format("DD/MM/YYYY")}

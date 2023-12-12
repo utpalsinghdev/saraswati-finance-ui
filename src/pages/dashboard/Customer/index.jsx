@@ -665,7 +665,7 @@ function Cutomers() {
 
   const columns = () => [
     {
-      Header: "loan id",
+      Header: "Case File No (CFN)",
       accessor: (e) => (e.customerId ? e.customerId : "N/A"),
     },
     {

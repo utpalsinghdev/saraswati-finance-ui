@@ -10,7 +10,7 @@ function ApprovalLetteragemt() {
       <div>
         <div className="mx-4 my-4 border px-4 py-2 rounded-md flex-col items-start flex">
           <span>For: {item?.customer?.name}</span>
-          <span>loanId: {item?.customer?.loanId}</span>
+          <span>CFN: {item?.customer?.customerId}</span>
           <span>
             Created At : {moment(item?.createdAt).format("DD/MM/YYYY")}
           </span>

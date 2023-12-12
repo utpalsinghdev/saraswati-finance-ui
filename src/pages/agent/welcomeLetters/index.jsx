@@ -11,7 +11,7 @@ function AgentWelcome() {
       <div>
         <div className="mx-4 my-4 border px-4 py-2 rounded-md flex-col items-start flex">
           <span>For: {item?.for?.name}</span>
-          <span>loanId: {item?.for?.loanId}</span>
+          <span>CNF: {item?.for?.customerId}</span>
           <span>
             Create At : {moment(item?.createdAt).format("DD/MM/YYYY")}
           </span>

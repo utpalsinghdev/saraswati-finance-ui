@@ -87,7 +87,7 @@ function Customerlogin() {
                       name="Id"
                       label=""
                       type="text"
-                      placeholder="ID"
+                      placeholder="Case file number (CFN)"
                       value={formik.values.Id}
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}

@@ -1034,7 +1034,7 @@ function CustomerHome() {
                       color: "#5FBDFF",
                     }}
                   >
-                    Loan Id
+                    Case File No (CFN)
                   </Text>
                   <Text>
                     {data?.customer?.customerId} |{" "}

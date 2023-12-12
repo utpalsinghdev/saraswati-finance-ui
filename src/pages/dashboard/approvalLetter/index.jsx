@@ -198,7 +198,7 @@ const PdfFile = ({ data }) => {
                     color: "#5FBDFF",
                   }}
                 >
-                  Loan Id
+                  Case File No (CFN)
                 </Text>
                 <Text>
                   {data?.customer?.customerId} |{" "}
@@ -1841,7 +1841,7 @@ export default function ApprovalLetter() {
       accessor: (c) => c?.customer?.loanId,
     },
     {
-      Header: "Customer id",
+      Header: "Case File No (CFN)",
       accessor: (c) => c?.customer.customerId,
     },
     {
