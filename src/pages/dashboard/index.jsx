@@ -100,7 +100,7 @@ const teams = [
   },
   {
     id: 3,
-    name: "approval letter",
+    name: "approval Download",
     href: "/admin/approval-letter/",
     initial: "A",
     current: false,
