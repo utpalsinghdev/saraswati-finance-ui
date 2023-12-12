@@ -67,7 +67,7 @@ function CustomerHome() {
 
   const [generate, setGenerate] = useState(init);
   const PdfFileWelcomeLetter = ({ data }) => {
-    const company = "Mahadev Financial Private Limited.";
+    const company = "Mahadev Financial Services Private Limited.";
     return (
       <Document>
         <Page size="A4" style={{}}>
@@ -115,8 +115,9 @@ function CustomerHome() {
               fontFamily: "Roboto",
             }}
           >
-            CONGRATULATIONS
+            WELCOME LETTER
           </Text>
+
           <View
             style={{
               marginTop: 10,
@@ -125,6 +126,38 @@ function CustomerHome() {
               marginHorizontal: 40,
             }}
           >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "#5FBDFF",
+                marginTop: 5,
+                marginBottom: 5,
+                fontSize: 12,
+                fontWeight: "light",
+                width: "100%",
+                textAlign: "right",
+                fontFamily: "Roboto",
+
+                // color: "blue",
+              }}
+            >
+              Date : {moment(data.createdAt).format("DD/MM/YYYY")}
+            </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "#F98F13",
+                marginTop: 5,
+                marginBottom: 5,
+                fontSize: 12,
+                fontWeight: "light",
+                textTransform: "uppercase",
+                fontFamily: "Roboto",
+              }}
+            >
+              Dear Sir/ Madam{" "}
+            </Text>
+
             <View
               style={{
                 display: "flex",
@@ -135,25 +168,31 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
+                  color: "#5FBDFF",
                   fontSize: 12,
                   fontWeight: "light",
-                  padding: 5,
+                  // padding: 5,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
-                  width: 135,
+                  width: 190,
+                  borderBottom: "1px solid black",
                 }}
               >
                 Applicant Name
               </Text>
-              <Text>:</Text>
+              {/* <Text>:</Text> */}
               <Text
                 style={{
                   textAlign: "left",
                   color: "black",
-                  fontSize: 12,
-                  padding: 5,
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
                   fontWeight: "extrabold",
+                  borderBottom: "1px solid black",
+                  width: "100%",
                 }}
               >
                 {data.for.name}
@@ -164,52 +203,20 @@ function CustomerHome() {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                gap: 10,
+                gap: 6,
               }}
             >
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
+                  color: "#5FBDFF",
+                  fontSize: 11,
                   fontWeight: "light",
-                  padding: 5,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                Applicant Mobile
-              </Text>
-              <Text>:</Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                +91 {data.for.phone}
-              </Text>
-            </View>
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
-              }}
-            >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
+                  width: 190,
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data.for.guardian_relation === "SONOF" ||
@@ -217,232 +224,450 @@ function CustomerHome() {
                   ? "Father Name"
                   : "Husband Name"}
               </Text>
-              <Text>:</Text>
+              {/* <Text>:</Text> */}
               <Text
                 style={{
                   textAlign: "left",
                   color: "black",
-                  fontSize: 12,
-                  padding: 5,
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
                   fontWeight: "extrabold",
+                  width: "100%",
+                  borderBottom: "1px solid black",
                 }}
               >
                 {data.for.guardian_name}
               </Text>
             </View>
-
             <View
               style={{
                 display: "flex",
                 flexDirection: "row",
-                gap: 10,
+                gap: 6,
               }}
             >
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
+                  color: "#5FBDFF",
+                  fontSize: 11,
                   fontWeight: "light",
-                  padding: 5,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
-                  width: 130,
+                  width: 180,
+                  borderBottom: "1px solid black",
                 }}
               >
-                Loan Amount
+                Applicant Mobile
               </Text>
-              <Text>:</Text>
+              {/* <Text>:</Text> */}
               <Text
                 style={{
                   textAlign: "left",
                   color: "black",
-                  fontSize: 12,
-                  padding: 5,
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
                   fontWeight: "extrabold",
+                  borderBottom: "1px solid black",
+                  width: 170,
+                }}
+              >
+                {data.for.phone}
+              </Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "#5FBDFF",
+                  fontSize: 11,
+                  fontWeight: "light",
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  width: 160,
+                  textTransform: "uppercase",
+                  borderBottom: "1px solid black",
+                }}
+              >
+                Application No.{" "}
+              </Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  paddingLeft: 20,
+                  textTransform: "uppercase",
+                  fontWeight: "extrabold",
+                  borderBottom: "1px solid black",
+                  width: 150,
+                }}
+              >
+                {data.for.loanId}
+              </Text>
+            </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 6,
+              }}
+            >
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "#5FBDFF",
+                  fontSize: 11,
+                  fontWeight: "light",
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  textTransform: "uppercase",
+                  width: 190,
+                  borderBottom: "1px solid black",
+                }}
+              >
+                Loan Amount
+              </Text>
+              {/* <Text>:</Text> */}
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  textTransform: "uppercase",
+                  fontWeight: "extrabold",
+                  width: "100%",
+                  borderBottom: "1px solid black",
                 }}
               >
                 Rs. {data.for.loanInNumber}/- ({data.for.loanInWords})
               </Text>
             </View>
-
             <View
               style={{
                 display: "flex",
                 flexDirection: "row",
-                gap: 10,
+                gap: 5,
               }}
             >
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
+                  color: "#5FBDFF",
+                  fontSize: 11,
                   fontWeight: "light",
-                  padding: 5,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
-                  width: 130,
+                  width: 180,
+                  borderBottom: "1px solid black",
                 }}
               >
                 Loan Year
               </Text>
-              <Text>:</Text>
+              {/* <Text>:</Text> */}
               <Text
                 style={{
                   textAlign: "left",
                   color: "black",
-                  fontSize: 12,
-                  padding: 5,
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
                   fontWeight: "extrabold",
+                  borderBottom: "1px solid black",
+                  width: 170,
                 }}
               >
                 {data.for.loanYear} Years
               </Text>
-            </View>
-
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
-              }}
-            >
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
+                  color: "#5FBDFF",
+                  fontSize: 11,
                   fontWeight: "light",
-                  padding: 5,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
-                  width: 130,
+                  borderBottom: "1px solid black",
+                  width: 160,
                 }}
               >
-                Loan Month
+                Loan Months
               </Text>
-              <Text>:</Text>
               <Text
                 style={{
                   textAlign: "left",
                   color: "black",
-                  fontSize: 12,
-                  padding: 5,
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  paddingLeft: 20,
                   textTransform: "uppercase",
                   fontWeight: "extrabold",
+                  borderBottom: "1px solid black",
+                  width: 150,
                 }}
               >
                 {data.for.loanYear * 12} Months
               </Text>
             </View>
-
             <View
               style={{
                 display: "flex",
                 flexDirection: "row",
-                gap: 10,
+                gap: 5,
               }}
             >
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
+                  color: "#5FBDFF",
+                  fontSize: 11,
                   fontWeight: "light",
-                  padding: 5,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
-                  width: 130,
+                  width: 180,
+                  borderBottom: "1px solid black",
                 }}
               >
                 Monthly Emi
               </Text>
-              <Text>:</Text>
+              {/* <Text>:</Text> */}
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
+                  color: "#F98F13",
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
                   fontWeight: "extrabold",
+                  borderBottom: "1px solid black",
+                  width: 170,
                 }}
               >
                 Rs.{" "}
-                {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi}
-                /month
+                {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi}{" "}
+                / month
               </Text>
-            </View>
-
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
-              }}
-            >
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
+                  color: "#5FBDFF",
+                  fontSize: 11,
                   fontWeight: "light",
-                  padding: 5,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
                   textTransform: "uppercase",
-                  width: 130,
+                  borderBottom: "1px solid black",
+                  width: 160,
                 }}
               >
                 File Charge
               </Text>
-              <Text>:</Text>
               <Text
                 style={{
                   textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
+                  color: "#F98F13",
+                  fontSize: 11,
+                  paddingHorizontal: 5,
+                  paddingVertical: 2,
+                  paddingLeft: 20,
                   textTransform: "uppercase",
                   fontWeight: "extrabold",
+                  borderBottom: "1px solid black",
+                  width: 150,
                 }}
               >
                 Rs. {data.charge}/-
               </Text>
             </View>
-
-            <View
+            {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
               }}
             >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                Generate Date
-              </Text>
-              <Text>:</Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                {moment(Date.now()).format("DD/MM/YYYY")}
-              </Text>
-            </View>
+              Loan Year
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              {data.for.loanYear} Years
+            </Text>
+          </View> */}
+
+            {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              Loan Month
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              {data.for.loanYear * 12} Months
+            </Text>
+          </View> */}
+
+            {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              Monthly Emi
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              Rs.{" "}
+              {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi}
+              /month
+            </Text>
+          </View> */}
+
+            {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              File Charge
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              Rs. {data.charge}/-
+            </Text>
+          </View> */}
+
+            {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              Generate Date
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              
+            </Text>
+          </View> */}
           </View>
           <View
             style={{
@@ -455,12 +680,11 @@ function CustomerHome() {
                 color: "black",
                 marginTop: 15,
                 lineHeight: 1.5,
-                fontSize: 11,
+                fontSize: 12,
               }}
             >
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We
-              have received your documents, these are appropriate docs according
-              to our legal adviser. Behalf of your documents by{" "}
+              Your documents received, and those are appropriate docs according
+              to our legal adviser, behalf of your documents by
               <Text
                 style={{
                   textAlign: "left",
@@ -470,189 +694,110 @@ function CustomerHome() {
                   fontFamily: "Roboto",
                 }}
               >
-                {company}
+                {" " + company}
               </Text>
-              Your documents are passed by our legal department and now you have
-              to pay file charge (Login Charge) for the loan, only in the
-              account of our company. If any condition your file is not complete
-              your file charge is refund to your account within 7 working days.
             </Text>
             <Text
               style={{
                 textAlign: "left",
-                color: "red",
-                marginTop: 5,
+                color: "black",
+                marginTop: 8,
+                lineHeight: 1.5,
                 fontSize: 12,
-                fontWeight: "light",
-                textTransform: "uppercase",
-                fontFamily: "Roboto",
               }}
             >
-              Company&rsquo;s bank details :
+              Your documents are passed by our legal department and now you have
+              to pay file charge (Login Charge) for the loan, only in the
+              account of our company.
             </Text>
+          </View>
+          <Text
+            style={{
+              textAlign: "left",
+              color: "black",
+              marginTop: 5,
+              marginBottom: 5,
+              marginHorizontal: 40,
+              fontSize: 11,
+              fontWeight: "light",
+              textTransform: "uppercase",
+              fontFamily: "Roboto",
+            }}
+          >
+            Important Notice{" "}
+          </Text>
+          <View
+            style={{
+              marginHorizontal: 40,
+              fontSize: 11,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
             <View
               style={{
-                marginTop: 10,
-                border: "1px solid black",
-                fontFamily: "Roboto",
-                textTransform: "uppercase",
+                width: "80%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 10,
               }}
             >
+              <Text>
+                1. Applicant should not deposit money in any of these following
+                working (person, lawyer, agent) or else company would not be
+                responsible for it.
+              </Text>
+              <Text>
+                2. Every signed paper of the offer letter as well as required
+                paper processing fees has to be send to the company.
+              </Text>
               <View
                 style={{
                   display: "flex",
-                  flexDirection: "row",
-                  gap: 10,
+                  flexDirection: "column",
+                  gap: 3,
                 }}
               >
                 <Text
                   style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    borderRight: "1px solid black",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
+                    textAlign: "justify",
                   }}
                 >
-                  Bank Name
+                  3. Immediately send the cash deposit slip at company&apos;s
+                  email ID
                 </Text>
                 <Text
                   style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
+                    textAlign: "justify",
                   }}
                 >
-                  XXXXXX NATIONAL BANK
-                </Text>
-              </View>
-              <View
-                style={{
-                  display: "flex",
-                  borderTop: "1px solid black",
-                  flexDirection: "row",
-                  gap: 10,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    borderRight: "1px solid black",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
-                  }}
-                >
-                  A/C Holder name
-                </Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  MAHADEV FINANCIAL PVT LTD
-                </Text>
-              </View>
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  borderTop: "1px solid black",
-                  gap: 10,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    borderRight: "1px solid black",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
-                  }}
-                >
-                  a/c no
-                </Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  19080017001XXXXXX
-                </Text>
-              </View>
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  borderTop: "1px solid black",
-                  gap: 10,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    borderRight: "1px solid black",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
-                  }}
-                >
-                  IFSC Code
-                </Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  XXXXXX7110
+                  info@Mahadevfinancial.in
                 </Text>
               </View>
             </View>
-            {/* <View
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Image
-              style={{
-                width: 150,
-              }}
-              src={"/qr.png"}
-            />
-          </View> */}
+            <View>
+              <Text
+                style={{
+                  fontSize: 14,
+                  marginLeft: 15,
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontFamily: "Roboto",
+                }}
+              >
+                Payment Qr
+              </Text>
+              <Image
+                source={"/qr.jpeg"}
+                style={{
+                  width: 100,
+                  height: 100,
+                }}
+              />
+            </View>
           </View>
+
           <View
             style={{
               marginHorizontal: 40,
@@ -664,15 +809,14 @@ function CustomerHome() {
                 marginTop: 20,
               }}
             >
-              After deposit your file charge you will receive your letter within
-              1-3 days. For Further Query
+              If you have any query
             </Text>
             <Text
               style={{
-                marginTop: 10,
+                marginTop: 4,
               }}
             >
-              Contact to Our Assistant:{" "}
+              Contact:
               <Text
                 style={{
                   fontFamily: "Roboto",
@@ -682,7 +826,7 @@ function CustomerHome() {
               </Text>
             </Text>
             <Text style={{ marginTop: 4 }}>
-              Contact to Our Assistant:{" "}
+              Mobile :
               <Text
                 style={{
                   fontFamily: "Roboto",
@@ -695,10 +839,10 @@ function CustomerHome() {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                bottom: -50,
-                right: -20,
-                width: 150,
-                height: 140,
+                bottom: -20,
+                right: -15,
+                width: 110,
+                height: 110,
               }}
             />
             <Text style={{ marginTop: 20 }}>
@@ -729,6 +873,9 @@ function CustomerHome() {
   };
   const PdfApprovalFile = ({ data }) => {
     const company = "Mahadev Financial Services Pvt. Ltd.";
+    const costWithoutGst = 0.03 * data?.customer?.loanInNumber;
+    const gst = 0.03 * data?.customer?.loanInNumber * 0.18;
+    const totalCost = costWithoutGst + gst;
     return (
       <Document>
         <Page size="A4" style={{}}>
@@ -748,23 +895,23 @@ function CustomerHome() {
                 position: "absolute",
                 top: 100,
                 right: 30,
-                width: 500,
-                height: 500,
-                opacity: 0.1,
+                width: 550,
+                height: 550,
+                opacity: 0.15,
               }}
-              src={"/logo_without_name.png"}
+              src={"/watermark.png"}
             />
-            <Text
-              style={{
-                textAlign: "center",
-                color: "#0531B1",
-                fontSize: 12,
-                fontWeight: "light",
-              }}
-            >
-              Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
-              PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
-            </Text>
+            {/* <Text
+            style={{
+              textAlign: "center",
+              color: "#0531B1",
+              fontSize: 12,
+              fontWeight: "light",
+            }}
+          >
+            Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
+            PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
+          </Text> */}
             <Text
               style={{
                 textAlign: "center",
@@ -777,18 +924,30 @@ function CustomerHome() {
             >
               Letter of Approval
             </Text>
+            <Text
+              style={{
+                textAlign: "right",
+                fontSize: 12,
+                fontFamily: "Roboto",
+                color: "#F98F13",
+                fontWeight: "bold",
+              }}
+            >
+              Date : {moment(data.createdAt).format("DD/MM/YYYY")}
+            </Text>
             <View
               style={{
                 fontSize: 12,
                 marginTop: 10,
                 fontWeight: "light",
+                color: "#5FBDFF",
               }}
             >
               <View
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: 5,
+                  gap: 3,
                   fontSize: 11,
                   fontFamily: "Roboto",
                 }}
@@ -804,10 +963,11 @@ function CustomerHome() {
                     style={{
                       fontWeight: "bold",
                       fontSize: 11,
+                      color: "#5FBDFF",
                       width: 85,
                     }}
                   >
-                    Name:-
+                    Name
                   </Text>
                   <Text>{data?.customer?.name}</Text>
                 </View>
@@ -822,10 +982,11 @@ function CustomerHome() {
                     style={{
                       fontWeight: "bold",
                       fontSize: 11,
+                      color: "#5FBDFF",
                       width: 85,
                     }}
                   >
-                    Mob:-
+                    Mob
                   </Text>
                   <Text>{data?.customer?.phone}</Text>
                 </View>
@@ -840,10 +1001,11 @@ function CustomerHome() {
                     style={{
                       fontWeight: "bold",
                       fontSize: 11,
+                      color: "#5FBDFF",
                       width: 85,
                     }}
                   >
-                    Ref:-
+                    Ref
                   </Text>
                   <Text
                     style={{
@@ -857,6 +1019,7 @@ function CustomerHome() {
                   style={{
                     display: "flex",
                     flexDirection: "row",
+                    // color: "#5FBDFF",
                     gap: 4,
                   }}
                 >
@@ -865,12 +1028,36 @@ function CustomerHome() {
                       fontWeight: "bold",
                       fontSize: 11,
                       width: 85,
+                      color: "#5FBDFF",
                     }}
                   >
-                    LoanId:-
+                    Loan Id
                   </Text>
-                  <Text>{data?.customer?.customerId}</Text>
+                  <Text>
+                    {data?.customer?.customerId} |{" "}
+                    <Text
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: 11,
+                        width: 85,
+                        color: "#5FBDFF",
+                      }}
+                    >
+                      Application No
+                    </Text>{" "}
+                    <Text>{data?.customer?.loanId}</Text>
+                  </Text>
                 </View>
+                {/* <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 4,
+                }}
+              >
+                
+               
+              </View> */}
                 <View
                   style={{
                     display: "flex",
@@ -883,27 +1070,10 @@ function CustomerHome() {
                       fontWeight: "bold",
                       fontSize: 11,
                       width: 85,
+                      color: "#5FBDFF",
                     }}
                   >
-                    ApplicationNo:-
-                  </Text>
-                  <Text>{data?.customer?.loanId}</Text>
-                </View>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: 4,
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: 11,
-                      width: 85,
-                    }}
-                  >
-                    Date :-
+                    Date
                   </Text>
                   <Text>{moment(data.createdAt).format("DD/MM/YYYY")}</Text>
                 </View>
@@ -919,13 +1089,12 @@ function CustomerHome() {
                 src={data?.photo ? data?.photo : data?.customer?.photo?.url}
               />
               <Image
-                src={"/stamp.png"}
+                src={"/stamp2.png"}
                 style={{
                   position: "absolute",
-                  top: 40,
-                  right: 50,
-                  width: 100,
-                  height: 90,
+                  top: 80,
+                  right: -10,
+                  height: 50,
                   backgroundColor: "transparent",
                 }}
               />
@@ -935,7 +1104,7 @@ function CustomerHome() {
               style={{
                 textAlign: "left",
                 color: "black",
-                marginTop: 20,
+                marginTop: 30,
                 fontSize: 12,
                 fontWeight: "light",
               }}
@@ -944,7 +1113,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "red",
+                  color: "#F98F13",
                   marginTop: 15,
                   fontSize: 12,
                   fontWeight: "bold",
@@ -972,7 +1141,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "red",
+                  color: "#F98F13",
                   marginTop: 8,
                   fontSize: 11,
                   fontWeight: "light",
@@ -1039,7 +1208,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Date of Application
@@ -1048,7 +1217,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     paddingBottom: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {moment(data?.customer?.createdAt).format("DD/MM/YYYY")}
@@ -1071,7 +1240,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Name
@@ -1080,7 +1249,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data?.customer?.name}
@@ -1103,7 +1272,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Guardian Name
@@ -1112,7 +1281,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     paddingBottom: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data?.customer?.guardian_name}
@@ -1135,7 +1304,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Address
@@ -1144,7 +1313,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data?.customer?.address}
@@ -1199,7 +1368,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Mobile NO
@@ -1208,7 +1377,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data?.customer.phone}
@@ -1231,7 +1400,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Email
@@ -1240,7 +1409,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data?.customer.email}
@@ -1263,7 +1432,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Aadhar
@@ -1272,7 +1441,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data?.customer.adharNumber}
@@ -1295,7 +1464,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Pan
@@ -1304,7 +1473,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid black",
                   }}
                 >
                   {data?.customer.panNumber}
@@ -1327,7 +1496,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Loan Amount
@@ -1336,7 +1505,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Rs. {data?.customer.loanInNumber} /- (
@@ -1360,7 +1529,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Loan Details
@@ -1369,7 +1538,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Periods {data?.customer?.loanYear} years at INTEREST RATE-5%
@@ -1401,7 +1570,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Bank Name &A/CNo./IFSCCODE A/C
@@ -1410,7 +1579,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data.customer.bank
@@ -1441,7 +1610,7 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   Executive Details
@@ -1450,7 +1619,7 @@ function CustomerHome() {
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
                   {data?.customer?.agent.employeeCode}-
@@ -1476,19 +1645,21 @@ function CustomerHome() {
                   style={{
                     width: 400,
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
-                  Processing Charges + 18%GST
+                  Processing Charges 3% + 18% GST
                 </Text>
                 <Text
                   style={{
                     width: "100%",
                     padding: 1,
-                    border: "1px solid black",
+                    borderBottom: "1px solid #5FBDFF",
                   }}
                 >
-                  Rs. {data?.processingCharge}
+                  {data.processingCharge == totalCost
+                    ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
+                    : data.processingCharge}
                 </Text>
               </View>
               <Text
@@ -1496,7 +1667,7 @@ function CustomerHome() {
                   borderTop: "1px solid black",
                   textAlign: "right",
                   color: "black",
-                  marginTop: 10,
+                  marginTop: 5,
                   paddingTop: 4,
                   fontSize: 12,
                   fontWeight: "bold",
@@ -1517,9 +1688,9 @@ function CustomerHome() {
                   right: 30,
                   width: 500,
                   height: 500,
-                  opacity: 0.1,
+                  opacity: 0.15,
                 }}
-                src={"/logo_without_name.png"}
+                src={"/watermark.png"}
               />
               <Text
                 style={{
@@ -1533,7 +1704,7 @@ function CustomerHome() {
                 }}
               >
                 You are intimated that{" "}
-                <Text style={{ color: "red", fontFamily: "Roboto" }}>
+                <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
                   Rs.{data?.customer.loanInNumber}/- (
                   {data?.customer.loanInWords})
                 </Text>{" "}
@@ -1545,9 +1716,12 @@ function CustomerHome() {
                 Where company will keep you are submitted to documents safe only
                 for 30 days, otherwise your file will stand closed. Kindly
                 deposit your process fees of
-                <Text style={{ color: "red", fontFamily: "Roboto" }}>
-                  Rs. {data.processingCharge}/-(18% Gst Tax Of Agreement Fees)
-                  by Bank (NEFT or RTGS) infavor of{" "}
+                <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
+                  {data.processingCharge == totalCost
+                    ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
+                    : data.processingCharge}{" "}
+                  (18% Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor
+                  of{" "}
                   <Text
                     style={{
                       fontFamily: "Roboto",
@@ -1568,7 +1742,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "red",
+                  color: "#F98F13",
                   marginTop: 20,
                   paddingTop: 4,
                   fontSize: 12,
@@ -1785,9 +1959,9 @@ function CustomerHome() {
                   right: 30,
                   width: 500,
                   height: 500,
-                  opacity: 0.1,
+                  opacity: 0.15,
                 }}
-                src={"/logo_without_name.png"}
+                src={"/watermark.png"}
               />
               <View
                 style={{
@@ -1802,7 +1976,11 @@ function CustomerHome() {
                 }}
               >
                 <Text
-                  style={{ color: "red", fontSize: 13, fontFamily: "Roboto" }}
+                  style={{
+                    color: "#F98F13",
+                    fontSize: 13,
+                    fontFamily: "Roboto",
+                  }}
                 >
                   QUESTIONAIRE FOR GUARANTOR
                 </Text>
@@ -1925,9 +2103,9 @@ function CustomerHome() {
                   right: 30,
                   width: 500,
                   height: 500,
-                  opacity: 0.1,
+                  opacity: 0.15,
                 }}
-                src={"/logo_without_name.png"}
+                src={"/watermark.png"}
               />
               <View
                 style={{
@@ -1944,7 +2122,7 @@ function CustomerHome() {
                 <Text
                   style={{
                     fontSize: 14,
-                    color: "red",
+                    color: "#F98F13",
                     marginTop: "6",
                     fontFamily: "Roboto",
                   }}
@@ -1996,168 +2174,190 @@ function CustomerHome() {
                 {/* <View style={{}}>
                 <Image src={"/payment.png"} />
               </View> */}
-                <View
-                  style={{
-                    marginTop: 10,
-                    border: "1px solid black",
-                    fontFamily: "Roboto",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      Bank Name
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                      }}
-                    >
-                      XXXXXXX NATIONAL BANK
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      borderTop: "1px solid black",
-                      flexDirection: "row",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      A/C Holder name
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                      }}
-                    >
-                      MAHADEV FINANCIAL PVT LTD
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      borderTop: "1px solid black",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      a/c no
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                      }}
-                    >
-                      19080017XXXXXX007110
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      borderTop: "1px solid black",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      IFSC Code
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                      }}
-                    >
-                      XXXXXX007110
-                    </Text>
-                  </View>
-                </View>
                 {/* <View
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  marginTop: 10,
+                  border: "1px solid black",
+                  fontFamily: "Roboto",
+                  textTransform: "uppercase",
                 }}
               >
-                <Image
+                <View
                   style={{
-                    width: 150,
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: 10,
                   }}
-                  src={"/qr.png"}
-                />
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    Bank Name
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    CANERA BANK
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    display: "flex",
+                    borderTop: "1px solid black",
+                    flexDirection: "row",
+                    gap: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    A/C Holder name
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    MAHADEV FAINACAL SERVICES{" "}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    borderTop: "1px solid black",
+                    gap: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    a/c no
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    110119513797
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    borderTop: "1px solid black",
+                    gap: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      fontWeight: "light",
+                      borderRight: "1px solid black",
+                      padding: 5,
+                      textTransform: "uppercase",
+                      width: 130,
+                    }}
+                  >
+                    IFSC Code
+                  </Text>
+                  <Text
+                    style={{
+                      textAlign: "left",
+                      color: "black",
+                      fontSize: 12,
+                      padding: 5,
+                      textTransform: "uppercase",
+                      fontWeight: "extrabold",
+                    }}
+                  >
+                    CNRB0008320
+                  </Text>
+                </View>
               </View> */}
+                <View
+                  style={{
+                    border: "1px solid black",
+                    padding: 2,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      fontFamily: "Roboto",
+                      paddingTop: 4,
+                      textAlign: "center",
+                      border: "1px solid black",
+                    }}
+                  >
+                    Payment Qr
+                  </Text>
+                  <View
+                    style={{
+                      display: "flex",
+                      marginTop: 4,
+                      alignItems: "center",
+                      justifyContent: "center",
+                      border: "1px solid black",
+                      paddingVertical: 10,
+                    }}
+                  >
+                    <Image
+                      style={{
+                        width: 150,
+                      }}
+                      src={"/qr.jpeg"}
+                    />
+                  </View>
+                </View>
+
                 <View
                   style={{
                     display: "flex",
@@ -2194,13 +2394,12 @@ function CustomerHome() {
                 }}
               >
                 <Image
-                  src={"/stamp.png"}
+                  src={"/stamp2.png"}
                   style={{
                     position: "absolute",
-                    bottom: -50,
+                    bottom: -55,
                     right: 20,
-                    width: 130,
-                    height: 120,
+                    height: 60,
                   }}
                 />
                 <Text
@@ -2285,23 +2484,23 @@ function CustomerHome() {
                 position: "absolute",
                 top: 100,
                 right: 30,
-                width: 500,
-                height: 500,
+                width: 550,
+                height: 550,
                 opacity: 0.1,
               }}
-              src={"/logo_without_name.png"}
+              src={"/watermark.png"}
             />
-            <Text
-              style={{
-                textAlign: "center",
-                color: "#F98F13",
-                fontSize: 12,
-                fontFamily: "Roboto",
-              }}
-            >
-              Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
-              PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
-            </Text>
+            {/* <Text
+            style={{
+              textAlign: "center",
+              color: "#F98F13",
+              fontSize: 12,
+              fontFamily: "Roboto",
+            }}
+          >
+            Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
+            PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
+          </Text> */}
             <Text
               style={{
                 textAlign: "right",
@@ -2311,7 +2510,7 @@ function CustomerHome() {
                 fontFamily: "Roboto",
               }}
             >
-              Date : {data.createdAt.split("T")[0]}
+              Date : {moment(data.createdAt.split("T")[0]).format("DD/MM/YY")}
             </Text>
             <Text
               style={{
@@ -2426,7 +2625,10 @@ function CustomerHome() {
                   }}
                 >
                   <Text>date:</Text>
-                  <Text> {data.createdAt.split("T")[0]}</Text>
+                  <Text>
+                    {" "}
+                    {moment(data.createdAt.split("T")[0]).format("DD/MM/YY")}
+                  </Text>
                 </View>
               </View>
             </View>
@@ -2636,7 +2838,7 @@ function CustomerHome() {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                bottom: -120,
+                bottom: -90,
                 right: 60,
                 width: 130,
                 height: 120,
@@ -2723,24 +2925,24 @@ function CustomerHome() {
                 position: "absolute",
                 top: 100,
                 right: 30,
-                width: 500,
-                height: 500,
+                width: 550,
+                height: 550,
                 opacity: 0.1,
               }}
-              src={"/logo_without_name.png"}
+              src={"/watermark.png"}
             />
-            <Text
-              style={{
-                textAlign: "center",
-                color: "#F98F13",
-                fontSize: 12,
-                fontWeight: "light",
-                fontFamily: "Roboto",
-              }}
-            >
-              Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
-              PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
-            </Text>
+            {/* <Text
+            style={{
+              textAlign: "center",
+              color: "#F98F13",
+              fontSize: 12,
+              fontWeight: "light",
+              fontFamily: "Roboto",
+            }}
+          >
+            Deals in HomeLoan, PersonalLoan, Agriculture Loan, Education Loan,
+            PaySlip Loan, Business Loans, Loan Against Property, ITR Loan etc.{" "}
+          </Text> */}
             <Text
               style={{
                 textAlign: "right",
@@ -2750,7 +2952,7 @@ function CustomerHome() {
                 fontWeight: "light",
               }}
             >
-              Date : {data.createdAt.split("T")[0]}
+              Date : {moment(data.createdAt.split("T")[0]).format("DD/MM/YY")}
             </Text>
             <Text
               style={{
@@ -2864,7 +3066,10 @@ function CustomerHome() {
                   }}
                 >
                   <Text>date:</Text>
-                  <Text> {data.createdAt.split("T")[0]}</Text>
+                  <Text>
+                    {" "}
+                    {moment(data.createdAt.split("T")[0]).format("DD/MM/YY")}
+                  </Text>
                 </View>
               </View>
             </View>
@@ -3067,7 +3272,7 @@ function CustomerHome() {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                bottom: -120,
+                bottom: -90,
                 right: 60,
                 width: 130,
                 height: 120,
