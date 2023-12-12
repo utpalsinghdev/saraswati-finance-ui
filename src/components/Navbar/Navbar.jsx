@@ -50,6 +50,11 @@ const Navbar = () => {
     //   link: "/our-agents",
     // },
     {
+      name: "Verify Agent",
+      link: "/verify-agent",
+    },
+
+    {
       name: "Contact Us",
       link: "/contact-us",
     },

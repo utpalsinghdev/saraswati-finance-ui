@@ -49,6 +49,7 @@ import Edit from "../pages/profile/Edit";
 import OurAgents from "../pages/OurAgents";
 import { QrCode } from "lucide-react";
 import Qr from "../pages/dashboard/payment/Qr";
+import Verify from "../pages/Verify";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   AGENT: "AGENT",
@@ -113,6 +114,10 @@ const ro = [
   //   link: "our-agents",
   //   com: <OurAgents />,
   // },
+  {
+    link: "verify-agent",
+    com: <Verify />,
+  },
 ];
 const Authro = [
   {
