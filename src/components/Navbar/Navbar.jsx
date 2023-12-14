@@ -45,10 +45,10 @@ const Navbar = () => {
       name: "Career",
       link: "/Career",
     },
-    // {
-    //   name: "Our Agents",
-    //   link: "/our-agents",
-    // },
+    {
+      name: "Payment",
+      link: "/pay",
+    },
     {
       name: "Verify Agent",
       link: "/verify-agent",

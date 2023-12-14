@@ -50,6 +50,7 @@ import OurAgents from "../pages/OurAgents";
 import { QrCode } from "lucide-react";
 import Qr from "../pages/dashboard/payment/Qr";
 import Verify from "../pages/Verify";
+import Pay from "../pages/Pay";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   AGENT: "AGENT",
@@ -114,6 +115,10 @@ const ro = [
   //   link: "our-agents",
   //   com: <OurAgents />,
   // },
+  {
+    link: "/pay",
+    com: <Pay />,
+  },
   {
     link: "verify-agent",
     com: <Verify />,
