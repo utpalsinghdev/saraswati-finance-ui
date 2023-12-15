@@ -39,9 +39,14 @@ Font.register({
 });
 const PdfFile = ({ data }) => {
   const company = "Mahadev Financial Services Pvt. Ltd.";
-
-  const costWithoutGst = 0.03 * data?.customer?.loanInNumber;
-  const gst = 0.03 * data?.customer?.loanInNumber * 0.18;
+  const _loanAmount = data?.customer?.loanInNumber;
+  const costWithoutGst =
+    (_loanAmount > 100000 && _loanAmount < 300000) ||
+    _loanAmount == 100000 ||
+    _loanAmount === 300000
+      ? 10000
+      : _loanAmount * 0.03;
+  const gst = costWithoutGst * 0.18;
   const totalCost = costWithoutGst + gst;
   return (
     <Document>
@@ -815,7 +820,7 @@ const PdfFile = ({ data }) => {
                   borderBottom: "1px solid #5FBDFF",
                 }}
               >
-                Processing Charges 3% + 18% GST
+                Processing Charges + 18% GST
               </Text>
               <Text
                 style={{
@@ -824,9 +829,7 @@ const PdfFile = ({ data }) => {
                   borderBottom: "1px solid #5FBDFF",
                 }}
               >
-                {data.processingCharge == totalCost
-                  ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
-                  : data.processingCharge}
+                {`Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`}
               </Text>
             </View>
             <Text
@@ -884,11 +887,8 @@ const PdfFile = ({ data }) => {
               otherwise your file will stand closed. Kindly deposit your process
               fees of
               <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
-                {data.processingCharge == totalCost
-                  ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
-                  : data.processingCharge}{" "}
-                (18% Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor
-                of{" "}
+                {`Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`} (18%
+                Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor of{" "}
                 <Text
                   style={{
                     fontFamily: "Roboto",
@@ -1718,10 +1718,6 @@ export default function ApprovalLetter() {
                   const customer = customers.data.find(
                     (a) => a.id === Number(e)
                   );
-
-                  console.log(customer.loanInNumber);
-                  console.log(processingCharge(customer.loanInNumber));
-
                   f.setValues({
                     ...f.values,
                     processingCharge: processingCharge(customer.loanInNumber),
@@ -1893,18 +1889,28 @@ export default function ApprovalLetter() {
     },
   ];
   function processingCharge(loanAmount) {
-    const chargeWithoutGST = 0.03 * loanAmount;
-    const totalCharge = chargeWithoutGST + 0.18 * chargeWithoutGST;
-    return Math.round(totalCharge);
+    if (
+      (loanAmount > 100000 && loanAmount < 300000) ||
+      loanAmount === 100000 ||
+      loanAmount === 300000
+    ) {
+      const chargeWithoutGST = 10000;
+      const totalCharge = chargeWithoutGST + 0.18 * chargeWithoutGST;
+      return Math.round(totalCharge);
+    } else {
+      const chargeWithoutGST = 0.03 * loanAmount;
+      const totalCharge = chargeWithoutGST + 0.18 * chargeWithoutGST;
+      return Math.round(totalCharge);
+    }
   }
   return agents.loading ? (
     <Loader />
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
+      <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This letter?"
         isDelete

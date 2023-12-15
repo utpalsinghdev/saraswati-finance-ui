@@ -876,8 +876,14 @@ function CustomerHome() {
   };
   const PdfApprovalFile = ({ data }) => {
     const company = "Mahadev Financial Services Pvt. Ltd.";
-    const costWithoutGst = 0.03 * data?.customer?.loanInNumber;
-    const gst = 0.03 * data?.customer?.loanInNumber * 0.18;
+    const _loanAmount = data?.customer?.loanInNumber;
+    const costWithoutGst =
+      (_loanAmount > 100000 && _loanAmount < 300000) ||
+      _loanAmount == 100000 ||
+      _loanAmount === 300000
+        ? 10000
+        : _loanAmount * 0.03;
+    const gst = costWithoutGst * 0.18;
     const totalCost = costWithoutGst + gst;
     return (
       <Document>
@@ -1651,7 +1657,7 @@ function CustomerHome() {
                     borderBottom: "1px solid #5FBDFF",
                   }}
                 >
-                  Processing Charges 3% + 18% GST
+                  Processing Charges + 18% GST
                 </Text>
                 <Text
                   style={{
@@ -1660,9 +1666,7 @@ function CustomerHome() {
                     borderBottom: "1px solid #5FBDFF",
                   }}
                 >
-                  {data.processingCharge == totalCost
-                    ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
-                    : data.processingCharge}
+                  {`Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`}
                 </Text>
               </View>
               <Text
@@ -1720,11 +1724,8 @@ function CustomerHome() {
                 for 30 days, otherwise your file will stand closed. Kindly
                 deposit your process fees of
                 <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
-                  {data.processingCharge == totalCost
-                    ? `Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`
-                    : data.processingCharge}{" "}
-                  (18% Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor
-                  of{" "}
+                  {`Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`} (18%
+                  Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor of{" "}
                   <Text
                     style={{
                       fontFamily: "Roboto",
