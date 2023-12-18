@@ -84,7 +84,7 @@ const Homepage = () => {
           <span className="text-3xl self-center font-bold text-green-800">
             {type} Loan
           </span>
-          <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
+          <span className="mt-4 px-4 text-center font-sebmibold text-secondary-200 text-md">
             Get {type} Loan on Easy EMI basis from Mahadev Financial Services
             Pvt. Ltd.
           </span>
