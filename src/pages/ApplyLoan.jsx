@@ -31,6 +31,7 @@ import { ToWords } from "to-words";
 import useFetch from "../hooks/useFetch";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import Modal from "../components/ui/modal";
 function fileToBase64(file, callback) {
   if (!file) {
     callback("");
@@ -69,9 +70,43 @@ function ApplyLoan() {
       },
     },
   });
+  const [sucess, setSucess] = React.useState({
+    state: false,
+    applicationId: null,
+    applicant: null,
+  });
   const allEmployees = useFetch(`api/agent`);
+  const renderSucess = () => {
+    return (
+      <Modal
+        title=" "
+        open={sucess.state}
+        setOpen={() => {
+          setSucess((prev) => ({
+            state: false,
+            applicationId: null,
+            applicant: null,
+          }));
+        }}
+      >
+        <div className="flex flex-col gap-4 items-center justify-center">
+          <img src="/Success.jpg" className="h-48" />
+          <h1 className="text-2xl font-bold text-green-600 text-center">
+            Application Submitted Sucessfully
+          </h1>
+          <h1 className="text-2xl font-bold text-green-600 text-start w-full">
+            Application Id : {sucess.applicationId}
+          </h1>
+          <h1 className="text-2xl font-bold text-green-600 text-start w-full">
+            Applicant Name : {sucess.applicant}
+          </h1>
+        </div>
+      </Modal>
+    );
+  };
   return (
     <div className="bg-gray-100">
+      {renderSucess()}
       <ContainerWrapper>
         <div className="p-0 md:p-4">
           <h1 className="text-xl  py-4 border-b-4 px-2 rounded-2xl border-green-600 text-center font-extrabold">
@@ -150,6 +185,11 @@ function ApplyLoan() {
                 payload
               );
               toast.success(res.data.message);
+              setSucess({
+                state: true,
+                applicationId: res.data.data.loanId,
+                applicant: res.data.data.name,
+              });
             } catch (error) {
               toast.error(error.response.data.message);
             } finally {
