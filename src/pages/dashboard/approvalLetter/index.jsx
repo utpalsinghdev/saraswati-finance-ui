@@ -1829,8 +1829,9 @@ export default function ApprovalLetter() {
         c?.customer.name + " " + " (" + c?.customer.customerId + ")",
     },
     {
-      Header: "address",
-      accessor: (c) => c.address,
+      Header: "pdf password",
+      accessor: (c) =>
+        c?.pdfPassword ? c?.pdfPassword?.replace(",", "") : "N/A",
     },
     {
       Header: "application id",
@@ -1849,30 +1850,57 @@ export default function ApprovalLetter() {
       accessor: "action",
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
-          <Badge
-            onClick={() => {
-              if (agents?.data?.[cell.row.index]?.customer?.bank) {
-                setDownload(cell.row.index);
-              } else {
-                toast.error("Customer Bank Details are Missing Please Update");
-              }
-            }}
-            type={enums.BLUE}
-          >
-            {download === cell.row.index ? (
-              <PDFDownloadLink
-                id="download"
-                document={<PdfFile data={agents.data[download]} />}
-                fileName={`${agents.data[download].customer.name}.pdf`}
-              >
-                {({ blob, url, loading, error }) =>
-                  loading ? "Generateing..." : "Print"
+          {cell.row.original.pdfPassword ? (
+            <a
+              href={import.meta.env.VITE_BASE_URL + cell.row.original.url}
+              download
+            >
+              <Badge type={enums.BLUE}>
+                {/* {download === cell.row.index ? (
+             <PDFDownloadLink
+               id="download"
+               document={<PdfFile data={agents.data[download]} />}
+               fileName={`${agents.data[download].customer.name}.pdf`}
+             >
+               {({ blob, url, loading, error }) =>
+                 loading ? "Generateing..." : "Print"
+               }
+             </PDFDownloadLink>
+           ) : (
+             "Generate"
+           )} */}
+                Download
+              </Badge>
+            </a>
+          ) : (
+            <Badge
+              onClick={() => {
+                if (agents?.data?.[cell.row.index]?.customer?.bank) {
+                  setDownload(cell.row.index);
+                } else {
+                  toast.error(
+                    "Customer Bank Details are Missing Please Update"
+                  );
                 }
-              </PDFDownloadLink>
-            ) : (
-              "Generate"
-            )}
-          </Badge>
+              }}
+              type={enums.BLUE}
+            >
+              {/* {download === cell.row.index ? (
+            <PDFDownloadLink
+              id="download"
+              document={<PdfFile data={agents.data[download]} />}
+              fileName={`${agents.data[download].customer.name}.pdf`}
+            >
+              {({ blob, url, loading, error }) =>
+                loading ? "Generateing..." : "Print"
+              }
+            </PDFDownloadLink>
+          ) : (
+            "Generate"
+          )} */}
+              Generate
+            </Badge>
+          )}
           <Badge
             onClick={() =>
               setConfirmModal((prev) => ({
