@@ -47,7 +47,7 @@ function CarouselBanner() {
       </span>
     );
   }
-  const imgs = ["/slider1.jpg", "/slider2.jpg", "/slider3.jpg"];
+  const imgs = ["/slider2.jpg", "/slider3.jpg", "/slider1.jpg"];
   function ItemBox({ src }) {
     return (
       <div className="relative">
