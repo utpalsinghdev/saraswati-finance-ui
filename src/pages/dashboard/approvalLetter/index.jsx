@@ -1623,7 +1623,29 @@ export default function ApprovalLetter() {
     id: null,
   });
   const [download, setDownload] = useState();
-
+  useEffect(() => {
+    FetchNews();
+  }, []);
+  async function FetchNews() {
+    try {
+      const res = await ApiService.fetchData({
+        url: `api/approval-letter`,
+        method: "GET",
+      });
+      setDatas((prev) => ({
+        ...prev,
+        loading: false,
+        data: res.data.data,
+      }));
+    } catch (error) {
+      toast.error(error.response.data.message);
+      setDatas((prev) => ({
+        ...prev,
+        loading: false,
+        data: [],
+      }));
+    }
+  }
   const customers = useFetch("api/customer");
   function renderModal() {
     const { state, data } = modal;
@@ -1663,6 +1685,7 @@ export default function ApprovalLetter() {
                 data: [...prev.data, res.data.data],
               }));
               setModal(initialModalState);
+              FetchNews();
             } catch (error) {
               toast.error(error.response.data.message);
             } finally {
@@ -1780,30 +1803,6 @@ export default function ApprovalLetter() {
         </Formik>
       </Modal>
     );
-  }
-
-  useEffect(() => {
-    FetchNews();
-  }, []);
-  async function FetchNews() {
-    try {
-      const res = await ApiService.fetchData({
-        url: `api/approval-letter`,
-        method: "GET",
-      });
-      setDatas((prev) => ({
-        ...prev,
-        loading: false,
-        data: res.data.data,
-      }));
-    } catch (error) {
-      toast.error(error.response.data.message);
-      setDatas((prev) => ({
-        ...prev,
-        loading: false,
-        data: [],
-      }));
-    }
   }
 
   function fileToBase64(file, callback) {
