@@ -140,7 +140,7 @@ const Homepage = () => {
             </span> */}
           </div>
         </div>
-        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-red-500  flex h-max  gap-2 ">
+        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-red-600  flex h-max  gap-2 ">
           <div className="bg-blue-600 w-4">
             <p className="text-blue-600">d</p>
           </div>
