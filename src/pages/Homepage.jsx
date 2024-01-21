@@ -99,7 +99,7 @@ const Homepage = () => {
       </div>
     );
   }
-  const news = useFetch("/api/news");
+  // const news = useFetch("/api/news");
   return (
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
       {/* <--------------------------Contact Section-----------------------------> */}
@@ -120,11 +120,12 @@ const Homepage = () => {
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
               <Ticker
-                messages={
-                  !news.loading
-                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Captial Group Business Solution Pvt. Ltd."]
-                }
+                // messages={
+                //   !news.loading
+                //     ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                //     : ["Captial Group Business Solution Pvt. Ltd."]
+                // }
+                messages={["Captial Group Business Solution Pvt. Ltd."]}
               />
             </span>
 
@@ -151,11 +152,12 @@ const Homepage = () => {
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
               <Ticker
-                messages={
-                  !news.loading
-                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Captial Group Business Solution Pvt. Ltd."]
-                }
+                // messages={
+                //   !news.loading
+                //     ? news.data.map((n) => n.lane === "SECOND" && n.text)
+                //     : ["Captial Group Business Solution Pvt. Ltd."]
+                // }
+                messages={["Captial Group Business Solution Pvt. Ltd."]}
               />
             </span>
 
