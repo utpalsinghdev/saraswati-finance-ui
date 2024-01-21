@@ -28,6 +28,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  // console.log(isMobiled);
   const links = [
     {
       name: "Home",
@@ -69,44 +70,45 @@ const Navbar = () => {
   ];
   return (
     <div className=" w-full md:w-[90%] mx-auto">
-      <div className="w-full md:hidden bg-green-50 py-2 px-4">
+      <div className="w-full md:hidden bg-blue-50 py-2 px-4">
         <div className="w-full flex flex-row items-center gap-4">
           <img src="/mic.svg" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
             <a
-              href="tel:7310801366"
+              href="tel:8445443881"
               target="_blank"
               rel="noreferrer"
               className="text-blue-800 font-medium"
             >
-              +19-7310801366
+              +19-8445443881
             </a>
             <a
-              href="mailto:info@mahadevfinancial.in"
+              href="mailto:info@capitalgbs.in"
               target="_blank"
               rel="noreferrer"
-              className="text-green-800 font-medium"
+              className="text-cyan-800 font-medium"
             >
-              info@mahadevfinancial.in
+              info@capitalgbs.in
             </a>
           </span>
         </div>
       </div>
-      <div className="w-full md:hidden bg-green-50 py-2 px-4">
+      <div className="w-full md:hidden bg-blue-50 py-2 px-4">
         <div className="w-full flex flex-row items-center gap-4">
           <img src="/clock.png" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
             <p className="text-blue-800 font-medium">
               Mon - Sat 10:00 AM - 5:00 PM
             </p>
-            <p className="text-green-800 font-medium">Sunday Closed</p>
+            <p className="text-red-500 font-medium">Sunday Closed</p>
           </span>
         </div>
       </div>
       <div
         className={classNames(
-          "relative  md:mt-6 pb-4    md:px-0 transition duration-300",
-          "bg-green-800 md:bg-white"
+          "relative  md:mt-6     md:px-0 transition duration-300",
+          "  md:bg-white",
+          isMobiled ? "pb-4 " : "bg-gradient-to-r from-cyan-500 to-blue-900"
         )}
       >
         <nav className="relative flex items-center justify-start md:justify-between">
@@ -121,7 +123,7 @@ const Navbar = () => {
                   to={link.link}
                   className={classNames(
                     "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-gray-700 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
-                    isActive(link.link) ? "bg-green-200" : ""
+                    isActive(link.link) ? "bg-red-100" : ""
                   )}
                 >
                   {link.name}
@@ -135,22 +137,18 @@ const Navbar = () => {
             }}
             className="md:hidden mt-4 cursor-pointer  w-6 h-6 ml-4"
           />
-          <span className="md:hidden mt-4 ml-4 font-medium flex items-center justify-start gap-3 text-md">
+          <span className="md:hidden mr-4  w-full flex items-center justify-center font-medium  text-md">
             <Image
-              src="/logo_without_name.png"
-              className=" block md:hidden  w-32   cursor-pointer"
+              src="/logo.png"
+              className=" block md:hidden  w-48 py-1  cursor-pointer"
             />
-            <p className="text-2xl text-[#B77E15] font-extrabold text-center">
-              {" "}
-              Mahadev Financial PVT LTD
-            </p>
           </span>
         </nav>
         <div
           style={{
             display: show ? "block" : "none",
           }}
-          className="absolute z-50 bg-green-800 top-20 rounded-b-md right-0 w-full transition duration-300"
+          className="absolute z-50 bg-[#1a659e] top-20 rounded-b-md right-0 w-full transition duration-300"
         >
           <div className="bg-white mt-4 w-full py-4 px-2 flex flex-col items-center  gap-1 font-semibold md:hidden">
             {links?.map((link, idx) => (
@@ -162,7 +160,7 @@ const Navbar = () => {
                 }}
                 className={classNames(
                   "px-2 py-2 w-full rounded-md border  cursor-pointer font-medium pb-1 border-b-2 transition duration-300  hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
-                  isActive(link.link) ? "bg-green-200" : ""
+                  isActive(link.link) ? "bg-red-100" : ""
                 )}
               >
                 {link.name}

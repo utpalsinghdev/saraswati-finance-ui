@@ -11,12 +11,13 @@ function CarouselBanner() {
 
   function ApplyBox() {
     return (
-      <span className="absolute top-16 md:top-36 left-6 md:left-32 z-50 md:w-[500px] w-72  rounded-lg md:h-56 h-44 bg-green-50/40 ">
+      <span className="absolute top-16 md:top-36 left-6 md:left-32 z-50 md:w-[500px] w-80  rounded-lg md:h-56 h-44 bg-blue-50/40 ">
         <div className="p-4 flex flex-col items-start gap-4 justify-start">
-          <p className="md:text-5xl text-3xl text-left text-green-800 font-extrabold">
+          <p className="md:text-5xl text-3xl text-left text-blue-800 font-extrabold">
             <p>
               {" "}
-              Mahadev Financial <p className="text-orange-400 "> PVT. LTD.</p>
+              Captial Group Business{" "}
+              <p className="text-red-600 ">Solution PVT. LTD.</p>
             </p>
           </p>
 
@@ -25,7 +26,7 @@ function CarouselBanner() {
               onClick={() => {
                 navigator("/contact-us");
               }}
-              className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-green-500 transform-cpu"
+              className="pushable rounded-3xl  bg-blue-400 hover:bg-blue-700 hover:text-blue-500 transform-cpu"
             >
               <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                 Contact
@@ -35,9 +36,9 @@ function CarouselBanner() {
               onClick={() => {
                 navigator("/apply-loan");
               }}
-              className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
+              className="pushable rounded-3xl bg-red-600   hover:bg-red-900  "
             >
-              <span className="front bg-green-600 hover:bg-green-700 px-4 py-2  rounded-3xl font-semibold">
+              <span className="front bg-blue-600 hover:bg-blue-700 px-4 py-2  rounded-3xl font-semibold">
                 Apply
               </span>
             </button>

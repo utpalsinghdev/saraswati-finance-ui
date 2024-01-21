@@ -109,8 +109,8 @@ function ApplyLoan() {
       {renderSucess()}
       <ContainerWrapper>
         <div className="p-0 md:p-4">
-          <h1 className="text-xl  py-4 border-b-4 px-2 rounded-2xl border-green-600 text-center font-extrabold">
-            <span className="text-green-500 text-2xl ">APPLY FOR LOAN</span>{" "}
+          <h1 className="text-xl  py-4 border-b-4 px-2 rounded-2xl border-red-500 text-center font-extrabold">
+            <span className="text-blue-700 text-2xl ">APPLY FOR LOAN</span>{" "}
           </h1>
         </div>
         <Formik
@@ -577,9 +577,9 @@ function ApplyLoan() {
                 <button
                   type={"submit"}
                   disabled={!values.agree || isSubmitting}
-                  className="pushable rounded-3xl bg-blue-600 mt-2 disabled:cursor-not-allowed  hover:bg-blue-900  block w-full"
+                  className="pushable rounded-3xl bg-red-600 mt-2 disabled:cursor-not-allowed  hover:bg-red-900  block w-full"
                 >
-                  <span className="front bg-green-600 hover:bg-green-700 px-4 py-2  rounded-3xl font-semibold">
+                  <span className="front bg-blue-700 hover:bg-blue-900 hover:text-white px-4 py-2  rounded-3xl font-semibold">
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </span>
                 </button>

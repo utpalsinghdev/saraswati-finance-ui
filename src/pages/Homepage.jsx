@@ -17,7 +17,7 @@ const Homepage = () => {
     {
       type: "Personal",
       link: "/services/personal-loan",
-      img: "/personal.jpg",
+      img: "/personal.jpeg",
     },
     {
       type: "Home",
@@ -27,7 +27,7 @@ const Homepage = () => {
     {
       type: "Education",
       link: "/services/education-loan",
-      img: "/educationLoan.png",
+      img: "/education.jpeg",
     },
     {
       type: "Business",
@@ -47,7 +47,7 @@ const Homepage = () => {
     {
       type: "Agriculture",
       link: "/services/agriculture-loan",
-      img: "/agricultureLoan.png",
+      img: "/agriculture.jpeg",
     },
     {
       type: "Pay Slip",
@@ -56,9 +56,7 @@ const Homepage = () => {
     },
   ];
   const navigator = useNavigate();
-  function aboutNav() {
-    navigator("/about-us");
-  }
+
   const catalog = [
     {
       name: "24/7 Unlimited Support",
@@ -78,19 +76,19 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-yellow-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-blue-700 hover:shadow-red-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
-          <span className="text-3xl self-center font-bold text-green-800">
+          <span className="text-3xl self-center font-bold text-blue-800">
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-sebmibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from Mahadev Financial Services
-            Pvt. Ltd.
+            Get {type} Loan on Easy EMI basis from Captial Group Business
+            Solution Pvt. Ltd.
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
-              <button className="pushable rounded-3xl  bg-green-800 hover:bg-green-700 hover:text-blue-900 transform-cpu">
+              <button className="pushable rounded-3xl  bg-blue-800 hover:bg-blue-700 hover:text-blue-900 transform-cpu">
                 <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                   Read More
                 </span>
@@ -107,22 +105,10 @@ const Homepage = () => {
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
-        {/* <div className="absolute w-full z-40 left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-9 text-black bg-green-800  flex h-max  gap-2 ">
-          <div className="flex flex-col justify-between w-full py-2">
-            <span className="py-1 px-2 text-sm font-semibold text-white w-full">
-              <Ticker
-                messages={
-                  !news.data
-                    ? news.data?.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Mahadev Financial Services Pvt. Ltd."]
-                }
-              />
-            </span>
-          </div>
-        </div> */}
-        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-orange-500  flex h-max  gap-2 ">
-          <div className="bg-green-400 w-4">
-            <p className="text-green-400">d</p>
+
+        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-red-600  flex h-max  gap-2 ">
+          <div className="bg-blue-600 w-4">
+            <p className="text-blue-600">d</p>
           </div>
 
           <div className="flex flex-col py-2 z-50 ">
@@ -137,7 +123,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Mahadev Financial Services Pvt. Ltd."]
+                    : ["Captial Group Business Solution Pvt. Ltd."]
                 }
               />
             </span>
@@ -147,15 +133,15 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Mahadev Financial Services Pvt. Ltd."]
+                    : ["Captial Group Business Solution Pvt. Ltd."]
                 }
               />
             </span> */}
           </div>
         </div>
-        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-orange-500  flex h-max  gap-2 ">
-          <div className="bg-green-400 w-4">
-            <p className="text-green-400">d</p>
+        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-red-500  flex h-max  gap-2 ">
+          <div className="bg-blue-600 w-4">
+            <p className="text-blue-600">d</p>
           </div>
 
           <div className="flex flex-col py-2 z-50 ">
@@ -168,7 +154,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Mahadev Financial Services Pvt. Ltd."]
+                    : ["Captial Group Business Solution Pvt. Ltd."]
                 }
               />
             </span>
@@ -178,7 +164,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Mahadev Financial Services Pvt. Ltd."]
+                    : ["Captial Group Business Solution Pvt. Ltd."]
                 }
               />
             </span> */}
@@ -188,10 +174,10 @@ const Homepage = () => {
       {/* <--------------------About Section------------------------------> */}
       <section className="flex mt-20 bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
         <div className="flex flex-col self-start gap-4 w-full md:w-96">
-          <h3 className="text-xl font-bold">WHY CHOOSE US</h3>
+          <h3 className="text-xl mt-4 font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
-          <p className="mt-10 ">
-            Mahadev Financial Services Pvt. Ltd. is dealing in Home Loan,
+          <p className="md:mt-10 ">
+            Captial Group Business Solution Pvt. Ltd. is dealing in Home Loan,
             Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
             Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
             Loans, Loan Against Property & Project Etc.
@@ -201,7 +187,7 @@ const Homepage = () => {
               onClick={() => {
                 navigator("/contact-us");
               }}
-              className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-green-500 transform-cpu"
+              className="pushable rounded-3xl  bg-blue-600 hover:bg-blue-700 hover:text-blue-500 transform-cpu"
             >
               <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                 Contact
@@ -213,7 +199,7 @@ const Homepage = () => {
               }}
               className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
             >
-              <span className="front bg-green-600 hover:bg-green-700 px-4 py-2  rounded-3xl font-semibold">
+              <span className="front bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white  rounded-3xl font-semibold">
                 Apply
               </span>
             </button>
@@ -231,7 +217,7 @@ const Homepage = () => {
             >
               <img src={c.img} alt="" className="w-16 h-16" />
               <span className="flex flex-col justify-between py-1">
-                <h2 className="font-semibold text-center text-lg text-orange-800">
+                <h2 className="font-semibold text-center text-lg text-red-800">
                   {c.name}
                 </h2>
                 <h4 className="text-gray-700 text-center font-medium">
@@ -246,7 +232,7 @@ const Homepage = () => {
       <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
         <h1 className="w-full md:text-left text-center text-5xl pl-2 font-bold mb-4 text-gray-800">
           <span className="underline">Our</span>{" "}
-          <span className="text-green-500">Services.</span>{" "}
+          <span className="text-blue-500">Services.</span>{" "}
         </h1>
 
         <div className="w-full px-2 md:grid md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
@@ -262,10 +248,10 @@ const Homepage = () => {
           Message
         </h1>
       </div>
-      <section className="mb-10 grid grid-cols-1 md:grid-cols-3 bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
+      <section className="mb-10 grid grid-cols-1 md:grid-cols-3 h-min bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
         <div>
-          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-green-700 w-full ">
-            <span className="mt-10 text-4xl text-green-800 text-center font-extrabold">
+          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-blue-700 w-full ">
+            <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
               Loan EMI Calculator
             </span>
             <span className="text-sm px-6">
@@ -314,7 +300,7 @@ const Homepage = () => {
                         Number(e.values.years)
                       )?.emi && (
                         <>
-                          <span className="text-green-600">
+                          <span className="text-blue-600">
                             {" "}
                             Rs.{" "}
                             {
@@ -327,9 +313,7 @@ const Homepage = () => {
                             <span className="text-gray-700">
                               {" "}
                               / Month at the interest Rate of{" "}
-                              <span className="text-green-600">
-                                5%
-                              </span> for{" "}
+                              <span className="text-blue-600">5%</span> for{" "}
                               <span className="text-indigo-600">
                                 {
                                   calculateEMI(
@@ -348,7 +332,7 @@ const Homepage = () => {
                     <div className="flex items-start justify-center mt-4 w-full">
                       <Link
                         to="/apply-loan"
-                        className="pushable rounded-3xl  bg-green-400 hover:bg-green-700 hover:text-blue-900 transform-cpu"
+                        className="pushable rounded-3xl  bg-blue-600 hover:bg-blue-700 hover:text-blue-900 transform-cpu"
                       >
                         <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                           Apply Now
@@ -363,7 +347,7 @@ const Homepage = () => {
         </div>
         <Image
           src={"/contact.jpg"}
-          className={"md:aspect-auto object-cover rounded-3xl"}
+          className={"w-auto h-[35rem] rounded-3xl"}
         />
         <Contact />
       </section>

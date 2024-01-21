@@ -39,7 +39,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Mahadev Financial Services Private Limited.";
+  const company = "Captial Group Business Solution Private Limited.";
   return (
     <Document>
       <Page size="A4" style={{}}>
@@ -744,7 +744,7 @@ const PdfFile = ({ data }) => {
                   textAlign: "justify",
                 }}
               >
-                info@Mahadevfinancial.in
+                info@capitalgbs.in
               </Text>
             </View>
             <Text>

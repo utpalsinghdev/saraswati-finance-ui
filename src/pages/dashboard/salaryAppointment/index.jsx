@@ -459,7 +459,7 @@ const PdfFile = ({ data }) => {
               </Text>
               &quot;, Grade:
               <Text style={{ fontSize: 12, fontFamily: "Roboto" }}>
-                Mahadev Financial PVT.LTD
+                Captial Group Business Solution PVT.LTD
               </Text>{" "}
               .,w.e.f.{" "}
               <Text
@@ -940,7 +940,7 @@ const PdfFile = ({ data }) => {
                 Any change in your status of residential address should be
                 notified in writing to the company. We welcome you to
                 <Text style={{ fontSize: 14, fontFamily: "Roboto" }}>
-                  Mahadev Financial Services Pvt. Ltd.
+                  Captial Group Business Solution Pvt. Ltd.
                 </Text>{" "}
                 and look forward to having a long and mutually beneficial
                 association with you.

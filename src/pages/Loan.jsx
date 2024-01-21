@@ -11,7 +11,7 @@ function Loan() {
   function Bullets({ children }) {
     return (
       <p className="text-gray-600 text-sm font-medium h-full w-full flex items-center justify-start gap-4">
-        <BiSolidChevronsRight className="text-green-500 text-lg" />{" "}
+        <BiSolidChevronsRight className="text-blue-500 text-lg" />{" "}
         <span className="w-[95%] text-gray-200">{children}</span>
       </p>
     );
@@ -19,9 +19,9 @@ function Loan() {
 
   function Card({ title, children }) {
     return (
-      <div className="upper bg-green-800 rounded-2xl mt-8 h-max">
+      <div className="upper bg-red-800 rounded-2xl mt-8 h-max">
         <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 px-4 py-2">
-          <h1 className="text-xl font-bold mt-2 text-left w-full text-green-500">
+          <h1 className="text-xl font-bold mt-2 text-left w-full text-red-500">
             {title}
           </h1>
           <div className="mt-4 flex gap-3 flex-col text-gray-200">
@@ -51,7 +51,7 @@ function Loan() {
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
               Eligibility for{" "}
-              <span className="text-green-500"> Education Loan</span>
+              <span className="text-red-500"> Education Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5% and the loan amount will Upto 1 lakh - 30
@@ -106,7 +106,7 @@ function Loan() {
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
               Eligibility for{" "}
-              <span className="text-green-500"> Agriculture Loan</span>
+              <span className="text-red-500"> Agriculture Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5% and the loan amount will Upto 1 lakh - 5 Cr
@@ -157,7 +157,7 @@ function Loan() {
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
               Eligibility for{" "}
-              <span className="text-green-500"> Property Loan</span>
+              <span className="text-red-500"> Property Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5% and the loan amount will be (according to
@@ -209,7 +209,7 @@ function Loan() {
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
               Eligibility for{" "}
-              <span className="text-green-500"> Business Loan</span>
+              <span className="text-red-500"> Business Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs
@@ -257,7 +257,7 @@ function Loan() {
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
               Eligibility for{" "}
-              <span className="text-green-500"> Personal Loan</span>
+              <span className="text-red-500"> Personal Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5% and the loan amount will Upto 1 lakh - 30
@@ -305,7 +305,7 @@ function Loan() {
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
-              Eligibility for <span className="text-green-500"> Home Loan</span>
+              Eligibility for <span className="text-red-500"> Home Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5%, According to market Value 70% to 80%
@@ -355,7 +355,7 @@ function Loan() {
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
-              Eligibility for <span className="text-green-500"> ITR Loan</span>
+              Eligibility for <span className="text-red-500"> ITR Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5% can get 3 to 4 times (according to ITR)
@@ -404,7 +404,7 @@ function Loan() {
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
               Eligibility for{" "}
-              <span className="text-green-500"> Pay Slip Loan</span>
+              <span className="text-red-500"> Pay Slip Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5%, 40 to 50 times (according to salary)
@@ -456,8 +456,7 @@ function Loan() {
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
-              Eligibility for{" "}
-              <span className="text-green-500"> Group Loan</span>
+              Eligibility for <span className="text-red-500"> Group Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
               Rate of interest 5%, and amount will be 50000 to 3 lakhs
@@ -523,7 +522,7 @@ function Loan() {
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
-              Eligibility for <span className="text-green-500"> Loan</span>
+              Eligibility for <span className="text-red-500"> Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md  mt-2 font-medium">
               Rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs

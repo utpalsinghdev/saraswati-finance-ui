@@ -26,22 +26,22 @@ function About() {
         <div className="w-full flex flex-col md:flex-row justify-between mb-10">
           <div className="px-1 py-8 mt-5 md:mt-20 w-full md:w-[60%]">
             <h1 className="flex gap-2 items-center flex-col md:flex-row text-left md:text-center  ">
-              <span className="text-3xl w-full md:w-max font-bold text-green-500">
+              <span className="text-3xl w-full md:w-max font-bold text-red-500">
                 About
               </span>
-              <span className="text-3xl font-bold text-green-800">
-                Mahadev Financial Services Pvt. Ltd.
+              <span className="text-3xl font-bold text-blue-800">
+                Captial Group Business Solution Pvt. Ltd.
               </span>
             </h1>
             <p className="text-md text-gray-700 font-medium mt-8">
-              Mahadev Financial Services Pvt. Ltd. is dealing in Home Loan,
+              Captial Group Business Solution Pvt. Ltd. is dealing in Home Loan,
               Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project
               Loan, Education Loan, Pay Slip Loan, Car Loan, Machine Loan,
               Business Loans, Loan Against Property & Project Etc.
             </p>
-            <div className="upper bg-green-500 rounded-2xl mt-8">
+            <div className="upper bg-red-500 rounded-2xl mt-8">
               <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4">
-                <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
+                <h1 className="pl-4 text-2xl font-extrabold text-red-600 flex items-center gap-2 border-b border-blue-900 mx-2">
                   <AiFillInfoCircle /> Important Information
                 </h1>
                 <div className="text-gray-200 text-sm font-medium px-4 flex items-start flex-col gap-2">
@@ -50,7 +50,7 @@ function About() {
                       <div className="flex items-center gap-2">
                         <span className="self-start">
                           {" "}
-                          <BiSolidChevronsRight className="text-green-800 text-lg mt-1 md:mt-0" />
+                          <BiSolidChevronsRight className="text-blue-800 text-lg mt-1 md:mt-0" />
                         </span>
                         <p>{l}</p>
                       </div>

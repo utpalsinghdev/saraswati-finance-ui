@@ -4,10 +4,10 @@ import Image from "../components/ui/Image/Index";
 function Pay() {
   return (
     <div className="w-full flex items-center justify-center">
-      <div className="flex w-[23rem] md:w-[40rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-green-700 hover:shadow-yellow-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[40rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-blue-700 hover:shadow-red-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={"/pay.png"} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
-          <span className="text-3xl self-center font-bold text-green-800">
+          <span className="text-3xl self-center font-bold text-red-600">
             Company Payment Details
           </span>
           <span className="mt-4 px-4 text-center font-semibold text-secondary-200 text-md">
@@ -16,7 +16,7 @@ function Pay() {
             account.
           </span>
           <span className="self-center mt-4 md:self-auto">
-            <div>
+            {/* <div>
               <p>
                 <span className="font-bold">Bank Name : </span> Canera Bank
               </p>
@@ -31,7 +31,8 @@ function Pay() {
               <p>
                 <span className="font-bold">IFSC Code : </span> CNRB0008320
               </p>
-            </div>
+            </div> */}
+            NO PAYMENT DETAILS AVAILABLE
           </span>
         </div>
       </div>

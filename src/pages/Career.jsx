@@ -35,8 +35,8 @@ function Career() {
     <div className="bg-gray-100">
       <ContainerWrapper>
         <div className="p-0 md:p-4">
-          <h1 className="text-3xl font-bold py-4 border-b-2 px-2 border-green-800">
-            <span className="text-green-500">Start Your Career with us</span>
+          <h1 className="text-3xl font-bold py-4 border-b-2 px-2 border-red-500">
+            <span className="text-blue-700">Start Your Career with us</span>
           </h1>
         </div>
         <Formik
@@ -240,7 +240,7 @@ function Career() {
                   <button
                     type={"submit"}
                     disabled={!f.values.agree || f.isSubmitting}
-                    className="pushable rounded-3xl  bg-green-800 hover:bg-green-700 hover:text-green-500 transform-cpu block w-full"
+                    className="pushable rounded-3xl  bg-red-500 hover:bg-red-700 text-blue-700 hover:text-blue-900 transform-cpu block w-full"
                   >
                     <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                       {f.isSubmitting ? "Submitting" : "Submit"}
@@ -249,21 +249,21 @@ function Career() {
                 </div>
               </div>
               <div className="flex  items-center flex-col gap-2">
-                <h3 className="text-2xl text-left text-green-800 w-full font-extrabold ">
+                <h3 className="text-2xl text-left text-blue-700 w-full font-extrabold ">
                   About Career
                 </h3>
 
                 <p className="text-sm max-w-md text-left ">
-                  Mahadev Financial Pvt ltd, a loan franchise, has been in
-                  existence for years now. You can bridge the gap between your
-                  applicant and us by partnering with our institution. Your
-                  journey with us will be one long road of opportunities. Our
-                  support team is always there to mentor you along the way. We
-                  ensure 100% transparency by keeping you updated about your
-                  clients through digital means. We have also eliminated the
-                  need for going through any kind of paperwork; if you are above
-                  21 and have a passion for the role, partner with us and earn
-                  the highest payouts.
+                  Captial Group Business Solution Pvt ltd, a loan franchise, has
+                  been in existence for years now. You can bridge the gap
+                  between your applicant and us by partnering with our
+                  institution. Your journey with us will be one long road of
+                  opportunities. Our support team is always there to mentor you
+                  along the way. We ensure 100% transparency by keeping you
+                  updated about your clients through digital means. We have also
+                  eliminated the need for going through any kind of paperwork;
+                  if you are above 21 and have a passion for the role, partner
+                  with us and earn the highest payouts.
                 </p>
                 <p className="text-sm max-w-md text-left ">
                   Once you partner with us by filling out the online franchise,
@@ -278,9 +278,9 @@ function Career() {
                 <p className="text-sm max-w-md text-left ">
                   anyone (salaried/self-employed/freelancer/students) above 21
                   years and willing to enhance the monthly income can become the
-                  business partner of Mahadev Financial Pvt ltd.
+                  business partner of Captial Group Business Solution Pvt ltd.
                 </p>
-                <h3 className="text-2xl text-green-800 text-left w-full font-extrabold ">
+                <h3 className="text-2xl text-blue-700 text-left w-full font-extrabold ">
                   How to Become our Partner
                 </h3>
                 <p className="text-md max-w-md w-full text-left ">
@@ -290,7 +290,7 @@ function Career() {
                   Wait and relax while our team verifies your details once done
                   start selling&lsquo;s
                 </p>
-                <h3 className="text-2xl text-green-800 text-left w-full font-extrabold ">
+                <h3 className="text-2xl text-blue-700 text-left w-full font-extrabold ">
                   Some of the best features
                 </h3>
                 <h2 className="text-md text-left mt-1 w-full font-extrabold ">

@@ -38,7 +38,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Mahadev Financial Services Pvt. Ltd.";
+  const company = "Captial Group Business Solution Pvt. Ltd.";
   const _loanAmount = data?.customer?.loanInNumber;
   const costWithoutGst =
     (_loanAmount > 100000 && _loanAmount < 300000) ||
@@ -1317,7 +1317,7 @@ const PdfFile = ({ data }) => {
                     fontFamily: "Roboto",
                   }}
                 >
-                  info@mahadevfinancial.in
+                  info@capitalgbs.in
                 </Text>
               </Text>
               <Text style={{ fontSize: 12, marginTop: "6" }}>

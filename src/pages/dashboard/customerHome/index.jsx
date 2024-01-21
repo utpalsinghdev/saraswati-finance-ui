@@ -67,7 +67,7 @@ function CustomerHome() {
 
   const [generate, setGenerate] = useState(init);
   const PdfFileWelcomeLetter = ({ data }) => {
-    const company = "Mahadev Financial Services Private Limited.";
+    const company = "Captial Group Business Solution Private Limited.";
     return (
       <Document>
         <Page size="A4" style={{}}>
@@ -772,7 +772,7 @@ function CustomerHome() {
                     textAlign: "justify",
                   }}
                 >
-                  info@Mahadevfinancial.in
+                  info@capitalgbs.in
                 </Text>
               </View>
               <Text>
@@ -875,7 +875,7 @@ function CustomerHome() {
     );
   };
   const PdfApprovalFile = ({ data }) => {
-    const company = "Mahadev Financial Services Pvt. Ltd.";
+    const company = "Captial Group Business Solution Pvt. Ltd.";
     const _loanAmount = data?.customer?.loanInNumber;
     const costWithoutGst =
       (_loanAmount > 100000 && _loanAmount < 300000) ||
@@ -2163,7 +2163,7 @@ function CustomerHome() {
                       fontFamily: "Roboto",
                     }}
                   >
-                    info@mahadevfinancial.in
+                    info@capitalgbs.in
                   </Text>
                 </Text>
                 <Text style={{ fontSize: 12, marginTop: "6" }}>

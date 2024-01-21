@@ -7,15 +7,16 @@ import ContainerWrapper from "../ui/containtWrapper";
 import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <div className="w-full bg-gray-900 ">
+    <div className="w-full bg-gradient-to-r from-cyan-500 to-blue-900 ">
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">
             <img src="/logo_full.png" className="w-72" alt="" />
             <p className="text-white mt-2">
-              Mahadev Financial Private Limited. is dealing in Personal Loan,
-              Loan against Property, Project Loan & Gold Loan. We Believe in
-              fair dealing and prompt disbursement of founds on priority Basis.
+              Captial Group Business Solution Private Limited. is dealing in
+              Personal Loan, Loan against Property, Project Loan & Gold Loan. We
+              Believe in fair dealing and prompt disbursement of founds on
+              priority Basis.
             </p>
           </div>
           <div className="w-full ">
@@ -60,25 +61,25 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:7310801366" target="_blank" rel="noreferrer">
-                  7310801366
+                <a href="tel:8477908496" target="_blank" rel="noreferrer">
+                  8477908496
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:7310801366" target="_blank" rel="noreferrer">
-                  7310801366
+                <a href="tel:8477908496" target="_blank" rel="noreferrer">
+                  8477908496
                 </a>
               </li>
 
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@mahadevfinancial.in"
+                  href="mailto:info@capitalgbs.in"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@mahadevfinancial.in
+                  info@capitalgbs.in
                 </a>
               </li>
               {/* <li className="flex flex-row items-start gap-2">
@@ -97,8 +98,8 @@ function Footer() {
                 </span>
                 <span>
                   {" "}
-                  Office: D.4 SCHEME NEAR ADHIVAKTA BHAWAN JYOTI NAGAR JAIPUR RJ
-                  302005
+                  Office No : 410-415 1st Floor Helios Business Park Outer Ring
+                  Road Bangalore Pincode - 560103
                 </span>
               </li>
             </ul>

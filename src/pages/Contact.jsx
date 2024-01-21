@@ -26,55 +26,45 @@ function Contact() {
           <section className="pb-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
             <Image src={"contact-us.jpg"} />
             <div className="flex flex-col gap-5 ">
-              <h1 className="text-3xl text-center font-bold text-green-800">
+              <h1 className="text-3xl text-center font-bold text-blue-800">
                 Contact Us
               </h1>
-              <div className="upper bg-green-500 rounded-2xl mt-8">
+              <div className="upper bg-red-500 rounded-2xl mt-8">
                 <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4">
-                  <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
+                  <h1 className="pl-4 text-2xl font-extrabold text-red-500 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Contact With Us
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     <a
-                      href="tel:7310801366"
+                      href="tel:8477908496"
                       className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-7310801366
+                      <Phone /> +91-8477908496
                     </a>
                     <a
-                      href="tel:7310801366"
+                      href="tel:8477908496"
                       className="flex items-end text-md  gap-2"
                     >
-                      <Phone /> +91-7310801366
+                      <Phone /> +91-8477908496
                     </a>
                     <a
-                      href="mailto:info@mahadevfinancial.in"
+                      href="mailto:info@capitalgbs.in"
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@mahadevfinancial.in
+                      <MailIcon /> info@capitalgbs.in
                     </a>
                   </div>
                 </div>
               </div>
-              {/* <div className="upper bg-green-500 rounded-2xl ">
+
+              <div className="upper bg-red-500 rounded-2xl ">
                 <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 ">
-                  <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
-                    Branch Office:
-                  </h1>
-                  <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    Plot No.330, Bus stand Rd, Opp. Acharya Puri, Prem Nagar,
-                    Sector 12, Gurugram, Haryana 122001
-                  </div>
-                </div>
-              </div> */}
-              <div className="upper bg-green-500 rounded-2xl ">
-                <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 ">
-                  <h1 className="pl-4 text-2xl font-extrabold text-green-600 flex items-center gap-2 border-b border-blue-900 mx-2">
+                  <h1 className="pl-4 text-2xl font-extrabold text-red-500 flex items-center gap-2 border-b border-blue-900 mx-2">
                     Office:
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    D.4 SCHEME NEAR ADHIVAKTA BHAWAN JYOTI NAGAR JAIPUR RJ
-                    302005
+                    Office No 410-415 1st Floor Helios Business Park Outer Ring
+                    Road Bangalore Pincode - 560103
                   </div>
                 </div>
               </div>

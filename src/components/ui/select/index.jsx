@@ -33,7 +33,7 @@ function Select({
             " block w-full rounded-md text-black border-0 py- pl-8  ring-1 ring-gray-300 ring-inset  ",
             error
               ? "ring-red-300  focus:ring-2 focus:ring-inset focus:ring-red-500"
-              : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-green-500",
+              : "ring-indigo-300  focus:ring-2 focus:ring-inset focus:ring-blue-500",
             className
           )}
           {...rest}
