@@ -108,7 +108,7 @@ function CustomerHome() {
           <Text
             style={{
               textAlign: "center",
-              color: "#F98F13",
+              color: "#FF0000",
               marginTop: 4,
               fontSize: 18,
               letterSpacing: 1,
@@ -146,7 +146,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "left",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 5,
                 marginBottom: 5,
                 fontSize: 12,
@@ -446,7 +446,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "#F98F13",
+                  color: "#FF0000",
                   fontSize: 11,
                   paddingHorizontal: 5,
                   paddingVertical: 2,
@@ -478,7 +478,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "#F98F13",
+                  color: "#FF0000",
                   fontSize: 11,
                   paddingHorizontal: 5,
                   paddingVertical: 2,
@@ -927,7 +927,7 @@ function CustomerHome() {
                 marginTop: 10,
                 fontSize: 18,
                 fontFamily: "Roboto",
-                color: "#F98F13",
+                color: "#FF0000",
                 fontWeight: "bold",
               }}
             >
@@ -938,7 +938,7 @@ function CustomerHome() {
                 textAlign: "right",
                 fontSize: 12,
                 fontFamily: "Roboto",
-                color: "#F98F13",
+                color: "#FF0000",
                 fontWeight: "bold",
               }}
             >
@@ -1122,7 +1122,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "#F98F13",
+                  color: "#FF0000",
                   marginTop: 15,
                   fontSize: 12,
                   fontWeight: "bold",
@@ -1150,7 +1150,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "#F98F13",
+                  color: "#FF0000",
                   marginTop: 8,
                   fontSize: 11,
                   fontWeight: "light",
@@ -1711,7 +1711,7 @@ function CustomerHome() {
                 }}
               >
                 You are intimated that{" "}
-                <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
+                <Text style={{ color: "#FF0000", fontFamily: "Roboto" }}>
                   Rs.{data?.customer.loanInNumber}/- (
                   {data?.customer.loanInWords})
                 </Text>{" "}
@@ -1723,7 +1723,7 @@ function CustomerHome() {
                 Where company will keep you are submitted to documents safe only
                 for 30 days, otherwise your file will stand closed. Kindly
                 deposit your process fees of
-                <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
+                <Text style={{ color: "#FF0000", fontFamily: "Roboto" }}>
                   {`Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`} (18%
                   Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor of{" "}
                   <Text
@@ -1746,7 +1746,7 @@ function CustomerHome() {
               <Text
                 style={{
                   textAlign: "left",
-                  color: "#F98F13",
+                  color: "#FF0000",
                   marginTop: 20,
                   paddingTop: 4,
                   fontSize: 12,
@@ -1981,7 +1981,7 @@ function CustomerHome() {
               >
                 <Text
                   style={{
-                    color: "#F98F13",
+                    color: "#FF0000",
                     fontSize: 13,
                     fontFamily: "Roboto",
                   }}
@@ -2126,7 +2126,7 @@ function CustomerHome() {
                 <Text
                   style={{
                     fontSize: 14,
-                    color: "#F98F13",
+                    color: "#FF0000",
                     marginTop: "6",
                     fontFamily: "Roboto",
                   }}
@@ -2497,7 +2497,7 @@ function CustomerHome() {
             {/* <Text
             style={{
               textAlign: "center",
-              color: "#F98F13",
+              color: "#FF0000",
               fontSize: 12,
               fontFamily: "Roboto",
             }}
@@ -2508,7 +2508,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "right",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 20,
                 fontSize: 15,
                 fontFamily: "Roboto",
@@ -2519,7 +2519,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 15,
                 fontSize: 30,
                 fontFamily: "Roboto",
@@ -2938,7 +2938,7 @@ function CustomerHome() {
             {/* <Text
             style={{
               textAlign: "center",
-              color: "#F98F13",
+              color: "#FF0000",
               fontSize: 12,
               fontWeight: "light",
               fontFamily: "Roboto",
@@ -2950,7 +2950,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "right",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 20,
                 fontSize: 15,
                 fontWeight: "light",
@@ -2961,7 +2961,7 @@ function CustomerHome() {
             <Text
               style={{
                 textAlign: "center",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 15,
                 fontSize: 30,
                 fontWeight: "light",

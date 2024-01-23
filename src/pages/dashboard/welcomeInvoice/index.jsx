@@ -63,6 +63,8 @@ const PdfFile = ({ data }) => {
         style={{
           paddingBottom: 35,
           fontFamily: "Roboto",
+          borderRight: "4px solid #5FBDFF",
+          borderLeft: "4px solid #5FBDFF",
         }}
       >
         <View style={{}}>
@@ -81,7 +83,6 @@ const PdfFile = ({ data }) => {
               top: 100,
               right: 30,
               width: 550,
-              height: 550,
               opacity: 0.1,
             }}
             src={"/watermark.png"}
@@ -89,7 +90,7 @@ const PdfFile = ({ data }) => {
           {/* <Text
             style={{
               textAlign: "center",
-              color: "#F98F13",
+              color: "#FF0000",
               fontSize: 12,
               fontFamily: "Roboto",
             }}
@@ -100,7 +101,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "right",
-              color: "#F98F13",
+              color: "#FF0000",
               marginTop: 20,
               fontSize: 15,
               fontFamily: "Roboto",
@@ -111,7 +112,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "center",
-              color: "#F98F13",
+              color: "#FF0000",
               marginTop: 15,
               fontSize: 30,
               fontFamily: "Roboto",

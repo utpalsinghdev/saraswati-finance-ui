@@ -90,7 +90,7 @@ const PdfFile = ({ data }) => {
               marginTop: 10,
               fontSize: 18,
               fontFamily: "Roboto",
-              color: "#F98F13",
+              color: "#FF0000",
               fontWeight: "bold",
             }}
           >
@@ -101,7 +101,7 @@ const PdfFile = ({ data }) => {
               textAlign: "right",
               fontSize: 12,
               fontFamily: "Roboto",
-              color: "#F98F13",
+              color: "#FF0000",
               fontWeight: "bold",
             }}
           >
@@ -285,7 +285,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 15,
                 fontSize: 12,
                 fontWeight: "bold",
@@ -313,7 +313,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 8,
                 fontSize: 11,
                 fontWeight: "light",
@@ -874,7 +874,7 @@ const PdfFile = ({ data }) => {
               }}
             >
               You are intimated that{" "}
-              <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
+              <Text style={{ color: "#FF0000", fontFamily: "Roboto" }}>
                 Rs.{data?.customer.loanInNumber}/- ({data?.customer.loanInWords}
                 )
               </Text>{" "}
@@ -886,7 +886,7 @@ const PdfFile = ({ data }) => {
               will keep you are submitted to documents safe only for 30 days,
               otherwise your file will stand closed. Kindly deposit your process
               fees of
-              <Text style={{ color: "#F98F13", fontFamily: "Roboto" }}>
+              <Text style={{ color: "#FF0000", fontFamily: "Roboto" }}>
                 {`Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`} (18%
                 Gst Tax Of Agreement Fees) by Bank (NEFT or RTGS) infavor of{" "}
                 <Text
@@ -908,7 +908,7 @@ const PdfFile = ({ data }) => {
             <Text
               style={{
                 textAlign: "left",
-                color: "#F98F13",
+                color: "#FF0000",
                 marginTop: 20,
                 paddingTop: 4,
                 fontSize: 12,
@@ -1140,7 +1140,7 @@ const PdfFile = ({ data }) => {
               }}
             >
               <Text
-                style={{ color: "#F98F13", fontSize: 13, fontFamily: "Roboto" }}
+                style={{ color: "#FF0000", fontSize: 13, fontFamily: "Roboto" }}
               >
                 QUESTIONAIRE FOR GUARANTOR
               </Text>
@@ -1280,7 +1280,7 @@ const PdfFile = ({ data }) => {
               <Text
                 style={{
                   fontSize: 14,
-                  color: "#F98F13",
+                  color: "#FF0000",
                   marginTop: "6",
                   fontFamily: "Roboto",
                 }}

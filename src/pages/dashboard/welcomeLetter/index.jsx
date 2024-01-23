@@ -34,53 +34,41 @@ import { RiUser2Line, RiUserHeartLine } from "react-icons/ri";
 import { ToWords } from "to-words";
 import moment from "moment/moment";
 import ComboBox from "../../../components/ui/comboBox";
+import metaData from "../../../utils/lib/site.config";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Captial Group Business Solution Private Limited.";
+  const company = metaData.title;
+  // console.log(data);
   return (
     <Document>
-      <Page size="A4" style={{}}>
+      <Page
+        size="A4"
+        style={{
+          borderRight: "4px solid #5FBDFF",
+          borderLeft: "4px solid #5FBDFF",
+        }}
+      >
         <View style={{}}>
           <Image src={"/pdfBanner.png"} />
         </View>
         <Image
           style={{
             position: "absolute",
-            top: 160,
+            top: 360,
             right: 30,
             width: 500,
-            height: 500,
             opacity: 0.1,
           }}
           src={"/logo_without_name.png"}
         />
-        <View
-          style={{
-            paddingTop: 20,
-            paddingHorizontal: 40,
-            position: "relative",
-          }}
-        >
-          <Image
-            style={{
-              position: "absolute",
-              top: 100,
-              right: 200,
-              width: 300,
-              height: 300,
-              opacity: 0.1,
-              transform: "rotate(-45deg)",
-            }}
-            src={"/log.png"}
-          />
-        </View>
+
         <Text
           style={{
             textAlign: "center",
-            color: "#F98F13",
+            color: "#FF0000",
             marginTop: 4,
             fontSize: 18,
             letterSpacing: 1,
@@ -118,7 +106,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "left",
-              color: "#F98F13",
+              color: "#FF0000",
               marginTop: 5,
               marginBottom: 5,
               fontSize: 12,
@@ -134,512 +122,347 @@ const PdfFile = ({ data }) => {
             style={{
               display: "flex",
               flexDirection: "row",
-              gap: 6,
+              justifyContent: "space-between",
             }}
           >
-            <Text
+            <View
               style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 12,
-                fontWeight: "light",
-                // padding: 5,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
+                marginTop: 10,
+                fontFamily: "Roboto",
                 textTransform: "uppercase",
-                width: 190,
-                borderBottom: "1px solid black",
+                // marginHorizontal: 40,
               }}
             >
-              Applicant Name
-            </Text>
-            {/* <Text>:</Text> */}
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                borderBottom: "1px solid black",
-                width: "100%",
-              }}
-            >
-              {data.for.name}
-            </Text>
-          </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 6,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 135,
+                  }}
+                >
+                  Applicant Name
+                </Text>
+                <Text>:</Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  {data.for.name}
+                </Text>
+              </View>
 
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 6,
-            }}
-          >
-            <Text
+              {/* <View
               style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                width: 190,
-                borderBottom: "1px solid black",
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
               }}
             >
-              {data.for.guardian_relation === "SONOF" ||
-              data.for.guardian_relation === "DOF"
-                ? "Father Name"
-                : "Husband Name"}
-            </Text>
-            {/* <Text>:</Text> */}
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                width: "100%",
-                borderBottom: "1px solid black",
-              }}
-            >
-              {data.for.guardian_name}
-            </Text>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 6,
-            }}
-          >
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                width: 180,
-                borderBottom: "1px solid black",
-              }}
-            >
-              Applicant Mobile
-            </Text>
-            {/* <Text>:</Text> */}
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                borderBottom: "1px solid black",
-                width: 170,
-              }}
-            >
-              {data.for.phone}
-            </Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                width: 160,
-                textTransform: "uppercase",
-                borderBottom: "1px solid black",
-              }}
-            >
-              Application No.{" "}
-            </Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                paddingLeft: 20,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                borderBottom: "1px solid black",
-                width: 150,
-              }}
-            >
-              {data.for.loanId}
-            </Text>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 6,
-            }}
-          >
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                width: 190,
-                borderBottom: "1px solid black",
-              }}
-            >
-              Loan Amount
-            </Text>
-            {/* <Text>:</Text> */}
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                width: "100%",
-                borderBottom: "1px solid black",
-              }}
-            >
-              Rs. {data.for.loanInNumber}/- ({data.for.loanInWords})
-            </Text>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 5,
-            }}
-          >
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                width: 180,
-                borderBottom: "1px solid black",
-              }}
-            >
-              Loan Year
-            </Text>
-            {/* <Text>:</Text> */}
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                borderBottom: "1px solid black",
-                width: 170,
-              }}
-            >
-              {data.for.loanYear} Years
-            </Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                borderBottom: "1px solid black",
-                width: 160,
-              }}
-            >
-              Loan Months
-            </Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                paddingLeft: 20,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                borderBottom: "1px solid black",
-                width: 150,
-              }}
-            >
-              {data.for.loanYear * 12} Months
-            </Text>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 5,
-            }}
-          >
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                width: 180,
-                borderBottom: "1px solid black",
-              }}
-            >
-              Monthly Emi
-            </Text>
-            {/* <Text>:</Text> */}
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#F98F13",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                borderBottom: "1px solid black",
-                width: 170,
-              }}
-            >
-              Rs.{" "}
-              {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi} /
-              month
-            </Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#5FBDFF",
-                fontSize: 11,
-                fontWeight: "light",
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                textTransform: "uppercase",
-                borderBottom: "1px solid black",
-                width: 160,
-              }}
-            >
-              File Charge
-            </Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "#F98F13",
-                fontSize: 11,
-                paddingHorizontal: 5,
-                paddingVertical: 2,
-                paddingLeft: 20,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-                borderBottom: "1px solid black",
-                width: 150,
-              }}
-            >
-              Rs. {data.charge}/-
-            </Text>
-          </View>
-          {/* <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 10,
-            }}
-          >
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                fontWeight: "light",
-                padding: 5,
-                textTransform: "uppercase",
-                width: 130,
-              }}
-            >
-              Loan Year
-            </Text>
-            <Text>:</Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-              }}
-            >
-              {data.for.loanYear} Years
-            </Text>
-          </View> */}
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  fontWeight: "light",
+                  padding: 5,
+                  textTransform: "uppercase",
+                  width: 130,
+                }}
+              >
+                Applicant Mobile
+              </Text>
+              <Text>:</Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  padding: 5,
+                  textTransform: "uppercase",
+                  fontWeight: "extrabold",
+                }}
+              >
+                +91 {data.for.phone}
+              </Text>
+            </View> */}
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  {data.for.guardian_relation === "SONOF" ||
+                  data.for.guardian_relation === "DOF"
+                    ? "Father Name"
+                    : "Husband Name"}
+                </Text>
+                <Text>:</Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  {data.for.guardian_name}
+                </Text>
+              </View>
 
-          {/* <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 10,
-            }}
-          >
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                fontWeight: "light",
-                padding: 5,
-                textTransform: "uppercase",
-                width: 130,
-              }}
-            >
-              Loan Month
-            </Text>
-            <Text>:</Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-              }}
-            >
-              {data.for.loanYear * 12} Months
-            </Text>
-          </View> */}
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  Loan Amount
+                </Text>
+                <Text>:</Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  Rs. {data.for.loanInNumber}/- ({data.for.loanInWords})
+                </Text>
+              </View>
 
-          {/* <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 10,
-            }}
-          >
-            <Text
+              {/* <View
               style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                fontWeight: "light",
-                padding: 5,
-                textTransform: "uppercase",
-                width: 130,
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
               }}
             >
-              Monthly Emi
-            </Text>
-            <Text>:</Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-              }}
-            >
-              Rs.{" "}
-              {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi}
-              /month
-            </Text>
-          </View> */}
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  fontWeight: "light",
+                  padding: 5,
+                  textTransform: "uppercase",
+                  width: 130,
+                }}
+              >
+                Loan Year
+              </Text>
+              <Text>:</Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  padding: 5,
+                  textTransform: "uppercase",
+                  fontWeight: "extrabold",
+                }}
+              >
+                {data.for.loanYear} Years
+              </Text>
+            </View> */}
 
-          {/* <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 10,
-            }}
-          >
-            <Text
+              {/* <View
               style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                fontWeight: "light",
-                padding: 5,
-                textTransform: "uppercase",
-                width: 130,
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
               }}
             >
-              File Charge
-            </Text>
-            <Text>:</Text>
-            <Text
-              style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
-              }}
-            >
-              Rs. {data.charge}/-
-            </Text>
-          </View> */}
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  fontWeight: "light",
+                  padding: 5,
+                  textTransform: "uppercase",
+                  width: 130,
+                }}
+              >
+                Loan Month
+              </Text>
+              <Text>:</Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  padding: 5,
+                  textTransform: "uppercase",
+                  fontWeight: "extrabold",
+                }}
+              >
+                {data.for.loanYear * 12} Months
+              </Text>
+            </View> */}
 
-          {/* <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 10,
-            }}
-          >
-            <Text
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  Monthly Emi
+                </Text>
+                <Text>:</Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  Rs.{" "}
+                  {
+                    calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)
+                      ?.emi
+                  }
+                  /month for {data.for.loanYear} year(s)
+                </Text>
+              </View>
+
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  File Charge
+                </Text>
+                <Text>:</Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  Rs. {metaData.fileCharge}/-
+                </Text>
+              </View>
+
+              {/* <View
               style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                fontWeight: "light",
-                padding: 5,
-                textTransform: "uppercase",
-                width: 130,
+                display: "flex",
+                flexDirection: "row",
+                gap: 10,
               }}
             >
-              Generate Date
-            </Text>
-            <Text>:</Text>
-            <Text
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  fontWeight: "light",
+                  padding: 5,
+                  textTransform: "uppercase",
+                  width: 130,
+                }}
+              >
+                Generate Date
+              </Text>
+              <Text>:</Text>
+              <Text
+                style={{
+                  textAlign: "left",
+                  color: "black",
+                  fontSize: 12,
+                  padding: 5,
+                  textTransform: "uppercase",
+                  fontWeight: "extrabold",
+                }}
+              >
+                {moment(Date.now()).format("DD/MM/YYYY")}
+              </Text>
+            </View> */}
+            </View>
+            {/* <Image
+              src={"/_stamp.png"}
               style={{
-                textAlign: "left",
-                color: "black",
-                fontSize: 12,
-                padding: 5,
-                textTransform: "uppercase",
-                fontWeight: "extrabold",
+                width: 110,
+                height: 110,
               }}
-            >
-              
-            </Text>
-          </View> */}
+            /> */}
+          </View>
         </View>
         <View
           style={{
@@ -650,7 +473,7 @@ const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 15,
+              marginTop: 10,
               lineHeight: 1.5,
               fontSize: 12,
             }}
@@ -709,10 +532,9 @@ const PdfFile = ({ data }) => {
         >
           <View
             style={{
-              width: "80%",
               display: "flex",
               flexDirection: "column",
-              gap: 10,
+              gap: 6,
             }}
           >
             <Text>
@@ -731,45 +553,22 @@ const PdfFile = ({ data }) => {
                 gap: 3,
               }}
             >
-              <Text
-                style={{
-                  textAlign: "justify",
-                }}
-              >
-                3. Immediately send the cash deposit slip at company&apos;s
-                email ID
-              </Text>
-              <Text
-                style={{
-                  textAlign: "justify",
-                }}
-              >
-                info@capitalgbs.in
+              <Text style={{}}>
+                3. Immediately send the cash deposit slip at company&apos; email
+                ID {metaData.email}
               </Text>
             </View>
             <Text>
               4. Signature or thumb impression is compulsory in every page.
             </Text>
-          </View>
-          <View>
-            <Text
-              style={{
-                fontSize: 14,
-                marginLeft: 15,
-                textAlign: "center",
-                fontWeight: "bold",
-                fontFamily: "Roboto",
-              }}
-            >
-              Payment Qr
+            <Text>
+              5. Disbursement of loan will be subject to the condition at the
+              time of disbursement.
             </Text>
-            <Image
-              source={"/qr.jpeg"}
-              style={{
-                width: 100,
-                height: 100,
-              }}
-            />
+            <Text>
+              6. Final approval sanction will be issued subject to fulfillment
+              of the existing terms & conditions of apply.
+            </Text>
           </View>
         </View>
 

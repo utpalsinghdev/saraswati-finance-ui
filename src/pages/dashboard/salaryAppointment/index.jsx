@@ -31,6 +31,7 @@ import Loader from "../../../components/loader";
 import bold from "../../../assets/bold.ttf";
 import { RiUser2Line, RiUserHeartLine } from "react-icons/ri";
 import ComboBox from "../../../components/ui/comboBox";
+import metaData from "../../../utils/lib/site.config";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
@@ -69,6 +70,9 @@ const PdfFile = ({ data }) => {
         size="A4"
         style={{
           fontFamily: "Helvetica",
+          // border: "1px solid ",
+          borderRight: "4px solid #5FBDFF",
+          borderLeft: "4px solid #5FBDFF",
         }}
       >
         <View style={{}}>
@@ -88,7 +92,6 @@ const PdfFile = ({ data }) => {
               top: 100,
               right: 30,
               width: 500,
-              height: 500,
               opacity: 0.1,
             }}
             src={"/watermark.png"}
@@ -112,7 +115,7 @@ const PdfFile = ({ data }) => {
               marginRight: 25,
               fontSize: 21,
               marginTop: 5,
-              color: "#F98F13",
+              color: "#FF0000",
               fontFamily: "Roboto",
             }}
           >
@@ -121,7 +124,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "right",
-              color: "#F98F13",
+              color: "#FF0000",
               fontSize: 12,
               color: "#5FBDFF",
               fontWeight: "light",
@@ -459,7 +462,7 @@ const PdfFile = ({ data }) => {
               </Text>
               &quot;, Grade:
               <Text style={{ fontSize: 12, fontFamily: "Roboto" }}>
-                Captial Group Business Solution PVT.LTD
+                {metaData.title}
               </Text>{" "}
               .,w.e.f.{" "}
               <Text
@@ -479,7 +482,7 @@ const PdfFile = ({ data }) => {
               fontSize: 16,
               fontFamily: "Roboto",
               fontWeight: "700",
-              color: "#F98F13",
+              color: "#FF0000",
             }}
           >
             Annual Compensation
@@ -494,10 +497,10 @@ const PdfFile = ({ data }) => {
             }}
           >
             You will be paid a fixed stipend{" "}
-            <Text style={{ color: "#F98F13" }}>On SALARY Basis Rs.</Text>{" "}
+            <Text style={{ color: "#FF0000" }}>On SALARY Basis Rs.</Text>{" "}
             <Text
               style={{
-                color: "#F98F13",
+                color: "#FF0000",
               }}
             >
               {data?.salary}
@@ -529,7 +532,7 @@ const PdfFile = ({ data }) => {
               fontSize: 16,
               fontFamily: "Roboto",
               fontWeight: "700",
-              color: "#F98F13",
+              color: "#FF0000",
             }}
           >
             Location:
@@ -550,16 +553,6 @@ const PdfFile = ({ data }) => {
             >
               {data.location}
             </Text>
-          </Text>
-          <Text
-            style={{
-              textAlign: "left",
-              color: "black",
-              marginTop: 2,
-              fontSize: 12,
-              lineHeight: 1.2,
-            }}
-          >
             However, the organization reserves the right to transfer you at any
             other OfficeI Branch, Subsidiary or Associate Company of the
             organization, in India that is in existence or may come in to
@@ -567,6 +560,7 @@ const PdfFile = ({ data }) => {
             the Company&apos;s rule applicable to the establishment to which you
             areposted.
           </Text>
+
           <Text
             style={{
               textAlign: "left",
@@ -574,7 +568,7 @@ const PdfFile = ({ data }) => {
               fontSize: 16,
               fontFamily: "Roboto",
               fontWeight: "700",
-              color: "#F98F13",
+              color: "#FF0000",
               lineHeight: 1,
             }}
           >
@@ -645,7 +639,6 @@ const PdfFile = ({ data }) => {
                 top: 100,
                 right: 30,
                 width: 500,
-                height: 500,
                 opacity: 0.1,
               }}
               src={"/watermark.png"}
@@ -687,7 +680,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Probationary Period:
@@ -712,7 +705,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Secrecy:
@@ -733,7 +726,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Alternate Employment:
@@ -750,7 +743,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Least:
@@ -770,7 +763,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Increment:
@@ -790,7 +783,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Reference Checks:
@@ -829,7 +822,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Past Records:
@@ -846,7 +839,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "700",
                   marginTop: "10",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Consequence of breach of terms:
@@ -870,7 +863,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 General:
@@ -902,7 +895,7 @@ const PdfFile = ({ data }) => {
                   fontSize: 16,
                   fontFamily: "Roboto",
                   fontWeight: "700",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Relieving:
@@ -914,7 +907,6 @@ const PdfFile = ({ data }) => {
                     top: -150,
                     right: 30,
                     width: 500,
-                    height: 500,
                     opacity: 0.1,
                   }}
                   src={"/watermark.png"}
@@ -931,7 +923,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "700",
                   marginTop: "10",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Change of Address:
@@ -940,7 +932,7 @@ const PdfFile = ({ data }) => {
                 Any change in your status of residential address should be
                 notified in writing to the company. We welcome you to
                 <Text style={{ fontSize: 14, fontFamily: "Roboto" }}>
-                  Captial Group Business Solution Pvt. Ltd.
+                  {metaData.title}
                 </Text>{" "}
                 and look forward to having a long and mutually beneficial
                 association with you.
@@ -951,7 +943,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                   fontWeight: "700",
                   marginTop: "10",
-                  color: "#F98F13",
+                  color: "#FF0000",
                 }}
               >
                 Terms:

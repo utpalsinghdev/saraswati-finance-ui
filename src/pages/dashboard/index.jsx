@@ -20,6 +20,7 @@ import Cookies from "js-cookie";
 import { Users2Icon } from "lucide-react";
 import Image from "../../components/ui/Image/Index";
 import { cn } from "../../utils/cn";
+import metaData from "../../utils/lib/site.config";
 const navigation = [
   {
     name: "Dashboard",
@@ -106,14 +107,14 @@ const teams = [
     current: false,
     access: ["ADMIN"],
   },
-  {
-    id: 3,
-    name: "DSA / DMA",
-    href: "/admin/joint-percent-letter/",
-    initial: "D",
-    current: false,
-    access: ["ADMIN"],
-  },
+  // {
+  //   id: 3,
+  //   name: "DSA / DMA",
+  //   href: "/admin/joint-percent-letter/",
+  //   initial: "D",
+  //   current: false,
+  //   access: ["ADMIN"],
+  // },
 ];
 const invoice = [
   {
@@ -252,8 +253,8 @@ export default function DashboardLayout({ children }) {
                                     to={item.href}
                                     className={classNames(
                                       isActive(item.href)
-                                        ? "bg-green-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-green-600",
+                                        ? "bg-red-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-red-300",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -292,8 +293,8 @@ export default function DashboardLayout({ children }) {
                                     onClick={() => setSidebarOpen(false)}
                                     className={classNames(
                                       isActive(team.href)
-                                        ? "bg-green-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-green-600",
+                                        ? "bg-red-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-red-300",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -328,8 +329,8 @@ export default function DashboardLayout({ children }) {
                                     to={team.href}
                                     className={classNames(
                                       isActive(team.href)
-                                        ? "bg-green-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-green-600",
+                                        ? "bg-red-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-red-300",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -387,8 +388,8 @@ export default function DashboardLayout({ children }) {
                             onClick={() => setSidebarOpen(false)}
                             className={classNames(
                               isActive(item.href)
-                                ? "bg-green-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-green-600",
+                                ? "bg-red-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-red-300",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >
@@ -424,8 +425,8 @@ export default function DashboardLayout({ children }) {
                             onClick={() => setSidebarOpen(false)}
                             className={classNames(
                               isActive(team.href)
-                                ? "bg-green-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-green-600",
+                                ? "bg-red-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-red-300",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >
@@ -458,8 +459,8 @@ export default function DashboardLayout({ children }) {
                             to={team.href}
                             className={classNames(
                               isActive(team.href)
-                                ? "bg-green-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-green-600",
+                                ? "bg-red-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-red-300",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >
@@ -519,8 +520,8 @@ export default function DashboardLayout({ children }) {
                     src="/logo_without_name.png"
                     className="w-12 cursor-pointer mr-1"
                   />
-                  <p className=" md:block text-xl sm:text-2xl md:text-2xl text-green-500 font-bold">
-                    Captial Group Business Solution Pvt. Ltd.
+                  <p className=" md:block text-xl sm:text-2xl md:text-2xl text-blue-500 font-bold">
+                    {metaData.title}
                   </p>
                 </span>
               </form>

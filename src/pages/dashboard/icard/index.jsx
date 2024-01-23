@@ -31,6 +31,7 @@ import { saveAs } from "file-saver";
 import "../../../arton.css";
 import moment from "moment";
 import ComboBox from "../../../components/ui/comboBox";
+import metaData from "../../../utils/lib/site.config";
 function fileToBase64(file, callback) {
   if (!file) {
     callback("");
@@ -60,6 +61,8 @@ const PdfFile = ({ data }) => {
         size="A4"
         style={{
           position: "relative",
+          borderRight: "4px solid #5FBDFF",
+          borderLeft: "4px solid #5FBDFF",
         }}
       >
         <View style={{}}>
@@ -78,18 +81,9 @@ const PdfFile = ({ data }) => {
         >
           <Image
             style={{
-              marginTop: 2,
-              marginRight: 10,
-              paddingHorizontal: 30,
-              height: 130,
-              marginBottom: 2,
-            }}
-            src={"/logo_full.png"}
-          />
-          <Image
-            style={{
               width: 200,
               height: 230,
+              marginTop: 40,
             }}
             src={data.agent.profilePic}
           />
@@ -108,20 +102,21 @@ const PdfFile = ({ data }) => {
               display: "flex",
               marginTop: 10,
               flexDirection: "row",
-              paddingHorizontal: 180,
+              // paddingHorizontal: 180,
+              paddingLeft: 180,
               width: "100%",
-              justifyContent: "space-between",
+              justifyContent: "space-start",
             }}
           >
             <Text
               style={{
                 textAlign: "left",
-                width: 100,
+                width: 138,
               }}
             >
               Designation
             </Text>
-            <Text style={{ width: 130 }}>: {data.agent.designation}</Text>
+            <Text style={{ width: "100%" }}>: {data.agent.designation}</Text>
           </View>
           <View
             style={{
@@ -248,10 +243,9 @@ const PdfFile = ({ data }) => {
           <Image
             style={{
               position: "absolute",
-              top: 70,
+              top: 150,
               right: 70,
               width: 400,
-              height: 400,
               zIndex: 0,
               opacity: 0.1,
             }}
@@ -451,12 +445,12 @@ export default function Icard() {
         <div
           id="i-card"
           ref={cardRef}
-          className="relative  w-60 h-96 bg-white shadow-md rounded-lg overflow-hidden"
+          className="relative border-l-2 border-r-2 border-t-2 border-[#5FBDFF]  w-60 h-96 bg-white shadow-md rounded-lg overflow-hidden"
         >
           <img
             src="/watermark.png"
             alt="watermark"
-            className="absolute top-32  left-4 w-64 h-64 opacity-10 "
+            className="absolute top-36   opacity-20 "
           />
           <img src={"/pdfBanner.png"} alt="banner" className="w-full" />
 
@@ -470,14 +464,14 @@ export default function Icard() {
             alt="footerbanner"
             className="w-full h-16 px-2 "
           /> */}
-          <span className="w-full h-14 px-2 text-center flex flex-col font-semibold">
+          {/* <span className="w-full h-14 px-2 text-center flex flex-col font-semibold">
             <p className="text-green-800">Captial Group Business Solution</p>
             <p className="text-yellow-800">Pvt Ltd</p>
-          </span>
+          </span> */}
           <img
             src={IcardData?.agent?.profilePic}
             alt="Employee"
-            className="w-24 h-28 mx-auto mb-2 relative z-10 p-0.4 border-2 border-[#3E4759] "
+            className="w-24 h-28 mt-8 mx-auto mb-2 relative z-10 p-0.4 border-2 border-[#3E4759] "
           />
           <img
             src={"/stamp.png"}
@@ -570,30 +564,40 @@ export default function Icard() {
       accessor: "action",
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
-          <Badge
-            onClick={() => {
-              setPrevModal((prev) => ({
-                edit_id: cell.row.original.id,
-                state: true,
-              }));
-            }}
-            type={enums.BLUE}
-          >
-            {/* {download === cell.row.index ? (
-              <PDFDownloadLink
-                id="download"
-                document={<PdfFile data={agents.data[download]} />}
-                fileName={`welcome.pdf`}
-              >
-                {({ blob, url, loading, error }) =>
-                  loading ? "Generateing..." : "Print"
-                }
-              </PDFDownloadLink>
-            ) : (
-              "Generate"
-            )} */}
-            Preview
-          </Badge>
+          {metaData.icardIsPdf ? (
+            <Badge
+              onClick={() => {
+                setDownload(cell.row.index);
+              }}
+              type={enums.BLUE}
+            >
+              {download === cell.row.index ? (
+                <PDFDownloadLink
+                  id="download"
+                  document={<PdfFile data={agents.data[download]} />}
+                  fileName={`welcome.pdf`}
+                >
+                  {({ blob, url, loading, error }) =>
+                    loading ? "Generateing..." : "Print"
+                  }
+                </PDFDownloadLink>
+              ) : (
+                "Generate"
+              )}
+            </Badge>
+          ) : (
+            <Badge
+              onClick={() => {
+                setPrevModal((prev) => ({
+                  edit_id: cell.row.original.id,
+                  state: true,
+                }));
+              }}
+              type={enums.BLUE}
+            >
+              Preview
+            </Badge>
+          )}
           <Badge
             onClick={() =>
               setConfirmModal((prev) => ({
