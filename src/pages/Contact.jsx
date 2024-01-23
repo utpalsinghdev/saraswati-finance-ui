@@ -18,6 +18,7 @@ import axios from "axios";
 import { sendMessageDto } from "../schemas";
 import { Formik } from "formik";
 import { MailIcon, Phone } from "lucide-react";
+import metaData from "../utils/lib/site.config";
 function Contact() {
   return (
     <div>
@@ -36,22 +37,22 @@ function Contact() {
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
                     <a
-                      href="tel:8477908496"
+                      href={`tel:${metaData.phone}`}
                       className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-8477908496
+                      <Phone /> +91-{metaData.phone}
                     </a>
                     <a
-                      href="tel:8477908496"
-                      className="flex items-end text-md  gap-2"
+                      href={`tel:${metaData.phone}`}
+                      className="flex items-end text-md gap-2"
                     >
-                      <Phone /> +91-8477908496
+                      <Phone /> +91-{metaData.phone}
                     </a>
                     <a
-                      href="mailto:info@capitalgbs.in"
+                      href={`mailto:${metaData.email}`}
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> info@capitalgbs.in
+                      <MailIcon /> {metaData.email}
                     </a>
                   </div>
                 </div>
@@ -63,8 +64,7 @@ function Contact() {
                     Office:
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    Office No 410-415 1st Floor Helios Business Park Outer Ring
-                    Road Bangalore Pincode - 560103
+                    {metaData.address}
                   </div>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import ContainerWrapper from "../ui/containtWrapper";
 import { Link } from "react-router-dom";
+import metaData from "../../utils/lib/site.config";
 function Footer() {
   return (
     <div className="w-full bg-gradient-to-r from-cyan-500 to-blue-900 ">
@@ -61,25 +62,33 @@ function Footer() {
             <ul className="text-white flex flex-col gap-4 mt-4">
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:8477908496" target="_blank" rel="noreferrer">
-                  8477908496
+                <a
+                  href={`tel:${metaData.phone}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {metaData.phone}
                 </a>
               </li>
               <li className="flex flex-row items-center gap-2">
                 <BsTelephone />{" "}
-                <a href="tel:8477908496" target="_blank" rel="noreferrer">
-                  8477908496
+                <a
+                  href={`tel:${metaData.phone}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {metaData.phone}
                 </a>
               </li>
 
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />
                 <a
-                  href="mailto:info@capitalgbs.in"
+                  href={`mailto:${metaData.email}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  info@capitalgbs.in
+                  {metaData.email}
                 </a>
               </li>
               {/* <li className="flex flex-row items-start gap-2">
@@ -96,11 +105,7 @@ function Footer() {
                 <span>
                   <HiOutlineLocationMarker size={20} />
                 </span>
-                <span>
-                  {" "}
-                  Office No : 410-415 1st Floor Helios Business Park Outer Ring
-                  Road Bangalore Pincode - 560103
-                </span>
+                <span> {metaData.address}</span>
               </li>
             </ul>
           </div>

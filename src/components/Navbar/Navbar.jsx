@@ -5,6 +5,7 @@ import { classNames } from "../../utils/classname";
 import Brand from "../brand";
 import Image from "../ui/Image/Index";
 import { Headphones } from "lucide-react";
+import metaData from "../../utils/lib/site.config";
 const Navbar = () => {
   const location = useLocation();
 
@@ -75,20 +76,20 @@ const Navbar = () => {
           <img src="/mic.svg" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
             <a
-              href="tel:8477908496"
+              href={`tel:${metaData.phone}`}
               target="_blank"
               rel="noreferrer"
               className="text-blue-800 font-medium"
             >
-              +91-8477908496
+              +91-{metaData.phone}
             </a>
             <a
-              href="mailto:info@capitalgbs.in"
+              href={`mailto:${metaData.email}`}
               target="_blank"
               rel="noreferrer"
               className="text-cyan-800 font-medium"
             >
-              info@capitalgbs.in
+              {metaData.email}
             </a>
           </span>
         </div>

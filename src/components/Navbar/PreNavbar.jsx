@@ -7,6 +7,7 @@ import {
   HeadphonesIcon,
   MailIcon,
 } from "lucide-react";
+import metaData from "../../utils/lib/site.config";
 
 function PreNavbar() {
   const location = useLocation();
@@ -23,8 +24,12 @@ function PreNavbar() {
         <div className="flex justify-between items-center text-white">
           <div className="py-2 flex gap-2">
             <MailIcon />
-            <a href="mailto:info@capitalgbs.in" rel="noreferrer">
-              info@capitalgbs.in{" "}
+            <a
+              href={`mailto:${metaData.email}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {metaData.email}
             </a>
           </div>
           <div className="py-2 flex gap-2">
@@ -37,15 +42,19 @@ function PreNavbar() {
             <HeadphonesIcon />
             <span className="flex gap-1" rel="noreferrer">
               <a
-                href="tel:8477908496  "
+                href={`tel:${metaData.phone}`}
                 className="pr-2 border-r-2 border-white"
                 target="_blank"
                 rel="noreferrer"
               >
-                8477908496
+                +91 {metaData.phone}
               </a>
-              <a href="tel:8477908496" target="_blank" rel="noreferrer">
-                8477908496
+              <a
+                href={`tel:${metaData.phone}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                +91 {metaData.phone}
               </a>
             </span>
           </div>
