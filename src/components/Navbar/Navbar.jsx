@@ -75,12 +75,12 @@ const Navbar = () => {
           <img src="/mic.svg" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
             <a
-              href="tel:8445443881"
+              href="tel:8477908496"
               target="_blank"
               rel="noreferrer"
               className="text-blue-800 font-medium"
             >
-              +19-8445443881
+              +91-8477908496
             </a>
             <a
               href="mailto:info@capitalgbs.in"
