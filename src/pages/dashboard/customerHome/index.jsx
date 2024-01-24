@@ -22,6 +22,7 @@ import {
   Font,
 } from "@react-pdf/renderer";
 import calculateEMI from "../../../utils/calculator";
+import metaData from "../../../utils/lib/site.config";
 function CustomerHome() {
   const greet = getGreeting();
   const user = JSON?.parse(Cookie?.get("gafs_user"));
@@ -1882,7 +1883,7 @@ function CustomerHome() {
                     fontFamily: "Roboto",
                   }}
                 >
-                  Rs.4150/-
+                  Rs.{metaData.fileCharge}/-
                 </Text>{" "}
                 paid
               </Text>

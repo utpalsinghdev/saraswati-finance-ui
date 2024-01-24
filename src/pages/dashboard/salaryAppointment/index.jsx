@@ -977,12 +977,12 @@ const PdfFile = ({ data }) => {
             }}
           >
             <Image
-              src={"/stamp2.png"}
+              src={"/stamp.png"}
               style={{
                 position: "absolute",
                 bottom: -70,
                 right: 20,
-                height: 60,
+                height: 90,
               }}
             />
           </View>

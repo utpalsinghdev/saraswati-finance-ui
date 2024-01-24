@@ -256,10 +256,10 @@ const PdfFile = ({ data }) => {
           src={"/stamp.png"}
           style={{
             position: "absolute",
-            top: 420,
+            top: 320,
             left: 140,
-            width: 130,
-            height: 130,
+            // width: 130,
+            height: 90,
           }}
         />
         <View
@@ -476,7 +476,7 @@ export default function Icard() {
           <img
             src={"/stamp.png"}
             alt="Employee"
-            className="w-[90px] h-[90px]  z-10 absolute top-[10.5rem] left-5 "
+            className=" h-[70px]  z-10 absolute top-[10.5rem] left-6 "
           />
           <h2 className="text-md font-bold italic text-center uppercase  tracking-wide  text-black">
             {IcardData?.agent?.firstName} {IcardData?.agent?.LastName}

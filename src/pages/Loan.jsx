@@ -4,6 +4,7 @@ import ContainerWrapper from "../components/ui/containtWrapper";
 import { useParams } from "react-router-dom";
 import { ChevronLeft, Home } from "lucide-react";
 import { BiSolidChevronsRight } from "react-icons/bi";
+import metaData from "../utils/lib/site.config";
 
 function Loan() {
   const { slug } = useParams();
@@ -64,7 +65,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
                 <Bullets>5 Recent Photographs of Guarantor</Bullets>
@@ -118,7 +119,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
                 <Bullets>
                   Papers of Property (Khasra, Khaitoni, Registry, Bainama)
                 </Bullets>
@@ -170,7 +171,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
                 <Bullets>
                   Papers of Property (Khasra, Khaitoni, Registry, Bainama)
                 </Bullets>
@@ -221,7 +222,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
                 <Bullets>5 Recent Photographs of Guarantor</Bullets>
@@ -270,7 +271,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
                 <Bullets>5 Recent Photographs of Guarantor</Bullets>
@@ -317,7 +318,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
                 <Bullets>
                   Papers of Property (Khasra, Khaitoni, Registry, Bainama).
                 </Bullets>
@@ -367,7 +368,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
                 <Bullets>Copy Of Last 2 Year ITR</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
@@ -416,7 +417,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
                 <Bullets>5 Recent Photographs of Guarantor</Bullets>
@@ -468,7 +469,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
                 <Bullets>5 Recent Photographs of Guarantor</Bullets>
@@ -534,7 +535,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = 4150 Rs.</Bullets>
+                <Bullets>File Charge = {metaData.fileCharge} Rs.</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
                 <Bullets>5 Recent Photographs of Guarantor</Bullets>

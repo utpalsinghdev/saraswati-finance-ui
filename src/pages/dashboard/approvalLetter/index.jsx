@@ -33,6 +33,7 @@ import calculateEMI from "../../../utils/calculator";
 
 import bold from "../../../assets/bold.ttf";
 import ComboBox from "../../../components/ui/comboBox";
+import metaData from "../../../utils/lib/site.config";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
@@ -1043,7 +1044,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                Rs.4150/-
+                Rs.{metaData.fileCharge}/-
               </Text>{" "}
               paid
             </Text>

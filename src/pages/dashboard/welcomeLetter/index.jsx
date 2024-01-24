@@ -615,8 +615,8 @@ const PdfFile = ({ data }) => {
               position: "absolute",
               bottom: -20,
               right: -15,
-              width: 110,
-              height: 110,
+              // width: 110,
+              height: 90,
             }}
           />
           <Text style={{ marginTop: 20 }}>
@@ -649,7 +649,7 @@ const initialModalState = {
   state: false,
   edit_id: "",
   data: {
-    charge: "4150",
+    charge: metaData.fileCharge,
     customerId: "",
     employeeId: "",
 

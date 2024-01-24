@@ -6,7 +6,7 @@ const metaData = {
   address:
     "Office No : 410-415 1st Floor Helios Business Park Outer Ring Road Bangalore Pincode - 560103",
   fileCharge: "4500",
-  icardIsPdf: false,
+  icardIsPdf: true,
 };
 
 export default metaData;
