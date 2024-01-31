@@ -46,9 +46,7 @@ function Verify() {
           <h1 className="text-xl">
             {agent?.title + " " + agent?.firstName + " " + agent?.LastName}
           </h1>
-          <p>
-            <span className="font-bold">Designation :</span> {agent?.role}
-          </p>
+
           <p>
             <span className="font-bold">AgentID : </span>
             {agent?.employeeCode}

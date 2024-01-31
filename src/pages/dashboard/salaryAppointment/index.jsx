@@ -464,7 +464,6 @@ const PdfFile = ({ data }) => {
               <Text style={{ fontSize: 12, fontFamily: "Roboto" }}>
                 {metaData.title}
               </Text>{" "}
-              .,w.e.f.{" "}
               <Text
                 style={{
                   fontFamily: "Roboto",
