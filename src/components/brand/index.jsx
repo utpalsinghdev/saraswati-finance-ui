@@ -14,7 +14,7 @@ function Brand({ className }) {
         className="   w-[10rem]   cursor-pointer mr-1"
       />
       {/* <p className="text-xl text-yellow-800  font-extrabold">
-        Captial Group Business Solution PVT LTD
+        Capital Group Business Solution PVT LTD
       </p> */}
     </span>
   );

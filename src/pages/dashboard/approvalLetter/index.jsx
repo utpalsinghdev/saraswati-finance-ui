@@ -39,7 +39,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Captial Group Business Solution Pvt. Ltd.";
+  const company = "Capital Group Business Solution Pvt. Ltd.";
   const _loanAmount = data?.customer?.loanInNumber;
   const costWithoutGst =
     (_loanAmount > 100000 && _loanAmount < 300000) ||

@@ -1,5 +1,5 @@
 const metaData = {
-  title: "Captial Group Business Solution Pvt. Ltd.",
+  title: "Capital Group Business Solution Pvt. Ltd.",
   siteUrl: "https://www.capitalgbs.in",
   email: "info@capitalgbs.in",
   phone: "8171599161",

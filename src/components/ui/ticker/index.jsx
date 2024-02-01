@@ -28,7 +28,7 @@ const Ticker = ({ messages }) => {
               index === currentIndex ? "visible" : ""
             }`}
           >
-            {message ? message : "Captial Group Business Solution Pvt Ltd"}
+            {message ? message : "Capital Group Business Solution Pvt Ltd"}
           </span>
         ))}
       </div>

@@ -14,7 +14,7 @@ function Footer() {
           <div className="w-full">
             <img src="/logo_full.png" className="w-72" alt="" />
             <p className="text-white mt-2">
-              Captial Group Business Solution Private Limited. is dealing in
+              Capital Group Business Solution Private Limited. is dealing in
               Personal Loan, Loan against Property, Project Loan & Gold Loan. We
               Believe in fair dealing and prompt disbursement of founds on
               priority Basis.

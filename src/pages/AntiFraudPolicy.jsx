@@ -10,7 +10,7 @@ const AntiFraudPolicy = () => {
       <ContainerWrapper>
         <HeadingWrapper
           heading={"Anti-Fraud Policy"}
-          title={"Captial Group Business Solution Pvt. Ltd."}
+          title={"Capital Group Business Solution Pvt. Ltd."}
         >
           <div className="px-4 mt-4 flex flex-col gap-2">
             <h3 className="text-green-500 text-2xl font-semibold">Payment</h3>
@@ -18,7 +18,7 @@ const AntiFraudPolicy = () => {
               If you make payment online, then pay only on the account of
               Services Pvt. ltd. which is mentioned on the bank section of our
               website. If person asks you to pay to a bank account which is
-              Having no relevance to Captial Group Business Solution Pvt. Ltd.
+              Having no relevance to Capital Group Business Solution Pvt. Ltd.
               then never make this kind of Payments Also never pay any amount to
               any person claiming that he/she is an agent or representative of
               Financial Services Private Limited outside the office branches any
@@ -44,7 +44,7 @@ const AntiFraudPolicy = () => {
               Suggestion For You
             </h3>
             <p className="text-gray-600 text-sm font-medium">
-              Captial Group Business Solution Pvt. Ltd. suggest you, if you find
+              Capital Group Business Solution Pvt. Ltd. suggest you, if you find
               any type of fraud or scam with our agent or representative please
               contact us immediately. We are always happy to help you.
             </p>

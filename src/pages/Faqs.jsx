@@ -11,7 +11,7 @@ function Faqs() {
       <ContainerWrapper>
         <HeadingWrapper
           heading="Frequently Asked Questions"
-          title="Captial Group Business Solution Pvt. Ltd."
+          title="Capital Group Business Solution Pvt. Ltd."
         >
           <div className="py-10">
             <AccordianGroup

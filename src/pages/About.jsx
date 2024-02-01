@@ -30,11 +30,11 @@ function About() {
                 About
               </span>
               <span className="text-3xl font-bold text-blue-800">
-                Captial Group Business Solution Pvt. Ltd.
+                Capital Group Business Solution Pvt. Ltd.
               </span>
             </h1>
             <p className="text-md text-gray-700 font-medium mt-8">
-              Captial Group Business Solution Pvt. Ltd. is dealing in Home Loan,
+              Capital Group Business Solution Pvt. Ltd. is dealing in Home Loan,
               Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project
               Loan, Education Loan, Pay Slip Loan, Car Loan, Machine Loan,
               Business Loans, Loan Against Property & Project Etc.

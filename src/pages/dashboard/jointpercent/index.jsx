@@ -41,7 +41,7 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const company_name = "Captial Group Business Solution Pvt. Ltd.";
+const company_name = "Capital Group Business Solution Pvt. Ltd.";
 const PdfFile = ({ data }) => {
   return (
     <Document>
