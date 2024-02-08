@@ -1140,10 +1140,15 @@ export default function Appointment() {
                   name: `${a.firstName} ${a.LastName} (${a.employeeCode})`,
                 }))}
                 onChange={(e) => {
-                  console.log(e);
+                  const _agent = employees.data.find((a) => a.id === Number(e));
+
                   f.setValues((prev) => ({
                     ...prev,
                     employeeId: e,
+                    location: _agent?.location || "",
+                    address: _agent?.address || "",
+                    guardian_name: _agent?.guardian_name || "",
+                    guradian_relation: _agent?.guradian_relation || "SONOF",
                   }));
                   f.setErrors((prev) => ({
                     ...prev,

@@ -16,6 +16,12 @@ export const agentApplicationSchema = Yup.object().shape({
   title: Yup.string().required("Please Select a title"),
   firstName: Yup.string().required("Please Enter Your First Name"),
   lastName: Yup.string().required("Please Enter Your First Name"),
+  location: Yup.string().required("Please Enter Your Location"),
+  address: Yup.string().required("Please Enter Your Address"),
+  guardian_name: Yup.string().required("Please Enter Your Guardian Name"),
+  guradian_relation: Yup.string().required(
+    "Please Select Your Guardian Relation"
+  ),
   email: Yup.string().email().required("Please Enter Your Email Address"),
   phone: Yup.string()
     .min(10, "Phone number must be at least 10 characters")

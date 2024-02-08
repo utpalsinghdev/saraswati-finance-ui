@@ -12,6 +12,8 @@ import { Formik } from "formik";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { agentApplicationSchema } from "../schemas";
+import { GoLocation } from "react-icons/go";
+import { RiUser2Line, RiUserHeartLine } from "react-icons/ri";
 function fileToBase64(file, callback) {
   if (!file) {
     callback("");
@@ -46,6 +48,10 @@ function Career() {
             title: "",
             firstName: "",
             lastName: "",
+            location: "",
+            address: "",
+            guardian_name: "",
+            guradian_relation: "SONOF",
             email: "",
             phone: "",
             role: "",
@@ -62,7 +68,7 @@ function Career() {
                 resolve();
               });
             });
-            console.log(values.profilePic[0]);
+            console.log(values.profilePic);
             if (values.profilePic) {
               await new Promise((resolve) => {
                 fileToBase64(values.profilePic, (base64Data) => {
@@ -96,6 +102,7 @@ function Career() {
               onSubmit={f.handleSubmit}
               className="flex pb-4 items-start gap-4 md:gap-10 justify-start flex-col md:flex-row  mt-4 p-0 md:p-8 lg:px-20  "
             >
+              {console.log(f.errors)}
               <Image
                 src={"/hire.jpg"}
                 alt={"career"}
@@ -134,6 +141,7 @@ function Career() {
                   <option>Miss.</option>
                   <option>Dr.</option>
                 </Select>
+
                 <Input
                   name="firstName"
                   onChange={f.handleChange}
@@ -153,6 +161,56 @@ function Career() {
                   icon={<User2Icon className="w-4 text-indigo-500" />}
                   label={""}
                   placeholder={"Last Name"}
+                />
+                <span className="flex items-center justify-between w-full gap-8">
+                  <Select
+                    label={""}
+                    name={"guradian_relation"}
+                    onBlur={f.handleBlur}
+                    onChange={f.handleChange}
+                    value={f.values.guradian_relation}
+                    error={
+                      f.touched.guradian_relation && f.errors.guradian_relation
+                    }
+                    icon={<RiUserHeartLine className="w-4 text-indigo-500" />}
+                  >
+                    <option value={"SONOF"}>S/O</option>
+                    <option value={"DOF"}>D/O</option>
+                    <option value={"WOF"}>W/O</option>
+                  </Select>
+                  <Input
+                    name="guardian_name"
+                    type={"text"}
+                    onChange={f.handleChange}
+                    onBlur={f.handleBlur}
+                    value={f.values.guardian_name}
+                    error={f.touched.guardian_name && f.errors.guardian_name}
+                    icon={<RiUser2Line className="w-4 text-indigo-500" />}
+                    label={""}
+                    placeholder={"Guardian Name"}
+                  />
+                </span>
+                <Input
+                  name="location"
+                  type={"text"}
+                  onChange={f.handleChange}
+                  onBlur={f.handleBlur}
+                  value={f.values.location}
+                  error={f.touched.location && f.errors.location}
+                  icon={<GoLocation size={18} className=" text-indigo-500" />}
+                  label={""}
+                  placeholder={"Enter Location"}
+                />
+                <Input
+                  name="address"
+                  type={"text"}
+                  onChange={f.handleChange}
+                  onBlur={f.handleBlur}
+                  value={f.values.address}
+                  error={f.touched.address && f.errors.address}
+                  icon={<GoLocation size={18} className=" text-indigo-500" />}
+                  label={""}
+                  placeholder={"Enter address"}
                 />
                 <Input
                   name="profilePic"

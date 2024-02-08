@@ -8,7 +8,11 @@ import { Formik } from "formik";
 import Input from "../../../components/ui/input";
 import { BiIdCard } from "react-icons/bi";
 import Select from "../../../components/ui/select";
-import { RiLockPasswordLine } from "react-icons/ri";
+import {
+  RiLockPasswordLine,
+  RiUser2Line,
+  RiUserHeartLine,
+} from "react-icons/ri";
 import Button from "../../../components/ui/button";
 import { Link2Icon, MailIcon, Phone, User2Icon } from "lucide-react";
 import { addNewsDto, agentSchema } from "../../../schemas";
@@ -18,6 +22,7 @@ import useFetch from "../../../hooks/useFetch";
 import Loader from "../../../components/loader";
 import moment from "moment";
 import Image from "../../../components/ui/Image/Index";
+import { GoLocation } from "react-icons/go";
 
 const initialModalState = {
   state: false,
@@ -29,6 +34,10 @@ const initialModalState = {
     role: "",
     Email: "",
     Phone: "",
+    location: "",
+    address: "",
+    guardian_name: "",
+    guradian_relation: "",
     city: "",
     password: "",
     workUnder: "",
@@ -125,6 +134,56 @@ function CarrerApplications() {
                 icon={<User2Icon className="w-4 text-indigo-500" />}
                 label={""}
                 placeholder={"Last Name"}
+              />
+              <span className="flex items-center justify-between w-full gap-8">
+                <Select
+                  label={""}
+                  name={"guradian_relation"}
+                  onBlur={f.handleBlur}
+                  onChange={f.handleChange}
+                  value={f.values.guradian_relation}
+                  error={
+                    f.touched.guradian_relation && f.errors.guradian_relation
+                  }
+                  icon={<RiUserHeartLine className="w-4 text-indigo-500" />}
+                >
+                  <option value={"SONOF"}>S/O</option>
+                  <option value={"DOF"}>D/O</option>
+                  <option value={"WOF"}>W/O</option>
+                </Select>
+                <Input
+                  name="guardian_name"
+                  type={"text"}
+                  onChange={f.handleChange}
+                  onBlur={f.handleBlur}
+                  value={f.values.guardian_name}
+                  error={f.touched.guardian_name && f.errors.guardian_name}
+                  icon={<RiUser2Line className="w-4 text-indigo-500" />}
+                  label={""}
+                  placeholder={"Guardian Name"}
+                />
+              </span>
+              <Input
+                name="location"
+                type={"text"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.location}
+                error={f.touched.location && f.errors.location}
+                icon={<GoLocation size={18} className=" text-indigo-500" />}
+                label={""}
+                placeholder={"Enter Location"}
+              />
+              <Input
+                name="address"
+                type={"text"}
+                onChange={f.handleChange}
+                onBlur={f.handleBlur}
+                value={f.values.address}
+                error={f.touched.address && f.errors.address}
+                icon={<GoLocation size={18} className=" text-indigo-500" />}
+                label={""}
+                placeholder={"Enter address"}
               />
               <Select
                 label={""}
@@ -241,6 +300,10 @@ function CarrerApplications() {
         title: OneNews.title,
         firstName: OneNews.firstName,
         LastName: OneNews.LastName,
+        location: OneNews.location,
+        address: OneNews.address,
+        guardian_name: OneNews.guardian_name,
+        guradian_relation: OneNews.guradian_relation,
         role: OneNews.role,
         Email: OneNews.Email,
         Phone: OneNews.Phone,
