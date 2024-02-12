@@ -63,7 +63,10 @@ function HomeAgent() {
           Approval Letters
         </p>
         <p className="text-start p-2 bg-green-400 rounded-xl">
-          {_agent?.data?.Customer?.map((c) => +c?.ApprovalLetter.length)}
+          {_agent?.data?.Customer?.map((c) => c?.ApprovalLetter?.length).reduce(
+            (a, b) => a + b,
+            0
+          )}
         </p>
       </Link>
       <Link
