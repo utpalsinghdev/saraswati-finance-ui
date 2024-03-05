@@ -44,7 +44,7 @@ const Navbar = () => {
       link: "/services/loan",
     },
     {
-      name: "Career",
+      name: "Agent Joining",
       link: "/Career",
     },
     {
