@@ -32,6 +32,7 @@ import useFetch from "../hooks/useFetch";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Modal from "../components/ui/modal";
+import ComboBox from "../components/ui/comboBox";
 function fileToBase64(file, callback) {
   if (!file) {
     callback("");
@@ -390,7 +391,7 @@ function ApplyLoan() {
                     placeholder={"Pincode"}
                   />
                 </span>
-                <Select
+                {/* <Select
                   name={"agentId"}
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -406,7 +407,23 @@ function ApplyLoan() {
                       value={a.id}
                     >{`${a.firstName} ${a.LastName}`}</option>
                   ))}
-                </Select>
+                </Select> */}
+                <ComboBox
+                  people={allEmployees.data?.map((a) => ({
+                    id: a.id,
+                    name: `${a.firstName} ${a.LastName}`,
+                  }))}
+                  onChange={(e) => {
+                    setValues({ ...values, agentId: Number(e) });
+                  }}
+                  name={"agentId"}
+                  placeholder={"Select the Agent"}
+                  value={values.agentId}
+                  onBlur={handleBlur}
+                  boxSize="w-full"
+                  error={touched.agentId && errors.agentId}
+                  icon={<RiUserSearchLine className="w-4 text-indigo-500" />}
+                />
               </div>
               <div className="flex  items-center flex-col gap-2">
                 <h3 className="text-3xl text-left w-full font-bold text-blue-800">

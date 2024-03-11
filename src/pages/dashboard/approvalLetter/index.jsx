@@ -1729,10 +1729,12 @@ export default function ApprovalLetter() {
                 ))}
               </Select> */}
               <ComboBox
-                people={customers.data?.map((a) => ({
-                  id: a.id,
-                  name: a.name,
-                }))}
+                people={customers.data
+                  ?.filter((c) => c.AccountNumber)
+                  ?.map((a) => ({
+                    id: a.id,
+                    name: a.name,
+                  }))}
                 onChange={(e) => {
                   console.log(e);
                   f.setValues((prev) => ({

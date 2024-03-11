@@ -13,6 +13,7 @@ export default function ComboBox({
   name,
   label,
   placeholder,
+  boxSize,
   ...rest
 }) {
   const [query, setQuery] = useState("");
@@ -28,6 +29,7 @@ export default function ComboBox({
   return (
     <Combobox
       as="div"
+      className={boxSize || ""}
       value={people.find((person) => person.id === value) || selectedPerson}
       onChange={(e) => {
         onChange(e.id, name);
