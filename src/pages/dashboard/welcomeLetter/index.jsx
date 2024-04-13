@@ -42,15 +42,31 @@ Font.register({
 const PdfFile = ({ data }) => {
   const company = metaData.title;
   // console.log(data);
+  const [general, setGeneral] = useState({
+    data: {},
+    loading: true,
+  });
+  async function fetchData() {
+    try {
+      const res = await ApiService.fetchData({
+        url: "api/payment-qr",
+        method: "GET",
+      });
+      setGeneral({ data: res.data.data[0] || null, loading: false });
+    } catch (error) {
+      toast.error(
+        typeof error.response.data.message !== "string"
+          ? error.response.data?.[0]
+          : error.response.data.message
+      );
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <Document>
-      <Page
-        size="A4"
-        style={{
-          borderRight: "4px solid #5FBDFF",
-          borderLeft: "4px solid #5FBDFF",
-        }}
-      >
+      <Page size="A4">
         <View style={{}}>
           <Image src={"/pdfBanner.png"} />
         </View>
@@ -416,7 +432,7 @@ const PdfFile = ({ data }) => {
                     fontWeight: "extrabold",
                   }}
                 >
-                  Rs. {metaData.fileCharge}/-
+                  Rs. {general.data.fileCharge}/-
                 </Text>
               </View>
 
@@ -616,7 +632,7 @@ const PdfFile = ({ data }) => {
               bottom: -20,
               right: -15,
               // width: 110,
-              height: 90,
+              height: 110,
             }}
           />
           <Text style={{ marginTop: 20 }}>

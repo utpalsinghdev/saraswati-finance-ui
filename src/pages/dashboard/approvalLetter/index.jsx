@@ -49,11 +49,40 @@ const PdfFile = ({ data }) => {
       : _loanAmount * 0.03;
   const gst = costWithoutGst * 0.18;
   const totalCost = costWithoutGst + gst;
+
+  const [general, setGeneral] = useState({
+    data: {},
+    loading: true,
+  });
+
+  async function fetchData() {
+    try {
+      const res = await ApiService.fetchData({
+        url: "api/payment-qr",
+        method: "GET",
+      });
+      setGeneral({ data: res.data.data[0] || null, loading: false });
+    } catch (error) {
+      toast.error(
+        typeof error.response.data.message !== "string"
+          ? error.response.data?.[0]
+          : error.response.data.message
+      );
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <Document>
       <Page size="A4" style={{}}>
         <View style={{}}>
-          <Image src={"/pdfBanner.png"} />
+          <Image
+            src={"/pdfBanner.png"}
+            style={{
+              height: 190,
+            }}
+          />
         </View>
         <View
           style={{
@@ -68,9 +97,8 @@ const PdfFile = ({ data }) => {
               position: "absolute",
               top: 100,
               right: 30,
-              width: 550,
-              height: 550,
-              opacity: 0.15,
+              width: 500,
+              opacity: 0.2,
             }}
             src={"/watermark.png"}
           />
@@ -858,8 +886,7 @@ const PdfFile = ({ data }) => {
                 top: 100,
                 right: 30,
                 width: 500,
-                height: 500,
-                opacity: 0.15,
+                opacity: 0.2,
               }}
               src={"/watermark.png"}
             />
@@ -1044,7 +1071,7 @@ const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                Rs.{metaData.fileCharge}/-
+                Rs.{general.data.fileCharge}/-
               </Text>{" "}
               paid
             </Text>
@@ -1123,8 +1150,7 @@ const PdfFile = ({ data }) => {
                 top: 100,
                 right: 30,
                 width: 500,
-                height: 500,
-                opacity: 0.15,
+                opacity: 0.2,
               }}
               src={"/watermark.png"}
             />
@@ -1261,8 +1287,8 @@ const PdfFile = ({ data }) => {
                 top: 100,
                 right: 30,
                 width: 500,
-                height: 500,
-                opacity: 0.15,
+                width: 500,
+                opacity: 0.2,
               }}
               src={"/watermark.png"}
             />
@@ -1318,7 +1344,7 @@ const PdfFile = ({ data }) => {
                     fontFamily: "Roboto",
                   }}
                 >
-                  info@fundwisor.in
+                  {metaData.email}
                 </Text>
               </Text>
               <Text style={{ fontSize: 12, marginTop: "6" }}>
@@ -1512,7 +1538,7 @@ const PdfFile = ({ data }) => {
                     style={{
                       width: 150,
                     }}
-                    src={"/qr.jpeg"}
+                    src={general.data.url}
                   />
                 </View>
               </View>
@@ -1553,12 +1579,12 @@ const PdfFile = ({ data }) => {
               }}
             >
               <Image
-                src={"/stamp2.png"}
+                src={"/stamp.png"}
                 style={{
                   position: "absolute",
-                  bottom: -55,
+                  bottom: -40,
                   right: 20,
-                  height: 60,
+                  height: 150,
                 }}
               />
               <Text
@@ -1852,57 +1878,30 @@ export default function ApprovalLetter() {
       accessor: "action",
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
-          {cell.row.original.pdfPassword ? (
-            <a
-              href={import.meta.env.VITE_BASE_URL + cell.row.original.url}
-              download
-            >
-              <Badge type={enums.BLUE}>
-                {/* {download === cell.row.index ? (
-             <PDFDownloadLink
-               id="download"
-               document={<PdfFile data={agents.data[download]} />}
-               fileName={`${agents.data[download].customer.name}.pdf`}
-             >
-               {({ blob, url, loading, error }) =>
-                 loading ? "Generateing..." : "Print"
-               }
-             </PDFDownloadLink>
-           ) : (
-             "Generate"
-           )} */}
-                Download
-              </Badge>
-            </a>
-          ) : (
-            <Badge
-              onClick={() => {
-                if (agents?.data?.[cell.row.index]?.customer?.bank) {
-                  setDownload(cell.row.index);
-                } else {
-                  toast.error(
-                    "Customer Bank Details are Missing Please Update"
-                  );
-                }
-              }}
-              type={enums.BLUE}
-            >
-              {/* {download === cell.row.index ? (
-            <PDFDownloadLink
-              id="download"
-              document={<PdfFile data={agents.data[download]} />}
-              fileName={`${agents.data[download].customer.name}.pdf`}
-            >
-              {({ blob, url, loading, error }) =>
-                loading ? "Generateing..." : "Print"
+          <Badge
+            onClick={() => {
+              if (agents?.data?.[cell.row.index]?.customer?.bank) {
+                setDownload(cell.row.index);
+              } else {
+                toast.error("Customer Bank Details are Missing Please Update");
               }
-            </PDFDownloadLink>
-          ) : (
-            "Generate"
-          )} */}
-              Generate
-            </Badge>
-          )}
+            }}
+            type={enums.BLUE}
+          >
+            {download === cell.row.index ? (
+              <PDFDownloadLink
+                id="download"
+                document={<PdfFile data={agents.data[download]} />}
+                fileName={`${agents.data[download].customer.name}.pdf`}
+              >
+                {({ blob, url, loading, error }) =>
+                  loading ? "Generateing..." : "Print"
+                }
+              </PDFDownloadLink>
+            ) : (
+              "Generate"
+            )}
+          </Badge>
           <Badge
             onClick={() =>
               setConfirmModal((prev) => ({
@@ -1938,9 +1937,9 @@ export default function ApprovalLetter() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
+      <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This letter?"
         isDelete

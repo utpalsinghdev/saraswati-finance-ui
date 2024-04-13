@@ -71,8 +71,6 @@ const PdfFile = ({ data }) => {
         style={{
           fontFamily: "Helvetica",
           // border: "1px solid ",
-          borderRight: "4px solid #5FBDFF",
-          borderLeft: "4px solid #5FBDFF",
         }}
       >
         <View style={{}}>
@@ -92,7 +90,7 @@ const PdfFile = ({ data }) => {
               top: 100,
               right: 30,
               width: 500,
-              opacity: 0.1,
+              opacity: 0.2,
             }}
             src={"/watermark.png"}
           />
@@ -418,9 +416,9 @@ const PdfFile = ({ data }) => {
               src={"/stamp.png"}
               style={{
                 position: "absolute",
-                top: 60,
-                right: 0,
-                height: 90,
+                top: 50,
+                right: 10,
+                height: 100,
                 backgroundColor: "transparent",
               }}
             />
@@ -638,7 +636,7 @@ const PdfFile = ({ data }) => {
                 top: 100,
                 right: 30,
                 width: 500,
-                opacity: 0.1,
+                opacity: 0.2,
               }}
               src={"/watermark.png"}
             />
@@ -906,7 +904,7 @@ const PdfFile = ({ data }) => {
                     top: -150,
                     right: 30,
                     width: 500,
-                    opacity: 0.1,
+                    opacity: 0.2,
                   }}
                   src={"/watermark.png"}
                 />
@@ -981,7 +979,7 @@ const PdfFile = ({ data }) => {
                 position: "absolute",
                 bottom: -70,
                 right: 20,
-                height: 90,
+                height: 100,
               }}
             />
           </View>

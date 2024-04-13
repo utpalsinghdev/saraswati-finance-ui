@@ -12,10 +12,6 @@ import Input from "../../../components/ui/input";
 import { Building2Icon } from "lucide-react";
 
 function Qr() {
-  const [general, setGeneral] = useState({
-    data: {},
-    loading: true,
-  });
   const [formData, setFormData] = useState({
     file: {},
     bankName: "",
@@ -23,6 +19,10 @@ function Qr() {
     ifsc: "",
     holderName: "",
     fileCharge: "",
+  });
+  const [general, setGeneral] = useState({
+    data: {},
+    loading: true,
   });
   async function fetchData() {
     try {
