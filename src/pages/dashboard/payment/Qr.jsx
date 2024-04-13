@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../../../hooks/useFetch";
 import { PhotoIcon } from "@heroicons/react/24/outline";
 
@@ -6,9 +6,50 @@ import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import ApiService from "../../../services/Api_services";
 import Button from "../../../components/ui/button";
+import moment from "moment";
+import { GoLocation } from "react-icons/go";
+import Input from "../../../components/ui/input";
+import { Building2Icon } from "lucide-react";
 
 function Qr() {
-  const qr = useFetch("api/payment-qr");
+  const [general, setGeneral] = useState({
+    data: {},
+    loading: true,
+  });
+  const [formData, setFormData] = useState({
+    file: {},
+    bankName: "",
+    accountNo: "",
+    ifsc: "",
+    holderName: "",
+    fileCharge: "",
+  });
+  async function fetchData() {
+    try {
+      const res = await ApiService.fetchData({
+        url: "api/payment-qr",
+        method: "GET",
+      });
+      setGeneral({ data: res.data.data[0] || null, loading: false });
+      setFormData({
+        file: {},
+        bankName: res.data.data[0]?.bankName || "",
+        accountNo: res.data.data[0]?.accountNo || "",
+        ifsc: res.data.data[0]?.ifsc || "",
+        holderName: res.data.data[0]?.holderName || "",
+        fileCharge: res.data.data[0]?.fileCharge || "",
+      });
+    } catch (error) {
+      toast.error(
+        typeof error.response.data.message !== "string"
+          ? error.response.data?.[0]
+          : error.response.data.message
+      );
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
   function fileToBase64(file, callback) {
     if (!file) {
       callback("");
@@ -27,57 +68,85 @@ function Qr() {
 
     reader.readAsDataURL(file);
   }
-  const { values, handleSubmit, isSubmitting, errors, handleBlur, touched } =
-    useFormik({
-      initialValues: {
-        file: {},
-      },
-      validate: (values) => {
-        const errors = {};
-        if (!values.file) {
-          errors.file = "Please enter a valid qr code";
-        }
-        if (values.file.size > 2097152) {
-          errors.file = "File size must be less than 2mb";
-        }
+  const {
+    values,
+    handleSubmit,
+    isSubmitting,
+    errors,
+    handleBlur,
+    touched,
+    handleChange,
+  } = useFormik({
+    initialValues: formData,
+    enableReinitialize: true,
+    validate: (values) => {
+      const errors = {};
+      if (!values.file) {
+        errors.file = "Please enter a valid qr code";
+      }
+      if (values.file.size > 2097152) {
+        errors.file = "File size must be less than 2mb";
+      }
+      if (!values.bankName) {
+        errors.bankName = "Please enter a bank name";
+      }
+      if (!values.accountNo) {
+        errors.accountNo = "Please enter a account number";
+      }
+      if (!values.ifsc) {
+        errors.ifsc = "Please enter a ifsc code";
+      }
+      if (!values.holderName) {
+        errors.holderName = "Please enter a holder name";
+      }
+      if (!values.fileCharge) {
+        errors.fileCharge = "Please enter a file charge";
+      }
 
-        return errors;
-      },
-      onSubmit: async (values, action) => {
-        const payload = {};
-        await new Promise((resolve) => {
-          fileToBase64(values.file, (base64Data) => {
-            payload.qr = base64Data;
-            resolve();
-          });
+      return errors;
+    },
+    onSubmit: async (values, action) => {
+      const payload = {
+        ...values,
+      };
+
+      await new Promise((resolve) => {
+        fileToBase64(values.file, (base64Data) => {
+          payload.qr = base64Data;
+          resolve();
         });
-        try {
-          const res = await ApiService.fetchData({
-            url: `api/payment-qr`,
-            method: "POST",
-            data: payload,
-          });
-          toast.success(res.data.message);
-        } catch (error) {
-          toast.error(
-            typeof error.response.data.message !== "string"
-              ? error.response.data?.[0]
-              : error.response.data.message
-          );
-        } finally {
-          action.resetForm();
-          action.setSubmitting(false);
-        }
-      },
-    });
+      });
+      try {
+        const res = await ApiService.fetchData({
+          url: `api/payment-qr`,
+          method: "POST",
+          data: payload,
+        });
+        toast.success(res.data.message);
+        fetchData();
+      } catch (error) {
+        toast.error(
+          typeof error.response.data.message !== "string"
+            ? error.response.data?.[0]
+            : error.response.data.message
+        );
+      } finally {
+        action.resetForm();
+        action.setSubmitting(false);
+      }
+    },
+  });
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full  flex flex-col">
       <h1>
-        {qr.data.length ? `Add at ${qr.data[0].createdAt}` : "No Qr Code"}
+        {general.data
+          ? `Last Updated on ${moment(general.data.createdAt).format("ll")}`
+          : "No Qr Code"}
       </h1>
+      <h1 className=" text-xl font-bold  ">Pyament Qr Code</h1>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center justify-center w-full flex-col h-[75vh]"
+        className="flex relative items-center justify-center w-full flex-col h-[30vh]"
       >
         <div className="w-[50%]">
           <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
@@ -114,7 +183,76 @@ function Qr() {
           </div>
         </div>
         <span>{touched.file && errors.file}</span>
-        <Button type={"submit"}>Upload</Button>
+        <Button disabled={isSubmitting} type={"submit"} className={"w-max"}>
+          {isSubmitting ? "Uploading..." : "Upload"}
+        </Button>
+      </form>
+      <h1 className=" text-xl font-bold">Bank Details & file Charge</h1>
+      <form
+        // onSubmit={f.handleSubmit}
+        className="relative pt-4 rounded-b-md pb-8 border-t border-gray-300 flex flex-col gap-4 px-4 bg-white"
+      >
+        <div className="max-w-md">
+          {" "}
+          <Input
+            name="bankName"
+            type={"text"}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.bankName}
+            error={touched.location && errors.bankName}
+            icon={<Building2Icon size={18} className=" text-indigo-500" />}
+            label={"Bank Name"}
+            placeholder={"Enter Bank Name"}
+          />
+          <Input
+            name="accountNo"
+            type={"text"}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.accountNo}
+            error={touched.accountNo && errors.accountNo}
+            icon={<Building2Icon size={18} className=" text-indigo-500" />}
+            label={"Account Number"}
+            placeholder={"Enter Account Number"}
+          />
+          <Input
+            name="ifsc"
+            type={"text"}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.ifsc}
+            error={touched.ifsc && errors.ifsc}
+            icon={<Building2Icon size={18} className=" text-indigo-500" />}
+            label={"IFSC"}
+            placeholder={"Enter IFSC"}
+          />
+          <Input
+            name="holderName"
+            type={"text"}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.holderName}
+            error={touched.holderName && errors.holderName}
+            icon={<Building2Icon size={18} className=" text-indigo-500" />}
+            label={"Account Holder Name"}
+            placeholder={"Enter Account Holder Name"}
+          />
+          <Input
+            name="fileCharge"
+            type={"text"}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.fileCharge}
+            error={touched.fileCharge && errors.fileCharge}
+            icon={<Building2Icon size={18} className=" text-indigo-500" />}
+            label={"File Charge"}
+            placeholder={"Enter File Charge"}
+          />
+        </div>
+        <Button disabled={isSubmitting} type={"submit"} className={"w-max"}>
+          {isSubmitting ? "Uploading..." : "Upload"}
+        </Button>
       </form>
     </div>
   );

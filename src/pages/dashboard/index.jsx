@@ -17,7 +17,7 @@ import { classNames } from "../../utils/classname";
 import Cookie from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { Users2Icon } from "lucide-react";
+import { SettingsIcon, Users2Icon } from "lucide-react";
 import Image from "../../components/ui/Image/Index";
 import { cn } from "../../utils/cn";
 import metaData from "../../utils/lib/site.config";
@@ -65,9 +65,9 @@ const navigation = [
     access: ["ADMIN"],
   },
   {
-    name: "Payment Qr",
+    name: "General Settings",
     href: "/admin/payment-method/",
-    icon: Users2Icon,
+    icon: SettingsIcon,
     current: false,
     access: ["ADMIN"],
   },
