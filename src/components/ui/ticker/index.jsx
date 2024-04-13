@@ -24,7 +24,7 @@ const Ticker = ({ messages }) => {
         {messages?.map((message, index) => (
           <span
             key={index}
-            className={`ticker-content text-white mr-4 ${
+            className={`ticker-content text-black mr-4 ${
               index === currentIndex ? "visible" : ""
             }`}
           >

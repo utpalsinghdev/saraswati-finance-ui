@@ -71,33 +71,6 @@ const Navbar = () => {
   ];
   return (
     <div className=" w-full md:w-[90%] mx-auto">
-      <div className="w-full md:hidden bg-blue-50 py-2 px-4">
-        <div className="w-full flex flex-row items-center gap-4">
-          <img src="/mic.svg" className="w-9 h-auto text-green-800" />
-          <span className="w-full flex flex-col ">
-            {metaData.phone.map((e) => (
-              <a
-                key={e}
-                href={`tel:${e}`}
-                className="text-blue-800 font-medium"
-              >
-                +91-{e}
-              </a>
-            ))}
-          </span>
-        </div>
-      </div>
-      <div className="w-full md:hidden bg-blue-50 py-2 px-4">
-        <div className="w-full flex flex-row items-center gap-4">
-          <img src="/clock.png" className="w-9 h-auto text-green-800" />
-          <span className="w-full flex flex-col ">
-            <p className="text-blue-800 font-medium">
-              Mon - Sat 10:00 AM - 5:00 PM
-            </p>
-            <p className="text-red-500 font-medium">Sunday Closed</p>
-          </span>
-        </div>
-      </div>
       <div
         className={classNames(
           "relative  md:mt-6     md:px-0 transition duration-300",

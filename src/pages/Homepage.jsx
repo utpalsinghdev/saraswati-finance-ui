@@ -12,6 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import calculateEMI from "../utils/calculator";
 import Select from "../components/ui/select";
 import Contact from "../components/contact";
+import metaData from "../utils/lib/site.config";
 const Homepage = () => {
   const services = [
     {
@@ -106,7 +107,7 @@ const Homepage = () => {
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
 
-        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-red-600  flex h-max  gap-2 ">
+        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-blue-100  flex h-max  gap-2 ">
           <div className="bg-blue-600 w-4">
             <p className="text-blue-600">d</p>
           </div>
@@ -140,7 +141,7 @@ const Homepage = () => {
             </span> */}
           </div>
         </div>
-        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-red-600  flex h-max  gap-2 ">
+        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-blue-100   flex h-max  gap-2 ">
           <div className="bg-blue-600 w-4">
             <p className="text-blue-600">d</p>
           </div>
@@ -174,7 +175,34 @@ const Homepage = () => {
         </div>
       </div>
       {/* <--------------------About Section------------------------------> */}
-      <section className="flex mt-20 bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
+      <div className="w-full md:hidden bg-blue-50 py-2 px-4 mt-20">
+        <div className="w-full flex flex-row items-center gap-4">
+          <img src="/mic.svg" className="w-9 h-auto text-green-800" />
+          <span className="w-full flex flex-col ">
+            {metaData.phone.map((e) => (
+              <a
+                key={e}
+                href={`tel:${e}`}
+                className="text-blue-800 font-medium"
+              >
+                +91-{e}
+              </a>
+            ))}
+          </span>
+        </div>
+      </div>
+      <div className="w-full md:hidden bg-blue-50 py-2 px-4">
+        <div className="w-full flex flex-row items-center gap-4">
+          <img src="/clock.png" className="w-9 h-auto text-green-800" />
+          <span className="w-full flex flex-col ">
+            <p className="text-blue-800 font-medium">
+              Mon - Sat 10:00 AM - 5:00 PM
+            </p>
+            <p className="text-red-500 font-medium">Sunday Closed</p>
+          </span>
+        </div>
+      </div>
+      <section className="flex mt- bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
         <div className="flex flex-col self-start gap-4 w-full md:w-96">
           <h3 className="text-xl mt-4 font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
