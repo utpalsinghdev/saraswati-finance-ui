@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import metaData from "../../utils/lib/site.config";
 function Footer() {
   return (
-    <div className="w-full bg-gradient-to-r from-cyan-500 to-blue-900 ">
+    <div className="w-full bg-gradient-to-r from-blue-900  to-red-100 ">
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">

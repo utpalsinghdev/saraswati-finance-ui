@@ -102,7 +102,7 @@ const Navbar = () => {
         className={classNames(
           "relative  md:mt-6     md:px-0 transition duration-300",
           "  md:bg-white",
-          isMobiled ? "pb-4 " : "bg-gradient-to-r from-cyan-500 to-blue-900"
+          isMobiled ? "pb-4 " : "bg-gradient-to-r from-blue-900  to-red-100 "
         )}
       >
         <nav className="relative flex items-center justify-start md:justify-between">
