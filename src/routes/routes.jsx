@@ -176,7 +176,7 @@ function RoutesConfig() {
               path="/admin/joint-percent-letter/"
               element={<JointPercent />}
             />
-            <Route path="/admin/i-card/" element={<Icard />} />
+            {/* <Route path="/admin/i-card/" element={<Icard />} /> */}
             <Route
               path="/admin/appointment-letter/"
               element={<Appointment />}
@@ -217,7 +217,7 @@ function RoutesConfig() {
           <Route
             element={<AccessControl allowedRoles={[USER_ROLES.CUSTOMER]} />}
           >
-            <Route path="/home" element={<CustomerHome />} />
+            {/* <Route path="/home" element={<CustomerHome />} /> */}
           </Route>
         </Route>
       </Routes>
