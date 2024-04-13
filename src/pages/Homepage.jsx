@@ -83,7 +83,7 @@ const Homepage = () => {
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-sebmibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from Capital Group Business
+            Get {type} Loan on Easy EMI basis from Fundwisor Finance Business
             Solution Pvt. Ltd.
           </span>
           <span className="self-center mt-4 md:self-auto">
@@ -123,9 +123,9 @@ const Homepage = () => {
                 // messages={
                 //   !news.loading
                 //     ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                //     : ["Capital Group Business Solution Pvt. Ltd."]
+                //     : ["Fundwisor Finance Business Solution Pvt. Ltd."]
                 // }
-                messages={["Capital Group Business Solution Pvt. Ltd."]}
+                messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
               />
             </span>
 
@@ -134,7 +134,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Capital Group Business Solution Pvt. Ltd."]
+                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
                 }
               />
             </span> */}
@@ -155,9 +155,9 @@ const Homepage = () => {
                 // messages={
                 //   !news.loading
                 //     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                //     : ["Capital Group Business Solution Pvt. Ltd."]
+                //     : ["Fundwisor Finance Business Solution Pvt. Ltd."]
                 // }
-                messages={["Capital Group Business Solution Pvt. Ltd."]}
+                messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
               />
             </span>
 
@@ -166,7 +166,7 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Capital Group Business Solution Pvt. Ltd."]
+                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
                 }
               />
             </span> */}
@@ -179,10 +179,10 @@ const Homepage = () => {
           <h3 className="text-xl mt-4 font-bold">WHY CHOOSE US</h3>
           <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
           <p className="md:mt-10 ">
-            Capital Group Business Solution Pvt. Ltd. is dealing in Home Loan,
-            Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project Loan,
-            Education Loan, Pay Slip Loan, Car Loan, Machine Loan, Business
-            Loans, Loan Against Property & Project Etc.
+            Fundwisor Finance Business Solution Pvt. Ltd. is dealing in Home
+            Loan, Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project
+            Loan, Education Loan, Pay Slip Loan, Car Loan, Machine Loan,
+            Business Loans, Loan Against Property & Project Etc.
           </p>
           <div className="flex md:mt-10 mt-1 items-center gap-4">
             <button

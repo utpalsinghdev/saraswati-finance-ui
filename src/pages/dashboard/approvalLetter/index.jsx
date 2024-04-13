@@ -39,7 +39,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 const PdfFile = ({ data }) => {
-  const company = "Capital Group Business Solution Pvt. Ltd.";
+  const company = "Fundwisor Finance Business Solution Pvt. Ltd.";
   const _loanAmount = data?.customer?.loanInNumber;
   const costWithoutGst =
     (_loanAmount > 100000 && _loanAmount < 300000) ||
@@ -1318,7 +1318,7 @@ const PdfFile = ({ data }) => {
                     fontFamily: "Roboto",
                   }}
                 >
-                  info@capitalgbs.in
+                  info@fundwisor.in
                 </Text>
               </Text>
               <Text style={{ fontSize: 12, marginTop: "6" }}>

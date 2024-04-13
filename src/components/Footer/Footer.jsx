@@ -14,7 +14,7 @@ function Footer() {
           <div className="w-full">
             <img src="/logo_full.png" className="w-72" alt="" />
             <p className="text-white mt-2">
-              Capital Group Business Solution Private Limited. is dealing in
+              Fundwisor Finance Business Solution Private Limited. is dealing in
               Personal Loan, Loan against Property, Project Loan & Gold Loan. We
               Believe in fair dealing and prompt disbursement of founds on
               priority Basis.
@@ -60,26 +60,14 @@ function Footer() {
           <div className="w-full ">
             <h1 className="text-white text-2xl font-bold">Contact Us</h1>
             <ul className="text-white flex flex-col gap-4 mt-4">
-              <li className="flex flex-row items-center gap-2">
-                <BsTelephone />{" "}
-                <a
-                  href={`tel:${metaData.phone}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {metaData.phone}
-                </a>
-              </li>
-              <li className="flex flex-row items-center gap-2">
-                <BsTelephone />{" "}
-                <a
-                  href={`tel:${metaData.phone}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {metaData.phone}
-                </a>
-              </li>
+              {metaData.phone.map((e) => (
+                <li key={e} className="flex flex-row items-center gap-2">
+                  <BsTelephone />{" "}
+                  <a href={`tel:${e}`} target="_blank" rel="noreferrer">
+                    {e}
+                  </a>
+                </li>
+              ))}
 
               <li className="flex flex-row items-center gap-2">
                 <AiOutlineMail />

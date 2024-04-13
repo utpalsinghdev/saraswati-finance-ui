@@ -36,18 +36,16 @@ function Contact() {
                     Contact With Us
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    <a
-                      href={`tel:${metaData.phone}`}
-                      className="flex items-end text-md gap-2"
-                    >
-                      <Phone /> +91-{metaData.phone}
-                    </a>
-                    <a
-                      href={`tel:${metaData.phone}`}
-                      className="flex items-end text-md gap-2"
-                    >
-                      <Phone /> +91-{metaData.phone}
-                    </a>
+                    {metaData.phone.map((e) => (
+                      <a
+                        key={e}
+                        href={`tel:${e}`}
+                        className="flex items-end text-md gap-2"
+                      >
+                        <Phone /> +91-{e}
+                      </a>
+                    ))}
+
                     <a
                       href={`mailto:${metaData.email}`}
                       className="flex items-end text-md  gap-2"

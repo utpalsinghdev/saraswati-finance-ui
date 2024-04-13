@@ -1,10 +1,10 @@
 const metaData = {
-  title: "Capital Group Business Solution Pvt. Ltd.",
-  siteUrl: "https://www.capitalgbs.in",
-  email: "info@capitalgbs.in",
-  phone: "8171599161",
+  title: "Fundwisor Finance Business Solution Pvt. Ltd.",
+  siteUrl: "https://www.fundwisor.in",
+  email: "info@fundwisor.in",
+  phone: ["1800270011", "8929270884"],
   address:
-    "Office No : 410-415 1st Floor Helios Business Park Outer Ring Road Bangalore Pincode - 560103",
+    "Office No : 17th, Cyber City, DIf Building 14, Tower C, Sector 25, Gurugram, Haryana 122001",
   fileCharge: "4500",
   icardIsPdf: true,
 };

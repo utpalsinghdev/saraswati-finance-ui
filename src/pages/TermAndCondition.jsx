@@ -11,7 +11,7 @@ const TermAndCondition = () => {
       <ContainerWrapper>
         <HeadingWrapper
           heading={"Terms & Conditions"}
-          title={"Capital Group Business Solution Pvt. Ltd."}
+          title={"Fundwisor Finance Business Solution Pvt. Ltd."}
         >
           <div className="px-4 mt-4  pb-8 flex flex-col gap-8 ">
             <p className="text-gray-600 text-sm font-medium h-full w-full flex items-center justify-start gap-4">

@@ -352,7 +352,7 @@ export default function Icard() {
             className="w-full h-16 px-2 "
           /> */}
           {/* <span className="w-full h-14 px-2 text-center flex flex-col font-semibold">
-            <p className="text-green-800">Capital Group Business Solution</p>
+            <p className="text-green-800">Fundwisor Finance Business Solution</p>
             <p className="text-yellow-800">Pvt Ltd</p>
           </span> */}
           <img

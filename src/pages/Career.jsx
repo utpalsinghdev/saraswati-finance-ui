@@ -312,8 +312,8 @@ function Career() {
                 </h3>
 
                 <p className="text-sm max-w-md text-left ">
-                  Capital Group Business Solution Pvt ltd, a loan franchise, has
-                  been in existence for years now. You can bridge the gap
+                  Fundwisor Finance Business Solution Pvt ltd, a loan franchise,
+                  has been in existence for years now. You can bridge the gap
                   between your applicant and us by partnering with our
                   institution. Your journey with us will be one long road of
                   opportunities. Our support team is always there to mentor you
@@ -336,7 +336,8 @@ function Career() {
                 <p className="text-sm max-w-md text-left ">
                   anyone (salaried/self-employed/freelancer/students) above 21
                   years and willing to enhance the monthly income can become the
-                  business partner of Capital Group Business Solution Pvt ltd.
+                  business partner of Fundwisor Finance Business Solution Pvt
+                  ltd.
                 </p>
                 <h3 className="text-2xl text-blue-700 text-left w-full font-extrabold ">
                   How to Become our Partner

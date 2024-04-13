@@ -75,22 +75,15 @@ const Navbar = () => {
         <div className="w-full flex flex-row items-center gap-4">
           <img src="/mic.svg" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
-            <a
-              href={`tel:${metaData.phone}`}
-              target="_blank"
-              rel="noreferrer"
-              className="text-blue-800 font-medium"
-            >
-              +91-{metaData.phone}
-            </a>
-            <a
-              href={`mailto:${metaData.email}`}
-              target="_blank"
-              rel="noreferrer"
-              className="text-cyan-800 font-medium"
-            >
-              {metaData.email}
-            </a>
+            {metaData.phone.map((e) => (
+              <a
+                key={e}
+                href={`tel:${e}`}
+                className="text-blue-800 font-medium"
+              >
+                +91-{e}
+              </a>
+            ))}
           </span>
         </div>
       </div>

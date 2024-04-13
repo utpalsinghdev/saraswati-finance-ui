@@ -8,6 +8,7 @@ import {
   MailIcon,
 } from "lucide-react";
 import metaData from "../../utils/lib/site.config";
+import { classNames } from "../../utils/classname";
 
 function PreNavbar() {
   const location = useLocation();
@@ -41,21 +42,22 @@ function PreNavbar() {
           <div className="py-2 flex gap-2">
             <HeadphonesIcon />
             <span className="flex gap-1" rel="noreferrer">
-              <a
-                href={`tel:${metaData.phone}`}
-                className="pr-2 border-r-2 border-white"
-                target="_blank"
-                rel="noreferrer"
-              >
-                +91 {metaData.phone}
-              </a>
-              <a
-                href={`tel:${metaData.phone}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                +91 {metaData.phone}
-              </a>
+              {metaData.phone.map((e, i) => (
+                <a
+                  key={e}
+                  href={`tel:${e}`}
+                  className={classNames(
+                    "pr-2 ",
+                    i === metaData.phone.length - 1
+                      ? "border-0"
+                      : "border-r-2 border-white"
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  +91 {e}
+                </a>
+              ))}
             </span>
           </div>
         </div>

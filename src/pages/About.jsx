@@ -30,14 +30,14 @@ function About() {
                 About
               </span>
               <span className="text-3xl font-bold text-blue-800">
-                Capital Group Business Solution Pvt. Ltd.
+                Fundwisor Finance Business Solution Pvt. Ltd.
               </span>
             </h1>
             <p className="text-md text-gray-700 font-medium mt-8">
-              Capital Group Business Solution Pvt. Ltd. is dealing in Home Loan,
-              Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project
-              Loan, Education Loan, Pay Slip Loan, Car Loan, Machine Loan,
-              Business Loans, Loan Against Property & Project Etc.
+              Fundwisor Finance Business Solution Pvt. Ltd. is dealing in Home
+              Loan, Personal Loan, Agriculture Loan, Shop Loan, Flat Loan,
+              Project Loan, Education Loan, Pay Slip Loan, Car Loan, Machine
+              Loan, Business Loans, Loan Against Property & Project Etc.
             </p>
             <div className="upper bg-red-500 rounded-2xl mt-8">
               <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4">
