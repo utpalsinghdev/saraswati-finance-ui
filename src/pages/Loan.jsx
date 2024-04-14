@@ -88,7 +88,7 @@ function Loan() {
                 <Bullets>Address Proof</Bullets>
                 <Bullets>I.D. Proof</Bullets>
                 <Bullets>Bank Statement of Last 6 months</Bullets>
-                <Bullets>File Charge = {general.data.fileCharge} Rs.</Bullets>
+                <Bullets>File Charge = {general?.data?.fileCharge} Rs.</Bullets>
               </Card>
               <Card title="Required Documents of Guarantor">
                 <Bullets>5 Recent Photographs of Guarantor</Bullets>

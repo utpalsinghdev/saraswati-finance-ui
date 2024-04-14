@@ -80,29 +80,6 @@ function Qr() {
     initialValues: formData,
     enableReinitialize: true,
     validate: (values) => {
-      const errors = {};
-      if (!values.file) {
-        errors.file = "Please enter a valid qr code";
-      }
-      if (values.file.size > 2097152) {
-        errors.file = "File size must be less than 2mb";
-      }
-      if (!values.bankName) {
-        errors.bankName = "Please enter a bank name";
-      }
-      if (!values.accountNo) {
-        errors.accountNo = "Please enter a account number";
-      }
-      if (!values.ifsc) {
-        errors.ifsc = "Please enter a ifsc code";
-      }
-      if (!values.holderName) {
-        errors.holderName = "Please enter a holder name";
-      }
-      if (!values.fileCharge) {
-        errors.fileCharge = "Please enter a file charge";
-      }
-
       return errors;
     },
     onSubmit: async (values, action) => {
