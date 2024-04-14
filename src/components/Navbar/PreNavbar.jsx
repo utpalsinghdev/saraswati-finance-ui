@@ -19,7 +19,7 @@ function PreNavbar() {
   return (
     <div
       ref={myRef}
-      className="font-normal hidden md:block w-full bg-gradient-to-r from-cyan-500 to-blue-500  py-2 z-40"
+      className="font-normal hidden md:block w-full bg-gradient-to-r from-old-brick-500 to-blue-500  py-2 z-40"
     >
       <ContainerWrapper>
         <div className="flex justify-between items-center text-white">

@@ -77,10 +77,10 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-blue-700 hover:shadow-red-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-old-brick-700 hover:shadow-red-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
-          <span className="text-3xl self-center font-bold text-blue-800">
+          <span className="text-3xl self-center font-bold text-old-brick-800">
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-sebmibold text-secondary-200 text-md">
@@ -89,7 +89,7 @@ const Homepage = () => {
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
-              <button className="pushable rounded-3xl  bg-blue-800 hover:bg-blue-700 hover:text-blue-900 transform-cpu">
+              <button className="pushable rounded-3xl  bg-old-brick-800 hover:bg-old-brick-700 hover:text-old-brick-900 transform-cpu">
                 <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                   Read More
                 </span>
@@ -107,9 +107,9 @@ const Homepage = () => {
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
 
-        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-blue-100  flex h-max  gap-2 ">
-          <div className="bg-blue-600 w-4">
-            <p className="text-blue-600">d</p>
+        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-old-brick-100  flex h-max  gap-2 ">
+          <div className="bg-old-brick-600 w-4">
+            <p className="text-old-brick-600">d</p>
           </div>
 
           <div className="flex flex-col py-2 z-50 ">
@@ -141,9 +141,9 @@ const Homepage = () => {
             </span> */}
           </div>
         </div>
-        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-blue-100   flex h-max  gap-2 ">
-          <div className="bg-blue-600 w-4">
-            <p className="text-blue-600">d</p>
+        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-old-brick-100   flex h-max  gap-2 ">
+          <div className="bg-old-brick-600 w-4">
+            <p className="text-old-brick-600">d</p>
           </div>
 
           <div className="flex flex-col py-2 z-50 ">
@@ -175,7 +175,7 @@ const Homepage = () => {
         </div>
       </div>
       {/* <--------------------About Section------------------------------> */}
-      <div className="w-full md:hidden bg-blue-50 py-2 px-4 mt-20">
+      <div className="w-full md:hidden bg-old-brick-50 py-2 px-4 mt-20">
         <div className="w-full flex flex-row items-center gap-4">
           <img src="/mic.svg" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
@@ -183,7 +183,7 @@ const Homepage = () => {
               <a
                 key={e}
                 href={`tel:${e}`}
-                className="text-blue-800 font-medium"
+                className="text-old-brick-800 font-medium"
               >
                 +91-{e}
               </a>
@@ -191,11 +191,11 @@ const Homepage = () => {
           </span>
         </div>
       </div>
-      <div className="w-full md:hidden bg-blue-50 py-2 px-4">
+      <div className="w-full md:hidden bg-old-brick-50 py-2 px-4">
         <div className="w-full flex flex-row items-center gap-4">
           <img src="/clock.png" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
-            <p className="text-blue-800 font-medium">
+            <p className="text-old-brick-800 font-medium">
               Mon - Sat 10:00 AM - 5:00 PM
             </p>
             <p className="text-red-500 font-medium">Sunday Closed</p>
@@ -205,7 +205,9 @@ const Homepage = () => {
       <section className="flex mt- bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
         <div className="flex flex-col self-start gap-4 w-full md:w-96">
           <h3 className="text-xl mt-4 font-bold">WHY CHOOSE US</h3>
-          <h1 className="text-3xl font-extrabold text-blue-800">About Us</h1>
+          <h1 className="text-3xl font-extrabold text-old-brick-800">
+            About Us
+          </h1>
           <p className="md:mt-10 ">
             Fundwisor Finance Business Solution Pvt. Ltd. is dealing in Home
             Loan, Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project
@@ -217,7 +219,7 @@ const Homepage = () => {
               onClick={() => {
                 navigator("/contact-us");
               }}
-              className="pushable rounded-3xl  bg-blue-600 hover:bg-blue-700 hover:text-blue-500 transform-cpu"
+              className="pushable rounded-3xl  bg-old-brick-600 hover:bg-old-brick-700 hover:text-old-brick-500 transform-cpu"
             >
               <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                 Contact
@@ -227,9 +229,9 @@ const Homepage = () => {
               onClick={() => {
                 navigator("/apply-loan");
               }}
-              className="pushable rounded-3xl bg-blue-600   hover:bg-blue-900  "
+              className="pushable rounded-3xl bg-old-brick-600   hover:bg-old-brick-900  "
             >
-              <span className="front bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white  rounded-3xl font-semibold">
+              <span className="front bg-old-brick-600 hover:bg-old-brick-700 px-4 py-2 text-white  rounded-3xl font-semibold">
                 Apply
               </span>
             </button>
@@ -262,7 +264,7 @@ const Homepage = () => {
       <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
         <h1 className="w-full md:text-left text-center text-5xl pl-2 font-bold mb-4 text-gray-800">
           <span className="underline">Our</span>{" "}
-          <span className="text-blue-500">Services.</span>{" "}
+          <span className="text-old-brick-500">Services.</span>{" "}
         </h1>
 
         <div className="w-full px-2 md:grid md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
@@ -274,14 +276,14 @@ const Homepage = () => {
 
       <div className="w-full my-10 ">
         <h1 className="text-center text-2xl font-bold">
-          <span className="text-blue-800">Calculate EMI,</span> Send Your
+          <span className="text-old-brick-800">Calculate EMI,</span> Send Your
           Message
         </h1>
       </div>
       <section className="mb-10 grid grid-cols-1 md:grid-cols-3 h-min bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
         <div>
-          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-blue-800  shadow-blue-700 w-full ">
-            <span className="mt-10 text-4xl text-blue-800 text-center font-extrabold">
+          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-old-brick-800  shadow-old-brick-700 w-full ">
+            <span className="mt-10 text-4xl text-old-brick-800 text-center font-extrabold">
               Loan EMI Calculator
             </span>
             <span className="text-sm px-6">
@@ -330,7 +332,7 @@ const Homepage = () => {
                         Number(e.values.years)
                       )?.emi && (
                         <>
-                          <span className="text-blue-600">
+                          <span className="text-old-brick-600">
                             {" "}
                             Rs.{" "}
                             {
@@ -343,7 +345,9 @@ const Homepage = () => {
                             <span className="text-gray-700">
                               {" "}
                               / Month at the interest Rate of{" "}
-                              <span className="text-blue-600">5%</span> for{" "}
+                              <span className="text-old-brick-600">
+                                5%
+                              </span> for{" "}
                               <span className="text-indigo-600">
                                 {
                                   calculateEMI(
@@ -362,7 +366,7 @@ const Homepage = () => {
                     <div className="flex items-start justify-center mt-4 w-full">
                       <Link
                         to="/apply-loan"
-                        className="pushable rounded-3xl  bg-blue-600 hover:bg-blue-700 hover:text-blue-900 transform-cpu"
+                        className="pushable rounded-3xl  bg-old-brick-600 hover:bg-old-brick-700 hover:text-old-brick-900 transform-cpu"
                       >
                         <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                           Apply Now

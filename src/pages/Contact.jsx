@@ -27,12 +27,12 @@ function Contact() {
           <section className="pb-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">
             <Image src={"contact-us.jpg"} />
             <div className="flex flex-col gap-5 ">
-              <h1 className="text-3xl text-center font-bold text-blue-800">
+              <h1 className="text-3xl text-center font-bold text-brick-800">
                 Contact Us
               </h1>
               <div className="upper bg-red-500 rounded-2xl mt-8">
-                <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4">
-                  <h1 className="pl-4 text-2xl font-extrabold text-red-500 flex items-center gap-2 border-b border-blue-900 mx-2">
+                <div className="lower bg-old-brick-700 rounded-2xl mr-1 pt-1 pb-4">
+                  <h1 className="pl-4 text-2xl font-extrabold text-white flex items-center gap-2 border-b border-old-brick-900 mx-2">
                     Contact With Us
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
@@ -57,8 +57,8 @@ function Contact() {
               </div>
 
               <div className="upper bg-red-500 rounded-2xl ">
-                <div className="lower bg-gray-800 rounded-2xl mr-1 pt-1 pb-4 ">
-                  <h1 className="pl-4 text-2xl font-extrabold text-red-500 flex items-center gap-2 border-b border-blue-900 mx-2">
+                <div className="lower bg-old-brick-700 rounded-2xl mr-1 pt-1 pb-4 ">
+                  <h1 className="pl-4 text-2xl font-extrabold text-white flex items-center gap-2 border-b border-old-brick-900 mx-2">
                     Office:
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">

@@ -111,7 +111,7 @@ function ApplyLoan() {
       <ContainerWrapper>
         <div className="p-0 md:p-4">
           <h1 className="text-xl  py-4 border-b-4 px-2 rounded-2xl border-red-500 text-center font-extrabold">
-            <span className="text-blue-700 text-2xl ">APPLY FOR LOAN</span>{" "}
+            <span className="text-old-brick-700 text-2xl ">APPLY FOR LOAN</span>{" "}
           </h1>
         </div>
         <Formik
@@ -214,7 +214,7 @@ function ApplyLoan() {
               className="flex pb-4 items-start gap-4 md:gap-24 justify-start flex-col md:flex-row  mt-4 p-0 md:p-8 lg:px-20  "
             >
               <div className="flex  items-center  flex-col gap-2">
-                <h3 className="text-3xl text-left w-full font-bold text-blue-800">
+                <h3 className="text-3xl text-left w-full font-bold text-old-brick-800">
                   Personal Information
                 </h3>
                 <Input
@@ -266,7 +266,7 @@ function ApplyLoan() {
                   label={""}
                   placeholder={"Mobile Number"}
                 />
-                <span className="text-3xl text-left w-full font-bold text-blue-800">
+                <span className="text-3xl text-left w-full font-bold text-old-brick-800">
                   Date of Birth
                 </span>
                 <Input
@@ -291,7 +291,7 @@ function ApplyLoan() {
                   label={""}
                   placeholder={"Email Address"}
                 />
-                <h3 className="text-3xl text-left w-full font-bold text-blue-800">
+                <h3 className="text-3xl text-left w-full font-bold text-old-brick-800">
                   Loan Information
                 </h3>
                 <Input
@@ -341,7 +341,7 @@ function ApplyLoan() {
                     placeholder={"In Month"}
                   />
                 </span>
-                <h3 className="text-3xl text-left w-full font-bold text-blue-800">
+                <h3 className="text-3xl text-left w-full font-bold text-old-brick-800">
                   Complete Address
                 </h3>
                 <TextArea
@@ -426,7 +426,7 @@ function ApplyLoan() {
                 />
               </div>
               <div className="flex  items-center flex-col gap-2">
-                <h3 className="text-3xl text-left w-full font-bold text-blue-800">
+                <h3 className="text-3xl text-left w-full font-bold text-old-brick-800">
                   Banking Information
                 </h3>
                 <Input
@@ -477,7 +477,7 @@ function ApplyLoan() {
                     <option value={"CURRENT"}>Current</option>
                   </Select>
                 </span>
-                <h3 className="text-3xl text-left w-full font-bold text-blue-800">
+                <h3 className="text-3xl text-left w-full font-bold text-old-brick-800">
                   Identity Details
                 </h3>
                 <Input
@@ -596,7 +596,7 @@ function ApplyLoan() {
                   disabled={!values.agree || isSubmitting}
                   className="pushable rounded-3xl bg-red-600 mt-2 disabled:cursor-not-allowed  hover:bg-red-900  block w-full"
                 >
-                  <span className="front bg-blue-700 hover:bg-blue-900 hover:text-white px-4 py-2  rounded-3xl font-semibold">
+                  <span className="front bg-old-brick-700 hover:bg-old-brick-900 hover:text-white px-4 py-2  rounded-3xl font-semibold">
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </span>
                 </button>
