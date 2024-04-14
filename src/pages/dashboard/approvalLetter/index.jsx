@@ -38,7 +38,7 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const PdfFile = ({ data }) => {
+export const PdfFile = ({ data }) => {
   const company = "Fundwisor Finance Business Solution Pvt. Ltd.";
   const _loanAmount = data?.customer?.loanInNumber;
   const costWithoutGst =

@@ -39,7 +39,7 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const PdfFile = ({ data }) => {
+export const PdfFile = ({ data }) => {
   const company = metaData.title;
   // console.log(data);
   const [general, setGeneral] = useState({

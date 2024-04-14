@@ -217,7 +217,7 @@ function RoutesConfig() {
           <Route
             element={<AccessControl allowedRoles={[USER_ROLES.CUSTOMER]} />}
           >
-            {/* <Route path="/home" element={<CustomerHome />} /> */}
+            <Route path="/home" element={<CustomerHome />} />
           </Route>
         </Route>
       </Routes>

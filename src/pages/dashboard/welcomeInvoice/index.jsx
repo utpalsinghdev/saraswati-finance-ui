@@ -37,7 +37,7 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const PdfFile = ({ data }) => {
+export const PdfFile = ({ data }) => {
   function calculateEMI(principal, interestRate, years) {
     if (principal && interestRate && years) {
       interestRate = interestRate / 100;
