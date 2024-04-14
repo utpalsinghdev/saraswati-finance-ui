@@ -104,7 +104,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               position: "absolute",
-              top: 480,
+              top: 490,
               // left: "50%",
               transform: "translateX(-10%)",
               fontSize: 20,

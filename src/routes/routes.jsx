@@ -176,7 +176,7 @@ function RoutesConfig() {
               path="/admin/joint-percent-letter/"
               element={<JointPercent />}
             />
-            {/* <Route path="/admin/i-card/" element={<Icard />} /> */}
+            <Route path="/admin/i-card/" element={<Icard />} />
             <Route
               path="/admin/appointment-letter/"
               element={<Appointment />}
