@@ -54,6 +54,123 @@ const PreviewModalState = {
   edit_id: "",
 };
 
+// const PdfFile = ({ data }) => {
+//   return (
+//     <Document>
+//       <Page
+//         size="A4"
+//         style={{
+//           position: "relative",
+//         }}
+//       >
+//         <View
+//           wrap={false}
+//           style={{
+//             display: "flex",
+//             flexDirection: "column",
+//             justifyContent: "center",
+//             alignItems: "center",
+//             width: "100%",
+//             height: "100%",
+//           }}
+//         >
+//           <Image
+//             src={"/icardTemplate.png"}
+//             style={{
+//               height: 500,
+//               width: "auto",
+//               // borderRadius: 10,
+//             }}
+//           />
+//           <Image
+//             src={data?.agent?.profilePic}
+//             style={{
+//               position: "absolute",
+//               top: 340,
+//               left: 250,
+//               height: 120,
+//               width: 100,
+//             }}
+//           />
+//           <Image
+//             src={"/stamp.png"}
+//             style={{
+//               position: "absolute",
+//               top: 400,
+//               left: 210,
+//               height: 70,
+//             }}
+//           />
+//           <Text
+//             style={{
+//               position: "absolute",
+//               top: 490,
+//               // left: "50%",
+//               transform: "translateX(-10%)",
+//               fontSize: 20,
+//               fontWeight: "bold",
+//               fontFamily: "Roboto",
+//             }}
+//           >
+//             {data?.agent?.firstName} {data?.agent?.LastName}
+//           </Text>
+//           <Text
+//             style={{
+//               position: "absolute",
+//               top: 518,
+//               // left: "50%",
+//               left: 295,
+//               fontSize: 18,
+//               fontWeight: "bold",
+//               fontFamily: "Roboto",
+//             }}
+//           >
+//             {data?.agent?.employeeCode}
+//           </Text>
+//           <Text
+//             style={{
+//               position: "absolute",
+//               top: 542,
+//               // left: "50%",
+//               left: 295,
+//               fontSize: 18,
+//               fontWeight: "bold",
+//               fontFamily: "Roboto",
+//             }}
+//           >
+//             {data?.agent?.designation}
+//           </Text>
+//           <Text
+//             style={{
+//               position: "absolute",
+//               top: 563,
+//               // left: "50%",
+//               left: 295,
+//               fontSize: 18,
+//               fontWeight: "bold",
+//               fontFamily: "Roboto",
+//             }}
+//           >
+//             {data?.location}
+//           </Text>
+//           <Text
+//             style={{
+//               position: "absolute",
+//               top: 586,
+//               // left: "50%",
+//               left: 295,
+//               fontSize: 18,
+//               fontWeight: "bold",
+//               fontFamily: "Roboto",
+//             }}
+//           >
+//             {data?.agent?.phone}
+//           </Text>
+//         </View>
+//       </Page>
+//     </Document>
+//   );
+// };
 const PdfFile = ({ data }) => {
   return (
     <Document>
@@ -63,109 +180,231 @@ const PdfFile = ({ data }) => {
           position: "relative",
         }}
       >
+        <View style={{}}>
+          <Image src={"/pdfBanner.png"} />
+        </View>
         <View
-          wrap={false}
           style={{
+            fontFamily: "Helvetica",
+            position: "relative",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             alignItems: "center",
-            width: "100%",
-            height: "100%",
+            gap: 2,
+            justifyContent: "center",
           }}
         >
           <Image
-            src={"/icardTemplate.png"}
             style={{
-              height: 500,
-              width: "auto",
-              // borderRadius: 10,
+              marginTop: 2,
+              marginRight: 150,
+              width: "100%",
+              paddingHorizontal: 30,
+              height: 100,
+              marginBottom: 2,
             }}
+            src={"/logo_without_new.jpg"}
           />
           <Image
-            src={data?.agent?.profilePic}
+            style={{
+              width: 200,
+              height: 230,
+            }}
+            src={data.profilepic || data.agent.profilePic}
+          />
+          <Text
+            style={{
+              marginTop: 20,
+              fontSize: 36,
+              textAlign: "left",
+              paddingBottom: 2,
+            }}
+          >
+            {data.agent.firstName} {data.agent.LastName}
+          </Text>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              // paddingHorizontal: 180,
+              paddingLeft: 180,
+              width: "100%",
+              justifyContent: "space-start",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 138,
+              }}
+            >
+              Designation
+            </Text>
+            <Text style={{ width: "100%" }}>: {data.agent.designation}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Location
+            </Text>
+            <Text style={{ width: 130 }}>: {data.location}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Code
+            </Text>
+            <Text style={{ width: 130 }}>: {data.agent.employeeCode}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Mobile
+            </Text>
+            <Text style={{ width: 130 }}>: {data.agent.phone}</Text>
+          </View>
+
+          {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              marginHorizontal: 110,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Code
+            </Text>
+            <Text>{data.agent.employeeCode}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Location
+            </Text>
+            <Text>{data.location}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Mobile
+            </Text>
+            <Text>{data.agent.phone}</Text>
+          </View> */}
+
+          <Image
             style={{
               position: "absolute",
-              top: 340,
-              left: 250,
-              height: 120,
-              width: 100,
+              bottom: -57,
+              right: 0,
+              left: 0,
+              zIndex: -1,
+              width: "100%",
             }}
+            src={"/pdfFooter.png"}
           />
           <Image
-            src={"/stamp.png"}
             style={{
               position: "absolute",
-              top: 400,
-              left: 210,
-              height: 70,
+              top: 240,
+              right: 70,
+              width: 500,
+              // height: 400,
+              zIndex: 0,
+              opacity: 0.1,
             }}
+            src={"/logo_without_name.png"}
           />
-          <Text
+        </View>
+        <Image
+          src={"/stamp.png"}
+          style={{
+            position: "absolute",
+            top: 420,
+            left: 140,
+            width: 130,
+            height: 130,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            fontSize: 12,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            color: "grey",
+          }}
+        >
+          <Image
             style={{
-              position: "absolute",
-              top: 490,
-              // left: "50%",
-              transform: "translateX(-10%)",
-              fontSize: 20,
-              fontWeight: "bold",
-              fontFamily: "Roboto",
+              marginTop: 120,
             }}
-          >
-            {data?.agent?.firstName} {data?.agent?.LastName}
-          </Text>
-          <Text
-            style={{
-              position: "absolute",
-              top: 518,
-              // left: "50%",
-              left: 295,
-              fontSize: 18,
-              fontWeight: "bold",
-              fontFamily: "Roboto",
-            }}
-          >
-            {data?.agent?.employeeCode}
-          </Text>
-          <Text
-            style={{
-              position: "absolute",
-              top: 542,
-              // left: "50%",
-              left: 295,
-              fontSize: 18,
-              fontWeight: "bold",
-              fontFamily: "Roboto",
-            }}
-          >
-            {data?.agent?.designation}
-          </Text>
-          <Text
-            style={{
-              position: "absolute",
-              top: 563,
-              // left: "50%",
-              left: 295,
-              fontSize: 18,
-              fontWeight: "bold",
-              fontFamily: "Roboto",
-            }}
-          >
-            {data?.location}
-          </Text>
-          <Text
-            style={{
-              position: "absolute",
-              top: 586,
-              // left: "50%",
-              left: 295,
-              fontSize: 18,
-              fontWeight: "bold",
-              fontFamily: "Roboto",
-            }}
-          >
-            {data?.agent?.phone}
-          </Text>
+            src={"/pdfFooter.png"}
+          />
         </View>
       </Page>
     </Document>
