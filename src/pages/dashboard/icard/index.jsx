@@ -701,7 +701,7 @@ export default function Icard() {
                 <PDFDownloadLink
                   id="download"
                   document={<PdfFile data={agents.data[download]} />}
-                  fileName={`welcome.pdf`}
+                  fileName={`i-card-${agents.data[download].agent.employeeCode}.pdf`}
                 >
                   {({ blob, url, loading, error }) =>
                     loading ? "Generateing..." : "Print"
