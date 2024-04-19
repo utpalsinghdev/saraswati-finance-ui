@@ -68,51 +68,7 @@ function Qr() {
 
     reader.readAsDataURL(file);
   }
-  // const {
-  //   values,
-  //   handleSubmit,
-  //   isSubmitting,
-  //   errors,
-  //   handleBlur,
-  //   touched,
-  //   handleChange,
-  // } = useFormik({
-  //   initialValues: formData,
-  //   enableReinitialize: true,
-  //   validate: (values) => {
-  //     return errors;
-  //   },
-  //   onSubmit: async (values, action) => {
-  //     const payload = {
-  //       ...values,
-  //     };
 
-  //     await new Promise((resolve) => {
-  //       fileToBase64(values.file, (base64Data) => {
-  //         payload.qr = base64Data;
-  //         resolve();
-  //       });
-  //     });
-  //     try {
-  //       const res = await ApiService.fetchData({
-  //         url: `api/payment-qr`,
-  //         method: "POST",
-  //         data: payload,
-  //       });
-  //       toast.success(res.data.message);
-  //       fetchData();
-  //     } catch (error) {
-  //       toast.error(
-  //         typeof error.response.data.message !== "string"
-  //           ? error.response.data?.[0]
-  //           : error.response.data.message
-  //       );
-  //     } finally {
-  //       action.resetForm();
-  //       action.setSubmitting(false);
-  //     }
-  //   },
-  // });
   return (
     <div className="w-full  flex flex-col">
       <h1>
@@ -217,12 +173,6 @@ function Qr() {
           const payload = {
             ...values,
           };
-          await new Promise((resolve) => {
-            fileToBase64(values.file, (base64Data) => {
-              payload.qr = base64Data;
-              resolve();
-            });
-          });
           try {
             const res = await ApiService.fetchData({
               url: `api/payment-qr`,
@@ -253,7 +203,7 @@ function Qr() {
           handleChange,
         }) => (
           <form
-            // onSubmit={f.handleSubmit}
+            onSubmit={handleSubmit}
             className="relative pt-4 rounded-b-md pb-8 border-t border-gray-300 flex flex-col gap-4 px-4 bg-white"
           >
             <div className="max-w-md">
@@ -314,7 +264,7 @@ function Qr() {
                 placeholder={"Enter File Charge"}
               />
             </div>
-            <Button disabled={isSubmitting} type={"submit"} className={"w-max"}>
+            <Button type={"submit"} className={"w-max"}>
               {isSubmitting ? "Uploading..." : "Upload"}
             </Button>
           </form>

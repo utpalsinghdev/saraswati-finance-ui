@@ -65,17 +65,612 @@ export const PdfFile = ({ data }) => {
     fetchData();
   }, []);
   return (
+    // <Document>
+    //   <Page size="A4">
+    //     <View style={{}}>
+    //       <Image src={"/pdfBanner.png"} />
+    //     </View>
+    //     <Image
+    //       style={{
+    //         position: "absolute",
+    //         top: 360,
+    //         right: 30,
+    //         width: 500,
+    //         opacity: 0.1,
+    //       }}
+    //       src={"/logo_without_name.png"}
+    //     />
+
+    //     <Text
+    //       style={{
+    //         textAlign: "center",
+    //         color: "#FF0000",
+    //         marginTop: 4,
+    //         fontSize: 18,
+    //         letterSpacing: 1,
+    //         fontFamily: "Roboto",
+    //       }}
+    //     >
+    //       WELCOME LETTER
+    //     </Text>
+
+    //     <View
+    //       style={{
+    //         marginTop: 10,
+    //         fontFamily: "Roboto",
+    //         textTransform: "uppercase",
+    //         marginHorizontal: 40,
+    //       }}
+    //     >
+    //       <Text
+    //         style={{
+    //           textAlign: "left",
+    //           color: "#5FBDFF",
+    //           marginTop: 5,
+    //           marginBottom: 5,
+    //           fontSize: 12,
+    //           fontWeight: "light",
+    //           width: "100%",
+    //           textAlign: "right",
+    //           fontFamily: "Roboto",
+
+    //           // color: "blue",
+    //         }}
+    //       >
+    //         Date : {moment(data.createdAt).format("DD/MM/YYYY")}
+    //       </Text>
+    //       <Text
+    //         style={{
+    //           textAlign: "left",
+    //           color: "#FF0000",
+    //           marginTop: 5,
+    //           marginBottom: 5,
+    //           fontSize: 12,
+    //           fontWeight: "light",
+    //           textTransform: "uppercase",
+    //           fontFamily: "Roboto",
+    //         }}
+    //       >
+    //         Dear Sir/ Madam{" "}
+    //       </Text>
+
+    //       <View
+    //         style={{
+    //           display: "flex",
+    //           flexDirection: "row",
+    //           justifyContent: "space-between",
+    //         }}
+    //       >
+    //         <View
+    //           style={{
+    //             marginTop: 10,
+    //             fontFamily: "Roboto",
+    //             textTransform: "uppercase",
+    //             // marginHorizontal: 40,
+    //           }}
+    //         >
+    //           <View
+    //             style={{
+    //               display: "flex",
+    //               flexDirection: "row",
+    //               gap: 6,
+    //             }}
+    //           >
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 fontWeight: "light",
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 width: 135,
+    //               }}
+    //             >
+    //               Applicant Name
+    //             </Text>
+    //             <Text>:</Text>
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 fontWeight: "extrabold",
+    //               }}
+    //             >
+    //               {data.for.name}
+    //             </Text>
+    //           </View>
+
+    //           {/* <View
+    //           style={{
+    //             display: "flex",
+    //             flexDirection: "row",
+    //             gap: 10,
+    //           }}
+    //         >
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               fontWeight: "light",
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               width: 130,
+    //             }}
+    //           >
+    //             Applicant Mobile
+    //           </Text>
+    //           <Text>:</Text>
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               fontWeight: "extrabold",
+    //             }}
+    //           >
+    //             +91 {data.for.phone}
+    //           </Text>
+    //         </View> */}
+    //           <View
+    //             style={{
+    //               display: "flex",
+    //               flexDirection: "row",
+    //               gap: 10,
+    //             }}
+    //           >
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 fontWeight: "light",
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 width: 130,
+    //               }}
+    //             >
+    //               {data.for.guardian_relation === "SONOF" ||
+    //               data.for.guardian_relation === "DOF"
+    //                 ? "Father Name"
+    //                 : "Husband Name"}
+    //             </Text>
+    //             <Text>:</Text>
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 fontWeight: "extrabold",
+    //               }}
+    //             >
+    //               {data.for.guardian_name}
+    //             </Text>
+    //           </View>
+
+    //           <View
+    //             style={{
+    //               display: "flex",
+    //               flexDirection: "row",
+    //               gap: 10,
+    //             }}
+    //           >
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 fontWeight: "light",
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 width: 130,
+    //               }}
+    //             >
+    //               Loan Amount
+    //             </Text>
+    //             <Text>:</Text>
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 fontWeight: "extrabold",
+    //               }}
+    //             >
+    //               Rs. {data.for.loanInNumber}/- ({data.for.loanInWords})
+    //             </Text>
+    //           </View>
+
+    //           {/* <View
+    //           style={{
+    //             display: "flex",
+    //             flexDirection: "row",
+    //             gap: 10,
+    //           }}
+    //         >
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               fontWeight: "light",
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               width: 130,
+    //             }}
+    //           >
+    //             Loan Year
+    //           </Text>
+    //           <Text>:</Text>
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               fontWeight: "extrabold",
+    //             }}
+    //           >
+    //             {data.for.loanYear} Years
+    //           </Text>
+    //         </View> */}
+
+    //           {/* <View
+    //           style={{
+    //             display: "flex",
+    //             flexDirection: "row",
+    //             gap: 10,
+    //           }}
+    //         >
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               fontWeight: "light",
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               width: 130,
+    //             }}
+    //           >
+    //             Loan Month
+    //           </Text>
+    //           <Text>:</Text>
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               fontWeight: "extrabold",
+    //             }}
+    //           >
+    //             {data.for.loanYear * 12} Months
+    //           </Text>
+    //         </View> */}
+
+    //           <View
+    //             style={{
+    //               display: "flex",
+    //               flexDirection: "row",
+    //               gap: 10,
+    //             }}
+    //           >
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 fontWeight: "light",
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 width: 130,
+    //               }}
+    //             >
+    //               Monthly Emi
+    //             </Text>
+    //             <Text>:</Text>
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 fontWeight: "extrabold",
+    //               }}
+    //             >
+    //               Rs.{" "}
+    //               {
+    //                 calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)
+    //                   ?.emi
+    //               }
+    //               /month for {data.for.loanYear} year(s)
+    //             </Text>
+    //           </View>
+
+    //           <View
+    //             style={{
+    //               display: "flex",
+    //               flexDirection: "row",
+    //               gap: 10,
+    //             }}
+    //           >
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 fontWeight: "light",
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 width: 130,
+    //               }}
+    //             >
+    //               File Charge
+    //             </Text>
+    //             <Text>:</Text>
+    //             <Text
+    //               style={{
+    //                 textAlign: "left",
+    //                 color: "black",
+    //                 fontSize: 12,
+    //                 padding: 5,
+    //                 textTransform: "uppercase",
+    //                 fontWeight: "extrabold",
+    //               }}
+    //             >
+    //               Rs. {general.data.fileCharge}/-
+    //             </Text>
+    //           </View>
+
+    //           {/* <View
+    //           style={{
+    //             display: "flex",
+    //             flexDirection: "row",
+    //             gap: 10,
+    //           }}
+    //         >
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               fontWeight: "light",
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               width: 130,
+    //             }}
+    //           >
+    //             Generate Date
+    //           </Text>
+    //           <Text>:</Text>
+    //           <Text
+    //             style={{
+    //               textAlign: "left",
+    //               color: "black",
+    //               fontSize: 12,
+    //               padding: 5,
+    //               textTransform: "uppercase",
+    //               fontWeight: "extrabold",
+    //             }}
+    //           >
+    //             {moment(Date.now()).format("DD/MM/YYYY")}
+    //           </Text>
+    //         </View> */}
+    //         </View>
+    //         {/* <Image
+    //           src={"/_stamp.png"}
+    //           style={{
+    //             width: 110,
+    //             height: 110,
+    //           }}
+    //         /> */}
+    //       </View>
+    //     </View>
+    //     <View
+    //       style={{
+    //         marginHorizontal: 40,
+    //       }}
+    //     >
+    //       <Text
+    //         style={{
+    //           textAlign: "left",
+    //           color: "black",
+    //           marginTop: 10,
+    //           lineHeight: 1.5,
+    //           fontSize: 12,
+    //         }}
+    //       >
+    //         Your documents received, and those are appropriate docs according to
+    //         our legal adviser, behalf of your documents by
+    //         <Text
+    //           style={{
+    //             textAlign: "left",
+    //             color: "black",
+    //             marginTop: 15,
+    //             fontSize: 10,
+    //             fontFamily: "Roboto",
+    //           }}
+    //         >
+    //           {" " + company}
+    //         </Text>
+    //       </Text>
+    //       <Text
+    //         style={{
+    //           textAlign: "left",
+    //           color: "black",
+    //           marginTop: 8,
+    //           lineHeight: 1.5,
+    //           fontSize: 12,
+    //         }}
+    //       >
+    //         Your documents are passed by our legal department and now you have
+    //         to pay file charge (Login Charge) for the loan, only in the account
+    //         of our company.
+    //       </Text>
+    //     </View>
+    //     <Text
+    //       style={{
+    //         textAlign: "left",
+    //         color: "black",
+    //         marginTop: 5,
+    //         marginBottom: 5,
+    //         marginHorizontal: 40,
+    //         fontSize: 11,
+    //         fontWeight: "light",
+    //         textTransform: "uppercase",
+    //         fontFamily: "Roboto",
+    //       }}
+    //     >
+    //       Important Notice{" "}
+    //     </Text>
+    //     <View
+    //       style={{
+    //         marginHorizontal: 40,
+    //         fontSize: 11,
+    //         display: "flex",
+    //         flexDirection: "row",
+    //         justifyContent: "space-between",
+    //       }}
+    //     >
+    //       <View
+    //         style={{
+    //           display: "flex",
+    //           flexDirection: "column",
+    //           gap: 6,
+    //         }}
+    //       >
+    //         <Text>
+    //           1. Applicant should not deposit money in any of these following
+    //           working (person, lawyer, agent) or else company would not be
+    //           responsible for it.
+    //         </Text>
+    //         <Text>
+    //           2. Every signed paper of the offer letter as well as required
+    //           paper processing fees has to be send to the company.
+    //         </Text>
+    //         <View
+    //           style={{
+    //             display: "flex",
+    //             flexDirection: "column",
+    //             gap: 3,
+    //           }}
+    //         >
+    //           <Text style={{}}>
+    //             3. Immediately send the cash deposit slip at company&apos; email
+    //             ID {metaData.email}
+    //           </Text>
+    //         </View>
+    //         <Text>
+    //           4. Signature or thumb impression is compulsory in every page.
+    //         </Text>
+    //         <Text>
+    //           5. Disbursement of loan will be subject to the condition at the
+    //           time of disbursement.
+    //         </Text>
+    //         <Text>
+    //           6. Final approval sanction will be issued subject to fulfillment
+    //           of the existing terms & conditions of apply.
+    //         </Text>
+    //       </View>
+    //     </View>
+
+    //     <View
+    //       style={{
+    //         marginHorizontal: 40,
+    //         fontSize: 10,
+    //       }}
+    //     >
+    //       <Text
+    //         style={{
+    //           marginTop: 20,
+    //         }}
+    //       >
+    //         If you have any query
+    //       </Text>
+    //       <Text
+    //         style={{
+    //           marginTop: 4,
+    //         }}
+    //       >
+    //         Contact:
+    //         <Text
+    //           style={{
+    //             fontFamily: "Roboto",
+    //           }}
+    //         >
+    //           {data.with.title} {data.with.firstName} {data.with.LastName}
+    //         </Text>
+    //       </Text>
+    //       <Text style={{ marginTop: 4 }}>
+    //         Mobile :
+    //         <Text
+    //           style={{
+    //             fontFamily: "Roboto",
+    //           }}
+    //         >
+    //           {data.with.phone}
+    //         </Text>
+    //       </Text>
+    //       <Image
+    //         src={"/stamp.png"}
+    //         style={{
+    //           position: "absolute",
+    //           bottom: -20,
+    //           right: -15,
+    //           // width: 110,
+    //           height: 110,
+    //         }}
+    //       />
+    //       <Text style={{ marginTop: 20 }}>
+    //         Signature of Lonee....................
+    //       </Text>
+    //     </View>
+    //     <View
+    //       style={{
+    //         position: "absolute",
+    //         fontSize: 12,
+    //         bottom: -1,
+    //         left: 0,
+    //         right: 0,
+    //         textAlign: "center",
+    //         color: "grey",
+    //       }}
+    //     >
+    //       <Image
+    //         style={{
+    //           marginTop: 120,
+    //         }}
+    //         src={"/pdfFooter.png"}
+    //       />
+    //     </View>
+    //   </Page>
+    // </Document>
     <Document>
-      <Page size="A4">
+      <Page size="A4" style={{}}>
         <View style={{}}>
           <Image src={"/pdfBanner.png"} />
         </View>
         <Image
           style={{
             position: "absolute",
-            top: 360,
+            top: 400,
             right: 30,
             width: 500,
+            height: 200,
             opacity: 0.1,
           }}
           src={"/logo_without_name.png"}
@@ -84,16 +679,15 @@ export const PdfFile = ({ data }) => {
         <Text
           style={{
             textAlign: "center",
-            color: "#FF0000",
+            color: "green",
             marginTop: 4,
             fontSize: 18,
             letterSpacing: 1,
             fontFamily: "Roboto",
           }}
         >
-          WELCOME LETTER
+          CONGRATULATIONS
         </Text>
-
         <View
           style={{
             marginTop: 10,
@@ -102,382 +696,323 @@ export const PdfFile = ({ data }) => {
             marginHorizontal: 40,
           }}
         >
-          <Text
+          <View
             style={{
-              textAlign: "left",
-              color: "#5FBDFF",
-              marginTop: 5,
-              marginBottom: 5,
-              fontSize: 12,
-              fontWeight: "light",
-              width: "100%",
-              textAlign: "right",
-              fontFamily: "Roboto",
-
-              // color: "blue",
+              display: "flex",
+              flexDirection: "row",
+              gap: 6,
             }}
           >
-            Date : {moment(data.createdAt).format("DD/MM/YYYY")}
-          </Text>
-          <Text
-            style={{
-              textAlign: "left",
-              color: "#FF0000",
-              marginTop: 5,
-              marginBottom: 5,
-              fontSize: 12,
-              fontWeight: "light",
-              textTransform: "uppercase",
-              fontFamily: "Roboto",
-            }}
-          >
-            Dear Sir/ Madam{" "}
-          </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 135,
+              }}
+            >
+              Applicant Name
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              {data.for.name}
+            </Text>
+          </View>
 
           <View
             style={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-between",
+              gap: 10,
             }}
           >
-            <View
+            <Text
               style={{
-                marginTop: 10,
-                fontFamily: "Roboto",
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
                 textTransform: "uppercase",
-                // marginHorizontal: 40,
+                width: 130,
               }}
             >
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 6,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 135,
-                  }}
-                >
-                  Applicant Name
-                </Text>
-                <Text>:</Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  {data.for.name}
-                </Text>
-              </View>
-
-              {/* <View
+              Applicant Mobile
+            </Text>
+            <Text>:</Text>
+            <Text
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
               }}
             >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                Applicant Mobile
-              </Text>
-              <Text>:</Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                +91 {data.for.phone}
-              </Text>
-            </View> */}
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 10,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
-                  }}
-                >
-                  {data.for.guardian_relation === "SONOF" ||
-                  data.for.guardian_relation === "DOF"
-                    ? "Father Name"
-                    : "Husband Name"}
-                </Text>
-                <Text>:</Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  {data.for.guardian_name}
-                </Text>
-              </View>
-
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 10,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
-                  }}
-                >
-                  Loan Amount
-                </Text>
-                <Text>:</Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  Rs. {data.for.loanInNumber}/- ({data.for.loanInWords})
-                </Text>
-              </View>
-
-              {/* <View
+              +91 {data.for.phone}
+            </Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
               }}
             >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                Loan Year
-              </Text>
-              <Text>:</Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                {data.for.loanYear} Years
-              </Text>
-            </View> */}
-
-              {/* <View
+              {data.for.guardian_relation === "SONOF" ||
+              data.for.guardian_relation === "DOF"
+                ? "Father Name"
+                : "Husband Name"}
+            </Text>
+            <Text>:</Text>
+            <Text
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
               }}
             >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                Loan Month
-              </Text>
-              <Text>:</Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                {data.for.loanYear * 12} Months
-              </Text>
-            </View> */}
+              {data.for.guardian_name}
+            </Text>
+          </View>
 
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 10,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
-                  }}
-                >
-                  Monthly Emi
-                </Text>
-                <Text>:</Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  Rs.{" "}
-                  {
-                    calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)
-                      ?.emi
-                  }
-                  /month for {data.for.loanYear} year(s)
-                </Text>
-              </View>
-
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 10,
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    fontWeight: "light",
-                    padding: 5,
-                    textTransform: "uppercase",
-                    width: 130,
-                  }}
-                >
-                  File Charge
-                </Text>
-                <Text>:</Text>
-                <Text
-                  style={{
-                    textAlign: "left",
-                    color: "black",
-                    fontSize: 12,
-                    padding: 5,
-                    textTransform: "uppercase",
-                    fontWeight: "extrabold",
-                  }}
-                >
-                  Rs. {general.data.fileCharge}/-
-                </Text>
-              </View>
-
-              {/* <View
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
               style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
               }}
             >
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  fontWeight: "light",
-                  padding: 5,
-                  textTransform: "uppercase",
-                  width: 130,
-                }}
-              >
-                Generate Date
-              </Text>
-              <Text>:</Text>
-              <Text
-                style={{
-                  textAlign: "left",
-                  color: "black",
-                  fontSize: 12,
-                  padding: 5,
-                  textTransform: "uppercase",
-                  fontWeight: "extrabold",
-                }}
-              >
-                {moment(Date.now()).format("DD/MM/YYYY")}
-              </Text>
-            </View> */}
-            </View>
-            {/* <Image
-              src={"/_stamp.png"}
+              Loan Amount
+            </Text>
+            <Text>:</Text>
+            <Text
               style={{
-                width: 110,
-                height: 110,
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
               }}
-            /> */}
+            >
+              Rs. {data.for.loanInNumber}/- ({data.for.loanInWords})
+            </Text>
+          </View>
+
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              Loan Year
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              {data.for.loanYear} Years
+            </Text>
+          </View>
+
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              Loan Month
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              {data.for.loanYear * 12} Months
+            </Text>
+          </View>
+
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              Monthly Emi
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              Rs.{" "}
+              {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi}
+              /month
+            </Text>
+          </View>
+
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              File Charge
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              Rs. {general.data.fileCharge}/-
+            </Text>
+          </View>
+
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                fontWeight: "light",
+                padding: 5,
+                textTransform: "uppercase",
+                width: 130,
+              }}
+            >
+              Generate Date
+            </Text>
+            <Text>:</Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                fontSize: 12,
+                padding: 5,
+                textTransform: "uppercase",
+                fontWeight: "extrabold",
+              }}
+            >
+              {moment(Date.now()).format("DD/MM/YYYY")}
+            </Text>
           </View>
         </View>
         <View
@@ -489,13 +1024,14 @@ export const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 10,
+              marginTop: 15,
               lineHeight: 1.5,
-              fontSize: 12,
+              fontSize: 11,
             }}
           >
-            Your documents received, and those are appropriate docs according to
-            our legal adviser, behalf of your documents by
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We
+            have received your documents, these are appropriate docs according
+            to our legal adviser. Behalf of your documents by{" "}
             <Text
               style={{
                 textAlign: "left",
@@ -505,89 +1041,197 @@ export const PdfFile = ({ data }) => {
                 fontFamily: "Roboto",
               }}
             >
-              {" " + company}
+              {company}
             </Text>
+            Your documents are passed by our legal department and now you have
+            to pay file charge (Login Charge) for the loan, only in the account
+            of our company. If any condition your file is not complete your file
+            charge is refund to your account within 7 working days.
           </Text>
           <Text
             style={{
               textAlign: "left",
-              color: "black",
-              marginTop: 8,
-              lineHeight: 1.5,
+              color: "red",
+              marginTop: 5,
               fontSize: 12,
+              fontWeight: "light",
+              textTransform: "uppercase",
+              fontFamily: "Roboto",
             }}
           >
-            Your documents are passed by our legal department and now you have
-            to pay file charge (Login Charge) for the loan, only in the account
-            of our company.
+            Company&rsquo;s bank details :
           </Text>
-        </View>
-        <Text
-          style={{
-            textAlign: "left",
-            color: "black",
-            marginTop: 5,
-            marginBottom: 5,
-            marginHorizontal: 40,
-            fontSize: 11,
-            fontWeight: "light",
-            textTransform: "uppercase",
-            fontFamily: "Roboto",
-          }}
-        >
-          Important Notice{" "}
-        </Text>
-        <View
-          style={{
-            marginHorizontal: 40,
-            fontSize: 11,
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
           <View
             style={{
               display: "flex",
-              flexDirection: "column",
-              gap: 6,
+              flexDirection: "row",
+              gap: 4,
+              alignItems: "center",
+              justifyContent: "space-between",
+              // border: "1px solid black",
             }}
           >
-            <Text>
-              1. Applicant should not deposit money in any of these following
-              working (person, lawyer, agent) or else company would not be
-              responsible for it.
-            </Text>
-            <Text>
-              2. Every signed paper of the offer letter as well as required
-              paper processing fees has to be send to the company.
-            </Text>
             <View
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 3,
+                marginTop: 10,
+                border: "1px solid black",
+                fontFamily: "Roboto",
+                textTransform: "uppercase",
               }}
             >
-              <Text style={{}}>
-                3. Immediately send the cash deposit slip at company&apos; email
-                ID {metaData.email}
-              </Text>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    borderRight: "1px solid black",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  Bank Name
+                </Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  {general.data.bankName}
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  borderTop: "1px solid black",
+                  flexDirection: "row",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    borderRight: "1px solid black",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  A/C Holder name
+                </Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    width: 260,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  {general.data.holderName}
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  borderTop: "1px solid black",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    borderRight: "1px solid black",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  a/c no
+                </Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  {general.data.accountNo}
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  borderTop: "1px solid black",
+                  gap: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    fontWeight: "light",
+                    borderRight: "1px solid black",
+                    padding: 5,
+                    textTransform: "uppercase",
+                    width: 130,
+                  }}
+                >
+                  IFSC Code
+                </Text>
+                <Text
+                  style={{
+                    textAlign: "left",
+                    color: "black",
+                    fontSize: 12,
+                    padding: 5,
+                    textTransform: "uppercase",
+                    fontWeight: "extrabold",
+                  }}
+                >
+                  {general.data.ifsc}
+                </Text>
+              </View>
             </View>
-            <Text>
-              4. Signature or thumb impression is compulsory in every page.
-            </Text>
-            <Text>
-              5. Disbursement of loan will be subject to the condition at the
-              time of disbursement.
-            </Text>
-            <Text>
-              6. Final approval sanction will be issued subject to fulfillment
-              of the existing terms & conditions of apply.
-            </Text>
+            {/* // QR image */}
+            {general.data.url && (
+              <Image
+                src={general.data.url}
+                style={{
+                  width: 110,
+                  height: 110,
+                }}
+              />
+            )}
           </View>
         </View>
-
         <View
           style={{
             marginHorizontal: 40,
@@ -599,14 +1243,15 @@ export const PdfFile = ({ data }) => {
               marginTop: 20,
             }}
           >
-            If you have any query
+            After deposit your file charge you will receive your letter within
+            1-3 days. For Further Query
           </Text>
           <Text
             style={{
-              marginTop: 4,
+              marginTop: 10,
             }}
           >
-            Contact:
+            Contact to Our Assistant:{" "}
             <Text
               style={{
                 fontFamily: "Roboto",
@@ -616,7 +1261,7 @@ export const PdfFile = ({ data }) => {
             </Text>
           </Text>
           <Text style={{ marginTop: 4 }}>
-            Mobile :
+            Contact to Our Assistant:{" "}
             <Text
               style={{
                 fontFamily: "Roboto",
@@ -629,10 +1274,10 @@ export const PdfFile = ({ data }) => {
             src={"/stamp.png"}
             style={{
               position: "absolute",
-              bottom: -20,
-              right: -15,
-              // width: 110,
-              height: 110,
+              bottom: -10,
+              right: 0,
+              width: 120,
+              height: 120,
             }}
           />
           <Text style={{ marginTop: 20 }}>
@@ -1104,9 +1749,9 @@ function WelcomeLetter() {
   ) : (
     <>
       {renderModal()}
-      {/* <PDFViewer height={1000} width={600}>
+      <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this letter?"
         isDelete
