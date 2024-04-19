@@ -39,31 +39,10 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-export const PdfFile = ({ data }) => {
+export const PdfFile = ({ data, general }) => {
   const company = metaData.title;
   // console.log(data);
-  const [general, setGeneral] = useState({
-    data: {},
-    loading: true,
-  });
-  async function fetchData() {
-    try {
-      const res = await ApiService.fetchData({
-        url: "api/payment-qr",
-        method: "GET",
-      });
-      setGeneral({ data: res.data.data[0] || null, loading: false });
-    } catch (error) {
-      toast.error(
-        typeof error.response.data.message !== "string"
-          ? error.response.data?.[0]
-          : error.response.data.message
-      );
-    }
-  }
-  useEffect(() => {
-    fetchData();
-  }, []);
+
   return (
     // <Document>
     //   <Page size="A4">
@@ -1325,6 +1304,28 @@ const initialModalState = {
   },
 };
 function WelcomeLetter() {
+  const [general, setGeneral] = useState({
+    data: {},
+    loading: true,
+  });
+  async function fetchData() {
+    try {
+      const res = await ApiService.fetchData({
+        url: "api/payment-qr",
+        method: "GET",
+      });
+      setGeneral({ data: res.data.data[0] || null, loading: false });
+    } catch (error) {
+      toast.error(
+        typeof error.response.data.message !== "string"
+          ? error.response.data?.[0]
+          : error.response.data.message
+      );
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
   const toWords = new ToWords({
     localeCode: "en-IN",
     converterOptions: {
@@ -1717,7 +1718,9 @@ function WelcomeLetter() {
             {download === cell.row.index ? (
               <PDFDownloadLink
                 id="download"
-                document={<PdfFile data={agents.data[download]} />}
+                document={
+                  <PdfFile data={agents.data[download]} general={general} />
+                }
                 fileName={`${agents.data[download].for.name}.pdf`}
               >
                 {({ blob, url, loading, error }) =>
