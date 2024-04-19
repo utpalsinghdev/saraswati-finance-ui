@@ -248,20 +248,20 @@ const PdfFile = ({ data }) => {
               display: "flex",
               marginTop: 10,
               flexDirection: "row",
-              paddingHorizontal: 180,
+              paddingLeft: 180,
               width: "100%",
-              justifyContent: "space-between",
+              justifyContent: "space-start",
             }}
           >
             <Text
               style={{
                 textAlign: "left",
-                width: 100,
+                width: 138,
               }}
             >
               Location
             </Text>
-            <Text style={{ width: 130 }}>: {data.location}</Text>
+            <Text style={{ width: "100%" }}>: {data.location}</Text>
           </View>
           <View
             style={{
@@ -353,7 +353,7 @@ const PdfFile = ({ data }) => {
             </Text>
             <Text>{data.agent.phone}</Text>
           </View> */}
-
+          {/* 
           <Image
             style={{
               position: "absolute",
@@ -364,7 +364,7 @@ const PdfFile = ({ data }) => {
               width: "100%",
             }}
             src={"/pdfFooter.png"}
-          />
+          /> */}
           <Image
             style={{
               position: "absolute",
@@ -746,9 +746,9 @@ export default function Icard() {
     <>
       {renderModal()}
       {prevIcardModal()}
-      {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+      <PDFViewer height={1000} width={600}>
+        <PdfFile data={agents.data[24]} />
+      </PDFViewer>
       <ConfirmationModal
         description="Do you really want to delete this This ICard?"
         isDelete
