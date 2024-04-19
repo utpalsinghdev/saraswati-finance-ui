@@ -1856,11 +1856,11 @@ export default function ApprovalLetter() {
       accessor: (c) =>
         c?.customer.name + " " + " (" + c?.customer.customerId + ")",
     },
-    {
-      Header: "pdf password",
-      accessor: (c) =>
-        c?.pdfPassword ? c?.pdfPassword?.replace(",", "") : "N/A",
-    },
+    // {
+    //   Header: "pdf password",
+    //   accessor: (c) =>
+    //     c?.pdfPassword ? c?.pdfPassword?.replace(",", "") : "N/A",
+    // },
     {
       Header: "application id",
       accessor: (c) => c?.customer?.loanId,
