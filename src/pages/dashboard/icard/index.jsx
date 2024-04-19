@@ -746,9 +746,9 @@ export default function Icard() {
     <>
       {renderModal()}
       {prevIcardModal()}
-      <PDFViewer height={1000} width={600}>
+      {/* <PDFViewer height={1000} width={600}>
         <PdfFile data={agents.data[24]} />
-      </PDFViewer>
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This ICard?"
         isDelete
