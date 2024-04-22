@@ -701,7 +701,11 @@ export default function Icard() {
                 <PDFDownloadLink
                   id="download"
                   document={<PdfFile data={agents.data[download]} />}
-                  fileName={`i-card-${agents.data[download].agent.employeeCode}.pdf`}
+                  fileName={`i-card-${
+                    agents.data[download].agent.fileName +
+                    " " +
+                    agents.data[download].agent.LastName
+                  }.pdf`}
                 >
                   {({ blob, url, loading, error }) =>
                     loading ? "Generateing..." : "Print"
@@ -747,7 +751,7 @@ export default function Icard() {
       {renderModal()}
       {prevIcardModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[24]} />
+        <PdfFile data={agents.data[agents.data.length - 1]} />
       </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This ICard?"
