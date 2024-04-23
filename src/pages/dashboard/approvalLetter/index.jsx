@@ -1538,7 +1538,7 @@ export const PdfFile = ({ data }) => {
                     style={{
                       width: 150,
                     }}
-                    src={"/qr.jpeg"}
+                    src={general.data.url}
                   />
                 </View>
               </View>
