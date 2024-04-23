@@ -27,6 +27,8 @@ import { PdfFile as WelcomeLetter } from "../welcomeLetter";
 import { PdfFile as WelcomeInvoice } from "../welcomeInvoice";
 import { PdfFile as PdfApprovalInvoiceFile } from "../approvalInvoice";
 import { PdfFile as ApprovalLetterTemplate } from "../approvalLetter";
+import ApiService from "../../../services/Api_services";
+import toast from "react-hot-toast";
 function CustomerHome() {
   const greet = getGreeting();
   const user = JSON?.parse(Cookie?.get("gafs_user"));
@@ -62,7 +64,28 @@ function CustomerHome() {
       setLatestWelcome(categorizedInvoices.welcomeInvoices[0] || null);
     }
   }, [approval]);
-
+  const [general, setGeneral] = useState({
+    data: {},
+    loading: true,
+  });
+  async function fetchData() {
+    try {
+      const res = await ApiService.fetchData({
+        url: "api/payment-qr",
+        method: "GET",
+      });
+      setGeneral({ data: res.data.data[0] || null, loading: false });
+    } catch (error) {
+      toast.error(
+        typeof error.response.data.message !== "string"
+          ? error.response.data?.[0]
+          : error.response.data.message
+      );
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
   const init = {
     welcome: false,
     ApprovalL: false,
@@ -106,7 +129,13 @@ function CustomerHome() {
                 {welcome && generate.welcome ? (
                   <PDFDownloadLink
                     id="download"
-                    document={<WelcomeLetter data={welcome} />}
+                    document={
+                      <WelcomeLetter
+                        data={welcome}
+                        general={general}
+                        imgUrl={general.data.url}
+                      />
+                    }
                     fileName={`${welcome.for.name}.pdf`}
                   >
                     |

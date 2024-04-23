@@ -702,7 +702,7 @@ export default function Icard() {
                   id="download"
                   document={<PdfFile data={agents.data[download]} />}
                   fileName={`i-card-${
-                    agents.data[download].agent.fileName +
+                    agents.data[download].agent.firstName +
                     " " +
                     agents.data[download].agent.LastName
                   }.pdf`}

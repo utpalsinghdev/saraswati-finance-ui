@@ -39,9 +39,8 @@ Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-export const PdfFile = ({ data, general }) => {
+export const PdfFile = ({ data, general, imgUrl }) => {
   const company = metaData.title;
-  // console.log(data);
 
   return (
     // <Document>
@@ -1200,15 +1199,15 @@ export const PdfFile = ({ data, general }) => {
               </View>
             </View>
             {/* // QR image */}
-            {/* {general.data.url && (
+            {general.data.url && (
               <Image
-                src={general.data.ur}
+                source={imgUrl}
                 style={{
                   width: 110,
                   height: 110,
                 }}
               />
-            )} */}
+            )}
           </View>
         </View>
         <View
@@ -1719,7 +1718,11 @@ function WelcomeLetter() {
               <PDFDownloadLink
                 id="download"
                 document={
-                  <PdfFile data={agents.data[download]} general={general} />
+                  <PdfFile
+                    data={agents.data[download]}
+                    general={general}
+                    imgUrl={general.data.url}
+                  />
                 }
                 fileName={`${agents.data[download].for.name}.pdf`}
               >
@@ -1753,7 +1756,11 @@ function WelcomeLetter() {
     <>
       {renderModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[0]} />
+        <PdfFile
+          data={agents.data[0]}
+          general={general}
+          imgUrl={general.data.url}
+        />
       </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this letter?"
