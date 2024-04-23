@@ -1202,7 +1202,7 @@ export const PdfFile = ({ data, general }) => {
             {/* // QR image */}
             {/* {general.data.url && ( */}
             <Image
-              src={"/qr.jpeg"}
+              src={general.data.ur}
               style={{
                 width: 110,
                 height: 110,
