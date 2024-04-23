@@ -84,13 +84,15 @@ function Qr() {
           const payload = {
             ...values,
           };
-          await new Promise((resolve) => {
-            fileToBase64(values.file, (base64Data) => {
-              payload.qr = base64Data;
-              resolve();
-            });
-          });
           try {
+            const uploadFile = new FormData();
+            uploadFile.append("file", values.file);
+            const resFile = await ApiService.fetchData({
+              url: `api/payment-qr/upload-qr-code`,
+              method: "POST",
+              data: uploadFile,
+            });
+            payload.qr = resFile.data.data.url;
             const res = await ApiService.fetchData({
               url: `api/payment-qr`,
               method: "POST",
