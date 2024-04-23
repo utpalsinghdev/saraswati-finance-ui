@@ -92,7 +92,8 @@ function Qr() {
               method: "POST",
               data: uploadFile,
             });
-            payload.qr = resFile.data.data.url;
+            payload.qr =
+              `${import.meta.env.VITE_BASE_URL}/` + resFile.data.data.url;
             const res = await ApiService.fetchData({
               url: `api/payment-qr`,
               method: "POST",
