@@ -141,7 +141,7 @@ export const PdfFile = ({ data }) => {
               fontSize: 12,
               marginTop: 10,
               fontWeight: "light",
-              color: "#5FBDFF",
+              color: "brown",
             }}
           >
             <View
@@ -164,7 +164,7 @@ export const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 11,
-                    color: "#5FBDFF",
+                    color: "brown",
                     width: 85,
                   }}
                 >
@@ -183,7 +183,7 @@ export const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 11,
-                    color: "#5FBDFF",
+                    color: "brown",
                     width: 85,
                   }}
                 >
@@ -202,7 +202,7 @@ export const PdfFile = ({ data }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 11,
-                    color: "#5FBDFF",
+                    color: "brown",
                     width: 85,
                   }}
                 >
@@ -229,7 +229,7 @@ export const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 11,
                     width: 85,
-                    color: "#5FBDFF",
+                    color: "brown",
                   }}
                 >
                   Case File No (CFN)
@@ -241,7 +241,7 @@ export const PdfFile = ({ data }) => {
                       fontWeight: "bold",
                       fontSize: 11,
                       width: 85,
-                      color: "#5FBDFF",
+                      color: "brown",
                     }}
                   >
                     Application No
@@ -271,7 +271,7 @@ export const PdfFile = ({ data }) => {
                     fontWeight: "bold",
                     fontSize: 11,
                     width: 85,
-                    color: "#5FBDFF",
+                    color: "brown",
                   }}
                 >
                   Date
@@ -290,12 +290,12 @@ export const PdfFile = ({ data }) => {
               src={data?.photo ? data?.photo : data?.customer?.photo?.url}
             />
             <Image
-              src={"/stamp2.png"}
+              src={"/stamp.png"}
               style={{
                 position: "absolute",
-                top: 80,
-                right: -10,
-                height: 50,
+                top: 30,
+                right: 30,
+                height: 110,
                 backgroundColor: "transparent",
               }}
             />
@@ -305,7 +305,7 @@ export const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 30,
+              marginTop: 10,
               fontSize: 12,
               fontWeight: "light",
             }}
@@ -409,7 +409,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Date of Application
@@ -418,7 +418,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {moment(data?.customer?.createdAt).format("DD/MM/YYYY")}
@@ -441,7 +441,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Name
@@ -450,7 +450,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.name}
@@ -473,7 +473,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Guardian Name
@@ -482,7 +482,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   paddingBottom: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.guardian_name}
@@ -505,7 +505,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Address
@@ -514,7 +514,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.address}
@@ -569,7 +569,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Mobile NO
@@ -578,7 +578,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer.phone}
@@ -601,7 +601,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Email
@@ -610,7 +610,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer.email}
@@ -633,7 +633,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Aadhar
@@ -642,7 +642,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer.adharNumber}
@@ -665,7 +665,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Pan
@@ -674,7 +674,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid black",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer.panNumber}
@@ -697,7 +697,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Loan Amount
@@ -706,7 +706,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Rs. {data?.customer.loanInNumber} /- (
@@ -730,7 +730,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Loan Details
@@ -739,7 +739,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Periods {data?.customer?.loanYear} years at INTEREST RATE-5% EMI
@@ -771,7 +771,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Bank Name &A/CNo./IFSCCODE A/C
@@ -780,7 +780,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data.customer.bank
@@ -811,7 +811,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Executive Details
@@ -820,7 +820,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {data?.customer?.agent.employeeCode}-
@@ -846,7 +846,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: 400,
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 Processing Charges + 18% GST
@@ -855,7 +855,7 @@ export const PdfFile = ({ data }) => {
                 style={{
                   width: "100%",
                   padding: 1,
-                  borderBottom: "1px solid #5FBDFF",
+                  border: "1px solid #5FBDFF",
                 }}
               >
                 {`Rs. ${costWithoutGst} + Rs. ${gst} = Rs. ${totalCost}`}
@@ -1507,7 +1507,7 @@ export const PdfFile = ({ data }) => {
                   </Text>
                 </View>
               </View> */}
-              <View
+              {/* <View
                 style={{
                   border: "1px solid black",
                   padding: 2,
@@ -1541,6 +1541,174 @@ export const PdfFile = ({ data }) => {
                     src={general.data.url}
                   />
                 </View>
+              </View> */}
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 4,
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  // border: "1px solid black",
+                }}
+              >
+                <View
+                  style={{
+                    marginTop: 10,
+                    border: "1px solid black",
+                    fontFamily: "Roboto",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      gap: 10,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        fontWeight: "light",
+                        borderRight: "1px solid black",
+                        padding: 5,
+                        textTransform: "uppercase",
+                        width: 130,
+                      }}
+                    >
+                      Bank Name
+                    </Text>
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        padding: 5,
+                        textTransform: "uppercase",
+                        fontWeight: "extrabold",
+                      }}
+                    >
+                      {general.data.bankName}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      borderTop: "1px solid black",
+                      flexDirection: "row",
+                      gap: 10,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        fontWeight: "light",
+                        borderRight: "1px solid black",
+                        padding: 5,
+                        textTransform: "uppercase",
+                        width: 130,
+                      }}
+                    >
+                      A/C Holder name
+                    </Text>
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        padding: 5,
+                        textTransform: "uppercase",
+                        fontWeight: "extrabold",
+                        width: 280,
+                      }}
+                    >
+                      {general.data.holderName}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      borderTop: "1px solid black",
+                      gap: 10,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        fontWeight: "light",
+                        borderRight: "1px solid black",
+                        padding: 5,
+                        textTransform: "uppercase",
+                        width: 130,
+                      }}
+                    >
+                      a/c no
+                    </Text>
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        padding: 5,
+                        textTransform: "uppercase",
+                        fontWeight: "extrabold",
+                      }}
+                    >
+                      {general.data.accountNo}{" "}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      borderTop: "1px solid black",
+                      gap: 10,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        fontWeight: "light",
+                        borderRight: "1px solid black",
+                        padding: 5,
+                        textTransform: "uppercase",
+                        width: 130,
+                      }}
+                    >
+                      IFSC Code
+                    </Text>
+                    <Text
+                      style={{
+                        textAlign: "left",
+                        color: "black",
+                        fontSize: 12,
+                        padding: 5,
+                        textTransform: "uppercase",
+                        fontWeight: "extrabold",
+                      }}
+                    >
+                      {general.data.ifsc}
+                    </Text>
+                  </View>
+                </View>
+                {/* // QR image */}
+                <Image
+                  src={general.data.url}
+                  style={{
+                    width: 110,
+                    height: 110,
+                  }}
+                />
               </View>
 
               <View
