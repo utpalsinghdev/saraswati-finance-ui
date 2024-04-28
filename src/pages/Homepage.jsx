@@ -13,6 +13,8 @@ import calculateEMI from "../utils/calculator";
 import Select from "../components/ui/select";
 import Contact from "../components/contact";
 import metaData from "../utils/lib/site.config";
+import Button from "../components/ui/button";
+import Modal from "../components/ui/modal";
 const Homepage = () => {
   const services = [
     {
@@ -100,9 +102,76 @@ const Homepage = () => {
       </div>
     );
   }
+  const [state, setState] = React.useState(true);
   // const news = useFetch("/api/news");
+  function noticeModal() {
+    return (
+      <Modal
+        open={state}
+        setOpen={() => {
+          setState(false);
+        }}
+        title={
+          <label className="font-bold text-red-500 text-2xl">
+            Important Notice
+          </label>
+        }
+      >
+        <div className="mt-2 font-medium">
+          <p className="my-2 border-b p-b-2 text-justify">
+            हमारी कंपनी पूरे भारत मे एजूकेशन लोन, सैलरी स्लिप लोन, प्रोजेक्ट
+            लोन, पर्सनल लोन, प्रॉपर्टी लोन, आईटीआर लोन, बिजनेस लोन एक लाख से
+            पांच करोड तक का लोन देती है आज कल लोन के नाम पर बहुत फ्रॉड हो रहा है
+            और बोलते है की हम बजाज फाइनेंस, मत्थुत फाइनेंस, मुद्रा लोन, महिंद्रा
+            लोन से आपका लोन करा रहे और अपने पर्सनल बैंक खातों में पैसे जमा करा
+            लेते हैं और फिर मोबाइल बंद कर लेते है उन लोगो के पास ना कंपनी ना कोई
+            लाइसेंस होता है एक फर्जी वेबसाइट बना लेते है और लोन के नाम से ठगी
+            स्टार्ट करते है ऐसे लोगो से सावधान रहें हमारी कंपनी भारत सरकार
+            द्वारा मान्यता प्राप्त है और 100% लोन देती. आप हमारी कंपनी में लोन
+            ले सकते हैं या एजेंट, फील्ड ऑफिसर, डीलरशिप लेकर काम कर सकते है नोट-
+            हम आपको सलाह देते हैं की आप {metaData.title} कंपनी में काम करने वाले
+            एजेंट, फील्ड ऑफिसर या डीलरशिप, एडवोकेट, या किसी भी पर्सनल बैंक खाते
+            में पैसे जमा ना करे अगर ऐसा करता है उसकी जिम्मेदारी कंपनी की नही
+            होगी। कोई भी लेनदेन केवल कंपनी के एकाउंट में मान्य होगा कोई भी
+            जानकारी के लिए कंपनी के व्हाट्सएप नंबर {metaData.phone.at(1)} पर
+            मैसेज या {metaData.email} पर मेल करे
+          </p>
+          <p className="my-2 border-b p-b-2 text-justify">
+            Our company provides education loan, salary slip loan, project loan,
+            personal loan, property loan, ITR loan, business loan from 1 lakh to
+            5 crores all over India. Nowadays a lot of fraud is happening in the
+            name of loan and it is said that we are getting you loan from Bajaj
+            Finance, Muthoot Finance, Mudra Loan, Mahindra Loan and Asks to
+            deposit money in his personal account and then switches off the
+            mobile.Those people have neither company nor any license, they
+            create a fake website and start cheating in the name of loan.Beware
+            of such people. Our company is recognized by the Government of India
+            and gives 100% loan. You can take loan in our company or work as an
+            agent or field officer or you can work in our company by taking a
+            dealership. Note- We advise you not to deposit money in{" "}
+            {metaData.title} Company&rsquo;s agents, field officers,dealerships,
+            advocates or any personal bank account.If anyone does this, so it
+            will not be the responsibility of the company. Any transaction will
+            be valid only in the account of the company. For any information,
+            message on company&rsquo;s WhatsApp number {metaData.phone.at(1)} or
+            mail to {metaData.email}
+          </p>
+          <div className="flex items-center justify-end mt-2">
+            <Button
+              className={"w-max"}
+              type={"button"}
+              onClick={() => setState(false)}
+            >
+              Close
+            </Button>
+          </div>
+        </div>
+      </Modal>
+    );
+  }
   return (
     <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
+      {noticeModal()}
       {/* <--------------------------Contact Section-----------------------------> */}
       <div className="relative text-white text-[20px] w-full  mx-auto">
         <CarouselBanner />
@@ -205,6 +274,7 @@ const Homepage = () => {
       <section className="flex mt- bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
         <div className="flex flex-col self-start gap-4 w-full md:w-96">
           <h3 className="text-xl mt-4 font-bold">WHY CHOOSE US</h3>
+          <h3 className="text-md font-bold">Pan: AAECF3620J</h3>
           <h1 className="text-3xl font-extrabold text-old-brick-800">
             About Us
           </h1>
