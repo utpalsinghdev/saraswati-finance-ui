@@ -57,6 +57,11 @@ const Homepage = () => {
       link: "/services/pay-slip-loan",
       img: "/pay.jpg",
     },
+    {
+      type: "group-load",
+      link: "/services/group-loan",
+      img: "/group.jpeg",
+    },
   ];
   const navigator = useNavigate();
 
