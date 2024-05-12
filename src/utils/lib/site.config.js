@@ -4,7 +4,7 @@ const metaData = {
   email: "info@fundwisorfinance.live",
   phone: ["18002704011", "8929270884"],
   address:
-    "Office No : 17th, Cyber City, DIf Building 14, Tower C, Sector 25, Gurugram, Haryana 122001",
+    "Plot No. 118, Ground Floor, IOMA Prof Almeida Road, TPS 4 Bandra West, Mumbai, Maharashtra (Pin- 400050)",
   fileCharge: "4500",
   icardIsPdf: true,
 };
