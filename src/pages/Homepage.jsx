@@ -279,6 +279,7 @@ const Homepage = () => {
       <section className="flex mt- bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
         <div className="flex flex-col self-start gap-4 w-full md:w-96">
           <h3 className="text-xl mt-4 font-bold">WHY CHOOSE US</h3>
+          <h3 className="text-md font-bold">CIN: U65929UP2020PTC139094</h3>
           <h3 className="text-md font-bold">Pan: AAECF3620J</h3>
           <h1 className="text-3xl font-extrabold text-old-brick-800">
             About Us
