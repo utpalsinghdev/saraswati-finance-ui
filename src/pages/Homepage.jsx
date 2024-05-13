@@ -108,7 +108,7 @@ const Homepage = () => {
     );
   }
   const [state, setState] = React.useState(true);
-  // const news = useFetch("/api/news");
+  const news = useFetch("/api/news");
   function noticeModal() {
     return (
       <Modal
@@ -195,12 +195,12 @@ const Homepage = () => {
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
               <Ticker
-                // messages={
-                //   !news.loading
-                //     ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                //     : ["Fundwisor Finance Business Solution Pvt. Ltd."]
-                // }
-                messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
+                messages={
+                  !news.loading
+                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
+                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
+                }
+                // messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
               />
             </span>
 
@@ -227,12 +227,12 @@ const Homepage = () => {
           <div className="flex flex-col justify-between w-full py-2">
             <span className="py-1 px-2 text-sm  ">
               <Ticker
-                // messages={
-                //   !news.loading
-                //     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                //     : ["Fundwisor Finance Business Solution Pvt. Ltd."]
-                // }
-                messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
+                messages={
+                  !news.loading
+                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
+                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
+                }
+                // messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
               />
             </span>
 
@@ -278,7 +278,9 @@ const Homepage = () => {
       </div>
       <section className="flex mt- bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
         <div className="flex flex-col self-start gap-4 w-full md:w-96">
-          <h3 className="text-xl mt-4 font-bold">WHY CHOOSE US</h3>
+          <h3 className="text-xl mt-4 font-bold">
+            Company Registration Details
+          </h3>
           <h3 className="text-md font-bold">CIN: U65929UP2020PTC139094</h3>
           <h3 className="text-md font-bold">Pan: AAECF3620J</h3>
           <h1 className="text-3xl font-extrabold text-old-brick-800">
