@@ -28,6 +28,8 @@ const initialModalState = {
     date: "",
     status: "done",
     amount: "",
+    pending: "",
+    total: "",
   },
 };
 const CustomerProfile = () => {
@@ -72,6 +74,10 @@ const CustomerProfile = () => {
                 customerId: Number(id),
                 date: values.date + "T00:00:00.985Z",
               };
+              if (values.pending && values.total) {
+                payload.pending = values.pending.toString();
+                payload.total = values.total.toString();
+              }
               if (values.date && values.name !== "Emi_date")
                 delete payload.date;
               if (edit_id) {
@@ -122,7 +128,30 @@ const CustomerProfile = () => {
                   </option>
                 ))}
               </Select>
-
+              {formik.values.name === "EMI" && (
+                <>
+                  <Input
+                    label={""}
+                    placeholder={"Pending"}
+                    type={"number"}
+                    name={"pending"}
+                    value={formik.values.pending}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    required={true}
+                  />
+                  <Input
+                    label={""}
+                    placeholder={"Total"}
+                    type={"number"}
+                    name={"total"}
+                    value={formik.values.total}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    required={true}
+                  />
+                </>
+              )}
               {formik.values.name === "Emi_date" ? (
                 <Input
                   label={""}
@@ -182,14 +211,19 @@ const CustomerProfile = () => {
     },
     {
       Header: "amount",
-      accessor: "amount",
+      accessor: (e) => (e.amount ? "Rs " + e.amount : "-"),
+    },
+    {
+      Header: "Pending",
+      accessor: (e) => (e.pending ? "Rs " + e.pending : "-"),
+    },
+    {
+      Header: "Total",
+      accessor: (e) => (e.total ? "Rs " + e.total : "-"),
     },
     {
       Header: "date",
-      accessor: (e) =>
-        moment(e.date).format("DD/MM/YYYY")
-          ? moment(e.date).format("DD/MM/YYYY")
-          : e.date,
+      accessor: (e) => (e.date ? moment(e.date).format("DD/MM/YYYY") : "-"),
     },
     {
       Header: "Action",
@@ -253,7 +287,7 @@ const CustomerProfile = () => {
                 </p>
                 <p className="text-sm flex items-center gap-2">
                   {" "}
-                  <RiEarthFill /> Address : {customer.data?.address}
+                  <RiEarthFill /> Address : {customer.data?.address || "N/A"}
                 </p>
               </div>
             </div>
