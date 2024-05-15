@@ -51,6 +51,7 @@ import { QrCode } from "lucide-react";
 import Qr from "../pages/dashboard/payment/Qr";
 import Verify from "../pages/Verify";
 import Pay from "../pages/Pay";
+import CustomerProfile from "../pages/dashboard/Customer/Customer";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   AGENT: "AGENT",
@@ -192,6 +193,7 @@ function RoutesConfig() {
               element={<LoanApplication />}
             />
             <Route path="/admin/customers/" element={<Cutomers />} />
+            <Route path="/admin/customer/:id" element={<CustomerProfile />} />
             <Route path="/admin/payment-method/" element={<Qr />} />
           </Route>
           <Route

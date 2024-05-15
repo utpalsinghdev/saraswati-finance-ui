@@ -42,6 +42,7 @@ import { GoLocation } from "react-icons/go";
 import { BsBank } from "react-icons/bs";
 import { IdentificationIcon } from "@heroicons/react/24/outline";
 import { GiReturnArrow } from "react-icons/gi";
+import { Link } from "react-router-dom";
 const generateRandomSixDigitNumber = () =>
   `${Math.floor(100000 + Math.random() * 900000)}`;
 const initialModalState = {
@@ -678,7 +679,15 @@ function Cutomers() {
     },
     {
       Header: "name",
-      accessor: (e) => (e.name ? e.name : "N/A"),
+      accessor: "name",
+      Cell: (cell) => (
+        <Link
+          to={`/admin/customer/${cell.row.original.id}`}
+          className="underline"
+        >
+          {cell.row.original.name}
+        </Link>
+      ),
     },
     {
       Header: "Photo",
