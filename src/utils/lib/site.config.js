@@ -1,5 +1,5 @@
 const metaData = {
-  title: "Fundwisor Finance Business Solution Pvt. Ltd.",
+  title: "Rosedone Secure Services PVT. LTD.",
   siteUrl: "https://rosedonefinance.com",
   email: "info@rosedonefinance.com",
   phone: ["9568556265"],

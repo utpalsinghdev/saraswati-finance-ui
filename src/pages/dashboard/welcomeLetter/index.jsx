@@ -56,7 +56,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
     //         width: 500,
     //         opacity: 0.1,
     //       }}
-    //       src={"/logo_without_name.png"}
+    //       src={"/logo.png"}
     //     />
 
     //     <Text
@@ -651,7 +651,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
             height: 200,
             opacity: 0.1,
           }}
-          src={"/logo_without_name.png"}
+          src={"/logo.png"}
         />
 
         <Text

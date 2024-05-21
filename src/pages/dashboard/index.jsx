@@ -395,7 +395,7 @@ export default function DashboardLayout({ children }) {
               <img
                 className="h-[4.5rem] w-auto mt-2 w-auto ml"
                 draggable="false"
-                src="/logo_full.png"
+                src="/logo.png"
                 alt="Your Company"
               />
             </div>
@@ -563,10 +563,7 @@ export default function DashboardLayout({ children }) {
                     " font-medium flex items-center justify-start gap-4 text-sm "
                   )}
                 >
-                  <img
-                    src="/logo_without_name.png"
-                    className="w-12 cursor-pointer mr-1"
-                  />
+                  <img src="/logo.png" className="w-12 cursor-pointer mr-1" />
                   <p className=" md:block text-xl sm:text-2xl md:text-2xl text-blue-500 font-bold">
                     {metaData.title}
                   </p>

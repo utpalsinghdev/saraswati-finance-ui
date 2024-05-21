@@ -34,10 +34,7 @@ export default function AgentLogin() {
                 " font-medium  flex items-center justify-start gap-4 text-sm "
               )}
             >
-              <img
-                src="/logo_full.png"
-                className="   w-96   cursor-pointer mr-1"
-              />
+              <img src="/logo.png" className="   w-96   cursor-pointer mr-1" />
             </span>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
               Agent Login

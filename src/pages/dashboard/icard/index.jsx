@@ -375,7 +375,7 @@ const PdfFile = ({ data }) => {
               zIndex: 0,
               opacity: 0.1,
             }}
-            src={"/logo_without_name.png"}
+            src={"/logo.png"}
           />
         </View>
         <Image
@@ -586,7 +586,7 @@ export default function Icard() {
             className="absolute w-full bottom-0 z-0 "
           />
           {/* <img
-            src={"/logo_full.png"}
+            src={"/logo.png"}
             alt="footerbanner"
             className="w-full h-16 px-2 "
           /> */}

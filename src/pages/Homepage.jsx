@@ -281,8 +281,8 @@ const Homepage = () => {
           <h3 className="text-xl mt-4 font-bold">
             Company Registration Details
           </h3>
-          <h3 className="text-md font-bold">CIN: U65929UP2020PTC139094</h3>
-          <h3 className="text-md font-bold">Pan: AAECF3620J</h3>
+          {/* <h3 className="text-md font-bold">CIN: U65929UP2020PTC139094</h3> */}
+          {/* <h3 className="text-md font-bold">Pan: AAECF3620J</h3> */}
           <h1 className="text-3xl font-extrabold text-old-brick-800">
             About Us
           </h1>
