@@ -38,24 +38,6 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 export const PdfFile = ({ data }) => {
-  function calculateEMI(principal, interestRate, years) {
-    if (principal && interestRate && years) {
-      interestRate = interestRate / 100;
-      const monthlyInterestRate = interestRate / 12;
-      const totalMonths = years * 12;
-      const emi =
-        (principal * monthlyInterestRate) /
-        (1 - Math.pow(1 + monthlyInterestRate, -totalMonths));
-      const totalLoanAmount = emi * totalMonths;
-      return {
-        emi: Math.round(emi),
-        totalLoanAmount: totalLoanAmount,
-        totalMonths,
-      };
-    } else {
-      return null;
-    }
-  }
   return (
     <Document>
       <Page

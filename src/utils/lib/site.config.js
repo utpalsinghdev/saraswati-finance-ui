@@ -1,10 +1,10 @@
 const metaData = {
   title: "Fundwisor Finance Business Solution Pvt. Ltd.",
-  siteUrl: "https://fundwisorfinance.live",
-  email: "info@fundwisorfinance.live",
-  phone: ["18002704011", "8929270884"],
+  siteUrl: "https://rosedonefinance.com",
+  email: "info@rosedonefinance.com",
+  phone: ["9568556265"],
   address:
-    "Plot No. 118, Ground Floor, IOMA Prof Almeida Road, TPS 4 Bandra West, Mumbai, Maharashtra (Pin- 400050)",
+    "Office no 201,203,204 6th floor roshfa tower near infocity hub Ghandhi nagar gujrat 382002",
   fileCharge: "4500",
   icardIsPdf: true,
 };

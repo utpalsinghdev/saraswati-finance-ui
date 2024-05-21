@@ -36,7 +36,7 @@ function Calculator() {
                   initialValues={{
                     amount: "",
                     years: "",
-                    intrestRate: 5,
+                    intrestRate: 7,
                   }}
                 >
                   {(e) => (

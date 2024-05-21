@@ -21,7 +21,6 @@ import {
   PDFDownloadLink,
   Font,
 } from "@react-pdf/renderer";
-import calculateEMI from "../../../utils/calculator";
 import metaData from "../../../utils/lib/site.config";
 import { PdfFile as WelcomeLetter } from "../welcomeLetter";
 import { PdfFile as WelcomeInvoice } from "../welcomeInvoice";
