@@ -29,7 +29,7 @@ function About() {
               <span className="text-3xl w-full md:w-max font-bold text-red-500">
                 About
               </span>
-              <span className="text-3xl font-bold text-old-brick-800">
+              <span className="text-3xl font-bold text-orange-800">
                 Fundwisor Finance Business Solution Pvt. Ltd.
               </span>
             </h1>
@@ -40,8 +40,8 @@ function About() {
               Loan, Business Loans, Loan Against Property & Project Etc.
             </p>
             <div className="upper bg-red-500 rounded-2xl mt-8">
-              <div className="lower bg-old-brick-800 rounded-2xl mr-1 pt-1 pb-4">
-                <h1 className="pl-4 text-2xl font-extrabold text-red-600 flex items-center gap-2 border-b border-old-brick-900 mx-2">
+              <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4">
+                <h1 className="pl-4 text-2xl font-extrabold text-red-600 flex items-center gap-2 border-b border-orange-900 mx-2">
                   <AiFillInfoCircle /> Important Information
                 </h1>
                 <div className="text-white text-sm font-medium px-4 flex items-start flex-col gap-2">
