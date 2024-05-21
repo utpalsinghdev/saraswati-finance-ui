@@ -3,6 +3,7 @@ import CarouselBanner from "../components/CarouselBanner";
 import ContainerWrapper from "../components/ui/containtWrapper";
 import HeadingWrapper from "../components/ui/heading Wrapper";
 import AccordianGroup from "../components/ui/accordian/AccordianGroup";
+import metaData from "../utils/lib/site.config";
 
 function Faqs() {
   return (
@@ -11,7 +12,7 @@ function Faqs() {
       <ContainerWrapper>
         <HeadingWrapper
           heading="Frequently Asked Questions"
-          title="Fundwisor Finance Business Solution Pvt. Ltd."
+          title={metaData.title}
         >
           <div className="py-10">
             <AccordianGroup

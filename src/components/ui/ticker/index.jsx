@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-
 const Ticker = ({ messages }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -28,7 +27,7 @@ const Ticker = ({ messages }) => {
               index === currentIndex ? "visible" : ""
             }`}
           >
-            {message ? message : "Fundwisor Finance Business Solution Pvt Ltd"}
+            {message ? message : ""}
           </span>
         ))}
       </div>

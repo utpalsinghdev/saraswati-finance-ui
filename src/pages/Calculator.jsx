@@ -11,15 +11,13 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { Formik } from "formik";
 import LinkButton from "../components/ui/link";
 import calculateEMI from "../utils/calculator";
+import metaData from "../utils/lib/site.config";
 function Calculator() {
   return (
     <div className="bg-gray-100">
       <CarouselBanner />
       <ContainerWrapper>
-        <HeadingWrapper
-          heading="Loan Calculator"
-          title="Fundwisor Finance Business Solution Private Limited."
-        >
+        <HeadingWrapper heading="Loan Calculator" title={metaData.title}>
           <div className="px-0 md:px-16 grid grid-cols-1 gap-4 md:grid-cols-2 mt-4 md:mt-8">
             <Image
               src={"/calculator.jpg"}

@@ -39,7 +39,7 @@ Font.register({
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
 export const PdfFile = ({ data }) => {
-  const company = "Fundwisor Finance Business Solution Pvt. Ltd.";
+  const company = metaData.title;
   const _loanAmount = data?.customer?.loanInNumber;
   const costWithoutGst =
     (_loanAmount > 100000 && _loanAmount < 300000) ||

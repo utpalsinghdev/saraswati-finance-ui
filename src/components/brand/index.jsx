@@ -10,9 +10,6 @@ function Brand({ className }) {
       )}
     >
       <img src="/logo.png" className="   w-[5rem]   cursor-pointer mr-1" />
-      {/* <p className="text-xl text-yellow-800  font-extrabold">
-        Fundwisor Finance Business Solution PVT LTD
-      </p> */}
     </span>
   );
 }

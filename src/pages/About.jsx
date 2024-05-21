@@ -6,6 +6,7 @@ import Image from "../components/ui/Image/Index";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { BiSolidChevronsRight } from "react-icons/bi";
 import Contact from "../components/contact";
+import metaData from "../utils/lib/site.config";
 
 function About() {
   const loanInformation = [
@@ -30,14 +31,14 @@ function About() {
                 About
               </span>
               <span className="text-3xl font-bold text-orange-800">
-                Fundwisor Finance Business Solution Pvt. Ltd.
+                {metaData.title}
               </span>
             </h1>
             <p className="text-md text-blue-500 font-medium mt-8">
-              Fundwisor Finance Business Solution Pvt. Ltd. is dealing in Home
-              Loan, Personal Loan, Agriculture Loan, Shop Loan, Flat Loan,
-              Project Loan, Education Loan, Pay Slip Loan, Car Loan, Machine
-              Loan, Business Loans, Loan Against Property & Project Etc.
+              {metaData.title} is dealing in Home Loan, Personal Loan,
+              Agriculture Loan, Shop Loan, Flat Loan, Project Loan, Education
+              Loan, Pay Slip Loan, Car Loan, Machine Loan, Business Loans, Loan
+              Against Property & Project Etc.
             </p>
             <div className="upper bg-red-500 rounded-2xl mt-8">
               <div className="lower bg-orange-800 rounded-2xl mr-1 pt-1 pb-4">

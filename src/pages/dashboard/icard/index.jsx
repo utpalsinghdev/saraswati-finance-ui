@@ -585,15 +585,7 @@ export default function Icard() {
             alt="footerbanner"
             className="absolute w-full bottom-0 z-0 "
           />
-          {/* <img
-            src={"/logo.png"}
-            alt="footerbanner"
-            className="w-full h-16 px-2 "
-          /> */}
-          {/* <span className="w-full h-14 px-2 text-center flex flex-col font-semibold">
-            <p className="text-green-800">Fundwisor Finance Business Solution</p>
-            <p className="text-yellow-800">Pvt Ltd</p>
-          </span> */}
+
           <img
             src={IcardData?.agent?.profilePic}
             alt="Employee"

@@ -91,8 +91,7 @@ const Homepage = () => {
             {type} Loan
           </span>
           <span className="mt-4 px-4 text-center font-sebmibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from Fundwisor Finance Business
-            Solution Pvt. Ltd.
+            Get {type} Loan on Easy EMI basis from {metaData.title}
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
@@ -198,21 +197,10 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
+                    : [`${metaData.title}`]
                 }
-                // messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
               />
             </span>
-
-            {/* <span className="py-1 px-2 text-sm w-full">
-              <Ticker
-                messages={
-                  !news.loading
-                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
-                }
-              />
-            </span> */}
           </div>
         </div>
         <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-orange-100   flex h-max  gap-2 ">
@@ -230,21 +218,10 @@ const Homepage = () => {
                 messages={
                   !news.loading
                     ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
+                    : [`${metaData.title}`]
                 }
-                // messages={["Fundwisor Finance Business Solution Pvt. Ltd."]}
               />
             </span>
-
-            {/* <span className="py-1 px-2 text-sm w-full">
-              <Ticker
-                messages={
-                  !news.loading
-                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : ["Fundwisor Finance Business Solution Pvt. Ltd."]
-                }
-              />
-            </span> */}
           </div>
         </div>
       </div>
@@ -285,10 +262,10 @@ const Homepage = () => {
           {/* <h3 className="text-md font-bold">Pan: AAECF3620J</h3> */}
           <h1 className="text-3xl font-extrabold text-orange-800">About Us</h1>
           <p className="md:mt-10 ">
-            Fundwisor Finance Business Solution Pvt. Ltd. is dealing in Home
-            Loan, Personal Loan, Agriculture Loan, Shop Loan, Flat Loan, Project
-            Loan, Education Loan, Pay Slip Loan, Car Loan, Machine Loan,
-            Business Loans, Loan Against Property & Project Etc.
+            {metaData.title} is dealing in Home Loan, Personal Loan, Agriculture
+            Loan, Shop Loan, Flat Loan, Project Loan, Education Loan, Pay Slip
+            Loan, Car Loan, Machine Loan, Business Loans, Loan Against Property
+            & Project Etc.
           </p>
           <div className="flex md:mt-10 mt-1 items-center gap-4">
             <button

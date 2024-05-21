@@ -3,16 +3,14 @@ import HeadingWrapper from "../components/ui/heading Wrapper";
 import ContainerWrapper from "../components/ui/containtWrapper";
 import CarouselBanner from "../components/CarouselBanner";
 import { ChevronLast, ChevronLeft } from "lucide-react";
+import metaData from "../utils/lib/site.config";
 
 const TermAndCondition = () => {
   return (
     <div className="bg-gray-100">
       <CarouselBanner />
       <ContainerWrapper>
-        <HeadingWrapper
-          heading={"Terms & Conditions"}
-          title={"Fundwisor Finance Business Solution Pvt. Ltd."}
-        >
+        <HeadingWrapper heading={"Terms & Conditions"} title={metaData.title}>
           <div className="px-4 mt-4  pb-8 flex flex-col gap-8 ">
             <p className="text-gray-600 text-sm font-medium h-full w-full flex items-center justify-start gap-4">
               <ChevronLeft className="text-green-600 w-4 h-4 rotate-180" />{" "}

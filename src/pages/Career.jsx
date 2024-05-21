@@ -14,6 +14,7 @@ import { toast } from "react-hot-toast";
 import { agentApplicationSchema } from "../schemas";
 import { GoLocation } from "react-icons/go";
 import { RiUser2Line, RiUserHeartLine } from "react-icons/ri";
+import metaData from "../utils/lib/site.config";
 function fileToBase64(file, callback) {
   if (!file) {
     callback("");
@@ -312,16 +313,16 @@ function Career() {
                 </h3>
 
                 <p className="text-sm max-w-md text-left ">
-                  Fundwisor Finance Business Solution Pvt ltd, a loan franchise,
-                  has been in existence for years now. You can bridge the gap
-                  between your applicant and us by partnering with our
-                  institution. Your journey with us will be one long road of
-                  opportunities. Our support team is always there to mentor you
-                  along the way. We ensure 100% transparency by keeping you
-                  updated about your clients through digital means. We have also
-                  eliminated the need for going through any kind of paperwork;
-                  if you are above 21 and have a passion for the role, partner
-                  with us and earn the highest payouts.
+                  {metaData.title}, a loan franchise, has been in existence for
+                  years now. You can bridge the gap between your applicant and
+                  us by partnering with our institution. Your journey with us
+                  will be one long road of opportunities. Our support team is
+                  always there to mentor you along the way. We ensure 100%
+                  transparency by keeping you updated about your clients through
+                  digital means. We have also eliminated the need for going
+                  through any kind of paperwork; if you are above 21 and have a
+                  passion for the role, partner with us and earn the highest
+                  payouts.
                 </p>
                 <p className="text-sm max-w-md text-left ">
                   Once you partner with us by filling out the online franchise,
@@ -336,8 +337,7 @@ function Career() {
                 <p className="text-sm max-w-md text-left ">
                   anyone (salaried/self-employed/freelancer/students) above 21
                   years and willing to enhance the monthly income can become the
-                  business partner of Fundwisor Finance Business Solution Pvt
-                  ltd.
+                  business partner of {metaData.title}
                 </p>
                 <h3 className="text-2xl text-orange-700 text-left w-full font-extrabold ">
                   How to Become our Partner

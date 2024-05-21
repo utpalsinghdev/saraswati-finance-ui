@@ -37,11 +37,12 @@ import Loader from "../../../components/loader";
 import bold from "../../../assets/bold.ttf";
 import { SlLocationPin } from "react-icons/sl";
 import TextArea from "../../../components/ui/textarea";
+import metaData from "../../../utils/lib/site.config";
 Font.register({
   family: "Roboto",
   fonts: [{ src: bold, fontWeight: "bold" }],
 });
-const company_name = "Fundwisor Finance Business Solution Pvt. Ltd.";
+const company_name = metaData.title;
 const PdfFile = ({ data }) => {
   return (
     <Document>
