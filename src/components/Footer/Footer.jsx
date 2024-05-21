@@ -12,7 +12,7 @@ function Footer() {
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">
-            <img src="/logo.png" className="w-64" alt="" />
+            <img src="/logo.png" className="w-56" alt="" />
             <p className="text-white mt-2">
               {metaData.title} is dealing in Personal Loan, Loan against
               Property, Project Loan & Gold Loan. We Believe in fair dealing and

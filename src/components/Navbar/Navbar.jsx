@@ -104,11 +104,20 @@ const Navbar = () => {
             }}
             className="md:hidden mt-4 cursor-pointer  w-6 h-6 ml-4"
           />
-          <span className="md:hidden mr-4  w-full flex items-center justify-center font-medium  text-md">
+          <span className="md:hidden mr-4 px-2 w-full flex items-center justify-between font-medium  text-md">
             <Image
               src="/logo.png"
-              className=" block md:hidden  w-20 py-1  cursor-pointer"
+              className=" block md:hidden  w-28 py-1  cursor-pointer"
             />
+            <span
+              className=" w-full 
+            
+              text-sm font-semibold text-xl
+            "
+            >
+              <p className="text-center">ROSEDONE SECURE</p>
+              <p className="text-center">SERVICES PVT. LTD.</p>
+            </span>
           </span>
         </nav>
         <div

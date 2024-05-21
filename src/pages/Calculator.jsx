@@ -85,7 +85,7 @@ function Calculator() {
                                 {" "}
                                 / Month at the interest Rate of{" "}
                                 <span className="text-green-600">
-                                  5%
+                                  7%
                                 </span> for{" "}
                                 <span className="text-indigo-600">
                                   {

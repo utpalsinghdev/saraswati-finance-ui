@@ -1,5 +1,6 @@
 import React from "react";
 import { classNames } from "../../utils/classname";
+import metaData from "../../utils/lib/site.config";
 
 function Brand({ className }) {
   return (

@@ -399,7 +399,7 @@ const Homepage = () => {
                               {" "}
                               / Month at the interest Rate of{" "}
                               <span className="text-orange-600">
-                                5%
+                                7%
                               </span> for{" "}
                               <span className="text-indigo-600">
                                 {
