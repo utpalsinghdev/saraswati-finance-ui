@@ -31,7 +31,7 @@ export default function AgentLogin() {
           <div>
             <span
               className={classNames(
-                " font-medium  flex items-center justify-start gap-4 text-sm "
+                " font-medium  flex items-center justify-center gap-4 text-sm "
               )}
             >
               <img src="/logo.png" className="   w-64   cursor-pointer mr-1" />
