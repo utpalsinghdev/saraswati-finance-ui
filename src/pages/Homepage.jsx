@@ -242,17 +242,7 @@ const Homepage = () => {
           </span>
         </div>
       </div>
-      <div className="w-full md:hidden bg-old-brick-50 py-2 px-4">
-        <div className="w-full flex flex-row items-center gap-4">
-          <img src="/clock.png" className="w-9 h-auto text-green-800" />
-          <span className="w-full flex flex-col ">
-            <p className="text-old-brick-800 font-medium">
-              Mon - Sat 10:00 AM - 5:00 PM
-            </p>
-            <p className="text-red-500 font-medium">Sunday Closed</p>
-          </span>
-        </div>
-      </div>
+
       <section className="flex mt- bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
         <div className="flex flex-col self-start gap-4 w-full md:w-96">
           <h3 className="text-xl mt-4 font-bold">
@@ -350,7 +340,7 @@ const Homepage = () => {
                 initialValues={{
                   amount: "",
                   years: "",
-                  intrestRate: 7,
+                  intrestRate: 5,
                 }}
               >
                 {(e) => (
@@ -401,7 +391,7 @@ const Homepage = () => {
                               {" "}
                               / Month at the interest Rate of{" "}
                               <span className="text-old-brick-600">
-                                7%
+                                5%
                               </span> for{" "}
                               <span className="text-indigo-600">
                                 {

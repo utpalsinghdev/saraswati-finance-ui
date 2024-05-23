@@ -747,7 +747,7 @@ export const PdfFile = ({ data }) => {
                 {
                   calculateEMI(
                     data?.customer?.loanInNumber,
-                    7,
+                    5,
                     data?.customer?.loanYear
                   ).emi
                 }

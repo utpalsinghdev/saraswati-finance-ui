@@ -918,7 +918,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
               }}
             >
               Rs.{" "}
-              {calculateEMI(data.for.loanInNumber, 7, data.for.loanYear)?.emi}
+              {calculateEMI(data.for.loanInNumber, 5, data.for.loanYear)?.emi}
               /month
             </Text>
           </View>
