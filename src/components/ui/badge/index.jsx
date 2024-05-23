@@ -59,7 +59,7 @@ function Badge({ children, type, ...rest }) {
         ?.map((badge, index) => (
           <div key={index}>{badge.comp}</div>
         ))}
-      {/* <span className="inline-flex items-center rounded-md bg-orange-100 px-2 py-1 text-xs font-medium text-orange-800">
+      {/* <span className="inline-flex items-center rounded-md bg-old-brick-100 px-2 py-1 text-xs font-medium text-old-brick-800">
         Badge
       </span>
 
