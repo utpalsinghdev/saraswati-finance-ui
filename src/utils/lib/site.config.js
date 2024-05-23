@@ -1,10 +1,10 @@
 const metaData = {
-  title: "Rosedone Secure Services PVT. LTD.",
-  siteUrl: "https://rosedonefinance.com",
-  email: "info@rosedonefinance.com",
-  phone: ["9568556265"],
+  title: "LAKSHMI FINANCE PVT. LTD.",
+  siteUrl: "https://lakshmifinance.live",
+  email: "info@lakshmifinance.live",
+  phone: ["8859769434"],
   address:
-    "Office no 201,203,204 6th floor roshfa tower near infocity hub, Ghandhi nagar, Gujarat, Pincode - 382002",
+    "Plot No. 235 A Ground Floor Sudham Corner Of 27th and 28th RD Off linking Road Bandra West Mumbai Maharashtra Pin- 400050",
   fileCharge: "4500",
   icardIsPdf: true,
 };
