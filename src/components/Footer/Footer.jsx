@@ -6,6 +6,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import ContainerWrapper from "../ui/containtWrapper";
 import { Link } from "react-router-dom";
 import metaData from "../../utils/lib/site.config";
+import { BiBriefcase } from "react-icons/bi";
 function Footer() {
   return (
     <div className="w-full bg-gradient-to-r from-blue-900  to-red-100 ">
@@ -78,21 +79,18 @@ function Footer() {
                   {metaData.email}
                 </a>
               </li>
-              {/* <li className="flex flex-row items-start gap-2">
-                <span>
-                  <HiOutlineLocationMarker size={20} />
-                </span>
-                <span>
-                  {" "}
-                  Branch Office: Plot No.330, Bus stand Rd, Opp. Acharya Puri,
-                  Prem Nagar, Sector 12, Gurugram, Haryana 122001
-                </span>
-              </li> */}
+
               <li className="flex flex-row items-start gap-2">
                 <span>
                   <HiOutlineLocationMarker size={20} />
                 </span>
                 <span> {metaData.address}</span>
+              </li>
+              <li className="flex flex-row items-start gap-2">
+                <span>
+                  <BiBriefcase size={20} />
+                </span>
+                <span> Office Time : Mon - Sat 10:00 AM - 5:00 PM</span>
               </li>
             </ul>
           </div>
