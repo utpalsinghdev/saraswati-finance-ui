@@ -20,47 +20,47 @@ const Homepage = () => {
     {
       type: "Personal",
       link: "/services/personal-loan",
-      img: "/personal.jpeg",
+      img: "/personalLoan.jpg",
     },
     {
       type: "Home",
       link: "/services/home-loan",
-      img: "/homeLoan.png",
+      img: "/homeloan.jpg",
     },
     {
       type: "Education",
       link: "/services/education-loan",
-      img: "/education.jpeg",
+      img: "/education.png",
     },
     {
       type: "Business",
       link: "/services/business-loan",
-      img: "/businessLoan.png",
+      img: "/business.jpg",
     },
     {
       type: "Property",
       link: "/services/property-loan",
-      img: "/property.jpeg",
+      img: "/property.png",
     },
     {
       type: "ITR",
       link: "/services/itr-loan",
-      img: "/itr.jpg",
+      img: "/ITRLoan.webp",
     },
     {
       type: "Agriculture",
       link: "/services/agriculture-loan",
-      img: "/agriculture.jpeg",
+      img: "/agri.jpg",
     },
     {
       type: "Pay Slip",
       link: "/services/pay-slip-loan",
-      img: "/pay.jpg",
+      img: "/payslip.jpg",
     },
     {
-      type: "group-load",
+      type: "Mahila Group",
       link: "/services/group-loan",
-      img: "/group.jpeg",
+      img: "/mahila.png",
     },
   ];
   const navigator = useNavigate();
