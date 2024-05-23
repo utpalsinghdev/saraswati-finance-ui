@@ -16,8 +16,7 @@ function CarouselBanner() {
           <p className="md:text-5xl text-3xl text-left text-blue-800 font-extrabold">
             <p>
               {" "}
-              Rosedone secure{" "}
-              <p className="text-red-600 ">Services PVT. LTD.</p>
+              Lakshmi <p className="text-red-600 ">Finance PVT. LTD.</p>
             </p>
           </p>
 

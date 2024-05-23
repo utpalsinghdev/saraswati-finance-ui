@@ -115,8 +115,8 @@ const Navbar = () => {
               text-sm font-semibold text-xl
             "
             >
-              <p className="text-center">ROSEDONE SECURE</p>
-              <p className="text-center">SERVICES PVT. LTD.</p>
+              <p className="text-center">LAkSHMI FINANCE</p>
+              <p className="text-center">PVT. LTD.</p>
             </span>
           </span>
         </nav>
