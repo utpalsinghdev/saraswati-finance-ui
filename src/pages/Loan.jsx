@@ -78,7 +78,7 @@ function Loan() {
               <span className="text-red-500"> Education Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
-              rate of interest 5% and the loan amount will Upto 1 lakh - 30
+              rate of interest 5% and the loan amount will Upto 1 lakh - 25
               lakhs
             </p>
 
@@ -236,7 +236,8 @@ function Loan() {
               <span className="text-red-500"> Business Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md font-medium  mt-2">
-              rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs
+              rate of interest 5% and the loan amount will Upto 1 lakh - 25
+              lakhs
             </p>
 
             <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
@@ -549,7 +550,8 @@ function Loan() {
               Eligibility for <span className="text-red-500"> Loan</span>
             </h1>
             <p className="text-center text-sm md:text-md  mt-2 font-medium">
-              rate of interest 5% and the loan amount will Upto 1 lakh - 5 lakhs
+              rate of interest 5% and the loan amount will Upto 1 lakh - 25
+              lakhs
             </p>
 
             <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
