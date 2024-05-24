@@ -112,10 +112,11 @@ const Navbar = () => {
             <span
               className=" w-full 
             
-              text-sm font-semibold text-xl
+               font-bold text-xl
+               text-old-brick-900
             "
             >
-              <p className="text-center">LAkSHMI FINANCE</p>
+              <p className="text-center">LAKSHMI FINANCE</p>
               <p className="text-center">PVT. LTD.</p>
             </span>
           </span>
