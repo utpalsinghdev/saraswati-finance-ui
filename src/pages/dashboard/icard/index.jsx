@@ -573,7 +573,7 @@ export default function Icard() {
         <div
           id="i-card"
           ref={cardRef}
-          className="relative border-l-2 border-r-2 border-t-2 border-[#5FBDFF]  w-60 h-96 bg-white shadow-md rounded-lg overflow-hidden"
+          className="relative border-l-2 border-r-2 border-2 border-[#052541]  w-60 h-96 bg-white shadow-md rounded-lg overflow-hidden"
         >
           <img
             src="/watermark.png"
@@ -582,11 +582,11 @@ export default function Icard() {
           />
           <img src={"/pdfBanner.png"} alt="banner" className="w-full" />
 
-          <img
+          {/* <img
             src={"/pdfFooter.png"}
             alt="footerbanner"
             className="absolute w-full bottom-0 z-0 "
-          />
+          /> */}
 
           <img
             src={IcardData?.agent?.profilePic}
