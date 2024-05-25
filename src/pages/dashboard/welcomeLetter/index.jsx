@@ -1259,7 +1259,6 @@ export const PdfFile = ({ data, general, imgUrl }) => {
               position: "absolute",
               bottom: -10,
               right: 0,
-              width: 120,
               height: 120,
             }}
           />

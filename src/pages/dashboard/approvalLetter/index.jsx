@@ -299,8 +299,8 @@ export const PdfFile = ({ data }) => {
               style={{
                 position: "absolute",
                 top: 30,
-                right: 30,
-                height: 110,
+                right: 60,
+                height: 70,
                 backgroundColor: "transparent",
               }}
             />
