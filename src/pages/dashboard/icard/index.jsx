@@ -576,7 +576,7 @@ export default function Icard() {
           className="relative border-l-2 border-r-2 border-2 border-[#052541]  w-60 h-96 bg-white shadow-md rounded-lg overflow-hidden"
         >
           <img
-            src="/watermark.png"
+            src="/logo.png"
             alt="watermark"
             className="absolute top-36   opacity-20 "
           />
