@@ -272,29 +272,6 @@ export default function DashboardLayout({ children }) {
                                   </Link>
                                 </li>
                               ))}
-                            <li>
-                              <a
-                                href="/bank_verification.pdf"
-                                download={true}
-                                className={classNames(
-                                  isActive("/")
-                                    ? "bg-red-700 text-white"
-                                    : "text-indigo-200 hover:text-white hover:bg-red-300",
-                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                )}
-                              >
-                                <DocumentDuplicateIcon
-                                  className={classNames(
-                                    true
-                                      ? "text-white"
-                                      : "text-indigo-200 group-hover:text-white",
-                                    "h-6 w-6 shrink-0"
-                                  )}
-                                  aria-hidden="true"
-                                />
-                                Bank Verification
-                              </a>
-                            </li>
                           </ul>
                         </li>
                         <li>
@@ -430,29 +407,6 @@ export default function DashboardLayout({ children }) {
                           </Link>
                         </li>
                       ))}
-                    <li>
-                      <a
-                        href="/bank_verification.pdf"
-                        download={true}
-                        className={classNames(
-                          isActive("/")
-                            ? "bg-red-700 text-white"
-                            : "text-indigo-200 hover:text-white hover:bg-red-300",
-                          "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                        )}
-                      >
-                        <DocumentDuplicateIcon
-                          className={classNames(
-                            true
-                              ? "text-white"
-                              : "text-indigo-200 group-hover:text-white",
-                            "h-6 w-6 shrink-0"
-                          )}
-                          aria-hidden="true"
-                        />
-                        Bank Verification
-                      </a>
-                    </li>
                   </ul>
                 </li>
                 <li>
