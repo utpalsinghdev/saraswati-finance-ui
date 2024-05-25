@@ -638,7 +638,12 @@ export const PdfFile = ({ data, general, imgUrl }) => {
     //   </Page>
     // </Document>
     <Document>
-      <Page size="A4" style={{}}>
+      <Page
+        size="A4"
+        style={{
+          border: "10px solid #052541",
+        }}
+      >
         <View style={{}}>
           <Image src={"/pdfBanner.png"} />
         </View>
@@ -1199,7 +1204,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
               </View>
             </View>
             {/* // QR image */}
-            {general.data.url && (
+            {/* {general.data.url && (
               <Image
                 source={imgUrl}
                 style={{
@@ -1207,7 +1212,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
                   height: 110,
                 }}
               />
-            )}
+            )} */}
           </View>
         </View>
         <View
@@ -1273,12 +1278,12 @@ export const PdfFile = ({ data, general, imgUrl }) => {
             color: "grey",
           }}
         >
-          <Image
+          {/* <Image
             style={{
               marginTop: 120,
             }}
             src={"/pdfFooter.png"}
-          />
+          /> */}
         </View>
       </Page>
     </Document>

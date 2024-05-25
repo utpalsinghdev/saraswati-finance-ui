@@ -75,7 +75,9 @@ const Navbar = () => {
         className={classNames(
           "relative  md:mt-6     md:px-0 transition duration-300",
           "  md:bg-white",
-          isMobiled ? "pb-4 " : "bg-white "
+          isMobiled
+            ? "pb-4 "
+            : "bg-gradient-to-r from-blue-400 to-old-brick-400"
         )}
       >
         <nav className="relative flex items-center justify-start md:justify-between">
@@ -104,7 +106,7 @@ const Navbar = () => {
             }}
             className="md:hidden mt-4 cursor-pointer  w-6 h-6 ml-4"
           />
-          <span className="md:hidden mr-4 px-2 w-full flex items-center justify-between font-medium  text-md">
+          <span className="md:hidden  mr-4 px-2 w-full flex items-center justify-between font-medium  text-md">
             <Image
               src="/logo.png"
               className=" block md:hidden  w-28 py-1  cursor-pointer"

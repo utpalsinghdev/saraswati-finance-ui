@@ -45,8 +45,7 @@ export const PdfFile = ({ data }) => {
         size="A4"
         style={{
           paddingBottom: 35,
-          borderRight: "4px solid #5FBDFF",
-          borderLeft: "4px solid #5FBDFF",
+          border: "10px solid #052541",
         }}
       >
         <View style={{}}>
@@ -444,12 +443,12 @@ export const PdfFile = ({ data }) => {
             color: "grey",
           }}
         >
-          <Image
+          {/* <Image
             style={{
               marginTop: 120,
             }}
             src={"/pdfFooter.png"}
-          />
+          /> */}
         </View>
       </Page>
     </Document>

@@ -178,6 +178,7 @@ const PdfFile = ({ data }) => {
         size="A4"
         style={{
           position: "relative",
+          border: "10px solid #052541",
         }}
       >
         <View style={{}}>
@@ -209,6 +210,7 @@ const PdfFile = ({ data }) => {
             style={{
               width: 200,
               height: 230,
+              zIndex: 10000,
             }}
             src={data.profilepic || data.agent.profilePic}
           />
@@ -368,7 +370,7 @@ const PdfFile = ({ data }) => {
           <Image
             style={{
               position: "absolute",
-              top: 240,
+              top: 100,
               right: 70,
               width: 500,
               // height: 400,
@@ -399,12 +401,12 @@ const PdfFile = ({ data }) => {
             color: "grey",
           }}
         >
-          <Image
+          {/* <Image
             style={{
               marginTop: 120,
             }}
             src={"/pdfFooter.png"}
-          />
+          /> */}
         </View>
       </Page>
     </Document>

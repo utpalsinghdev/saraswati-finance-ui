@@ -70,7 +70,7 @@ const PdfFile = ({ data }) => {
         size="A4"
         style={{
           fontFamily: "Helvetica",
-          // border: "1px solid ",
+          border: "10px solid #052541",
         }}
       >
         <View style={{}}>
@@ -92,7 +92,7 @@ const PdfFile = ({ data }) => {
               width: 500,
               opacity: 0.2,
             }}
-            src={"/watermark.png"}
+            src={"/logo.png"}
           />
           {/* <Text
             style={{
@@ -638,7 +638,7 @@ const PdfFile = ({ data }) => {
                 width: 500,
                 opacity: 0.2,
               }}
-              src={"/watermark.png"}
+              src={"/logo.png"}
             />
             <View
               style={{
@@ -906,7 +906,7 @@ const PdfFile = ({ data }) => {
                     width: 500,
                     opacity: 0.2,
                   }}
-                  src={"/watermark.png"}
+                  src={"/logo.png"}
                 />
               </View>
               <Text style={{ fontSize: 13, marginTop: "8" }}>
@@ -1014,12 +1014,12 @@ const PdfFile = ({ data }) => {
             color: "grey",
           }}
         >
-          <Image
+          {/* <Image
             style={{
               marginTop: 120,
             }}
             src={"/pdfFooter.png"}
-          />
+          /> */}
         </View>
       </Page>
     </Document>
