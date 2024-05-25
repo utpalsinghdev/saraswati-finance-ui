@@ -1259,7 +1259,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
               position: "absolute",
               bottom: -10,
               right: 0,
-              height: 120,
+              height: 90,
             }}
           />
           <Text style={{ marginTop: 20 }}>

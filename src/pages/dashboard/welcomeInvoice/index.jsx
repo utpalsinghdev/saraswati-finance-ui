@@ -419,7 +419,7 @@ export const PdfFile = ({ data }) => {
               bottom: -90,
               right: 60,
               width: 130,
-              height: 120,
+              height: 100,
             }}
           />
         </View>

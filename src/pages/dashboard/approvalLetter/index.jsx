@@ -1757,7 +1757,7 @@ export const PdfFile = ({ data }) => {
                   position: "absolute",
                   bottom: -40,
                   right: 20,
-                  height: 150,
+                  height: 100,
                 }}
               />
               <Text

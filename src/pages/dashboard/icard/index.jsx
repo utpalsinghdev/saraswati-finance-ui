@@ -373,7 +373,6 @@ const PdfFile = ({ data }) => {
               top: 100,
               right: 70,
               width: 500,
-              // height: 400,
               zIndex: 0,
               opacity: 0.1,
             }}
@@ -386,7 +385,6 @@ const PdfFile = ({ data }) => {
             position: "absolute",
             top: 420,
             left: 140,
-            width: 130,
             height: 130,
           }}
         />
