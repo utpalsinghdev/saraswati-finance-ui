@@ -803,7 +803,7 @@ const PdfFile = ({ data }) => {
                   borderTop: "1px solid black",
                   textAlign: "right",
                   color: "black",
-                  marginTop: 50,
+                  marginTop: 20,
                   marginBottom: 50,
                   paddingTop: 4,
                   fontSize: 12,
@@ -1416,8 +1416,8 @@ export default function Appointment() {
     <>
       {renderModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[0]} />
-      </PDFViewer> */}
+          <PdfFile data={agents.data[0]} />
+        </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete
