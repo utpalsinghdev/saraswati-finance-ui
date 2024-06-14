@@ -424,12 +424,12 @@ export default function Icard() {
   const [download, setDownload] = useState();
   const cardRef = useRef(null);
 
-  const handleDownload = () => {
+  const handleDownload = (angent_name) => {
     const card = cardRef.current;
 
-    html2canvas(card).then((canvas) => {
+    html2canvas(card, { useCORS: true, allowTaint: false }).then((canvas) => {
       canvas.toBlob((blob) => {
-        saveAs(blob, "i-card.png");
+        saveAs(blob, `${angent_name}-i-card.png`);
       });
     });
   };
@@ -630,6 +630,12 @@ export default function Icard() {
             </span>
           </div>
         </div>
+        <button
+          className="bg-[#052541] text-white w-full py-2 rounded-md mt-4"
+          onClick={() => handleDownload(IcardData?.agent?.firstName)}
+        >
+          download
+        </button>
       </Modal>
     );
   }
