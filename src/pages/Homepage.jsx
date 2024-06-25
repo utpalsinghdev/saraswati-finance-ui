@@ -106,7 +106,7 @@ const Homepage = () => {
       </div>
     );
   }
-  const [state, setState] = React.useState(true);
+  const [state, setState] = React.useState(false);
   const news = useFetch("/api/news");
   function noticeModal() {
     return (
