@@ -1,10 +1,10 @@
 const metaData = {
-    title: "LAKSHMI FINANCE PVT. LTD.",
-    siteUrl: "https://lakshmifinance.live",
-    email: "info@lakshmifinance.live",
-    phone: ["8392908548"],
-    address: "Plot No. 235 A Ground Floor Sudham Corner Of 27th and 28th RD Off linking Road Bandra West Mumbai Maharashtra Pin- 400050",
-    fileCharge: "4150",
+    title: "Supriya financial services pvt ltd",
+    siteUrl: "https://supriyafinancial.com",
+    email: "info@supriyafinancial.com",
+    phone: ["XX9290XXXX"],
+    address: "FP-30B PITAMPURA ,NEAR TV  TOWER, PRITAM PURA Delhi, 110034",
+    fileCharge: "4550",
     icardIsPdf: false,
 };
 
