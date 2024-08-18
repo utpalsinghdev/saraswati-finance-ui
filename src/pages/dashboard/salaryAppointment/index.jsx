@@ -70,7 +70,8 @@ const PdfFile = ({ data }) => {
         size="A4"
         style={{
           fontFamily: "Helvetica",
-          border: "10px solid #052541",
+          borderRight: "5px solid #052541",
+          borderLeft: "5px solid #052541",
         }}
       >
         <View style={{}}>
@@ -201,7 +202,7 @@ const PdfFile = ({ data }) => {
                   }}
                 >
                   {data.guradian_relation === "SONOF" ||
-                  data.guradian_relation === "DOF"
+                    data.guradian_relation === "DOF"
                     ? "Father Name"
                     : "Husband Name"}
                 </Text>
@@ -599,19 +600,6 @@ const PdfFile = ({ data }) => {
             termination of your service
             withoutanynoticeoranycompensationinlieuofsuchnotice.
           </Text>
-
-          <Text
-            style={{
-              textAlign: "left",
-              color: "black",
-              marginTop: 2,
-              fontSize: 12,
-              lineHeight: 1.5,
-            }}
-          >
-            c) You shal ll not seek membership of any local or public bodies
-            without obtaining written permission from management
-          </Text>
           <Text
             style={{
               borderTop: "1px solid black",
@@ -624,10 +612,24 @@ const PdfFile = ({ data }) => {
           >
             SIGNATURE & THUMB IMPRESSION PAGE-1
           </Text>
+          <Text
+            style={{
+              textAlign: "left",
+              color: "black",
+              marginTop: 2,
+              marginTop: 50,
+
+              fontSize: 12,
+              lineHeight: 1.5,
+            }}
+          >
+            c) You shal ll not seek membership of any local or public bodies
+            without obtaining written permission from management
+          </Text>
+
           <View
             style={{
               position: "relative",
-              marginTop: 50,
             }}
           >
             <Image
@@ -645,7 +647,7 @@ const PdfFile = ({ data }) => {
                 textAlign: "left",
                 color: "black",
                 width: "100%",
-                marginTop: 10,
+                marginTop: 5,
                 paddingTop: 4,
                 fontSize: 12,
                 fontWeight: "bold",
@@ -1380,11 +1382,10 @@ export default function Appointment() {
               <PDFDownloadLink
                 id="download"
                 document={<PdfFile data={agents.data[download]} />}
-                fileName={`${
-                  agents.data[download].agent.firstName
-                    ? agents.data[download].agent.firstName
-                    : agents.data[download].agentName
-                }.pdf`}
+                fileName={`${agents.data[download].agent.firstName
+                  ? agents.data[download].agent.firstName
+                  : agents.data[download].agentName
+                  }.pdf`}
               >
                 {({ blob, url, loading, error }) =>
                   loading ? "Generateing..." : "Print"
@@ -1416,8 +1417,8 @@ export default function Appointment() {
     <>
       {renderModal()}
       {/* <PDFViewer height={1000} width={600}>
-          <PdfFile data={agents.data[0]} />
-        </PDFViewer> */}
+        <PdfFile data={agents.data[0]} />
+      </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This Appointment letter ?"
         isDelete

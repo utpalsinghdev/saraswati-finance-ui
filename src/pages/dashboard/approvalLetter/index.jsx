@@ -43,8 +43,8 @@ export const PdfFile = ({ data }) => {
   const _loanAmount = data?.customer?.loanInNumber;
   const costWithoutGst =
     (_loanAmount > 100000 && _loanAmount < 300000) ||
-    _loanAmount == 100000 ||
-    _loanAmount === 300000
+      _loanAmount == 100000 ||
+      _loanAmount === 300000
       ? 10000
       : _loanAmount * 0.03;
   const gst = costWithoutGst * 0.18;
@@ -78,7 +78,8 @@ export const PdfFile = ({ data }) => {
       <Page
         size="A4"
         style={{
-          border: "10px solid #052541",
+          borderRight: "5px solid #052541",
+          borderLeft: "5px solid #052541",
         }}
       >
         <View style={{}}>
@@ -790,12 +791,12 @@ export const PdfFile = ({ data }) => {
               >
                 {data.customer.bank
                   ? data.customer.bank +
-                    " /" +
-                    data.customer.AccountNumber +
-                    " /" +
-                    data.customer.ifsc +
-                    " /" +
-                    data.customer.accountType
+                  " /" +
+                  data.customer.AccountNumber +
+                  " /" +
+                  data.customer.ifsc +
+                  " /" +
+                  data.customer.accountType
                   : "................./ ..........."}
               </Text>
             </View>

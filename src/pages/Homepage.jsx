@@ -25,7 +25,7 @@ const Homepage = () => {
     {
       type: "Home",
       link: "/services/home-loan",
-      img: "/homeloan.jpg",
+      img: "/home.jpeg",
     },
     {
       type: "Education",
@@ -35,7 +35,7 @@ const Homepage = () => {
     {
       type: "Business",
       link: "/services/business-loan",
-      img: "/business.jpg",
+      img: "/businessLoan.png",
     },
     {
       type: "Property",
@@ -50,7 +50,7 @@ const Homepage = () => {
     {
       type: "Agriculture",
       link: "/services/agriculture-loan",
-      img: "/agri.jpg",
+      img: "/agriculture.jpeg",
     },
     {
       type: "Pay Slip",
@@ -60,7 +60,7 @@ const Homepage = () => {
     {
       type: "Mahila Group",
       link: "/services/group-loan",
-      img: "/mahila.png",
+      img: "/group.jpeg",
     },
   ];
   const navigator = useNavigate();
@@ -376,37 +376,37 @@ const Homepage = () => {
                         Number(e.values.intrestRate),
                         Number(e.values.years)
                       )?.emi && (
-                        <>
-                          <span className="text-old-brick-600">
-                            {" "}
-                            Rs.{" "}
-                            {
-                              calculateEMI(
-                                Number(e.values.amount),
-                                Number(e.values.intrestRate),
-                                Number(e.values.years)
-                              )?.emi
-                            }
-                            <span className="text-gray-700">
+                          <>
+                            <span className="text-old-brick-600">
                               {" "}
-                              / Month at the interest Rate of{" "}
-                              <span className="text-old-brick-600">
-                                5%
-                              </span> for{" "}
-                              <span className="text-indigo-600">
-                                {
-                                  calculateEMI(
-                                    Number(e.values.amount),
-                                    Number(e.values.intrestRate),
-                                    Number(e.values.years)
-                                  )?.totalMonths
-                                }
-                              </span>{" "}
-                              Months
+                              Rs.{" "}
+                              {
+                                calculateEMI(
+                                  Number(e.values.amount),
+                                  Number(e.values.intrestRate),
+                                  Number(e.values.years)
+                                )?.emi
+                              }
+                              <span className="text-gray-700">
+                                {" "}
+                                / Month at the interest Rate of{" "}
+                                <span className="text-old-brick-600">
+                                  5%
+                                </span> for{" "}
+                                <span className="text-indigo-600">
+                                  {
+                                    calculateEMI(
+                                      Number(e.values.amount),
+                                      Number(e.values.intrestRate),
+                                      Number(e.values.years)
+                                    )?.totalMonths
+                                  }
+                                </span>{" "}
+                                Months
+                              </span>
                             </span>
-                          </span>
-                        </>
-                      )}
+                          </>
+                        )}
                     </p>
                     <div className="flex items-start justify-center mt-4 w-full">
                       <Link

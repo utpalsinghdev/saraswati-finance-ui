@@ -641,7 +641,9 @@ export const PdfFile = ({ data, general, imgUrl }) => {
       <Page
         size="A4"
         style={{
-          border: "10px solid #052541",
+          fontFamily: "Helvetica",
+          borderRight: "5px solid #052541",
+          borderLeft: "5px solid #052541",
         }}
       >
         <View style={{}}>
@@ -650,10 +652,9 @@ export const PdfFile = ({ data, general, imgUrl }) => {
         <Image
           style={{
             position: "absolute",
-            top: 400,
+            top: 220,
             right: 30,
             width: 500,
-            height: 200,
             opacity: 0.1,
           }}
           src={"/logo.png"}
@@ -767,7 +768,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
               }}
             >
               {data.for.guardian_relation === "SONOF" ||
-              data.for.guardian_relation === "DOF"
+                data.for.guardian_relation === "DOF"
                 ? "Father Name"
                 : "Husband Name"}
             </Text>

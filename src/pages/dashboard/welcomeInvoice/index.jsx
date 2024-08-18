@@ -45,7 +45,8 @@ export const PdfFile = ({ data }) => {
         style={{
           paddingBottom: 35,
           fontFamily: "Roboto",
-          border: "10px solid #052541",
+          borderLeft: "5px solid #052541",
+          borderRight: "5px solid #052541",
         }}
       >
         <View style={{}}>
@@ -731,10 +732,9 @@ function WelcomeInvoice() {
                     }
                   />
                 }
-                fileName={`${
-                  agents.data.filter((a) => a?.recived === null)[download]
-                    .customer.name
-                }.pdf`}
+                fileName={`${agents.data.filter((a) => a?.recived === null)[download]
+                  .customer.name
+                  }.pdf`}
               >
                 {({ blob, url, loading, error }) =>
                   loading ? "Generateing..." : "Print"

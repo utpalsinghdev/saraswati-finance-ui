@@ -45,7 +45,8 @@ export const PdfFile = ({ data }) => {
         size="A4"
         style={{
           paddingBottom: 35,
-          border: "10px solid #052541",
+          borderRight: "5px solid #052541",
+          borderLeft: "5px solid #052541",
         }}
       >
         <View style={{}}>
@@ -684,8 +685,7 @@ function ApprovalInvoice() {
       Header: "pending",
       accessor: (c) =>
         "Rs. " +
-        `${
-          typeof (c.total - c.recived) === "number" ? c.total - c.recived : "-"
+        `${typeof (c.total - c.recived) === "number" ? c.total - c.recived : "-"
         }`,
     },
     {
