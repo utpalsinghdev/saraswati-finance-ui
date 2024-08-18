@@ -591,6 +591,7 @@ const PdfFile = ({ data }) => {
               marginTop: 2,
               fontSize: 12,
               lineHeight: 1,
+              marginBottom: 10,
             }}
           >
             b) You will devote your entire time and attention to the work of the
@@ -598,7 +599,7 @@ const PdfFile = ({ data }) => {
             work, honorary or remunerative expect with the written permission of
             the management ineachcase. Contravention of this will lead to the
             termination of your service
-            withoutanynoticeoranycompensationinlieuofsuchnotice.
+            without any notice or any compensation in lieu of such notice.
           </Text>
           <Text
             style={{
@@ -806,7 +807,7 @@ const PdfFile = ({ data }) => {
                   textAlign: "right",
                   color: "black",
                   marginTop: 20,
-                  marginBottom: 50,
+                  marginBottom: 100,
                   paddingTop: 4,
                   fontSize: 12,
                   fontWeight: "bold",
