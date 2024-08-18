@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite --host",
         "build": "vite build",
-        "deploy": "sudo cp -R dist/* /var/www/supriya_ui",
+        "deploy": "sudo cp -R dist/* /var/www/html/supriya_ui",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },
