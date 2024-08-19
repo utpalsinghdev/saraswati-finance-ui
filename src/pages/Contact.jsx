@@ -56,16 +56,18 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="upper bg-red-500 rounded-2xl ">
-                <div className="lower bg-old-brick-700 rounded-2xl mr-1 pt-1 pb-4 ">
-                  <h1 className="pl-4 text-2xl font-extrabold text-white flex items-center gap-2 border-b border-old-brick-900 mx-2">
+              {metaData.address.map((e) => (
+                <div key={e} className="upper bg-red-500 rounded-2xl ">
+                  <div className="lower bg-old-brick-700 rounded-2xl mr-1 pt-1 pb-4 ">
+                    {/* <h1 className="pl-4 text-2xl font-extrabold text-white flex items-center gap-2 border-b border-old-brick-900 mx-2">
                     Office:
-                  </h1>
-                  <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    {metaData.address}
+                  </h1> */}
+                    <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
+                      {e}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </section>
         </div>

@@ -80,12 +80,14 @@ function Footer() {
                 </a>
               </li>
 
-              <li className="flex flex-row items-start gap-2">
-                <span>
-                  <HiOutlineLocationMarker size={20} />
-                </span>
-                <span> {metaData.address}</span>
-              </li>
+              {metaData.address.map((e) => (
+                <li key={e} className="flex flex-row items-start gap-2">
+                  <span>
+                    <HiOutlineLocationMarker size={20} />
+                  </span>
+                  <span> {e}</span>
+                </li>
+              ))}
               <li className="flex flex-row items-start gap-2">
                 <span>
                   <BiBriefcase size={20} />
