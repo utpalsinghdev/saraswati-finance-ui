@@ -21,6 +21,24 @@ import { SettingsIcon, Users2Icon } from "lucide-react";
 import Image from "../../components/ui/Image/Index";
 import { cn } from "../../utils/cn";
 import metaData from "../../utils/lib/site.config";
+import {
+  Page,
+  Text,
+  View,
+  Document,
+  Image as PdfImage,
+  PDFDownloadLink,
+  Font,
+  PDFViewer,
+} from "@react-pdf/renderer";
+import Modal from "../../components/ui/modal";
+import Input from "../../components/ui/input";
+import Button from "../../components/ui/button";
+import bold from "../../assets/bold.ttf";
+Font.register({
+  family: "Roboto",
+  fonts: [{ src: bold, fontWeight: "bold" }],
+});
 const navigation = [
   {
     name: "Dashboard",
@@ -172,10 +190,179 @@ export default function DashboardLayout({ children }) {
     },
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  function BankVerificationForm(customerName) {
+    return (
+      <Document>
+        <Page
+          size="A4"
+          style={{
+            fontSize: 14,
+            fontFamily: "Helvetica",
+            position: "relative",
+            borderRight: "5px solid #052541",
+            borderLeft: "5px solid #052541",
+          }}
+        >
+          <View style={{ marginBottom: 10 }}>
+            <PdfImage src={"/pdfBanner.png"} />
+          </View>
+          <View>
+            <PdfImage
+              style={{
+                position: "absolute",
+                top: 60,
+                right: 70,
+                width: 450,
+                opacity: 0.1,
+              }}
+              src={"/logo.png"}
+            />
+          </View>
+          <PdfImage
+            style={{
+              position: "absolute",
+              bottom: 30,
+              right: 70,
+              width: 110,
+            }}
+            src={"/stamp.png"}
+          />
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              marginTop: 10,
+              fontSize: 18,
+            }}
+          >
+            <Text
+              style={{
+                color: "black",
+                padding: 2,
+                textAlign: "center",
+                marginBottom: 20,
+                // width: "max-content",
+                fontSize: 14,
+                width: "100%",
+                textAlign: "right",
+                paddingHorizontal: 20,
+              }}
+            >
+              Date: {new Date().toLocaleDateString()}
+            </Text>
+          </View>
+          <View
+            style={{
+              marginHorizontal: 40,
+            }}
+          >
+            <Text
+              style={{ marginBottom: 10, fontFamily: "Roboto", fontWeight: "bold", marginTop: 20, textDecoration: "underline" }}
+            >
+              BANK VERIFICATION OF SIGNATURE: LOANEE
+            </Text>
+            <Text
+              style={{ marginBottom: 10, fontFamily: "Roboto", fontWeight: "bold", marginTop: 20, textDecoration: "underline" }}
+            >
+              TO WHOM SO EVER IT MAY CONCERN
+            </Text>
+            <View style={{ marginBottom: 10, marginTop: 20, display: "flex", flexDirection: "row" }}>
+              <Text> Ref.: Signature Verification of:</Text>
+              <Text> Ref.: Signature Verification of:</Text> <Text style={{
+                fontFamily: "Roboto",
+              }}>{customerName}</Text>
+            </View>
+            <Text style={{ marginBottom: 10, marginTop: 20 }}>
+              We confirm that the signature of (Mr./Ms./Mrs.)
+            </Text>
+            <Text style={{ marginBottom: 20, marginTop: 20 }}>
+              Residing at:
+            </Text>
+            <Text style={{ marginBottom: 10, marginTop: 20 }}>
+              Pin Code:- _____________
+            </Text>
+            <Text style={{ marginBottom: 10, marginTop: 20 }}>
+              And having saving Account No: _________________ with our Bank
+            </Text>
+            <Text style={{ marginBottom: 10, marginTop: 20 }}>
+              We further confirm that the above said account is having transaction with us for the period of last year
+            </Text>
+            <Text style={{ marginBottom: 10, marginTop: 20 }}>
+              Signature of account holder _________________________
+            </Text>
+            <Text style={{ marginBottom: 10, marginTop: 20 }}>
+              Signature Attested:
+            </Text>
+            <Text style={{ marginBottom: 5, marginTop: 5, textAlign: "right", fontFamily: "Roboto", }}>
+              (signature & seal of branch manager/ authorized signature)
+            </Text>
+            <Text style={{ marginBottom: 5, marginTop: 5, textAlign: "right", fontSize: 10 }}>
+              SIGNATURE & THUMB IMPRESSION
+            </Text>
+
+          </View>
+        </Page>
+      </Document>
+    );
+  }
+
+  const [bForm, SetBform] = useState("");
+  const [modal, setModal] = useState(false);
+  const [generatePdf, setGeneratePdf] = useState(false);
+  const downloadBankVerification = () => {
+    return (
+      <Modal
+        open={modal}
+        setOpen={() => {
+          setModal(false);
+          setGeneratePdf(false);
+          SetBform("");
+        }}
+        title={"Bank Verification"}
+      >
+        <Input
+          label={"Customer Name"}
+          placeholder={"Enter Customer Name"}
+          value={bForm}
+          onChange={(e) => SetBform(e.target.value)}
+          icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+        />
+
+        {!generatePdf ? (
+          <Button
+            onClick={() => {
+              setGeneratePdf(true);
+            }}
+          >
+            Generate
+          </Button>
+        ) : (
+          <PDFDownloadLink
+            document={BankVerificationForm(bForm)}
+            fileName={`Bank-Verification-${bForm}.pdf`}
+            style={{
+              textDecoration: "none",
+              padding: "10px",
+              color: "#4a4a4a",
+              backgroundColor: "#f2f2f2",
+              border: "1px solid #4a4a4a",
+            }}
+          >
+            {({ blob, url, loading, error }) =>
+              loading ? "Generating..." : "Download"
+            }
+          </PDFDownloadLink>
+        )}
+      </Modal>
+    );
+  }
 
   return (
     <>
+
       <div>
+        {downloadBankVerification()}
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -272,6 +459,30 @@ export default function DashboardLayout({ children }) {
                                   </Link>
                                 </li>
                               ))}
+                            <li>
+                              <button
+                                onClick={() => {
+                                  setModal(true);
+                                }}
+                                className={classNames(
+                                  false
+                                    ? "bg-red-700 text-white"
+                                    : "text-indigo-200 hover:text-white hover:bg-red-300 w-full",
+                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                )}
+                              >
+                                <DocumentDuplicateIcon
+                                  className={classNames(
+                                    false
+                                      ? "text-white"
+                                      : "text-indigo-200 group-hover:text-white",
+                                    "h-6 w-6 shrink-0"
+                                  )}
+                                  aria-hidden="true"
+                                />
+                                Bank Verification
+                              </button>
+                            </li>
                           </ul>
                         </li>
                         <li>
@@ -407,6 +618,30 @@ export default function DashboardLayout({ children }) {
                           </Link>
                         </li>
                       ))}
+                    <li>
+                      <button
+                        onClick={() => {
+                          setModal(true);
+                        }}
+                        className={classNames(
+                          false
+                            ? "bg-red-700 text-white"
+                            : "text-indigo-200 hover:text-white hover:bg-red-300 w-full",
+                          "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                        )}
+                      >
+                        <DocumentDuplicateIcon
+                          className={classNames(
+                            false
+                              ? "text-white"
+                              : "text-indigo-200 group-hover:text-white",
+                            "h-6 w-6 shrink-0"
+                          )}
+                          aria-hidden="true"
+                        />
+                        Bank Verification
+                      </button>
+                    </li>
                   </ul>
                 </li>
                 <li>
