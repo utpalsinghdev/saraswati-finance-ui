@@ -227,6 +227,7 @@ const Homepage = () => {
       </div>
       {/* <--------------------About Section------------------------------> */}
       <div className="w-full md:hidden bg-old-brick-50 py-2 px-4 mt-20">
+        <h1>CIN no U67120WB1995PLC075385</h1>
         <div className="w-full flex flex-row items-center gap-4">
           <img src="/mic.svg" className="w-9 h-auto text-green-800" />
           <span className="w-full flex flex-col ">
