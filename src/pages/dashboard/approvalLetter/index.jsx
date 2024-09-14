@@ -1077,7 +1077,7 @@ export const PdfFile = ({ data }) => {
                   fontFamily: "Roboto",
                 }}
               >
-                Rs.{general.data.fileCharge}/-
+                Rs.{data?.processingCharge}/-
               </Text>{" "}
               paid
             </Text>
