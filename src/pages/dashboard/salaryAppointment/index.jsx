@@ -70,8 +70,10 @@ const PdfFile = ({ data }) => {
         size="A4"
         style={{
           fontFamily: "Helvetica",
-          borderRight: "5px solid #052541",
-          borderLeft: "5px solid #052541",
+          borderRight: "5px solid blue",
+          borderLeft: "5px solid blue",
+          borderTop: "5px solid blue",
+          borderBottom: "5px solid blue",
         }}
       >
         <View style={{}}>
@@ -526,7 +528,7 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               textAlign: "left",
-              marginTop: 4,
+              marginTop: 6,
               fontSize: 16,
               fontFamily: "Roboto",
               fontWeight: "700",
@@ -576,7 +578,7 @@ const PdfFile = ({ data }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 2,
+              marginTop: 4,
               fontSize: 12,
               lineHeight: 1,
             }}
@@ -607,6 +609,7 @@ const PdfFile = ({ data }) => {
               textAlign: "right",
               color: "black",
               paddingTop: 4,
+              marginTop: 60,
               fontSize: 12,
               fontWeight: "bold",
             }}
@@ -618,7 +621,7 @@ const PdfFile = ({ data }) => {
               textAlign: "left",
               color: "black",
               marginTop: 2,
-              marginTop: 50,
+              marginTop: 20,
 
               fontSize: 12,
               lineHeight: 1.5,
@@ -807,7 +810,7 @@ const PdfFile = ({ data }) => {
                   textAlign: "right",
                   color: "black",
                   marginTop: 20,
-                  marginBottom: 100,
+                  marginBottom: 70,
                   paddingTop: 4,
                   fontSize: 12,
                   fontWeight: "bold",

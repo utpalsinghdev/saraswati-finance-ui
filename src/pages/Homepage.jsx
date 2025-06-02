@@ -84,7 +84,7 @@ const Homepage = () => {
   ];
   function ServiceCard({ img, type, link }) {
     return (
-      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-old-brick-700 hover:shadow-red-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
+      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-pink-700 hover:shadow-pink-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={img} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">
           <span className="text-3xl self-center font-bold text-old-brick-800">
@@ -95,7 +95,7 @@ const Homepage = () => {
           </span>
           <span className="self-center mt-4 md:self-auto">
             <Link to={link}>
-              <button className="pushable rounded-3xl  bg-old-brick-800 hover:bg-old-brick-700 hover:text-old-brick-900 transform-cpu">
+              <button className="pushable rounded-3xl  bg-pink-700 hover:bg-old-brick-700 hover:text-old-brick-900 transform-cpu">
                 <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
                   Read More
                 </span>
@@ -181,8 +181,8 @@ const Homepage = () => {
         <CarouselBanner />
 
         <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-old-brick-100  flex h-max  gap-2 ">
-          <div className="bg-old-brick-600 w-4">
-            <p className="text-old-brick-600">d</p>
+          <div className="bg-pink-600 w-4">
+            <p className="text-pink-600">d</p>
           </div>
 
           <div className="flex flex-col py-2 z-50 ">
@@ -204,8 +204,8 @@ const Homepage = () => {
           </div>
         </div>
         <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-old-brick-100   flex h-max  gap-2 ">
-          <div className="bg-old-brick-600 w-4">
-            <p className="text-old-brick-600">d</p>
+          <div className="bg-pink-600 w-4">
+            <p className="text-pink-600">d</p>
           </div>
 
           <div className="flex flex-col py-2 z-50 ">
@@ -253,7 +253,12 @@ const Homepage = () => {
           <h1 className="text-3xl font-extrabold text-old-brick-800">
             About Us
           </h1>
-          <h1>CIN no U67120WB1995PLC075385</h1>
+          <div class="space-y-4 p-2 sha bg-gray-100 rounded-lg">
+            <h1 class="text-2xl font-bold font-serif text-pink-700">Total Customers: <span class="font-semibold text-black">432</span></h1>
+            <h1 class="text-2xl font-semibold font-serif text-green-700">Total Files: <span class="font-medium text-black">1289</span></h1>
+            <h1 class="text-2xl font-light font-serif text-purple-700">Disbursement Files: <span class="font-semibold text-black">328</span></h1>
+          </div>
+
 
           <p className="md:mt-10 ">
             {metaData.title} is dealing in Home Loan, Personal Loan, Agriculture

@@ -32,43 +32,59 @@ const Navbar = () => {
   // console.log(isMobiled);
   const links = [
     {
+      id: 1,
       name: "Home",
       link: "/",
     },
     {
+      id: 2,
       name: "About Us",
       link: "/about-us",
     },
     {
+      id: 3,
       name: "Loan Services",
       link: "/services/loan",
     },
     {
+      id: 4,
       name: "Agent Joining",
       link: "/Career",
     },
     {
+      id: 5,
       name: "Payment",
       link: "/pay",
     },
     {
+      id: 6,
       name: "Verify Agent",
       link: "/verify-agent",
     },
-
     {
+      id: 7,
+      name: "Legal Documents",
+      link: "#",
+    },
+    {
+      id: 8,
       name: "Contact Us",
       link: "/contact-us",
     },
     {
+      id: 9,
       name: "Apply Now",
       link: "/apply-loan",
     },
     {
+      id: 10,
       name: "Customer Login",
       link: "/c/login",
     },
   ];
+
+  const [loading, setLoading] = useState(0);
+
   return (
     <div className=" w-full md:w-[90%] mx-auto">
       <div
@@ -77,7 +93,7 @@ const Navbar = () => {
           "  md:bg-white",
           isMobiled
             ? "pb-4 "
-            : "bg-gradient-to-r from-blue-400 to-old-brick-400"
+            : "bg-yellow-300"
         )}
       >
         <nav className="relative flex items-center justify-start md:justify-between">
@@ -90,12 +106,15 @@ const Navbar = () => {
                 <Link
                   key={idx}
                   to={link.link}
+                  onClick={() => {
+                    setLoading(link.id)
+                  }}
                   className={classNames(
                     "cursor-pointer font-medium pb-1 border-b-2 transition duration-300  py-1 px-2 rounded-md border-white hover:text-gray-700 hover:border-b-2 tracking-wide  hover:border-primary-500 ",
                     isActive(link.link) ? "bg-orange-100" : ""
                   )}
                 >
-                  {link.name}
+                  {loading === 7 && link.id === 7 ? "downloading..." : link.name}
                 </Link>
               ))}
             </div>
@@ -118,7 +137,7 @@ const Navbar = () => {
                text-old-brick-900
             "
             >
-              <p className="text-center">Supriya Financial</p>
+              <p className="text-center">Credit Loan Financial</p>
               <p className="text-center">Services PVT. LTD.</p>
             </span>
           </span>
@@ -136,13 +155,14 @@ const Navbar = () => {
                 to={link.link}
                 onClick={() => {
                   setShow(!show);
+                  setLoading(link.id);
                 }}
                 className={classNames(
                   "px-2 py-2 w-full rounded-md border  cursor-pointer font-medium pb-1 border-b-2 transition duration-300  hover:text-primary-500 hover:border-b-2 tracking-wide  hover:border-primary-500",
                   isActive(link.link) ? "bg-orange-100" : ""
                 )}
               >
-                {link.name}
+                {loading === 7 && link.id === 7 ? "downloading..." : link.name}
               </Link>
             ))}
           </div>

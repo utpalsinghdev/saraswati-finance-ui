@@ -11,12 +11,12 @@ function CarouselBanner() {
 
   function ApplyBox() {
     return (
-      <span className="absolute top-16 md:top-36 left-6 md:left-32 z-50 md:w-[500px] w-80  rounded-lg md:h-56 h-44 bg-blue-50/40 ">
+      <span className="absolute top-16 md:top-36 left-6 md:left-32 z-50 md:w-[520px] w-[340px]  rounded-lg md:h-56 h-44 bg-blue-50/40 ">
         <div className="p-4 flex flex-col items-start gap-4 justify-start">
           <p className="md:text-5xl text-3xl text-left text-blue-800 font-extrabold">
             <p>
               {" "}
-              Supriya Financial <p className="text-red-600 ">Services Finance PVT. LTD.</p>
+              Credit loan Financial <p className="text-pink-700 ">Services PVT. LTD.</p>
             </p>
           </p>
 
@@ -35,7 +35,7 @@ function CarouselBanner() {
               onClick={() => {
                 navigator("/apply-loan");
               }}
-              className="pushable rounded-3xl bg-red-600   hover:bg-red-900  "
+              className="pushable rounded-3xl bg-pink-600   hover:bg-pink-900  "
             >
               <span className="front bg-blue-600 hover:bg-blue-700 px-4 py-2  rounded-3xl font-semibold">
                 Apply

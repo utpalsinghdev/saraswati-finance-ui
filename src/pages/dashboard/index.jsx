@@ -441,8 +441,8 @@ export default function DashboardLayout({ children }) {
                                     to={item.href}
                                     className={classNames(
                                       isActive(item.href)
-                                        ? "bg-red-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-red-300",
+                                        ? "bg-pink-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-pink-300",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -466,8 +466,8 @@ export default function DashboardLayout({ children }) {
                                 }}
                                 className={classNames(
                                   false
-                                    ? "bg-red-700 text-white"
-                                    : "text-indigo-200 hover:text-white hover:bg-red-300 w-full",
+                                    ? "bg-pink-700 text-white"
+                                    : "text-indigo-200 hover:text-white hover:bg-pink-300 w-full",
                                   "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                 )}
                               >
@@ -505,8 +505,8 @@ export default function DashboardLayout({ children }) {
                                     onClick={() => setSidebarOpen(false)}
                                     className={classNames(
                                       isActive(team.href)
-                                        ? "bg-red-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-red-300",
+                                        ? "bg-pink-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-pink-300",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -541,8 +541,8 @@ export default function DashboardLayout({ children }) {
                                     to={team.href}
                                     className={classNames(
                                       isActive(team.href)
-                                        ? "bg-red-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-red-300",
+                                        ? "bg-pink-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-pink-300",
                                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
                                   >
@@ -600,8 +600,8 @@ export default function DashboardLayout({ children }) {
                             onClick={() => setSidebarOpen(false)}
                             className={classNames(
                               isActive(item.href)
-                                ? "bg-red-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-red-300",
+                                ? "bg-pink-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-pink-300",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >
@@ -625,8 +625,8 @@ export default function DashboardLayout({ children }) {
                         }}
                         className={classNames(
                           false
-                            ? "bg-red-700 text-white"
-                            : "text-indigo-200 hover:text-white hover:bg-red-300 w-full",
+                            ? "bg-pink-700 text-white"
+                            : "text-indigo-200 hover:text-white hover:bg-pink-300 w-full",
                           "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                         )}
                       >
@@ -661,8 +661,8 @@ export default function DashboardLayout({ children }) {
                             onClick={() => setSidebarOpen(false)}
                             className={classNames(
                               isActive(team.href)
-                                ? "bg-red-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-red-300",
+                                ? "bg-pink-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-pink-300",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >
@@ -695,8 +695,8 @@ export default function DashboardLayout({ children }) {
                             to={team.href}
                             className={classNames(
                               isActive(team.href)
-                                ? "bg-red-700 text-white"
-                                : "text-indigo-200 hover:text-white hover:bg-red-300",
+                                ? "bg-pink-700 text-white"
+                                : "text-indigo-200 hover:text-white hover:bg-pink-300",
                               "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                             )}
                           >

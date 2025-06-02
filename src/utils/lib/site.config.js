@@ -1,10 +1,10 @@
 const metaData = {
-    title: "Supriya financial services pvt ltd",
-    siteUrl: "https://supriyafinancial.in",
-    email: "info@supriyafinancial.in",
-    phone: ["9266283114", "9266280572"],
+    title: "Credit Loan Financial Services PVT LTD",
+    siteUrl: "https://www.creditloans.in",
+    email: "info@creditloans.in",
+    phone: ["8755944435"],
     address: [
-        "Address: Malik Buildcon Plaza-1, F-2, First Floor Plot-05 Sector 4 Road, Pocket 2, Sector 12 Dwarka, Delhi, 110075",
+        "ADDRESS - C SECTOR, 2 FLOOR , 205 TO 220 BUSINESS PARK WHITEFIELD ROAD BANGALORE PIN -560066",
     ],
     fileCharge: "4550",
     icardIsPdf: true,

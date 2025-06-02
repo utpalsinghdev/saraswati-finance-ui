@@ -7,9 +7,10 @@ import ContainerWrapper from "../ui/containtWrapper";
 import { Link } from "react-router-dom";
 import metaData from "../../utils/lib/site.config";
 import { BiBriefcase } from "react-icons/bi";
+import { DiAndroid } from "react-icons/di";
 function Footer() {
   return (
-    <div className="w-full bg-gradient-to-r from-blue-900  to-red-100 ">
+    <div className="w-full bg-gradient-to-r from-purple-900  to-pink-600 ">
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
           <div className="w-full">
@@ -37,10 +38,11 @@ function Footer() {
                 <IoIosArrowForward />
                 Services
               </Link>
-              <a href="/Agent.apk" className="flex flex-row items-center gap-2">
-                <IoIosArrowForward />
+              <a href="/Agent.apk" className="flex flex-row items-center gap-2 font-bold text-green-700 hover:text-green-900">
+                <DiAndroid />
                 Agent App
               </a>
+
               <Link
                 to="apply-loan"
                 className="flex flex-row items-center gap-2"

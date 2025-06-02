@@ -54,7 +54,7 @@ const PreviewModalState = {
   edit_id: "",
 };
 
-const PdfFile = ({ data }) => {
+const iPdfFile = ({ data }) => {
   return (
     <Document>
       <Page
@@ -217,245 +217,248 @@ const PdfFile = ({ data }) => {
     </Document>
   );
 };
-// const PdfFile = ({ data }) => {
-//   return (
-//     <Document>
-//       <Page
-//         size="A4"
-//         style={{
-//           position: "relative",
-//           border: "10px solid #052541",
-//         }}
-//       >
-//         <View style={{}}>
-//           <Image src={"/pdfBanner.png"} />
-//         </View>
-//         <View
-//           style={{
-//             fontFamily: "Helvetica",
-//             position: "relative",
-//             display: "flex",
-//             flexDirection: "column",
-//             alignItems: "center",
-//             gap: 2,
-//             justifyContent: "center",
-//           }}
-//         >
-//           <Image
-//             style={{
-//               marginTop: 2,
-//               marginRight: 150,
-//               width: "100%",
-//               paddingHorizontal: 30,
-//               height: 100,
-//               marginBottom: 2,
-//             }}
-//             src={"/logo_without_new.jpg"}
-//           />
-//           <Image
-//             style={{
-//               width: 200,
-//               height: 230,
-//               zIndex: 10000,
-//             }}
-//             src={data.profilepic || data.agent.profilePic}
-//           />
-//           <Text
-//             style={{
-//               marginTop: 20,
-//               fontSize: 36,
-//               textAlign: "left",
-//               paddingBottom: 2,
-//             }}
-//           >
-//             {data.agent.firstName} {data.agent.LastName}
-//           </Text>
-//           <View
-//             style={{
-//               display: "flex",
-//               marginTop: 10,
-//               flexDirection: "row",
-//               // paddingHorizontal: 180,
-//               paddingLeft: 180,
-//               width: "100%",
-//               justifyContent: "space-start",
-//             }}
-//           >
-//             <Text
-//               style={{
-//                 textAlign: "left",
-//                 width: 138,
-//               }}
-//             >
-//               Designation
-//             </Text>
-//             <Text style={{ width: "100%" }}>: {data.agent.designation}</Text>
-//           </View>
-//           <View
-//             style={{
-//               display: "flex",
-//               marginTop: 10,
-//               flexDirection: "row",
-//               paddingLeft: 180,
-//               width: "100%",
-//               justifyContent: "space-start",
-//             }}
-//           >
-//             <Text
-//               style={{
-//                 textAlign: "left",
-//                 width: 138,
-//               }}
-//             >
-//               Location
-//             </Text>
-//             <Text style={{ width: "100%" }}>: {data.location}</Text>
-//           </View>
-//           <View
-//             style={{
-//               display: "flex",
-//               marginTop: 10,
-//               flexDirection: "row",
-//               paddingHorizontal: 180,
-//               width: "100%",
-//               justifyContent: "space-between",
-//             }}
-//           >
-//             <Text
-//               style={{
-//                 textAlign: "left",
-//                 width: 100,
-//               }}
-//             >
-//               Code
-//             </Text>
-//             <Text style={{ width: 130 }}>: {data.agent.employeeCode}</Text>
-//           </View>
-//           <View
-//             style={{
-//               display: "flex",
-//               marginTop: 10,
-//               flexDirection: "row",
-//               paddingHorizontal: 180,
-//               width: "100%",
-//               justifyContent: "space-between",
-//             }}
-//           >
-//             <Text
-//               style={{
-//                 textAlign: "left",
-//                 width: 100,
-//               }}
-//             >
-//               Mobile
-//             </Text>
-//             <Text style={{ width: 130 }}>: {data.agent.phone}</Text>
-//           </View>
+const PdfFile = ({ data }) => {
+  return (
+    <Document>
+      <Page
+        size="A4"
+        style={{
+          fontFamily: "Helvetica",
+          borderRight: "5px solid blue",
+          borderLeft: "5px solid blue",
+          borderTop: "5px solid blue",
+          borderBottom: "5px solid blue",
+        }}
+      >
+        <View style={{}}>
+          <Image src={"/pdfBanner.png"} />
+        </View>
+        <View
+          style={{
+            fontFamily: "Helvetica",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+            justifyContent: "center",
+          }}
+        >
+          <Image
+            style={{
+              marginTop: 2,
+              marginRight: 150,
+              width: "100%",
+              paddingHorizontal: 30,
+              height: 100,
+              marginBottom: 2,
+            }}
+            src={"/logo_without_new.jpg"}
+          />
+          <Image
+            style={{
+              width: 200,
+              height: 230,
+              zIndex: 10000,
+            }}
+            src={data.profilepic || data.agent.profilePic}
+          />
+          <Text
+            style={{
+              marginTop: 20,
+              fontSize: 36,
+              textAlign: "left",
+              paddingBottom: 2,
+            }}
+          >
+            {data.agent.firstName} {data.agent.LastName}
+          </Text>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              // paddingHorizontal: 180,
+              paddingLeft: 180,
+              width: "100%",
+              justifyContent: "space-start",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 138,
+              }}
+            >
+              Designation
+            </Text>
+            <Text style={{ width: "100%" }}>: {data.agent.designation}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingLeft: 180,
+              width: "100%",
+              justifyContent: "space-start",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 138,
+              }}
+            >
+              Location
+            </Text>
+            <Text style={{ width: "100%" }}>: {data.location}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Code
+            </Text>
+            <Text style={{ width: 130 }}>: {data.agent.employeeCode}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              marginTop: 10,
+              flexDirection: "row",
+              paddingHorizontal: 180,
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Mobile
+            </Text>
+            <Text style={{ width: 130 }}>: {data.agent.phone}</Text>
+          </View>
 
-//           {/* <View
-//             style={{
-//               display: "flex",
-//               flexDirection: "row",
-//               marginHorizontal: 110,
-//             }}
-//           >
-//             <Text
-//               style={{
-//                 textAlign: "left",
-//                 width: 100,
-//               }}
-//             >
-//               Code
-//             </Text>
-//             <Text>{data.agent.employeeCode}</Text>
-//           </View>
-//           <View
-//             style={{
-//               display: "flex",
-//               flexDirection: "row",
-//             }}
-//           >
-//             <Text
-//               style={{
-//                 textAlign: "left",
-//                 width: 100,
-//               }}
-//             >
-//               Location
-//             </Text>
-//             <Text>{data.location}</Text>
-//           </View>
-//           <View
-//             style={{
-//               display: "flex",
-//               flexDirection: "row",
-//             }}
-//           >
-//             <Text
-//               style={{
-//                 textAlign: "left",
-//                 width: 100,
-//               }}
-//             >
-//               Mobile
-//             </Text>
-//             <Text>{data.agent.phone}</Text>
-//           </View> */}
-//           {/* 
-//           <Image
-//             style={{
-//               position: "absolute",
-//               bottom: -57,
-//               right: 0,
-//               left: 0,
-//               zIndex: -1,
-//               width: "100%",
-//             }}
-//             src={"/pdfFooter.png"}
-//           /> */}
-//           <Image
-//             style={{
-//               position: "absolute",
-//               top: 100,
-//               right: 70,
-//               width: 500,
-//               zIndex: 0,
-//               opacity: 0.1,
-//             }}
-//             src={"/logo.png"}
-//           />
-//         </View>
-//         <Image
-//           src={"/stamp.png"}
-//           style={{
-//             position: "absolute",
-//             top: 420,
-//             left: 140,
-//             height: 130,
-//           }}
-//         />
-//         <View
-//           style={{
-//             position: "absolute",
-//             fontSize: 12,
-//             bottom: 0,
-//             left: 0,
-//             right: 0,
-//             textAlign: "center",
-//             color: "grey",
-//           }}
-//         >
-//           {/* <Image
-//             style={{
-//               marginTop: 120,
-//             }}
-//             src={"/pdfFooter.png"}
-//           /> */}
-//         </View>
-//       </Page>
-//     </Document>
-//   );
-// };
+          {/* <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              marginHorizontal: 110,
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Code
+            </Text>
+            <Text>{data.agent.employeeCode}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Location
+            </Text>
+            <Text>{data.location}</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <Text
+              style={{
+                textAlign: "left",
+                width: 100,
+              }}
+            >
+              Mobile
+            </Text>
+            <Text>{data.agent.phone}</Text>
+          </View> */}
+          {/* 
+          <Image
+            style={{
+              position: "absolute",
+              bottom: -57,
+              right: 0,
+              left: 0,
+              zIndex: -1,
+              width: "100%",
+            }}
+            src={"/pdfFooter.png"}
+          /> */}
+          <Image
+            style={{
+              position: "absolute",
+              top: 100,
+              right: 70,
+              width: 500,
+              zIndex: 0,
+              opacity: 0.1,
+            }}
+            src={"/logo.png"}
+          />
+        </View>
+        <Image
+          src={"/stamp.png"}
+          style={{
+            position: "absolute",
+            top: 420,
+            left: 140,
+            height: 130,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            fontSize: 12,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            textAlign: "center",
+            color: "grey",
+          }}
+        >
+          <Image
+            style={{
+              marginTop: 120,
+            }}
+            src={"/pdfFooter.png"}
+          />
+        </View>
+      </Page>
+    </Document>
+  );
+};
 const initialModalState = {
   state: false,
   edit_id: "",

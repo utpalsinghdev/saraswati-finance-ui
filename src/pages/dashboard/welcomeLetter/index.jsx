@@ -642,8 +642,10 @@ export const PdfFile = ({ data, general, imgUrl }) => {
         size="A4"
         style={{
           fontFamily: "Helvetica",
-          borderRight: "5px solid #052541",
-          borderLeft: "5px solid #052541",
+          borderRight: "5px solid blue",
+          borderLeft: "5px solid blue",
+          borderTop: "5px solid blue",
+          borderBottom: "5px solid blue",
         }}
       >
         <View style={{}}>
