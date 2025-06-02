@@ -1,7 +1,7 @@
 const metaData = {
     title: "Credit Loan Financial Services PVT LTD",
-    siteUrl: "https://www.creditloans.in",
-    email: "info@creditloans.in",
+    siteUrl: "https://www.creditlfs.com",
+    email: "info@creditlfs.com",
     phone: ["8755944435"],
     address: [
         "ADDRESS - C SECTOR, 2 FLOOR , 205 TO 220 BUSINESS PARK WHITEFIELD ROAD BANGALORE PIN -560066",
