@@ -54,7 +54,7 @@ const PreviewModalState = {
   edit_id: "",
 };
 
-const iPdfFile = ({ data }) => {
+const PdfFile = ({ data }) => {
   return (
     <Document>
       <Page
@@ -86,10 +86,9 @@ const iPdfFile = ({ data }) => {
             src={data?.agent?.profilePic}
             style={{
               position: "absolute",
-              top: 260,
-              left: 235,
-              height: 150,
-              width: 130,
+              top: 280,
+              height: 130,
+              width: 110,
               borderRadius: 15,
             }}
           />
@@ -99,13 +98,26 @@ const iPdfFile = ({ data }) => {
               position: "absolute",
               top: 350,
               left: 190,
-              height: 70,
+              height: 100,
             }}
           />
           <Text
             style={{
               position: "absolute",
-              top: 440,
+              top: 445,
+              // left: "50%",
+              transform: "translateX(-10%)",
+              fontSize: 25,
+              fontWeight: "bold",
+              fontFamily: "Roboto",
+            }}
+          >
+            {data?.agent?.firstName} {data?.agent?.LastName}
+          </Text>
+          <Text
+            style={{
+              position: "absolute",
+              top: 491,
               // left: "50%",
               transform: "translateX(-10%)",
               fontSize: 20,
@@ -113,12 +125,12 @@ const iPdfFile = ({ data }) => {
               fontFamily: "Roboto",
             }}
           >
-            {data?.agent?.firstName} {data?.agent?.LastName}
+            {data?.agent?.designation}
           </Text>
           <View
             style={{
               position: "absolute",
-              top: 480,
+              top: 530,
               color: "black",
               fontSize: 15,
               display: "flex",
@@ -146,28 +158,6 @@ const iPdfFile = ({ data }) => {
               >
                 : {data?.agent?.employeeCode}
               </Text>
-            </View>
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <Text
-
-                style={{
-                  fontWeight: "bold",
-                  fontFamily: "Roboto",
-                }}
-
-              >
-                Designation
-              </Text>
-              <Text
-              >
-                : {data?.agent?.designation}
-              </Text>
-
             </View>
             <View
               style={{
@@ -217,7 +207,7 @@ const iPdfFile = ({ data }) => {
     </Document>
   );
 };
-const PdfFile = ({ data }) => {
+const iPdfFile = ({ data }) => {
   return (
     <Document>
       <Page
