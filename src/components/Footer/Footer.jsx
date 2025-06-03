@@ -66,7 +66,7 @@ function Footer() {
                 <li key={e} className="flex flex-row items-center gap-2">
                   <BsTelephone />{" "}
                   <a href={`tel:${e}`} target="_blank" rel="noreferrer">
-                    {e}
+                    +91 {e}
                   </a>
                 </li>
               ))}
