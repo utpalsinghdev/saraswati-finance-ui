@@ -858,7 +858,7 @@ export const PdfFile = ({ data }) => {
                   border: "1px solid #5FBDFF",
                 }}
               >
-                Processing Charges + 18% GST
+                Insurance Fee + 18% GST
               </Text>
               <Text
                 style={{
@@ -1371,197 +1371,164 @@ export const PdfFile = ({ data }) => {
                 7. The process charge should not be returned after the offer
                 letter is ready
               </Text>
-              {/* <Text
-                style={{ fontSize: 14, marginTop: 15, fontFamily: "Roboto" }}
-              >
-                COMPANY’S PAYMENT DETAILS:-
-              </Text> */}
-              {/* <View style={{}}>
-                <Image src={"/payment.png"} />
-              </View> */}
-              {/* <View
-                style={{
-                  marginTop: 10,
-                  border: "1px solid black",
-                  fontFamily: "Roboto",
-                  textTransform: "uppercase",
-                }}
-              >
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: 10,
-                  }}
-                >
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      fontWeight: "light",
-                      borderRight: "1px solid black",
-                      padding: 5,
-                      textTransform: "uppercase",
-                      width: 130,
-                    }}
-                  >
-                    Bank Name
+              <View style={{ padding: 5 }}>
+                {/* Header */}
+                <View style={{ marginBottom: 5 }}>
+                  <Text style={{ fontSize: 14, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 }}>
+                    ECS MANDATE FORM
                   </Text>
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      padding: 5,
-                      textTransform: "uppercase",
-                      fontWeight: "extrabold",
-                    }}
-                  >
-                    CANERA BANK
+                  <Text style={{ fontSize: 12, fontWeight: 'bold', textAlign: 'center' }}>
+                    CREDIT LOAN FINANCIAL SERVICE
                   </Text>
                 </View>
-                <View
-                  style={{
-                    display: "flex",
-                    borderTop: "1px solid black",
-                    flexDirection: "row",
-                    gap: 10,
-                  }}
-                >
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      fontWeight: "light",
-                      borderRight: "1px solid black",
-                      padding: 5,
-                      textTransform: "uppercase",
-                      width: 130,
-                    }}
-                  >
-                    A/C Holder name
-                  </Text>
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      padding: 5,
-                      textTransform: "uppercase",
-                      fontWeight: "extrabold",
-                    }}
-                  >
-                    MAHADEV FAINACAL SERVICES{" "}
-                  </Text>
+
+                {/* Table */}
+                <View style={{ border: '1px solid black', width: '100%' }}>
+                  {/* Table Rows */}
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Bank Name</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Bank Address</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Account Holder Name</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Bank Account Number</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>IFSC Code</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>MICR Code</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Bank Opening Date (DD/MM/YYYY)</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Last Transaction Date (DD/MM/YYYY)</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Loan Amount (INR)</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>EMI Amount (INR)</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>EMI Tenure (in Months)</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Aadhaar Number</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', borderBottom: '1px solid black' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>PAN Number</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
+
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ width: '40%', padding: 5, borderRight: '1px solid black' }}>
+                      <Text style={{ fontWeight: 'bold' }}>Registered Phone Number</Text>
+                    </View>
+                    <View style={{ width: '60%', padding: 5 }}>
+                      <Text></Text>
+                    </View>
+                  </View>
                 </View>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    borderTop: "1px solid black",
-                    gap: 10,
-                  }}
-                >
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      fontWeight: "light",
-                      borderRight: "1px solid black",
-                      padding: 5,
-                      textTransform: "uppercase",
-                      width: 130,
-                    }}
-                  >
-                    a/c no
-                  </Text>
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      padding: 5,
-                      textTransform: "uppercase",
-                      fontWeight: "extrabold",
-                    }}
-                  >
-                    110119513797
-                  </Text>
+
+                {/* Photo Section */}
+                <View style={{ marginTop: 25 }}>
+                  <Text style={{ marginBottom: 5 }}>Photo (Paste Here):</Text>
+                  <View style={{ height: 100, marginBottom: 20 }}></View>
                 </View>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    borderTop: "1px solid black",
-                    gap: 10,
-                  }}
-                >
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      fontWeight: "light",
-                      borderRight: "1px solid black",
-                      padding: 5,
-                      textTransform: "uppercase",
-                      width: 130,
-                    }}
-                  >
-                    IFSC Code
-                  </Text>
-                  <Text
-                    style={{
-                      textAlign: "left",
-                      color: "black",
-                      fontSize: 12,
-                      padding: 5,
-                      textTransform: "uppercase",
-                      fontWeight: "extrabold",
-                    }}
-                  >
-                    CNRB0008320
-                  </Text>
+
+                {/* Signature Section */}
+                <View style={{ marginTop: 10 }}>
+                  <Text>Signature & Thumb Impression!</Text>
                 </View>
-              </View> */}
-              {/* <View
-                style={{
-                  border: "1px solid black",
-                  padding: 2,
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 14,
-                    fontFamily: "Roboto",
-                    paddingTop: 4,
-                    textAlign: "center",
-                    border: "1px solid black",
-                  }}
-                >
-                  Payment Qr
-                </Text>
-                <View
-                  style={{
-                    display: "flex",
-                    marginTop: 4,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "1px solid black",
-                    paddingVertical: 10,
-                  }}
-                >
-                  <Image
-                    style={{
-                      width: 150,
-                    }}
-                    src={general.data.url}
-                  />
+
+                {/* Company Stamp */}
+                <View style={{ marginTop: 40, textAlign: 'right' }}>
+                  <Text>Company Stamp:</Text>
+                  <View style={{ width: 100, height: 50, marginLeft: 'auto' }}></View>
                 </View>
-              </View> */}
+              </View>
 
 
               <View
