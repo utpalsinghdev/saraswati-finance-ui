@@ -1010,9 +1010,9 @@ export const PdfFile = ({ data, general, imgUrl }) => {
             style={{
               textAlign: "left",
               color: "black",
-              marginTop: 15,
+              marginTop: 25,
               lineHeight: 1.5,
-              fontSize: 11,
+              fontSize: 13,
             }}
           >
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We
@@ -1034,7 +1034,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
             of our company. If any condition your file is not complete your file
             charge is refund to your account within 7 working days.
           </Text>
-          <Text
+          {/* <Text
             style={{
               textAlign: "left",
               color: "red",
@@ -1046,7 +1046,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
             }}
           >
             Company&rsquo;s bank details :
-          </Text>
+          </Text> */}
           <View
             style={{
               display: "flex",
@@ -1057,7 +1057,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
               // border: "1px solid black",
             }}
           >
-            <View
+            {/* <View
               style={{
                 marginTop: 10,
                 border: "1px solid black",
@@ -1205,7 +1205,7 @@ export const PdfFile = ({ data, general, imgUrl }) => {
                   {general.data.ifsc}
                 </Text>
               </View>
-            </View>
+            </View> */}
             {/* // QR image */}
             {/* {general.data.url && (
               <Image
@@ -1221,12 +1221,12 @@ export const PdfFile = ({ data, general, imgUrl }) => {
         <View
           style={{
             marginHorizontal: 40,
-            fontSize: 10,
+            fontSize: 13,
           }}
         >
           <Text
             style={{
-              marginTop: 20,
+              marginTop: 25,
             }}
           >
             After deposit your file charge you will receive your letter within

@@ -1,5 +1,5 @@
 const metaData = {
-    title: "Credit Loan Financial Services PVT LTD",
+    title: "Credit Loan Financial Services Private Limited",
     siteUrl: "https://www.creditlfs.com",
     email: "info@creditlfs.com",
     phone: ["8755944435"],

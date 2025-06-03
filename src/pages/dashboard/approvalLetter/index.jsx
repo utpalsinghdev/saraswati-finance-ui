@@ -919,8 +919,8 @@ export const PdfFile = ({ data }) => {
               the validation of the submitted documents for loan. We are pleased
               to informyou that the company is issuing the offer letter to you
               so that we can further initiate your lone process as early as
-              possible. This offer letter is valid for 25 days. Where company
-              will keep you are submitted to documents safe only for 30 days,
+              possible. This offer letter is valid for 7 days. Where company
+              will keep you are submitted to documents safe only for 10 days,
               otherwise your file will stand closed. Kindly deposit your process
               fees of
               <Text style={{ color: "#FF0000", fontFamily: "Roboto" }}>
@@ -1108,12 +1108,23 @@ export const PdfFile = ({ data }) => {
             >
               11. File fees will not refundable after is suing the offer letter
             </Text>
+            <Text
+              style={{
+                textAlign: "left",
+                color: "black",
+                paddingTop: 2,
+                fontSize: 12,
+                fontWeight: "bold",
+              }}
+            >
+              12. If your payment goes on hold, you may be required to pay the first EMI.
+            </Text>
 
             <Text
               style={{
                 textAlign: "left",
                 color: "black",
-                paddingTop: 30,
+                paddingTop: 20,
                 fontSize: 12,
                 fontWeight: "bold",
                 lineHeight: 1.5,
@@ -1256,7 +1267,7 @@ export const PdfFile = ({ data }) => {
               </Text>
               <Text style={{ fontSize: 14, marginTop: "10" }}>
                 ={">"} 5photo ={">"} Address Proof ={">"} I.D Proof ={">"} 7
-                stampaper 50-50Rs/- ={">"}Bankdetail
+                stampaper 500-500Rs/- ={">"}Bankdetail
               </Text>
               <Text style={{ fontSize: 11, marginTop: "6" }}>
                 &bull; Property documents (in case of property guarantor)
@@ -1360,11 +1371,11 @@ export const PdfFile = ({ data }) => {
                 7. The process charge should not be returned after the offer
                 letter is ready
               </Text>
-              <Text
+              {/* <Text
                 style={{ fontSize: 14, marginTop: 15, fontFamily: "Roboto" }}
               >
                 COMPANY’S PAYMENT DETAILS:-
-              </Text>
+              </Text> */}
               {/* <View style={{}}>
                 <Image src={"/payment.png"} />
               </View> */}
@@ -1551,174 +1562,7 @@ export const PdfFile = ({ data }) => {
                   />
                 </View>
               </View> */}
-              <View
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 4,
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  // border: "1px solid black",
-                }}
-              >
-                <View
-                  style={{
-                    marginTop: 10,
-                    border: "1px solid black",
-                    fontFamily: "Roboto",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      Bank Name
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                      }}
-                    >
-                      {general.data.bankName}
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      borderTop: "1px solid black",
-                      flexDirection: "row",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      A/C Holder name
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                        width: 280,
-                      }}
-                    >
-                      {general.data.holderName}
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      borderTop: "1px solid black",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      a/c no
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                      }}
-                    >
-                      {general.data.accountNo}{" "}
-                    </Text>
-                  </View>
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      borderTop: "1px solid black",
-                      gap: 10,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        fontWeight: "light",
-                        borderRight: "1px solid black",
-                        padding: 5,
-                        textTransform: "uppercase",
-                        width: 130,
-                      }}
-                    >
-                      IFSC Code
-                    </Text>
-                    <Text
-                      style={{
-                        textAlign: "left",
-                        color: "black",
-                        fontSize: 12,
-                        padding: 5,
-                        textTransform: "uppercase",
-                        fontWeight: "extrabold",
-                      }}
-                    >
-                      {general.data.ifsc}
-                    </Text>
-                  </View>
-                </View>
-                {/* // QR image */}
-                {/* <Image
-                  src={general.data.url}
-                  style={{
-                    width: 110,
-                    height: 110,
-                  }}
-                /> */}
-              </View>
+
 
               <View
                 style={{
@@ -1727,7 +1571,7 @@ export const PdfFile = ({ data }) => {
                   alignItems: "center",
                   justifyContent: "space-between",
                   gap: 10,
-                  marginTop: 30,
+                  marginTop: 100,
                 }}
               >
                 <View
