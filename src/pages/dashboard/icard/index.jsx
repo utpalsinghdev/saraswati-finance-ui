@@ -54,7 +54,7 @@ const PreviewModalState = {
   edit_id: "",
 };
 
-const PdfFile = ({ data }) => {
+const iPdfFile = ({ data }) => {
   return (
     <Document>
       <Page
@@ -207,7 +207,7 @@ const PdfFile = ({ data }) => {
     </Document>
   );
 };
-const iPdfFile = ({ data }) => {
+const PdfFile = ({ data }) => {
   return (
     <Document>
       <Page
