@@ -1866,6 +1866,7 @@ export default function ApprovalLetter() {
       accessor: "action",
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
+
           <Badge
             onClick={async () => {
               const confirm = window.confirm("Are you sure you want to regnerate this letter")
@@ -1893,18 +1894,18 @@ export default function ApprovalLetter() {
             >
               <Badge type={enums.cyan}>
                 {/* {download === cell.row.index ? (
-             <PDFDownloadLink
-               id="download"
-               document={<PdfFile data={agents.data[download]} />}
-               fileName={`${agents.data[download].customer.name}.pdf`}
-             >
-               {({ blob, url, loading, error }) =>
-                 loading ? "Generateing..." : "Print"
-               }
-             </PDFDownloadLink>
-           ) : (
-             "Generate"
-           )} */}
+                     <PDFDownloadLink
+                       id="download"
+                       document={<PdfFile data={agents.data[download]} />}
+                       fileName={`${agents.data[download].customer.name}.pdf`}
+                     >
+                       {({ blob, url, loading, error }) =>
+                         loading ? "Generateing..." : "Print"
+                       }
+                     </PDFDownloadLink>
+                   ) : (
+                     "Generate"
+                   )} */}
                 Download
               </Badge>
             </a>
@@ -1922,18 +1923,18 @@ export default function ApprovalLetter() {
               type={enums.cyan}
             >
               {/* {download === cell.row.index ? (
-            <PDFDownloadLink
-              id="download"
-              document={<PdfFile data={agents.data[download]} />}
-              fileName={`${agents.data[download].customer.name}.pdf`}
-            >
-              {({ blob, url, loading, error }) =>
-                loading ? "Generateing..." : "Print"
-              }
-            </PDFDownloadLink>
-          ) : (
-            "Generate"
-          )} */}
+                    <PDFDownloadLink
+                      id="download"
+                      document={<PdfFile data={agents.data[download]} />}
+                      fileName={`${agents.data[download].customer.name}.pdf`}
+                    >
+                      {({ blob, url, loading, error }) =>
+                        loading ? "Generateing..." : "Print"
+                      }
+                    </PDFDownloadLink>
+                  ) : (
+                    "Generate"
+                  )} */}
               Generate
             </Badge>
           )}
