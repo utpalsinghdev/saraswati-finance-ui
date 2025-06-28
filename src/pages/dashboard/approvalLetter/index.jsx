@@ -1886,13 +1886,12 @@ export default function ApprovalLetter() {
           >
             Re-Generate
           </Badge>
-
-          {cell.row.original.pdfPassword ? (
+          {cell.row.original.pdfPassword && (
             <a
               href={import.meta.env.VITE_BASE_URL + cell.row.original.url}
               download
             >
-              <Badge type={enums.cyan}>
+              <Badge type={enums.BLUE}>
                 {/* {download === cell.row.index ? (
                      <PDFDownloadLink
                        id="download"
@@ -1909,34 +1908,6 @@ export default function ApprovalLetter() {
                 Download
               </Badge>
             </a>
-          ) : (
-            <Badge
-              onClick={() => {
-                if (agents?.data?.[cell.row.index]?.customer?.bank) {
-                  setDownload(cell.row.index);
-                } else {
-                  toast.error(
-                    "Customer Bank Details are Missing Please Update"
-                  );
-                }
-              }}
-              type={enums.cyan}
-            >
-              {/* {download === cell.row.index ? (
-                    <PDFDownloadLink
-                      id="download"
-                      document={<PdfFile data={agents.data[download]} />}
-                      fileName={`${agents.data[download].customer.name}.pdf`}
-                    >
-                      {({ blob, url, loading, error }) =>
-                        loading ? "Generateing..." : "Print"
-                      }
-                    </PDFDownloadLink>
-                  ) : (
-                    "Generate"
-                  )} */}
-              Generate
-            </Badge>
           )}
           <Badge
             onClick={() =>
