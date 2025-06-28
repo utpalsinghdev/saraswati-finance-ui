@@ -1844,11 +1844,11 @@ export default function ApprovalLetter() {
       accessor: (c) =>
         c?.customer.name + " " + " (" + c?.customer.customerId + ")",
     },
-    // {
-    //   Header: "pdf password",
-    //   accessor: (c) =>
-    //     c?.pdfPassword ? c?.pdfPassword?.replace(",", "") : "N/A",
-    // },
+    {
+      Header: "pdf password",
+      accessor: (c) =>
+        c?.pdfPassword ? c?.pdfPassword?.replace(",", "") : "N/A",
+    },
     {
       Header: "application id",
       accessor: (c) => c?.customer?.loanId,
@@ -1867,29 +1867,76 @@ export default function ApprovalLetter() {
       Cell: (cell) => (
         <span className="flex items-center justify-start gap-4">
           <Badge
-            onClick={() => {
-              if (agents?.data?.[cell.row.index]?.customer?.bank) {
-                setDownload(cell.row.index);
-              } else {
-                toast.error("Customer Bank Details are Missing Please Update");
-              }
-            }}
-            type={enums.BLUE}
-          >
-            {download === cell.row.index ? (
-              <PDFDownloadLink
-                id="download"
-                document={<PdfFile data={agents.data[download]} />}
-                fileName={`${agents.data[download].customer.name}.pdf`}
-              >
-                {({ blob, url, loading, error }) =>
-                  loading ? "Generateing..." : "Print"
+            onClick={async () => {
+              const confirm = window.confirm("Are you sure you want to regnerate this letter")
+              if (confirm) {
+                const res = await ApiService.fetchData({
+                  url: `api/approval-letter/re-generate/${cell.row.original.id}`,
+                  method: "GET",
+                });
+
+                if (res.status === 200) {
+                  FetchNews()
                 }
-              </PDFDownloadLink>
-            ) : (
-              "Generate"
-            )}
+              }
+            }
+            }
+            type={enums.GREEN}
+          >
+            Re-Generate
           </Badge>
+
+          {cell.row.original.pdfPassword ? (
+            <a
+              href={import.meta.env.VITE_BASE_URL + cell.row.original.url}
+              download
+            >
+              <Badge type={enums.cyan}>
+                {/* {download === cell.row.index ? (
+             <PDFDownloadLink
+               id="download"
+               document={<PdfFile data={agents.data[download]} />}
+               fileName={`${agents.data[download].customer.name}.pdf`}
+             >
+               {({ blob, url, loading, error }) =>
+                 loading ? "Generateing..." : "Print"
+               }
+             </PDFDownloadLink>
+           ) : (
+             "Generate"
+           )} */}
+                Download
+              </Badge>
+            </a>
+          ) : (
+            <Badge
+              onClick={() => {
+                if (agents?.data?.[cell.row.index]?.customer?.bank) {
+                  setDownload(cell.row.index);
+                } else {
+                  toast.error(
+                    "Customer Bank Details are Missing Please Update"
+                  );
+                }
+              }}
+              type={enums.cyan}
+            >
+              {/* {download === cell.row.index ? (
+            <PDFDownloadLink
+              id="download"
+              document={<PdfFile data={agents.data[download]} />}
+              fileName={`${agents.data[download].customer.name}.pdf`}
+            >
+              {({ blob, url, loading, error }) =>
+                loading ? "Generateing..." : "Print"
+              }
+            </PDFDownloadLink>
+          ) : (
+            "Generate"
+          )} */}
+              Generate
+            </Badge>
+          )}
           <Badge
             onClick={() =>
               setConfirmModal((prev) => ({
