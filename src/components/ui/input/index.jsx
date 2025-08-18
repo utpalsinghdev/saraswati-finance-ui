@@ -98,7 +98,7 @@ const Input = ({
             disabled={disabled}
             required={required}
             className={inputClasses}
-            placeholder={placeholder}
+            placeholder={` ${placeholder}`}
             {...props}
           />
         </div>
