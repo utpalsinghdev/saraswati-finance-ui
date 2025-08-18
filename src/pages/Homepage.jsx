@@ -221,14 +221,17 @@ const Homepage = () => {
       {/* Features Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-              Why Choose Us
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-indigo-700 mb-6">
+              What Makes Us Different
             </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              We provide comprehensive financial solutions with a focus on customer satisfaction and transparency.
+            <p className="text-base md:text-lg text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+              We go beyond just financial services — our mission is to empower you with
+              <span className="font-semibold text-indigo-600"> clarity, trust, and growth-driven strategies</span>.
+              With us, you don’t just get solutions, you gain a reliable partner for your financial journey.
             </p>
           </div>
+
 
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -254,13 +257,16 @@ const Homepage = () => {
       <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-              Our Loan Services
+            <h2 className="text-3xl lg:text-4xl font-bold text-indigo-700 mb-4">
+              Our Loan Options
             </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Choose from our wide range of loan products designed to meet your specific financial requirements.
+            <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
+              We provide different types of loans like <span className="font-semibold">personal, home, business,</span>
+              and more — all designed to be <span className="font-semibold">simple, transparent,</span>
+              and <span className="font-semibold">quick to access</span>.
             </p>
           </div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (

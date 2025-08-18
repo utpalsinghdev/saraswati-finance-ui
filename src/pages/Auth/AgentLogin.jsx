@@ -118,7 +118,7 @@ export default function AgentLogin() {
                     loading={formik.isSubmitting}
                     disabled={formik.isSubmitting}
                     loadingText={"logging you in..."}
-                    size={"NORMAL"}
+                    size={"md"}
                     type="submit"
                     className=""
                   >

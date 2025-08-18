@@ -37,7 +37,7 @@ const Navbar = () => {
     { name: "About Us", href: "/about-us" },
     { name: "Loan Services", href: "/services/loan" },
     { name: "Agent Joining", href: "/Career" },
-    { name: "Payment", href: "/pay" },
+    // { name: "Payment", href: "/pay" },
     { name: "Verify Agent", href: "/verify-agent" },
     { name: "Contact Us", href: "/contact-us" },
   ];

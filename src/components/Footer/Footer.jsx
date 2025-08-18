@@ -149,10 +149,12 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-primary-400" />
                 <span>{metaData.email}</span>
               </div>
-              <div className="flex items-start space-x-3 text-neutral-300">
-                <MapPin className="w-4 h-4 text-primary-400 mt-1" />
-                <span className="text-sm">{metaData.address[0]}</span>
-              </div>
+              {metaData.address.map((addr, idx) => (
+                <div key={idx} className="flex items-start space-x-3 text-neutral-300">
+                  <MapPin className="w-5 h-5 min-w-[1.25rem] min-h-[1.25rem] text-primary-400 mt-1" />
+                  <span className="text-sm">{addr}</span>
+                </div>
+              ))}
               <div className="flex items-center space-x-3 text-neutral-300">
                 <Clock className="w-4 h-4 text-primary-400" />
                 <span className="text-sm">Mon - Sat 10:00 AM - 5:00 PM</span>
