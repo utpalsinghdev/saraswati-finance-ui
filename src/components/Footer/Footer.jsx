@@ -92,41 +92,48 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="flex items-center text-neutral-300 hover:text-primary-400 transition-colors duration-200 group"
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Quick Links and Services - Side by side on mobile */}
+          <div className="grid grid-cols-2 gap-6 md:col-span-1 lg:col-span-2">
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="flex items-center text-neutral-300 hover:text-primary-400 transition-colors duration-200 group"
+                    >
+                      <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    to={service.href}
-                    className="flex items-center text-neutral-300 hover:text-primary-400 transition-colors duration-200 group"
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Services */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
+              <ul className="space-y-3">
+                {services.map((service) => (
+                  <li key={service.name}>
+                    <Link
+                      to={service.href}
+                      className="flex items-center text-neutral-300 hover:text-primary-400 transition-colors duration-200 group"
+                    >
+                      <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+          {/* Company Info */}
+
+
+
 
           {/* Contact & Company */}
           <div>
