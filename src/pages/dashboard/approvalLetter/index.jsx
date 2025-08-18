@@ -1378,7 +1378,7 @@ export const PdfFile = ({ data }) => {
                     ECS MANDATE FORM
                   </Text>
                   <Text style={{ fontSize: 12, fontWeight: 'bold', textAlign: 'center' }}>
-                    CREDIT LOAN FINANCIAL SERVICE
+                    {metaData.title}
                   </Text>
                 </View>
 
