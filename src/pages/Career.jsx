@@ -35,7 +35,7 @@ function fileToBase64(file, callback) {
 }
 function Career() {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 mt-20">
       <ContainerWrapper>
         <div className="p-0 md:p-4">
           <h1 className="text-3xl font-bold py-4 border-b-2 px-2 border-red-500">

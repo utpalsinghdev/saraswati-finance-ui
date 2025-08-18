@@ -106,7 +106,7 @@ function ApplyLoan() {
     );
   };
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 mt-20 md:mt-28">
       {renderSucess()}
       <ContainerWrapper>
         <div className="p-0 md:p-4">

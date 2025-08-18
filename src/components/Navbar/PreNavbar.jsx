@@ -11,58 +11,13 @@ import metaData from "../../utils/lib/site.config";
 import { classNames } from "../../utils/classname";
 
 function PreNavbar() {
-  const location = useLocation();
-  const myRef = useRef(null);
-  useEffect(() => {
-    window.scrollTo(0, myRef.current.offsetTop);
-  }, [location.pathname]);
+  // const location = useLocation();
+  // const myRef = useRef(null);
+  // useEffect(() => {
+  //   window.scrollTo(0, myRef.current.offsetTop);
+  // }, [location.pathname]);
   return (
-    <div
-      ref={myRef}
-      className="font-normal hidden md:block w-full bg-gradient-to-r from-old-brick-500 to-blue-500  py-2 z-40"
-    >
-      <ContainerWrapper>
-        <div className="flex justify-between items-center text-white">
-          <div className="py-2 flex gap-2">
-            <MailIcon />
-            <a
-              href={`mailto:${metaData.email}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {metaData.email}
-            </a>
-          </div>
-          <div className="py-2 flex gap-2">
-            <BriefcaseIcon />
-            <p target="_blank" rel="noreferrer">
-              Mon - Sat 10:00 AM - 5:00 PM
-            </p>
-          </div>
-          <div className="py-2 flex gap-2">
-            <HeadphonesIcon />
-            <span className="flex gap-1" rel="noreferrer">
-              {metaData.phone.map((e, i) => (
-                <a
-                  key={e}
-                  href={`tel:${e}`}
-                  className={classNames(
-                    "pr-2 ",
-                    i === metaData.phone.length - 1
-                      ? "border-0"
-                      : "border-r-2 border-white"
-                  )}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  +91 {e}
-                </a>
-              ))}
-            </span>
-          </div>
-        </div>
-      </ContainerWrapper>
-    </div>
+    <div></div>
   );
 }
 

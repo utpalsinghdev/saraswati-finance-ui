@@ -1,348 +1,349 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Ticker from "../components/ui/ticker";
-import Image from "../components/ui/Image/Index";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { classNames } from "../utils/classname";
+import Button from "../components/ui/button";
+import Card from "../components/ui/card";
 import Input from "../components/ui/input";
-import { BiRupee } from "react-icons/bi";
-import { AiOutlineCalendar } from "react-icons/ai";
-import CarouselBanner from "../components/CarouselBanner";
+import {
+  ArrowRight,
+  Shield,
+  Clock,
+  Users,
+  TrendingUp,
+  CheckCircle,
+  Calculator,
+  FileText,
+  Smartphone,
+  Building,
+  GraduationCap,
+  Home,
+  Briefcase,
+  Leaf,
+  Receipt,
+  Users2
+} from "lucide-react";
 import { Formik } from "formik";
 import useFetch from "../hooks/useFetch";
-import { Link, useNavigate } from "react-router-dom";
 import calculateEMI from "../utils/calculator";
 import Select from "../components/ui/select";
 import Contact from "../components/contact";
 import metaData from "../utils/lib/site.config";
-import Button from "../components/ui/button";
-import Modal from "../components/ui/modal";
+import HeroSection from "../components/CarouselBanner";
+
 const Homepage = () => {
+  const [stats, setStats] = useState([
+    { value: 0, target: 432, label: "Happy Customers", icon: Users },
+    { value: 0, target: 1289, label: "Files Processed", icon: FileText },
+    { value: 0, target: 328, label: "Disbursements", icon: TrendingUp },
+  ]);
+
+  const news = useFetch("/api/news");
+
   const services = [
     {
       type: "Personal",
       link: "/services/personal-loan",
       img: "/personalLoan.jpg",
+      icon: Smartphone,
+      description: "Quick personal loans with minimal documentation and fast approval process.",
+      features: ["Up to 50 Lakhs", "Quick Approval", "Minimal Documents"]
     },
     {
       type: "Home",
       link: "/services/home-loan",
       img: "/home.jpeg",
+      icon: Home,
+      description: "Realize your dream of owning a home with our competitive home loan options.",
+      features: ["Up to 5 Crores", "Low Interest Rates", "Flexible EMI"]
     },
     {
       type: "Education",
       link: "/services/education-loan",
       img: "/education.png",
+      icon: GraduationCap,
+      description: "Invest in your future with our education loan programs for students.",
+      features: ["Up to 25 Lakhs", "Student Friendly", "No Collateral"]
     },
     {
       type: "Business",
       link: "/services/business-loan",
       img: "/businessLoan.png",
+      icon: Building,
+      description: "Grow your business with our comprehensive business loan solutions.",
+      features: ["Up to 5 Crores", "Business Growth", "Quick Processing"]
     },
     {
       type: "Property",
       link: "/services/property-loan",
       img: "/property.png",
+      icon: Home,
+      description: "Unlock the value of your property with our property-backed loans.",
+      features: ["Up to 80% LTV", "Property Backed", "Competitive Rates"]
     },
     {
       type: "ITR",
       link: "/services/itr-loan",
       img: "/ITRLoan.webp",
+      icon: Receipt,
+      description: "Get loans based on your ITR with minimal documentation requirements.",
+      features: ["ITR Based", "5x Annual Income", "Quick Approval"]
     },
     {
       type: "Agriculture",
       link: "/services/agriculture-loan",
       img: "/agriculture.jpeg",
+      icon: Leaf,
+      description: "Support your agricultural ventures with our specialized farm loans.",
+      features: ["Farm Loans", "Seasonal Repayment", "Government Support"]
     },
     {
       type: "Pay Slip",
       link: "/services/pay-slip-loan",
       img: "/payslip.jpg",
+      icon: Receipt,
+      description: "Salary-based loans for salaried individuals with easy repayment options.",
+      features: ["Salary Based", "50x Monthly Salary", "No Guarantor"]
     },
     {
       type: "Mahila Group",
       link: "/services/group-loan",
       img: "/group.jpeg",
+      icon: Users2,
+      description: "Empowering women through group lending and financial inclusion.",
+      features: ["Group Lending", "Women Empowerment", "Social Impact"]
     },
   ];
-  const navigator = useNavigate();
 
-  const catalog = [
+  const features = [
     {
-      name: "24/7 Unlimited Support",
-      img: "/time.png",
-      desc: "Our customer support team is ready to help our clients all the time.",
+      icon: Shield,
+      title: "Secure & Trusted",
+      description: "Your financial data is protected with bank-level security protocols and encryption.",
+      color: "text-primary-600"
     },
     {
-      name: "We Are Committed",
-      img: "/agreement.png",
-      desc: "Skilled professionals are always ready to provide reliable services to our clients!...",
+      icon: Clock,
+      title: "Quick Approval",
+      description: "Get loan approval within 24-48 hours with our streamlined process.",
+      color: "text-secondary-600"
     },
     {
-      name: "Customer Focused Team",
-      img: "/medal.png",
-      desc: "Our agency can only be as strong as our people & because of this, our team have designed....",
-    },
+      icon: Users,
+      title: "24/7 Support",
+      description: "Our dedicated support team is available round the clock to assist you.",
+      color: "text-warning-600"
+    }
   ];
-  function ServiceCard({ img, type, link }) {
-    return (
-      <div className="flex w-[23rem] md:w-[18rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-pink-700 hover:shadow-pink-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
-        <Image src={img} className={"w-96 h-64 rounded-xl"} />
-        <div className="flex flex-col items-center justify-between">
-          <span className="text-3xl self-center font-bold text-old-brick-800">
-            {type} Loan
-          </span>
-          <span className="mt-4 px-4 text-center font-sebmibold text-secondary-200 text-md">
-            Get {type} Loan on Easy EMI basis from {metaData.title}
-          </span>
-          <span className="self-center mt-4 md:self-auto">
-            <Link to={link}>
-              <button className="pushable rounded-3xl  bg-pink-700 hover:bg-old-brick-700 hover:text-old-brick-900 transform-cpu">
-                <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
-                  Read More
-                </span>
-              </button>
-            </Link>
-          </span>
-        </div>
-      </div>
-    );
-  }
-  const [state, setState] = React.useState(false);
-  const news = useFetch("/api/news");
-  function noticeModal() {
-    return (
-      <Modal
-        open={state}
-        setOpen={() => {
-          setState(false);
-        }}
-        title={
-          <label className="font-bold text-red-500 text-2xl">
-            Important Notice
-          </label>
-        }
-      >
-        <div className="mt-2 font-medium">
-          <p className="my-2 border-b p-b-2 text-justify">
-            हमारी कंपनी पूरे भारत मे एजूकेशन लोन, सैलरी स्लिप लोन, प्रोजेक्ट
-            लोन, पर्सनल लोन, प्रॉपर्टी लोन, आईटीआर लोन, बिजनेस लोन एक लाख से
-            पांच करोड तक का लोन देती है आज कल लोन के नाम पर बहुत फ्रॉड हो रहा है
-            और बोलते है की हम बजाज फाइनेंस, मत्थुत फाइनेंस, मुद्रा लोन, महिंद्रा
-            लोन से आपका लोन करा रहे और अपने पर्सनल बैंक खातों में पैसे जमा करा
-            लेते हैं और फिर मोबाइल बंद कर लेते है उन लोगो के पास ना कंपनी ना कोई
-            लाइसेंस होता है एक फर्जी वेबसाइट बना लेते है और लोन के नाम से ठगी
-            स्टार्ट करते है ऐसे लोगो से सावधान रहें हमारी कंपनी भारत सरकार
-            द्वारा मान्यता प्राप्त है और 100% लोन देती. आप हमारी कंपनी में लोन
-            ले सकते हैं या एजेंट, फील्ड ऑफिसर, डीलरशिप लेकर काम कर सकते है नोट-
-            हम आपको सलाह देते हैं की आप {metaData.title} कंपनी में काम करने वाले
-            एजेंट, फील्ड ऑफिसर या डीलरशिप, एडवोकेट, या किसी भी पर्सनल बैंक खाते
-            में पैसे जमा ना करे अगर ऐसा करता है उसकी जिम्मेदारी कंपनी की नही
-            होगी। कोई भी लेनदेन केवल कंपनी के एकाउंट में मान्य होगा कोई भी
-            जानकारी के लिए कंपनी के व्हाट्सएप नंबर {metaData.phone.at(1)} पर
-            मैसेज या {metaData.email} पर मेल करे
-          </p>
-          <p className="my-2 border-b p-b-2 text-justify">
-            Our company provides education loan, salary slip loan, project loan,
-            personal loan, property loan, ITR loan, business loan from 1 lakh to
-            5 crores all over India. Nowadays a lot of fraud is happening in the
-            name of loan and it is said that we are getting you loan from Bajaj
-            Finance, Muthoot Finance, Mudra Loan, Mahindra Loan and Asks to
-            deposit money in his personal account and then switches off the
-            mobile.Those people have neither company nor any license, they
-            create a fake website and start cheating in the name of loan.Beware
-            of such people. Our company is recognized by the Government of India
-            and gives 100% loan. You can take loan in our company or work as an
-            agent or field officer or you can work in our company by taking a
-            dealership. Note- We advise you not to deposit money in{" "}
-            {metaData.title} Company&rsquo;s agents, field officers,dealerships,
-            advocates or any personal bank account.If anyone does this, so it
-            will not be the responsibility of the company. Any transaction will
-            be valid only in the account of the company. For any information,
-            message on company&rsquo;s WhatsApp number {metaData.phone.at(1)} or
-            mail to {metaData.email}
-          </p>
-          <div className="flex items-center justify-end mt-2">
-            <Button
-              className={"w-max"}
-              type={"button"}
-              onClick={() => setState(false)}
-            >
-              Close
-            </Button>
-          </div>
-        </div>
-      </Modal>
-    );
-  }
+
+  // Animate stats on scroll
+  useEffect(() => {
+    const animateStats = () => {
+      setStats(prevStats =>
+        prevStats.map(stat => ({
+          ...stat,
+          value: Math.min(stat.value + Math.ceil(stat.target / 50), stat.target)
+        }))
+      );
+    };
+
+    const interval = setInterval(animateStats, 50);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="w-full bg-gray-100 flex items-center justify-center flex-col">
-      {noticeModal()}
-      {/* <--------------------------Contact Section-----------------------------> */}
-      <div className="relative text-white text-[20px] w-full  mx-auto">
-        <CarouselBanner />
+    <div className="min-h-screen bg-neutral-50">
+      {/* Hero Section */}
 
-        <div className="absolute z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-7 text-black bg-old-brick-100  flex h-max  gap-2 ">
-          <div className="bg-pink-600 w-4">
-            <p className="text-pink-600">d</p>
-          </div>
+      <HeroSection />
+      <section className="relative pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-4xl lg:text-6xl font-bold text-neutral-900 leading-tight">
+                  Your Trusted
+                  <span className="text-primary-600 block">Financial Partner</span>
+                </h1>
+                <p className="text-xl text-neutral-600 leading-relaxed">
+                  Get the financial support you need with our comprehensive loan services.
+                  Quick approval, competitive rates, and personalized solutions for every need.
+                </p>
+              </div>
 
-          <div className="flex flex-col py-2 z-50 ">
-            <span className="py-1 px-2 text-black text-sm font-medium ">
-              ABOUT COMPANY
-            </span>
-            {/* <span className="py-1 px-2 text-2xl font-semibold ">News</span> */}
-          </div>
-          <div className="flex flex-col justify-between w-full py-2">
-            <span className="py-1 px-2 text-sm  ">
-              <Ticker
-                messages={
-                  !news.loading
-                    ? news.data.map((n) => n.lane === "FIRST" && n.text)
-                    : [`${metaData.title}`]
-                }
-              />
-            </span>
-          </div>
-        </div>
-        <div className="absolute border-t-2 border-white z-40 container mx-auto w-full md:w-[80%] left-1/2 transform -translate-x-1/2 overflow-hidden -bottom-20 text-black bg-old-brick-100   flex h-max  gap-2 ">
-          <div className="bg-pink-600 w-4">
-            <p className="text-pink-600">d</p>
-          </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  icon={ArrowRight}
+                  iconPosition="right"
+                  onClick={() => window.location.href = "/apply-loan"}
+                >
+                  Apply Now
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  onClick={() => window.location.href = "/calculator"}
+                >
+                  Calculate EMI
+                </Button>
+              </div>
 
-          <div className="flex flex-col py-2 z-50 ">
-            <span className="py-1 px-2 text-2xl font-semibold ">News</span>
-            {/* <span className="py-1 px-2 text-2xl font-semibold ">News</span> */}
-          </div>
-          <div className="flex flex-col justify-between w-full py-2">
-            <span className="py-1 px-2 text-sm  ">
-              <Ticker
-                messages={
-                  !news.loading
-                    ? news.data.map((n) => n.lane === "SECOND" && n.text)
-                    : [`${metaData.title}`]
-                }
-              />
-            </span>
-          </div>
-        </div>
-      </div>
-      {/* <--------------------About Section------------------------------> */}
-      <div className="w-full md:hidden bg-old-brick-50 py-2 px-4 mt-20">
-        <div className="w-full flex flex-row items-center gap-4">
-          <img src="/mic.svg" className="w-9 h-auto text-green-800" />
-          <span className="w-full flex flex-col ">
-            {metaData.phone.map((e) => (
-              <a
-                key={e}
-                href={`tel:${e}`}
-                className="text-old-brick-800 font-medium"
-              >
-                +91-{e}
-              </a>
-            ))}
-          </span>
-        </div>
-      </div>
-
-      <section className="flex mt- bg-gray-100 items-center justify-between flex-col gap-8 md:flex-row mx-6 md:mx-14 lg:mx-32">
-        <div className="flex flex-col self-start gap-4 w-full md:w-96">
-          <h3 className="text-xl mt-4 font-bold">
-            Company Registration Details
-          </h3>
-          {/* <h3 className="text-md font-bold">CIN: U65929UP2020PTC139094</h3> */}
-          {/* <h3 className="text-md font-bold">Pan: AAECF3620J</h3> */}
-          <h1 className="text-3xl font-extrabold text-old-brick-800">
-            About Us
-          </h1>
-          <div class="space-y-4 p-2 sha bg-gray-100 rounded-lg">
-            <h1 class="text-2xl font-bold font-serif text-pink-700">Total Customers: <span class="font-semibold text-black">432</span></h1>
-            <h1 class="text-2xl font-semibold font-serif text-green-700">Total Files: <span class="font-medium text-black">1289</span></h1>
-            <h1 class="text-2xl font-light font-serif text-purple-700">Disbursement Files: <span class="font-semibold text-black">328</span></h1>
-          </div>
-
-
-          <p className="md:mt-10 ">
-            {metaData.title} is dealing in Home Loan, Personal Loan, Agriculture
-            Loan, Shop Loan, Flat Loan, Project Loan, Education Loan, Pay Slip
-            Loan, Car Loan, Machine Loan, Business Loans, Loan Against Property
-            & Project Etc.
-          </p>
-          <div className="flex md:mt-10 mt-1 items-center gap-4">
-            <button
-              onClick={() => {
-                navigator("/contact-us");
-              }}
-              className="pushable rounded-3xl  bg-old-brick-600 hover:bg-old-brick-700 hover:text-old-brick-500 transform-cpu"
-            >
-              <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
-                Contact
-              </span>
-            </button>
-            <button
-              onClick={() => {
-                navigator("/apply-loan");
-              }}
-              className="pushable rounded-3xl bg-old-brick-600   hover:bg-old-brick-900  "
-            >
-              <span className="front bg-old-brick-600 hover:bg-old-brick-700 px-4 py-2 text-white  rounded-3xl font-semibold">
-                Apply
-              </span>
-            </button>
-          </div>
-        </div>
-        <Image
-          src={"/about.png"}
-          className={"md:aspect-auto h-96  object-cover rounded-3xl"}
-        />
-        <div className="flex flex-col h-full items-center gap-1 justify-between w-full md:w-96">
-          {catalog?.map((c, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center gap-2 p-1  shadow-md rounded-lg w-full"
-            >
-              <img src={c.img} alt="" className="w-16 h-16" />
-              <span className="flex flex-col justify-between py-1">
-                <h2 className="font-semibold text-center text-lg text-red-800">
-                  {c.name}
-                </h2>
-                <h4 className="text-gray-700 text-center font-medium">
-                  {c.desc}
-                </h4>
-              </span>
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 pt-8">
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="flex items-center justify-center mb-2">
+                      <stat.icon className="w-6 h-6 text-primary-600" />
+                    </div>
+                    <div className="text-2xl font-bold text-neutral-900">{stat.value}+</div>
+                    <div className="text-sm text-neutral-600">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+
+            <div className="relative">
+              <div className="relative z-10">
+                <img
+                  src="/about.png"
+                  alt="Financial Services"
+                  className="w-full h-auto rounded-2xl shadow-large"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full opacity-20 blur-2xl" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-full opacity-20 blur-xl" />
+            </div>
+          </div>
         </div>
       </section>
-      {/* <--------------------------Services Section-----------------------------> */}
-      <section className="flex mt-10 bg-gray-100 items-center justify-center flex-col mx-8 md:mx-16 lg:mx-32">
-        <h1 className="w-full md:text-left text-center text-5xl pl-2 font-bold mb-4 text-gray-800">
-          <span className="underline">Our</span>{" "}
-          <span className="text-old-brick-500">Services.</span>{" "}
-        </h1>
 
-        <div className="w-full px-2 md:grid md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-5 my-2 flex flex-col items-start justify-between ">
-          {services?.map((s, i) => (
-            <ServiceCard type={s.type} link={s.link} key={i} img={s.img} />
-          ))}
+      {/* Features Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
+              Why Choose Us
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              We provide comprehensive financial solutions with a focus on customer satisfaction and transparency.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} hover className="text-center p-8">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
+                    <feature.icon className={`w-8 h-8 ${feature.color}`} />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-neutral-600">
+                  {feature.description}
+                </p>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      <div className="w-full my-10 ">
-        <h1 className="text-center text-2xl font-bold">
-          <span className="text-old-brick-800">Calculate EMI,</span> Send Your
-          Message
-        </h1>
-      </div>
-      <section className="mb-10 grid grid-cols-1 md:grid-cols-3 h-min bg-gray-100 gap-6  mx-2 md:mx-12 lg:mx-28 ">
-        <div>
-          <div className=" flex flex-col text-left h-full px-4 md:px-0 shadow-xl rounded-3xl hover:shadow-old-brick-800  shadow-old-brick-700 w-full ">
-            <span className="mt-10 text-4xl text-old-brick-800 text-center font-extrabold">
-              Loan EMI Calculator
-            </span>
-            <span className="text-sm px-6">
-              Enter loan amount and select year to Calculate EMI and check you
-              eligibility
-            </span>
-            <div className="w-full pt-4 rounded-b-md pb-8   flex flex-col gap-4 px-4 ">
+      {/* Services Section */}
+      <section className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
+              Our Loan Services
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              Choose from our wide range of loan products designed to meet your specific financial requirements.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} hover className="overflow-hidden">
+                <div className="relative h-48 mb-6">
+                  <img
+                    src={service.img}
+                    alt={service.type}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-neutral-900">
+                    {service.type} Loan
+                  </h3>
+                  <p className="text-neutral-600 text-sm">
+                    {service.description}
+                  </p>
+
+                  <div className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-sm text-neutral-600">
+                        <CheckCircle className="w-4 h-4 text-primary-600 mr-2" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    icon={ArrowRight}
+                    iconPosition="right"
+                    onClick={() => window.location.href = service.link}
+                    className="w-full"
+                  >
+                    Learn More
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EMI Calculator Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900">
+                  Calculate Your EMI
+                </h2>
+                <p className="text-lg text-neutral-600">
+                  Use our EMI calculator to understand your monthly payments and plan your finances better.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Calculator className="w-6 h-6 text-primary-600" />
+                  <span className="font-medium text-neutral-900">Quick & Easy Calculation</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Shield className="w-6 h-6 text-primary-600" />
+                  <span className="font-medium text-neutral-900">No Personal Information Required</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-6 h-6 text-primary-600" />
+                  <span className="font-medium text-neutral-900">Instant Results</span>
+                </div>
+              </div>
+            </div>
+
+            <Card className="p-8">
               <Formik
                 initialValues={{
                   amount: "",
@@ -350,25 +351,26 @@ const Homepage = () => {
                   intrestRate: 5,
                 }}
               >
-                {(e) => (
-                  <>
+                {(formik) => (
+                  <div className="space-y-6">
                     <Input
-                      label={"Enter Loan Amount"}
+                      label="Loan Amount"
                       type="number"
-                      value={e.values.amount}
+                      value={formik.values.amount}
                       name="amount"
-                      onChange={e.handleChange}
-                      placeholder={"Enter Amount"}
-                      icon={<BiRupee className="text-indigo-600" />}
+                      onChange={formik.handleChange}
+                      placeholder="Enter amount"
+                      icon={<Calculator className="w-5 h-5" />}
                     />
+
                     <Select
-                      icon={<AiOutlineCalendar className="text-indigo-600" />}
-                      label={"Select Loan Tenure"}
-                      value={e.values.years}
-                      onChange={e.handleChange}
+                      icon={<Clock className="w-5 h-5" />}
+                      label="Loan Tenure"
+                      value={formik.values.years}
+                      onChange={formik.handleChange}
                       name="years"
                     >
-                      <option value="null">Select a year</option>
+                      <option value="">Select tenure</option>
                       {Array.from({ length: 17 }, (_, index) => (
                         <option key={index + 1} value={index + 1}>
                           {index + 1} Year{index !== 0 ? "s" : ""}
@@ -376,66 +378,108 @@ const Homepage = () => {
                       ))}
                     </Select>
 
-                    <p className="text-sm mt-8 font-medium text-center text-gray-700">
-                      You have to pay
-                      {calculateEMI(
-                        Number(e.values.amount),
-                        Number(e.values.intrestRate),
-                        Number(e.values.years)
-                      )?.emi && (
-                          <>
-                            <span className="text-old-brick-600">
-                              {" "}
-                              Rs.{" "}
-                              {
-                                calculateEMI(
-                                  Number(e.values.amount),
-                                  Number(e.values.intrestRate),
-                                  Number(e.values.years)
-                                )?.emi
-                              }
-                              <span className="text-gray-700">
-                                {" "}
-                                / Month at the interest Rate of{" "}
-                                <span className="text-old-brick-600">
-                                  5%
-                                </span> for{" "}
-                                <span className="text-indigo-600">
-                                  {
-                                    calculateEMI(
-                                      Number(e.values.amount),
-                                      Number(e.values.intrestRate),
-                                      Number(e.values.years)
-                                    )?.totalMonths
-                                  }
-                                </span>{" "}
-                                Months
-                              </span>
+                    {formik.values.amount && formik.values.years && (
+                      <div className="bg-primary-50 rounded-lg p-6 space-y-3">
+                        <h4 className="font-semibold text-primary-900">Your EMI Details</h4>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-neutral-600">Monthly EMI:</span>
+                            <span className="font-semibold text-primary-900">
+                              ₹{calculateEMI(
+                                Number(formik.values.amount),
+                                Number(formik.values.intrestRate),
+                                Number(formik.values.years)
+                              )?.emi || 0}
                             </span>
-                          </>
-                        )}
-                    </p>
-                    <div className="flex items-start justify-center mt-4 w-full">
-                      <Link
-                        to="/apply-loan"
-                        className="pushable rounded-3xl  bg-old-brick-600 hover:bg-old-brick-700 hover:text-old-brick-900 transform-cpu"
-                      >
-                        <span className="front bg-gray-400 px-4 py-2  rounded-3xl font-semibold">
-                          Apply Now
-                        </span>
-                      </Link>
-                    </div>
-                  </>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-neutral-600">Interest Rate:</span>
+                            <span className="font-semibold text-primary-900">5% p.a.</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-neutral-600">Total Months:</span>
+                            <span className="font-semibold text-primary-900">
+                              {calculateEMI(
+                                Number(formik.values.amount),
+                                Number(formik.values.intrestRate),
+                                Number(formik.values.years)
+                              )?.totalMonths || 0}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      icon={ArrowRight}
+                      iconPosition="right"
+                      onClick={() => window.location.href = "/apply-loan"}
+                      className="w-full"
+                    >
+                      Apply Now
+                    </Button>
+                  </div>
                 )}
               </Formik>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900">
+                  Get in Touch
+                </h2>
+                <p className="text-lg text-neutral-600">
+                  Have questions about our services? Our team is here to help you find the perfect financial solution.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-primary-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-neutral-900">Secure & Confidential</h4>
+                    <p className="text-sm text-neutral-600">Your information is protected</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-secondary-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-neutral-900">Quick Response</h4>
+                    <p className="text-sm text-neutral-600">Get answers within 24 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                    <Users className="w-6 h-6 text-warning-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-neutral-900">Expert Support</h4>
+                    <p className="text-sm text-neutral-600">Dedicated financial advisors</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <Contact />
             </div>
           </div>
         </div>
-        <Image
-          src={"/contact.jpg"}
-          className={"w-auto h-[35rem] rounded-3xl"}
-        />
-        <Contact />
       </section>
     </div>
   );

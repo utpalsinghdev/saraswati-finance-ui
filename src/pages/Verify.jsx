@@ -68,7 +68,7 @@ function Verify() {
     );
   };
   return (
-    <div className="container mx-auto w-full md:w-[80%] px-8 my-5 md:my-10">
+    <div className="container mx-auto w-full md:w-[80%] px-8 my-5 md:mt-28 mt-20">
       <h1 className="text-xl font-bold text-center w-full">Verify Agent</h1>
       <div className="w-full flex items-center justify-center">
         <div

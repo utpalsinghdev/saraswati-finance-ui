@@ -21,7 +21,7 @@ import { MailIcon, Phone } from "lucide-react";
 import metaData from "../utils/lib/site.config";
 function Contact() {
   return (
-    <div>
+    <div className="mt-20">
       <ContainerWrapper>
         <div className="w-full  pt-16">
           <section className="pb-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-6 px-2 items-center justify-between md:py-15">

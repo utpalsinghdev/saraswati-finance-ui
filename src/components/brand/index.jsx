@@ -2,7 +2,7 @@ import React from "react";
 import { classNames } from "../../utils/classname";
 import metaData from "../../utils/lib/site.config";
 
-function Brand({ className }) {
+function Brand({ className, imgClass }) {
   return (
     <span
       className={classNames(
@@ -10,7 +10,7 @@ function Brand({ className }) {
         className
       )}
     >
-      <img src="/logo.png" className="   w-[5rem]   cursor-pointer mr-1" />
+      <img src="/logo.png" className={classNames("   w-[5rem]   cursor-pointer mr-1", imgClass)} />
     </span>
   );
 }

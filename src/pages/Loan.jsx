@@ -34,21 +34,24 @@ function Loan() {
   }, []);
   function Bullets({ children }) {
     return (
-      <p className="text-gray-600 text-sm font-medium h-full w-full flex items-center justify-start gap-4">
-        <BiSolidChevronsRight className="text-blue-500 text-lg" />{" "}
-        <span className="w-[95%] text-gray-200">{children}</span>
-      </p>
+      <div className="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+        <div className="flex-shrink-0 w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+        <span className="text-gray-700 text-sm leading-relaxed">{children}</span>
+      </div>
     );
   }
 
   function Card({ title, children }) {
     return (
-      <div className="upper bg-red-800 rounded-2xl mt-8 h-max">
-        <div className="lower bg-old-brick-800 rounded-2xl mr-1 pt-1 pb-4 px-4 py-2">
-          <h1 className="text-xl font-bold mt-2 text-left w-full text-white">
+      <div className="bg-white rounded-xl shadow-soft border border-gray-100 overflow-hidden hover:shadow-medium transition-all duration-300 group">
+        <div className="bg-gradient-to-r from-primary-500 to-primary-600 px-6 py-4">
+          <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+            <div className="w-1 h-6 bg-white rounded-full"></div>
             {title}
-          </h1>
-          <div className="mt-4 flex gap-3 flex-col text-gray-200">
+          </h3>
+        </div>
+        <div className="p-6">
+          <div className="space-y-1">
             {children}
           </div>
         </div>
@@ -70,7 +73,7 @@ function Loan() {
 
   function EducationLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -125,7 +128,7 @@ function Loan() {
   }
   function AgricultureLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -176,7 +179,7 @@ function Loan() {
   }
   function PropertyLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -228,7 +231,7 @@ function Loan() {
   }
   function BusinessLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -277,7 +280,7 @@ function Loan() {
   }
   function PersonalLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -326,7 +329,7 @@ function Loan() {
   }
   function HomeLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -376,7 +379,7 @@ function Loan() {
   }
   function ITRLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -424,7 +427,7 @@ function Loan() {
   }
   function PaySlipLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -477,7 +480,7 @@ function Loan() {
   }
   function GroupLoan() {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
@@ -543,7 +546,7 @@ function Loan() {
     return <GroupLoan />;
   } else {
     return (
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-20">
         <ContainerWrapper>
           <div className="mt-4 pb-8 w-full">
             <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">

@@ -3,7 +3,7 @@ import Image from "../components/ui/Image/Index";
 
 function Pay() {
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full flex items-center justify-center mt-20 md:mt-28">
       <div className="flex w-[23rem] md:w-[40rem]  flex-col pt-8 pb-8 mb-4 shadow-lg shadow-blue-700 hover:shadow-red-800 rounded-2xl items-center md:justify-around justify-center px-2 gap-4">
         <Image src={"/pay.png"} className={"w-96 h-64 rounded-xl"} />
         <div className="flex flex-col items-center justify-between">

@@ -1,107 +1,230 @@
 import React from "react";
-import { IoIosArrowForward } from "react-icons/io";
-import { BsTelephone } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/ai";
-import { HiOutlineLocationMarker } from "react-icons/hi";
-import ContainerWrapper from "../ui/containtWrapper";
 import { Link } from "react-router-dom";
+import { classNames } from "../../utils/classname";
+import Brand from "../brand";
+import Button from "../ui/button";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  ArrowRight,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Download,
+  Shield,
+  Award,
+  Users
+} from "lucide-react";
 import metaData from "../../utils/lib/site.config";
-import { BiBriefcase } from "react-icons/bi";
-import { DiAndroid } from "react-icons/di";
-function Footer() {
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const quickLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Services", href: "/services/loan" },
+    { name: "Apply Now", href: "/apply-loan" },
+    { name: "Contact Us", href: "/contact-us" },
+    { name: "FAQs", href: "/faqs" },
+  ];
+
+  const services = [
+    { name: "Personal Loan", href: "/services/personal-loan" },
+    { name: "Home Loan", href: "/services/home-loan" },
+    { name: "Business Loan", href: "/services/business-loan" },
+    { name: "Education Loan", href: "/services/education-loan" },
+    { name: "Property Loan", href: "/services/property-loan" },
+    { name: "Agriculture Loan", href: "/services/agriculture-loan" },
+  ];
+
+  const company = [
+    { name: "Agent Joining", href: "/Career" },
+    { name: "Verify Agent", href: "/verify-agent" },
+    { name: "Payment", href: "/pay" },
+    { name: "Terms & Conditions", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Anti-Fraud Policy", href: "/anti-fraud" },
+  ];
+
+  const socialLinks = [
+    { name: "Facebook", icon: Facebook, href: "#" },
+    { name: "Twitter", icon: Twitter, href: "#" },
+    { name: "Instagram", icon: Instagram, href: "#" },
+    { name: "LinkedIn", icon: Linkedin, href: "#" },
+  ];
+
+  const features = [
+    { icon: Shield, text: "Secure & Trusted", description: "Your data is protected with bank-level security" },
+    { icon: Award, text: "Award Winning", description: "Recognized for excellence in financial services" },
+    { icon: Users, text: "24/7 Support", description: "Round-the-clock customer support available" },
+  ];
+
   return (
-    <div className="w-full bg-gradient-to-r from-purple-900  to-pink-600 ">
-      <ContainerWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-between py-20 ">
-          <div className="w-full">
-            <img src="/logo.png" className="w-56" alt="" />
-            <p className="text-white mt-2">
-              {metaData.title} is dealing in Personal Loan, Loan against
-              Property, Project Loan & Gold Loan. We Believe in fair dealing and
-              prompt disbursement of founds on priority Basis.
+    <footer className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Company Info */}
+          <div className="lg:col-span-1">
+            <div className="mb-6">
+              <Brand imgClass="w-[15rem]" />
+            </div>
+            <p className="text-neutral-300 mb-6 leading-relaxed">
+              {metaData.title} is your trusted financial partner, providing comprehensive loan solutions with competitive rates and personalized service.
             </p>
-          </div>
-          <div className="w-full ">
-            <h1 className="text-white text-2xl font-bold">Quick Links</h1>
-            <ul className="text-white flex flex-col gap-4 mt-4">
-              <Link to="/" className="flex flex-row items-center gap-2">
-                <IoIosArrowForward /> Home
-              </Link>
-              <Link to="about-us" className="flex flex-row items-center gap-2">
-                <IoIosArrowForward />
-                About Us
-              </Link>
-              <Link
-                to="/services/loan"
-                className="flex flex-row items-center gap-2"
-              >
-                <IoIosArrowForward />
-                Services
-              </Link>
-              <a href="/Agent.apk" className="flex flex-row items-center gap-2 font-bold text-green-700 hover:text-green-900">
-                <DiAndroid />
-                Agent App
-              </a>
 
-              <Link
-                to="apply-loan"
-                className="flex flex-row items-center gap-2"
-              >
-                <IoIosArrowForward />
-                Apply Now
-              </Link>
-              <Link
-                to="contact-us"
-                className="flex flex-row items-center gap-2"
-              >
-                <IoIosArrowForward />
-                Contact Us
-              </Link>
-            </ul>
+            {/* Features */}
+            <div className="space-y-4">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+                    <feature.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-white">{feature.text}</h4>
+                    <p className="text-sm text-neutral-400">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="w-full ">
-            <h1 className="text-white text-2xl font-bold">Contact Us</h1>
-            <ul className="text-white flex flex-col gap-4 mt-4">
-              {metaData.phone.map((e) => (
-                <li key={e} className="flex flex-row items-center gap-2">
-                  <BsTelephone />{" "}
-                  <a href={`tel:${e}`} target="_blank" rel="noreferrer">
-                    +91 {e}
-                  </a>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="flex items-center text-neutral-300 hover:text-primary-400 transition-colors duration-200 group"
+                  >
+                    <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    {link.name}
+                  </Link>
                 </li>
               ))}
+            </ul>
+          </div>
 
-              <li className="flex flex-row items-center gap-2">
-                <AiOutlineMail />
-                <a
-                  href={`mailto:${metaData.email}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {metaData.email}
-                </a>
-              </li>
-
-              {metaData.address.map((e) => (
-                <li key={e} className="flex flex-row items-start gap-2">
-                  <span>
-                    <HiOutlineLocationMarker size={20} />
-                  </span>
-                  <span> {e}</span>
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    to={service.href}
+                    className="flex items-center text-neutral-300 hover:text-primary-400 transition-colors duration-200 group"
+                  >
+                    <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    {service.name}
+                  </Link>
                 </li>
               ))}
-              <li className="flex flex-row items-start gap-2">
-                <span>
-                  <BiBriefcase size={20} />
-                </span>
-                <span> Office Time : Mon - Sat 10:00 AM - 5:00 PM</span>
-              </li>
             </ul>
+          </div>
+
+          {/* Contact & Company */}
+          <div>
+            <h3 className="text-lg font-semibold mb-6 text-white">Contact & Company</h3>
+
+            {/* Contact Info */}
+            <div className="space-y-4 mb-6">
+              <div className="flex items-center space-x-3 text-neutral-300">
+                <Phone className="w-4 h-4 text-primary-400" />
+                <span>+91 {metaData.phone[0]}</span>
+              </div>
+              <div className="flex items-center space-x-3 text-neutral-300">
+                <Mail className="w-4 h-4 text-primary-400" />
+                <span>{metaData.email}</span>
+              </div>
+              <div className="flex items-start space-x-3 text-neutral-300">
+                <MapPin className="w-4 h-4 text-primary-400 mt-1" />
+                <span className="text-sm">{metaData.address[0]}</span>
+              </div>
+              <div className="flex items-center space-x-3 text-neutral-300">
+                <Clock className="w-4 h-4 text-primary-400" />
+                <span className="text-sm">Mon - Sat 10:00 AM - 5:00 PM</span>
+              </div>
+            </div>
+
+            {/* Company Links */}
+            <div className="space-y-3">
+              {company.map((item) => (
+                <div key={item.name}>
+                  <Link
+                    to={item.href}
+                    className="flex items-center text-neutral-300 hover:text-primary-400 transition-colors duration-200 group text-sm"
+                  >
+                    <ArrowRight className="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    {item.name}
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            {/* Agent App Download */}
+            <div className="mt-6">
+              <Button
+                variant="primary"
+                size="sm"
+                icon={Download}
+                fullWidth
+                // onClick={() => window.open("/Agent.apk", "_blank")}
+                className="bg-primary-600 hover:bg-primary-700"
+              >
+                Download Agent App
+              </Button>
+            </div>
           </div>
         </div>
-      </ContainerWrapper>
-    </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="border-t border-neutral-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            {/* Copyright */}
+            <div className="text-neutral-400 text-sm">
+              © {currentYear} {metaData.title}. All rights reserved.
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  className="w-10 h-10 bg-neutral-700 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-200 group"
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-5 h-5 text-neutral-300 group-hover:text-white transition-colors duration-200" />
+                </a>
+              ))}
+            </div>
+
+            {/* Additional Links */}
+            <div className="flex items-center space-x-6 text-sm text-neutral-400">
+              <Link to="/terms" className="hover:text-primary-400 transition-colors duration-200">
+                Terms
+              </Link>
+              <Link to="/privacy" className="hover:text-primary-400 transition-colors duration-200">
+                Privacy
+              </Link>
+              <Link to="/cookies" className="hover:text-primary-400 transition-colors duration-200">
+                Cookies
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;
