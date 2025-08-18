@@ -29,7 +29,6 @@ const Footer = () => {
     { name: "Services", href: "/services/loan" },
     { name: "Apply Now", href: "/apply-loan" },
     { name: "Contact Us", href: "/contact-us" },
-    { name: "FAQs", href: "/faqs" },
   ];
 
   const services = [
@@ -209,17 +208,7 @@ const Footer = () => {
             </div>
 
             {/* Additional Links */}
-            <div className="flex items-center space-x-6 text-sm text-neutral-400">
-              <Link to="/terms" className="hover:text-primary-400 transition-colors duration-200">
-                Terms
-              </Link>
-              <Link to="/privacy" className="hover:text-primary-400 transition-colors duration-200">
-                Privacy
-              </Link>
-              <Link to="/cookies" className="hover:text-primary-400 transition-colors duration-200">
-                Cookies
-              </Link>
-            </div>
+
           </div>
         </div>
       </div>
