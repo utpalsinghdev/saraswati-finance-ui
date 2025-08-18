@@ -73,19 +73,23 @@ function Loan() {
 
   function EducationLoan() {
     return (
-      <div className="bg-gray-100 mt-20">
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 mt-20">
         <ContainerWrapper>
-          <div className="mt-4 pb-8 w-full">
-            <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
-              Eligibility for{" "}
-              <span className="text-red-500"> Education Loan</span>
-            </h1>
-            <p className="text-center text-sm md:text-md font-medium  mt-2">
-              rate of interest 5% and the loan amount will Upto 1 lakh - 25
-              lakhs
-            </p>
+          <div className="py-8 w-full">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Eligibility for{" "}
+                <span className="text-primary-600">Education Loan</span>
+              </h1>
+              <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-4 border border-primary-100">
+                <p className="text-primary-700 font-medium">
+                  Rate of interest: <span className="font-bold">5%</span> |
+                  Loan amount: <span className="font-bold">Upto 1 lakh - 25 lakhs</span>
+                </p>
+              </div>
+            </div>
 
-            <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-4">
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               <Card title="Required Documents Of Loanee">
                 <Bullets>5 Photographs</Bullets>
                 <Bullets>Address Proof</Bullets>
@@ -546,18 +550,22 @@ function Loan() {
     return <GroupLoan />;
   } else {
     return (
-      <div className="bg-gray-100 mt-20">
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 mt-20">
         <ContainerWrapper>
-          <div className="mt-4 pb-8 w-full">
-            <h1 className="w-full text-2xl md:text-3xl mt-1 pt-4 font-bold text-center">
-              Eligibility for <span className="text-red-500"> Loan</span>
-            </h1>
-            <p className="text-center text-sm md:text-md  mt-2 font-medium">
-              rate of interest 5% and the loan amount will Upto 1 lakh - 25
-              lakhs
-            </p>
+          <div className="py-8 w-full">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Eligibility for <span className="text-primary-600">Loan</span>
+              </h1>
+              <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-4 border border-primary-100">
+                <p className="text-primary-700 font-medium">
+                  Rate of interest: <span className="font-bold">5%</span> |
+                  Loan amount: <span className="font-bold">Upto 1 lakh - 25 lakhs</span>
+                </p>
+              </div>
+            </div>
 
-            <div className="grid gap-4 mt-6 grid-cols-1 md:grid-cols-3">
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
               <Card title="Required Documents Of Loanee">
                 <Bullets>5 Photographs</Bullets>
                 <Bullets>Address Proof</Bullets>
