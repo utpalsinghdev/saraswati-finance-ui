@@ -54,7 +54,7 @@ const PreviewModalState = {
   edit_id: "",
 };
 
-const PdfFile = ({ data }) => {
+const iPdfFile = ({ data }) => {
   return (
     <Document>
       <Page
@@ -207,17 +207,15 @@ const PdfFile = ({ data }) => {
     </Document>
   );
 };
-const iPdfFile = ({ data }) => {
+const PdfFile = ({ data }) => {
   return (
     <Document>
       <Page
         size="A4"
         style={{
           fontFamily: "Helvetica",
-          borderRight: "5px solid blue",
-          borderLeft: "5px solid blue",
-          borderTop: "5px solid blue",
-          borderBottom: "5px solid blue",
+
+
         }}
       >
         <View style={{}}>
