@@ -18,8 +18,24 @@ import axios from "axios";
 import { sendMessageDto } from "../schemas";
 import { Formik } from "formik";
 import { MailIcon, Phone } from "lucide-react";
-import metaData from "../utils/lib/site.config";
+import useSiteConfig from "../hooks/useSiteConfig";
 function Contact() {
+  const { config, loading } = useSiteConfig();
+
+  if (loading) {
+    return (
+      <div className="mt-20">
+        <ContainerWrapper>
+          <div className="w-full pt-16">
+            <div className="flex justify-center items-center h-64">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+            </div>
+          </div>
+        </ContainerWrapper>
+      </div>
+    );
+  }
+
   return (
     <div className="mt-20">
       <ContainerWrapper>
@@ -36,7 +52,7 @@ function Contact() {
                     Contact With Us
                   </h1>
                   <div className="text-gray-200 text-md  font-medium px-4 flex items-start flex-col gap-4 py-4">
-                    {metaData.phone.map((e) => (
+                    {config?.phone?.map((e) => (
                       <a
                         key={e}
                         href={`tel:${e}`}
@@ -47,16 +63,16 @@ function Contact() {
                     ))}
 
                     <a
-                      href={`mailto:${metaData.email}`}
+                      href={`mailto:${config?.email}`}
                       className="flex items-end text-md  gap-2"
                     >
-                      <MailIcon /> {metaData.email}
+                      <MailIcon /> {config?.email}
                     </a>
                   </div>
                 </div>
               </div>
 
-              {metaData.address.map((e) => (
+              {config?.address?.map((e) => (
                 <div key={e} className="upper bg-red-500 rounded-2xl ">
                   <div className="lower bg-old-brick-700 rounded-2xl mr-1 pt-1 pb-4 ">
                     {/* <h1 className="pl-4 text-2xl font-extrabold text-white flex items-center gap-2 border-b border-old-brick-900 mx-2">

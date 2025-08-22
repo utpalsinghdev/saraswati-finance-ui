@@ -6,9 +6,23 @@ import Image from "../components/ui/Image/Index";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { BiSolidChevronsRight } from "react-icons/bi";
 import Contact from "../components/contact";
-import metaData from "../utils/lib/site.config";
+import useSiteConfig from "../hooks/useSiteConfig";
 
 function About() {
+  const { config, loading } = useSiteConfig();
+
+  if (loading) {
+    return (
+      <div className="mt-5">
+        <div className="container w-ful md:w-[90%] mx-auto px-1">
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const loanInformation = [
     "Personal/Educational loans are offered up to 50 Lakhs.",
     "Special schemes for Government, Private sectors employee, Engineers, Teacher, Architectures, other persons for grow their business.",
@@ -29,11 +43,11 @@ function About() {
             <h1 className="flex gap-2 items-center flex-col md:flex-row text-left md:text-center  ">
 
               <span className="text-3xl font-bold text-old-brick-800">
-                {metaData.title}
+                {config?.title || "Saraswati Financial Services Private Limited"}
               </span>
             </h1>
             <p className="text-md text-blue-500 font-medium mt-8">
-              {metaData.title} is dealing in Home Loan, Personal Loan,
+              {config?.title || "Saraswati Financial Services Private Limited"} is dealing in Home Loan, Personal Loan,
               Agriculture Loan, Shop Loan, Flat Loan, Project Loan, Education
               Loan, Pay Slip Loan, Car Loan, Machine Loan, Business Loans, Loan
               Against Property & Project Etc.

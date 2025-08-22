@@ -18,9 +18,10 @@ import {
   Award,
   Users
 } from "lucide-react";
-import metaData from "../../utils/lib/site.config";
+import useSiteConfig from "../../hooks/useSiteConfig";
 
 const Footer = () => {
+  const { config, loading } = useSiteConfig();
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -73,7 +74,7 @@ const Footer = () => {
               <Brand imgClass="w-[15rem]" />
             </div>
             <p className="text-neutral-300 mb-6 leading-relaxed">
-              {metaData.title} is your trusted financial partner, providing comprehensive loan solutions with competitive rates and personalized service.
+              {config?.title || "Saraswati Financial Services Private Limited"} is your trusted financial partner, providing comprehensive loan solutions with competitive rates and personalized service.
             </p>
 
             {/* Features */}
@@ -143,13 +144,13 @@ const Footer = () => {
             <div className="space-y-4 mb-6">
               <div className="flex items-center space-x-3 text-neutral-300">
                 <Phone className="w-4 h-4 text-primary-400" />
-                <span>+91 {metaData.phone[0]}</span>
+                <span>+91 {config?.phone?.[0] || "9773945780"}</span>
               </div>
               <div className="flex items-center space-x-3 text-neutral-300">
                 <Mail className="w-4 h-4 text-primary-400" />
-                <span>{metaData.email}</span>
+                <span>{config?.email || "Info@Saraswatifinance.live"}</span>
               </div>
-              {metaData.address.map((addr, idx) => (
+              {config?.address?.map((addr, idx) => (
                 <div key={idx} className="flex items-start space-x-3 text-neutral-300">
                   <MapPin className="w-5 h-5 min-w-[1.25rem] min-h-[1.25rem] text-primary-400 mt-1" />
                   <span className="text-sm">{addr}</span>
@@ -199,7 +200,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-neutral-400 text-sm">
-              © {currentYear} {metaData.title}. All rights reserved.
+              © {currentYear} {config?.title || "Saraswati Financial Services Private Limited"}. All rights reserved.
             </div>
 
             {/* Social Links */}

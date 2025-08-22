@@ -52,6 +52,7 @@ import Qr from "../pages/dashboard/payment/Qr";
 import Verify from "../pages/Verify";
 import Pay from "../pages/Pay";
 import CustomerProfile from "../pages/dashboard/Customer/Customer";
+import Agreement from "../pages/dashboard/Agreement";
 const USER_ROLES = {
   ADMIN: "ADMIN",
   AGENT: "AGENT",
@@ -176,6 +177,10 @@ function RoutesConfig() {
             <Route
               path="/admin/joint-percent-letter/"
               element={<JointPercent />}
+            />
+            <Route
+              path="/admin/agreement/"
+              element={<Agreement />}
             />
             <Route path="/admin/i-card/" element={<Icard />} />
             <Route

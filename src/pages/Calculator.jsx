@@ -11,13 +11,25 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { Formik } from "formik";
 import LinkButton from "../components/ui/link";
 import calculateEMI from "../utils/calculator";
-import metaData from "../utils/lib/site.config";
+import useSiteConfig from "../hooks/useSiteConfig";
 function Calculator() {
+  const { config, loading } = useSiteConfig();
+
+  if (loading) {
+    return (
+      <div className="bg-gray-100">
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-gray-100">
       <CarouselBanner />
       <ContainerWrapper>
-        <HeadingWrapper heading="Loan Calculator" title={metaData.title}>
+        <HeadingWrapper heading="Loan Calculator" title={config?.title || "Saraswati Financial Services Private Limited"}>
           <div className="px-0 md:px-16 grid grid-cols-1 gap-4 md:grid-cols-2 mt-4 md:mt-8">
             <Image
               src={"/calculator.jpg"}
@@ -70,37 +82,37 @@ function Calculator() {
                           Number(e.values.intrestRate),
                           Number(e.values.years)
                         )?.emi && (
-                          <>
-                            <span className="text-green-600">
-                              {" "}
-                              Rs.{" "}
-                              {
-                                calculateEMI(
-                                  Number(e.values.amount),
-                                  Number(e.values.intrestRate),
-                                  Number(e.values.years)
-                                )?.emi
-                              }
-                              <span className="text-gray-700">
+                            <>
+                              <span className="text-green-600">
                                 {" "}
-                                / Month at the interest Rate of{" "}
-                                <span className="text-green-600">
-                                  7%
-                                </span> for{" "}
-                                <span className="text-indigo-600">
-                                  {
-                                    calculateEMI(
-                                      Number(e.values.amount),
-                                      Number(e.values.intrestRate),
-                                      Number(e.values.years)
-                                    )?.totalMonths
-                                  }
-                                </span>{" "}
-                                Months
+                                Rs.{" "}
+                                {
+                                  calculateEMI(
+                                    Number(e.values.amount),
+                                    Number(e.values.intrestRate),
+                                    Number(e.values.years)
+                                  )?.emi
+                                }
+                                <span className="text-gray-700">
+                                  {" "}
+                                  / Month at the interest Rate of{" "}
+                                  <span className="text-green-600">
+                                    7%
+                                  </span> for{" "}
+                                  <span className="text-indigo-600">
+                                    {
+                                      calculateEMI(
+                                        Number(e.values.amount),
+                                        Number(e.values.intrestRate),
+                                        Number(e.values.years)
+                                      )?.totalMonths
+                                    }
+                                  </span>{" "}
+                                  Months
+                                </span>
                               </span>
-                            </span>
-                          </>
-                        )}
+                            </>
+                          )}
                       </p>
                       <div className="flex items-start justify-center mt-4 w-full">
                         <LinkButton to="/apply-loan" size={"NORMAL"}>
