@@ -105,10 +105,9 @@ const PdfFile = ({ data }) => {
           <Text
             style={{
               position: "absolute",
-              top: 445,
-              left: "45%",
-              transform: "translateX(-50%)",
-              fontSize: 25,
+              top: 450,
+              textAlign: "center",
+              fontSize: 18,
               fontWeight: "bold",
               fontFamily: "Roboto",
             }}
@@ -786,7 +785,7 @@ export default function Icard() {
       {renderModal()}
       {prevIcardModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[0]} />
+        <PdfFile data={agents.data[agents.data.length - 1]} />
       </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This ICard?"
