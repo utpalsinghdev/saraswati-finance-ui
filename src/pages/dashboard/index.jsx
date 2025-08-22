@@ -97,6 +97,13 @@ const navigation = [
     current: false,
     access: ["ADMIN"],
   },
+  {
+    name: "Agent Attendance",
+    href: "/admin/agent-attendance/",
+    icon: FolderIcon,
+    current: false,
+    access: ["ADMIN"],
+  },
   // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   // { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
 ];
@@ -189,6 +196,10 @@ export default function DashboardLayout({ children }) {
     {
       name: "Your profile",
       href: !!Cookies.get("gafs_agent") ? "/profile/me" : "#",
+    },
+    {
+      name: "Punch In",
+      href: !!Cookies.get("gafs_agent") ? "/agent/punch-in" : "#",
     },
     {
       name: "Sign out",

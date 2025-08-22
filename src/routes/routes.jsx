@@ -52,6 +52,8 @@ import Qr from "../pages/dashboard/payment/Qr";
 import Verify from "../pages/Verify";
 import Pay from "../pages/Pay";
 import CustomerProfile from "../pages/dashboard/Customer/Customer";
+import AgentSheeet from "../pages/dashboard/agents/AttendenceSheet";
+import PunchIN from "../pages/profile/Punch";
 import Agreement from "../pages/dashboard/Agreement";
 const USER_ROLES = {
   ADMIN: "ADMIN",
@@ -188,6 +190,7 @@ function RoutesConfig() {
               element={<Appointment />}
             />
             <Route path="/admin/news/" element={<News />} />
+            <Route path="/admin/agent-attendance/" element={<AgentSheeet />} />
             <Route
               path="/admin/job-applications/"
               element={<CarrerApplications />}
@@ -218,6 +221,7 @@ function RoutesConfig() {
             <Route path="/agent/approval/" element={<ApprovalLetteragemt />} />
             <Route path="/agent/customer/" element={<ApprovalCustomers />} />
             <Route path="/profile/me" element={<Profile />} />
+            <Route path="/agent/punch-in" element={<PunchIN />} />
             <Route path="profile/me/edit" element={<Edit />} />
           </Route>
 
