@@ -184,7 +184,7 @@ const Footer = () => {
                 size="sm"
                 icon={Download}
                 fullWidth
-                // onClick={() => window.open("/Agent.apk", "_blank")}
+                onClick={() => window.open("/Agent.apk", "_blank")}
                 className="bg-primary-600 hover:bg-primary-700"
               >
                 Download Agent App
