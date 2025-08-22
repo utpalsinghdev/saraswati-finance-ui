@@ -54,7 +54,7 @@ const PreviewModalState = {
   edit_id: "",
 };
 
-const iPdfFile = ({ data }) => {
+const PdfFile = ({ data }) => {
   return (
     <Document>
       <Page
@@ -86,10 +86,11 @@ const iPdfFile = ({ data }) => {
             src={data?.agent?.profilePic}
             style={{
               position: "absolute",
-              top: 280,
-              height: 130,
-              width: 110,
-              borderRadius: 15,
+              top: 295,
+              left: 231,
+              height: 150,
+              width: 150,
+              borderRadius: 100,
             }}
           />}
           <Image
@@ -105,8 +106,8 @@ const iPdfFile = ({ data }) => {
             style={{
               position: "absolute",
               top: 445,
-              // left: "50%",
-              transform: "translateX(-10%)",
+              left: "45%",
+              transform: "translateX(-50%)",
               fontSize: 25,
               fontWeight: "bold",
               fontFamily: "Roboto",
@@ -117,9 +118,9 @@ const iPdfFile = ({ data }) => {
           <Text
             style={{
               position: "absolute",
-              top: 491,
+              top: 481,
               // left: "50%",
-              transform: "translateX(-10%)",
+              transform: "translateX(10%)",
               fontSize: 20,
               fontWeight: "bold",
               fontFamily: "Roboto",
@@ -207,7 +208,7 @@ const iPdfFile = ({ data }) => {
     </Document>
   );
 };
-const PdfFile = ({ data }) => {
+const iPdfFile = ({ data }) => {
   return (
     <Document>
       <Page
@@ -785,7 +786,7 @@ export default function Icard() {
       {renderModal()}
       {prevIcardModal()}
       {/* <PDFViewer height={1000} width={600}>
-        <PdfFile data={agents.data[2]} />
+        <PdfFile data={agents.data[0]} />
       </PDFViewer> */}
       <ConfirmationModal
         description="Do you really want to delete this This ICard?"
