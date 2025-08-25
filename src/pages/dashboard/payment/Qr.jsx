@@ -84,8 +84,8 @@ function Qr() {
           ? `Last Updated on ${moment(general.data.updatedAt).format("ll")}`
           : "No Bank Details added Yet"}
       </h1>
-      {/* <h1 className=" text-xl font-bold  ">Pyament Qr Code</h1> */}
-      {/* <Formik
+      <h1 className=" text-xl font-bold  ">Pyament Qr Code</h1>
+      <Formik
         initialValues={formData}
         enableReinitialize={true}
         onSubmit={async (values, action) => {
@@ -174,7 +174,7 @@ function Qr() {
             </Button>
           </form>
         )}
-      </Formik> */}
+      </Formik>
 
       <h1 className=" text-xl font-bold">Site Configuration & Bank Details</h1>
       <Formik
